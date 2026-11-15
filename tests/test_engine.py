@@ -265,3 +265,207 @@ def test_a_problem_with_one_protein_is_still_raised(offline):
     offline.side_effect = broken
     with pytest.raises(fetch.FetchError):
         engine.find_clues(PAH, targets)
+
+
+# =====================================================================
+# Ticket 5.3: three tabs. Approved medicines are shown, in A to Z order
+# =====================================================================
+#
+# New tests only. Saved files, no network.
+
+from moonlight.engine import ApprovedMedicine, sort_into_tabs  # noqa: E402
+from moonlight.fetch import Listed  # noqa: E402
+from test_fetch import LISTED_APPROVED, fake_with_the_disease_list  # noqa: E402
+
+
+@pytest.fixture
+def pah_tabs(offline):
+    """The three tabs for PAH and Kashish's five answer-key proteins."""
+    offline.side_effect = fake_with_the_disease_list
+    tray = engine.find_clues(PAH, targets_named(*FIVE))
+    return sort_into_tabs(tray, fetch.fetch_approved(PAH))
+
+
+def approved_named(tabs, name):
+    found = [m for m in tabs.approved if m.name.upper() == name.upper()]
+    assert len(found) == 1, f"expected one {name}, found {len(found)}"
+    return found[0]
+
+
+# Example 1
+def test_53_approved_holds_sildenafil_and_tadalafil_a_to_z_each_once(pah_tabs):
+    assert all(isinstance(m, ApprovedMedicine) for m in pah_tabs.approved)
+    approved = [m.name for m in pah_tabs.approved]
+    assert approved.count("SILDENAFIL") == 1 and approved.count("TADALAFIL") == 1
+    assert approved == sorted(approved, key=str.casefold)
+    assert approved.index("SILDENAFIL") < approved.index("TADALAFIL")
+    assert len(set(m.id for m in pah_tabs.approved)) == len(approved)
+
+
+def test_53_approved_is_the_two_sources_joined_with_no_medicine_twice(pah_tabs):
+    # Six through the five proteins, and all six are also on the disease's
+    # own list of 14. Joined, that is 14, not 20.
+    assert [m.name for m in pah_tabs.approved] == LISTED_APPROVED
+    through_proteins = [m.name for m in pah_tabs.approved if m.clue is not None]
+    assert through_proteins == [
+        "AMBRISENTAN", "BOSENTAN", "MACITENTAN", "SILDENAFIL", "SITAXENTAN", "TADALAFIL",
+    ]
+
+
+def test_53_a_medicine_found_through_a_protein_carries_its_paths(pah_tabs):
+    sildenafil = approved_named(pah_tabs, "Sildenafil")
+    assert [p.target.symbol for p in sildenafil.clue.paths] == ["PDE5A"]
+    assert sildenafil.clue.paths[0].direction == "down"
+    assert round(sildenafil.clue.paths[0].score, 2) == 0.61
+    assert sildenafil.forms == ("SILDENAFIL", "SILDENAFIL CITRATE")
+    assert sildenafil.reports == sildenafil.clue.reports > 0
+    bosentan = approved_named(pah_tabs, "Bosentan")
+    assert [p.target.symbol for p in bosentan.clue.paths] == ["EDNRA"]
+
+
+# Example 2
+def test_53_new_clues_and_being_studied_are_what_they_were(pah_tabs):
+    assert names(pah_tabs.new_clues) == NEW_ORDER
+    assert names(pah_tabs.being_studied) == ["UDENAFIL", "VARDENAFIL"]
+    ranked = engine.find_ranked_clues(PAH, targets_named(*FIVE))
+    assert pah_tabs.new_clues == ranked.new_clues
+    assert pah_tabs.being_studied == ranked.being_studied
+
+
+# Example 5
+def test_53_a_medicine_only_on_the_diseases_own_list_has_no_paths(pah_tabs):
+    beraprost = approved_named(pah_tabs, "Beraprost")
+    assert beraprost.clue is None
+    assert beraprost.forms == ("BERAPROST", "BERAPROST SODIUM")
+    assert beraprost.reports == len(beraprost.sources) > 0
+
+
+# Example 6
+def test_53_left_out_has_exactly_two_numbers(pah_tabs):
+    assert pah_tabs.left_out == {"not_approved": 12, "unclear_link": 0}
+
+
+def test_53_no_tab_holds_a_medicine_that_is_not_approved_anywhere(pah_tabs, offline):
+    tray = engine.find_clues(PAH, targets_named(*FIVE))
+    hidden = set()
+    for path in tray["not_approved"]:
+        hidden.add(path.medicine.name)
+        hidden.update(form.name for form in path.medicine.forms)
+    assert len(hidden) > 10
+    shown = set()
+    for medicine in pah_tabs.approved:
+        shown.add(medicine.name)
+        shown.update(medicine.forms)
+    for clue in pah_tabs.new_clues + pah_tabs.being_studied:
+        shown.add(clue.medicine.name)
+        shown.update(form.name for form in clue.medicine.forms)
+    assert hidden & shown == set()
+
+
+def test_53_with_no_proteins_and_no_list_every_tab_is_empty():
+    tabs = sort_into_tabs(engine.find_clues(PAH, []), [])
+    assert tabs.approved == [] and tabs.new_clues == [] and tabs.being_studied == []
+    assert tabs.left_out == {"not_approved": 0, "unclear_link": 0}
+
+
+def test_53_with_no_proteins_the_approved_tab_is_the_diseases_own_list(offline):
+    offline.side_effect = fake_with_the_disease_list
+    tabs = sort_into_tabs(engine.find_clues(PAH, []), fetch.fetch_approved(PAH))
+    assert [m.name for m in tabs.approved] == LISTED_APPROVED
+    assert all(m.clue is None for m in tabs.approved)
+
+
+def tray_of(*paths):
+    return sort_paths(paths)
+
+
+def made_up_path(name, best_stage="APPROVAL", disease_stage=None, symbol="AAA", score=0.5,
+                 medicine_id=None, parent_id=None):
+    form = MedicineForm(id=medicine_id or "ID_" + name.upper(), name=name,
+                        best_stage=best_stage, disease_stage=disease_stage,
+                        parent_id=parent_id)
+    return Path(
+        medicine=Medicine(name=name, forms=(form,)),
+        target=Target(id="ENSG_" + symbol, symbol=symbol, name=symbol, score=score),
+        disease=PAH,
+        action_types=("INHIBITOR",),
+        score=score,
+        sources=(f"https://example.org/{name}/{symbol}",),
+    )
+
+
+def test_53_approved_is_a_to_z_ignoring_capitals_and_never_by_score():
+    tray = tray_of(
+        made_up_path("zeta", disease_stage="APPROVAL", score=0.9),
+        made_up_path("Alpha", disease_stage="APPROVAL", score=0.1),
+    )
+    listed = [Listed(id="C9", name="MIDDLE", forms=(("C9", "MIDDLE"),), sources=())]
+    tabs = sort_into_tabs(tray, listed)
+    assert [m.name for m in tabs.approved] == ["Alpha", "MIDDLE", "zeta"]
+
+
+def test_53_an_approved_medicine_on_two_proteins_is_one_item_with_both():
+    tray = tray_of(
+        made_up_path("Twoine", disease_stage="APPROVAL", symbol="AAA", score=0.5),
+        made_up_path("Twoine", disease_stage="APPROVAL", symbol="BBB", score=0.9),
+    )
+    (twoine,) = sort_into_tabs(tray, []).approved
+    assert [p.target.symbol for p in twoine.clue.paths] == ["BBB", "AAA"]
+
+
+def test_53_forms_from_both_sources_are_joined_each_once_parent_first():
+    tray = tray_of(made_up_path("REALINE SODIUM", disease_stage="APPROVAL",
+                                medicine_id="C2", parent_id="C1"))
+    listed = [Listed(id="C1", name="REALINE",
+                     forms=(("C1", "REALINE"), ("C2", "REALINE SODIUM"), ("C3", "REALINE CITRATE")),
+                     sources=("https://example.org/list",))]
+    (realine,) = sort_into_tabs(tray, listed).approved
+    assert realine.id == "C1"
+    assert realine.forms == ("REALINE", "REALINE SODIUM", "REALINE CITRATE")
+
+
+# The live data, 2026-11-15: for "hypertensive disorder" the protein records
+# hold Celiprolol with no link to the disease, but the disease's own list
+# says Celiprolol Hydrochloride is approved for it. A medicine and its forms
+# are one item, and the item takes the strongest stage of its forms. So it
+# is approved for the disease, and it is not a clue.
+def test_53_a_medicine_the_list_says_is_approved_is_never_also_a_clue():
+    tray = tray_of(
+        made_up_path("CELIPROLOL", medicine_id="C1"),  # looks like a new clue
+        made_up_path("TRIALINE", disease_stage="PHASE_2", medicine_id="C5"),
+        made_up_path("ONLYNEW", medicine_id="C7"),
+    )
+    assert names(rank_clues(tray["new_clue"])) == ["CELIPROLOL", "ONLYNEW"]
+    listed = [
+        Listed(id="C1", name="CELIPROLOL",
+               forms=(("C1", "CELIPROLOL"), ("C2", "CELIPROLOL HYDROCHLORIDE")), sources=()),
+        Listed(id="C5", name="TRIALINE", forms=(("C6", "TRIALINE SODIUM"),), sources=()),
+    ]
+    tabs = sort_into_tabs(tray, listed)
+    assert names(tabs.new_clues) == ["ONLYNEW"]
+    assert tabs.being_studied == []
+    assert [m.name for m in tabs.approved] == ["CELIPROLOL", "TRIALINE"]
+    celiprolol = approved_named(tabs, "Celiprolol")
+    assert [p.target.symbol for p in celiprolol.clue.paths] == ["AAA"]
+    assert celiprolol.forms == ("CELIPROLOL", "CELIPROLOL HYDROCHLORIDE")
+
+
+def test_53_a_left_out_medicine_the_list_says_is_approved_is_not_counted_as_left_out():
+    tray = tray_of(
+        made_up_path("ODDINE", best_stage="PHASE_3", medicine_id="C1"),
+        made_up_path("GONEINE", disease_stage="WITHDRAWAL", medicine_id="C3"),
+        made_up_path("NOTYETINE", best_stage="PHASE_2", medicine_id="C8"),
+    )
+    listed = [
+        Listed(id="C1", name="ODDINE", forms=(("C2", "ODDINE SODIUM"),), sources=()),
+        Listed(id="C3", name="GONEINE", forms=(("C4", "GONEINE SODIUM"),), sources=()),
+    ]
+    tabs = sort_into_tabs(tray, listed)
+    assert [m.name for m in tabs.approved] == ["GONEINE", "ODDINE"]
+    assert tabs.left_out == {"not_approved": 1, "unclear_link": 0}
+
+
+def test_53_find_ranked_clues_still_counts_three_groups_for_the_terminal_runner():
+    # cli.py is not part of this ticket and still prints three counts.
+    ranked = engine.find_ranked_clues(PAH, targets_named(*FIVE))
+    assert set(ranked.left_out) == {"not_approved", "already_approved", "unclear_link"}

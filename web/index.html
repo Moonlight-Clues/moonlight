@@ -65,6 +65,17 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 
 /* results: one column */
 .results{max-width:760px;margin-top:40px;scroll-margin-top:70px}
+
+/* the three tabs: one row, one list showing at a time */
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:22px 0 0;padding:4px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 4px 13px #101F3107}
+.tab{border:0;background:transparent;border-radius:10px;padding:9px 4px;min-height:46px;color:var(--navy);font-weight:700;font-size:13px;line-height:1.25;text-align:center}
+.tab:hover{background:var(--mist)}
+.tab[aria-selected="true"]{background:#287D7C;color:#fff}
+.tab-count{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.panel{margin-top:22px}
+.panel>.section-desc,.tab-words{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 12px}
+.doctor-line{background:var(--paper);border:1px solid #EADFC8;border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:12px 15px;font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
+.no-path{margin:16px 0 4px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
 .rule{background:var(--mist);border-left:3px solid var(--teal);padding:14px 15px;border-radius:0 11px 11px 0;font-size:13px;line-height:1.55;margin:6px 0 17px}
@@ -122,7 +133,7 @@ div.explanation{padding:12px 13px}
 .studied{background:#E9EEF2;border:1px solid #D0DBE2;border-radius:16px;padding:18px 14px}
 .studied h2{color:var(--navy)}.studied .card{border-left-color:#788A9F;box-shadow:none}
 .section-desc{font-size:12px;color:var(--muted);margin:0 0 16px}
-.left-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.left-out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .count{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 8px;text-align:center}
 .count strong{display:block;font-size:26px;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.2}
 .count span{display:block;font-size:11px;color:var(--muted);margin-top:5px}
@@ -141,7 +152,7 @@ div.explanation{padding:12px 13px}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
-@media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}}
+@media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.tabs{gap:6px;padding:5px}.tab{font-size:14px;padding:10px 8px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}}
 @media(max-width:540px){.card-top{gap:8px}.reports{white-space:normal}.safety-inner{padding:9px 0;font-size:11px}.site-header{padding:16px 0}.page-actions{flex-direction:column}.page-actions button{text-align:center}}
 </style>
 </head>
@@ -197,8 +208,32 @@ div.explanation{padding:12px 13px}
       <h1 id="disease-title"></h1>
       <p class="muted">Medicines that act on the proteins linked to this disease. These are connections worth reading about, never treatments.</p>
 
-      <section class="section" data-slot="new-clues" id="new-clues">
-        <div class="section-head"><h2>New clues</h2></div>
+      <div class="tabs" data-slot="tabs" role="tablist" aria-label="Kinds of medicine for this disease">
+        <button class="tab" type="button" role="tab" id="tab-approved" data-tab="approved" aria-controls="panel-approved" aria-selected="true">Approved <span class="tab-count" data-part="count"></span></button>
+        <button class="tab" type="button" role="tab" id="tab-trials" data-tab="trials" aria-controls="panel-trials" aria-selected="false" tabindex="-1">In trials <span class="tab-count" data-part="count"></span></button>
+        <button class="tab" type="button" role="tab" id="tab-clues" data-tab="clues" aria-controls="panel-clues" aria-selected="false" tabindex="-1">New clues <span class="tab-count" data-part="count"></span></button>
+      </div>
+
+      <section class="panel" data-slot="approved" id="panel-approved" role="tabpanel" aria-labelledby="tab-approved">
+        <div id="approved-list">
+          <p class="tab-words">Already approved for this disease in at least one country, according to the database. Nothing here says how well any of them works.</p>
+          <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
+          <div class="cards" id="approved-cards"></div>
+        </div>
+        <div class="state-box empty-box" id="approved-empty" hidden>
+          <h3>The database lists no medicine approved for this disease.</h3>
+        </div>
+      </section>
+
+      <section class="panel studied" data-slot="studied" id="panel-trials" role="tabpanel" aria-labelledby="tab-trials" hidden>
+        <h2>Already being studied for this disease</h2>
+        <p class="section-desc">Approved for another disease and now being tested for this one. A separate research category, not a prediction of effectiveness.</p>
+        <p class="filter-note" id="studied-note"></p>
+        <div class="cards" id="studied-cards"></div>
+      </section>
+
+      <section class="panel" data-slot="new-clues" id="panel-clues" role="tabpanel" aria-labelledby="tab-clues" hidden>
+        <p class="tab-words">Approved for another disease, with no recorded link to this one. Connections worth reading about, never treatments.</p>
         <div id="new-list">
           <p class="rule" data-slot="rule-text" id="rule-text"></p>
           <p class="filter-label">Show only the medicines for one protein. Tap again to show all.</p>
@@ -212,19 +247,11 @@ div.explanation{padding:12px 13px}
         </div>
       </section>
 
-      <section class="section studied" data-slot="studied" id="studied">
-        <h2>Already being studied for this disease</h2>
-        <p class="section-desc">A separate research category, not a prediction of effectiveness.</p>
-        <p class="filter-note" id="studied-note"></p>
-        <div class="cards" id="studied-cards"></div>
-      </section>
-
       <section aria-labelledby="left-out-title" class="section" data-slot="left-out">
         <h2 id="left-out-title">Left-out counts</h2>
         <p class="section-desc">Counts only. No medicine names are displayed here.</p>
         <div class="left-out">
           <div class="count"><strong id="count-not-approved">0</strong><span>Not approved anywhere</span></div>
-          <div class="count"><strong id="count-already-approved">0</strong><span>Already approved for this disease</span></div>
           <div class="count"><strong id="count-unclear-link">0</strong><span>Unclear link</span></div>
         </div>
       </section>
@@ -254,6 +281,7 @@ div.explanation{padding:12px 13px}
     <div class="path" data-slot="path"></div>
     <div class="protein-list" data-part="proteins"></div>
     <div data-part="machines"></div>
+    <p class="machine-note no-path" data-part="no-path" hidden>This medicine does not act on one of the 25 proteins most linked to this disease, so no path is shown.</p>
     <p class="direction-note">The data does not say which direction this disease needs.</p>
     <div class="explanation" data-slot="explanation">
       <div class="slot-label">Plain-language explanation</div>
@@ -318,8 +346,12 @@ div.explanation{padding:12px 13px}
   const capital = text => text ? text[0].toUpperCase() + text.slice(1) : text;
   const listed = words => words.length < 2 ? words.join("") : words.slice(0, -1).join(", ") + " and " + words[words.length - 1];
 
+  const TABS = ["approved", "trials", "clues"];
+  const FIRST_TAB = "approved";  // always opens first, even when it is empty
+
   let latest = 0;       // the number of the newest request; older answers are dropped
   let chosen = null;    // the protein whose filter button is pressed, or null
+  let waiting = [];     // new-clue cards that fetch their explanation when their tab first opens
 
   async function ask(path, params) {
     const answer = await fetch(path + "?" + new URLSearchParams(params));
@@ -341,9 +373,11 @@ div.explanation{padding:12px 13px}
     byId("problem").hidden = true;
     byId("loading").hidden = true;
     byId("disease-title").textContent = "";
+    byId("approved-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
     byId("filters").replaceChildren();
+    waiting = [];
   }
 
   function clearChoices() {
@@ -426,7 +460,7 @@ div.explanation{padding:12px 13px}
 
   /* ---- clues ---- */
 
-  async function showClues(diseaseId) {
+  async function showClues(diseaseId, tab) {
     const mine = ++latest;
     const results = byId("results");
     results.hidden = false;
@@ -447,43 +481,113 @@ div.explanation{padding:12px 13px}
     if (mine !== latest) return;
     byId("loading").hidden = true;
     draw(data);
+    selectTab(TABS.includes(tab) ? tab : FIRST_TAB);
     byId("found").hidden = false;
   }
+
+  /* ---- the three tabs ---- */
+
+  const tabButtons = [...document.querySelectorAll('[role="tab"]')];
+
+  /* Show one tab's list and hide the other two. */
+  function selectTab(name) {
+    for (const button of tabButtons) {
+      const on = button.dataset.tab === name;
+      button.setAttribute("aria-selected", String(on));
+      button.tabIndex = on ? 0 : -1;
+      byId(button.getAttribute("aria-controls")).hidden = !on;
+    }
+    // The first new clues fetch their explanations together, the first
+    // time their tab is opened. The rest wait for a tap.
+    if (name === "clues") waiting.splice(0).forEach(el => el.readExplanation());
+  }
+
+  tabButtons.forEach((button, place) => {
+    button.addEventListener("click", () => selectTab(button.dataset.tab));
+    button.addEventListener("keydown", event => {
+      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (!step) return;
+      const next = tabButtons[(place + step + tabButtons.length) % tabButtons.length];
+      selectTab(next.dataset.tab);
+      next.focus();
+    });
+  });
 
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
     byId("disease-title").textContent = diseaseName;
     byId("rule-text").textContent = data.rule_text;
 
+    const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
     const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
     const studiedCards = data.being_studied.map(clue => card(clue, disease, diseaseName, null));
+    byId("approved-cards").replaceChildren(...approvedCards);
     byId("new-cards").replaceChildren(...newCards);
     byId("studied-cards").replaceChildren(...studiedCards);
+    byId("approved-list").hidden = !approvedCards.length;
+    byId("approved-empty").hidden = !!approvedCards.length;
     byId("new-list").hidden = !newCards.length;
     byId("empty").hidden = !!newCards.length;
+    byId("studied-note").textContent = studiedCards.length ? ""
+      : "No medicine in this data is being studied for this disease.";
+
+    const counts = {approved: approvedCards.length, trials: studiedCards.length, clues: newCards.length};
+    for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
     byId("count-not-approved").textContent = data.left_out.not_approved;
-    byId("count-already-approved").textContent = data.left_out.already_approved;
     byId("count-unclear-link").textContent = data.left_out.unclear_link;
 
-    drawFilters(data.new_clues.concat(data.being_studied));
+    drawFilters(data.new_clues);
     applyFilter(null);
 
-    // The first cards fetch their explanations together. The rest wait for a tap.
-    newCards.slice(0, FIRST_EXPLAINED).forEach(el => el.readExplanation());
+    waiting = newCards.slice(0, FIRST_EXPLAINED);
   }
 
-  function card(clue, disease, diseaseName, number) {
-    const el = copyOf("card-template");
-    const symbols = clue.proteins.map(protein => protein.symbol);
-    el.dataset.proteins = symbols.join(",");
+  /* A medicine already approved for this disease. It is not a clue. */
+  function approvedCard(medicine, diseaseName) {
+    const el = baseCard(medicine, diseaseName);
+    slot(el, "rank").remove();
+    slot(el, "explanation").remove();
+    slot(el, "ending").remove();
+    slot(el, "phase").remove();
+    if (!medicine.proteins.length) {
+      part(el, "path-head").remove();
+      slot(el, "path").remove();
+      el.querySelector(".direction-note").remove();
+      part(el, "no-path").hidden = false;
+    }
+    return el;
+  }
 
+  /* A new clue, with its number on the list, or a medicine being studied. */
+  function card(clue, disease, diseaseName, number) {
+    const el = baseCard(clue, diseaseName);
     if (number !== null) {
       const rank = slot(el, "rank");
       rank.textContent = number;
       rank.setAttribute("aria-label", "Number " + number + " on the list");
       rank.hidden = false;
     }
+    slot(el, "ending").textContent = clue.ending;
+    if (clue.trial_phase) {
+      const phase = slot(el, "phase");
+      phase.textContent = clue.trial_phase;
+      phase.hidden = false;
+    }
+
+    // Fetched straight away: stays closed, three lines showing. Fetched by a tap: opens.
+    el.readExplanation = () => readExplanation(el, clue, disease, false);
+    el.readNow = () => readExplanation(el, clue, disease, true);
+    part(el, "read").addEventListener("click", el.readNow);
+    return el;
+  }
+
+  /* What every card shows: name, forms, reports, path, proteins, source. */
+  function baseCard(clue, diseaseName) {
+    const el = copyOf("card-template");
+    const symbols = clue.proteins.map(protein => protein.symbol);
+    el.dataset.proteins = symbols.join(",");
+
     slot(el, "medicine-name").textContent = clue.medicine;
     slot(el, "forms").textContent = "Forms: " + clue.forms.join(", ");
     slot(el, "reports").textContent = clue.reports + (clue.reports === 1 ? " report" : " reports");
@@ -523,8 +627,6 @@ div.explanation{padding:12px 13px}
       part(el, "machines").append(line);
     }
 
-    slot(el, "ending").textContent = clue.ending;
-
     if (clue.source) {
       const source = slot(el, "source");
       source.href = clue.source;
@@ -532,20 +634,10 @@ div.explanation{padding:12px 13px}
     } else {
       part(el, "no-source").hidden = false;
     }
-    if (clue.trial_phase) {
-      const phase = slot(el, "phase");
-      phase.textContent = clue.trial_phase;
-      phase.hidden = false;
-    }
-
-    // Fetched straight away: stays closed, three lines showing. Fetched by a tap: opens.
-    el.readExplanation = () => readExplanation(el, clue, disease, false);
-    el.readNow = () => readExplanation(el, clue, disease, true);
-    part(el, "read").addEventListener("click", el.readNow);
     return el;
   }
 
-  /* ---- protein filter buttons ---- */
+  /* ---- protein filter buttons, for the new clues ---- */
 
   function drawFilters(clues) {
     const points = new Map();
@@ -567,22 +659,11 @@ div.explanation{padding:12px 13px}
     chosen = symbol;
     byId("filters").querySelectorAll("button").forEach(button =>
       button.setAttribute("aria-pressed", String(button.dataset.protein === symbol)));
-    const shownIn = id => {
-      let shown = 0;
-      byId(id).querySelectorAll(".card").forEach(el => {
-        const has = symbol === null || el.dataset.proteins.split(",").includes(symbol);
-        el.hidden = !has;
-        if (has) shown++;
-      });
-      return shown;
-    };
-    const fresh = shownIn("new-cards"), studied = shownIn("studied-cards");
+    byId("new-cards").querySelectorAll(".card").forEach(el => {
+      el.hidden = symbol !== null && !el.dataset.proteins.split(",").includes(symbol);
+    });
     byId("filter-note").textContent = symbol === null ? ""
-      : fresh ? "Showing only the medicines that act on " + symbol + ". The numbers are their places on the whole list."
-      : "No new clue acts on " + symbol + ".";
-    byId("studied-note").textContent = studied ? ""
-      : symbol === null ? "No medicine in this data is being studied for this disease."
-      : "No medicine in this box acts on " + symbol + ".";
+      : "Showing only the medicines that act on " + symbol + ". The numbers are their places on the whole list.";
   }
 
   /* ---- explanations ---- */
@@ -610,6 +691,12 @@ div.explanation{padding:12px 13px}
     ready.open = open;
     slot(el, "explanation").replaceWith(ready);
   }
+
+  /* ---- a link can open a disease, and one of its tabs ----
+     Like ?disease=MONDO_0015924&tab=clues. With no tab, Approved opens. */
+
+  const linked = new URLSearchParams(location.search);
+  if (linked.get("disease")) showClues(linked.get("disease"), linked.get("tab"));
 })();
 </script>
 </body>

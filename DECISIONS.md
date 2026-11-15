@@ -30,3 +30,7 @@ Format: date, the decision, why.
 - 2026-11-13: Only measurements are hidden for now. Other things that are not diseases, like "response to high sodium diet", stay until I have seen more examples.
 - 2026-11-13: When the words typed are on Open Targets' own "also called" list for a disease, Moonlight shows that word next to the name, like "Orthomyxoviridae infectious disease, also called: flu". Open Targets has no entry named "influenza", only this one. The word comes from Open Targets, never from Gemini.
 - 2026-11-13: A suggestion that is already the first match is not shown twice.
+- 2026-11-13: The results are three tabs: Approved, In trials, New clues. The page was too long, and tabs make it short. Approved opens first, because people look for the medicine they already take, and they should see what already exists before they read clues.
+- 2026-11-15: The Approved tab always opens first, even when it is empty. Then the page always opens the same way, and the person sees straight away if nothing is approved.
+- 2026-11-15: The Approved tab says "Talk to your doctor before changing any medicine", because people will find the medicine they take there.
+- 2026-11-15: Medicines already approved for the disease get no explanation and no "Do not try it" ending. Someone may be taking that medicine because their doctor said so.

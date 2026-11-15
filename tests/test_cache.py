@@ -519,3 +519,69 @@ def test_63_the_cache_only_checks_the_date_when_it_is_asked_to(clock):
     cache.forget_memory()  # and the same from the disk
     assert cache.load("thing", "26.09", "key", max_age_seconds=24 * HOUR) is None
     assert cache.load("thing", "26.09", "key") == "kept"
+
+
+# =====================================================================
+# Ticket 5.3: the disease's own medicine list is asked the same careful way
+# =====================================================================
+#
+# New tests only. Kashish's decision, 2026-11-12: Open Targets sometimes
+# gives a short answer with reports missing, so Moonlight asks again and
+# keeps the fullest. "Which medicines are on this disease's list?" is the
+# same kind of question.
+
+def disease_list_answer(*reports_per_medicine, names=("REALINE", "OTHERINE")):
+    rows = [
+        {"maxClinicalStage": "APPROVAL",
+         "drug": {"id": f"C{number}", "name": name, "maximumClinicalStage": "APPROVAL",
+                  "parentMolecule": None},
+         "clinicalReports": [{"url": f"https://example.org/{name}/{n}"} for n in range(reports)]}
+        for number, (name, reports) in enumerate(zip(names, reports_per_medicine))
+    ]
+    return {"data": {"disease": {"id": PAH.id, "drugAndClinicalCandidates": {
+        "count": len(rows), "rows": rows}}}}
+
+
+class FakeDiseaseList:
+    """Stands in for fetch._send. Gives these answers one after another."""
+
+    def __init__(self, *answers):
+        self.answers = list(answers)
+        self.asked = 0
+
+    def __call__(self, body):
+        if "dataVersion" in body["query"]:
+            return {"data": {"meta": {"dataVersion": {"year": "26", "month": "09",
+                                                      "iteration": None}}}}
+        assert body == {"query": fetch.DISEASE_DRUGS_QUERY, "variables": {"diseaseId": PAH.id}}
+        self.asked += 1
+        return self.answers[self.asked - 1]
+
+
+def test_53_the_disease_list_is_asked_twice_and_then_saved():
+    fake = FakeDiseaseList(disease_list_answer(2, 1), disease_list_answer(2, 1))
+    with use(fake):
+        first = fetch.fetch_approved(PAH)
+        again = fetch.fetch_approved(PAH)  # from the saved results
+        new_program()
+        after_restart = fetch.fetch_approved(PAH)  # from the disk
+    assert fake.asked == 2
+    assert first == again == after_restart
+    assert [len(entry.sources) for entry in first] == [2, 1]
+
+
+def test_53_a_short_disease_list_means_a_third_ask_and_the_fullest_is_kept():
+    fake = FakeDiseaseList(
+        disease_list_answer(0, 0), disease_list_answer(2, 1), disease_list_answer(0, 0))
+    with use(fake):
+        found = fetch.fetch_approved(PAH)
+    assert fake.asked == 3
+    assert [len(entry.sources) for entry in found] == [2, 1]
+
+
+def test_53_if_the_disease_lists_name_different_medicines_it_stops_and_saves_nothing(tmp_path):
+    fake = FakeDiseaseList(
+        disease_list_answer(2, 1), disease_list_answer(2, names=("REALINE",)))
+    with use(fake), pytest.raises(fetch.AnswersDisagree):
+        fetch.fetch_approved(PAH)
+    assert not list((tmp_path / "saved").rglob("*.json"))
