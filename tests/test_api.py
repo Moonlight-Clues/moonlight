@@ -1314,6 +1314,12 @@ def test_53_the_page_still_names_no_medicine_before_a_search(client):
     assert page.count(guide) == 1
     outside = page.replace(guide, "").upper()
     for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
+        assert name.upper() not in outside, name
+        if name != "Doxapram":
+            assert name.upper() not in guide.upper(), name
+
+
+# =====================================================================
 # Ticket 5.4: the "How to use Moonlight" guide
 # =====================================================================
 #
@@ -1530,8 +1536,6 @@ def test_54_the_four_corrected_sentences_are_in_the_guides_key(client):
     for old in ("If any step is missing", "The same on every card",
                 "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
         assert old not in guide, old
-=======
-        assert name.upper() not in page
 
 
 # =====================================================================
@@ -1619,11 +1623,3 @@ def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(c
     assert len(data["approved"]) == 13
     assert len(data["new_clues"]) == 16 and len(data["being_studied"]) == 2
     assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
-
-
-        assert name.upper() not in outside, name
-        if name != "Doxapram":
-            assert name.upper() not in guide.upper(), name
-
-
-# ==============================================================
