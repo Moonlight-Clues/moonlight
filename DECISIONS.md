@@ -36,3 +36,4 @@ Format: date, the decision, why.
 - 2026-11-15: Medicines already approved for the disease get no explanation and no "Do not try it" ending. Someone may be taking that medicine because their doctor said so.
 - 2026-11-15: The sentence under the disease name now says "What open research data says about medicines and this disease. Nothing here is medical advice." The old sentence said "never treatments", and that is not true above a tab of approved medicines. Those words stay in the New clues tab.
 - 2026-11-15: If any country took a medicine off the shelves, Moonlight leaves it out, even if other countries still sell it. It is counted with the medicines that are not approved anywhere.
+- 2026-11-15: Sitaxentan is on my paper graph as already approved, but it was withdrawn. With the live data my answer key is 16, 2, 5, 13. The old saved files still give 16, 2, 6, 12 because they have no withdrawn note.

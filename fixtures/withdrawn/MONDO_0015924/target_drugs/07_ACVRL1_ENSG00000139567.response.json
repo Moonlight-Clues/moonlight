@@ -1,0 +1,182 @@
+{
+  "data": {
+    "target": {
+      "id": "ENSG00000139567",
+      "drugAndClinicalCandidates": {
+        "count": 2,
+        "rows": [
+          {
+            "drug": {
+              "id": "CHEMBL2109295",
+              "name": "ASCRINVACUMAB",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "INHIBITOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000139567"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0005575"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0007256"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "MONDO_0040679"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "MONDO_0003219"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "MONDO_0005580"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "MONDO_0004950"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0005112"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D08JBL"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01486368"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01620970"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01911273"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05178043"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03893695"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04984668"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00557856"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01337050"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02116894"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL5095025",
+              "name": "PANULISIB",
+              "maximumClinicalStage": "PHASE_1",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "INHIBITOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145675"
+                      },
+                      {
+                        "id": "ENSG00000051382"
+                      },
+                      {
+                        "id": "ENSG00000105851"
+                      },
+                      {
+                        "id": "ENSG00000121879"
+                      },
+                      {
+                        "id": "ENSG00000105647"
+                      },
+                      {
+                        "id": "ENSG00000171608"
+                      },
+                      {
+                        "id": "ENSG00000141506"
+                      },
+                      {
+                        "id": "ENSG00000117461"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "INHIBITOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000198793"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "INHIBITOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000139567"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": []
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0R8ID"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01762410"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

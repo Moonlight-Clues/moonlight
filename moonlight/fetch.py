@@ -176,7 +176,9 @@ query DiseaseDrugs($diseaseId: String!) {
           id
           name
           maximumClinicalStage
-          parentMolecule { id name }
+          drugWarnings { warningType }
+          parentMolecule { id name drugWarnings { warningType } }
+          childMolecules { id name drugWarnings { warningType } }
         }
         clinicalReports { url }
       }
@@ -569,6 +571,12 @@ def fetch_approved(disease: Disease) -> List[Listed]:
 
     Only the word "APPROVAL" is looked for. A form with any other stage
     word, even one Moonlight has never met, is only listed as a form.
+
+    Kashish's decision, 2026-11-15. A medicine withdrawn in any country
+    does not count as approved. If any form of a family on this list was
+    withdrawn, the whole family is left out, even if the withdrawn form is
+    not the approved one. If Open Targets did not say, nothing is guessed:
+    the family stays, and that is written in the log.
     """
     data = _ask(DISEASE_DRUGS_QUERY, {"diseaseId": disease.id})
     if data["disease"] is None:
@@ -582,8 +590,10 @@ def fetch_approved(disease: Disease) -> List[Listed]:
         parent = drug["parentMolecule"]
         family_id = parent["id"] if parent else drug["id"]
         family = families.setdefault(
-            family_id, {"name": None, "forms": [], "sources": [], "approved": False}
+            family_id,
+            {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": []},
         )
+        family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
             family["name"] = family["name"] or parent["name"]
         else:
@@ -602,6 +612,20 @@ def fetch_approved(disease: Disease) -> List[Listed]:
             if url and url not in family["sources"]:
                 family["sources"].append(url)
 
+    approved = {
+        family_id: family for family_id, family in families.items() if family["approved"]
+    }
+    not_known = sum(
+        1 for family in approved.values()
+        if True not in family["withdrawn"] and None in family["withdrawn"]
+    )
+    if not_known:
+        # Said out loud, never guessed. The medicines are counted, not named.
+        _log.warning(
+            "Open Targets did not say whether %d of the %d medicines approved for %s "
+            "were withdrawn. Moonlight could not check them for withdrawal.",
+            not_known, len(approved), disease.name,
+        )
     return [
         Listed(
             id=family_id,
@@ -609,6 +633,6 @@ def fetch_approved(disease: Disease) -> List[Listed]:
             forms=tuple(family["forms"]),
             sources=tuple(family["sources"]),
         )
-        for family_id, family in families.items()
-        if family["approved"]
+        for family_id, family in approved.items()
+        if True not in family["withdrawn"]  # one withdrawn form is enough
     ]

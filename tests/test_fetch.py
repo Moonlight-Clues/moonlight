@@ -352,6 +352,8 @@ def fibro_post_json(body):
     assert variables["diseaseId"] == FIBRO.id
     if "associatedTargets" in body["query"]:
         return load(FIBRO_FILES / "associated_targets.response.json")
+    if "drugAndClinicalCandidates" in body["query"]:
+        return load(FIBRO_FILES / "disease_drugs.response.json")
     return load(FIBRO_FILES / "disease.response.json")
 
 
@@ -673,3 +675,138 @@ def test_53_the_same_form_sent_twice_is_one_form(offline):
     assert realine.forms == (("C1", "REALINE"),)
     assert realine.sources == ("https://example.org/C1",)
 
+
+
+# =====================================================================
+# Ticket 2.9, part 2 (Kashish, 15 Nov): the disease's own list also
+# carries the withdrawn note, and a withdrawn medicine is not on the
+# Approved list fetch_approved gives.
+# =====================================================================
+#
+# fixtures/withdrawn/MONDO_0015924/ holds the PAH answers read again live
+# on 2026-11-15 with the withdrawn note asked for. The files saved on
+# 10 Nov in fixtures/MONDO_0015924/ have no note and are left as they are.
+
+PAH_NOTED = FIXTURES / "withdrawn" / "MONDO_0015924"
+
+
+def noted_post_json(body):
+    """Stands in for fetch._post_json: the PAH answers that hold the
+    withdrawn note. The protein list and the disease record are the old
+    saved ones, because those questions did not change."""
+    variables = body["variables"]
+    if "targetId" in variables:
+        (file,) = (PAH_NOTED / "target_drugs").glob(
+            f"*_{variables['targetId']}.response.json")
+        return load(file)
+    if "diseaseId" in variables and "drugAndClinicalCandidates" in body["query"]:
+        assert variables["diseaseId"] == PAH.id
+        return load(PAH_NOTED / "disease_drugs.response.json")
+    if "diseaseId" in variables and "associatedTargets" not in body["query"]:
+        return load(GOLDEN / "disease_description.response.json")
+    return fake_post_json(body)
+
+
+@pytest.fixture
+def noted(offline):
+    offline.side_effect = noted_post_json
+    return offline
+
+
+def test_29_the_noted_pah_files_were_made_with_the_questions_fetch_asks():
+    assert (load(PAH_NOTED / "disease_drugs.request.json")["query"]
+            == fetch.DISEASE_DRUGS_QUERY)
+    files = list((PAH_NOTED / "target_drugs").glob("*.request.json"))
+    assert len(files) == 14
+    for file in files:
+        assert load(file)["query"] == fetch.TARGET_DRUGS_QUERY
+
+
+def test_29_the_diseases_own_list_is_asked_for_the_note_in_the_same_question():
+    assert "drugWarnings { warningType }" in fetch.DISEASE_DRUGS_QUERY
+    assert fetch.DISEASE_DRUGS_QUERY.count("query ") == 1
+
+
+def test_29_the_saved_list_says_sitaxentan_is_approved_for_pah_and_withdrawn():
+    rows = load(PAH_NOTED / "disease_drugs.response.json")["data"]["disease"][
+        "drugAndClinicalCandidates"]["rows"]
+    assert len(rows) == 118
+    (sitaxentan,) = [row for row in rows if row["drug"]["name"] == "SITAXENTAN"]
+    assert sitaxentan["maxClinicalStage"] == "APPROVAL"
+    assert {w["warningType"] for w in sitaxentan["drug"]["drugWarnings"]} == {"Withdrawn"}
+
+
+def test_29_with_the_note_sitaxentan_is_not_on_the_approved_list(noted):
+    names = [entry.name for entry in fetch.fetch_approved(PAH)]
+    assert "SITAXENTAN" not in names
+    for entry in fetch.fetch_approved(PAH):
+        assert not any("SITAXENTAN" in name for _, name in entry.forms)
+    # The other 13 are all still there, in the same order as before.
+    assert sorted(names) == [name for name in LISTED_APPROVED if name != "SITAXENTAN"]
+    assert len(names) == 13
+
+
+def test_29_without_the_note_the_old_list_is_as_it_was_and_fetch_says_so(
+        disease_list, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        names = sorted(entry.name for entry in fetch.fetch_approved(PAH))
+    assert names == LISTED_APPROVED  # not guessed: nothing is taken off
+    (said,) = [record.getMessage() for record in caplog.records]
+    assert "did not say" in said and "withdrawn" in said
+    assert "14" in said and "pulmonary arterial hypertension" in said
+    assert not any(name in said.upper() for name in LISTED_APPROVED)  # no medicine named
+
+
+def test_29_nothing_is_said_about_the_list_when_it_holds_the_note(noted, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        fetch.fetch_approved(PAH)
+    assert not caplog.records
+
+
+def list_answer(*rows):
+    """A hand-made "medicines for this disease" answer."""
+    return {"data": {"disease": {"id": PAH.id, "drugAndClinicalCandidates": {
+        "count": len(rows), "rows": list(rows)}}}}
+
+
+def list_row(drug_id, name, stage="APPROVAL", parent=None, warnings=(), children=()):
+    return {
+        "maxClinicalStage": stage,
+        "drug": {"id": drug_id, "name": name, "maximumClinicalStage": "APPROVAL",
+                 "drugWarnings": list(warnings), "parentMolecule": parent,
+                 "childMolecules": list(children)},
+        "clinicalReports": [],
+    }
+
+
+def approved_names(offline, *rows):
+    offline.side_effect = lambda body: list_answer(*rows)
+    return [entry.name for entry in fetch.fetch_approved(PAH)]
+
+
+def test_29_on_the_list_one_withdrawn_form_takes_the_whole_family_off(offline):
+    # The withdrawn form is only in trials for the disease. The approved
+    # form has no warning of its own. The family is still left out.
+    parent = {"id": "T1", "name": "TESTAMIL", "drugWarnings": []}
+    assert approved_names(
+        offline,
+        list_row("T1", "TESTAMIL"),
+        list_row("T2", "TESTAMIL SODIUM", stage="PHASE_3", parent=parent, warnings=WITHDRAWN),
+        list_row("O1", "OTHERMIL"),
+    ) == ["OTHERMIL"]
+
+
+def test_29_on_the_list_a_withdrawn_parent_or_tablet_form_with_no_row_counts(offline):
+    parent = {"id": "T1", "name": "TESTAMIL", "drugWarnings": WITHDRAWN}
+    child = {"id": "U2", "name": "UPMIL SODIUM", "drugWarnings": WITHDRAWN}
+    assert approved_names(
+        offline,
+        list_row("T2", "TESTAMIL SODIUM", parent=parent),
+        list_row("U1", "UPMIL", children=[child]),
+        list_row("O1", "OTHERMIL"),
+    ) == ["OTHERMIL"]
+
+
+def test_29_on_the_list_a_black_box_warning_is_not_a_withdrawal(offline):
+    assert approved_names(
+        offline, list_row("T1", "TESTAMIL", warnings=BLACK_BOX)) == ["TESTAMIL"]

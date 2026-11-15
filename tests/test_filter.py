@@ -388,3 +388,123 @@ def test_29_example_4_no_api_response_names_any_of_the_six(
     assert "VORTIOXETINE" in everything  # it really answered
     assert [name for name in SIX if name in everything] == []
     assert data["left_out"]["not_approved"] >= 6
+
+
+# =====================================================================
+# Ticket 2.9, part 2 (Kashish, 15 Nov). Approved medicines are now shown
+# in the Approved tab. Sitaxentan is approved for pulmonary arterial
+# hypertension and was withdrawn. With the withdrawn note present it must
+# not be named in any tab, from either source of the Approved tab: the
+# proteins, or Open Targets' own list for the disease.
+# With the live data Kashish's answer key is 16, 2, 5, 13.
+# =====================================================================
+
+from test_fetch import PAH as PAH_GOLDEN, noted_post_json  # noqa: E402
+
+FIVE = ("BMPR2", "KCNK3", "ACVRL1", "EDNRA", "PDE5A")
+SITAXENTAN_ID = "CHEMBL282724"  # read from fixtures/withdrawn/MONDO_0015924/
+
+
+@pytest.fixture
+def noted_files(tmp_path, monkeypatch):
+    """The PAH answers that hold the withdrawn note. Real HTTP is an error."""
+    monkeypatch.setenv("MOONLIGHT_CACHE_DIR", str(tmp_path / "saved"))
+    cache.forget_memory()
+    explain.forget_everything()
+    with patch("moonlight.fetch._post_json", side_effect=noted_post_json), \
+            patch("moonlight.api.data_version", return_value="26.09"), \
+            patch("moonlight.explain.time.sleep"), \
+            patch("requests.request", side_effect=AssertionError("network used")), \
+            patch("requests.post", side_effect=AssertionError("network used")), \
+            patch("requests.get", side_effect=AssertionError("network used")), \
+            patch("requests.sessions.Session.request",
+                  side_effect=AssertionError("network used")):
+        yield
+    explain.forget_everything()
+    cache.forget_memory()
+
+
+def pah_targets(*symbols):
+    by_symbol = {t.symbol: t for t in fetch.fetch_targets(PAH_GOLDEN)}
+    return [by_symbol[symbol] for symbol in symbols]
+
+
+def test_29_with_the_note_the_five_proteins_give_16_2_5_13(noted_files):
+    tray = engine.find_clues(PAH_GOLDEN, pah_targets(*FIVE))
+    assert {group: len(paths) for group, paths in tray.items()} == {
+        "new_clue": 16,
+        "being_studied": 2,
+        "already_approved": 5,
+        "not_approved": 13,
+        "unclear_link": 0,
+    }
+    assert "SITAXENTAN" in {p.medicine.name for p in tray["not_approved"]}
+    for path in sum(tray.values(), []):
+        assert path.medicine.withdrawn is not None  # every answer held the note
+
+
+def test_29_with_the_note_sitaxentan_is_in_no_tab_and_is_counted_not_approved(noted_files):
+    tray = engine.find_clues(PAH_GOLDEN, pah_targets(*FIVE))
+    tabs = engine.sort_into_tabs(tray, fetch.fetch_approved(PAH_GOLDEN))
+
+    def named(clues):
+        return names_in(path for clue in clues for path in clue.paths)
+
+    approved = set()
+    for medicine in tabs.approved:
+        approved.add(medicine.name.upper())
+        approved.update(name.upper() for name in medicine.forms)
+    for shown in (approved, named(tabs.being_studied), named(tabs.new_clues)):
+        assert shown  # each tab really holds medicines
+        assert not any("SITAXENTAN" in name for name in shown)
+    assert len(tabs.approved) == 13  # the 14 of the old files, without Sitaxentan
+    assert len(tabs.new_clues) == 16 and len(tabs.being_studied) == 2
+    assert tabs.left_out == {"not_approved": 13, "unclear_link": 0}
+
+
+def test_29_with_the_note_no_api_response_names_sitaxentan(noted_files):
+    client = TestClient(api.app)
+
+    def gemini_unreachable(method, path, body=None, timeout=None):
+        raise requests.ConnectionError("no network")
+
+    with patch("moonlight.api.fetch_targets", return_value=pah_targets(*FIVE)), \
+            patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
+        clues = client.get("/api/clues", params={"disease_id": PAH_GOLDEN.id})
+        assert clues.status_code == 200
+        data = clues.json()
+        texts = [clues.text]
+        for clue in data["new_clues"] + data["being_studied"]:
+            answer = client.get(
+                "/api/explain", params={"disease_id": PAH_GOLDEN.id, "clue_id": clue["id"]})
+            assert answer.status_code == 200
+            texts.append(answer.text)
+        gone = client.get(
+            "/api/explain", params={"disease_id": PAH_GOLDEN.id, "clue_id": SITAXENTAN_ID})
+        assert gone.status_code == 404
+        texts.append(gone.text)
+
+    for tab in ("approved", "being_studied", "new_clues"):
+        assert data[tab]
+        assert not any("SITAXENTAN" in item["medicine"].upper() for item in data[tab])
+        assert not any("SITAXENTAN" in form.upper() for item in data[tab]
+                       for form in item["forms"])
+        assert SITAXENTAN_ID not in {item["id"] for item in data[tab]}
+    assert len(data["approved"]) == 13
+    assert "Sildenafil" in [item["medicine"] for item in data["approved"]]  # it really answered
+    assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
+    assert "SITAXENTAN" not in "\n".join(texts).upper()
+
+
+def test_29_with_the_note_the_runner_does_not_print_sitaxentan(noted_files):
+    printed = []
+    with patch("cli.search_diseases", return_value=[PAH_GOLDEN]), \
+            patch("cli.fetch_targets", return_value=pah_targets(*FIVE)), \
+            patch("builtins.print", side_effect=lambda *a, **k: printed.append(
+                " ".join(str(x) for x in a))):
+        code = cli.main(["pulmonary arterial hypertension"])
+    text = "\n".join(printed).upper()
+    assert code == 0
+    assert "VARDENAFIL" in text  # it really printed
+    assert "SITAXENTAN" not in text
+    assert "- NOT APPROVED ANYWHERE: 13" in text
