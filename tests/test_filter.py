@@ -172,3 +172,47 @@ def test_sort_paths_puts_each_path_in_its_medicines_group():
 
 def test_sort_paths_with_nothing_gives_every_group_empty():
     assert sort_paths([]) == {group: [] for group in GROUPS}
+
+
+# ---- Ticket 2.10: a link word that is not a phase and not APPROVAL ----
+# Kashish's decision, 2026-11-15: such a link is "unclear link". It never raises.
+
+# Real example, read from Open Targets on 2026-11-15: gabapentin is approved,
+# and its link to anxiety disorder is IND.
+def test_gabapentin_with_an_ind_link_is_unclear_link():
+    assert group_of(single("Gabapentin", "APPROVAL", "IND")) == "unclear_link"
+
+
+def test_a_preclinical_link_is_unclear_link():
+    assert group_of(single("Testamil", "APPROVAL", "PRECLINICAL")) == "unclear_link"
+
+
+def test_a_preapproval_link_is_unclear_link():
+    assert group_of(single("Testamil", "APPROVAL", "PREAPPROVAL")) == "unclear_link"
+
+
+def test_a_made_up_link_word_is_unclear_link_and_nothing_raises():
+    moon = path_for(single("Moonamil", "APPROVAL", "MOON_LINK"))
+
+    assert group_of(moon.medicine) == "unclear_link"
+    assert sort_paths([moon])["unclear_link"] == [moon]
+
+
+def test_a_family_with_an_ind_link_and_a_phase_link_is_still_being_studied():
+    medicine = family(
+        "Testamil",
+        form("Testamil", "APPROVAL", "IND"),
+        form("Testamil Sodium", "APPROVAL", "PHASE_2", parent_id="ID_TESTAMIL"),
+    )
+    assert group_of(medicine) == "being_studied"
+
+
+def test_phases_approval_and_no_link_sort_exactly_as_before():
+    assert group_of(single("Testamil", "APPROVAL")) == "new_clue"
+    assert group_of(single("Testamil", "APPROVAL", "APPROVAL")) == "already_approved"
+    for stage in ("PHASE_4", "PHASE_3", "PHASE_2_3", "PHASE_2", "PHASE_1_2", "PHASE_1", "EARLY_PHASE_1"):
+        assert group_of(single("Testamil", "APPROVAL", stage)) == "being_studied"
+    for stage in ("WITHDRAWAL", "UNKNOWN"):
+        assert group_of(single("Testamil", "APPROVAL", stage)) == "unclear_link"
+    for best in ("PHASE_3", "IND", "PRECLINICAL", "MOON_STAGE"):
+        assert group_of(single("Testamil", best, "IND")) == "not_approved"

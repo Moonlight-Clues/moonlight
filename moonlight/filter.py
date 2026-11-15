@@ -42,7 +42,7 @@ def group_of(medicine: Medicine) -> str:
         return BEING_STUDIED
     if link in ("WITHDRAWAL", "UNKNOWN"):
         return UNCLEAR_LINK
-    raise ValueError(f"Do not know how to sort disease stage: {link!r}")
+    return UNCLEAR_LINK  # IND, PRECLINICAL or any other word: unclear, never an error
 
 
 def sort_paths(paths: Iterable[Path]) -> Dict[str, List[Path]]:

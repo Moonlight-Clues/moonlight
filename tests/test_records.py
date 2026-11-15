@@ -116,6 +116,8 @@ def test_stage_order_is_the_one_in_the_ticket():
         "PHASE_1_2",
         "PHASE_1",
         "EARLY_PHASE_1",
+        "IND",
+        "PRECLINICAL",
         "WITHDRAWAL",
         "UNKNOWN",
     )
@@ -130,11 +132,12 @@ def test_any_stage_is_stronger_than_no_stage():
     assert stronger_stage(None, None) is None
 
 
-def test_a_stage_word_we_do_not_know_is_an_error():
-    with pytest.raises(ValueError):
-        stronger_stage("PHASE_9", "APPROVAL")
-    with pytest.raises(ValueError):
-        form("Z1", "Z", "approved-ish")
+# Changed in ticket 2.10 with Kashish's yes (2026-11-15). It used to say
+# that a stage word we do not know IS an error.
+def test_a_stage_word_we_do_not_know_is_not_an_error_and_is_not_approved():
+    assert stronger_stage("PHASE_9", "APPROVAL") == "APPROVAL"
+    z = form("Z1", "Z", "approved-ish")
+    assert Medicine(name="Z", forms=[z]).best_stage != "APPROVAL"
 
 
 # Example 6
