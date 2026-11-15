@@ -1510,3 +1510,29 @@ def test_54_the_words_under_the_three_tabs_say_what_the_real_tabs_say(client):
     assert names == ["Approved", "In trials", "New clues"]
     assert "not a prediction" in guide  # in trials: never hinted to be more likely to work
     assert "First on the list does not mean best." in guide
+
+
+# Kashish's decision, 2026-11-15: four sentences in the guide's key were
+# wrong in the draft. These are her exact words.
+KEY_C = ("Medicine, then protein, then disease. Every clue has all three steps. "
+         "An approved medicine can be shown without a path, and its card says why.")
+KEY_D = ("What the medicine does to the protein, like a volume knob. On this "
+         "same list, other medicines turn KCNK3 up. All of them are clues, because "
+         "the data does not say which way helps. “Unknown” means the data does not "
+         "say which way, so Moonlight does not guess. “Mixed” means it does both.")
+KEY_F = ("The facts about this clue, rewritten in plain words. It is checked, so "
+         "it adds no medicine, protein or number of its own.")
+KEY_G = ("On every clue and every trial card. The data does not say whether the "
+         "disease needs the protein turned up or down, so a clue can point the "
+         "wrong way. Approved cards do not have it.")
+
+
+def test_54_the_four_corrected_sentences_are_in_the_guides_key(client):
+    guide = guide_of(client.get("/").text)
+    key = guide[guide.index('<dl class="key"'):guide.index("</dl>")]
+    for letter, title, words in (("C", "The path", KEY_C), ("D", "Up, down or unknown", KEY_D),
+                                 ("F", "The explanation", KEY_F), ("G", "The catch", KEY_G)):
+        assert '>%s</span><dt>%s</dt><dd>%s</dd>' % (letter, title, words) in key, letter
+    for old in ("If any step is missing", "The same on every card",
+                "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
+        assert old not in guide, old
