@@ -9,6 +9,8 @@ Five questions, five functions:
     fetch_paths(disease, target)   -> list of Path, one per Medicine family
     fetch_approved(disease)        -> list of Listed: the medicines Open Targets'
                                       own list says are approved for the disease
+    fetch_withdrawn(disease)       -> list of Listed: the medicines on that same
+                                      list that were withdrawn in any country
 
 and one about the data itself:
 
@@ -556,31 +558,17 @@ class Listed:
     name: str
     forms: Tuple[Tuple[str, str], ...]
     sources: Tuple[str, ...]
+    # Always True from fetch_approved. fetch_withdrawn also hands over
+    # families that are only in trials for the disease: then it is False.
+    approved: bool = True
 
 
-def fetch_approved(disease: Disease) -> List[Listed]:
-    """The medicines on the disease's own list whose stage for this disease
-    is approval. One Listed per medicine family, in the order Open Targets
-    first mentions them. [] if the disease is not known or none is approved.
-
-    A medicine and its tablet forms are one item, named after the parent.
-    The item takes the strongest stage of its forms: it is here if at least
-    one form is approved for this disease. That form must also say it is
-    approved for at least one disease. If it does not, the two stages
-    disagree, and the form does not count. Nothing is guessed.
-
-    Only the word "APPROVAL" is looked for. A form with any other stage
-    word, even one Moonlight has never met, is only listed as a form.
-
-    Kashish's decision, 2026-11-15. A medicine withdrawn in any country
-    does not count as approved. If any form of a family on this list was
-    withdrawn, the whole family is left out, even if the withdrawn form is
-    not the approved one. If Open Targets did not say, nothing is guessed:
-    the family stays, and that is written in the log.
-    """
+def _list_families(disease: Disease) -> Dict[str, dict]:
+    """Every medicine family on the disease's own list, by family id, with
+    what was gathered about it. {} if the disease is not known."""
     data = _ask(DISEASE_DRUGS_QUERY, {"diseaseId": disease.id})
     if data["disease"] is None:
-        return []
+        return {}
 
     families: Dict[str, dict] = {}  # family id -> what we have gathered so far
     for row in data["disease"]["drugAndClinicalCandidates"]["rows"]:
@@ -611,7 +599,53 @@ def fetch_approved(disease: Disease) -> List[Listed]:
             url = report["url"]
             if url and url not in family["sources"]:
                 family["sources"].append(url)
+    return families
 
+
+def _as_listed(family_id: str, family: dict) -> Listed:
+    return Listed(
+        id=family_id,
+        name=family["name"],
+        forms=tuple(family["forms"]),
+        sources=tuple(family["sources"]),
+        approved=family["approved"],
+    )
+
+
+def fetch_withdrawn(disease: Disease) -> List[Listed]:
+    """The families on the disease's own list with a form that was withdrawn
+    in any country (ticket 2.11), approved for this disease or not. The same
+    question as fetch_approved, so it is answered from the saved results.
+    [] if the list holds no withdrawn note: nothing is guessed.
+    """
+    return [
+        _as_listed(family_id, family)
+        for family_id, family in _list_families(disease).items()
+        if True in family["withdrawn"]  # one withdrawn form is enough
+    ]
+
+
+def fetch_approved(disease: Disease) -> List[Listed]:
+    """The medicines on the disease's own list whose stage for this disease
+    is approval. One Listed per medicine family, in the order Open Targets
+    first mentions them. [] if the disease is not known or none is approved.
+
+    A medicine and its tablet forms are one item, named after the parent.
+    The item takes the strongest stage of its forms: it is here if at least
+    one form is approved for this disease. That form must also say it is
+    approved for at least one disease. If it does not, the two stages
+    disagree, and the form does not count. Nothing is guessed.
+
+    Only the word "APPROVAL" is looked for. A form with any other stage
+    word, even one Moonlight has never met, is only listed as a form.
+
+    Kashish's decision, 2026-11-15. A medicine withdrawn in any country
+    does not count as approved. If any form of a family on this list was
+    withdrawn, the whole family is left out, even if the withdrawn form is
+    not the approved one. If Open Targets did not say, nothing is guessed:
+    the family stays, and that is written in the log.
+    """
+    families = _list_families(disease)
     approved = {
         family_id: family for family_id, family in families.items() if family["approved"]
     }
@@ -627,12 +661,7 @@ def fetch_approved(disease: Disease) -> List[Listed]:
             not_known, len(approved), disease.name,
         )
     return [
-        Listed(
-            id=family_id,
-            name=family["name"],
-            forms=tuple(family["forms"]),
-            sources=tuple(family["sources"]),
-        )
+        _as_listed(family_id, family)
         for family_id, family in approved.items()
         if True not in family["withdrawn"]  # one withdrawn form is enough
     ]

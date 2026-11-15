@@ -810,3 +810,61 @@ def test_29_on_the_list_a_withdrawn_parent_or_tablet_form_with_no_row_counts(off
 def test_29_on_the_list_a_black_box_warning_is_not_a_withdrawal(offline):
     assert approved_names(
         offline, list_row("T1", "TESTAMIL", warnings=BLACK_BOX)) == ["TESTAMIL"]
+
+
+# =====================================================================
+# Ticket 2.11: fetch hands over the withdrawn families of the disease's
+# own list, so the engine can leave them out and count them.
+# =====================================================================
+#
+# New tests only. fetch_approved is unchanged. Saved files, no network.
+
+def test_211_the_withdrawn_families_on_the_noted_pah_list(noted):
+    found = {entry.name: entry for entry in fetch.fetch_withdrawn(PAH)}
+    assert all(isinstance(entry, fetch.Listed) for entry in found.values())
+    # Read live on 2026-11-15: three families on PAH's own list were withdrawn.
+    assert sorted(found) == ["BENZBROMARONE", "PRASTERONE", "SITAXENTAN"]
+    sitaxentan = found["SITAXENTAN"]
+    assert sitaxentan.id == "CHEMBL282724"
+    assert [name for _, name in sitaxentan.forms] == ["SITAXENTAN", "SITAXENTAN SODIUM"]
+    # Only Sitaxentan is approved for PAH. The other two are only in trials for it.
+    assert [name for name, entry in sorted(found.items()) if entry.approved] == ["SITAXENTAN"]
+
+
+def test_211_no_family_is_both_approved_and_withdrawn(noted):
+    approved = {entry.id for entry in fetch.fetch_approved(PAH)}
+    withdrawn = {entry.id for entry in fetch.fetch_withdrawn(PAH)}
+    assert len(approved) == 13 and len(withdrawn) == 3
+    assert approved & withdrawn == set()
+    assert all(entry.approved for entry in fetch.fetch_approved(PAH))
+
+
+def test_211_withdrawn_asks_the_same_question_as_approved(noted):
+    fetch.fetch_withdrawn(PAH)
+    body = noted.call_args.args[0]
+    assert body == {"query": fetch.DISEASE_DRUGS_QUERY, "variables": {"diseaseId": PAH.id}}
+
+
+def test_211_a_list_with_no_note_gives_no_withdrawn_family_and_does_not_say_it_twice(
+        disease_list, caplog):
+    # Not guessed. fetch_approved is the one that writes it in the log.
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        assert fetch.fetch_withdrawn(PAH) == []
+    assert not caplog.records
+
+
+def test_211_withdrawn_for_a_disease_open_targets_does_not_know_is_empty(disease_list):
+    assert fetch.fetch_withdrawn(Disease(id="MONDO_0000000", name="nothing")) == []
+
+
+def test_211_withdrawn_families_made_by_hand(offline):
+    parent = {"id": "T1", "name": "TESTAMIL", "drugWarnings": []}
+    offline.side_effect = lambda body: list_answer(
+        list_row("T1", "TESTAMIL"),
+        list_row("T2", "TESTAMIL SODIUM", stage="PHASE_3", parent=parent, warnings=WITHDRAWN),
+        list_row("O1", "OTHERMIL", warnings=BLACK_BOX),
+        list_row("R1", "TRIALMIL", stage="PHASE_2", warnings=WITHDRAWN),
+    )
+    found = fetch.fetch_withdrawn(PAH)
+    assert [(entry.id, entry.name, entry.approved) for entry in found] == [
+        ("T1", "TESTAMIL", True), ("R1", "TRIALMIL", False)]

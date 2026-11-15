@@ -163,7 +163,11 @@ def _family_id(medicine: Medicine) -> str:
     return first.parent_id or first.id
 
 
-def sort_into_tabs(tray: Dict[str, List[Path]], listed: Iterable[Listed]) -> Tabs:
+def sort_into_tabs(
+    tray: Dict[str, List[Path]],
+    listed: Iterable[Listed],
+    withdrawn_listed: Iterable[Listed] = (),
+) -> Tabs:
     """The tray from find_clues and the disease's own list -> the three tabs.
 
     Approved has two sources, joined with no medicine twice:
@@ -176,14 +180,34 @@ def sort_into_tabs(tray: Dict[str, List[Path]], listed: Iterable[Listed]) -> Tab
     disease, every path of that medicine belongs to Approved, whichever
     group the tray put it in. It is then not a clue, and not counted as
     left out.
+
+    Withdrawn comes first (ticket 2.11). If any path says the medicine or
+    one of its forms was withdrawn, the medicine is withdrawn in every
+    source: it is in no tab, whatever the list says, and it is counted in
+    not_approved. A list with no withdrawn note never wins over a path
+    that says "withdrawn". A missing note alone is still not guessed.
+
+    withdrawn_listed is the other direction: the families the disease's own
+    list marks as withdrawn (fetch.fetch_withdrawn). They are withdrawn in
+    every source too, even when a path has no note. One that is approved
+    for the disease is counted in not_approved even if it has no path.
     """
-    listed_by_id = {entry.id: entry for entry in listed}
+    withdrawn_listed = list(withdrawn_listed)
+    withdrawn_ids = {
+        _family_id(path.medicine)
+        for paths in tray.values()
+        for path in paths
+        if path.medicine.withdrawn is True
+    } | {entry.id for entry in withdrawn_listed}
+    listed_by_id = {entry.id: entry for entry in listed if entry.id not in withdrawn_ids}
 
     approved_paths: List[Path] = []
     others: Dict[str, List[Path]] = {group: [] for group in GROUPS if group != ALREADY_APPROVED}
     for group, paths in tray.items():
         for path in paths:
-            if group == ALREADY_APPROVED or _family_id(path.medicine) in listed_by_id:
+            if _family_id(path.medicine) in withdrawn_ids:
+                others[NOT_APPROVED].append(path)  # counted, never named
+            elif group == ALREADY_APPROVED or _family_id(path.medicine) in listed_by_id:
                 approved_paths.append(path)
             else:
                 others[group].append(path)
@@ -230,8 +254,12 @@ def sort_into_tabs(tray: Dict[str, List[Path]], listed: Iterable[Listed]) -> Tab
         new_clues=rank_clues(others[NEW_CLUE]),
         left_out={
             # A medicine that acts on two proteins is still one medicine.
-            group: len({path.medicine.name for path in others[group]})
-            for group in (NOT_APPROVED, UNCLEAR_LINK)
+            # So is one that has a path and is also on the withdrawn list.
+            NOT_APPROVED: len(
+                {path.medicine.name for path in others[NOT_APPROVED]}
+                | {entry.name for entry in withdrawn_listed if entry.approved}
+            ),
+            UNCLEAR_LINK: len({path.medicine.name for path in others[UNCLEAR_LINK]}),
         },
     )
 
