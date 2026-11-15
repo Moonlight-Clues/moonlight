@@ -469,3 +469,218 @@ def test_53_find_ranked_clues_still_counts_three_groups_for_the_terminal_runner(
     # cli.py is not part of this ticket and still prints three counts.
     ranked = engine.find_ranked_clues(PAH, targets_named(*FIVE))
     assert set(ranked.left_out) == {"not_approved", "already_approved", "unclear_link"}
+
+
+# =====================================================================
+# Ticket 2.11: withdrawn, mixed answers
+# =====================================================================
+#
+# New tests only. Saved files, no network.
+#
+# The Approved tab has two sources: the proteins and the disease's own
+# list. If the protein answer says a medicine or one of its forms was
+# withdrawn, it is withdrawn, even when the list has no withdrawn note.
+# A missing note never wins over a "withdrawn" note.
+
+from test_fetch import noted_post_json  # noqa: E402
+
+
+def mixed_post_json(body):
+    """The protein answers saved on 15 Nov, WITH the withdrawn note, and the
+    disease's own list saved on 10 Nov, with NO note."""
+    if "diseaseId" in body["variables"] and "drugAndClinicalCandidates" in body["query"]:
+        return fake_with_the_disease_list(body)
+    return noted_post_json(body)
+
+
+def everyone_named(tabs):
+    """Every medicine name and form name in the three tabs, in capitals."""
+    found = set()
+    for medicine in tabs.approved:
+        found.add(medicine.name.upper())
+        found.update(name.upper() for name in medicine.forms)
+    for clue in tabs.being_studied + tabs.new_clues:
+        for path in clue.paths:
+            found.add(path.medicine.name.upper())
+            found.update(form.name.upper() for form in path.medicine.forms)
+    return found
+
+
+def test_211_mixed_the_old_list_still_names_sitaxentan_and_has_no_note(offline, caplog):
+    # This is what makes the answers "mixed".
+    offline.side_effect = mixed_post_json
+    assert "SITAXENTAN" in [entry.name for entry in fetch.fetch_approved(PAH)]
+    (ednra,) = targets_named("EDNRA")
+    (sitaxentan,) = [p for p in fetch.fetch_paths(PAH, ednra)
+                     if p.medicine.name == "SITAXENTAN"]
+    assert sitaxentan.medicine.withdrawn is True
+
+
+def test_211_mixed_a_withdrawn_note_from_the_proteins_wins_over_a_list_with_no_note(offline):
+    offline.side_effect = mixed_post_json
+    tray = engine.find_clues(PAH, targets_named(*FIVE))
+    tabs = sort_into_tabs(tray, fetch.fetch_approved(PAH))
+
+    assert not any("SITAXENTAN" in name for name in everyone_named(tabs))
+    assert sorted(m.name for m in tabs.approved) == [
+        name for name in LISTED_APPROVED if name != "SITAXENTAN"]
+    assert len(tabs.new_clues) == 16 and len(tabs.being_studied) == 2
+    assert tabs.left_out == {"not_approved": 13, "unclear_link": 0}  # it is counted
+
+
+def withdrawn_path(name, medicine_id, symbol="AAA", withdrawn=True, disease_stage=None,
+                   salt_withdrawn=None):
+    """A made-up path. With salt_withdrawn, the family also has a tablet form."""
+    forms = [MedicineForm(id=medicine_id, name=name, best_stage="APPROVAL",
+                          disease_stage=disease_stage, withdrawn=withdrawn)]
+    if salt_withdrawn is not None:
+        forms.append(MedicineForm(id=medicine_id + "S", name=name + " SODIUM",
+                                  best_stage="APPROVAL", parent_id=medicine_id,
+                                  withdrawn=salt_withdrawn))
+    return Path(
+        medicine=Medicine(name=name, forms=forms),
+        target=Target(id="ENSG_" + symbol, symbol=symbol, name=symbol, score=0.5),
+        disease=PAH,
+        action_types=("INHIBITOR",),
+        score=0.5,
+        sources=(f"https://example.org/{name}/{symbol}",),
+    )
+
+
+def test_211_a_withdrawn_medicine_the_list_names_is_in_no_tab_and_counted_once():
+    tray = tray_of(
+        withdrawn_path("GONEMIL", "G1", symbol="AAA"),
+        withdrawn_path("GONEMIL", "G1", symbol="BBB"),  # two proteins, one medicine
+        withdrawn_path("STAYMIL", "S1", withdrawn=False, disease_stage="APPROVAL"),
+        withdrawn_path("NEWMIL", "N1", withdrawn=False),
+    )
+    listed = [
+        Listed(id="G1", name="GONEMIL", forms=(("G1", "GONEMIL"), ("G2", "GONEMIL SODIUM")),
+               sources=("https://example.org/list/GONEMIL",)),
+        Listed(id="S1", name="STAYMIL", forms=(("S1", "STAYMIL"),), sources=()),
+    ]
+    tabs = sort_into_tabs(tray, listed)
+    assert [m.name for m in tabs.approved] == ["STAYMIL"]
+    assert names(tabs.new_clues) == ["NEWMIL"]
+    assert not any("GONEMIL" in name for name in everyone_named(tabs))
+    assert tabs.left_out == {"not_approved": 1, "unclear_link": 0}
+
+
+def test_211_one_withdrawn_form_is_enough_for_the_whole_family():
+    tray = tray_of(withdrawn_path("GONEMIL", "G1", withdrawn=False, salt_withdrawn=True))
+    listed = [Listed(id="G1", name="GONEMIL", forms=(("G1", "GONEMIL"),), sources=())]
+    tabs = sort_into_tabs(tray, listed)
+    assert tabs.approved == []
+    assert tabs.left_out == {"not_approved": 1, "unclear_link": 0}
+
+
+def test_211_withdrawn_on_one_protein_counts_for_its_paths_on_every_protein():
+    # The answer for protein AAA has the note. The answer for BBB has none.
+    tray = tray_of(
+        withdrawn_path("GONEMIL", "G1", symbol="AAA", withdrawn=True),
+        withdrawn_path("GONEMIL", "G1", symbol="BBB", withdrawn=None,
+                       disease_stage="APPROVAL"),
+    )
+    tabs = sort_into_tabs(tray, [])
+    assert tabs.approved == [] and tabs.new_clues == [] and tabs.being_studied == []
+    assert tabs.left_out == {"not_approved": 1, "unclear_link": 0}
+
+
+def test_211_a_missing_note_is_still_not_guessed_to_mean_withdrawn():
+    tray = tray_of(withdrawn_path("QUIETMIL", "Q1", withdrawn=None))
+    listed = [Listed(id="Q1", name="QUIETMIL", forms=(("Q1", "QUIETMIL"),), sources=())]
+    tabs = sort_into_tabs(tray, listed)
+    assert [m.name for m in tabs.approved] == ["QUIETMIL"]
+    assert tabs.left_out == {"not_approved": 0, "unclear_link": 0}
+
+
+# ---- Ticket 2.11, the other half: the LIST says "withdrawn" ----
+#
+# fetch.fetch_withdrawn hands over the families the disease's own list
+# marks as withdrawn. sort_into_tabs takes them as a third thing.
+#   1. One that is approved for the disease and acts on none of the
+#      proteins looked at is in no tab AND is counted in not_approved.
+#   2. If a protein answer has no note for it, "withdrawn" still wins.
+
+def tabs_with_withdrawn_list(*symbols):
+    tray = engine.find_clues(PAH, targets_named(*symbols))
+    return sort_into_tabs(tray, fetch.fetch_approved(PAH), fetch.fetch_withdrawn(PAH))
+
+
+def test_211_case_1_withdrawn_only_on_the_list_is_left_out_and_counted(offline):
+    # Only PDE5A is looked at. Sitaxentan acts on EDNRA, so it has no path:
+    # it is only on the disease's own list, approved for PAH, and withdrawn.
+    offline.side_effect = noted_post_json
+    tray = engine.find_clues(PAH, targets_named("PDE5A"))
+    assert not any("SITAXENTAN" in p.medicine.name for p in sum(tray.values(), []))
+    assert len(tray["not_approved"]) == 3
+
+    tabs = tabs_with_withdrawn_list("PDE5A")
+    assert not any("SITAXENTAN" in name for name in everyone_named(tabs))
+    assert len(tabs.approved) == 13
+    assert tabs.left_out == {"not_approved": 4, "unclear_link": 0}  # 3 and Sitaxentan
+
+
+def test_211_case_1_it_is_counted_once_when_it_also_has_a_path(offline):
+    offline.side_effect = noted_post_json
+    tabs = tabs_with_withdrawn_list(*FIVE)
+    assert not any("SITAXENTAN" in name for name in everyone_named(tabs))
+    assert len(tabs.new_clues) == 16 and len(tabs.being_studied) == 2
+    assert tabs.left_out == {"not_approved": 13, "unclear_link": 0}  # Kashish's 16, 2, 5, 13
+
+
+def test_211_case_1_a_withdrawn_medicine_only_in_trials_on_the_list_is_not_counted(offline):
+    # Benzbromarone and Prasterone are on PAH's list only as trials. A
+    # medicine like that was never shown or counted, so it still is not.
+    offline.side_effect = noted_post_json
+    assert len(fetch.fetch_withdrawn(PAH)) == 3
+    tabs = sort_into_tabs(engine.find_clues(PAH, []), fetch.fetch_approved(PAH),
+                          fetch.fetch_withdrawn(PAH))
+    assert tabs.left_out == {"not_approved": 1, "unclear_link": 0}  # Sitaxentan only
+
+
+def list_noted_post_json(body):
+    """The other mix: the disease's own list saved on 15 Nov WITH the note,
+    and the protein answers saved on 10 Nov with NO note."""
+    if "diseaseId" in body["variables"] and "drugAndClinicalCandidates" in body["query"]:
+        return noted_post_json(body)
+    return fake_post_json(body)
+
+
+def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(offline):
+    offline.side_effect = list_noted_post_json
+    tray = engine.find_clues(PAH, targets_named(*FIVE))
+    (sitaxentan,) = [p for p in tray["already_approved"] if p.medicine.name == "SITAXENTAN"]
+    assert sitaxentan.medicine.withdrawn is None  # the protein answer has no note
+
+    tabs = tabs_with_withdrawn_list(*FIVE)
+    assert not any("SITAXENTAN" in name for name in everyone_named(tabs))
+    assert len(tabs.approved) == 13
+    assert len(tabs.new_clues) == 16 and len(tabs.being_studied) == 2
+    assert tabs.left_out == {"not_approved": 13, "unclear_link": 0}
+
+
+def test_211_case_2_withdrawn_on_the_list_wins_in_every_tab():
+    tray = tray_of(
+        withdrawn_path("CLUEMIL", "C1", withdrawn=None),  # looks like a new clue
+        withdrawn_path("TRIALMIL", "R1", withdrawn=None, disease_stage="PHASE_2"),
+        withdrawn_path("DONEMIL", "D1", withdrawn=None, disease_stage="APPROVAL"),
+        withdrawn_path("STAYMIL", "S1", withdrawn=None),
+    )
+    withdrawn = [
+        Listed(id="C1", name="CLUEMIL", forms=(("C1", "CLUEMIL"),), sources=(), approved=False),
+        Listed(id="R1", name="TRIALMIL", forms=(("R1", "TRIALMIL"),), sources=(),
+               approved=False),
+        Listed(id="D1", name="DONEMIL", forms=(("D1", "DONEMIL"),), sources=()),
+    ]
+    tabs = sort_into_tabs(tray, [], withdrawn)
+    assert everyone_named(tabs) == {"STAYMIL"}
+    assert names(tabs.new_clues) == ["STAYMIL"]
+    assert tabs.left_out == {"not_approved": 3, "unclear_link": 0}
+
+
+def test_211_with_no_withdrawn_list_the_tabs_are_what_they_were(offline):
+    offline.side_effect = noted_post_json
+    tray = engine.find_clues(PAH, targets_named(*FIVE))
+    listed = fetch.fetch_approved(PAH)
+    assert sort_into_tabs(tray, listed) == sort_into_tabs(tray, listed, [])

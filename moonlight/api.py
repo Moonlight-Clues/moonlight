@@ -38,6 +38,7 @@ from moonlight.fetch import (
     fetch_approved,
     fetch_disease,
     fetch_targets,
+    fetch_withdrawn,
     search_diseases,
     search_matches,
 )
@@ -65,9 +66,10 @@ app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None
 class _Found:
     """Everything worked out for one disease in one request."""
 
-    def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed]):
+    def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed],
+                 withdrawn_listed: List[Listed] = ()):
         self.disease = disease
-        tabs = sort_into_tabs(tray, listed)
+        tabs = sort_into_tabs(tray, listed, withdrawn_listed)
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
@@ -92,7 +94,8 @@ def _find(disease_id: str) -> _Found:
         if disease is None:
             raise HTTPException(status_code=404, detail="Open Targets does not know this disease.")
         targets = fetch_targets(disease, TOP_TARGETS)
-        return _Found(disease, find_clues(disease, targets), fetch_approved(disease))
+        return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
+                      fetch_withdrawn(disease))  # the same saved answer, not a new question
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
