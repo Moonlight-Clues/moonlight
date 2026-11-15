@@ -1,0 +1,267 @@
+{
+ "about": "Night watch 1, part D question 1. Asked live on 2026-11-15, Open Targets data version 26.09. 'request' and 'response' are exactly what was sent and what came back. 'approved_counts' was counted by the night watch with fetch.fetch_approved for the disease, its parents, and two more steps up.",
+ "request": {
+  "query": "query DiseaseParents($diseaseId: String!) {\n  disease(efoId: $diseaseId) { id name parents { id name } ancestors }\n}\n",
+  "variables": {
+   "diseaseId": "MONDO_0020511"
+  }
+ },
+ "response": {
+  "data": {
+   "disease": {
+    "id": "MONDO_0020511",
+    "name": "precursor B-cell acute lymphoblastic leukemia",
+    "parents": [
+     {
+      "id": "MONDO_0017595",
+      "name": "aggressive B-cell non-Hodgkin lymphoma"
+     },
+     {
+      "id": "MONDO_0004967",
+      "name": "acute lymphoblastic leukemia"
+     }
+    ],
+    "ancestors": [
+     "MONDO_0017595",
+     "MONDO_0004967",
+     "MONDO_0015759",
+     "MONDO_0005402",
+     "MONDO_0010643",
+     "MONDO_0003538",
+     "MONDO_0018908",
+     "MONDO_0005168",
+     "MONDO_0004095",
+     "MONDO_0005157",
+     "MONDO_0005059",
+     "MONDO_0005062",
+     "MONDO_0004805",
+     "MONDO_0044881",
+     "MONDO_0015757",
+     "MONDO_0005570",
+     "MONDO_0005046",
+     "MONDO_0002334",
+     "MONDO_0005070",
+     "MONDO_0023370",
+     "MONDO_0045024"
+    ]
+   }
+  }
+ },
+ "approved_counts": [
+  {
+   "id": "MONDO_0020511",
+   "name": "precursor B-cell acute lymphoblastic leukemia",
+   "steps_up": 0,
+   "parents": [
+    "MONDO_0017595",
+    "MONDO_0004967"
+   ],
+   "rows_on_own_list": 53,
+   "rows_with_stage_APPROVAL": 0,
+   "approved_medicines_by_moonlight_rule": 0,
+   "approved_names": []
+  },
+  {
+   "id": "MONDO_0004967",
+   "name": "acute lymphoblastic leukemia",
+   "steps_up": 1,
+   "parents": [
+    "MONDO_0005402",
+    "MONDO_0010643",
+    "MONDO_0003538",
+    "MONDO_0018908",
+    "MONDO_0005168"
+   ],
+   "rows_on_own_list": 306,
+   "rows_with_stage_APPROVAL": 17,
+   "approved_medicines_by_moonlight_rule": 15,
+   "approved_names": [
+    "ASPARAGINASE ERWINIA CHRYSANTHEMI",
+    "BLINATUMOMAB",
+    "CALASPARGASE PEGOL",
+    "CHLORAMBUCIL",
+    "CLOFARABINE",
+    "CYTARABINE",
+    "DASATINIB ANHYDROUS",
+    "INOTUZUMAB OZOGAMICIN",
+    "MERCAPTOPURINE ANHYDROUS",
+    "METHOTREXATE",
+    "PEGASPARGASE",
+    "PLERIXAFOR",
+    "PONATINIB",
+    "RITUXIMAB",
+    "THIOGUANINE"
+   ]
+  },
+  {
+   "id": "MONDO_0017595",
+   "name": "aggressive B-cell non-Hodgkin lymphoma",
+   "steps_up": 1,
+   "parents": [
+    "MONDO_0015759"
+   ],
+   "rows_on_own_list": 6,
+   "rows_with_stage_APPROVAL": 0,
+   "approved_medicines_by_moonlight_rule": 0,
+   "approved_names": []
+  },
+  {
+   "id": "MONDO_0003538",
+   "name": "precursor lymphoblastic lymphoma/leukemia",
+   "steps_up": 2,
+   "parents": [
+    "MONDO_0005157"
+   ],
+   "rows_on_own_list": 0,
+   "rows_with_stage_APPROVAL": 0,
+   "approved_medicines_by_moonlight_rule": 0,
+   "approved_names": []
+  },
+  {
+   "id": "MONDO_0005168",
+   "name": "neoplasm of immature B and T cells",
+   "steps_up": 2,
+   "parents": [
+    "MONDO_0005157"
+   ],
+   "rows_on_own_list": 0,
+   "rows_with_stage_APPROVAL": 0,
+   "approved_medicines_by_moonlight_rule": 0,
+   "approved_names": []
+  },
+  {
+   "id": "MONDO_0005402",
+   "name": "lymphoid leukemia",
+   "steps_up": 2,
+   "parents": [
+    "MONDO_0005157",
+    "MONDO_0005059"
+   ],
+   "rows_on_own_list": 45,
+   "rows_with_stage_APPROVAL": 4,
+   "approved_medicines_by_moonlight_rule": 4,
+   "approved_names": [
+    "CYTARABINE",
+    "DAUNORUBICIN",
+    "MERCAPTOPURINE ANHYDROUS",
+    "PONATINIB"
+   ]
+  },
+  {
+   "id": "MONDO_0010643",
+   "name": "acute leukemia",
+   "steps_up": 2,
+   "parents": [
+    "MONDO_0005059"
+   ],
+   "rows_on_own_list": 118,
+   "rows_with_stage_APPROVAL": 1,
+   "approved_medicines_by_moonlight_rule": 1,
+   "approved_names": [
+    "CRISANTASPASE"
+   ]
+  },
+  {
+   "id": "MONDO_0015759",
+   "name": "B-cell non-Hodgkin lymphoma",
+   "steps_up": 2,
+   "parents": [
+    "MONDO_0018908",
+    "MONDO_0004095"
+   ],
+   "rows_on_own_list": 151,
+   "rows_with_stage_APPROVAL": 4,
+   "approved_medicines_by_moonlight_rule": 4,
+   "approved_names": [
+    "BENDAMUSTINE",
+    "EPCORITAMAB",
+    "LONCASTUXIMAB TESIRINE",
+    "POLATUZUMAB VEDOTIN"
+   ]
+  },
+  {
+   "id": "MONDO_0004095",
+   "name": "B-cell neoplasm",
+   "steps_up": 3,
+   "parents": [
+    "MONDO_0004805",
+    "MONDO_0005062"
+   ],
+   "rows_on_own_list": 0,
+   "rows_with_stage_APPROVAL": 0,
+   "approved_medicines_by_moonlight_rule": 0,
+   "approved_names": []
+  },
+  {
+   "id": "MONDO_0005059",
+   "name": "leukemia",
+   "steps_up": 3,
+   "parents": [
+    "MONDO_0044881"
+   ],
+   "rows_on_own_list": 182,
+   "rows_with_stage_APPROVAL": 13,
+   "approved_medicines_by_moonlight_rule": 13,
+   "approved_names": [
+    "ALLOPURINOL",
+    "BUSULFAN",
+    "CORTISONE ACETATE",
+    "DEXAMETHASONE",
+    "DEXAMETHASONE PHOSPHORIC ACID",
+    "HYDROCORTISONE",
+    "METHYLPREDNISOLONE ACETATE",
+    "METHYLPREDNISOLONE HEMISUCCINATE",
+    "PREDNISOLONE",
+    "PREDNISOLONE PHOSPHORIC ACID",
+    "PREDNISONE",
+    "RASBURICASE",
+    "REVUMENIB"
+   ]
+  },
+  {
+   "id": "MONDO_0005157",
+   "name": "lymphoid neoplasm",
+   "steps_up": 3,
+   "parents": [
+    "MONDO_0044881"
+   ],
+   "rows_on_own_list": 27,
+   "rows_with_stage_APPROVAL": 4,
+   "approved_medicines_by_moonlight_rule": 4,
+   "approved_names": [
+    "DOROCUBICEL",
+    "OMIDUBICEL",
+    "OMIDUBICEL NON-CULTURED FRACTION",
+    "VINBLASTINE"
+   ]
+  },
+  {
+   "id": "MONDO_0018908",
+   "name": "non-Hodgkin lymphoma",
+   "steps_up": 3,
+   "parents": [
+    "MONDO_0005062"
+   ],
+   "rows_on_own_list": 492,
+   "rows_with_stage_APPROVAL": 16,
+   "approved_medicines_by_moonlight_rule": 15,
+   "approved_names": [
+    "BENDAMUSTINE",
+    "BRENTUXIMAB VEDOTIN",
+    "CARMUSTINE",
+    "COPANLISIB",
+    "DOXORUBICIN",
+    "FEBARBAMATE",
+    "IDELALISIB",
+    "MELPHALAN",
+    "METHOTREXATE",
+    "PIRTOBRUTINIB",
+    "PIXANTRONE",
+    "PLERIXAFOR",
+    "RITUXIMAB",
+    "TOSITUMOMAB",
+    "TROFOSFAMIDE"
+   ]
+  }
+ ]
+}

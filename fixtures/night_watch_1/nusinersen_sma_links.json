@@ -1,0 +1,1013 @@
+{
+ "about": "Night watch 1, part D question 2. Asked live on 2026-11-15, Open Targets data version 26.09. Every medicine row on the list of spinal muscular atrophy, with every clinical report and its link. The Nusinersen rows are CHEMBL3301572 and CHEMBL3833342.",
+ "request": {
+  "query": "query DiseaseDrugLinks($diseaseId: String!) {\n  disease(efoId: $diseaseId) {\n    id\n    name\n    drugAndClinicalCandidates {\n      count\n      rows {\n        maxClinicalStage\n        drug { id name parentMolecule { id name } }\n        clinicalReports { id source type clinicalStage year title url }\n      }\n    }\n  }\n}\n",
+  "variables": {
+   "diseaseId": "MONDO_0001516"
+  }
+ },
+ "response": {
+  "data": {
+   "disease": {
+    "id": "MONDO_0001516",
+    "name": "spinal muscular atrophy",
+    "drugAndClinicalCandidates": {
+     "count": 22,
+     "rows": [
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL6068571",
+        "name": "ARGX-119",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct07287982",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Phase 2 Double-Blinded, Randomized, Placebo-Controlled Study to Assess the Safety, Tolerability, Efficacy, Pharmacokinetics, and Immunogenicity of Intravenous Administration of ARGX-119 in Pediatric Participants Aged 5 to Less Than 18 Years With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT07287982"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "UNKNOWN",
+       "drug": {
+        "id": "CHEMBL5095406",
+        "name": "BRANAPLAM HYDROCHLORIDE",
+        "parentMolecule": {
+         "id": "CHEMBL4290141",
+         "name": "BRANAPLAM"
+        }
+       },
+       "clinicalReports": [
+        {
+         "id": "branaplam hydrochloride",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Branaplam Hydrochloride and 2 diseases",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/BRANAPLAM%20HYDROCHLORIDE/relevant/1/"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL3545254",
+        "name": "OLESOXIME",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct01302600",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Phase II, Multicenter, Randomized, Adaptive, Double-blind, Placebo Controlled Study to Assess Safety and Efficacy of Olesoxime (TRO19622) in 3-25 Year Old Spinal Muscular Atrophy (SMA) Patients.",
+         "url": "https://clinicaltrials.gov/study/NCT01302600"
+        },
+        {
+         "id": "nct02628743",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Multicenter, Open-Label, Single-Arm Study to Evaluate Long-Term Safety, Tolerability, and Effectiveness of 10 mg/kg BID Olesoxime in Patients With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT02628743"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "APPROVAL",
+       "drug": {
+        "id": "CHEMBL3833342",
+        "name": "NUSINERSEN SODIUM",
+        "parentMolecule": {
+         "id": "CHEMBL3301572",
+         "name": "NUSINERSEN"
+        }
+       },
+       "clinicalReports": [
+        {
+         "id": "label/2016/209531lbl.pdf",
+         "source": "FDA",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Nusinersen Sodium and Spinal Muscular Atrophy",
+         "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2016/209531lbl.pdf"
+        },
+        {
+         "id": "nct04317794",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "A Multicenter, Observational, Postmarketing Surveillance Study of Spinraza Injection (Nusinersen Sodium) When Used in Routine Medical Practice in Korea",
+         "url": "https://clinicaltrials.gov/study/NCT04317794"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2_3",
+       "drug": {
+        "id": "CHEMBL6068245",
+        "name": "EMUGROBART",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct05115110",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2_3",
+         "year": null,
+         "title": "A Two-Part, Seamless, Multi-Center, Randomized, Placebo-Controlled, Double-Blind Study to Investigate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics and Efficacy of RO7204239 in Combination With Risdiplam (RO7034067) in Patients With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05115110"
+        },
+        {
+         "id": "da59th/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Report in Phase 2 stage for Rg6237 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/DA59TH"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "APPROVAL",
+       "drug": {
+        "id": "CHEMBL4297240",
+        "name": "ONASEMNOGENE ABEPARVOVEC",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "dp07nc/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Zolgensma and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/DP07NC"
+        },
+        {
+         "id": "emea/h/c/004750",
+         "source": "EMA Human Drugs",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": 2020,
+         "title": "Report in Approval stage for Onasemnogene Abeparvovec and Muscular Atrophy, Spinal",
+         "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/zolgensma"
+        },
+        {
+         "id": "emea/h/c/006498",
+         "source": "EMA Human Drugs",
+         "type": "INDICATION",
+         "clinicalStage": "PREAPPROVAL",
+         "year": null,
+         "title": "Report in Preapproval stage for Onasemnogene Abeparvovec and Muscular Atrophy, Spinal",
+         "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/itvisma"
+        },
+        {
+         "id": "d04dmz/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Report in Phase 3 stage for Avxs-101 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D04DMZ"
+        },
+        {
+         "id": "nct03306277",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Phase 3, Open-Label, Single-Arm, Single-Dose Gene Replacement Therapy Clinical Trial for Patients With Spinal Muscular Atrophy Type 1 With One or Two SMN2 Copies Delivering AVXS-101 by Intravenous Infusion",
+         "url": "https://clinicaltrials.gov/study/NCT03306277"
+        },
+        {
+         "id": "nct03461289",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Phase 3, Open-Label, Single-Arm, Single-Dose Gene Replacement Therapy Clinical Trial for Patients With Spinal Muscular Atrophy Type 1 With One or Two SMN2 Copies Delivering AVXS-101 by Intravenous Infusion",
+         "url": "https://clinicaltrials.gov/study/NCT03461289"
+        },
+        {
+         "id": "nct03837184",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Phase 3, Open-Label, Single-Arm, Single-Dose Gene Replacement Therapy Clinical Trial for Patients With Spinal Muscular Atrophy Type 1 With One or Two SMN2 Copies Delivering AVXS-101 by Intravenous Infusion",
+         "url": "https://clinicaltrials.gov/study/NCT03837184"
+        },
+        {
+         "id": "nct04042025",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "A Long-term Follow-up Study of Patients in the Clinical Trials for Spinal Muscular Atrophy Receiving AVXS-101",
+         "url": "https://clinicaltrials.gov/study/NCT04042025"
+        },
+        {
+         "id": "nct05335876",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Long-term Follow-up of Patients With Spinal Muscular Atrophy Treated With OAV101 IT or OAV101 IV in Clinical Trials",
+         "url": "https://clinicaltrials.gov/study/NCT05335876"
+        },
+        {
+         "id": "nct07444450",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "A Phase 3, Randomized, Double-Blinded Study to Evaluate the Safety and Efficacy of Salanersen (BIIB115) After Onasemnogene Abeparvovec Treatment in Infants With Genetically Diagnosed Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT07444450"
+        },
+        {
+         "id": "nct03421977",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "A Long Term Follow up Safety Study of Patients in the AVXS-101-CL-101 Gene Replacement Therapy Clinical Trial for Spinal Muscular Atrophy Type 1 Delivering AVXS 101",
+         "url": "https://clinicaltrials.gov/study/NCT03421977"
+        },
+        {
+         "id": "nct04174157",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "A Prospective, Long-Term Registry of Patients With a Diagnosis of Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT04174157"
+        },
+        {
+         "id": "nct05769465",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "MAP THE SMA: a Machine-learning Based Algorithm to Predict THErapeutic Response in Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05769465"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL3301611",
+        "name": "AMIFAMPRIDINE PHOSPHATE",
+        "parentMolecule": {
+         "id": "CHEMBL354077",
+         "name": "AMIFAMPRIDINE"
+        }
+       },
+       "clinicalReports": [
+        {
+         "id": "nct03781479",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Randomized, Placebo-Controlled, Crossover Study to Evaluate the Safety and Efficacy of Amifampridine Phosphate in Ambulatory Patients With Spinal Muscular Atrophy (SMA) Type 3",
+         "url": "https://clinicaltrials.gov/study/NCT03781479"
+        },
+        {
+         "id": "nct03819660",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Long Term Safety Study of Amifampridine Phosphate in Ambulatory Patients With Spinal Muscular Atrophy (SMA) Type 3",
+         "url": "https://clinicaltrials.gov/study/NCT03819660"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL118",
+        "name": "CELECOXIB",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct02876094",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Pilot, Open-Label, Dose Response Study Investigating the Effect of Low-Dose Celecoxib on SMN2 in Patients With Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT02876094"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL1201621",
+        "name": "SOMATROPIN",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct00533221",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Can Treatment With Human Growth Hormone Increase Strength in Spinal Muscular Atrophy Type II and III?",
+         "url": "https://clinicaltrials.gov/study/NCT00533221"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "UNKNOWN",
+       "drug": {
+        "id": "CHEMBL4297914",
+        "name": "TALDEFGROBEP ALFA",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "taldefgrobep alfa",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Taldefgrobep Alfa and 3 diseases",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/TALDEFGROBEP%20ALFA/relevant/1/"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_1_2",
+       "drug": {
+        "id": "CHEMBL1149",
+        "name": "LEVOCARNITINE",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct00661453",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "Phase I/II Trial of Valproic Acid and Carnitine in Infants With Spinal Muscular Atrophy Type I (CARNI-VAL Type I)",
+         "url": "https://clinicaltrials.gov/study/NCT00661453"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2_3",
+       "drug": {
+        "id": "CHEMBL744",
+        "name": "RILUZOLE",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct00774423",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2_3",
+         "year": null,
+         "title": "Multicentric, Randomized, Double-blind Study Versus Placebo, With Two Parallel Groups Treated to Evaluate the Efficacy and the Tolerance of Riluzole in Children and Young Adults (6 to 20 Years of Age) With SMA. (Type II and Type III)",
+         "url": "https://clinicaltrials.gov/study/NCT00774423"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "APPROVAL",
+       "drug": {
+        "id": "CHEMBL3301572",
+        "name": "NUSINERSEN",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "d05mzi/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Nusinersen and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D05MZI"
+        },
+        {
+         "id": "emea/h/c/004312",
+         "source": "EMA Human Drugs",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": 2017,
+         "title": "Report in Approval stage for Nusinersen and Muscular Atrophy, Spinal",
+         "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/spinraza"
+        },
+        {
+         "id": "nct04488133",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_4",
+         "year": null,
+         "title": "A Phase 4 Study of Nusinersen (BIIB058) Among Patients With Spinal Muscular Atrophy Who Received Onasemnogene Abeparvovec",
+         "url": "https://clinicaltrials.gov/study/NCT04488133"
+        },
+        {
+         "id": "nct04089566",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Escalating Dose and Randomized, Controlled Study of Nusinersen (BIIB058) in Participants With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT04089566"
+        },
+        {
+         "id": "nct04729907",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "A Long-Term Extension Study of Nusinersen (BIIB058) Administered at Higher Doses in Participants With Spinal Muscular Atrophy Who Previously Participated in an Investigational Study With Nusinersen",
+         "url": "https://clinicaltrials.gov/study/NCT04729907"
+        },
+        {
+         "id": "nct07047144",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Phase 2, Double-Blind Study to Evaluate the Pharmacokinetics, Pharmacodynamics, Efficacy, and Safety of Apitegromab in Subjects <2 Years Old With Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT07047144"
+        },
+        {
+         "id": "nct06555419",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1",
+         "year": null,
+         "title": "An Open Label Study to Assess the Pharmacokinetic Profile of Nusinersen (BIIB058) Administered Via the ThecaFlex DRx\u2122 System (PIERRE-PK)",
+         "url": "https://clinicaltrials.gov/study/NCT06555419"
+        },
+        {
+         "id": "nct04050852",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "EARLY_PHASE_1",
+         "year": null,
+         "title": "Pulmonary Function Test Changes and Respiratory Muscle Strength Trends in Spinal Muscular Atrophy Patients Receiving Nusinersen Treatments",
+         "url": "https://clinicaltrials.gov/study/NCT04050852"
+        },
+        {
+         "id": "nct02865109",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Expanded Access Program (EAP) to Provide Nusinersen to Patients With Infantile-onset Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT02865109"
+        },
+        {
+         "id": "nct03709784",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "A Prospective, Multi-center, Observational Study of the Safety, Tolerability and Effectiveness of SPINRAZA\u00ae (Nusinersen) in Adult Patients With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT03709784"
+        },
+        {
+         "id": "nct03878030",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Effect of Nusinersen on Motor Function in Adult Patients With Spinal Muscular Atrophy Types 2 and 3",
+         "url": "https://clinicaltrials.gov/study/NCT03878030"
+        },
+        {
+         "id": "nct04404764",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Characterization of the Clinical-epidemiological Profile of Patients With Spinal Muscular Atrophy (SMA) 5q Types II and III in Follow-up in the Brazilian Unified Public Health System: A Cross-sectional Observational Study (Registry)",
+         "url": "https://clinicaltrials.gov/study/NCT04404764"
+        },
+        {
+         "id": "nct04419233",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "A Multicenter, Non-Interventional, Postmarketing Surveillance Study of Nusinersen Sodium Injection When Used in Routine Medical Practice in China",
+         "url": "https://clinicaltrials.gov/study/NCT04419233"
+        },
+        {
+         "id": "nct04576494",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Study of the Functional Effects of Nusinersen in 5q-spinal Muscular Amyotrophy Adults (SMA Type 2 or 3 Forms): a Multicenter Single-case Experimental Design in Multiple Baselines Across Subjects, Randomized, Single-blinded Evaluation",
+         "url": "https://clinicaltrials.gov/study/NCT04576494"
+        },
+        {
+         "id": "nct04587492",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Metabolome of Children With Spinal Muscular Atrophy Treated With Nusinersen",
+         "url": "https://clinicaltrials.gov/study/NCT04587492"
+        },
+        {
+         "id": "nct04591678",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Characterizing Longitudinal Outcomes in Adults With SMA Treated With Nusinersen",
+         "url": "https://clinicaltrials.gov/study/NCT04591678"
+        },
+        {
+         "id": "nct04825119",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Hyperkinetic Movements in Patients With Motor Neuron Disease and in Patients With Spinal Muscular Atrophy and Their Response to Treatment With Nusinersen",
+         "url": "https://clinicaltrials.gov/study/NCT04825119"
+        },
+        {
+         "id": "nct05187260",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Antisense Oligonucleotide Therapy in Spinal Muscular Atrophy: An Observational Study in China",
+         "url": "https://clinicaltrials.gov/study/NCT05187260"
+        },
+        {
+         "id": "nct05769465",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "MAP THE SMA: a Machine-learning Based Algorithm to Predict THErapeutic Response in Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05769465"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "APPROVAL",
+       "drug": {
+        "id": "CHEMBL4297528",
+        "name": "RISDIPLAM",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "d0n5mh/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Risdiplam and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D0N5MH"
+        },
+        {
+         "id": "emea/h/c/005145",
+         "source": "EMA Human Drugs",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": 2021,
+         "title": "Report in Approval stage for Risdiplam and Muscular Atrophy, Spinal",
+         "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/evrysdi"
+        },
+        {
+         "id": "label/2020/213535s000lbl.pdf",
+         "source": "FDA",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Risdiplam and Spinal Muscular Atrophy",
+         "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/213535s000lbl.pdf"
+        },
+        {
+         "id": "nct04256265",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "An Expanded Access Program for Risdiplam in Patients With Type 1 or Type 2 Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT04256265"
+        },
+        {
+         "id": "nct05861986",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_4",
+         "year": null,
+         "title": "A Phase IV Open-Label Study Evaluating the Effectiveness and Safety of Risdiplam Administered as an Early Intervention in Pediatric Patients With Spinal Muscular Atrophy After Gene Therapy",
+         "url": "https://clinicaltrials.gov/study/NCT05861986"
+        },
+        {
+         "id": "nct05861999",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_4",
+         "year": null,
+         "title": "A Phase IV Open-Label Study Evaluating the Effectiveness and Safety of Risdiplam Administered in Pediatric Patients With Spinal Muscular Atrophy Who Experienced a Plateau or Decline in Function After Gene Therapy",
+         "url": "https://clinicaltrials.gov/study/NCT05861999"
+        },
+        {
+         "id": "nct05115110",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2_3",
+         "year": null,
+         "title": "A Two-Part, Seamless, Multi-Center, Randomized, Placebo-Controlled, Double-Blind Study to Investigate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics and Efficacy of RO7204239 in Combination With Risdiplam (RO7034067) in Patients With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05115110"
+        },
+        {
+         "id": "nct02908685",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Two Part Seamless, Multi-Center Randomized, Placebo-Controlled, Double-Blind Study to Investigate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics and Efficacy of Risdiplam (RO7034067) in Type 2 and 3 Spinal Muscular Atrophy Patients",
+         "url": "https://clinicaltrials.gov/study/NCT02908685"
+        },
+        {
+         "id": "nct02913482",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Two Part Seamless, Open-label, Multicenter Study to Investigate the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics and Efficacy of Risdiplam (RO7034067) in Infants With Type 1 Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT02913482"
+        },
+        {
+         "id": "nct03779334",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "An Open-Label Study of Risdiplam in Infants With Genetically Diagnosed and Presymptomatic Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT03779334"
+        },
+        {
+         "id": "nct05808764",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Phase II, Open-label Study to Investigate the Pharmacokinetics and Safety of Risdiplam in Infants With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05808764"
+        },
+        {
+         "id": "nct07047144",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Phase 2, Double-Blind Study to Evaluate the Pharmacokinetics, Pharmacodynamics, Efficacy, and Safety of Apitegromab in Subjects <2 Years Old With Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT07047144"
+        },
+        {
+         "id": "nct05219487",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Investigating NMJ Defects in SMA Following Central and Peripheral SMN Restoration",
+         "url": "https://clinicaltrials.gov/study/NCT05219487"
+        },
+        {
+         "id": "nct05769465",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "MAP THE SMA: a Machine-learning Based Algorithm to Predict THErapeutic Response in Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT05769465"
+        },
+        {
+         "id": "risdiplam",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Risdiplam and Spinal Muscular Atrophy",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/RISDIPLAM/relevant/1/"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_3",
+       "drug": {
+        "id": "CHEMBL6068460",
+        "name": "SALANERSEN",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct07444450",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "A Phase 3, Randomized, Double-Blinded Study to Evaluate the Safety and Efficacy of Salanersen (BIIB115) After Onasemnogene Abeparvovec Treatment in Infants With Genetically Diagnosed Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT07444450"
+        },
+        {
+         "id": "nct07444476",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "An Open-Label, Phase 3 Study to Evaluate the Efficacy and Safety of Salanersen (BIIB115) in Participants Aged 15-60 Years With Spinal Muscular Atrophy Who Are Either Treatment-Na\u00efve or Have Previously Been Treated With Risdiplam",
+         "url": "https://clinicaltrials.gov/study/NCT07444476"
+        },
+        {
+         "id": "duwb31/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1",
+         "year": null,
+         "title": "Report in Phase 1 stage for Biib115 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/DUWB31"
+        },
+        {
+         "id": "nct05575011",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1",
+         "year": null,
+         "title": "A Randomized, Blinded, Placebo-Controlled, Phase 1 Single Ascending Dose Study in Healthy Adult Male Volunteers and an Open-Label Multiple Ascending Dose Study With Long-Term Extension in Pediatric SMA Participants Previously Treated With Onasemnogene Abeparvovec (Zolgensma\u2122) to Evaluate the Safety, Tolerability, and Pharmacokinetics of BIIB115",
+         "url": "https://clinicaltrials.gov/study/NCT05575011"
+        },
+        {
+         "id": "salanersen",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Salanersen and Spinal Muscular Atrophy",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/SALANERSEN/relevant/1/"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_3",
+       "drug": {
+        "id": "CHEMBL4290141",
+        "name": "BRANAPLAM",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "d0ce6c/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Report in Phase 3 stage for Lmi070 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D0CE6C"
+        },
+        {
+         "id": "branaplam",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Branaplam and 2 diseases",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/BRANAPLAM/relevant/1/"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_3",
+       "drug": {
+        "id": "CHEMBL4594326",
+        "name": "APITEGROMAB",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct05156320",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "Phase 3, Double-Blind, Placebo-Controlled Trial to Evaluate the Efficacy and Safety of Apitegromab (SRK-015) in Patients With Later-Onset Spinal Muscular Atrophy Receiving Background Nusinersen or Risdiplam Therapy",
+         "url": "https://clinicaltrials.gov/study/NCT05156320"
+        },
+        {
+         "id": "nct05626855",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_3",
+         "year": null,
+         "title": "An Open-Label, Multicenter, Extension Trial to Evaluate the Long-Term Safety and Efficacy of Apitegromab in Patients With Type 2 and Type 3 Spinal Muscular Atrophy Who Completed Previous Investigational Trials of Apitegromab",
+         "url": "https://clinicaltrials.gov/study/NCT05626855"
+        },
+        {
+         "id": "dn5j9r/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Report in Phase 2 stage for Srk-015 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/DN5J9R"
+        },
+        {
+         "id": "nct03921528",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Phase 2 Active Treatment Study to Evaluate the Efficacy and Safety of SRK-015 in Patients With Later-Onset Spinal Muscular Atrophy (TOPAZ)",
+         "url": "https://clinicaltrials.gov/study/NCT03921528"
+        },
+        {
+         "id": "nct07047144",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "A Phase 2, Double-Blind Study to Evaluate the Pharmacokinetics, Pharmacodynamics, Efficacy, and Safety of Apitegromab in Subjects <2 Years Old With Spinal Muscular Atrophy (SMA)",
+         "url": "https://clinicaltrials.gov/study/NCT07047144"
+        },
+        {
+         "id": "apitegromab",
+         "source": "USAN",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Report in Unknown stage for Apitegromab and Spinal Muscular Atrophy",
+         "url": "https://searchusan.ama-assn.org/finder/usan/search/APITEGROMAB/relevant/1/"
+        },
+        {
+         "id": "nct06877689",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "UNKNOWN",
+         "year": null,
+         "title": "Expanded Access Protocol of Apitegromab for Patients With Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT06877689"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL4297600",
+        "name": "RELDESEMTIV",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "d07zuz/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Report in Phase 2 stage for Ck-2127107 and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D07ZUZ"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_1_2",
+       "drug": {
+        "id": "CHEMBL467",
+        "name": "HYDROXYUREA",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct00568698",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "A Pilot Therapeutic Trial Using Hydroxyurea in Type I Spinal Muscular Atrophy Patients",
+         "url": "https://clinicaltrials.gov/study/NCT00568698"
+        },
+        {
+         "id": "nct00568802",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "A Pilot Therapeutic Trial Using Hydroxyurea in Type II and Type III Spinal Muscular Atrophy Patients",
+         "url": "https://clinicaltrials.gov/study/NCT00568802"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_2",
+       "drug": {
+        "id": "CHEMBL812",
+        "name": "PYRIDOSTIGMINE BROMIDE",
+        "parentMolecule": {
+         "id": "CHEMBL1115",
+         "name": "PYRIDOSTIGMINE"
+        }
+       },
+       "clinicalReports": [
+        {
+         "id": "nct02227823",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_2",
+         "year": null,
+         "title": "Safety and Efficacy Study of Anti-cholinesterase Therapy on the Motor Functions in Patients With Spinal Muscular Atrophy Type 3.",
+         "url": "https://clinicaltrials.gov/study/NCT02227823"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "PHASE_1_2",
+       "drug": {
+        "id": "CHEMBL109",
+        "name": "VALPROIC ACID",
+        "parentMolecule": null
+       },
+       "clinicalReports": [
+        {
+         "id": "nct00661453",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "Phase I/II Trial of Valproic Acid and Carnitine in Infants With Spinal Muscular Atrophy Type I (CARNI-VAL Type I)",
+         "url": "https://clinicaltrials.gov/study/NCT00661453"
+        }
+       ]
+      },
+      {
+       "maxClinicalStage": "APPROVAL",
+       "drug": {
+        "id": "CHEMBL1746",
+        "name": "SODIUM PHENYLBUTYRATE",
+        "parentMolecule": {
+         "id": "CHEMBL1469",
+         "name": "PHENYLBUTANOIC ACID"
+        }
+       },
+       "clinicalReports": [
+        {
+         "id": "d0p2gk/spinal muscular atrophy",
+         "source": "TTD",
+         "type": "INDICATION",
+         "clinicalStage": "APPROVAL",
+         "year": null,
+         "title": "Report in Approval stage for Sodium Phenylbutyrate and Spinal Muscular Atrophy",
+         "url": "https://ttd.idrblab.cn/data/drug/details/D0P2GK"
+        },
+        {
+         "id": "nct00439218",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "Phase I/IIa Clinical Trial of Sodium Phenylbutyrate in Pediatric Subjects With Type I Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT00439218"
+        },
+        {
+         "id": "nct00439569",
+         "source": "ClinicalTrials.gov",
+         "type": "INDICATION",
+         "clinicalStage": "PHASE_1_2",
+         "year": null,
+         "title": "Phase I/IIa Clinical Trial of Sodium Phenylbutyrate in Pediatric Subjects With Type II/III Spinal Muscular Atrophy",
+         "url": "https://clinicaltrials.gov/study/NCT00439569"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}
