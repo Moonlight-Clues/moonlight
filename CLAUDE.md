@@ -38,7 +38,8 @@ MedicineForm, Medicine, Path.
 - Being studied: approved, and in trials for the disease. Separate box
   labelled "Already being studied for this disease", with the trial
   phase and source. Never say or hint it is more likely to work.
-- Already approved for the disease: removed. It is not a clue.
+- Already approved for the disease: shown in its own tab, Approved, in
+  A to Z order. Never ranked, never explained as a clue. It is not a clue.
 
 ## Safety rules. No ticket may weaken these.
 - Every page shows: "For learning and research exploration, not medical advice.
