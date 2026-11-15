@@ -30,3 +30,4 @@ Format: date, the decision, why.
 - 2026-11-13: Only measurements are hidden for now. Other things that are not diseases, like "response to high sodium diet", stay until I have seen more examples.
 - 2026-11-13: When the words typed are on Open Targets' own "also called" list for a disease, Moonlight shows that word next to the name, like "Orthomyxoviridae infectious disease, also called: flu". Open Targets has no entry named "influenza", only this one. The word comes from Open Targets, never from Gemini.
 - 2026-11-13: A suggestion that is already the first match is not shown twice.
+- 2026-11-15: If any country took a medicine off the shelves, Moonlight leaves it out, even if other countries still sell it. It is counted with the medicines that are not approved anywhere.

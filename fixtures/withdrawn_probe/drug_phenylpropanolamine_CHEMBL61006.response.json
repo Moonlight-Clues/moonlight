@@ -1,0 +1,390 @@
+{
+  "data": {
+    "drug": {
+      "id": "CHEMBL61006",
+      "name": "PHENYLPROPANOLAMINE",
+      "drugType": "Small molecule",
+      "description": "Small molecule drug with a maximum clinical stage of Approval (across all indications), with an approval for nasal congestion and obesity disorder.",
+      "maximumClinicalStage": "APPROVAL",
+      "tradeNames": [],
+      "parentMolecule": null,
+      "childMolecules": [
+        {
+          "id": "CHEMBL1200695",
+          "name": "PHENYLPROPANOLAMINE HYDROCHLORIDE",
+          "maximumClinicalStage": "APPROVAL",
+          "drugWarnings": [
+            {
+              "id": 4070,
+              "warningType": "Withdrawn",
+              "toxicityClass": "neurotoxicity",
+              "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+              "year": 1987,
+              "description": "Increased risk of hemorrhagic stroke",
+              "efoTerm": "hemorrhagic stroke",
+              "efoId": "EFO:0020921",
+              "efoIdForWarningClass": "EFO:0011057",
+              "chemblIds": [
+                "CHEMBL1201535",
+                "CHEMBL61006",
+                "CHEMBL1200695"
+              ],
+              "references": [
+                {
+                  "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "CHEMBL1201535",
+          "name": "PHENYLPROPANOLAMINE POLISTIREX",
+          "maximumClinicalStage": "APPROVAL",
+          "drugWarnings": [
+            {
+              "id": 4070,
+              "warningType": "Withdrawn",
+              "toxicityClass": "neurotoxicity",
+              "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+              "year": 1987,
+              "description": "Increased risk of hemorrhagic stroke",
+              "efoTerm": "hemorrhagic stroke",
+              "efoId": "EFO:0020921",
+              "efoIdForWarningClass": "EFO:0011057",
+              "chemblIds": [
+                "CHEMBL1201535",
+                "CHEMBL61006",
+                "CHEMBL1200695"
+              ],
+              "references": [
+                {
+                  "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "drugWarnings": [
+        {
+          "id": 3975,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "risk of serious haemorrhagic strokes",
+          "efoTerm": "hemorrhagic stroke",
+          "efoId": "EFO:0020921",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4070,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Increased risk of hemorrhagic stroke",
+          "efoTerm": "hemorrhagic stroke",
+          "efoId": "EFO:0020921",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL1201535",
+            "CHEMBL61006",
+            "CHEMBL1200695"
+          ],
+          "references": [
+            {
+              "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+              "source": "USGPO",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4204,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Haemorrhagic stroke. Severe high blood pressure.",
+          "efoTerm": "hemorrhagic stroke",
+          "efoId": "EFO:0020921",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "alert/phenylpropanolamine",
+              "source": "TGA",
+              "url": "https://www.tga.gov.au/alert/phenylpropanolamine"
+            }
+          ]
+        },
+        {
+          "id": 4205,
+          "warningType": "Withdrawn",
+          "toxicityClass": "vascular toxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Haemorrhagic stroke. Severe high blood pressure.",
+          "efoTerm": "hypertension",
+          "efoId": "EFO:0000537",
+          "efoIdForWarningClass": "EFO:0011062",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "alert/phenylpropanolamine",
+              "source": "TGA",
+              "url": "https://www.tga.gov.au/alert/phenylpropanolamine"
+            }
+          ]
+        },
+        {
+          "id": 4347,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Associated with strokes.",
+          "efoTerm": "stroke",
+          "efoId": "EFO:0000712",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "WHO/PSM/QSM/2005.2",
+              "source": "WHO",
+              "url": "https://apps.who.int/iris/handle/10665/66869"
+            }
+          ]
+        },
+        {
+          "id": 4492,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Associated with strokes.",
+          "efoTerm": "stroke",
+          "efoId": "EFO:0000712",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "WHO/PSM/QSM/2005.2",
+              "source": "WHO",
+              "url": "https://apps.who.int/iris/handle/10665/66869"
+            }
+          ]
+        },
+        {
+          "id": 4630,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Risk of hemorrhagic stroke",
+          "efoTerm": "hemorrhagic stroke",
+          "efoId": "EFO:0020921",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "978-92-4-001477-0",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/9789240014770"
+            }
+          ]
+        },
+        {
+          "id": 4682,
+          "warningType": "Withdrawn",
+          "toxicityClass": "vascular toxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "hypertensive episodes in susceptible individuals, particularly when taken together with coffee, alcohol, antihistamines or neuroleptics",
+          "efoTerm": "hypertension",
+          "efoId": "EFO:0000537",
+          "efoIdForWarningClass": "EFO:0011062",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4789,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "Risk of haemorrhagic stroke",
+          "efoTerm": "hemorrhagic stroke",
+          "efoId": "EFO:0020921",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "WHO-EMP-QSM-2008.3",
+              "source": "WHO",
+              "url": "https://apps.who.int/iris/bitstream/handle/10665/336530/WHO-EMP-QSM-2008.3-eng.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4828,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "potential of these products to induce several adverse reactions including cerebral haemorrhage",
+          "efoTerm": "brain hemorrhagic, abnormal",
+          "efoId": "ZP:0000527",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4858,
+          "warningType": "Withdrawn",
+          "toxicityClass": "vascular toxicity",
+          "country": "Australia; Bhutan; Timor-Leste; South Korea; United States; Canada; Singapore; Malaysia; Brazil; Germany",
+          "year": 1987,
+          "description": "hypertensive episodes in susceptible individuals, particularly when taken together with coffee, alcohol, antihistamines or neuroleptics",
+          "efoTerm": "drug interaction",
+          "efoId": "EFO:0009878",
+          "efoIdForWarningClass": "EFO:0011062",
+          "chemblIds": [
+            "CHEMBL61006"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        }
+      ],
+      "mechanismsOfAction": {
+        "rows": [
+          {
+            "actionType": "AGONIST",
+            "mechanismOfAction": "Alpha-1a adrenergic receptor agonist",
+            "targets": [
+              {
+                "id": "ENSG00000120907",
+                "approvedSymbol": "ADRA1A"
+              }
+            ]
+          },
+          {
+            "actionType": "RELEASING AGENT",
+            "mechanismOfAction": "Norepinephrine transporter releasing agent",
+            "targets": [
+              {
+                "id": "ENSG00000103546",
+                "approvedSymbol": "SLC6A2"
+              }
+            ]
+          }
+        ]
+      },
+      "indications": {
+        "count": 2,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "HP_0001742",
+              "name": "Nasal congestion"
+            },
+            "clinicalReports": [
+              {
+                "id": "r01ba01",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=R01BA01",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "r01ba51",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=R01BA51",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "MONDO_0011122",
+              "name": "obesity disorder"
+            },
+            "clinicalReports": [
+              {
+                "id": "d09jxm/obesity",
+                "type": "INDICATION",
+                "clinicalStage": "WITHDRAWAL",
+                "source": "TTD",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D09JXM",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

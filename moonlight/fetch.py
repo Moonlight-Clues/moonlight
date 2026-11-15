@@ -25,8 +25,12 @@ docs/schema-notes.md, not from memory. "meta", "dataVersion", "year",
 "month" and "iteration" were read from the live API on 2026-11-12.
 "category", "object", "synonyms", "relation" and "terms" in the search were
 read from the live API on 2026-11-13 and are saved in fixtures/search/.
+"drugWarnings", "warningType" and "childMolecules" were read from the live
+API on 2026-11-15 and are saved in fixtures/withdrawn_probe/ and
+fixtures/withdrawn/.
 """
 
+import logging
 import threading
 import time
 from dataclasses import dataclass
@@ -90,6 +94,14 @@ MEASUREMENT = "measurement"
 # The group of "also called" names that mean exactly the same disease.
 EXACT_SYNONYM = "hasExactSynonym"
 
+# Kashish's decision, 2026-11-15. If any country took a medicine off the
+# shelves, Moonlight leaves it out. Open Targets keeps this in a list called
+# "drugWarnings". Each warning has a "warningType". Only this type counts.
+# The other type seen, "Black Box Warning", is not a withdrawal.
+WITHDRAWN = "withdrawn"  # compared in small letters
+
+_log = logging.getLogger(__name__)
+
 DISEASE_QUERY = """
 query DiseaseRecord($diseaseId: String!) {
   disease(efoId: $diseaseId) { id name description }
@@ -122,7 +134,9 @@ query TargetDrugs($targetId: String!) {
           id
           name
           maximumClinicalStage
-          parentMolecule { id name }
+          drugWarnings { warningType }
+          parentMolecule { id name drugWarnings { warningType } }
+          childMolecules { id name drugWarnings { warningType } }
           mechanismsOfAction {
             rows {
               actionType
@@ -390,12 +404,39 @@ def _same_machine_ids(drug: dict, target_id: str) -> List[str]:
     return found
 
 
+def _was_withdrawn(drug: dict) -> Optional[bool]:
+    """Was this form, the medicine it is a form of, or one of its own
+    tablet forms withdrawn in any country?
+
+    True if any of them has a warning of the type "Withdrawn". False if
+    Open Targets sent the warnings for all of them and none is a withdrawal.
+    None if a warnings list is missing and no withdrawal was found: then
+    it is not known, and nothing is guessed.
+    """
+    told_everything = True
+    if drug.get("childMolecules") is None:
+        told_everything = False  # no word about its tablet forms
+    molecules = [drug, drug.get("parentMolecule")] + list(drug.get("childMolecules") or [])
+    for molecule in molecules:
+        if molecule is None:
+            continue  # it is not a form of another medicine
+        warnings = molecule.get("drugWarnings")
+        if warnings is None:
+            told_everything = False
+            continue
+        for warning in warnings:
+            if (warning.get("warningType") or "").strip().lower() == WITHDRAWN:
+                return True
+    return False if told_everything else None
+
+
 def fetch_paths(disease: Disease, target: Target) -> List[Path]:
     """One Path per medicine family acting on the target.
 
     A form with a parent joins its parent's family, and the family is named
     after the parent. Families come out in the order Open Targets first
-    mentions them.
+    mentions them. Each form remembers whether it was withdrawn in any
+    country. If Open Targets did not say, that is written in the log.
     """
     data = _ask(TARGET_DRUGS_QUERY, {"targetId": target.id})
     if data["target"] is None:
@@ -423,6 +464,7 @@ def fetch_paths(disease: Disease, target: Target) -> List[Path]:
             best_stage=drug["maximumClinicalStage"],
             disease_stage=_disease_stage(drug, disease.id),
             parent_id=parent["id"] if parent else None,
+            withdrawn=_was_withdrawn(drug),
         )
         if parent:
             family["forms"].append(form)
@@ -440,7 +482,7 @@ def fetch_paths(disease: Disease, target: Target) -> List[Path]:
             if url and url not in family["sources"]:
                 family["sources"].append(url)
 
-    return [
+    paths = [
         Path(
             medicine=Medicine(name=family["name"], forms=family["forms"]),
             target=target,
@@ -452,3 +494,12 @@ def fetch_paths(disease: Disease, target: Target) -> List[Path]:
         )
         for family in families.values()
     ]
+    not_known = sum(1 for path in paths if path.medicine.withdrawn is None)
+    if not_known:
+        # Said out loud, never guessed. The medicines are counted, not named.
+        _log.warning(
+            "Open Targets did not say whether %d of the %d medicines acting on %s "
+            "were withdrawn. Moonlight could not check them for withdrawal.",
+            not_known, len(paths), target.symbol,
+        )
+    return paths

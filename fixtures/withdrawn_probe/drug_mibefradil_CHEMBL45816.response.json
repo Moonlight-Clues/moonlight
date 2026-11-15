@@ -1,0 +1,401 @@
+{
+  "data": {
+    "drug": {
+      "id": "CHEMBL45816",
+      "name": "MIBEFRADIL",
+      "drugType": "Small molecule",
+      "description": "Small molecule drug with a maximum clinical stage of Approval (across all indications), with an approval for cardiovascular disorder and ovarian cancer and 1 investigational indication.",
+      "maximumClinicalStage": "APPROVAL",
+      "tradeNames": [
+        {
+          "label": "Posicor 100",
+          "source": "ChEMBL"
+        },
+        {
+          "label": "Posicor 50",
+          "source": "ChEMBL"
+        }
+      ],
+      "parentMolecule": null,
+      "childMolecules": [
+        {
+          "id": "CHEMBL1534525",
+          "name": "MIBEFRADIL DIHYDROCHLORIDE",
+          "maximumClinicalStage": "APPROVAL",
+          "drugWarnings": [
+            {
+              "id": 3977,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "Worldwide",
+              "year": 1998,
+              "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+              "efoTerm": "cardiac arrhythmia",
+              "efoId": "EFO:0004269",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL45816",
+                "CHEMBL1534525"
+              ],
+              "references": [
+                {
+                  "id": "CL12.pdf",
+                  "source": "WHO",
+                  "url": "https://www.un.org/esa/coordination/CL12.pdf"
+                }
+              ]
+            },
+            {
+              "id": 4326,
+              "warningType": "Withdrawn",
+              "toxicityClass": null,
+              "country": "Worldwide",
+              "year": 1998,
+              "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+              "efoTerm": "drug interaction",
+              "efoId": "EFO:0009878",
+              "efoIdForWarningClass": null,
+              "chemblIds": [
+                "CHEMBL1534525",
+                "CHEMBL45816"
+              ],
+              "references": [
+                {
+                  "id": "CL12.pdf",
+                  "source": "WHO",
+                  "url": "https://www.un.org/esa/coordination/CL12.pdf"
+                }
+              ]
+            },
+            {
+              "id": 4483,
+              "warningType": "Withdrawn",
+              "toxicityClass": null,
+              "country": "Worldwide",
+              "year": 1998,
+              "description": "associated with potentially harmful interactions with other drugs. Mibefradil dihydrochloride reduced the activity of certain liver enzymes that are important in helping the body eliminate many other drugs. Inhibiting these enzymes can cause some of these drugs to accumulate to dangerous levels in the body",
+              "efoTerm": "drug interaction",
+              "efoId": "EFO:0009878",
+              "efoIdForWarningClass": null,
+              "chemblIds": [
+                "CHEMBL1534525",
+                "CHEMBL45816"
+              ],
+              "references": [
+                {
+                  "id": "FR-1998-10-08/html/98-26923.htm",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-1998-10-08/html/98-26923.htm"
+                }
+              ]
+            },
+            {
+              "id": 4565,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "Worldwide",
+              "year": 1998,
+              "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+              "efoTerm": "torsades de pointes",
+              "efoId": "EFO:0005307",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL45816",
+                "CHEMBL1534525"
+              ],
+              "references": [
+                {
+                  "id": "CL12.pdf",
+                  "source": "WHO",
+                  "url": "https://www.un.org/esa/coordination/CL12.pdf"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "drugWarnings": [
+        {
+          "id": 3977,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+          "efoTerm": "cardiac arrhythmia",
+          "efoId": "EFO:0004269",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL45816",
+            "CHEMBL1534525"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4138,
+          "warningType": "Withdrawn",
+          "toxicityClass": "musculoskeletal toxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "Safety concerns in relation to potential for serious drug interactions.; Reports of life-threatening interactions of the drug: extremely low heart rates and a risk of muscle injury; Following reports of serious adverse effects caused by the interaction with other medicines",
+          "efoTerm": "Musculoskeletal toxicity",
+          "efoId": "EFO:0011055",
+          "efoIdForWarningClass": "EFO:0011055",
+          "chemblIds": [
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "EDM-QSM-2001.3",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/EDM-QSM-2001.3"
+            }
+          ]
+        },
+        {
+          "id": 4326,
+          "warningType": "Withdrawn",
+          "toxicityClass": null,
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+          "efoTerm": "drug interaction",
+          "efoId": "EFO:0009878",
+          "efoIdForWarningClass": null,
+          "chemblIds": [
+            "CHEMBL1534525",
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4482,
+          "warningType": "Withdrawn",
+          "toxicityClass": null,
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "Safety concerns in relation to potential for serious drug interactions.; Reports of life-threatening interactions of the drug: extremely low heart rates and a risk of muscle injury; Following reports of serious adverse effects caused by the interaction with other medicines",
+          "efoTerm": "drug interaction",
+          "efoId": "EFO:0009878",
+          "efoIdForWarningClass": null,
+          "chemblIds": [
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "EDM-QSM-2001.3",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/EDM-QSM-2001.3"
+            }
+          ]
+        },
+        {
+          "id": 4483,
+          "warningType": "Withdrawn",
+          "toxicityClass": null,
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "associated with potentially harmful interactions with other drugs. Mibefradil dihydrochloride reduced the activity of certain liver enzymes that are important in helping the body eliminate many other drugs. Inhibiting these enzymes can cause some of these drugs to accumulate to dangerous levels in the body",
+          "efoTerm": "drug interaction",
+          "efoId": "EFO:0009878",
+          "efoIdForWarningClass": null,
+          "chemblIds": [
+            "CHEMBL1534525",
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "FR-1998-10-08/html/98-26923.htm",
+              "source": "USGPO",
+              "url": "https://www.govinfo.gov/content/pkg/FR-1998-10-08/html/98-26923.htm"
+            }
+          ]
+        },
+        {
+          "id": 4533,
+          "warningType": "Withdrawn",
+          "toxicityClass": "musculoskeletal toxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "reports of life- threatening interactions of the drug: extremely low heart rates and a risk of muscle injury",
+          "efoTerm": "Musculoskeletal toxicity",
+          "efoId": "EFO:0011055",
+          "efoIdForWarningClass": "EFO:0011055",
+          "chemblIds": [
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4565,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "potential to induce cardiac arrhythmias (including torsades de pointes) especially when taken concomitantly with other medications",
+          "efoTerm": "torsades de pointes",
+          "efoId": "EFO:0005307",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL45816",
+            "CHEMBL1534525"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4567,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "Safety concerns in relation to potential for serious drug interactions.; Reports of life-threatening interactions of the drug: extremely low heart rates and a risk of muscle injury; Following reports of serious adverse effects caused by the interaction with other medicines",
+          "efoTerm": "Bradycardia",
+          "efoId": "HP:0001662",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "EDM-QSM-2001.3",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/EDM-QSM-2001.3"
+            }
+          ]
+        },
+        {
+          "id": 4845,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1998,
+          "description": "reports of life- threatening interactions of the drug: extremely low heart rates and a risk of muscle injury",
+          "efoTerm": "Bradycardia",
+          "efoId": "HP:0001662",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL45816"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        }
+      ],
+      "mechanismsOfAction": {
+        "rows": [
+          {
+            "actionType": "BLOCKER",
+            "mechanismOfAction": "Voltage-gated T-type calcium channel blocker",
+            "targets": [
+              {
+                "id": "ENSG00000196557",
+                "approvedSymbol": "CACNA1H"
+              },
+              {
+                "id": "ENSG00000006283",
+                "approvedSymbol": "CACNA1G"
+              },
+              {
+                "id": "ENSG00000100346",
+                "approvedSymbol": "CACNA1I"
+              }
+            ]
+          }
+        ]
+      },
+      "indications": {
+        "count": 3,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "MONDO_0008170",
+              "name": "ovarian cancer"
+            },
+            "clinicalReports": [
+              {
+                "id": "d0w8xt/ovarian cancer",
+                "type": "INDICATION",
+                "clinicalStage": "WITHDRAWAL",
+                "source": "TTD",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0W8XT",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "MONDO_0004995",
+              "name": "cardiovascular disorder"
+            },
+            "clinicalReports": [
+              {
+                "id": "c08cx01",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=C08CX01",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "disease": {
+              "id": "MONDO_0018177",
+              "name": "glioblastoma"
+            },
+            "clinicalReports": [
+              {
+                "id": "d0w8xt/glioblastoma multiforme",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_1",
+                "source": "TTD",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0W8XT",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
