@@ -1,0 +1,864 @@
+{
+  "data": {
+    "drug": {
+      "id": "CHEMBL1419",
+      "name": "SIBUTRAMINE",
+      "drugType": "Small molecule",
+      "description": "Small molecule drug with a maximum clinical stage of Approval (across all indications), with 6 approved and 2 investigational indications.",
+      "maximumClinicalStage": "APPROVAL",
+      "tradeNames": [
+        {
+          "label": "Reductil",
+          "source": "ChEMBL"
+        }
+      ],
+      "parentMolecule": null,
+      "childMolecules": [
+        {
+          "id": "CHEMBL3989830",
+          "name": "SIBUTRAMINE HYDROCHLORIDE",
+          "maximumClinicalStage": "APPROVAL",
+          "drugWarnings": [
+            {
+              "id": 3941,
+              "warningType": "Withdrawn",
+              "toxicityClass": "neurotoxicity",
+              "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+              "year": 2010,
+              "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+              "efoTerm": "stroke",
+              "efoId": "EFO:0000712",
+              "efoIdForWarningClass": "EFO:0011057",
+              "chemblIds": [
+                "CHEMBL3989830",
+                "CHEMBL1419"
+              ],
+              "references": [
+                {
+                  "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+                  "source": "FDA",
+                  "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+                },
+                {
+                  "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+                  "source": "Health Canada",
+                  "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+                },
+                {
+                  "id": "21574210",
+                  "source": "PubMed",
+                  "url": "http://europepmc.org/abstract/MED/21574210"
+                },
+                {
+                  "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+                },
+                {
+                  "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+                  "source": "EMA",
+                  "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+                },
+                {
+                  "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+                  "source": "Other",
+                  "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+                },
+                {
+                  "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+                  "source": "Other",
+                  "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+                },
+                {
+                  "id": "2010/SibutramineOct2010.asp",
+                  "source": "MEDSAFE",
+                  "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+                }
+              ]
+            },
+            {
+              "id": 3943,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+              "year": 2010,
+              "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+              "efoTerm": "cardiac arrest",
+              "efoId": "EFO:0009492",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL3989830",
+                "CHEMBL1419"
+              ],
+              "references": [
+                {
+                  "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+                  "source": "Other",
+                  "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+                },
+                {
+                  "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+                  "source": "EMA",
+                  "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+                },
+                {
+                  "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+                  "source": "Health Canada",
+                  "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+                },
+                {
+                  "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+                  "source": "Other",
+                  "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+                },
+                {
+                  "id": "21574210",
+                  "source": "PubMed",
+                  "url": "http://europepmc.org/abstract/MED/21574210"
+                },
+                {
+                  "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+                },
+                {
+                  "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+                  "source": "FDA",
+                  "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+                },
+                {
+                  "id": "2010/SibutramineOct2010.asp",
+                  "source": "MEDSAFE",
+                  "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+                }
+              ]
+            },
+            {
+              "id": 4076,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+              "year": 2010,
+              "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+              "efoTerm": "myocardial infarction",
+              "efoId": "EFO:0000612",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL3989830",
+                "CHEMBL1419"
+              ],
+              "references": [
+                {
+                  "id": "2010/SibutramineOct2010.asp",
+                  "source": "MEDSAFE",
+                  "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+                },
+                {
+                  "id": "21574210",
+                  "source": "PubMed",
+                  "url": "http://europepmc.org/abstract/MED/21574210"
+                },
+                {
+                  "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+                  "source": "Other",
+                  "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+                },
+                {
+                  "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+                  "source": "EMA",
+                  "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+                },
+                {
+                  "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+                  "source": "Other",
+                  "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+                },
+                {
+                  "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+                  "source": "FDA",
+                  "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+                },
+                {
+                  "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+                  "source": "Health Canada",
+                  "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+                },
+                {
+                  "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+                  "source": "USGPO",
+                  "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "drugWarnings": [
+        {
+          "id": 3941,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+          "efoTerm": "stroke",
+          "efoId": "EFO:0000712",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL3989830",
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+              "source": "FDA",
+              "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+            },
+            {
+              "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+              "source": "Health Canada",
+              "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+            },
+            {
+              "id": "21574210",
+              "source": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/21574210"
+            },
+            {
+              "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+              "source": "USGPO",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+            },
+            {
+              "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+              "source": "EMA",
+              "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+            },
+            {
+              "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+              "source": "Other",
+              "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+            },
+            {
+              "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+              "source": "Other",
+              "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+            },
+            {
+              "id": "2010/SibutramineOct2010.asp",
+              "source": "MEDSAFE",
+              "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+            }
+          ]
+        },
+        {
+          "id": 3943,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+          "efoTerm": "cardiac arrest",
+          "efoId": "EFO:0009492",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL3989830",
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+              "source": "Other",
+              "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+            },
+            {
+              "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+              "source": "EMA",
+              "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+            },
+            {
+              "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+              "source": "Health Canada",
+              "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+            },
+            {
+              "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+              "source": "Other",
+              "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+            },
+            {
+              "id": "21574210",
+              "source": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/21574210"
+            },
+            {
+              "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+              "source": "USGPO",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+            },
+            {
+              "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+              "source": "FDA",
+              "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+            },
+            {
+              "id": "2010/SibutramineOct2010.asp",
+              "source": "MEDSAFE",
+              "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+            }
+          ]
+        },
+        {
+          "id": 4076,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "cardiovascular events, such as heart attack, stroke and cardiac arrest",
+          "efoTerm": "myocardial infarction",
+          "efoId": "EFO:0000612",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL3989830",
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "2010/SibutramineOct2010.asp",
+              "source": "MEDSAFE",
+              "url": "http://www.medsafe.govt.nz/hot/media/2010/SibutramineOct2010.asp"
+            },
+            {
+              "id": "21574210",
+              "source": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/21574210"
+            },
+            {
+              "id": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm",
+              "source": "Other",
+              "url": "http://www.info.gov.hk/gia/general/201011/02/P201011020204.htm"
+            },
+            {
+              "id": "medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe.",
+              "source": "EMA",
+              "url": "https://www.ema.europa.eu/en/medicines/human/referrals/sibutramine#:~:text=The%20Agency\ufffds%20Committee%20for%20Medicinal,should%20be%20suspended%20throughout%20Europe."
+            },
+            {
+              "id": "20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841",
+              "source": "Other",
+              "url": "https://web.archive.org/web/20120723055422/http://pib.nic.in/newsite/erelease.aspx?relid=70841"
+            },
+            {
+              "id": "7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm",
+              "source": "FDA",
+              "url": "http://wayback.archive-it.org/7993/20170111132935/http://www.fda.gov/Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedicalProducts/ucm228830.htm"
+            },
+            {
+              "id": "recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php",
+              "source": "Health Canada",
+              "url": "http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2010/13438a-eng.php"
+            },
+            {
+              "id": "FR-2014-07-02/pdf/2014-15371.pdf",
+              "source": "USGPO",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2014-07-02/pdf/2014-15371.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4089,
+          "warningType": "Withdrawn",
+          "toxicityClass": "neurotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "Increased risk of heart attack and stroke",
+          "efoTerm": "stroke",
+          "efoId": "EFO:0000712",
+          "efoIdForWarningClass": "EFO:0011057",
+          "chemblIds": [
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "978-92-4-001477-0",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/9789240014770"
+            }
+          ]
+        },
+        {
+          "id": 4226,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "Higher rate of cardiovascular events in obese and overweight patients using sibutramine than in patients managing their weight through exercise and diet alone",
+          "efoTerm": "cardiotoxicity",
+          "efoId": "EFO:1001482",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "alert/sibutramine-reductil-withdrawal-australia",
+              "source": "TGA",
+              "url": "https://www.tga.gov.au/alert/sibutramine-reductil-withdrawal-australia"
+            }
+          ]
+        },
+        {
+          "id": 4227,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "Increased risk of heart attack and stroke",
+          "efoTerm": "myocardial infarction",
+          "efoId": "EFO:0000612",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "978-92-4-001477-0",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/9789240014770"
+            }
+          ]
+        },
+        {
+          "id": 4653,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "Increase of risk of cardivascular events in patients with history of cardiovascular disease; Based on data from the SCOUT trial (which showed a higher rate of cardiovascular events in obese and overweight patients using sibutramine than in patients managing their weight through exercise and diet alone).; Elevated risk of cardiotoxicity",
+          "efoTerm": "cardiotoxicity",
+          "efoId": "EFO:1001482",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "978-92-4-001477-0",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/9789240014770"
+            }
+          ]
+        },
+        {
+          "id": 4957,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "India; European Union; Hong Kong; United States; New Zealand; Canada; Indonesia; Egypt; Guatemala; Australia",
+          "year": 2010,
+          "description": "Increased risk of heart attack and stroke",
+          "efoTerm": "stroke",
+          "efoId": "EFO:0000712",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL1419"
+          ],
+          "references": [
+            {
+              "id": "978-92-4-001477-0",
+              "source": "WHO",
+              "url": "https://www.who.int/publications/i/item/9789240014770"
+            }
+          ]
+        }
+      ],
+      "mechanismsOfAction": {
+        "rows": [
+          {
+            "actionType": "INHIBITOR",
+            "mechanismOfAction": "Monoamine transporter inhibitor",
+            "targets": [
+              {
+                "id": "ENSG00000108576",
+                "approvedSymbol": "SLC6A4"
+              },
+              {
+                "id": "ENSG00000142319",
+                "approvedSymbol": "SLC6A3"
+              },
+              {
+                "id": "ENSG00000103546",
+                "approvedSymbol": "SLC6A2"
+              }
+            ]
+          }
+        ]
+      },
+      "indications": {
+        "count": 5,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "disease": {
+              "id": "MONDO_0005582",
+              "name": "binge eating disorder"
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00402584",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00402584",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00212173",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00212173",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00829283",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00829283",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "disease": {
+              "id": "MONDO_0008575",
+              "name": "nicotine dependence"
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00037752",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00037752",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "disease": {
+              "id": "MONDO_0005044",
+              "name": "hypertensive disorder"
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00679653",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00679653",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "MONDO_0011122",
+              "name": "obesity disorder"
+            },
+            "clinicalReports": [
+              {
+                "id": "a08aa10",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=A08AA10",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "d08kvz/obesity",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D08KVZ",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00115063",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00115063",
+                "year": null,
+                "trialOverallStatus": "TERMINATED",
+                "trialWhyStopped": "ethical issues of continuing control group without treatment",
+                "trialStopReasonCategories": [
+                  "Safety_Sideeffects"
+                ]
+              },
+              {
+                "id": "nct01170364",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT01170364",
+                "year": null,
+                "trialOverallStatus": "TERMINATED",
+                "trialWhyStopped": "Terminated due to sibutramine being withdrawn from the market.",
+                "trialStopReasonCategories": [
+                  "Study_Design"
+                ]
+              },
+              {
+                "id": "nct00165685",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00165685",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00261911",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00261911",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00645255",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00645255",
+                "year": null,
+                "trialOverallStatus": "TERMINATED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00677391",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00677391",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00679653",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00679653",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00941382",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00941382",
+                "year": null,
+                "trialOverallStatus": "UNKNOWN",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct05209984",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT05209984",
+                "year": null,
+                "trialOverallStatus": "WITHDRAWN",
+                "trialWhyStopped": "Strategic change in development priorities",
+                "trialStopReasonCategories": [
+                  "Business_Administrative"
+                ]
+              },
+              {
+                "id": "nct00134199",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00134199",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00330525",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00330525",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00402077",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00402077",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00537420",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00537420",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00993421",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00993421",
+                "year": null,
+                "trialOverallStatus": "TERMINATED",
+                "trialWhyStopped": "Clinical trial terminated due to results from recent nonclinical studies",
+                "trialStopReasonCategories": [
+                  "Another_Study"
+                ]
+              },
+              {
+                "id": "nct01597609",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_1",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT01597609",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00212173",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00212173",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct00829283",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00829283",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct01184560",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT01184560",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct07588750",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT07588750",
+                "year": null,
+                "trialOverallStatus": "NOT_YET_RECRUITING",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "disease": {
+              "id": "HP_0025502",
+              "name": "Overweight"
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00677391",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT00677391",
+                "year": null,
+                "trialOverallStatus": "COMPLETED",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "nct07588750",
+                "type": "INDICATION",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov",
+                "url": "https://clinicaltrials.gov/study/NCT07588750",
+                "year": null,
+                "trialOverallStatus": "NOT_YET_RECRUITING",
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
