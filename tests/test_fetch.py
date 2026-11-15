@@ -522,3 +522,154 @@ def test_29_nothing_is_said_when_every_answer_holds_the_field(offline, caplog):
 def test_29_the_old_saved_pah_files_have_no_withdrawn_field_so_it_is_not_known():
     for path in paths_for("PDE5A") + paths_for("EDNRA"):
         assert path.medicine.withdrawn is None
+
+
+# =====================================================================
+# Ticket 5.3: Open Targets' own list of medicines for a disease
+# =====================================================================
+#
+# New tests only. The saved file is fixtures/MONDO_0015924/disease_drugs.*,
+# and fixtures/MONDO_0007947/disease_drugs.* for a disease (Marfan syndrome)
+# whose list holds no approved medicine. No network.
+
+MARFAN = Disease(id="MONDO_0007947", name="Marfan syndrome")
+LISTED_APPROVED = [
+    "AMBRISENTAN", "BERAPROST", "BOSENTAN", "EPOPROSTENOL", "ILOPROST",
+    "MACITENTAN", "NITRIC OXIDE", "RIOCIGUAT", "SELEXIPAG", "SILDENAFIL",
+    "SITAXENTAN", "SOTATERCEPT", "TADALAFIL", "TREPROSTINIL",
+]
+
+
+def fake_with_the_disease_list(body):
+    """fake_post_json, and also the saved "medicines for this disease" answer."""
+    variables = body["variables"]
+    if "diseaseId" in variables and "drugAndClinicalCandidates" in body["query"]:
+        saved = FIXTURES / variables["diseaseId"] / "disease_drugs.response.json"
+        if not saved.exists():
+            return {"data": {"disease": None}}  # a disease Open Targets does not know
+        return load(saved)
+    return fake_post_json(body)
+
+
+@pytest.fixture
+def disease_list(offline):
+    offline.side_effect = fake_with_the_disease_list
+    return offline
+
+
+def listed(disease=PAH):
+    return {entry.name: entry for entry in fetch.fetch_approved(disease)}
+
+
+def test_53_the_list_holds_the_14_medicines_approved_for_pah(disease_list):
+    found = fetch.fetch_approved(PAH)
+    assert all(isinstance(entry, fetch.Listed) for entry in found)
+    assert sorted(entry.name for entry in found) == LISTED_APPROVED
+
+
+def test_53_the_question_names_the_disease(disease_list):
+    fetch.fetch_approved(PAH)
+    body = disease_list.call_args.args[0]
+    assert body["variables"] == {"diseaseId": PAH.id}
+    assert body["query"] == fetch.DISEASE_DRUGS_QUERY
+
+
+def test_53_every_field_asked_for_is_in_the_saved_request(disease_list):
+    # The field names were read from the saved request, not from memory.
+    saved = load(GOLDEN / "disease_drugs.request.json")["query"]
+    for field in ("drugAndClinicalCandidates", "maxClinicalStage", "maximumClinicalStage",
+                  "parentMolecule", "clinicalReports", "url", "efoId"):
+        assert field in fetch.DISEASE_DRUGS_QUERY, field
+        assert field in saved, field
+
+
+def test_53_a_medicine_only_in_trials_for_the_disease_is_not_on_the_list(disease_list):
+    rows = load(GOLDEN / "disease_drugs.response.json")["data"]["disease"][
+        "drugAndClinicalCandidates"]["rows"]
+    stages = {row["drug"]["name"]: row["maxClinicalStage"] for row in rows}
+    assert stages["GSK-2256098"] == "PHASE_1"  # the saved file really holds it
+    assert len(rows) == 118
+    names = set()
+    for entry in fetch.fetch_approved(PAH):
+        names.add(entry.name)
+        names.update(name for _, name in entry.forms)
+    assert "GSK-2256098" not in names
+    assert len(fetch.fetch_approved(PAH)) == 14
+
+
+def test_53_a_medicine_and_its_forms_are_one_item_named_after_the_parent(disease_list):
+    sildenafil = listed()["SILDENAFIL"]
+    assert sildenafil.id == "CHEMBL192"
+    # The parent first, then its tablet form. Only the citrate row says
+    # "approved for PAH"; the family takes the strongest stage of its forms.
+    assert sildenafil.forms == (("CHEMBL192", "SILDENAFIL"), ("CHEMBL1737", "SILDENAFIL CITRATE"))
+    assert [name for _, name in listed()["TREPROSTINIL"].forms] == [
+        "TREPROSTINIL", "TREPROSTINIL DIOLAMINE", "TREPROSTINIL SODIUM",
+    ]
+    assert listed()["TADALAFIL"].forms == (("CHEMBL779", "TADALAFIL"),)
+
+
+def test_53_the_sources_are_the_report_links_each_once(disease_list):
+    rows = load(GOLDEN / "disease_drugs.response.json")["data"]["disease"][
+        "drugAndClinicalCandidates"]["rows"]
+    links = []
+    for row in rows:
+        if row["drug"]["id"] == "CHEMBL779":
+            links.extend(report["url"] for report in row["clinicalReports"] if report["url"])
+    tadalafil = listed()["TADALAFIL"]
+    assert set(tadalafil.sources) == set(links)
+    assert len(tadalafil.sources) == len(set(tadalafil.sources)) > 0
+
+
+def test_53_a_disease_with_no_approved_medicine_gives_an_empty_list(disease_list):
+    rows = load(FIXTURES / MARFAN.id / "disease_drugs.response.json")["data"]["disease"][
+        "drugAndClinicalCandidates"]["rows"]
+    assert len(rows) == 7 and "APPROVAL" not in {row["maxClinicalStage"] for row in rows}
+    assert fetch.fetch_approved(MARFAN) == []
+
+
+def test_53_a_disease_open_targets_does_not_know_gives_an_empty_list(disease_list):
+    assert fetch.fetch_approved(Disease(id="MONDO_0000000", name="nothing")) == []
+
+
+def one_row(drug_id, name, stage, top_stage="APPROVAL", parent=None, drug=True):
+    return {
+        "maxClinicalStage": stage,
+        "drug": {"id": drug_id, "name": name, "maximumClinicalStage": top_stage,
+                 "parentMolecule": parent} if drug else None,
+        "clinicalReports": [{"url": f"https://example.org/{drug_id}"}],
+    }
+
+
+def answer_with(*rows):
+    return {"data": {"disease": {"id": PAH.id, "drugAndClinicalCandidates": {
+        "count": len(rows), "rows": list(rows)}}}}
+
+
+def test_53_a_stage_word_moonlight_does_not_know_does_not_stop_the_list(offline):
+    # "IND" and "PRECLINICAL" are real words from the live API (2026-11-15).
+    offline.side_effect = lambda body: answer_with(
+        one_row("C1", "REALINE", "APPROVAL"),
+        one_row("C2", "REALINE SODIUM", "IND", top_stage="PRECLINICAL",
+                parent={"id": "C1", "name": "REALINE"}),
+        one_row("C3", "OTHERINE", "PRECLINICAL", top_stage="IND"),
+        one_row("C4", "GONE", "APPROVAL", drug=False),
+    )
+    (realine,) = fetch.fetch_approved(PAH)
+    assert realine.forms == (("C1", "REALINE"), ("C2", "REALINE SODIUM"))
+
+
+def test_53_approved_for_the_disease_but_not_approved_anywhere_is_left_out(offline):
+    # The two stages disagree, so Moonlight does not guess: it is left out.
+    offline.side_effect = lambda body: answer_with(
+        one_row("C1", "ODDINE", "APPROVAL", top_stage="PHASE_3"))
+    assert fetch.fetch_approved(PAH) == []
+
+
+def test_53_the_same_form_sent_twice_is_one_form(offline):
+    offline.side_effect = lambda body: answer_with(
+        one_row("C1", "REALINE", "APPROVAL"), one_row("C1", "REALINE", "PHASE_3"))
+    (realine,) = fetch.fetch_approved(PAH)
+    assert realine.forms == (("C1", "REALINE"),)
+    assert realine.sources == ("https://example.org/C1",)
+

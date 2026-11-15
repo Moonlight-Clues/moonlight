@@ -1,12 +1,14 @@
 """Fetch: ask Open Targets about a disease, its proteins, and their medicines.
 
-Four questions, four functions:
+Five questions, five functions:
 
     search_diseases(text)          -> list of Disease, best match first
     search_matches(text)           -> the same list, each with its "also called" names
     fetch_disease(disease_id)      -> one Disease with its description filled in
     fetch_targets(disease, limit)  -> list of Target, highest score first
     fetch_paths(disease, target)   -> list of Path, one per Medicine family
+    fetch_approved(disease)        -> list of Listed: the medicines Open Targets'
+                                      own list says are approved for the disease
 
 and one about the data itself:
 
@@ -28,6 +30,9 @@ read from the live API on 2026-11-13 and are saved in fixtures/search/.
 "drugWarnings", "warningType" and "childMolecules" were read from the live
 API on 2026-11-15 and are saved in fixtures/withdrawn_probe/ and
 fixtures/withdrawn/.
+The fields of the disease's own medicine list ("drugAndClinicalCandidates"
+on a disease, "maxClinicalStage" on its rows) were read from
+fixtures/MONDO_0015924/disease_drugs.* and the live API on 2026-11-15.
 """
 
 import logging
@@ -55,7 +60,8 @@ VERSION_CHECK_SECONDS = 3600  # a long-running program reads the version again a
 # Kashish's decision, 2026-11-12. Open Targets sometimes gives a short
 # answer to "which medicines act on this protein?", with reports missing.
 # So that question is asked twice, and a third time only if the first two
-# answers differ. The answer with the most clinical reports is kept, and
+# answers differ. "Which medicines are on this disease's own list?" is the
+# same kind of question, so it is asked the same way (ticket 5.3). The answer with the most clinical reports is kept, and
 # only then is it saved. The medicines must be the same in every answer.
 # If they are not, Moonlight stops and saves nothing.
 ASKS_AT_FIRST = 2
@@ -154,6 +160,35 @@ query TargetDrugs($targetId: String!) {
 }
 """
 
+# Ticket 5.3. Open Targets' own list of medicines for a disease. Each row is
+# one medicine form, and "maxClinicalStage" on the row is how far that form
+# got for THIS disease. "maximumClinicalStage" on the drug is how far it got
+# for any disease.
+DISEASE_DRUGS_QUERY = """
+query DiseaseDrugs($diseaseId: String!) {
+  disease(efoId: $diseaseId) {
+    id
+    drugAndClinicalCandidates {
+      count
+      rows {
+        maxClinicalStage
+        drug {
+          id
+          name
+          maximumClinicalStage
+          parentMolecule { id name }
+        }
+        clinicalReports { url }
+      }
+    }
+  }
+}
+"""
+APPROVAL = "APPROVAL"  # the stage word for "approved", in both stage fields
+
+# The two "which medicines?" questions. Both are asked twice, see below.
+MEDICINE_QUERIES = (TARGET_DRUGS_QUERY, DISEASE_DRUGS_QUERY)
+
 
 class FetchError(RuntimeError):
     """Open Targets answered, but with an error instead of data."""
@@ -211,12 +246,13 @@ def _is_good(answer: dict) -> bool:
 
 
 def _rows(answer: dict) -> List[dict]:
-    target = answer["data"].get("target") or {}
-    return (target.get("drugAndClinicalCandidates") or {}).get("rows") or []
+    """The medicine rows of an answer, about a protein or about a disease."""
+    asked_about = answer["data"].get("target") or answer["data"].get("disease") or {}
+    return (asked_about.get("drugAndClinicalCandidates") or {}).get("rows") or []
 
 
 def _report_count(answer: dict) -> int:
-    """How many clinical reports a medicines-for-a-protein answer holds."""
+    """How many clinical reports a "which medicines?" answer holds."""
     return sum(len(row.get("clinicalReports") or []) for row in _rows(answer))
 
 
@@ -258,7 +294,7 @@ def _post_json(body: dict) -> dict:
     saved = cache.load("open-targets", version, body, max_age_seconds=USE_BY_SECONDS)
     if saved is not None:
         return saved
-    if body["query"] == TARGET_DRUGS_QUERY:
+    if body["query"] in MEDICINE_QUERIES:
         answer = _send_keeping_the_fullest(body)
     else:
         answer = _send(body)
@@ -503,3 +539,76 @@ def fetch_paths(disease: Disease, target: Target) -> List[Path]:
             not_known, len(paths), target.symbol,
         )
     return paths
+
+
+@dataclass(frozen=True)
+class Listed:
+    """One medicine family that Open Targets' own list for a disease says is
+    approved for that disease.
+
+    forms holds (id, name) for every form of the family on that list, the
+    parent first. sources holds the family's report links, each once.
+    """
+
+    id: str  # the id shared by the medicine and its tablet forms
+    name: str
+    forms: Tuple[Tuple[str, str], ...]
+    sources: Tuple[str, ...]
+
+
+def fetch_approved(disease: Disease) -> List[Listed]:
+    """The medicines on the disease's own list whose stage for this disease
+    is approval. One Listed per medicine family, in the order Open Targets
+    first mentions them. [] if the disease is not known or none is approved.
+
+    A medicine and its tablet forms are one item, named after the parent.
+    The item takes the strongest stage of its forms: it is here if at least
+    one form is approved for this disease. That form must also say it is
+    approved for at least one disease. If it does not, the two stages
+    disagree, and the form does not count. Nothing is guessed.
+
+    Only the word "APPROVAL" is looked for. A form with any other stage
+    word, even one Moonlight has never met, is only listed as a form.
+    """
+    data = _ask(DISEASE_DRUGS_QUERY, {"diseaseId": disease.id})
+    if data["disease"] is None:
+        return []
+
+    families: Dict[str, dict] = {}  # family id -> what we have gathered so far
+    for row in data["disease"]["drugAndClinicalCandidates"]["rows"]:
+        drug = row["drug"]
+        if drug is None:
+            continue
+        parent = drug["parentMolecule"]
+        family_id = parent["id"] if parent else drug["id"]
+        family = families.setdefault(
+            family_id, {"name": None, "forms": [], "sources": [], "approved": False}
+        )
+        if parent:
+            family["name"] = family["name"] or parent["name"]
+        else:
+            family["name"] = drug["name"]
+
+        form = (drug["id"], drug["name"])
+        if form not in family["forms"]:
+            if parent:
+                family["forms"].append(form)
+            else:
+                family["forms"].insert(0, form)  # the parent itself goes first
+        if row["maxClinicalStage"] == APPROVAL and drug["maximumClinicalStage"] == APPROVAL:
+            family["approved"] = True
+        for report in row["clinicalReports"]:
+            url = report["url"]
+            if url and url not in family["sources"]:
+                family["sources"].append(url)
+
+    return [
+        Listed(
+            id=family_id,
+            name=family["name"],
+            forms=tuple(family["forms"]),
+            sources=tuple(family["sources"]),
+        )
+        for family_id, family in families.items()
+        if family["approved"]
+    ]
