@@ -443,9 +443,17 @@ def test_the_only_quick_start_chip_is_pah_by_its_id(client):
 
 
 def test_the_page_names_no_medicine_before_a_search(client):
-    page = client.get("/").text.upper()
+    # Kashish's decision, 2026-11-15 (ticket 5.4): the guide shows one real
+    # card, Doxapram. Outside the guide the page names no medicine. Inside
+    # the guide the only medicine named is Doxapram, with its form.
+    page = client.get("/").text
+    guide = guide_of(page)
+    assert page.count(guide) == 1
+    outside = page.replace(guide, "").upper()
     for name in NEW_ORDER + ["Udenafil", "Vardenafil", "Sildenafil", "Tadalafil"]:
-        assert name.upper() not in page
+        assert name.upper() not in outside, name
+        if name != "Doxapram":
+            assert name.upper() not in guide.upper(), name
 
 
 # ---- /api/search ----
@@ -1298,9 +1306,236 @@ def test_53_approved_cards_get_no_number_no_explanation_and_no_ending(client):
 
 
 def test_53_the_page_still_names_no_medicine_before_a_search(client):
-    page = client.get("/").text.upper()
+    # Kashish's decision, 2026-11-15 (ticket 5.4): the guide shows one real
+    # card, Doxapram. Outside the guide the page names no medicine. Inside
+    # the guide the only medicine named is Doxapram, with its form.
+    page = client.get("/").text
+    guide = guide_of(page)
+    assert page.count(guide) == 1
+    outside = page.replace(guide, "").upper()
     for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
-        assert name.upper() not in page
+        assert name.upper() not in outside, name
+        if name != "Doxapram":
+            assert name.upper() not in guide.upper(), name
+
+
+# =====================================================================
+# Ticket 5.4: the "How to use Moonlight" guide
+# =====================================================================
+#
+# New tests only. They read the page from GET / and touch no network.
+
+GUIDE_HEADINGS = [
+    "How to read what Moonlight finds.",
+    "A medicine made for one disease may act on a protein linked to another.",
+    "Three steps",
+    "The three tabs",
+    "How to read a card",
+    "What Moonlight cannot tell you",
+    "Good ways to use it",
+    "Where the facts come from",
+]
+FOOTER_LINE = "Made with care by a family in Kochi"
+FOOTER_NOTE = (
+    "Moonlight · Research exploration only · Not clinical findings · "
+    "Data from Open Targets"
+)
+
+
+def guide_of(page):
+    """The guide's own piece of the page, from its opening tag to its end mark."""
+    start = page.index('<section id="guide"')
+    return page[start:page.index("<!-- end of the guide -->")]
+
+
+def plain(html):
+    """The words a reader sees: tags taken out, spaces tidied."""
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+def links_to_the_guide(page):
+    """(where it opens the guide, the words of the link), in page order."""
+    return re.findall(r'<a [^>]*href="#(guide[a-z-]*)"[^>]*data-guide[^>]*>([^<]+)</a>', page)
+
+
+# ---- Example 1 ----
+
+def test_54_example_1_the_page_holds_the_guides_eight_headings_and_the_safety_line(client):
+    page = client.get("/").text
+    assert SAFETY_LINE in page
+    guide = guide_of(page)
+    headings = [plain(h) for h in re.findall(r"(?s)<h[12][^>]*>(.*?)</h[12]>", guide)]
+    assert headings == GUIDE_HEADINGS
+    assert len(headings) == 8
+
+
+def test_54_the_guide_is_inside_the_page_and_hidden_until_opened(client):
+    page = client.get("/").text
+    tag = re.search(r'<section id="guide"[^>]*>', page).group(0)
+    assert " hidden" in tag
+    # Under the header and the pinned safety line, which are not copied again.
+    assert page.index('class="site-header"') < page.index('data-slot="safety-line"') \
+        < page.index('<section id="guide"')
+    assert page.count(SAFETY_LINE) == 1
+    assert page.count('class="site-header"') == 1
+
+
+def test_54_back_to_search_closes_the_guide(client):
+    guide = guide_of(client.get("/").text)
+    assert re.search(r'<a [^>]*href="#home"[^>]*data-guide-close[^>]*>Back to search</a>', guide)
+    script = page_script(client)
+    assert "function closeGuide(" in script and "function openGuide(" in script
+
+
+def test_54_the_sentence_about_the_data_release_is_not_copied(client):
+    page = client.get("/").text
+    assert "which release of the data" not in page
+    assert "The facts are from the Open Targets Platform." in page
+
+
+# ---- Example 2 ----
+
+def test_54_example_2_no_http_link_to_any_outside_font_script_or_stylesheet(client):
+    page = client.get("/").text
+    assert "http" not in page.lower()
+    assert "<link" not in page.lower()
+    assert "@import" not in page
+    assert not re.search(r"<script[^>]+src", page, flags=re.IGNORECASE)
+    assert "fonts.googleapis" not in page and "gstatic" not in page
+    # Anything the styles fetch is held inside the page itself.
+    addresses = re.findall(r"url\(\s*[\"']?([^\"')]{0,12})", page)
+    assert all(address.startswith("data:") for address in addresses), addresses
+
+
+def test_54_no_visitor_counter_on_the_page(client):
+    page = client.get("/").text.lower()
+    assert "visitor" not in page and "counter" not in page.replace("counter-reset", "")
+
+
+# ---- Example 3 ----
+
+def test_54_example_3_the_page_holds_the_three_links_to_the_guide_and_the_footer_line(client):
+    page = client.get("/").text
+    assert links_to_the_guide(page) == [
+        ("guide", "How to read Moonlight."),
+        ("guide-card", "How to read a card"),
+        ("guide", "How to use Moonlight"),
+    ]
+    assert FOOTER_LINE in page
+
+
+def test_54_the_small_line_is_under_the_search_box(client):
+    page = client.get("/").text
+    home = page[page.index('<section id="home"'):page.index('<section id="results"')]
+    assert "New here? How to read Moonlight." in plain(home)
+    assert home.index('class="search-box"') < home.index("New here?") \
+        < home.index('data-slot="matches"')
+
+
+def test_54_how_to_read_a_card_is_beside_the_tabs_and_opens_at_the_card_and_its_key(client):
+    page = client.get("/").text
+    at = page.index(">How to read a card</a>")
+    assert page.index('data-slot="tabs"') < at < page.index('data-slot="approved"')
+    guide = guide_of(page)
+    card_part = guide[guide.index('id="guide-card"'):]
+    assert card_part.index("How to read a card") < card_part.index('<article class="card"') \
+        < card_part.index('<dl class="key"')
+
+
+def test_54_the_footer_has_the_guide_link_the_handwritten_line_and_its_note(client):
+    page = client.get("/").text
+    footer = page[page.index("<footer"):page.index("</footer>")]
+    assert "About Us" not in page
+    assert re.search(r'<a [^>]*data-guide[^>]*>How to use Moonlight</a>', footer)
+    assert footer.index("How to use Moonlight") < footer.index(FOOTER_LINE)
+    assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)  # the small heart
+    assert FOOTER_NOTE in footer
+
+
+def test_54_a_link_can_open_the_guide(client):
+    script = page_script(client)
+    assert 'linked.get("guide") === "1"' in script
+
+
+# ---- Example 4 ----
+
+def test_54_example_4_the_do_not_use_it_to_list_holds_start_stop_or_change_any_medicine(client):
+    guide = guide_of(client.get("/").text)
+    box = guide[guide.index("Do not use it to"):]
+    box = box[:box.index("</ul>")]
+    items = [plain(item) for item in re.findall(r"(?s)<li>(.*?)</li>", box)]
+    assert "start, stop or change any medicine" in items
+    assert len(items) == 4
+
+
+# ---- Rules 5 and 6 for copying the draft ----
+
+def test_54_the_example_card_is_doxapram_with_the_facts_checked_live(client):
+    # Checked against the live API on 2026-11-15: sixth new clue for
+    # pulmonary arterial hypertension, 8 reports, KCNK3 turned down, 79 points.
+    guide = guide_of(client.get("/").text)
+    card = guide[guide.index('<article class="card"'):guide.index("</article>")]
+    words = plain(card)
+    assert re.search(r'class="rank"[^>]*>6<', card)
+    assert "Forms: Doxapram, Doxapram Hydrochloride" in words
+    assert "8 reports" in words
+    assert "Doxapram → KCNK3 → Pulmonary arterial hypertension" in words
+    assert "Down" in words and "79 / 100 points" in words
+    assert "The data does not say which direction this disease needs." in words
+    assert ENDING in words
+
+
+def test_54_the_example_cards_facts_match_the_saved_answer(client):
+    data = clues_json(client, *FIVE)
+    doxapram = clue_named(data["new_clues"], "Doxapram")
+    assert NEW_ORDER.index("Doxapram") + 1 == 6
+    assert doxapram["forms"] == ["Doxapram", "Doxapram Hydrochloride"]
+    assert doxapram["reports"] == 8
+    assert doxapram["proteins"] == [{
+        "symbol": "KCNK3", "points": 79, "direction": "down",
+        "machine": 1, "piece_of_machine": False,
+    }]
+    assert doxapram["ending"] == ENDING
+
+
+def test_54_the_words_under_the_three_tabs_say_what_the_real_tabs_say(client):
+    page = client.get("/").text
+    guide = guide_of(page)
+    # The first sentence under each real tab is in the guide, word for word.
+    for words in (APPROVED_WORDS, TRIALS_WORDS, CLUES_WORDS):
+        first = words.split(". ")[0] + "."
+        assert first in guide, first
+        assert page.count(first) == 2  # once under the real tab, once in the guide
+    names = re.findall(r'<div class="tab-note"><h3>([^<]+)</h3>', guide)
+    assert names == ["Approved", "In trials", "New clues"]
+    assert "not a prediction" in guide  # in trials: never hinted to be more likely to work
+    assert "First on the list does not mean best." in guide
+
+
+# Kashish's decision, 2026-11-15: four sentences in the guide's key were
+# wrong in the draft. These are her exact words.
+KEY_C = ("Medicine, then protein, then disease. Every clue has all three steps. "
+         "An approved medicine can be shown without a path, and its card says why.")
+KEY_D = ("What the medicine does to the protein, like a volume knob. On this "
+         "same list, other medicines turn KCNK3 up. All of them are clues, because "
+         "the data does not say which way helps. “Unknown” means the data does not "
+         "say which way, so Moonlight does not guess. “Mixed” means it does both.")
+KEY_F = ("The facts about this clue, rewritten in plain words. It is checked, so "
+         "it adds no medicine, protein or number of its own.")
+KEY_G = ("On every clue and every trial card. The data does not say whether the "
+         "disease needs the protein turned up or down, so a clue can point the "
+         "wrong way. Approved cards do not have it.")
+
+
+def test_54_the_four_corrected_sentences_are_in_the_guides_key(client):
+    guide = guide_of(client.get("/").text)
+    key = guide[guide.index('<dl class="key"'):guide.index("</dl>")]
+    for letter, title, words in (("C", "The path", KEY_C), ("D", "Up, down or unknown", KEY_D),
+                                 ("F", "The explanation", KEY_F), ("G", "The catch", KEY_G)):
+        assert '>%s</span><dt>%s</dt><dd>%s</dd>' % (letter, title, words) in key, letter
+    for old in ("If any step is missing", "The same on every card",
+                "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
+        assert old not in guide, old
 
 
 # =====================================================================

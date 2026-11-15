@@ -40,3 +40,6 @@ Format: date, the decision, why.
 - 2026-11-15: PRECLINICAL and IND go below phase 1 on the stage ladder. They mean a medicine has not been tested in people yet, so it is not approved.
 - 2026-11-15: If Open Targets uses a stage word Moonlight does not know, Moonlight does not crash. It treats the medicine as not approved and keeps going.
 - 2026-11-15: An approved medicine whose link to the disease is only PRECLINICAL or IND goes in "unclear link". It is not a new clue, because there is a link. It is not in trials, because no test in people has started.
+- 2026-11-15: Moonlight has a guide inside the page called "How to use Moonlight". It shows how to read the tabs and a card, and what Moonlight cannot tell you.
+- 2026-11-15: No visitor counter on the page. It is not useful for Moonlight right now, and the page loads nothing from outside.
+- 2026-11-15: The guide shows one real card, Doxapram, from my paper graph, so people can see how to read a card. It is the only medicine the page names before a search, and only inside the guide.
