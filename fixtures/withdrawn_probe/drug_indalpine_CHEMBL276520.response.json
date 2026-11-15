@@ -1,0 +1,97 @@
+{
+  "data": {
+    "drug": {
+      "id": "CHEMBL276520",
+      "name": "INDALPINE",
+      "drugType": "Small molecule",
+      "description": "Small molecule drug with a maximum clinical stage of Approval.",
+      "maximumClinicalStage": "APPROVAL",
+      "tradeNames": [],
+      "parentMolecule": null,
+      "childMolecules": [],
+      "drugWarnings": [
+        {
+          "id": 4200,
+          "warningType": "Withdrawn",
+          "toxicityClass": "hematological toxicity",
+          "country": "France",
+          "year": 1985,
+          "description": "Agranulocytosis",
+          "efoTerm": "Agranulocytosis",
+          "efoId": "HP:0012234",
+          "efoIdForWarningClass": "EFO:0011051",
+          "chemblIds": [
+            "CHEMBL276520"
+          ],
+          "references": [
+            {
+              "id": "10.1177/009286150103500134",
+              "source": "DOI",
+              "url": "https://doi.org/10.1177/009286150103500134"
+            }
+          ]
+        },
+        {
+          "id": 4412,
+          "warningType": "Withdrawn",
+          "toxicityClass": "hematological toxicity",
+          "country": "France",
+          "year": 1985,
+          "description": "agranulocytosis and severe neutropenia",
+          "efoTerm": "Agranulocytosis",
+          "efoId": "HP:0012234",
+          "efoIdForWarningClass": "EFO:0011051",
+          "chemblIds": [
+            "CHEMBL276520"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4531,
+          "warningType": "Withdrawn",
+          "toxicityClass": "hematological toxicity",
+          "country": "France",
+          "year": 1985,
+          "description": "agranulocytosis and severe neutropenia",
+          "efoTerm": "neutropenia",
+          "efoId": "MONDO:0001475",
+          "efoIdForWarningClass": "EFO:0011051",
+          "chemblIds": [
+            "CHEMBL276520"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        }
+      ],
+      "mechanismsOfAction": {
+        "rows": [
+          {
+            "actionType": "INHIBITOR",
+            "mechanismOfAction": "Serotonin transporter inhibitor",
+            "targets": [
+              {
+                "id": "ENSG00000108576",
+                "approvedSymbol": "SLC6A4"
+              }
+            ]
+          }
+        ]
+      },
+      "indications": {
+        "count": 0,
+        "rows": []
+      }
+    }
+  }
+}

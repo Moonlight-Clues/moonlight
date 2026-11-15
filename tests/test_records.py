@@ -262,6 +262,47 @@ def test_activator_with_a_down_word_is_mixed():
     assert direction_from_action_types(["ACTIVATOR", "INHIBITOR"]) == "mixed"
 
 
+# ---- Ticket 2.9. A form remembers if it was withdrawn ----
+# Three answers, like a light with three positions:
+#   True  = Open Targets says it was withdrawn somewhere
+#   False = Open Targets was asked and lists no withdrawal
+#   None  = Open Targets did not say. Moonlight does not guess.
+
+def test_29_a_form_that_was_not_told_does_not_guess():
+    assert form("X1", "TESTAMIL", "APPROVAL").withdrawn is None
+
+
+def test_29_a_family_with_one_withdrawn_form_is_withdrawn():
+    plain = MedicineForm(id="T1", name="TESTAMIL", best_stage="APPROVAL", withdrawn=False)
+    salt = MedicineForm(
+        id="T2", name="TESTAMIL SODIUM", best_stage="APPROVAL", parent_id="T1", withdrawn=True
+    )
+    assert Medicine(name="TESTAMIL", forms=[plain, salt]).withdrawn is True
+    assert Medicine(name="TESTAMIL", forms=[salt, plain]).withdrawn is True  # order does not matter
+
+
+def test_29_a_family_with_no_withdrawn_form_is_not_withdrawn():
+    plain = MedicineForm(id="T1", name="TESTAMIL", best_stage="APPROVAL", withdrawn=False)
+    salt = MedicineForm(
+        id="T2", name="TESTAMIL SODIUM", best_stage="APPROVAL", parent_id="T1", withdrawn=False
+    )
+    assert Medicine(name="TESTAMIL", forms=[plain, salt]).withdrawn is False
+
+
+def test_29_if_one_form_was_not_told_the_family_says_not_known():
+    plain = MedicineForm(id="T1", name="TESTAMIL", best_stage="APPROVAL", withdrawn=False)
+    salt = MedicineForm(id="T2", name="TESTAMIL SODIUM", best_stage="APPROVAL", parent_id="T1")
+    assert Medicine(name="TESTAMIL", forms=[plain, salt]).withdrawn is None
+
+
+def test_29_withdrawn_wins_over_not_known():
+    unknown = MedicineForm(id="T1", name="TESTAMIL", best_stage="APPROVAL")
+    salt = MedicineForm(
+        id="T2", name="TESTAMIL SODIUM", best_stage="APPROVAL", parent_id="T1", withdrawn=True
+    )
+    assert Medicine(name="TESTAMIL", forms=[unknown, salt]).withdrawn is True
+
+
 # ---- Ticket 2.10: stage words PRECLINICAL and IND, and words we do not know ----
 #
 # The two saved files in fixtures/stage_words/ are live Open Targets answers

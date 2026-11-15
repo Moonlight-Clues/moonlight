@@ -328,6 +328,204 @@ def test_isosorbide_mononitrate_on_gucy1a1_has_direction_up():
     assert path.direction == "up"
 
 
+# ---- Ticket 2.9. fetch reads whether a medicine was withdrawn ----
+# Field names read from the live API on 2026-11-15 and from the saved files
+# in fixtures/withdrawn_probe/ and fixtures/withdrawn/: "drugWarnings",
+# "warningType", "childMolecules". The two warning types seen are
+# "Withdrawn" and "Black Box Warning".
+
+FIBRO_FILES = FIXTURES / "withdrawn" / "fibromyalgia"
+FIBRO = Disease(id="MONDO_0005546", name="fibromyalgia")
+SIX = ("SIBUTRAMINE", "MIBEFRADIL", "NOMIFENSINE", "TERODILINE", "INDALPINE",
+       "PHENYLPROPANOLAMINE")
+
+
+def fibro_post_json(body):
+    """Stands in for fetch._post_json with the fibromyalgia files saved on
+    2026-11-15. Those answers hold the withdrawn field."""
+    assert set(body) == {"query", "variables"}
+    variables = body["variables"]
+    if "targetId" in variables:
+        (file,) = (FIBRO_FILES / "target_drugs").glob(
+            f"*_{variables['targetId']}.response.json")
+        return load(file)
+    assert variables["diseaseId"] == FIBRO.id
+    if "associatedTargets" in body["query"]:
+        return load(FIBRO_FILES / "associated_targets.response.json")
+    if "drugAndClinicalCandidates" in body["query"]:
+        return load(FIBRO_FILES / "disease_drugs.response.json")
+    return load(FIBRO_FILES / "disease.response.json")
+
+
+def fibro_targets(*symbols):
+    by_symbol = {t.symbol: t for t in fetch.fetch_targets(FIBRO)}
+    return [by_symbol[symbol] for symbol in symbols]
+
+
+def fibro_paths(offline, symbol):
+    offline.side_effect = fibro_post_json
+    (target,) = fibro_targets(symbol)
+    return fetch.fetch_paths(FIBRO, target)
+
+
+def test_29_the_saved_files_were_made_with_the_question_fetch_asks():
+    for file in (FIBRO_FILES / "target_drugs").glob("*.request.json"):
+        assert load(file)["query"] == fetch.TARGET_DRUGS_QUERY
+
+
+def test_29_the_question_asks_for_the_withdrawn_field_in_the_same_question():
+    # One question per protein, as before. Not a second question per medicine.
+    assert "drugWarnings { warningType }" in fetch.TARGET_DRUGS_QUERY
+    assert fetch.TARGET_DRUGS_QUERY.count("query ") == 1
+
+
+def test_29_the_six_have_their_own_withdrawn_record_in_the_probe_files():
+    # The single-medicine records the probe saved say "Withdrawn" themselves.
+    for file in (FIXTURES / "withdrawn_probe").glob("drug_*.response.json"):
+        drug = load(file)["data"]["drug"]
+        assert drug["name"] in SIX
+        assert "Withdrawn" in {w["warningType"] for w in drug["drugWarnings"]}
+
+
+@pytest.mark.parametrize("symbol, name", [
+    ("SLC6A4", "Sibutramine"),
+    ("SLC6A4", "Nomifensine"),
+    ("SLC6A4", "Indalpine"),
+    ("CACNA1H", "Mibefradil"),
+    ("CACNA1H", "Terodiline"),
+    ("SLC6A2", "Phenylpropanolamine"),
+])
+def test_29_example_1_each_of_the_six_is_read_as_withdrawn(offline, symbol, name):
+    medicine = family(fibro_paths(offline, symbol), name).medicine
+    assert medicine.best_stage == "APPROVAL"  # the stage alone does not show it
+    assert medicine.withdrawn is True
+    assert all(form.withdrawn is True for form in medicine.forms)
+
+
+def test_29_example_2_a_black_box_warning_is_not_a_withdrawal(offline):
+    saved = load(FIBRO_FILES / "target_drugs" / "01_SLC6A4_ENSG00000108576.response.json")
+    rows = saved["data"]["target"]["drugAndClinicalCandidates"]["rows"]
+    (drug,) = [r["drug"] for r in rows if r["drug"]["name"] == "DULOXETINE"]
+    assert {w["warningType"] for w in drug["drugWarnings"]} == {"Black Box Warning"}
+
+    duloxetine = family(fibro_paths(offline, "SLC6A4"), "Duloxetine").medicine
+    assert duloxetine.withdrawn is False
+    assert all(form.withdrawn is False for form in duloxetine.forms)
+
+
+def test_29_a_medicine_with_no_warnings_at_all_is_not_withdrawn(offline):
+    saved = load(FIBRO_FILES / "target_drugs" / "07_SLC6A2_ENSG00000103546.response.json")
+    rows = saved["data"]["target"]["drugAndClinicalCandidates"]["rows"]
+    quiet = [r["drug"] for r in rows
+             if r["drug"]["drugWarnings"] == [] and r["drug"]["parentMolecule"] is None
+             and r["drug"]["childMolecules"] == []]
+    assert quiet
+    by_id = {form.id: form for path in fibro_paths(offline, "SLC6A2")
+             for form in path.medicine.forms}
+    assert all(by_id[drug["id"]].withdrawn is False for drug in quiet)
+
+
+def test_29_example_3_a_form_with_no_warning_of_its_own_follows_its_family(offline):
+    # Saved live: PHENDIMETRAZINE TARTRATE has no warning of its own, but
+    # PHENDIMETRAZINE, the medicine it is a form of, was withdrawn.
+    saved = load(FIBRO_FILES / "target_drugs" / "07_SLC6A2_ENSG00000103546.response.json")
+    rows = saved["data"]["target"]["drugAndClinicalCandidates"]["rows"]
+    (salt,) = [r["drug"] for r in rows if r["drug"]["name"] == "PHENDIMETRAZINE TARTRATE"]
+    assert salt["drugWarnings"] == []
+    assert {w["warningType"] for w in salt["parentMolecule"]["drugWarnings"]} == {"Withdrawn"}
+
+    family_ = family(fibro_paths(offline, "SLC6A2"), "Phendimetrazine").medicine
+    assert len(family_.forms) == 2
+    assert family_.withdrawn is True
+
+
+def one_medicine_answer(drug):
+    """A hand-made answer holding one medicine, in the saved files' shape."""
+    drug = {"id": "T1", "name": "TESTAMIL", "maximumClinicalStage": "APPROVAL",
+            "parentMolecule": None, "mechanismsOfAction": {"rows": []},
+            "indications": {"rows": []}, **drug}
+    return {"data": {"target": {"id": "E1", "drugAndClinicalCandidates": {
+        "count": 1, "rows": [{"drug": drug, "clinicalReports": []}]}}}}
+
+
+E1 = Target(id="E1", symbol="TEST1", name="test protein", score=0.5)
+
+
+def only_medicine(offline, drug):
+    offline.side_effect = lambda body: one_medicine_answer(drug)
+    (path,) = fetch.fetch_paths(PAH, E1)
+    return path.medicine
+
+
+WITHDRAWN = [{"warningType": "Withdrawn"}]
+BLACK_BOX = [{"warningType": "Black Box Warning"}]
+
+
+def test_29_a_parent_with_no_row_of_its_own_still_counts(offline):
+    medicine = only_medicine(offline, {
+        "id": "T2", "name": "TESTAMIL SODIUM", "drugWarnings": [], "childMolecules": [],
+        "parentMolecule": {"id": "T1", "name": "TESTAMIL", "drugWarnings": WITHDRAWN},
+    })
+    assert medicine.withdrawn is True
+
+
+def test_29_a_tablet_form_with_no_row_of_its_own_still_counts(offline):
+    medicine = only_medicine(offline, {
+        "drugWarnings": BLACK_BOX,
+        "childMolecules": [
+            {"id": "T2", "name": "TESTAMIL SODIUM", "drugWarnings": []},
+            {"id": "T3", "name": "TESTAMIL MALEATE", "drugWarnings": WITHDRAWN},
+        ],
+    })
+    assert medicine.withdrawn is True
+
+
+def test_29_only_the_word_withdrawn_counts(offline):
+    medicine = only_medicine(offline, {
+        "drugWarnings": BLACK_BOX + [{"warningType": "Some New Warning"}],
+        "childMolecules": [{"id": "T2", "name": "TESTAMIL SODIUM", "drugWarnings": BLACK_BOX}],
+    })
+    assert medicine.withdrawn is False
+
+
+@pytest.mark.parametrize("drug", [
+    {},  # an answer saved before 2026-11-15: no withdrawn field at all
+    {"drugWarnings": None, "childMolecules": []},
+    {"drugWarnings": [], "childMolecules": None},
+    {"drugWarnings": []},  # no word about its tablet forms
+    {"drugWarnings": [], "childMolecules": [{"id": "T2", "name": "TESTAMIL SODIUM"}]},
+    {"id": "T2", "name": "TESTAMIL SODIUM", "drugWarnings": [], "childMolecules": [],
+     "parentMolecule": {"id": "T1", "name": "TESTAMIL"}},
+])
+def test_29_change_5_a_missing_withdrawn_field_is_not_known_and_fetch_says_so(
+        offline, caplog, drug):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        medicine = only_medicine(offline, drug)
+    assert medicine.withdrawn is None  # not True, not False: no guess
+    (said,) = [record.getMessage() for record in caplog.records]
+    assert "did not say" in said and "withdrawn" in said
+    assert "TEST1" in said  # the protein is named
+    assert "TESTAMIL" not in said.upper()  # the medicine is not
+
+
+def test_29_withdrawn_found_beats_a_missing_piece(offline, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        medicine = only_medicine(offline, {"drugWarnings": WITHDRAWN})  # no childMolecules
+    assert medicine.withdrawn is True
+    assert not caplog.records
+
+
+def test_29_nothing_is_said_when_every_answer_holds_the_field(offline, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        fibro_paths(offline, "CACNA1H")
+    assert not caplog.records
+
+
+def test_29_the_old_saved_pah_files_have_no_withdrawn_field_so_it_is_not_known():
+    for path in paths_for("PDE5A") + paths_for("EDNRA"):
+        assert path.medicine.withdrawn is None
+
+
 # =====================================================================
 # Ticket 5.3: Open Targets' own list of medicines for a disease
 # =====================================================================
@@ -477,3 +675,138 @@ def test_53_the_same_form_sent_twice_is_one_form(offline):
     assert realine.forms == (("C1", "REALINE"),)
     assert realine.sources == ("https://example.org/C1",)
 
+
+
+# =====================================================================
+# Ticket 2.9, part 2 (Kashish, 15 Nov): the disease's own list also
+# carries the withdrawn note, and a withdrawn medicine is not on the
+# Approved list fetch_approved gives.
+# =====================================================================
+#
+# fixtures/withdrawn/MONDO_0015924/ holds the PAH answers read again live
+# on 2026-11-15 with the withdrawn note asked for. The files saved on
+# 10 Nov in fixtures/MONDO_0015924/ have no note and are left as they are.
+
+PAH_NOTED = FIXTURES / "withdrawn" / "MONDO_0015924"
+
+
+def noted_post_json(body):
+    """Stands in for fetch._post_json: the PAH answers that hold the
+    withdrawn note. The protein list and the disease record are the old
+    saved ones, because those questions did not change."""
+    variables = body["variables"]
+    if "targetId" in variables:
+        (file,) = (PAH_NOTED / "target_drugs").glob(
+            f"*_{variables['targetId']}.response.json")
+        return load(file)
+    if "diseaseId" in variables and "drugAndClinicalCandidates" in body["query"]:
+        assert variables["diseaseId"] == PAH.id
+        return load(PAH_NOTED / "disease_drugs.response.json")
+    if "diseaseId" in variables and "associatedTargets" not in body["query"]:
+        return load(GOLDEN / "disease_description.response.json")
+    return fake_post_json(body)
+
+
+@pytest.fixture
+def noted(offline):
+    offline.side_effect = noted_post_json
+    return offline
+
+
+def test_29_the_noted_pah_files_were_made_with_the_questions_fetch_asks():
+    assert (load(PAH_NOTED / "disease_drugs.request.json")["query"]
+            == fetch.DISEASE_DRUGS_QUERY)
+    files = list((PAH_NOTED / "target_drugs").glob("*.request.json"))
+    assert len(files) == 14
+    for file in files:
+        assert load(file)["query"] == fetch.TARGET_DRUGS_QUERY
+
+
+def test_29_the_diseases_own_list_is_asked_for_the_note_in_the_same_question():
+    assert "drugWarnings { warningType }" in fetch.DISEASE_DRUGS_QUERY
+    assert fetch.DISEASE_DRUGS_QUERY.count("query ") == 1
+
+
+def test_29_the_saved_list_says_sitaxentan_is_approved_for_pah_and_withdrawn():
+    rows = load(PAH_NOTED / "disease_drugs.response.json")["data"]["disease"][
+        "drugAndClinicalCandidates"]["rows"]
+    assert len(rows) == 118
+    (sitaxentan,) = [row for row in rows if row["drug"]["name"] == "SITAXENTAN"]
+    assert sitaxentan["maxClinicalStage"] == "APPROVAL"
+    assert {w["warningType"] for w in sitaxentan["drug"]["drugWarnings"]} == {"Withdrawn"}
+
+
+def test_29_with_the_note_sitaxentan_is_not_on_the_approved_list(noted):
+    names = [entry.name for entry in fetch.fetch_approved(PAH)]
+    assert "SITAXENTAN" not in names
+    for entry in fetch.fetch_approved(PAH):
+        assert not any("SITAXENTAN" in name for _, name in entry.forms)
+    # The other 13 are all still there, in the same order as before.
+    assert sorted(names) == [name for name in LISTED_APPROVED if name != "SITAXENTAN"]
+    assert len(names) == 13
+
+
+def test_29_without_the_note_the_old_list_is_as_it_was_and_fetch_says_so(
+        disease_list, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        names = sorted(entry.name for entry in fetch.fetch_approved(PAH))
+    assert names == LISTED_APPROVED  # not guessed: nothing is taken off
+    (said,) = [record.getMessage() for record in caplog.records]
+    assert "did not say" in said and "withdrawn" in said
+    assert "14" in said and "pulmonary arterial hypertension" in said
+    assert not any(name in said.upper() for name in LISTED_APPROVED)  # no medicine named
+
+
+def test_29_nothing_is_said_about_the_list_when_it_holds_the_note(noted, caplog):
+    with caplog.at_level("WARNING", logger="moonlight.fetch"):
+        fetch.fetch_approved(PAH)
+    assert not caplog.records
+
+
+def list_answer(*rows):
+    """A hand-made "medicines for this disease" answer."""
+    return {"data": {"disease": {"id": PAH.id, "drugAndClinicalCandidates": {
+        "count": len(rows), "rows": list(rows)}}}}
+
+
+def list_row(drug_id, name, stage="APPROVAL", parent=None, warnings=(), children=()):
+    return {
+        "maxClinicalStage": stage,
+        "drug": {"id": drug_id, "name": name, "maximumClinicalStage": "APPROVAL",
+                 "drugWarnings": list(warnings), "parentMolecule": parent,
+                 "childMolecules": list(children)},
+        "clinicalReports": [],
+    }
+
+
+def approved_names(offline, *rows):
+    offline.side_effect = lambda body: list_answer(*rows)
+    return [entry.name for entry in fetch.fetch_approved(PAH)]
+
+
+def test_29_on_the_list_one_withdrawn_form_takes_the_whole_family_off(offline):
+    # The withdrawn form is only in trials for the disease. The approved
+    # form has no warning of its own. The family is still left out.
+    parent = {"id": "T1", "name": "TESTAMIL", "drugWarnings": []}
+    assert approved_names(
+        offline,
+        list_row("T1", "TESTAMIL"),
+        list_row("T2", "TESTAMIL SODIUM", stage="PHASE_3", parent=parent, warnings=WITHDRAWN),
+        list_row("O1", "OTHERMIL"),
+    ) == ["OTHERMIL"]
+
+
+def test_29_on_the_list_a_withdrawn_parent_or_tablet_form_with_no_row_counts(offline):
+    parent = {"id": "T1", "name": "TESTAMIL", "drugWarnings": WITHDRAWN}
+    child = {"id": "U2", "name": "UPMIL SODIUM", "drugWarnings": WITHDRAWN}
+    assert approved_names(
+        offline,
+        list_row("T2", "TESTAMIL SODIUM", parent=parent),
+        list_row("U1", "UPMIL", children=[child]),
+        list_row("O1", "OTHERMIL"),
+    ) == ["OTHERMIL"]
+
+
+def test_29_on_the_list_a_black_box_warning_is_not_a_withdrawal(offline):
+    assert approved_names(
+        offline, list_row("T1", "TESTAMIL", warnings=BLACK_BOX)) == ["TESTAMIL"]

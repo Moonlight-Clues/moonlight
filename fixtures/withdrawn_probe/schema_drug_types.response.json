@@ -1,0 +1,1137 @@
+{
+  "data": {
+    "meta": {
+      "name": "Open Targets GraphQL & REST API Beta",
+      "apiVersion": {
+        "x": "26",
+        "y": "9",
+        "z": "0"
+      },
+      "dataVersion": {
+        "year": "26",
+        "month": "09",
+        "iteration": null
+      }
+    },
+    "Drug": {
+      "name": "Drug",
+      "kind": "OBJECT",
+      "description": "Core annotation for drug or clinical candidate molecules. A drug in the platform is understood as any bioactive molecule with drug-like properties included in the EMBL-EBI ChEMBL database. All ChEMBL molecules fullfilling any of the next criteria are included in the database: a) Molecules with a known indication. b) Molecules with a known mechanism of action c) ChEMBL molecules included in the DrugBank database d) Molecules that are acknowledged as chemical probes",
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "id",
+          "description": "Drug or clinical candidate molecule identifier",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "maximumClinicalStage",
+          "description": "Highest clinical stage reached by the drug or clinical candidate molecule",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "crossReferences",
+          "description": "Cross-reference information for this molecule from external databases",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "DrugReferences",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "tradeNames",
+          "description": "List of brand names for the drug, each with its source",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "DrugLabelAndSource",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "molblock",
+          "description": "Molblock",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "Summary of the drug's clinical development",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "drugType",
+          "description": "Classification of the molecule's therapeutic category or chemical class (e.g. Antibody)",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "synonyms",
+          "description": "List of alternative names for the drug, each with its source (e.g. ChEMBL, or AACT for names mined from clinical trials)",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "DrugLabelAndSource",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Generic name of the drug molecule",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "parentMolecule",
+          "description": "Parent molecule for derivative compounds",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "Drug",
+            "ofType": null
+          }
+        },
+        {
+          "name": "childMolecules",
+          "description": "List of molecules corresponding to derivative compounds",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Drug",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "drugWarnings",
+          "description": "Warnings present on drug as identified by ChEMBL.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "DrugWarning",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "similarEntities",
+          "description": "Semantically similar drugs based on a PubMed word embedding model",
+          "args": [
+            {
+              "name": "additionalIds",
+              "defaultValue": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            {
+              "name": "entityNames",
+              "defaultValue": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            {
+              "name": "threshold",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              }
+            },
+            {
+              "name": "size",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Similarity",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "literatureOcurrences",
+          "description": "Return the list of publications that mention the main entity, alone or in combination with other entities",
+          "args": [
+            {
+              "name": "additionalIds",
+              "defaultValue": null,
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            {
+              "name": "startYear",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "name": "startMonth",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "name": "endYear",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "name": "endMonth",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "name": "cursor",
+              "defaultValue": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          ],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "Publications",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "mechanismsOfAction",
+          "description": "Mechanisms of action to produce intended pharmacological effects. Curated from scientific literature and post-marketing package inserts",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "MechanismsOfAction",
+            "ofType": null
+          }
+        },
+        {
+          "name": "adverseEvents",
+          "description": "Significant adverse events estimated from pharmacovigilance reports deposited in FAERS",
+          "args": [
+            {
+              "name": "page",
+              "defaultValue": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "Pagination",
+                "ofType": null
+              }
+            }
+          ],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "AdverseEvents",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "pharmacogenomics",
+          "description": "Pharmacogenomics data linking genetic variants to responses to this drug. Data is integrated from sources including ClinPGx and describes how genetic variants influence individual responses to this drug.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Pharmacogenomics",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "indications",
+          "description": "Clinical indications for this drug as reported by clinical trial records.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "clinicalIndicationsFromDrugImp",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "DrugWarning": {
+      "name": "DrugWarning",
+      "kind": "OBJECT",
+      "description": "Blackbox and withdrawn information for drugs molecules included in ChEMBL database.",
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "efoId",
+          "description": "List of disease identifiers associated with the warning [bioregistry:efo]",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "year",
+          "description": "Year when the warning was issued",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "name": "id",
+          "description": "Internal identifier for the drug warning record",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Long",
+            "ofType": null
+          }
+        },
+        {
+          "name": "chemblIds",
+          "description": "List of molecule identifiers associated with the warning",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "toxicityClass",
+          "description": "Classification of toxicity type associated with the drug",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "efoTerm",
+          "description": "List of disease labels associated with the warning",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "warningType",
+          "description": "Classification of action taken (drug is withdrawn or has a black box warning)",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "efoIdForWarningClass",
+          "description": "Disease identifier categorising the type of warning [bioregistry:efo]",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "description",
+          "description": "Description of the drug adverse effect",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "country",
+          "description": "Country where the warning was issued",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "references",
+          "description": "List of sources supporting the warning information",
+          "args": [],
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "DrugWarningReference",
+                "ofType": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    "DrugWarningReference": {
+      "name": "DrugWarningReference",
+      "kind": "OBJECT",
+      "description": "Reference information for drug warnings",
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "id",
+          "description": "Reference identifier (e.g., PubMed ID)",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "url",
+          "description": "URL linking to the reference",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "source",
+          "description": "Source of the reference",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    },
+    "clinicalIndicationsFromDrugImp": {
+      "name": "clinicalIndicationsFromDrugImp",
+      "kind": "OBJECT",
+      "description": "",
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "count",
+          "description": "Total number of indications results matching the query filters",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Long",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "rows",
+          "description": "List of clinical indications results between drug-disease pairs",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ClinicalIndicationFromDrug",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ClinicalIndicationFromDrug": {
+      "name": "ClinicalIndicationFromDrug",
+      "kind": "OBJECT",
+      "description": null,
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "id",
+          "description": "Hash of drugId, diseaseId.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "maxClinicalStage",
+          "description": "Maximum Clinical Development Status for the association.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "disease",
+          "description": "",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "Disease",
+            "ofType": null
+          }
+        },
+        {
+          "name": "clinicalReports",
+          "description": "",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ClinicalReport",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ClinicalReport": {
+      "name": "ClinicalReport",
+      "kind": "OBJECT",
+      "description": null,
+      "enumValues": null,
+      "fields": [
+        {
+          "name": "id",
+          "description": "Report ID",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "origin",
+          "description": "Nature of the record the report originates from (e.g. CLINICAL_TRIAL, DRUG_LABEL, REGULATORY_AGENCY, CURATED_RESOURCE).",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialStartDate",
+          "description": "Start date of the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialStudyType",
+          "description": "Type of clinical study (e.g. Interventional, Observational)",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "provider",
+          "description": "Resource or organisation that distributes the data fetched from the primary source (e.g. AACT, ChEMBL, EMA, PMDA, TTD).",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "title",
+          "description": "Title of the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "url",
+          "description": "URL linking to the source record",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialDescription",
+          "description": "Description of the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "clinicalStage",
+          "description": "Harmonised clinical stage",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialWhyStopped",
+          "description": "Free-text reason for early stoppage of the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialPrimaryPurpose",
+          "description": "Purpose for the intervention of the clinical trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialStopReasonCategories",
+          "description": "Assigned categories based on trialWhyStopped",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "qualityControls",
+          "description": "Flags related to report concerns",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "trialOfficialTitle",
+          "description": "Official title of the clinical trial as registered",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialSponsor",
+          "description": "Information on the entity or individual initiating the study.",
+          "args": [],
+          "type": {
+            "kind": "OBJECT",
+            "name": "TrialSponsor",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialNumberOfArms",
+          "description": "Number of arms in the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "name": "year",
+          "description": "The year to which the clinical report refers.",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "Int",
+            "ofType": null
+          }
+        },
+        {
+          "name": "countries",
+          "description": "List of countries where the clinical report was conducted/reported",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "type",
+          "description": "Type of clinical report. List of possible values: INDICATION, SAFETY.",
+          "args": [],
+          "type": {
+            "kind": "ENUM",
+            "name": "ClinicalReportType",
+            "ofType": null
+          }
+        },
+        {
+          "name": "phaseFromSource",
+          "description": "Clinical phase reported at source",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "source",
+          "description": "Source of the clinical report (e.g., AACT)",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialLiterature",
+          "description": "List of PMIDs linked to the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "TrialLiterature",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "drugs",
+          "description": "List of drugs mentioned in the report",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ClinRepDrugListItem",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "trialOverallStatus",
+          "description": "Overall status of the trial associated with the clinical report",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialPhase",
+          "description": "Phase of the clinical trial",
+          "args": [],
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "diseases",
+          "description": "Diseases associated with the clinical report.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ClinicalDiseaseListItem",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "sideEffects",
+          "description": "Side effects associated with the clinical report.",
+          "args": [],
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ClinicalDiseaseListItem",
+                  "ofType": null
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ClinicalReportType": {
+      "name": "ClinicalReportType",
+      "kind": "ENUM",
+      "description": "Kind of clinical evidence the report describes.",
+      "enumValues": [
+        {
+          "name": "INDICATION",
+          "description": "Clinical evidence informing about a drug/disease claim."
+        },
+        {
+          "name": "SAFETY",
+          "description": "Clinical evidence informing about a drug's safety event"
+        }
+      ],
+      "fields": null
+    }
+  }
+}
