@@ -443,9 +443,17 @@ def test_the_only_quick_start_chip_is_pah_by_its_id(client):
 
 
 def test_the_page_names_no_medicine_before_a_search(client):
-    page = client.get("/").text.upper()
+    # Kashish's decision, 2026-11-15 (ticket 5.4): the guide shows one real
+    # card, Doxapram. Outside the guide the page names no medicine. Inside
+    # the guide the only medicine named is Doxapram, with its form.
+    page = client.get("/").text
+    guide = guide_of(page)
+    assert page.count(guide) == 1
+    outside = page.replace(guide, "").upper()
     for name in NEW_ORDER + ["Udenafil", "Vardenafil", "Sildenafil", "Tadalafil"]:
-        assert name.upper() not in page
+        assert name.upper() not in outside, name
+        if name != "Doxapram":
+            assert name.upper() not in guide.upper(), name
 
 
 # ---- /api/search ----
@@ -1298,9 +1306,17 @@ def test_53_approved_cards_get_no_number_no_explanation_and_no_ending(client):
 
 
 def test_53_the_page_still_names_no_medicine_before_a_search(client):
-    page = client.get("/").text.upper()
+    # Kashish's decision, 2026-11-15 (ticket 5.4): the guide shows one real
+    # card, Doxapram. Outside the guide the page names no medicine. Inside
+    # the guide the only medicine named is Doxapram, with its form.
+    page = client.get("/").text
+    guide = guide_of(page)
+    assert page.count(guide) == 1
+    outside = page.replace(guide, "").upper()
     for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
-        assert name.upper() not in page
+        assert name.upper() not in outside, name
+        if name != "Doxapram":
+            assert name.upper() not in guide.upper(), name
 
 
 # =====================================================================
