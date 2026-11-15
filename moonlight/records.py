@@ -1,8 +1,9 @@
 """Shared record types for Moonlight: Disease, Target, MedicineForm, Medicine, Path.
 
 Nothing here fetches, filters or ranks. These are only the shapes that the
-other modules pass to each other, plus two small rules: which clinical stage
-is stronger, and which way a medicine pushes a protein.
+other modules pass to each other, plus three small rules: which clinical stage
+is stronger, which way a medicine pushes a protein, and when a medicine
+family counts as withdrawn.
 """
 
 from dataclasses import dataclass
@@ -19,6 +20,8 @@ STAGE_ORDER = (
     "PHASE_1_2",
     "PHASE_1",
     "EARLY_PHASE_1",
+    "IND",  # not tested in people yet (ticket 2.10)
+    "PRECLINICAL",  # not tested in people yet (ticket 2.10)
     "WITHDRAWAL",
     "UNKNOWN",
 )
@@ -32,11 +35,15 @@ UP_ACTION_TYPES = frozenset(
 
 
 def _stage_rank(stage: str) -> int:
-    """Position in STAGE_ORDER. 0 is strongest."""
+    """Position in STAGE_ORDER. 0 is strongest.
+
+    A word that is not on the ladder never raises. It sits below every word
+    that is, so it can never count as approved (Kashish, 2026-11-15).
+    """
     try:
         return STAGE_ORDER.index(stage)
     except ValueError:
-        raise ValueError(f"Unknown clinical stage: {stage!r}") from None
+        return len(STAGE_ORDER)
 
 
 def stronger_stage(a: Optional[str], b: Optional[str]) -> Optional[str]:
@@ -97,6 +104,10 @@ class MedicineForm:
     best_stage: str  # furthest stage for any disease
     disease_stage: Optional[str] = None  # stage for our disease, None if no link
     parent_id: Optional[str] = None  # id of the medicine this is a form of
+    # Was it taken off the shelves in any country? True: yes. False: Open
+    # Targets was asked and lists no withdrawal. None: Open Targets did not
+    # say, so Moonlight does not know and does not guess.
+    withdrawn: Optional[bool] = None
 
     def __post_init__(self):
         _stage_rank(self.best_stage)
@@ -131,6 +142,20 @@ class Medicine:
         for form in self.forms:
             best = stronger_stage(best, form.disease_stage)
         return best
+
+    @property
+    def withdrawn(self) -> Optional[bool]:
+        """Was any form withdrawn? One withdrawn form is enough for True.
+
+        None means it is not known: no form is known to be withdrawn, but
+        Open Targets did not say for at least one of them.
+        """
+        answers = [form.withdrawn for form in self.forms]
+        if any(answer is True for answer in answers):
+            return True
+        if any(answer is None for answer in answers):
+            return None
+        return False
 
 
 @dataclass(frozen=True)

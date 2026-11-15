@@ -1,8 +1,8 @@
 """The sorting tray: put each medicine into one group, using Kashish's rules.
 
 Nothing here fetches or ranks. It only looks at a Medicine family's two
-stages (best_stage and disease_stage, both worked out in records.py) and
-answers two questions in order.
+stages and whether it was withdrawn (best_stage, disease_stage and
+withdrawn, all worked out in records.py) and answers two questions in order.
 """
 
 from typing import Dict, Iterable, List
@@ -26,10 +26,18 @@ def group_of(medicine: Medicine) -> str:
     """Which group a medicine family belongs to.
 
     Question 1: is the family approved for at least one disease?
+                A family with a withdrawn form does not count as approved.
     Question 2: what is the family's link to OUR disease?
     """
     # Question 1. If the answer is no, stop here, even if there is a link.
     if medicine.best_stage != "APPROVAL":
+        return NOT_APPROVED
+    # Kashish's decision, 2026-11-15. A medicine withdrawn in any country
+    # does not count as approved, even if other countries still sell it.
+    # One withdrawn form is enough for the whole family. Only True counts:
+    # None means Open Targets did not say, and that is not guessed to mean
+    # "withdrawn". fetch.py says so when that happens.
+    if medicine.withdrawn is True:
         return NOT_APPROVED
 
     # Question 2.
@@ -42,7 +50,7 @@ def group_of(medicine: Medicine) -> str:
         return BEING_STUDIED
     if link in ("WITHDRAWAL", "UNKNOWN"):
         return UNCLEAR_LINK
-    raise ValueError(f"Do not know how to sort disease stage: {link!r}")
+    return UNCLEAR_LINK  # IND, PRECLINICAL or any other word: unclear, never an error
 
 
 def sort_paths(paths: Iterable[Path]) -> Dict[str, List[Path]]:
