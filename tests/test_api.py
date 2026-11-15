@@ -70,6 +70,8 @@ def fake_post_json(body):
         return {"data": {"disease": None}}  # a disease Open Targets does not know
     if "associatedTargets" in query:
         return load(GOLDEN / "associated_targets.response.json")
+    if "drugAndClinicalCandidates" in query:
+        return load(GOLDEN / "disease_drugs.response.json")
     return load(GOLDEN / "disease_description.response.json")
 
 
@@ -232,22 +234,25 @@ def all_api_text(client):
     return "\n".join(said).upper()
 
 
-def test_no_response_contains_sildenafil_or_tadalafil(client):
-    text = all_api_text(client)
-    assert "VARDENAFIL" in text  # it really answered
-    assert "SILDENAFIL" not in text
-    assert "TADALAFIL" not in text
+def test_sildenafil_and_tadalafil_are_only_in_the_approved_list(client):
+    with with_saved_targets():
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    approved = [item["medicine"] for item in data["approved"]]
+    assert "Sildenafil" in approved and "Tadalafil" in approved
+    others = json.dumps([data["new_clues"], data["being_studied"]]).upper()
+    assert "VARDENAFIL" in others  # it really answered
+    assert "SILDENAFIL" not in others and "TADALAFIL" not in others
 
 
 def test_no_response_names_any_medicine_from_a_hidden_group(client):
     saved = [t for t in fetch.fetch_targets(PAH) if t.id in SAVED_IDS]
     tray = engine.find_clues(PAH, saved)
     hidden = set()
-    for group in ("not_approved", "already_approved", "unclear_link"):
+    for group in ("not_approved", "unclear_link"):
         for path in tray[group]:
             hidden.add(path.medicine.name.upper())
             hidden.update(form.name.upper() for form in path.medicine.forms)
-    assert "SILDENAFIL" in hidden and len(hidden) > 10
+    assert len(hidden) > 10
     text = all_api_text(client)
     assert [name for name in sorted(hidden) if name in text] == []
 
@@ -286,10 +291,10 @@ def test_gemini_naming_a_hidden_medicine_is_thrown_away(client):
 
 # ---- Example 3 ----
 
-def test_left_out_is_three_numbers_12_6_0(client):
+def test_left_out_is_two_numbers_12_0(client):
     data = clues_json(client, *FIVE)
-    assert data["left_out"] == {"not_approved": 12, "already_approved": 6, "unclear_link": 0}
-    assert list(data["left_out"].values()) == [12, 6, 0]
+    assert data["left_out"] == {"not_approved": 12, "unclear_link": 0}
+    assert list(data["left_out"].values()) == [12, 0]
 
 
 # ---- Example 4 ----
@@ -474,7 +479,7 @@ def test_a_disease_with_no_clues_gives_empty_lists_and_zero_counts(client):
     with patch("moonlight.api.fetch_targets", return_value=[]):
         data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
     assert data["new_clues"] == [] and data["being_studied"] == []
-    assert data["left_out"] == {"not_approved": 0, "already_approved": 0, "unclear_link": 0}
+    assert data["left_out"] == {"not_approved": 0, "unclear_link": 0}
 
 
 def test_open_targets_being_down_is_a_502_not_a_crash(client):
@@ -936,13 +941,15 @@ def test_the_page_never_picks_a_disease_by_itself(client):
     calls = [m.start() for m in re.finditer(r"showClues\(", script)]
     # Its own definition, the quick-start chip, and choice(), the one
     # function that makes both the match buttons and the did-you-mean buttons.
-    assert len(calls) == 3
+    assert len(calls) == 4   # the fourth is the link
     for at in calls:
         before = script[:at]
         if before.endswith("async function "):
             continue
         last_tap = before.rfind('addEventListener("click"')
-        assert last_tap != -1 and "\n  }\n" not in before[last_tap:]
+        from_a_tap = last_tap != -1 and "\n  }\n" not in before[last_tap:]
+        from_a_link = before.endswith('if (linked.get("disease")) ')
+        assert from_a_tap or from_a_link
 
 
 # =====================================================================
