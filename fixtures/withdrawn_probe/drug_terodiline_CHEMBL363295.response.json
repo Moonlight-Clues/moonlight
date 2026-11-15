@@ -1,0 +1,371 @@
+{
+  "data": {
+    "drug": {
+      "id": "CHEMBL363295",
+      "name": "TERODILINE",
+      "drugType": "Small molecule",
+      "description": "Small molecule drug with a maximum clinical stage of Approval (across all indications), with an approval for polyuria and urinary incontinence.",
+      "maximumClinicalStage": "APPROVAL",
+      "tradeNames": [],
+      "parentMolecule": null,
+      "childMolecules": [
+        {
+          "id": "CHEMBL539770",
+          "name": "TERODILINE HYDROCHLORIDE",
+          "maximumClinicalStage": "APPROVAL",
+          "drugWarnings": [
+            {
+              "id": 4515,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "Worldwide",
+              "year": 1991,
+              "description": "Ventricular Tachycardia and Arrhythmia",
+              "efoTerm": "ventricular tachycardia",
+              "efoId": "EFO:0005306",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL539770",
+                "CHEMBL363295"
+              ],
+              "references": [
+                {
+                  "id": "10.1177/009286150103500134",
+                  "source": "DOI",
+                  "url": "https://doi.org/10.1177/009286150103500134"
+                }
+              ]
+            },
+            {
+              "id": 4812,
+              "warningType": "Withdrawn",
+              "toxicityClass": "cardiotoxicity",
+              "country": "Worldwide",
+              "year": 1991,
+              "description": "Ventricular Tachycardia and Arrhythmia",
+              "efoTerm": "Ventricular arrhythmia",
+              "efoId": "HP:0004308",
+              "efoIdForWarningClass": "EFO:1001482",
+              "chemblIds": [
+                "CHEMBL539770",
+                "CHEMBL363295"
+              ],
+              "references": [
+                {
+                  "id": "7628177",
+                  "source": "PubMed",
+                  "url": "http://europepmc.org/abstract/MED/7628177"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "drugWarnings": [
+        {
+          "id": 4427,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1991,
+          "description": "cardiac adverse reactions, including ventricular tachycardia, heart block and bradycardia",
+          "efoTerm": "Bradycardia",
+          "efoId": "HP:0001662",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL363295"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4515,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1991,
+          "description": "Ventricular Tachycardia and Arrhythmia",
+          "efoTerm": "ventricular tachycardia",
+          "efoId": "EFO:0005306",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL539770",
+            "CHEMBL363295"
+          ],
+          "references": [
+            {
+              "id": "10.1177/009286150103500134",
+              "source": "DOI",
+              "url": "https://doi.org/10.1177/009286150103500134"
+            }
+          ]
+        },
+        {
+          "id": 4724,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1991,
+          "description": "cardiac adverse reactions, including ventricular tachycardia, heart block and bradycardia",
+          "efoTerm": "ventricular tachycardia",
+          "efoId": "EFO:0005306",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL363295"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        },
+        {
+          "id": 4812,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1991,
+          "description": "Ventricular Tachycardia and Arrhythmia",
+          "efoTerm": "Ventricular arrhythmia",
+          "efoId": "HP:0004308",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL539770",
+            "CHEMBL363295"
+          ],
+          "references": [
+            {
+              "id": "7628177",
+              "source": "PubMed",
+              "url": "http://europepmc.org/abstract/MED/7628177"
+            }
+          ]
+        },
+        {
+          "id": 5022,
+          "warningType": "Withdrawn",
+          "toxicityClass": "cardiotoxicity",
+          "country": "Worldwide",
+          "year": 1991,
+          "description": "cardiac adverse reactions, including ventricular tachycardia, heart block and bradycardia",
+          "efoTerm": "heart block",
+          "efoId": "MP:0010559",
+          "efoIdForWarningClass": "EFO:1001482",
+          "chemblIds": [
+            "CHEMBL363295"
+          ],
+          "references": [
+            {
+              "id": "CL12.pdf",
+              "source": "WHO",
+              "url": "https://www.un.org/esa/coordination/CL12.pdf"
+            }
+          ]
+        }
+      ],
+      "mechanismsOfAction": {
+        "rows": [
+          {
+            "actionType": "ANTAGONIST",
+            "mechanismOfAction": "Muscarinic acetylcholine receptor antagonist",
+            "targets": [
+              {
+                "id": "ENSG00000133019",
+                "approvedSymbol": "CHRM3"
+              },
+              {
+                "id": "ENSG00000180720",
+                "approvedSymbol": "CHRM4"
+              },
+              {
+                "id": "ENSG00000168539",
+                "approvedSymbol": "CHRM1"
+              },
+              {
+                "id": "ENSG00000181072",
+                "approvedSymbol": "CHRM2"
+              },
+              {
+                "id": "ENSG00000184984",
+                "approvedSymbol": "CHRM5"
+              }
+            ]
+          },
+          {
+            "actionType": "BLOCKER",
+            "mechanismOfAction": "Voltage-gated calcium channel blocker",
+            "targets": [
+              {
+                "id": "ENSG00000196557",
+                "approvedSymbol": "CACNA1H"
+              },
+              {
+                "id": "ENSG00000153956",
+                "approvedSymbol": "CACNA2D1"
+              },
+              {
+                "id": "ENSG00000151067",
+                "approvedSymbol": "CACNA1C"
+              },
+              {
+                "id": "ENSG00000157445",
+                "approvedSymbol": "CACNA2D3"
+              },
+              {
+                "id": "ENSG00000081248",
+                "approvedSymbol": "CACNA1S"
+              },
+              {
+                "id": "ENSG00000007402",
+                "approvedSymbol": "CACNA2D2"
+              },
+              {
+                "id": "ENSG00000157388",
+                "approvedSymbol": "CACNA1D"
+              },
+              {
+                "id": "ENSG00000141837",
+                "approvedSymbol": "CACNA1A"
+              },
+              {
+                "id": "ENSG00000148408",
+                "approvedSymbol": "CACNA1B"
+              },
+              {
+                "id": "ENSG00000006283",
+                "approvedSymbol": "CACNA1G"
+              },
+              {
+                "id": "ENSG00000151062",
+                "approvedSymbol": "CACNA2D4"
+              },
+              {
+                "id": "ENSG00000100346",
+                "approvedSymbol": "CACNA1I"
+              },
+              {
+                "id": "ENSG00000102001",
+                "approvedSymbol": "CACNA1F"
+              },
+              {
+                "id": "ENSG00000198216",
+                "approvedSymbol": "CACNA1E"
+              },
+              {
+                "id": "ENSG00000182389",
+                "approvedSymbol": "CACNB4"
+              },
+              {
+                "id": "ENSG00000165995",
+                "approvedSymbol": "CACNB2"
+              },
+              {
+                "id": "ENSG00000067191",
+                "approvedSymbol": "CACNB1"
+              },
+              {
+                "id": "ENSG00000167535",
+                "approvedSymbol": "CACNB3"
+              },
+              {
+                "id": "ENSG00000105605",
+                "approvedSymbol": "CACNG7"
+              },
+              {
+                "id": "ENSG00000075429",
+                "approvedSymbol": "CACNG5"
+              },
+              {
+                "id": "ENSG00000166862",
+                "approvedSymbol": "CACNG2"
+              },
+              {
+                "id": "ENSG00000075461",
+                "approvedSymbol": "CACNG4"
+              },
+              {
+                "id": "ENSG00000142408",
+                "approvedSymbol": "CACNG8"
+              },
+              {
+                "id": "ENSG00000006116",
+                "approvedSymbol": "CACNG3"
+              },
+              {
+                "id": "ENSG00000130433",
+                "approvedSymbol": "CACNG6"
+              },
+              {
+                "id": "ENSG00000108878",
+                "approvedSymbol": "CACNG1"
+              }
+            ]
+          }
+        ]
+      },
+      "indications": {
+        "count": 2,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "HP_0000103",
+              "name": "Polyuria"
+            },
+            "clinicalReports": [
+              {
+                "id": "g04bd05",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=G04BD05",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "disease": {
+              "id": "HP_0000020",
+              "name": "Urinary incontinence"
+            },
+            "clinicalReports": [
+              {
+                "id": "g04bd05",
+                "type": "INDICATION",
+                "clinicalStage": "APPROVAL",
+                "source": "ATC",
+                "url": "https://www.whocc.no/atc_ddd_index/?code=G04BD05",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              },
+              {
+                "id": "d0y3zp/urinary incontinence",
+                "type": "INDICATION",
+                "clinicalStage": "PHASE_3",
+                "source": "TTD",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0Y3ZP",
+                "year": null,
+                "trialOverallStatus": null,
+                "trialWhyStopped": null,
+                "trialStopReasonCategories": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

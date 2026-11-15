@@ -1,0 +1,2913 @@
+{
+  "data": {
+    "target": {
+      "id": "ENSG00000171303",
+      "drugAndClinicalCandidates": {
+        "count": 7,
+        "rows": [
+          {
+            "drug": {
+              "id": "CHEMBL1257",
+              "name": "ENFLURANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145888"
+                      },
+                      {
+                        "id": "ENSG00000109738"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000022355"
+                      },
+                      {
+                        "id": "ENSG00000145864"
+                      },
+                      {
+                        "id": "ENSG00000113327"
+                      },
+                      {
+                        "id": "ENSG00000166206"
+                      },
+                      {
+                        "id": "ENSG00000109158"
+                      },
+                      {
+                        "id": "ENSG00000182256"
+                      },
+                      {
+                        "id": "ENSG00000268089"
+                      },
+                      {
+                        "id": "ENSG00000011677"
+                      },
+                      {
+                        "id": "ENSG00000094755"
+                      },
+                      {
+                        "id": "ENSG00000187730"
+                      },
+                      {
+                        "id": "ENSG00000163285"
+                      },
+                      {
+                        "id": "ENSG00000163288"
+                      },
+                      {
+                        "id": "ENSG00000102287"
+                      },
+                      {
+                        "id": "ENSG00000151834"
+                      },
+                      {
+                        "id": "ENSG00000186297"
+                      },
+                      {
+                        "id": "ENSG00000145863"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000100433"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000186795"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000082482"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0006834"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0100806"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0AO9S"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00815269"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL1200694",
+              "name": "SEVOFLURANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145888"
+                      },
+                      {
+                        "id": "ENSG00000109738"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "POSITIVE ALLOSTERIC MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000022355"
+                      },
+                      {
+                        "id": "ENSG00000145864"
+                      },
+                      {
+                        "id": "ENSG00000113327"
+                      },
+                      {
+                        "id": "ENSG00000166206"
+                      },
+                      {
+                        "id": "ENSG00000109158"
+                      },
+                      {
+                        "id": "ENSG00000182256"
+                      },
+                      {
+                        "id": "ENSG00000268089"
+                      },
+                      {
+                        "id": "ENSG00000011677"
+                      },
+                      {
+                        "id": "ENSG00000094755"
+                      },
+                      {
+                        "id": "ENSG00000187730"
+                      },
+                      {
+                        "id": "ENSG00000163285"
+                      },
+                      {
+                        "id": "ENSG00000163288"
+                      },
+                      {
+                        "id": "ENSG00000102287"
+                      },
+                      {
+                        "id": "ENSG00000151834"
+                      },
+                      {
+                        "id": "ENSG00000186297"
+                      },
+                      {
+                        "id": "ENSG00000145863"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000100433"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000186795"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000082482"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0001627"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0009444"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0002032"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0021163"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "EFO_0009868"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0005068"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0021211"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0007256"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0000556"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0700092"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0025425"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_1001478"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "EFO_0009954"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0021632"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0007345"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "EFO_0003776"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0000266"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0006810"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_1001905"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005041"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004979"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0011058"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0009831"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0000579"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0100806"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0008315"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005586"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0003803"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005453"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1_2",
+                    "disease": {
+                      "id": "MONDO_0004981"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "EFO_0006834"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0021063"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0005648"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004992"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0000708"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0043510"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0015796"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "GO_0006954"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0005010"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0004888"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0001358"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "EARLY_PHASE_1",
+                    "disease": {
+                      "id": "HP_0012532"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "HP_0012531"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "HP_0000023"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0009636"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0006536"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0002870"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0009909"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0007576"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "EARLY_PHASE_1",
+                    "disease": {
+                      "id": "EFO_0005323"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0001577"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0007027"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005203"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0005099"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0021040"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0011918"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "HP_0001249"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005206"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004631"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004987"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0007254"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0002691"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0005233"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0018177"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_1030008"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005015"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0008903"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "EFO_0004352"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0045057"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0044970"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0011962"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0006497"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005098"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0000486"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0002045"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0005575"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0010682"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005291"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002009"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "EFO_0009516"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0011122"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0003381"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005468"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005300"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0008170"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002492"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0003767"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0002869"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002050"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0006502"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MP_0001914"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00144118"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00364637"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00922844"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00937807"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01048658"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01052337"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01084200"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01096212"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01150838"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01189721"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01199237"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01437462"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01601795"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01705743"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01755234"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01792063"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01809041"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01833676"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01878656"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01886664"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01930747"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01995214"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02107170"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02146976"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02182648"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02405689"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02457442"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02609087"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02691416"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02712528"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02727296"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02785653"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03058341"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03772106"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04002271"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04039854"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04619160"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04802122"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05037006"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05158998"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05223907"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05303805"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05430750"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05935930"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05941494"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05962671"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06024733"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06560268"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07080528"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0W6ZF"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0F0TO"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00337051"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00389883"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00531349"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00741351"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01120405"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01219881"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01294163"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01802255"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02322502"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02559102"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02609802"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03089905"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03841812"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04235608"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04316013"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04355962"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04415060"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04513808"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04530188"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05259631"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05696509"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05867472"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06624592"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07166991"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07289945"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00762372"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05636566"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00535808"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00971607"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01199276"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01374633"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01937767"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02048683"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02284204"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02839668"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02946437"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02971254"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03643367"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06017141"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00484575"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01700907"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04771962"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02188407"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02229201"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04162535"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05695287"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05742789"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02786329"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04016740"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04950205"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04998253"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00507195"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00515905"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00516711"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00518908"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00521612"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00586118"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00733564"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00775879"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00815269"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00885443"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00913276"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00924222"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00983918"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00995670"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01001585"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01014728"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01083953"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01151254"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01171833"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01202162"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01235143"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01248871"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01450956"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01461551"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01549990"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01575626"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01591031"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01616966"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01744262"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01872884"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01896245"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01905501"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02038894"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02185118"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02217319"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02331108"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02342509"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02382445"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02406300"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02407626"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02428972"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02429323"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02440204"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02489734"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02510586"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02550470"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02604459"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02639806"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02660411"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02662257"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02664142"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02672345"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02697448"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02709863"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02715869"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02726620"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02794896"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02909413"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02920749"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03015350"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03024840"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03094533"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03112564"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03162861"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03165396"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03173339"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03193710"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03213392"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03214653"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03263078"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03326960"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03366597"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03379103"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03460015"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03521414"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03522402"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03553082"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03553446"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03559920"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03705728"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03726580"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03727464"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03772054"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03778723"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03787849"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03789370"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03818048"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03860129"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04123249"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04203290"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04254744"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04259398"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04284644"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04292457"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04292561"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04383730"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04415905"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04485117"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04601961"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04760262"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04775212"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04800393"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04865614"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04866498"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04962672"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04965532"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05008939"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05019222"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05102422"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05148637"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05241054"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05247177"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05289349"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05321160"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05343260"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05356091"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05365165"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05396690"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05474937"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05505123"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05523037"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05527314"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05559970"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05586126"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05681429"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05693428"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05864625"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05936671"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06176144"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06209112"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06210061"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06215833"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06217055"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06275087"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06307717"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06353516"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06390046"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06396468"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06423846"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06467279"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06558695"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06601036"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06606899"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06656455"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06666959"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06694675"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06729086"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06788743"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06832683"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06835010"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06936761"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07016308"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07033442"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07041567"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07121699"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07152912"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07181564"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07207304"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07248917"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07271459"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07304206"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07304479"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07313969"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07325669"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07338578"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07378241"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07378878"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07440758"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07450495"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07513870"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07534956"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07602400"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL1200733",
+              "name": "DESFLURANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145888"
+                      },
+                      {
+                        "id": "ENSG00000109738"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "POSITIVE ALLOSTERIC MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000022355"
+                      },
+                      {
+                        "id": "ENSG00000145864"
+                      },
+                      {
+                        "id": "ENSG00000113327"
+                      },
+                      {
+                        "id": "ENSG00000166206"
+                      },
+                      {
+                        "id": "ENSG00000109158"
+                      },
+                      {
+                        "id": "ENSG00000182256"
+                      },
+                      {
+                        "id": "ENSG00000268089"
+                      },
+                      {
+                        "id": "ENSG00000011677"
+                      },
+                      {
+                        "id": "ENSG00000094755"
+                      },
+                      {
+                        "id": "ENSG00000187730"
+                      },
+                      {
+                        "id": "ENSG00000163285"
+                      },
+                      {
+                        "id": "ENSG00000163288"
+                      },
+                      {
+                        "id": "ENSG00000102287"
+                      },
+                      {
+                        "id": "ENSG00000151834"
+                      },
+                      {
+                        "id": "ENSG00000186297"
+                      },
+                      {
+                        "id": "ENSG00000145863"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000100433"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000186795"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000082482"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0008903"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0009868"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0006795"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004979"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005099"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0006373"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002039"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0011918"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005010"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "HP_0001249"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0100806"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005203"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0004888"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0011122"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005300"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002492"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0009909"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0003381"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_1001905"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002050"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005139"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002009"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0045057"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005327"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004992"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0006834"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01199237"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01270620"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01452256"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01833676"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01870011"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01878656"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01886664"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01985854"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02019797"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02379715"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02631525"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03194074"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03540030"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04039854"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0H4GN"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00219856"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01219881"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02322502"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02609802"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07289945"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00762372"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02971254"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03727607"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01700907"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04771962"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06241131"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00400790"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00507195"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00815269"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00983918"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01083953"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01171833"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01202162"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01235143"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01549990"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01760018"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01936545"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02079064"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02191371"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02212340"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02342509"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02406300"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02458547"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02515968"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02520947"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02617680"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02709863"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02726620"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02826902"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02909413"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02922660"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03015350"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03016234"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03029715"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03213392"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03326960"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03659539"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03848780"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03860129"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04104334"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04188314"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04474600"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04691128"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04775212"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04805775"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04983966"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05088252"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05148637"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05414721"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06176144"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06207344"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06307717"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06387836"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06772558"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07016308"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07239479"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07271472"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07304479"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07440758"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07568938"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL931",
+              "name": "HALOTHANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145888"
+                      },
+                      {
+                        "id": "ENSG00000109738"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "POSITIVE ALLOSTERIC MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000022355"
+                      },
+                      {
+                        "id": "ENSG00000145864"
+                      },
+                      {
+                        "id": "ENSG00000113327"
+                      },
+                      {
+                        "id": "ENSG00000166206"
+                      },
+                      {
+                        "id": "ENSG00000109158"
+                      },
+                      {
+                        "id": "ENSG00000182256"
+                      },
+                      {
+                        "id": "ENSG00000268089"
+                      },
+                      {
+                        "id": "ENSG00000011677"
+                      },
+                      {
+                        "id": "ENSG00000094755"
+                      },
+                      {
+                        "id": "ENSG00000187730"
+                      },
+                      {
+                        "id": "ENSG00000163285"
+                      },
+                      {
+                        "id": "ENSG00000163288"
+                      },
+                      {
+                        "id": "ENSG00000102287"
+                      },
+                      {
+                        "id": "ENSG00000151834"
+                      },
+                      {
+                        "id": "ENSG00000186297"
+                      },
+                      {
+                        "id": "ENSG00000145863"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000100433"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000186795"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000082482"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0006834"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0100806"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0D8VE"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00815269"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL1754",
+              "name": "DOXAPRAM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL3989519",
+                  "name": "DOXAPRAM HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "BLOCKER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "BLOCKER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "HP_0001662"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "APPROVAL",
+                    "disease": {
+                      "id": "MONDO_0005087"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0019091"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005002"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "HP_0012418"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0M7BT"
+              },
+              {
+                "url": "https://www.whocc.no/atc_ddd_index/?code=R07AB01"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04430790"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01022151"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02820025"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03894189"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07022704"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL3989519",
+              "name": "DOXAPRAM HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1754",
+                "name": "DOXAPRAM",
+                "drugWarnings": []
+              },
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "BLOCKER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "BLOCKER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "APPROVAL",
+                    "disease": {
+                      "id": "MONDO_0005275"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=954859c0-a121-34d6-e053-2a95a90a1e19"
+              }
+            ]
+          },
+          {
+            "drug": {
+              "id": "CHEMBL1256",
+              "name": "ISOFLURANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [],
+              "mechanismsOfAction": {
+                "rows": [
+                  {
+                    "actionType": "POSITIVE MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000145888"
+                      },
+                      {
+                        "id": "ENSG00000109738"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "POSITIVE ALLOSTERIC MODULATOR",
+                    "targets": [
+                      {
+                        "id": "ENSG00000022355"
+                      },
+                      {
+                        "id": "ENSG00000145864"
+                      },
+                      {
+                        "id": "ENSG00000113327"
+                      },
+                      {
+                        "id": "ENSG00000166206"
+                      },
+                      {
+                        "id": "ENSG00000109158"
+                      },
+                      {
+                        "id": "ENSG00000182256"
+                      },
+                      {
+                        "id": "ENSG00000268089"
+                      },
+                      {
+                        "id": "ENSG00000011677"
+                      },
+                      {
+                        "id": "ENSG00000094755"
+                      },
+                      {
+                        "id": "ENSG00000187730"
+                      },
+                      {
+                        "id": "ENSG00000163285"
+                      },
+                      {
+                        "id": "ENSG00000163288"
+                      },
+                      {
+                        "id": "ENSG00000102287"
+                      },
+                      {
+                        "id": "ENSG00000151834"
+                      },
+                      {
+                        "id": "ENSG00000186297"
+                      },
+                      {
+                        "id": "ENSG00000145863"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000100433"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000186795"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000171303"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000169427"
+                      }
+                    ]
+                  },
+                  {
+                    "actionType": "OPENER",
+                    "targets": [
+                      {
+                        "id": "ENSG00000082482"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "indications": {
+                "rows": [
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "HP_0000238"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0045057"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005453"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0003803"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "EFO_0009868"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0005099"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_1030008"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0004781"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0002870"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0002050"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0005010"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_1001792"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0002492"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0006834"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0005648"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0011918"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "HP_0100806"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2",
+                    "disease": {
+                      "id": "MONDO_0002009"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_2_3",
+                    "disease": {
+                      "id": "MONDO_0006502"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "MONDO_0003767"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0004352"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0004269"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_0008526"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "EFO_1001905"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_1",
+                    "disease": {
+                      "id": "MONDO_0002869"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "UNKNOWN",
+                    "disease": {
+                      "id": "MONDO_0005252"
+                    }
+                  },
+                  {
+                    "maxClinicalStage": "PHASE_3",
+                    "disease": {
+                      "id": "EFO_0009833"
+                    }
+                  }
+                ]
+              }
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00144118"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00922844"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01601795"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02154074"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02678650"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03146104"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04039854"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0DP6L"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01839084"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02512809"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02521831"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04341350"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04415060"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04684238"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05312385"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05327296"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05696509"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05867472"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06809218"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07099014"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01958138"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06014138"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06418893"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04171193"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05213832"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05695287"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05742789"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00521612"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00788008"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00815269"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00983918"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01151254"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01171833"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01983800"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02185118"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02222142"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02342509"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02471001"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02726620"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03213392"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03335579"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03569046"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03726580"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03860129"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03882788"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04188314"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04383730"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04727515"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04737473"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05693428"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05830864"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06307717"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06311604"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06387836"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06625606"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07152912"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07435402"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07457593"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07460050"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

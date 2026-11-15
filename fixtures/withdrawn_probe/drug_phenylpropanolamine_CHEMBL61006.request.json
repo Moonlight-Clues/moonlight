@@ -1,0 +1,6 @@
+{
+  "query": "query DrugRecord($drugId: String!) {\n  drug(chemblId: $drugId) {\n    id name drugType description maximumClinicalStage\n    tradeNames { label source }\n    parentMolecule { id name maximumClinicalStage drugWarnings { id warningType toxicityClass country year description efoTerm efoId efoIdForWarningClass chemblIds references { id source url } } }\n    childMolecules { id name maximumClinicalStage drugWarnings { id warningType toxicityClass country year description efoTerm efoId efoIdForWarningClass chemblIds references { id source url } } }\n    drugWarnings { id warningType toxicityClass country year description efoTerm efoId efoIdForWarningClass chemblIds references { id source url } }\n    mechanismsOfAction { rows { actionType mechanismOfAction targets { id approvedSymbol } } }\n    indications {\n      count\n      rows {\n        maxClinicalStage\n        disease { id name }\n        clinicalReports { id type clinicalStage source url year trialOverallStatus trialWhyStopped trialStopReasonCategories }\n      }\n    }\n  }\n}",
+  "variables": {
+    "drugId": "CHEMBL61006"
+  }
+}

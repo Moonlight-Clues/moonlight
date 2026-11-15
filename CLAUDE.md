@@ -34,6 +34,8 @@ MedicineForm, Medicine, Path.
   shown inside it. The item takes the strongest stage of its forms.
 - "Approved" means approved for at least one disease. A medicine that
   is not approved anywhere is left out.
+- A medicine withdrawn in any country does not count as approved. It
+  is left out.
 - New clue: approved, with no link to the disease. Main list.
 - Being studied: approved, and in trials for the disease. Separate box
   labelled "Already being studied for this disease", with the trial
