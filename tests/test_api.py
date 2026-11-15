@@ -70,6 +70,8 @@ def fake_post_json(body):
         return {"data": {"disease": None}}  # a disease Open Targets does not know
     if "associatedTargets" in query:
         return load(GOLDEN / "associated_targets.response.json")
+    if "drugAndClinicalCandidates" in query:
+        return load(GOLDEN / "disease_drugs.response.json")
     return load(GOLDEN / "disease_description.response.json")
 
 
@@ -232,22 +234,25 @@ def all_api_text(client):
     return "\n".join(said).upper()
 
 
-def test_no_response_contains_sildenafil_or_tadalafil(client):
-    text = all_api_text(client)
-    assert "VARDENAFIL" in text  # it really answered
-    assert "SILDENAFIL" not in text
-    assert "TADALAFIL" not in text
+def test_sildenafil_and_tadalafil_are_only_in_the_approved_list(client):
+    with with_saved_targets():
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    approved = [item["medicine"] for item in data["approved"]]
+    assert "Sildenafil" in approved and "Tadalafil" in approved
+    others = json.dumps([data["new_clues"], data["being_studied"]]).upper()
+    assert "VARDENAFIL" in others  # it really answered
+    assert "SILDENAFIL" not in others and "TADALAFIL" not in others
 
 
 def test_no_response_names_any_medicine_from_a_hidden_group(client):
     saved = [t for t in fetch.fetch_targets(PAH) if t.id in SAVED_IDS]
     tray = engine.find_clues(PAH, saved)
     hidden = set()
-    for group in ("not_approved", "already_approved", "unclear_link"):
+    for group in ("not_approved", "unclear_link"):
         for path in tray[group]:
             hidden.add(path.medicine.name.upper())
             hidden.update(form.name.upper() for form in path.medicine.forms)
-    assert "SILDENAFIL" in hidden and len(hidden) > 10
+    assert len(hidden) > 10
     text = all_api_text(client)
     assert [name for name in sorted(hidden) if name in text] == []
 
@@ -286,10 +291,10 @@ def test_gemini_naming_a_hidden_medicine_is_thrown_away(client):
 
 # ---- Example 3 ----
 
-def test_left_out_is_three_numbers_12_6_0(client):
+def test_left_out_is_two_numbers_12_0(client):
     data = clues_json(client, *FIVE)
-    assert data["left_out"] == {"not_approved": 12, "already_approved": 6, "unclear_link": 0}
-    assert list(data["left_out"].values()) == [12, 6, 0]
+    assert data["left_out"] == {"not_approved": 12, "unclear_link": 0}
+    assert list(data["left_out"].values()) == [12, 0]
 
 
 # ---- Example 4 ----
@@ -474,7 +479,7 @@ def test_a_disease_with_no_clues_gives_empty_lists_and_zero_counts(client):
     with patch("moonlight.api.fetch_targets", return_value=[]):
         data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
     assert data["new_clues"] == [] and data["being_studied"] == []
-    assert data["left_out"] == {"not_approved": 0, "already_approved": 0, "unclear_link": 0}
+    assert data["left_out"] == {"not_approved": 0, "unclear_link": 0}
 
 
 def test_open_targets_being_down_is_a_502_not_a_crash(client):
@@ -936,10 +941,363 @@ def test_the_page_never_picks_a_disease_by_itself(client):
     calls = [m.start() for m in re.finditer(r"showClues\(", script)]
     # Its own definition, the quick-start chip, and choice(), the one
     # function that makes both the match buttons and the did-you-mean buttons.
-    assert len(calls) == 3
+    assert len(calls) == 4   # the fourth is the link
     for at in calls:
         before = script[:at]
         if before.endswith("async function "):
             continue
         last_tap = before.rfind('addEventListener("click"')
-        assert last_tap != -1 and "\n  }\n" not in before[last_tap:]
+        from_a_tap = last_tap != -1 and "\n  }\n" not in before[last_tap:]
+        from_a_link = before.endswith('if (linked.get("disease")) ')
+        assert from_a_tap or from_a_link
+
+
+# =====================================================================
+# Ticket 5.3: three tabs, and approved medicines shown
+# =====================================================================
+#
+# New tests only. Saved files, no network. The disease's own medicine list
+# comes from fixtures/MONDO_0015924/disease_drugs.response.json.
+
+APPROVED_14 = [
+    "Ambrisentan", "Beraprost", "Bosentan", "Epoprostenol", "Iloprost",
+    "Macitentan", "Nitric Oxide", "Riociguat", "Selexipag", "Sildenafil",
+    "Sitaxentan", "Sotatercept", "Tadalafil", "Treprostinil",
+]
+DOCTOR_LINE = "Talk to your doctor before changing any medicine."
+APPROVED_WORDS = (
+    "Already approved for this disease in at least one country, according to "
+    "the database. Nothing here says how well any of them works."
+)
+APPROVED_EMPTY = "The database lists no medicine approved for this disease."
+TRIALS_WORDS = (
+    "Approved for another disease and now being tested for this one. A "
+    "separate research category, not a prediction of effectiveness."
+)
+CLUES_WORDS = (
+    "Approved for another disease, with no recorded link to this one. "
+    "Connections worth reading about, never treatments."
+)
+NO_PATH_WORDS = (
+    "This medicine does not act on one of the 25 proteins most linked to "
+    "this disease, so no path is shown."
+)
+
+
+def fake_with_the_disease_list(body):
+    """fake_post_json, and also the saved "medicines for this disease" answer."""
+    variables = body["variables"]
+    if "diseaseId" in variables and "drugAndClinicalCandidates" in body["query"]:
+        if variables["diseaseId"] != PAH_ID:
+            return {"data": {"disease": None}}
+        return load(GOLDEN / "disease_drugs.response.json")
+    return fake_post_json(body)
+
+
+@pytest.fixture
+def disease_list():
+    """The pretend Open Targets also holds the disease's own medicine list."""
+    with patch("moonlight.fetch._post_json", side_effect=fake_with_the_disease_list):
+        yield
+
+
+def everything_the_api_says(client):
+    """Every answer the API can give about PAH, as (what it is, text in capitals)."""
+    said = [("page", client.get("/").text)]
+    said.append(("search", client.get(
+        "/api/search", params={"q": "pulmonary arterial hypertension"}).text))
+    with with_saved_targets():
+        clues = client.get("/api/clues", params={"disease_id": PAH_ID})
+        assert clues.status_code == 200
+        said.append(("clues", clues.text))
+        with patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
+            for clue in clues.json()["new_clues"] + clues.json()["being_studied"]:
+                answer = client.get(
+                    "/api/explain", params={"disease_id": PAH_ID, "clue_id": clue["id"]}
+                )
+                assert answer.status_code == 200
+                said.append(("explain", answer.text))
+    return [(what, text.upper()) for what, text in said]
+
+
+# ---- Example 1 ----
+
+def test_53_example_1_approved_holds_sildenafil_and_tadalafil_a_to_z_each_once(
+        client, disease_list):
+    data = clues_json(client, *FIVE)
+    approved = [item["medicine"] for item in data["approved"]]
+    assert approved.count("Sildenafil") == 1 and approved.count("Tadalafil") == 1
+    assert approved == sorted(approved, key=str.casefold)
+    assert approved == APPROVED_14
+    assert len({item["id"] for item in data["approved"]}) == 14
+
+
+def test_53_an_approved_item_has_its_facts_and_no_rank_explanation_or_ending(
+        client, disease_list):
+    data = clues_json(client, *FIVE)
+    for item in data["approved"]:
+        assert set(item) == {"id", "medicine", "forms", "proteins", "reports", "source"}
+        assert item["id"] and item["forms"]
+        assert isinstance(item["reports"], int)
+        assert item["source"] is None or item["source"].startswith("https://")
+        for protein in item["proteins"]:
+            assert set(protein) == {"symbol", "points", "direction", "machine", "piece_of_machine"}
+            assert protein["direction"] in ("up", "down", "mixed", "unknown")
+    assert ENDING.upper() not in json.dumps(data["approved"]).upper()
+    assert "DO NOT TRY IT" not in json.dumps(data["approved"]).upper()
+
+
+def test_53_sildenafil_carries_its_protein_points_direction_forms_and_source(
+        client, disease_list):
+    data = clues_json(client, *FIVE)
+    sildenafil = clue_named(data["approved"], "Sildenafil")
+    assert sildenafil["id"] == "CHEMBL192"
+    assert sildenafil["forms"] == ["Sildenafil", "Sildenafil Citrate"]
+    assert sildenafil["proteins"] == [{
+        "symbol": "PDE5A", "points": 61, "direction": "down",
+        "machine": 1, "piece_of_machine": False,
+    }]
+    assert sildenafil["reports"] > 0
+    assert sildenafil["source"].startswith("https://")
+
+
+def test_53_riociguat_is_one_item_with_three_pieces_of_one_machine(client, disease_list):
+    data = clues_json(client, *GUCY1)
+    riociguat = clue_named(data["approved"], "Riociguat")
+    assert [p["symbol"] for p in riociguat["proteins"]] == list(GUCY1)
+    assert [p["machine"] for p in riociguat["proteins"]] == [1, 1, 1]
+    assert all(p["piece_of_machine"] for p in riociguat["proteins"])
+
+
+def test_53_an_approved_medicine_is_in_no_other_list(client, disease_list):
+    with with_saved_targets():
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    approved = {item["id"] for item in data["approved"]}
+    others = {clue["id"] for clue in data["new_clues"] + data["being_studied"]}
+    assert len(approved) == 14 and others
+    assert approved & others == set()
+
+
+# ---- Example 2 ----
+
+def test_53_example_2_new_clues_are_the_same_16_and_being_studied_the_same_2(
+        client, disease_list):
+    data = clues_json(client, *FIVE)
+    assert [clue["medicine"] for clue in data["new_clues"]] == NEW_ORDER
+    assert [clue["medicine"] for clue in data["being_studied"]] == ["Udenafil", "Vardenafil"]
+    for clue in data["new_clues"] + data["being_studied"]:
+        assert set(clue) == {
+            "id", "medicine", "forms", "proteins", "reports", "source",
+            "trial_phase", "ending",
+        }
+
+
+def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
+    data = clues_json(client, *FIVE)
+    assert list(data) == [
+        "disease", "rule_text", "approved", "being_studied", "new_clues", "left_out",
+    ]
+    assert data["rule_text"] == RULE_TEXT
+
+
+# ---- Example 3 ----
+
+def test_53_example_3_no_response_names_a_medicine_that_is_not_approved_anywhere(
+        client, disease_list):
+    saved = [t for t in fetch.fetch_targets(PAH) if t.id in SAVED_IDS]
+    tray = engine.find_clues(PAH, saved)
+    hidden = set()
+    for group in ("not_approved", "unclear_link"):
+        for path in tray[group]:
+            hidden.add(path.medicine.name.upper())
+            hidden.update(form.name.upper() for form in path.medicine.forms)
+    assert len(hidden) > 10
+    said = everything_the_api_says(client)
+    assert any("SILDENAFIL" in text for what, text in said)  # it really answered
+    for what, text in said:
+        assert [name for name in sorted(hidden) if name in text] == [], what
+
+
+def test_53_approved_names_are_only_ever_in_the_clues_answer(client, disease_list):
+    # Not on the page before a search, not in the search, not in any explanation.
+    said = everything_the_api_says(client)
+    assert sum(1 for what, text in said if what == "explain") >= 18
+    for what, text in said:
+        for name in APPROVED_14:
+            assert (name.upper() in text) == (what == "clues"), (what, name)
+
+
+# ---- Example 4 ----
+
+def test_53_example_4_explain_for_sildenafil_is_still_refused(client, disease_list):
+    data = clues_json(client, *FIVE)
+    sildenafil = clue_named(data["approved"], "Sildenafil")
+    gemini = CountingGemini()
+    with with_targets(*FIVE), patch("moonlight.explain._gemini_request", side_effect=gemini):
+        refused = [
+            client.get("/api/explain", params={"disease_id": PAH_ID, "clue_id": clue_id})
+            for clue_id in (sildenafil["id"], "CHEMBL1737")  # the medicine and its tablet form
+        ]
+    for answer in refused:
+        assert answer.status_code == 404
+        assert "SILDENAFIL" not in answer.text.upper()
+    assert gemini.calls == 0  # Gemini was never asked about it
+
+
+def test_53_no_approved_medicine_can_be_explained(client, disease_list):
+    data = clues_json(client, *FIVE)
+    gemini = CountingGemini()
+    with with_targets(*FIVE), patch("moonlight.explain._gemini_request", side_effect=gemini):
+        for item in data["approved"]:
+            answer = client.get(
+                "/api/explain", params={"disease_id": PAH_ID, "clue_id": item["id"]})
+            assert answer.status_code == 404, item["medicine"]
+    assert gemini.calls == 0
+
+
+def test_53_gemini_naming_a_medicine_from_the_approved_tab_is_thrown_away(client, disease_list):
+    # Beraprost is only on the disease's own list. It is still a name
+    # Moonlight met, so an explanation may not bring it up.
+    data = clues_json(client, *FIVE)
+    avanafil = clue_named(data["new_clues"], "Avanafil")
+    sneaky = (
+        "Avanafil is a medicine. Beraprost is a medicine too. "
+        "It grabs a protein called PDE5A. A protein is a tiny machine in your body."
+    )
+    with with_targets(*FIVE), \
+            patch("moonlight.explain._gemini_request", side_effect=gemini_says(sneaky)):
+        answer = client.get(
+            "/api/explain", params={"disease_id": PAH_ID, "clue_id": avanafil["id"]}
+        )
+    assert answer.status_code == 200
+    assert answer.json()["source"] == "template"
+    assert "BERAPROST" not in answer.text.upper()
+
+
+# ---- Example 5 ----
+
+def test_53_example_5_a_medicine_only_on_the_diseases_own_list_has_no_proteins(
+        client, disease_list):
+    with with_saved_targets():
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    beraprost = clue_named(data["approved"], "Beraprost")
+    assert beraprost["proteins"] == []
+    assert beraprost["id"] == "CHEMBL1207745"
+    assert beraprost["forms"] == ["Beraprost", "Beraprost Sodium"]
+    assert beraprost["reports"] > 0
+    assert beraprost["source"].startswith("https://")
+
+
+def test_53_with_no_proteins_at_all_approved_is_still_the_diseases_own_list(
+        client, disease_list):
+    with patch("moonlight.api.fetch_targets", return_value=[]):
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    assert [item["medicine"] for item in data["approved"]] == APPROVED_14
+    assert all(item["proteins"] == [] for item in data["approved"])
+    assert data["new_clues"] == [] and data["being_studied"] == []
+
+
+def test_53_a_disease_with_nothing_approved_gives_an_empty_approved_list(client, disease_list):
+    with patch("moonlight.api.fetch_targets", return_value=[]), \
+            patch("moonlight.api.fetch_approved", return_value=[]):
+        data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
+    assert data["approved"] == []
+
+
+# ---- Example 6 ----
+
+def test_53_example_6_left_out_has_exactly_two_numbers(client, disease_list):
+    data = clues_json(client, *FIVE)
+    assert data["left_out"] == {"not_approved": 12, "unclear_link": 0}
+    assert list(data["left_out"].values()) == [12, 0]
+
+
+def test_53_open_targets_failing_on_the_disease_list_is_a_502_not_a_crash(client):
+    def no_list(body):
+        if "drugAndClinicalCandidates" in body["query"] and "diseaseId" in body["variables"]:
+            raise requests.ConnectionError("down")
+        return fake_post_json(body)
+    with with_targets(*FIVE), patch("moonlight.fetch._post_json", side_effect=no_list):
+        response = client.get("/api/clues", params={"disease_id": PAH_ID})
+    assert response.status_code == 502
+    assert "detail" in response.json()
+
+
+# ---- Example 7: the page ----
+
+def tag_of(page, slot):
+    return re.search(r'<[^>]*data-slot="%s"[^>]*>' % slot, page).group(0)
+
+
+def test_53_example_7_the_page_holds_the_tab_labels_the_doctor_line_and_the_safety_line(client):
+    page = client.get("/").text
+    assert SAFETY_LINE in page
+    assert DOCTOR_LINE in page
+    labels = re.findall(r'<button[^>]*role="tab"[^>]*>\s*([^<]+?)\s*<', page)
+    assert labels == ["Approved", "In trials", "New clues"]
+
+
+def test_53_the_words_under_each_tab_are_exact(client):
+    page = client.get("/").text
+    for words in (APPROVED_WORDS, DOCTOR_LINE, APPROVED_EMPTY, TRIALS_WORDS, CLUES_WORDS,
+                  NO_PATH_WORDS, "Already being studied for this disease"):
+        assert words in page, words
+    # The doctor line is on its own line: an element of its own.
+    assert re.search(r">\s*%s\s*<" % re.escape(DOCTOR_LINE), page)
+    assert re.search(r">\s*%s\s*<" % re.escape(APPROVED_WORDS), page)
+
+
+def test_53_the_tabs_are_one_row_under_the_disease_name_and_above_the_lists(client):
+    page = client.get("/").text
+    order = [page.index(mark) for mark in (
+        'data-slot="safety-line"', 'id="disease-title"', 'data-slot="tabs"',
+        'data-slot="approved"', 'data-slot="studied"', 'data-slot="new-clues"',
+        'data-slot="left-out"',
+    )]
+    assert order == sorted(order)
+    assert len(re.findall(r'<button[^>]*role="tab"', page)) == 3
+    assert len(re.findall(r'<section[^>]*role="tabpanel"', page)) == 3
+    assert len(re.findall(r'<div[^>]*role="tablist"', page)) == 1
+
+
+def test_53_approved_opens_first_and_the_other_two_tabs_start_hidden(client):
+    page = client.get("/").text
+    assert " hidden" not in tag_of(page, "approved")
+    assert " hidden" in tag_of(page, "studied")
+    assert " hidden" in tag_of(page, "new-clues")
+    tabs = re.findall(r'<button[^>]*role="tab"[^>]*>', page)
+    assert ['aria-selected="true"' in tab for tab in tabs] == [True, False, False]
+    script = page_script(client)
+    assert 'const FIRST_TAB = "approved"' in script
+
+
+def test_53_a_link_can_open_a_tab(client):
+    script = page_script(client)
+    assert 'get("disease")' in script and 'get("tab")' in script
+    for name in ("approved", "trials", "clues"):
+        assert 'data-tab="%s"' % name in client.get("/").text
+
+
+def test_53_left_out_shows_two_numbers_on_the_page(client):
+    page = client.get("/").text
+    left_out = page[page.index('data-slot="left-out"'):]
+    left_out = left_out[:left_out.index("</section>")]
+    assert left_out.count('class="count"') == 2
+    assert "Not approved anywhere" in left_out and "Unclear link" in left_out
+    assert "Already approved for this disease" not in left_out
+
+
+def test_53_approved_cards_get_no_number_no_explanation_and_no_ending(client):
+    script = page_script(client)
+    approved_card = script[script.index("function approvedCard("):]
+    approved_card = approved_card[:approved_card.index("\n  }\n")]
+    for gone in ('slot(el, "explanation").remove()', 'slot(el, "ending").remove()',
+                 'slot(el, "rank").remove()'):
+        assert gone in approved_card, gone
+    assert "/api/explain" not in approved_card and "readExplanation" not in approved_card
+
+
+def test_53_the_page_still_names_no_medicine_before_a_search(client):
+    page = client.get("/").text.upper()
+    for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
+        assert name.upper() not in page

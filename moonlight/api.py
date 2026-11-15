@@ -2,15 +2,19 @@
 
     GET /                                   the page (web/index.html)
     GET /api/search?q=                      matching diseases, best first, and "did you mean"
-    GET /api/clues?disease_id=              Kashish's ranked clues, no explanations
+    GET /api/clues?disease_id=              the three tabs: approved, being studied
+                                            and new clues. No explanations
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
 
 Nothing here fetches, filters, ranks or explains by itself. It asks
 fetch.py, engine.py, rank.py and explain.py, and turns their answers into
-JSON. Only new clues and medicines being studied are ever named. Medicines
-that are left out are sent as three counts and nothing else.
+JSON. Three kinds of medicine are named: new clues, medicines being studied,
+and medicines already approved for the disease (ticket 5.3). Approved
+medicines are in A to Z order, with no rank, no explanation and no ending.
+Medicines that are not approved anywhere, or have an unclear link, are sent
+as two counts and nothing else.
 
 /api/explain looks the disease up again to find its clue. It gives
 explain.py the Open Targets data version, so a finished explanation is
@@ -27,32 +31,26 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
 from moonlight import explain, translate
-from moonlight.engine import find_clues
+from moonlight.engine import ApprovedMedicine, find_clues, sort_into_tabs
 from moonlight.fetch import (
     FetchError,
     data_version,
+    fetch_approved,
     fetch_disease,
     fetch_targets,
     search_diseases,
     search_matches,
 )
-from moonlight.filter import (
-    ALREADY_APPROVED,
-    BEING_STUDIED,
-    GROUPS,
-    NEW_CLUE,
-    NOT_APPROVED,
-    SHOWN_GROUPS,
-    UNCLEAR_LINK,
-)
-from moonlight.rank import RULE_TEXT, Clue, rank_clues
+from moonlight.fetch import Listed
+from moonlight.filter import NOT_APPROVED, UNCLEAR_LINK
+from moonlight.rank import RULE_TEXT, Clue
 from moonlight.records import Disease, Path
 
 PAGE = pathlib.Path(__file__).resolve().parent.parent / "web" / "index.html"
 TOP_TARGETS = 25  # the same number of proteins the terminal runner looks at
 
 # The left-out groups, in the order they are sent. Counts only.
-LEFT_OUT_GROUPS = (NOT_APPROVED, ALREADY_APPROVED, UNCLEAR_LINK)
+LEFT_OUT_GROUPS = (NOT_APPROVED, UNCLEAR_LINK)
 
 # "Did you mean" is given up on after this long, counted from the start of
 # the search: Gemini's 3 seconds, and 2 more to look its names up in Open
@@ -67,18 +65,13 @@ app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None
 class _Found:
     """Everything worked out for one disease in one request."""
 
-    def __init__(self, disease: Disease, tray: Dict[str, List[Path]]):
+    def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed]):
         self.disease = disease
-        # The same steps as engine.find_ranked_clues. They are done here so
-        # the names from every group can also go to the explainer's check.
-        self.new_clues = rank_clues(tray[NEW_CLUE])
-        self.being_studied = rank_clues(tray[BEING_STUDIED])
-        self.left_out = {
-            # A medicine that acts on two proteins is still one medicine.
-            group: len({path.medicine.name for path in tray[group]})
-            for group in GROUPS
-            if group not in SHOWN_GROUPS
-        }
+        tabs = sort_into_tabs(tray, listed)
+        self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
+        self.new_clues = tabs.new_clues
+        self.being_studied = tabs.being_studied
+        self.left_out = tabs.left_out
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -86,17 +79,20 @@ class _Found:
             for path in paths:
                 names.add(path.medicine.name)
                 names.update(form.name for form in path.medicine.forms)
+        for medicine in tabs.approved:  # also the ones only on the disease's own list
+            names.add(medicine.name)
+            names.update(medicine.forms)
         self.known_names = names
 
 
 def _find(disease_id: str) -> _Found:
-    """Disease -> its top proteins -> the sorted, ranked clues."""
+    """Disease -> its top proteins and its own medicine list -> the three tabs."""
     try:
         disease = fetch_disease(disease_id)
         if disease is None:
             raise HTTPException(status_code=404, detail="Open Targets does not know this disease.")
         targets = fetch_targets(disease, TOP_TARGETS)
-        return _Found(disease, find_clues(disease, targets))
+        return _Found(disease, find_clues(disease, targets), fetch_approved(disease))
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -109,20 +105,20 @@ def _clue_id(clue: Clue) -> str:
     return first.parent_id or first.id
 
 
-def _one_source(clue: Clue) -> Optional[str]:
-    """One link, from the strongest protein that has one. None if there is none."""
-    for path in clue.paths:
-        for source in path.sources:
-            if source.startswith("https://"):
-                return source
+def _first_link(sources) -> Optional[str]:
+    for source in sources:
+        if source.startswith("https://"):
+            return source
     return None
 
 
-def _clue_json(clue: Clue, disease: Disease) -> dict:
-    """One clue's facts. No explanation, so this is quick."""
-    # The names, the points and the ending come from explain.py, so a card
-    # and its explanation always say the same thing.
-    facts = explain.facts_for(clue, disease)
+def _one_source(clue: Clue) -> Optional[str]:
+    """One link, from the strongest protein that has one. None if there is none."""
+    return _first_link(source for path in clue.paths for source in path.sources)
+
+
+def _proteins_json(clue: Clue) -> List[dict]:
+    """The proteins of one medicine, strongest first, with points and direction."""
     machine_of: Dict[str, Tuple[int, bool]] = {}
     for number, machine in enumerate(clue.machines, start=1):
         for path in machine:
@@ -141,15 +137,42 @@ def _clue_json(clue: Clue, disease: Disease) -> dict:
                 "piece_of_machine": shared,
             }
         )
+    return proteins
+
+
+def _clue_json(clue: Clue, disease: Disease) -> dict:
+    """One clue's facts. No explanation, so this is quick."""
+    # The names, the points and the ending come from explain.py, so a card
+    # and its explanation always say the same thing.
+    facts = explain.facts_for(clue, disease)
     return {
         "id": _clue_id(clue),
         "medicine": facts["medicine"]["name"],
         "forms": facts["medicine"]["forms"],
-        "proteins": proteins,
+        "proteins": _proteins_json(clue),
         "reports": clue.reports,
         "source": _one_source(clue),
         "trial_phase": facts.get("trial_phase"),  # only for being studied
         "ending": explain.ending_for(facts),
+    }
+
+
+def _approved_json(medicine: ApprovedMedicine) -> dict:
+    """One medicine already approved for the disease. It is not a clue, so
+    it has no rank, no explanation and no ending.
+
+    proteins is empty when the medicine acts on none of the top proteins.
+    """
+    # explain.py's own way of writing a name, so "SILDENAFIL" is written
+    # "Sildenafil" here exactly as a clue's name is.
+    display = explain._display
+    return {
+        "id": medicine.id,
+        "medicine": display(medicine.name),
+        "forms": [display(name) for name in medicine.forms],
+        "proteins": _proteins_json(medicine.clue) if medicine.clue else [],
+        "reports": medicine.reports,
+        "source": _first_link(medicine.sources),
     }
 
 
@@ -210,8 +233,10 @@ def clues(disease_id: str) -> dict:
     return {
         "disease": {"id": disease.id, "name": disease.name},
         "rule_text": RULE_TEXT,
-        "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
+        # The three tabs, in the order the page shows them.
+        "approved": [_approved_json(medicine) for medicine in found.approved],
         "being_studied": [_clue_json(clue, disease) for clue in found.being_studied],
+        "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
 
@@ -219,7 +244,9 @@ def clues(disease_id: str) -> dict:
 @app.get("/api/explain")
 def explain_clue(disease_id: str, clue_id: str) -> dict:
     found = _find(disease_id)
-    # Only a shown clue can be explained. Anything else is "not found".
+    # Only a new clue or a medicine being studied can be explained. A
+    # medicine already approved for the disease is not a clue: it is
+    # "not found" here, like anything else.
     for clue in found.new_clues + found.being_studied:
         if _clue_id(clue) == clue_id:
             break
