@@ -176,14 +176,28 @@ def sort_into_tabs(tray: Dict[str, List[Path]], listed: Iterable[Listed]) -> Tab
     disease, every path of that medicine belongs to Approved, whichever
     group the tray put it in. It is then not a clue, and not counted as
     left out.
+
+    Withdrawn comes first (ticket 2.11). If any path says the medicine or
+    one of its forms was withdrawn, the medicine is withdrawn in every
+    source: it is in no tab, whatever the list says, and it is counted in
+    not_approved. A list with no withdrawn note never wins over a path
+    that says "withdrawn". A missing note alone is still not guessed.
     """
-    listed_by_id = {entry.id: entry for entry in listed}
+    withdrawn_ids = {
+        _family_id(path.medicine)
+        for paths in tray.values()
+        for path in paths
+        if path.medicine.withdrawn is True
+    }
+    listed_by_id = {entry.id: entry for entry in listed if entry.id not in withdrawn_ids}
 
     approved_paths: List[Path] = []
     others: Dict[str, List[Path]] = {group: [] for group in GROUPS if group != ALREADY_APPROVED}
     for group, paths in tray.items():
         for path in paths:
-            if group == ALREADY_APPROVED or _family_id(path.medicine) in listed_by_id:
+            if _family_id(path.medicine) in withdrawn_ids:
+                others[NOT_APPROVED].append(path)  # counted, never named
+            elif group == ALREADY_APPROVED or _family_id(path.medicine) in listed_by_id:
                 approved_paths.append(path)
             else:
                 others[group].append(path)

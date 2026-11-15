@@ -1301,3 +1301,46 @@ def test_53_the_page_still_names_no_medicine_before_a_search(client):
     page = client.get("/").text.upper()
     for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
         assert name.upper() not in page
+
+
+# =====================================================================
+# Ticket 2.11: withdrawn, mixed answers
+# =====================================================================
+#
+# New tests only. Saved files, no network. The protein answers are the ones
+# saved on 15 Nov WITH the withdrawn note. The disease's own list is the
+# one saved on 10 Nov with NO note, and it names Sitaxentan as approved.
+
+NOTED = ROOT / "fixtures" / "withdrawn" / "MONDO_0015924"
+SITAXENTAN_ID = "CHEMBL282724"  # read from the saved files
+
+
+def mixed_post_json(body):
+    variables = body["variables"]
+    if "targetId" in variables:
+        (file,) = (NOTED / "target_drugs").glob(f"*_{variables['targetId']}.response.json")
+        return load(file)
+    return fake_with_the_disease_list(body)
+
+
+def test_211_mixed_answers_no_response_names_sitaxentan(client):
+    old_list = load(GOLDEN / "disease_drugs.response.json")
+    assert "drugWarnings" not in json.dumps(old_list)  # the list has no note
+    assert "SITAXENTAN" in json.dumps(old_list)
+
+    with patch("moonlight.fetch._post_json", side_effect=mixed_post_json), \
+            with_targets(*FIVE), \
+            patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
+        clues = client.get("/api/clues", params={"disease_id": PAH_ID})
+        assert clues.status_code == 200
+        data = clues.json()
+        gone = client.get(
+            "/api/explain", params={"disease_id": PAH_ID, "clue_id": SITAXENTAN_ID})
+
+    assert "SITAXENTAN" not in clues.text.upper()
+    assert gone.status_code == 404 and "SITAXENTAN" not in gone.text.upper()
+    assert SITAXENTAN_ID not in {item["id"] for item in data["approved"]}
+    assert len(data["approved"]) == 13
+    assert "Sildenafil" in [item["medicine"] for item in data["approved"]]  # it really answered
+    assert len(data["new_clues"]) == 16 and len(data["being_studied"]) == 2
+    assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
