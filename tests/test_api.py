@@ -1344,3 +1344,47 @@ def test_211_mixed_answers_no_response_names_sitaxentan(client):
     assert "Sildenafil" in [item["medicine"] for item in data["approved"]]  # it really answered
     assert len(data["new_clues"]) == 16 and len(data["being_studied"]) == 2
     assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
+
+
+# ---- Ticket 2.11, the other half: the LIST says "withdrawn" ----
+
+def list_noted_post_json(body):
+    """The disease's own list saved on 15 Nov WITH the withdrawn note, and
+    the protein answers saved on 10 Nov with NO note."""
+    if "diseaseId" in body["variables"] and "drugAndClinicalCandidates" in body["query"]:
+        return load(NOTED / "disease_drugs.response.json")
+    return fake_post_json(body)
+
+
+def all_noted_post_json(body):
+    """Every "which medicines?" answer WITH the withdrawn note."""
+    if "targetId" in body["variables"]:
+        return mixed_post_json(body)
+    return list_noted_post_json(body)
+
+
+def clues_with(client, fake, *symbols):
+    with patch("moonlight.fetch._post_json", side_effect=fake), with_targets(*symbols):
+        clues = client.get("/api/clues", params={"disease_id": PAH_ID})
+        gone = client.get(
+            "/api/explain", params={"disease_id": PAH_ID, "clue_id": SITAXENTAN_ID})
+    assert clues.status_code == 200
+    assert "SITAXENTAN" not in clues.text.upper()
+    assert gone.status_code == 404 and "SITAXENTAN" not in gone.text.upper()
+    data = clues.json()
+    assert "Sildenafil" in [item["medicine"] for item in data["approved"]]  # it really answered
+    return data
+
+
+def test_211_case_1_withdrawn_only_on_the_list_is_not_named_and_is_counted(client):
+    # Only PDE5A is looked at, so Sitaxentan (EDNRA) is only on the list.
+    data = clues_with(client, all_noted_post_json, "PDE5A")
+    assert len(data["approved"]) == 13
+    assert data["left_out"] == {"not_approved": 4, "unclear_link": 0}  # PDE5A's 3 and Sitaxentan
+
+
+def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(client):
+    data = clues_with(client, list_noted_post_json, *FIVE)
+    assert len(data["approved"]) == 13
+    assert len(data["new_clues"]) == 16 and len(data["being_studied"]) == 2
+    assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
