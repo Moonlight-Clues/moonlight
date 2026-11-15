@@ -20,6 +20,8 @@ STAGE_ORDER = (
     "PHASE_1_2",
     "PHASE_1",
     "EARLY_PHASE_1",
+    "IND",  # not tested in people yet (ticket 2.10)
+    "PRECLINICAL",  # not tested in people yet (ticket 2.10)
     "WITHDRAWAL",
     "UNKNOWN",
 )
@@ -33,11 +35,15 @@ UP_ACTION_TYPES = frozenset(
 
 
 def _stage_rank(stage: str) -> int:
-    """Position in STAGE_ORDER. 0 is strongest."""
+    """Position in STAGE_ORDER. 0 is strongest.
+
+    A word that is not on the ladder never raises. It sits below every word
+    that is, so it can never count as approved (Kashish, 2026-11-15).
+    """
     try:
         return STAGE_ORDER.index(stage)
     except ValueError:
-        raise ValueError(f"Unknown clinical stage: {stage!r}") from None
+        return len(STAGE_ORDER)
 
 
 def stronger_stage(a: Optional[str], b: Optional[str]) -> Optional[str]:
