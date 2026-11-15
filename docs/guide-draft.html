@@ -1,0 +1,277 @@
+<title>Moonlight Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: Sidha's Lunar Observatory page, continued. One reading column, navy header, pinned safety line,
+   cream ground, white cards. The guide's one new device is the lettered key on a real card. Single light look, like the platform. */
+:root{
+  --cream:#F5F0E8;--navy:#101F31;--teal:#429D9A;--teal-ink:#327F80;--teal-deep:#287D7C;--gold:#E9B45B;
+  --paper:#FFFFFF;--mist:#E7F1EF;--slate:#EAEFF2;--line:#D5E0E2;--sand:#EAE4D8;
+  --muted:#566877;--neutral:#53606C;--neutral-bg:#EFF1F3;--header-soft:#C4D2D9;--safety-bg:#203448;--safety-line:#5F9E9B;--safety-ink:#F4F0E9;
+  --radius:14px;
+  --display:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--teal-ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+.wordmark,h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;text-wrap:balance}
+.wrap{width:min(100% - 32px,1060px);margin-inline:auto}
+.col{max-width:760px}
+
+.site-header{background:var(--navy);color:var(--cream);padding:20px 0}
+.brandline{display:flex;align-items:center;gap:10px}
+.wordmark{font-size:clamp(27px,5.5vw,35px);line-height:1.12;font-weight:700}
+.brand-dot{background:var(--gold);width:7px;height:7px;border-radius:100%;flex:none}
+.tagline{margin-top:8px;color:var(--header-soft);font-size:13px;max-width:640px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.safety{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--safety-bg);border-bottom:1px solid var(--safety-line)}
+.safety-inner{display:flex;align-items:flex-start;gap:10px;padding:11px 0;font-size:12px;line-height:1.45;color:var(--safety-ink)}
+.safety svg{flex:none;margin-top:1px}
+
+.main{padding-block:32px 64px;display:grid;gap:56px}
+.eyebrow{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.13em;color:var(--teal-ink)}
+h1{font-size:clamp(29px,6vw,43px);line-height:1.15;font-weight:650;margin:9px 0 10px;max-width:650px}
+h2{font-size:clamp(23px,4vw,29px);line-height:1.2;color:var(--teal-ink);margin-bottom:6px}
+h3{font-size:17px;line-height:1.25;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:62ch}
+.sub{color:var(--muted);font-size:14px;max-width:62ch;margin-bottom:18px}
+.back{display:inline-block;margin-top:18px;text-decoration:none;color:var(--teal-deep);border:1px solid #A9CACB;background:var(--paper);padding:9px 12px;border-radius:9px;font-size:12px;font-weight:700}
+.back:hover{background:var(--mist)}
+
+/* the idea: medicine, protein, disease */
+.idea{background:var(--navy);color:var(--cream);border-radius:18px;padding:26px 20px;display:grid;gap:22px}
+.idea h2{color:var(--cream);margin:0;max-width:22ch}
+.chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:8px;text-align:center}
+.chain .shape{width:54px;height:54px;margin:0 auto 12px}
+.chain .circle{border-radius:50%;background:var(--gold)}
+.chain .diamond{background:var(--teal);transform:rotate(45deg) scale(.78);border-radius:5px}
+.chain .square{background:var(--cream);border-radius:9px}
+.chain strong{display:block;font-family:var(--display);font-size:16px;letter-spacing:-.02em}
+.chain span{display:block;font-size:12px;color:var(--header-soft);line-height:1.4;margin-top:3px}
+.chain .arrow{color:var(--teal);font-size:22px;padding-top:14px}
+.idea p{color:var(--header-soft);font-size:14px;max-width:60ch}
+
+/* three steps */
+.steps{display:grid;gap:12px;counter-reset:step}
+.steps li{counter-increment:step;display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.steps li::before{content:counter(step);width:30px;height:30px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.steps p{font-size:14px;color:var(--muted);margin-top:3px}
+
+/* tabs */
+.tabrow{display:flex;gap:6px;background:var(--slate);border-radius:12px;padding:5px;margin-bottom:12px}
+.tabrow span{flex:1;min-width:0;text-align:center;font-size:13px;font-weight:700;padding:10px 6px;border-radius:8px;color:var(--neutral)}
+.tabrow .on{background:var(--paper);color:var(--navy);box-shadow:0 2px 8px #101F3110}
+.tabs{display:grid;gap:10px}
+.tab{display:grid;gap:4px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.tab p{font-size:14px;color:var(--muted)}
+.tab .who{font-size:12px;color:var(--teal-ink);font-weight:700}
+
+/* the card, with its key */
+.card{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:var(--radius);padding:18px 16px 17px;box-shadow:0 4px 13px #101F3107;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}
+.rank{flex:none;min-width:30px;height:30px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+.card h3{font-size:22px;letter-spacing:-.035em}
+.forms{font-size:12px;color:var(--muted);margin-top:8px}
+.reports{font-size:11px;color:var(--muted);white-space:nowrap;flex:none;display:flex;align-items:center;gap:6px}
+.card-subhead{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:750;margin:18px 0 8px;display:flex;align-items:center;gap:7px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:12px}
+.path-node{background:var(--mist);border-radius:7px;padding:6px 9px;font-size:11px}
+.path-node.p{font-weight:700;color:var(--teal-ink)}
+.path-arrow{color:var(--teal);font-size:16px;line-height:1}
+.protein-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.protein-id{font-weight:700;font-size:13px}
+.protein-facts{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.direction{display:inline-flex;align-items:center;gap:5px;border:1px solid #C8CFD6;background:var(--neutral-bg);color:var(--neutral);border-radius:6px;padding:4px 8px;font-size:12px;font-weight:650}
+.score{font-weight:750;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.direction-note{font-size:12px;color:var(--muted);margin:12px 0 14px}
+.explanation{border:1px solid var(--line);background:#F8FAFA;border-radius:10px;padding:12px 13px;font-size:12px;line-height:1.6}
+.slot-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:var(--teal-ink);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.ending{background:var(--cream);padding:12px;border-radius:9px;font-size:12px;line-height:1.6;margin:13px 0;border:1px solid var(--sand);display:grid;grid-template-columns:auto 1fr;gap:9px}
+.card-foot{font-size:12px;font-weight:700;color:var(--teal-ink);display:flex;align-items:center;gap:7px;text-decoration:underline;text-underline-offset:3px}
+.k{flex:none;width:19px;height:19px;border-radius:50%;background:var(--gold);color:var(--navy);font:750 11px/19px var(--body);text-align:center;letter-spacing:0;text-transform:none;text-decoration:none;display:inline-block}
+.key{display:grid;gap:0;margin-top:16px;border-top:1px solid var(--line)}
+.key div{display:grid;grid-template-columns:19px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.key dt{grid-column:2;font-weight:700;font-size:14px}
+.key dd{grid-column:2;font-size:14px;color:var(--muted)}
+.key .k{grid-row:1 / span 2;margin-top:2px}
+
+/* cannot tell you */
+.limits{display:grid;gap:0;border-top:1px solid var(--line)}
+.limits li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14px}
+.limits li::before{content:"";width:9px;height:2px;background:var(--neutral);margin-top:11px;border-radius:2px}
+.limits b{font-weight:700}
+.limits span{color:var(--muted)}
+
+/* do and do not */
+.pair{display:grid;gap:12px}
+.box{border-radius:var(--radius);padding:18px 16px;display:grid;gap:10px;align-content:start}
+.box.do{background:var(--mist)}
+.box.dont{background:var(--paper);border:1px solid var(--line)}
+.box ul{display:grid;gap:8px;font-size:14px}
+.box li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.box.do li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:8px}
+.box.dont li::before{content:"";width:9px;height:2px;background:var(--navy);margin-top:11px}
+
+.facts{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;display:grid;gap:14px}
+.facts p{font-size:14px;color:var(--muted)}
+.facts b{color:var(--navy)}
+
+.site-footer{border-top:1px solid var(--line);padding:24px 0 36px}
+.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px}
+.footer-row{align-items:center}
+.footer-row .made{display:inline-flex;align-items:center;gap:9px;font-family:"Caveat","Segoe Script","Bradley Hand",cursive;font-weight:600;font-size:clamp(22px,6.2vw,27px);line-height:1.1;color:var(--navy);transform:rotate(-2deg);transform-origin:left center}
+.footer-row .made svg{flex:none;width:20px;height:20px;fill:var(--gold);transform:rotate(8deg)}
+.footer-note{margin-top:12px;color:var(--muted);font-size:11px}
+
+@media(min-width:760px){
+  .main{padding-block:44px 80px;gap:68px}
+  .idea{padding:34px 34px}
+  .card{padding:21px 22px}
+  .tabs{grid-template-columns:repeat(3,1fr)}
+  .pair{grid-template-columns:1fr 1fr}
+  .safety-inner{font-size:13px;padding:12px 0}
+  .chain .shape{width:66px;height:66px}
+}
+@media(max-width:540px){
+  .safety-inner{padding:9px 0;font-size:11px}
+  .site-header{padding:16px 0}
+  .chain{grid-template-columns:1fr;gap:6px}
+  .chain .arrow{padding:0;transform:rotate(90deg);justify-self:center}
+}
+</style>
+
+<header class="site-header"><div class="wrap">
+  <div class="brandline"><span class="wordmark">Moonlight</span><span class="brand-dot" aria-hidden="true"></span></div>
+  <p class="tagline">An explorer that shows which existing medicines act on the proteins linked to a disease, using open research data.</p>
+</div></header>
+
+<div class="safety" role="note"><div class="wrap safety-inner"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 21 6v6c0 5-3.4 8.2-9 10-5.6-1.8-9-5-9-10V6l9-4Z"/><path d="M12 7v6m0 3h.01"/></svg><span>For learning and research exploration, not medical advice. Never start, stop or change any medicine without a doctor.</span></div></div>
+
+<main class="wrap main">
+
+  <section class="col">
+    <div class="eyebrow">How to use Moonlight</div>
+    <h1>How to read what Moonlight finds.</h1>
+    <p class="lead">Moonlight does one thing. You give it a disease, and it shows which medicines act on the proteins linked to that disease. This page explains each part of what you see, and what it does not mean.</p>
+    <a class="back" href="#home">Back to search</a>
+  </section>
+
+  <section class="col idea" aria-labelledby="idea-title">
+    <h2 id="idea-title">A medicine made for one disease may act on a protein linked to another.</h2>
+    <div class="chain">
+      <div><div class="shape circle" aria-hidden="true"></div><strong>Medicine</strong><span>already approved and used by doctors</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div><div class="shape diamond" aria-hidden="true"></div><strong>Protein</strong><span>a tiny machine in the body that the medicine turns up or down</span></div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div><div class="shape square" aria-hidden="true"></div><strong>Disease</strong><span>linked to that protein in the research record</span></div>
+    </div>
+    <p>Moonlight follows this path through open research data and shows you every step. It finds connections worth reading about. Scientists and doctors decide what they mean.</p>
+  </section>
+
+  <section class="col" aria-labelledby="steps-title">
+    <h2 id="steps-title">Three steps</h2>
+    <p class="sub">A search takes a few seconds.</p>
+    <ol class="steps">
+      <li><div><h3>Type a disease</h3><p>Use the name a doctor would write. If Moonlight is not sure, it asks “Did you mean?” and waits for you.</p></div></li>
+      <li><div><h3>Pick the one you mean</h3><p>Many diseases have several types. Moonlight lists them and never chooses for you.</p></div></li>
+      <li><div><h3>Open a tab</h3><p>The medicines are sorted into three tabs. Tap one to see its list.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="col" aria-labelledby="tabs-title">
+    <h2 id="tabs-title">The three tabs</h2>
+    <p class="sub">Every medicine Moonlight shows is approved for at least one disease. The tabs tell you how it relates to the disease you searched.</p>
+    <div class="tabrow" aria-hidden="true"><span class="on">Approved</span><span>In trials</span><span>New clues</span></div>
+    <div class="tabs">
+      <div class="tab"><h3>Approved</h3><p>Already approved for this disease in at least one country, according to the database. Listed A to Z.</p><p class="who">Look here for a medicine you already know.</p></div>
+      <div class="tab"><h3>In trials</h3><p>Approved for another disease and now being tested for this one. Being tested is not a prediction that it works.</p><p class="who">Each card shows the trial phase.</p></div>
+      <div class="tab"><h3>New clues</h3><p>Approved for another disease, with no recorded link to this one. Ordered by how strongly the proteins are linked.</p><p class="who">First on the list does not mean best.</p></div>
+    </div>
+  </section>
+
+  <section class="col" aria-labelledby="card-title">
+    <h2 id="card-title">How to read a card</h2>
+    <p class="sub">This is a real clue from the search for pulmonary arterial hypertension. The gold letters match the key underneath.</p>
+
+    <article class="card">
+      <div class="card-top">
+        <div class="card-title"><span class="rank">6</span><div><h3>Doxapram <span class="k" aria-label="A">A</span></h3><p class="forms">Forms: Doxapram, Doxapram Hydrochloride</p></div></div>
+        <span class="reports">8 reports <span class="k" aria-label="B">B</span></span>
+      </div>
+      <p class="card-subhead">Research pathway <span class="k" aria-label="C">C</span></p>
+      <div class="path"><span class="path-node">Doxapram</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node p">KCNK3</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node">Pulmonary arterial hypertension</span></div>
+      <div class="protein-row">
+        <span class="protein-id">KCNK3</span>
+        <span class="protein-facts"><span class="direction">↓ Down</span><span class="k" aria-label="D">D</span><span class="score">79 / 100 points</span><span class="k" aria-label="E">E</span></span>
+      </div>
+      <p class="direction-note">The data does not say which direction this disease needs.</p>
+      <div class="explanation"><div class="slot-label">Plain-language explanation <span class="k" aria-label="F">F</span></div>Doxapram is a medicine. Doctors already use it for something else. It comes in more than one form. Doxapram grabs a protein called KCNK3. A protein is a tiny machine in your body. Doxapram turns KCNK3 down, like a volume knob.</div>
+      <div class="ending"><span class="k" aria-label="G">G</span><span>But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. It is not a treatment. Do not try it.</span></div>
+      <div class="card-foot">Source record <span class="k" aria-label="H">H</span></div>
+    </article>
+
+    <dl class="key">
+      <div><span class="k" aria-hidden="true">A</span><dt>The medicine and its forms</dt><dd>A medicine and its tablet forms are shown as one item. The number beside the name is its place in the list.</dd></div>
+      <div><span class="k" aria-hidden="true">B</span><dt>Reports</dt><dd>How many clinical reports the database holds for this medicine. More reports means more has been written about it. It does not mean a better clue.</dd></div>
+      <div><span class="k" aria-hidden="true">C</span><dt>The path</dt><dd>Medicine, then protein, then disease. If any step is missing, Moonlight does not show the card.</dd></div>
+      <div><span class="k" aria-hidden="true">D</span><dt>Up, down or unknown</dt><dd>What the medicine does to the protein, like a volume knob. On this same list, another medicine turns KCNK3 up. Both are clues, because the data does not say which way helps. “Unknown” means the database uses a word Moonlight does not recognise, so it does not guess.</dd></div>
+      <div><span class="k" aria-hidden="true">E</span><dt>Points out of 100</dt><dd>How strongly research links this protein to the disease. The points belong to the protein. They are not a grade for the medicine.</dd></div>
+      <div><span class="k" aria-hidden="true">F</span><dt>The explanation</dt><dd>The facts on the card, rewritten in plain words. Nothing is added that is not on the card.</dd></div>
+      <div><span class="k" aria-hidden="true">G</span><dt>The catch</dt><dd>The same on every card. The data does not say whether the disease needs the protein turned up or down, so a clue can point the wrong way.</dd></div>
+      <div><span class="k" aria-hidden="true">H</span><dt>Source record</dt><dd>A link to the public record behind the card, so you can check it yourself.</dd></div>
+    </dl>
+  </section>
+
+  <section class="col" aria-labelledby="limits-title">
+    <h2 id="limits-title">What Moonlight cannot tell you</h2>
+    <p class="sub">Knowing these makes the rest more useful.</p>
+    <ul class="limits">
+      <li><div><b>Whether a clue would help or harm.</b> <span>That takes trials in people.</span></div></li>
+      <li><div><b>Which direction the disease needs.</b> <span>A medicine that turns a protein the wrong way could make things worse.</span></div></li>
+      <li><div><b>Anything beyond the 25 most-linked proteins.</b> <span>Moonlight stops there for each disease.</span></div></li>
+      <li><div><b>Treatments that do not act on a protein.</b> <span>A moisturiser, a diet or surgery will never appear.</span></div></li>
+      <li><div><b>What is approved where you live.</b> <span>The database records approval in at least one country.</span></div></li>
+      <li><div><b>That the record is complete or current.</b> <span>Public databases have gaps and mistakes, and they change.</span></div></li>
+    </ul>
+  </section>
+
+  <section class="col" aria-labelledby="use-title">
+    <h2 id="use-title">Good ways to use it</h2>
+    <p class="sub">Moonlight is a place to start reading.</p>
+    <div class="pair">
+      <div class="box do"><h3>Use it to</h3><ul>
+        <li><span>learn which proteins are linked to a disease</span></li>
+        <li><span>find the medicines already approved or in trials</span></li>
+        <li><span>open the source record and read further</span></li>
+        <li><span>write down questions to take to your doctor</span></li>
+      </ul></div>
+      <div class="box dont"><h3>Do not use it to</h3><ul>
+        <li><span>start, stop or change any medicine</span></li>
+        <li><span>judge the medicine you take by its points</span></li>
+        <li><span>decide that a clue will work</span></li>
+        <li><span>look for where to get a medicine</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="col" aria-labelledby="facts-title">
+    <h2 id="facts-title">Where the facts come from</h2>
+    <p class="sub">Every fact has a public source.</p>
+    <div class="facts">
+      <p><b>The facts are from the Open Targets Platform.</b> It is a free, open research database that brings together public sources such as ChEMBL for medicines, ClinicalTrials.gov for trials, Europe PMC for published research, and others. Moonlight shows which release of the data it is using.</p>
+      <p><b>The order is decided by plain rules.</b> The ranking rule is printed above the list of new clues. No AI ranks or chooses anything.</p>
+      <p><b>The plain-language explanation is written by Gemini.</b> It is given only the facts on the card, and its answer is checked against them. If Gemini is busy, Moonlight writes the explanation from its own template.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-row"><span class="made">Made with care by a family in Kochi <svg viewBox="0 0 24 24" role="img" aria-label="love"><path d="M12 21s-7.5-4.7-9.6-9.3C.9 8.300 2.700 4.500 6.300 4.500c2.100 0 3.600 1.100 4.700 2.800h2c1.100-1.700 2.600-2.800 4.700-2.800 3.600 0 5.400 3.800 3.900 7.200C19.500 16.300 12 21 12 21Z"/></svg></span><span>Moonlight</span></div>
+  <div class="footer-note">Research exploration only · Not clinical findings · Data from Open Targets</div>
+</div></footer>
