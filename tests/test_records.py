@@ -257,3 +257,165 @@ def test_binding_agent_does_not_change_a_known_direction():
 
 def test_activator_with_a_down_word_is_mixed():
     assert direction_from_action_types(["ACTIVATOR", "INHIBITOR"]) == "mixed"
+
+
+# ---- Ticket 2.10: stage words PRECLINICAL and IND, and words we do not know ----
+#
+# The two saved files in fixtures/stage_words/ are live Open Targets answers
+# from 2026-11-15 (data version 26.09). No test here touches the network:
+# fetch._post_json is swapped for a function that hands back a saved file.
+
+import copy
+import json
+import pathlib
+from unittest.mock import patch
+
+from moonlight import fetch
+from moonlight.filter import NOT_APPROVED, group_of
+
+STAGE_WORDS = pathlib.Path(__file__).resolve().parent.parent / "fixtures" / "stage_words"
+ASTHMA = Disease(id="MONDO_0004979", name="asthma")
+MIGRAINE = Disease(id="MONDO_0005277", name="migraine disorder")
+ADORA2B = Target(id="ENSG00000170425", symbol="ADORA2B", name="adenosine A2b receptor", score=0.5)
+SCN1A = Target(
+    id="ENSG00000144285",
+    symbol="SCN1A",
+    name="sodium voltage-gated channel alpha subunit 1",
+    score=0.5,
+)
+
+
+def _saved(name):
+    file = STAGE_WORDS / f"{name}.response.json"
+    return json.loads(file.read_text(encoding="utf-8"))
+
+
+def _medicine_from(answer, disease, target, name):
+    """Read a saved answer the way Moonlight does and pick one medicine out."""
+    with patch.object(fetch, "_post_json", return_value=answer):
+        paths = fetch.fetch_paths(disease, target)
+    found = [path.medicine for path in paths if path.medicine.name == name]
+    assert len(found) == 1, f"{name} is not in the saved answer"
+    return found[0]
+
+
+# Example 1
+def test_a_medicine_whose_best_stage_is_preclinical_is_not_approved():
+    answer = _saved("asthma_ADORA2B_ENSG00000170425")
+
+    medicine = _medicine_from(answer, ASTHMA, ADORA2B, "LAS101057")
+
+    assert medicine.best_stage == "PRECLINICAL"
+    assert group_of(medicine) == NOT_APPROVED
+
+
+# Example 2
+def test_a_medicine_whose_best_stage_is_ind_is_not_approved():
+    answer = _saved("migraine_SCN1A_ENSG00000144285")
+
+    medicine = _medicine_from(answer, MIGRAINE, SCN1A, "NKTR-171")
+
+    assert medicine.best_stage == "IND"
+    assert group_of(medicine) == NOT_APPROVED
+
+
+# Example 3. The saved asthma answer, with one medicine's stage words
+# swapped for a made-up one. The file itself is not changed.
+def test_a_medicine_whose_best_stage_is_a_made_up_word_is_not_approved():
+    answer = copy.deepcopy(_saved("asthma_ADORA2B_ENSG00000170425"))
+    swapped = 0
+    for row in answer["data"]["target"]["drugAndClinicalCandidates"]["rows"]:
+        drug = row["drug"]
+        if drug["name"] == "LAS101057":
+            drug["maximumClinicalStage"] = "MOON_STAGE"
+            for indication in drug["indications"]["rows"]:
+                indication["maxClinicalStage"] = "MOON_STAGE"
+            swapped += 1
+    assert swapped == 1
+
+    medicine = _medicine_from(answer, ASTHMA, ADORA2B, "LAS101057")  # nothing raises
+
+    assert medicine.best_stage == "MOON_STAGE"
+    assert medicine.disease_stage == "MOON_STAGE"
+    assert group_of(medicine) == NOT_APPROVED
+
+
+def test_a_made_up_stage_word_never_raises_by_hand():
+    made_up = form("M1", "MOON MEDICINE", "MOON_STAGE", "MOON_STAGE")
+    medicine = Medicine(name="MOON MEDICINE", forms=[made_up])
+
+    assert medicine.best_stage == "MOON_STAGE"
+    assert stronger_stage("MOON_STAGE", None) == "MOON_STAGE"
+    assert stronger_stage(None, "MOON_STAGE") == "MOON_STAGE"
+    assert group_of(medicine) == NOT_APPROVED
+
+
+def test_every_saved_medicine_can_be_read_without_an_error():
+    for name, disease, target in (
+        ("asthma_ADORA2B_ENSG00000170425", ASTHMA, ADORA2B),
+        ("migraine_SCN1A_ENSG00000144285", MIGRAINE, SCN1A),
+    ):
+        with patch.object(fetch, "_post_json", return_value=_saved(name)):
+            paths = fetch.fetch_paths(disease, target)
+        assert paths
+        for path in paths:
+            assert path.medicine.best_stage  # worked out, no error
+
+
+def test_preclinical_and_ind_sit_between_withdrawal_and_the_phases():
+    # Lowest to highest: WITHDRAWAL, PRECLINICAL, IND, then the phases.
+    assert stronger_stage("PRECLINICAL", "WITHDRAWAL") == "PRECLINICAL"
+    assert stronger_stage("WITHDRAWAL", "PRECLINICAL") == "PRECLINICAL"
+    assert stronger_stage("IND", "PRECLINICAL") == "IND"
+    assert stronger_stage("PRECLINICAL", "IND") == "IND"
+    assert stronger_stage("EARLY_PHASE_1", "IND") == "EARLY_PHASE_1"
+    assert stronger_stage("IND", "EARLY_PHASE_1") == "EARLY_PHASE_1"
+    assert stronger_stage("APPROVAL", "IND") == "APPROVAL"
+
+
+def test_every_stage_word_on_the_ladder_is_spelled_as_open_targets_spells_it():
+    # PHASE_4 and WITHDRAWAL are not in the two new files. They are in the
+    # golden disease's saved files from ticket 1.1.
+    golden = STAGE_WORDS.parent / "MONDO_0015924"
+    text = "".join(
+        file.read_text(encoding="utf-8")
+        for folder in (STAGE_WORDS, golden, golden / "target_drugs")
+        for file in sorted(folder.glob("*.response.json"))
+    )
+    for word in STAGE_ORDER:
+        assert f'ClinicalStage": "{word}"' in text, f"{word} is in no saved answer"
+
+
+def test_a_known_stage_word_beats_a_made_up_one():
+    for known in STAGE_ORDER:
+        assert stronger_stage(known, "MOON_STAGE") == known
+        assert stronger_stage("MOON_STAGE", known) == known
+
+
+# Example 4
+def test_a_family_takes_the_strongest_stage_of_its_forms_with_the_new_words():
+    def family(*stages):
+        forms = [form(f"F{n}", f"FORM {n}", stage) for n, stage in enumerate(stages)]
+        return Medicine(name="F", forms=forms)
+
+    assert family("PRECLINICAL", "IND").best_stage == "IND"
+    assert family("IND", "PRECLINICAL").best_stage == "IND"
+    assert family("WITHDRAWAL", "PRECLINICAL").best_stage == "PRECLINICAL"
+    assert family("IND", "PHASE_1").best_stage == "PHASE_1"
+    assert family("PRECLINICAL", "APPROVAL").best_stage == "APPROVAL"
+    assert family("MOON_STAGE", "APPROVAL").best_stage == "APPROVAL"
+    assert family("APPROVAL", "MOON_STAGE").best_stage == "APPROVAL"
+    assert family("MOON_STAGE", "PRECLINICAL").best_stage == "PRECLINICAL"
+
+
+def test_a_family_takes_the_strongest_link_of_its_forms_with_the_new_words():
+    medicine = Medicine(
+        name="G",
+        forms=[
+            form("G1", "G", "APPROVAL", "IND"),
+            form("G2", "G SALT", "APPROVAL", "PHASE_2", "G1"),
+            form("G3", "G OTHER SALT", "APPROVAL", None, "G1"),
+        ],
+    )
+
+    assert medicine.disease_stage == "PHASE_2"
