@@ -68,13 +68,15 @@ MAIL_LINK = '<a href="mailto:%s">%s</a>' % (ADDRESS, ADDRESS)
 
 DOCTORS = "For doctors: what Moonlight can and cannot tell you"
 # Kashish's words, 16 Nov. Each was checked against the code on main.
-# "What is left out" is not here yet: it waits for Kashish's words.
 DOCTOR_POINTS = [
     "Where the facts come from. The Open Targets Platform, a free and open "
     "research database.",
     "What “Approved” means here. Approved for this disease in at least one "
     "country, according to the database. It says nothing about how well a "
     "medicine works or what guidelines recommend.",
+    "What is left out. Medicines withdrawn in any country and medicines not "
+    "approved anywhere are counted, never named. Medicines whose link to the "
+    "disease is unclear are counted separately.",
     "Wider and narrower diseases. Approvals the database files one step above "
     "or below the disease are shown with a label. Wider-group approvals sit in "
     "a folded box.",
@@ -245,6 +247,7 @@ def test_for_doctors_holds_kashishs_points_word_for_word_in_the_same_list_style(
     assert section.count('<ul class="limits">') == 1
     items = re.findall(r"(?s)<li>(.*?)</li>", section)
     assert [plain(item) for item in items] == DOCTOR_POINTS
+    assert len(items) == 8
     for item, words in zip(items, DOCTOR_POINTS):  # the first sentence is the bold title
         assert plain(re.search(r"<b>(.*?)</b>", item).group(1)) == words.split(". ")[0] + "."
 
