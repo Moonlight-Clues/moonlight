@@ -12,6 +12,11 @@ exact body that was posted.
   the disease's own entry and each direct parent and child. The lane number
   is the entry's place in the `parents` / `children` list. Each was asked
   twice (the ask-twice rule) and the kept answer saved.
+- `<disease id>/disease.*`, `associated_targets.*`, `target_drugs/<place>_<symbol>_<id>.*`
+  (amyloidosis, pre-B ALL and atopic eczema only): fetch.py's DISEASE_QUERY,
+  TARGETS_QUERY (top 25) and TARGET_DRUGS_QUERY, word for word, so a whole
+  search can run offline. The `target_drugs` answers are saved without
+  indentation, because they are large.
 - `drug_daratumumab_CHEMBL1743007.*`: daratumumab's own list of diseases.
   It is PHASE_3 for AL amyloidosis and PHASE_2 for amyloidosis, not APPROVAL.
 

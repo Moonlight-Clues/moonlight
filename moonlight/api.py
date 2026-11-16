@@ -31,7 +31,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 
 from moonlight import explain, translate
-from moonlight.engine import ApprovedMedicine, find_clues, sort_into_tabs
+from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
+from moonlight.engine import sort_into_tabs
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -67,10 +68,12 @@ class _Found:
     """Everything worked out for one disease in one request."""
 
     def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed],
-                 withdrawn_listed: List[Listed] = ()):
+                 withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = ()):
         self.disease = disease
-        tabs = sort_into_tabs(tray, listed, withdrawn_listed)
+        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours)
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
+        # Approved only for a wider group (ticket 2.12): the folded box.
+        self.wider_group = tabs.wider_group
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
         self.left_out = tabs.left_out
@@ -81,7 +84,8 @@ class _Found:
             for path in paths:
                 names.add(path.medicine.name)
                 names.update(form.name for form in path.medicine.forms)
-        for medicine in tabs.approved:  # also the ones only on the disease's own list
+        # Also the ones only on the disease's own list, or on a parent's or child's.
+        for medicine in tabs.approved + tabs.wider_group:
             names.add(medicine.name)
             names.update(medicine.forms)
         self.known_names = names
@@ -95,7 +99,8 @@ def _find(disease_id: str) -> _Found:
             raise HTTPException(status_code=404, detail="Open Targets does not know this disease.")
         targets = fetch_targets(disease, TOP_TARGETS)
         return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
-                      fetch_withdrawn(disease))  # the same saved answer, not a new question
+                      fetch_withdrawn(disease),  # the same saved answer, not a new question
+                      fetch_neighbours(disease))  # one step up and one step down
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -165,11 +170,12 @@ def _approved_json(medicine: ApprovedMedicine) -> dict:
     it has no rank, no explanation and no ending.
 
     proteins is empty when the medicine acts on none of the top proteins.
+    label is only there for a medicine found on a parent or child entry.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
     display = explain._display
-    return {
+    item = {
         "id": medicine.id,
         "medicine": display(medicine.name),
         "forms": [display(name) for name in medicine.forms],
@@ -177,6 +183,9 @@ def _approved_json(medicine: ApprovedMedicine) -> dict:
         "reports": medicine.reports,
         "source": _first_link(medicine.sources),
     }
+    if medicine.label:
+        item["label"] = medicine.label  # the engine's words, never changed here
+    return item
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -233,7 +242,7 @@ def search(q: str = "") -> dict:
 def clues(disease_id: str) -> dict:
     found = _find(disease_id)
     disease = found.disease
-    return {
+    answer = {
         "disease": {"id": disease.id, "name": disease.name},
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
@@ -242,6 +251,10 @@ def clues(disease_id: str) -> dict:
         "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
+    if found.wider_group:
+        # The folded box in the Approved tab. Only there when it holds something.
+        answer["wider_group"] = [_approved_json(medicine) for medicine in found.wider_group]
+    return answer
 
 
 @app.get("/api/explain")

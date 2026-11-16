@@ -11,6 +11,8 @@ Five questions, five functions:
                                       own list says are approved for the disease
     fetch_withdrawn(disease)       -> list of Listed: the medicines on that same
                                       list that were withdrawn in any country
+    fetch_family(disease)          -> Family: the disease's direct parents and
+                                      direct children, one step only
 
 and one about the data itself:
 
@@ -35,6 +37,8 @@ fixtures/withdrawn/.
 The fields of the disease's own medicine list ("drugAndClinicalCandidates"
 on a disease, "maxClinicalStage" on its rows) were read from
 fixtures/MONDO_0015924/disease_drugs.* and the live API on 2026-11-15.
+"parents" and "children" on a disease were read from the live API on
+2026-11-16 and are saved in fixtures/family/.
 """
 
 import logging
@@ -113,6 +117,20 @@ _log = logging.getLogger(__name__)
 DISEASE_QUERY = """
 query DiseaseRecord($diseaseId: String!) {
   disease(efoId: $diseaseId) { id name description }
+}
+"""
+
+# Ticket 2.12. One sheet up and one sheet down. "parents" and "children" are
+# the direct ones only. "ancestors" and "descendants" go further and are not
+# asked for.
+FAMILY_QUERY = """
+query DiseaseFamily($diseaseId: String!) {
+  disease(efoId: $diseaseId) {
+    id
+    name
+    parents { id name }
+    children { id name }
+  }
 }
 """
 
@@ -385,6 +403,35 @@ def fetch_disease(disease_id: str) -> Optional[Disease]:
         name=record["name"],
         description=(record["description"] or "").strip(),
     )
+
+
+@dataclass(frozen=True)
+class Family:
+    """A disease's direct parents and direct children, in Open Targets' order."""
+
+    parents: Tuple[Disease, ...]
+    children: Tuple[Disease, ...]
+
+
+def fetch_family(disease: Disease) -> Family:
+    """The entries one step up and one step down from the disease.
+
+    Like the sheet above and the sheets below in a stack of paper. Only
+    one step: not grandparents, not grandchildren. No parents and no
+    children if the disease is not known, or if the answer does not hold
+    those lists. Nothing is guessed.
+    """
+    data = _ask(FAMILY_QUERY, {"diseaseId": disease.id})
+    record = data["disease"] or {}
+
+    def entries(field: str) -> Tuple[Disease, ...]:
+        found: Dict[str, Disease] = {}
+        for entry in record.get(field) or []:
+            if entry["id"] != disease.id:  # never the disease itself
+                found.setdefault(entry["id"], Disease(id=entry["id"], name=entry["name"]))
+        return tuple(found.values())
+
+    return Family(parents=entries("parents"), children=entries("children"))
 
 
 def fetch_targets(disease: Disease, limit: int = 25) -> List[Target]:

@@ -76,6 +76,10 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .panel>.section-desc,.tab-words{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 12px}
 .doctor-line{background:var(--paper);border:1px solid #EADFC8;border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:12px 15px;font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .no-path{margin:16px 0 4px}
+.where-label{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
+.wider-box{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:17px 0 0;padding:0 14px}
+.wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
+.wider-box[open]{padding-bottom:14px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
 .rule{background:var(--mist);border-left:3px solid var(--teal);padding:14px 15px;border-radius:0 11px 11px 0;font-size:13px;line-height:1.55;margin:6px 0 17px}
@@ -307,6 +311,12 @@ div.explanation{padding:12px 13px}
         <div class="state-box empty-box" id="approved-empty" hidden>
           <h3>The database lists no medicine approved for this disease.</h3>
         </div>
+        <!-- Approved only for a wider group. Folded, at the bottom of the tab. -->
+        <details class="wider-box" id="wider-box" hidden>
+          <summary>Approved for a wider group (<span id="wider-count"></span>)</summary>
+          <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
+          <div class="cards" id="wider-cards"></div>
+        </details>
       </section>
 
       <section class="panel studied" data-slot="studied" id="panel-trials" role="tabpanel" aria-labelledby="tab-trials" hidden>
@@ -482,6 +492,7 @@ div.explanation{padding:12px 13px}
       </div>
       <span class="reports" data-slot="reports"></span>
     </div>
+    <p class="where-label" data-slot="label" hidden></p>
     <p class="card-subhead" data-part="path-head">Research pathway</p>
     <div class="path" data-slot="path"></div>
     <div class="protein-list" data-part="proteins"></div>
@@ -579,6 +590,7 @@ div.explanation{padding:12px 13px}
     byId("loading").hidden = true;
     byId("disease-title").textContent = "";
     byId("approved-cards").replaceChildren();
+    byId("wider-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
     byId("filters").replaceChildren();
@@ -724,19 +736,27 @@ div.explanation{padding:12px 13px}
     byId("rule-text").textContent = data.rule_text;
 
     const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
+    // Approved only for a wider group: the folded box. Not counted on the tab.
+    const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
     const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
     const studiedCards = data.being_studied.map(clue => card(clue, disease, diseaseName, null));
     byId("approved-cards").replaceChildren(...approvedCards);
     byId("new-cards").replaceChildren(...newCards);
     byId("studied-cards").replaceChildren(...studiedCards);
     byId("approved-list").hidden = !approvedCards.length;
-    byId("approved-empty").hidden = !!approvedCards.length;
+    byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length;
+    byId("wider-cards").replaceChildren(...widerCards);
+    byId("wider-count").textContent = widerCards.length;
+    byId("wider-box").hidden = !widerCards.length;
+    byId("wider-box").open = !approvedCards.length;  // open only when it is all there is
     byId("new-list").hidden = !newCards.length;
     byId("empty").hidden = !!newCards.length;
     byId("studied-note").textContent = studiedCards.length ? ""
       : "No medicine in this data is being studied for this disease.";
 
-    const counts = {approved: approvedCards.length, trials: studiedCards.length, clues: newCards.length};
+    const counts = {
+      approved: approvedCards.length,  // the main list only, not the box
+      trials: studiedCards.length, clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
     byId("count-not-approved").textContent = data.left_out.not_approved;
@@ -755,6 +775,10 @@ div.explanation{padding:12px 13px}
     slot(el, "explanation").remove();
     slot(el, "ending").remove();
     slot(el, "phase").remove();
+    if (medicine.label) {  // found on a parent or child entry: say which
+      slot(el, "label").textContent = medicine.label;
+      slot(el, "label").hidden = false;
+    }
     if (!medicine.proteins.length) {
       part(el, "path-head").remove();
       slot(el, "path").remove();
