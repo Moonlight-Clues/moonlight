@@ -1,0 +1,5183 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0007739",
+      "name": "Huntington disease",
+      "drugAndClinicalCandidates": {
+        "count": 62,
+        "rows": [
+          {
+            "id": "048be8f3a14dc5da04f304504798857a8cf6c0eb23cbcb1d4e88ccb01c136204",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5095406",
+              "name": "BRANAPLAM HYDROCHLORIDE",
+              "maximumClinicalStage": "UNKNOWN",
+              "parentMolecule": {
+                "id": "CHEMBL4290141",
+                "name": "BRANAPLAM"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "branaplam hydrochloride",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Branaplam Hydrochloride and 2 diseases",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/BRANAPLAM%20HYDROCHLORIDE/relevant/1/",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "spinal muscular atrophy",
+                    "disease": {
+                      "id": "MONDO_0001516",
+                      "name": "spinal muscular atrophy"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "BRANAPLAM HYDROCHLORIDE",
+                    "drug": {
+                      "id": "CHEMBL5095406",
+                      "name": "BRANAPLAM HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0b2daf79a1eb70199d30985c715f697744354854597a3376a07abf09b104066d",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL4850295",
+              "name": "VOTOPLAM",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct07326709",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Placebo-controlled, Double-blind Phase 3 Study to Evaluate the Efficacy, Safety and Tolerability of Votoplam in Participants With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT07326709",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "votoplam",
+                    "drug": {
+                      "id": "CHEMBL4850295",
+                      "name": "VOTOPLAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05358717",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2A, Randomized, Placebo-Controlled, Dose-Ranging Study to Evaluate the Safety and Efficacy of PTC518 in Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05358717",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PTC518",
+                    "drug": {
+                      "id": "CHEMBL4850295",
+                      "name": "VOTOPLAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct06254482",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2b, Double-Blind, Randomized Extension Study to Evaluate the Long-Term Safety and Efficacy of Votoplam in Participants With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT06254482",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "votoplam",
+                    "drug": {
+                      "id": "CHEMBL4850295",
+                      "name": "VOTOPLAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "votoplam",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Votoplam and Huntington Disease",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/VOTOPLAM/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "VOTOPLAM",
+                    "drug": {
+                      "id": "CHEMBL4850295",
+                      "name": "VOTOPLAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "136d340f000cd55710cca05bd269d7d7dfa3fe94d2736165381004ca690715b6",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL809",
+              "name": "SERTRALINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04071639",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Non-randomized Control Clinical Trial to Evaluate the Efficacy and Safety of Symptomatic Drug Therapy for Mild to Moderate Huntington's Disease Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04071639",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sertraline",
+                    "drug": {
+                      "id": "CHEMBL809",
+                      "name": "SERTRALINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "risperidone",
+                    "drug": {
+                      "id": "CHEMBL85",
+                      "name": "RISPERIDONE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "haloperidol",
+                    "drug": {
+                      "id": "CHEMBL54",
+                      "name": "HALOPERIDOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "idebenone",
+                    "drug": {
+                      "id": "CHEMBL252556",
+                      "name": "IDEBENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1ae474c423967bf62e73c7a6213f90049771cd6c6e24d7f98365b5be8e24d724",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3087515",
+              "name": "MAVOGLURANT",
+              "maximumClinicalStage": "PHASE_2_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01019473",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-centre, Randomized, Double-blind, Placebo-controlled, Parallel-group, Multiple Oral Dose Titration Proof of Concept Study in Patients With Huntington's Disease to Assess the Efficacy, Safety and Tolerability of AFQ056 in Reducing Chorea",
+                "url": "https://clinicaltrials.gov/study/NCT01019473",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "mavoglurant",
+                    "drug": {
+                      "id": "CHEMBL3087515",
+                      "name": "MAVOGLURANT"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1bbbd5b4e11357fe08ece9a03df0bc9eb369aa00bf6d1e1ee7680c54478d2401",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4290141",
+              "name": "BRANAPLAM",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct05111249",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-Blind, Placebo-Controlled Dose Range Finding Study With Open-Label Extension to Evaluate the Safety, Pharmacokinetics and Pharmacodynamics of LMI070/Branaplam Administered as Weekly Oral Doses in Participants With Early Manifest Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05111249",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "branaplam",
+                    "drug": {
+                      "id": "CHEMBL4290141",
+                      "name": "BRANAPLAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02268552",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "An Open Label Multi-part First-in-human Study of Oral LMI070 in Infants With Type 1 Spinal Muscular Atrophy",
+                "url": "https://clinicaltrials.gov/study/NCT02268552",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "spinal muscular atrophy",
+                    "disease": {
+                      "id": "MONDO_0019079",
+                      "name": "proximal spinal muscular atrophy"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "branaplam",
+                    "drug": {
+                      "id": "CHEMBL4290141",
+                      "name": "BRANAPLAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "branaplam",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Branaplam and 2 diseases",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/BRANAPLAM/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "spinal muscular atrophy",
+                    "disease": {
+                      "id": "MONDO_0001516",
+                      "name": "spinal muscular atrophy"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "BRANAPLAM",
+                    "drug": {
+                      "id": "CHEMBL4290141",
+                      "name": "BRANAPLAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "213caa83b0773f876f42e4aa5817a362bcddb7c20f9a9b7aae94c19e1eefa492",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL117785",
+              "name": "TETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "18909efa-de8a-42f1-a641-aa0319d71c35",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Tetrabenazine and 2 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=18909efa-de8a-42f1-a641-aa0319d71c35",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "TETRABENAZINE",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "ac768bab-8afa-4446-bc7f-caeeffec0cda",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Tetrabenazine and 2 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac768bab-8afa-4446-bc7f-caeeffec0cda",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "TETRABENAZINE",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "c1ed776ac9ae3c2f4fdb24284cc5d33f83a30c3719e7e90154d85dda490b0ba4",
+                "type": "INDICATION",
+                "source": "PMDA",
+                "provider": "PMDA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approval",
+                "year": 2012,
+                "countries": [],
+                "title": "Report in Approval stage for Tetrabenazine and Huntington ' S Disease",
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington ' s disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d09pjx/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approved",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Tetrabenazine and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D09PJX",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01834911",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_4",
+                "phaseFromSource": "PHASE4",
+                "year": null,
+                "countries": [],
+                "title": "Effect of Tetrabenazine on Stroop Interference in Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01834911",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02509793",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_4",
+                "phaseFromSource": "PHASE4",
+                "year": null,
+                "countries": [],
+                "title": "A Pilot Study Assessing Impulsivity in Patients With Huntington's Disease on Xenazine (Tetrabenazine)",
+                "url": "https://clinicaltrials.gov/study/NCT02509793",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00219804",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-Blind, Placebo-Controlled Study of Tetrabenazine for the Treatment of Huntington's Chorea",
+                "url": "https://clinicaltrials.gov/study/NCT00219804",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00632645",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Neuroleptic and Huntington Disease. Comparison of : Olanzapine, la Tetrabenazine and Tiapride. A Multicentric, Randomised, Controlled Study.",
+                "url": "https://clinicaltrials.gov/study/NCT00632645",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tiapride",
+                    "drug": {
+                      "id": "CHEMBL84158",
+                      "name": "TIAPRIDE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "olanzapine",
+                    "drug": {
+                      "id": "CHEMBL715",
+                      "name": "OLANZAPINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2177219b55b0644052af90d6ed4c4e187893e1e0e11be56d53734888832e882d",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL190461",
+              "name": "CANNABIDIOL",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01502046",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Double Blind, Randomized, Cross Over, Placebo Controlled Phase 2 Clinical Trial to Asses Neuroprotection by Cannabinoids in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01502046",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "cannabidiol",
+                    "drug": {
+                      "id": "CHEMBL190461",
+                      "name": "CANNABIDIOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "delta-9-tetrahydrocannabinol",
+                    "drug": {
+                      "id": "CHEMBL465",
+                      "name": "DRONABINOL"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "22aa5c50a7e0c16c8933d0be7935e9b38a9d2d6f822ac289fcc4ae67075bfd14",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL4297384",
+              "name": "GSK-356278",
+              "maximumClinicalStage": "PHASE_1",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0k9di/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "phase 1",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 1 stage for Gsk-356278 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0K9DI",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "gsk-356278",
+                    "drug": {
+                      "id": "CHEMBL4297384",
+                      "name": "GSK-356278"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2cc5d45776aca3859dc42e9ce7ff9db1188d4d5738ed82faec7619bbf1f25317",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL641",
+              "name": "ATOMOXETINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00368849",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Atomoxetine for Attention Deficits in Adults With Mild HD: A Randomized, Placebo-Controlled Crossover Study",
+                "url": "https://clinicaltrials.gov/study/NCT00368849",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "attention deficit disorder",
+                    "disease": {
+                      "id": "MONDO_0005302",
+                      "name": "attention deficit hyperactivity disorder, inattentive type"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "attention deficit disorder",
+                    "disease": {
+                      "id": "MONDO_0007743",
+                      "name": "attention deficit-hyperactivity disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "atomoxetine",
+                    "drug": {
+                      "id": "CHEMBL641",
+                      "name": "ATOMOXETINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "30d4bad68200030f2d6fb1c43aec956582f7d8d303e1f0d455dd87f8edb4e1e6",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4650527",
+              "name": "LEXANERSEN SODIUM",
+              "maximumClinicalStage": "UNKNOWN",
+              "parentMolecule": {
+                "id": "CHEMBL4650262",
+                "name": "LEXANERSEN"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "lexanersen sodium",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Lexanersen Sodium and Huntington Disease",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/LEXANERSEN%20SODIUM/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "LEXANERSEN SODIUM",
+                    "drug": {
+                      "id": "CHEMBL4650527",
+                      "name": "LEXANERSEN SODIUM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3fa0b6698ac07193aff1ecc82be32f5e522824379f4fad7798ca51a606e2466b",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2106060",
+              "name": "BEVANTOLOL HYDROCHLORIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": {
+                "id": "CHEMBL314010",
+                "name": "BEVANTOLOL"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "d0xt8w/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Som3355 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0XT8W",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "som3355",
+                    "drug": {
+                      "id": "CHEMBL2106060",
+                      "name": "BEVANTOLOL HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03575676",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Phase IIa, Double-blind, Randomized, Placebo-controlled Study of the Efficacy and Safety of SOM3355 in Huntington's Disease (HD) Patients With Chorea Movements.",
+                "url": "https://clinicaltrials.gov/study/NCT03575676",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "som3355",
+                    "drug": {
+                      "id": "CHEMBL2106060",
+                      "name": "BEVANTOLOL HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05475483",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Phase IIb, Randomized, Double-blind, Placebo-controlled Study in Parallel Groups Assessing the Efficacy and Safety of Two Doses of SOM3355 in Patients Suffering From Huntington's Disease With Choreic Movements",
+                "url": "https://clinicaltrials.gov/study/NCT05475483",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "som3355",
+                    "drug": {
+                      "id": "CHEMBL2106060",
+                      "name": "BEVANTOLOL HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "452ea8e397452476d41293b22abe8f23747e0dfa288c2a610e49c9a7765c0787",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL744",
+              "name": "RILUZOLE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00277602",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase III Multicenter, Double-Blind, Parallel-Group, Placebo Controlled Study to Measure the Effect of Riluzole 50 mg b.i.d. Over a Period of Three Years on the Progression of Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00277602",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "riluzole",
+                    "drug": {
+                      "id": "CHEMBL744",
+                      "name": "RILUZOLE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4738aeb3d21ad0536b19563779225b8f12cd5edddf64eab0cd3334fa88ff290a",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL600",
+              "name": "ACETYLCYSTEINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct05509153",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomised Controlled Trial, Of N-Acetyl Cysteine (NAC), for Premanifest Huntingtin Gene Expansion Carriers",
+                "url": "https://clinicaltrials.gov/study/NCT05509153",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "N-acetyl cysteine",
+                    "drug": {
+                      "id": "CHEMBL600",
+                      "name": "ACETYLCYSTEINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "473d04e7329633398a7f9253a25ecbdad2752ea5bcd83428e3f958c94bef475c",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1431",
+              "name": "METFORMIN",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04826692",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "\ufffdRandomized, Double-blind, Placebo-controlled Study to Assess the Effect of Metformin, an Activator of AMPK, on Cognitive Measures of Progression in Huntington's Disease Patients\ufffd",
+                "url": "https://clinicaltrials.gov/study/NCT04826692",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "metformin",
+                    "drug": {
+                      "id": "CHEMBL1431",
+                      "name": "METFORMIN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "496a75840df33afe0189ab5812f4ca72d15ce2afb2eb5fe9ced1c03790e3562b",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201178",
+              "name": "LISDEXAMFETAMINE DIMESYLATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL1201222",
+                "name": "LISDEXAMFETAMINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "5a4b474ca486dabbb65a7967d6b1ac6469bf1463a00486f6e42504401715c7a6",
+                "type": "INDICATION",
+                "source": "PMDA",
+                "provider": "PMDA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approval",
+                "year": 2019,
+                "countries": [],
+                "title": "Report in Approval stage for Lisdexamfetamine Mesilate and Hd",
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "hd",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "lisdexamfetamine mesilate",
+                    "drug": {
+                      "id": "CHEMBL1201178",
+                      "name": "LISDEXAMFETAMINE DIMESYLATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4b6a55ed8170ea78fd258f8f361d61940b7e22cbac36640b31e2e8dcd0031152",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3137326",
+              "name": "DEUTETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL117785",
+                "name": "TETRABENAZINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "7ea3c60a-45c7-44cc-afc2-d87fa53993c0",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Deutetrabenazine and 2 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ea3c60a-45c7-44cc-afc2-d87fa53993c0",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "DEUTETRABENAZINE",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d0e7zu/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approved",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Deutetrabenazine and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0E7ZU",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01795859",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized Double-Blind, Placebo-Controlled Study of SD-809 Extended Release for the Treatment of Chorea Associated With Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01795859",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01897896",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "An Open-Label, Long Term Safety Study of SD-809 ER in Subjects With Chorea Associated With Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01897896",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04713982",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Impact of Deutetrabenazine on Functional Speech and Gait Dynamics in Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04713982",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04071639",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Non-randomized Control Clinical Trial to Evaluate the Efficacy and Safety of Symptomatic Drug Therapy for Mild to Moderate Huntington's Disease Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04071639",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sertraline",
+                    "drug": {
+                      "id": "CHEMBL809",
+                      "name": "SERTRALINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "risperidone",
+                    "drug": {
+                      "id": "CHEMBL85",
+                      "name": "RISPERIDONE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "haloperidol",
+                    "drug": {
+                      "id": "CHEMBL54",
+                      "name": "HALOPERIDOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "idebenone",
+                    "drug": {
+                      "id": "CHEMBL252556",
+                      "name": "IDEBENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4c19334a7e406742a67a0da4092135f690c3159fbe3b0a30c2e5b9a7814bb21f",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL283800",
+              "name": "CREATINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00712426",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Creatine Safety, Tolerability, & Efficacy in Huntington's Disease (CREST-E)",
+                "url": "https://clinicaltrials.gov/study/NCT00712426",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "creatine monohydrate",
+                    "drug": {
+                      "id": "CHEMBL283800",
+                      "name": "CREATINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00592995",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Creatine Safety and Tolerability in Premanifest HD: PRECREST",
+                "url": "https://clinicaltrials.gov/study/NCT00592995",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "creatine monohydrate",
+                    "drug": {
+                      "id": "CHEMBL283800",
+                      "name": "CREATINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01411163",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Premanifest Huntington's Disease Extension Study II: Creatine Safety & Tolerability",
+                "url": "https://clinicaltrials.gov/study/NCT01411163",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "creatine",
+                    "drug": {
+                      "id": "CHEMBL283800",
+                      "name": "CREATINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01412151",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Creatine Safety & Tolerability in Huntington's Disease (CREST-X): A Single-Center, Open-Label, Long-Term Safety & Tolerability Extension Study of Creatine in Subjects With HD",
+                "url": "https://clinicaltrials.gov/study/NCT01412151",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "creatine monohydrate",
+                    "drug": {
+                      "id": "CHEMBL283800",
+                      "name": "CREATINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00026988",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Creatine Therapy for Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00026988",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "creatine",
+                    "drug": {
+                      "id": "CHEMBL283800",
+                      "name": "CREATINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4c6377351394a7244f2b5c9f821dff0f90c63b57280e2f880d5c84722a9713a5",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL5095095",
+              "name": "DALZANEMDOR",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct05655520",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Multicenter, Open-label Safety Study to Evaluate the Long-term Safety and Tolerability of SAGE-718 in Participants With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05655520",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "SAGE-718",
+                    "drug": {
+                      "id": "CHEMBL5095095",
+                      "name": "DALZANEMDOR"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05107128",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Placebo-Controlled, Double-Blind Study to Evaluate the Effect of SAGE-718 on Cognitive Function in Participants With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05107128",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "SAGE-718",
+                    "drug": {
+                      "id": "CHEMBL5095095",
+                      "name": "DALZANEMDOR"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05358821",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A 28-Day Randomized, Placebo-Controlled, Double-Blind, Parallel Groups and Normative Comparison Study to Evaluate the Effect of SAGE-718 on Functioning Capacity in Participants With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05358821",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sage-718",
+                    "drug": {
+                      "id": "CHEMBL5095095",
+                      "name": "DALZANEMDOR"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03787758",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 1, Double-blind, Placebo-controlled, Multiple Ascending Dose Study to Determine the Safety, Tolerability, and Pharmacokinetics of SAGE-718 Oral Solution in Healthy Adults With an Open-label Cohort of Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03787758",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "cognitive impairment",
+                    "disease": {
+                      "id": "HP_0100543",
+                      "name": "Cognitive impairment"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "dalzanemdor",
+                    "drug": {
+                      "id": "CHEMBL5095095",
+                      "name": "DALZANEMDOR"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "558406b10eedbfba3b483ecccb2bbcccd3c138deac75e15819b2d90c02778cbf",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL660",
+              "name": "AMANTADINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00001930",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "NMDA-Receptor Blockade in Huntington's Chorea",
+                "url": "https://clinicaltrials.gov/study/NCT00001930",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "chorea",
+                    "disease": {
+                      "id": "MONDO_0001595",
+                      "name": "choreatic disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "amantadine",
+                    "drug": {
+                      "id": "CHEMBL660",
+                      "name": "AMANTADINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5c1b041dbb2ac57771d333a6b6cf0d52989ca9ad12367a44f0cb2dbcc6672056",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL562318",
+              "name": "MARDEPODECT",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0oh2w/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Pf-02545920 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0OH2W",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pf-02545920",
+                    "drug": {
+                      "id": "CHEMBL562318",
+                      "name": "MARDEPODECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01806896",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Double-blind Randomized, Sequential Treatment Group, Placebo-controlled Study To Evaluate The Safety, Tolerability And Brain Cortico-striatal Function Of 2 Doses Of Pf-02545920 In Subjects With Early Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01806896",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PF-02545920",
+                    "drug": {
+                      "id": "CHEMBL562318",
+                      "name": "MARDEPODECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02197130",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Randomized, Placebo Controlled, Double Blind Proof-of-concept Study Of The Efficacy And Safety Of Pf-02545920 In Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02197130",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PF-02545920",
+                    "drug": {
+                      "id": "CHEMBL562318",
+                      "name": "MARDEPODECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02342548",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "An Open Label Extension Study To Investigate The Long Term Safety, Tolerability And Efficacy Of Pf-02545920 In Subjects With Huntington's Disease Who Previously Completed Study A8241021",
+                "url": "https://clinicaltrials.gov/study/NCT02342548",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PF-02545920",
+                    "drug": {
+                      "id": "CHEMBL562318",
+                      "name": "MARDEPODECT"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "5f4b43e1d109b8e82375443e2161ffbe4f996fcc84a56b05b639382be940924d",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL596802",
+              "name": "PRIDOPIDINE",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0f4sy/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "phase 3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for Pridopidine and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0F4SY",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00665223",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Multicentre, Multinational, Randomised, Double-Blind, Parallel-Group Study Comparing ACR16 45 mg Once-Daily or Twice-Daily Versus Placebo for the Symptomatic Treatment of Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00665223",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "acr16",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04556656",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Parallel Arm, Multicenter Study Evaluating the Efficacy and Safety of Pridopidine in Patients With Early Stage of Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04556656",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00724048",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-center, North American, Randomized, Double-blind, Parallel Group Study Comparing Three Doses of ACR16 Versus Placebo for the Symptomatic Treatment of Huntington Disease (HART)",
+                "url": "https://clinicaltrials.gov/study/NCT00724048",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "acr16",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01306929",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-Center, North American, Open-Label Extension Study of Pridopidine (ACR16) in the Symptomatic Treatment of Huntington's Disease (Open-HART).",
+                "url": "https://clinicaltrials.gov/study/NCT01306929",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02006472",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Dose-Finding, Randomized, Parallel-Group, Double-Blind, Placebo-Controlled Study, Evaluating the Safety and Efficacy of Pridopidine 45, 67.5, 90, and 112.5 mg Twice-Daily vs Placebo for Symptomatic Treatment in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02006472",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02494778",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-Center, Open-Label Study Evaluating the Safety, Tolerability, and Efficacy of Pridopidine in Patients With Huntington's Disease (Open PRIDE-HD)",
+                "url": "https://clinicaltrials.gov/study/NCT02494778",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "emea/h/c/006261",
+                "type": "INDICATION",
+                "source": "EMA Human Drugs",
+                "provider": "EMA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "application withdrawn",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Pridopidine and Huntington Disease",
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nurzigma",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pridopidine",
+                    "drug": {
+                      "id": "CHEMBL596802",
+                      "name": "PRIDOPIDINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "655778e7155824a40ea41593474b89f0a7c995ceb6dd001c1b6443b8c8f89217",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1702",
+              "name": "ATOMOXETINE HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL641",
+                "name": "ATOMOXETINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "1050c3b7c23845584585a3ffd810409026fb73cd5c96dde35143a968a8d9903b",
+                "type": "INDICATION",
+                "source": "PMDA",
+                "provider": "PMDA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approval",
+                "year": 2009,
+                "countries": [],
+                "title": "Report in Approval stage for Atomoxetine Hydrochloride and Hd",
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "hd",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "atomoxetine hydrochloride",
+                    "drug": {
+                      "id": "CHEMBL1702",
+                      "name": "ATOMOXETINE HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "68902923daf599db94548340920b3b9e2c4fa9613171ae50523c339aa3e1c5a5",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4297884",
+              "name": "PEPINEMAB",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0n1sh/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Vx-15 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0N1SH",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "vx-15",
+                    "drug": {
+                      "id": "CHEMBL4297884",
+                      "name": "PEPINEMAB"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02481674",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Multi-center, Randomized, Double-blind, Placebo Controlled Study in Subjects With Late Prodromal and Early Manifest Huntington's Disease to Assess the Safety, Tolerability, pk, and Efficacy of Pepinemab",
+                "url": "https://clinicaltrials.gov/study/NCT02481674",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pepinemab",
+                    "drug": {
+                      "id": "CHEMBL4297884",
+                      "name": "PEPINEMAB"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "pepinemab",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Pepinemab and 3 diseases",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/PEPINEMAB/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "neoplasm",
+                    "disease": {
+                      "id": "MONDO_0005070",
+                      "name": "neoplasm"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "multiple sclerosis",
+                    "disease": {
+                      "id": "EFO_0803536",
+                      "name": "multiple sclerosis symptom measurement"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PEPINEMAB",
+                    "drug": {
+                      "id": "CHEMBL4297884",
+                      "name": "PEPINEMAB"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6d380b4294e90c170009f01632762144c3ff41f4ffdc550c7b3637ddd22a88be",
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL602",
+              "name": "CYSTEAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct02101957",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 3 stage for Cysteamine and Huntington'S Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02101957",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "cysteamine",
+                    "drug": {
+                      "id": "CHEMBL602",
+                      "name": "CYSTEAMINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "72c04692a60ccd3dad6091a68b8a1b74379d79893c72eb757a6abcd4de8e7945",
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL1200577",
+              "name": "CYSTEAMINE BITARTRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL602",
+                "name": "CYSTEAMINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "d0vd6q/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "phase 2/3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 3 stage for Rp103 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0VD6Q",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "rp103",
+                    "drug": {
+                      "id": "CHEMBL1200577",
+                      "name": "CYSTEAMINE BITARTRATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "730977647c5299a6dae8e7a8a86d10eb0c3bc28e6ddf50c4b3e7dabd4ffb8440",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1200494",
+              "name": "GUANFACINE HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL862",
+                "name": "GUANFACINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "3dce4f3266adcf2eddc7b4bf04653f931dcd7df4104f4047fbb5b4ddcf7d5f7a",
+                "type": "INDICATION",
+                "source": "PMDA",
+                "provider": "PMDA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approval",
+                "year": 2017,
+                "countries": [],
+                "title": "Report in Approval stage for Guanfacine Hydrochloride and Hd",
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "hd",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "guanfacine hydrochloride",
+                    "drug": {
+                      "id": "CHEMBL1200494",
+                      "name": "GUANFACINE HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7e3087b343ce5f1d81a0c84a46a23e6aefd0874ea6f6f42033c276156b6eb0bc",
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL1434",
+              "name": "MINOCYCLINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00277355",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-Center, Double-Blind, Pilot Study of Minocycline in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00277355",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "minocycline",
+                    "drug": {
+                      "id": "CHEMBL1434",
+                      "name": "MINOCYCLINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00029874",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Minocycline Dosing and Safety in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00029874",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "minocycline",
+                    "drug": {
+                      "id": "CHEMBL1434",
+                      "name": "MINOCYCLINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "86b73000f3e135e96364047006ba1f0479b1487f00c14c8a659211e471771ead",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL454801",
+              "name": "UBIDECARENONE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00608881",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Coenzyme Q10 in Huntington's Disease (HD)",
+                "url": "https://clinicaltrials.gov/study/NCT00608881",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "coenzyme Q10",
+                    "drug": {
+                      "id": "CHEMBL454801",
+                      "name": "UBIDECARENONE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d0mm6a/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Coenzyme Q10 Analog and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0MM6A",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "coenzyme q10 analog",
+                    "drug": {
+                      "id": "CHEMBL454801",
+                      "name": "UBIDECARENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "87d4e79694ad91ca143e410114f25996453b33b1280449c2e02a90f490069ae1",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1746",
+              "name": "SODIUM PHENYLBUTYRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL1469",
+                "name": "PHENYLBUTANOIC ACID"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00212316",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Phenylbutyrate Development for Huntington's Disease (PHEND-HD): A Multi-Center, Double-Blind, Placebo-Controlled Study With Open-Label Follow-Up to Determine the Safety and Tolerability of Phenylbutyrate in Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00212316",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "phenylbutyrate",
+                    "drug": {
+                      "id": "CHEMBL1746",
+                      "name": "SODIUM PHENYLBUTYRATE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "phenylbutyrate",
+                    "drug": {
+                      "id": "CHEMBL2105745",
+                      "name": "GLYCEROL PHENYLBUTYRATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "8a3a5160cfdfbff554300842281cd954a28f05afa4c2e6bbb234f37071506c44",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1218",
+              "name": "RAMELTEON",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00907595",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": null,
+                "year": null,
+                "countries": [],
+                "title": "Treating Sleep Wake Cycle Disturbances in Basal Ganglia Neurodegenerative Disorder Subjects With Ramelteon- A Double Blind, Placebo Controlled Trial",
+                "url": "https://clinicaltrials.gov/study/NCT00907595",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "dementia with Lewy bodies",
+                    "disease": {
+                      "id": "MONDO_0007488",
+                      "name": "Lewy body dementia"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Parkinson's disease",
+                    "disease": {
+                      "id": "MONDO_0005180",
+                      "name": "Parkinson disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ramelteon",
+                    "drug": {
+                      "id": "CHEMBL1218",
+                      "name": "RAMELTEON"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "8b5f1b1bbc83d0cb185c6d80458f35743babf5d6ce98eaf9e5d4ca605a6bea4e",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL3942498",
+              "name": "PBF-999",
+              "maximumClinicalStage": "PHASE_1",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "dj0p6a/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "phase 1",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 1 stage for Pbf-999 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/DJ0P6A",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pbf-999",
+                    "drug": {
+                      "id": "CHEMBL3942498",
+                      "name": "PBF-999"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "91a1b6c52d21fbefd7c0e16768b34db61189c84b8b6662a16c526fba1b4d379d",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL857",
+              "name": "BIOTIN",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04478734",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Multicentric Trial on the Use of Combined Therapy of Thiamine and Biotine in Patients With Huntington\u00b4s Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04478734",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "biotin",
+                    "drug": {
+                      "id": "CHEMBL857",
+                      "name": "BIOTIN"
+                    }
+                  },
+                  {
+                    "drugFromSource": "thiamine",
+                    "drug": {
+                      "id": "CHEMBL1588",
+                      "name": "THIAMINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "94abf1826e58249d60f8599a8927b9d1a071b7ea56209800f34b271af02bb3dc",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4650264",
+              "name": "ROVANERSEN SODIUM",
+              "maximumClinicalStage": "UNKNOWN",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "rovanersen sodium",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Rovanersen Sodium and Huntington Disease",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ROVANERSEN%20SODIUM/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ROVANERSEN SODIUM",
+                    "drug": {
+                      "id": "CHEMBL4650264",
+                      "name": "ROVANERSEN SODIUM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "95a7d444c597d1857bc91b0f825484be8893af2bbaff8941c967eed3e744a9ec",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL4297581",
+              "name": "TOMINERSEN",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d07oao/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "phase 3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for Ionis-Httrx and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D07OAO",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ionis-httrx",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "dmov12/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "phase 3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for Tominersen and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/DMOV12",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tominersen",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03761849",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Multicenter, Double-Blind, Placebo-Controlled, Phase III Clinical Study to Evaluate the Efficacy and Safety of Intrathecally Administered RO7234292 (RG6042) in Patients With Manifest Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03761849",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "RO7234292",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03842969",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "An Open-Label Extension Study to Evaluate the Long-Term Safety and Tolerability of Intrathecally Administered RO7234292 (RG6042) in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03842969",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "RO7234292",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03342053",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "An Open-Label Extension Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of RO7234292 (ISIS 443139) in Huntington's Disease Patients Who Participated in Prior Investigational Studies of RO7234292 (ISIS 443139)",
+                "url": "https://clinicaltrials.gov/study/NCT03342053",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "RO7234292",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05686551",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase II, Randomized, Double-blind, Placebo-controlled, Dose-finding Study to Evaluate the Safety, Biomarkers, and Efficacy of Tominersen in Individuals With Prodromal and Early Manifest Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05686551",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tominersen",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02519036",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-blind, Placebo-controlled Study to Evaluate the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Multiple Ascending Doses of Intrathecally Administered ISIS 443139 in Patients With Early Manifest Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02519036",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ISIS 443139",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04000594",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "An Open-Label Adaptive Multiple-Dose Study to Investigate the Pharmacokinetics and Pharmacodynamics of RO7234292 in CSF and Plasma, and Safety and Tolerability Following Intrathecal Administration in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04000594",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "RO7234292",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "tominersen",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Tominersen and 5 diseases",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/TOMINERSEN/relevant/1/",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "pyoderma gangrenosum",
+                    "disease": {
+                      "id": "EFO_0006835",
+                      "name": "pyoderma gangrenosum"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "anti-neutrophil cytoplasmic antibody-associated vasculitis",
+                    "disease": {
+                      "id": "MONDO_0015492",
+                      "name": "anti-neutrophil cytoplasmic antibody-associated vasculitis"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "inflammation",
+                    "disease": {
+                      "id": "MP_0001845",
+                      "name": "inflammation"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "hidradenitis suppurativa",
+                    "disease": {
+                      "id": "MONDO_0006559",
+                      "name": "hidradenitis suppurativa"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "TOMINERSEN",
+                    "drug": {
+                      "id": "CHEMBL4297581",
+                      "name": "TOMINERSEN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "96a0dfa34694e17841e3289308d2a78c617e64a924cc98b48ddc63eff7539d0e",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL675",
+              "name": "ALENDRONATE SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL870",
+                "name": "ALENDRONIC ACID"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct06585449",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-blind, Placebo-controlled Study, to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Intrathecally Administered Single Ascending Doses of ALN-HTT02 in Adult Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT06585449",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ALN-HTT02",
+                    "drug": {
+                      "id": "CHEMBL675",
+                      "name": "ALENDRONATE SODIUM"
+                    }
+                  },
+                  {
+                    "drugFromSource": "ALN-HTT02",
+                    "drug": {
+                      "id": "CHEMBL870",
+                      "name": "ALENDRONIC ACID"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9793d0c1dd513dcac854bd8b2607fd5e711cc270d5fe4785d4bad0c67ff32522",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL54",
+              "name": "HALOPERIDOL",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04071639",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Non-randomized Control Clinical Trial to Evaluate the Efficacy and Safety of Symptomatic Drug Therapy for Mild to Moderate Huntington's Disease Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04071639",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sertraline",
+                    "drug": {
+                      "id": "CHEMBL809",
+                      "name": "SERTRALINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "risperidone",
+                    "drug": {
+                      "id": "CHEMBL85",
+                      "name": "RISPERIDONE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "haloperidol",
+                    "drug": {
+                      "id": "CHEMBL54",
+                      "name": "HALOPERIDOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "idebenone",
+                    "drug": {
+                      "id": "CHEMBL252556",
+                      "name": "IDEBENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9ced332d1ec0a4975db7c901fbdcd95068ed9e1038270a724eac903acb9354a4",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL66092",
+              "name": "LAQUINIMOD",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0jn5n/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Laquinimod and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0JN5N",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "laquinimod",
+                    "drug": {
+                      "id": "CHEMBL66092",
+                      "name": "LAQUINIMOD"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02215616",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Multinational, Randomized, Double-Blind, Placebo-Controlled, Parallel-Group Study to Evaluate the Efficacy and Safety of Laquinimod (0.5, 1.0 and 1.5 mg/Day) as Treatment in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02215616",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "laquinimod",
+                    "drug": {
+                      "id": "CHEMBL66092",
+                      "name": "LAQUINIMOD"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9f46093388a1a282f7cd7bb212121088f6537babefbe18bc91507dc93c598d1f",
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL4650526",
+              "name": "ROVANERSEN",
+              "maximumClinicalStage": "PHASE_1_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0w5yp/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "phase 1/2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 1 2 stage for Wve-120101 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0W5YP",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "wve-120101",
+                    "drug": {
+                      "id": "CHEMBL4650526",
+                      "name": "ROVANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03225833",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled, Phase 1b/2a Study of WVE-120101 Administered Intrathecally in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03225833",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "WVE-120101",
+                    "drug": {
+                      "id": "CHEMBL4650526",
+                      "name": "ROVANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04617847",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Open-label Extension Study to Evaluate the Safety, Pharmacodynamics, and Clinical Effects of WVE-120101 in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04617847",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "WVE-120101",
+                    "drug": {
+                      "id": "CHEMBL4650526",
+                      "name": "ROVANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "rovanersen",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Rovanersen and Huntington Disease",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ROVANERSEN/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ROVANERSEN",
+                    "drug": {
+                      "id": "CHEMBL4650526",
+                      "name": "ROVANERSEN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a90783f673e40bc4c482da68746db9881f8a38a9fef53a7134c5039e941c991c",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL255863",
+              "name": "NILOTINIB",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct03764215",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "An Open Label, Phase Ib Study to Evaluate the Impact of Low Doses of Nilotinib Treatment on Safety, Tolerability and Biomarkers in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03764215",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Parkinson's disease dementia",
+                    "disease": null
+                  },
+                  {
+                    "diseaseFromSource": "dementia with Lewy bodies",
+                    "disease": {
+                      "id": "MONDO_0007488",
+                      "name": "Lewy body dementia"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "nilotinib",
+                    "drug": {
+                      "id": "CHEMBL255863",
+                      "name": "NILOTINIB"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "af4d88edf5b46c711b3c2a89043adc079ef83442bc3cf8c60241150caf0203dd",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2105613",
+              "name": "DIVALPROEX SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL109",
+                "name": "VALPROIC ACID"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00095355",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Stimulation of Tyrosine Kinase and ERK Signaling Pathways in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00095355",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "lithium carbonate",
+                    "drug": {
+                      "id": "CHEMBL1200826",
+                      "name": "LITHIUM CARBONATE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "divalproex",
+                    "drug": {
+                      "id": "CHEMBL2105613",
+                      "name": "DIVALPROEX SODIUM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b2b5d9d9fb36a57f769372a0ff1a5c61428340c924c4829f342262f96dba1470",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL252556",
+              "name": "IDEBENONE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04071639",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Non-randomized Control Clinical Trial to Evaluate the Efficacy and Safety of Symptomatic Drug Therapy for Mild to Moderate Huntington's Disease Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04071639",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sertraline",
+                    "drug": {
+                      "id": "CHEMBL809",
+                      "name": "SERTRALINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "risperidone",
+                    "drug": {
+                      "id": "CHEMBL85",
+                      "name": "RISPERIDONE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "haloperidol",
+                    "drug": {
+                      "id": "CHEMBL54",
+                      "name": "HALOPERIDOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "idebenone",
+                    "drug": {
+                      "id": "CHEMBL252556",
+                      "name": "IDEBENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b454360443b341980e3795de08dce226b1077540d339d5ddf9e567921094a4ce",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL589390",
+              "name": "LATREPIRDINE",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00920946",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Safety and Efficacy Study of Dimebon in Patients With Mile-to-Moderate Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00920946",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "cognitive impairment",
+                    "disease": {
+                      "id": "HP_0100543",
+                      "name": "Cognitive impairment"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "dimebon",
+                    "drug": {
+                      "id": "CHEMBL589390",
+                      "name": "LATREPIRDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01085266",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "HORIZON-Plus: An Open-Label Extension of the HORIZON Protocol (DIM20) Evaluating the Safety of Dimebon (Latrepirdine) in Subjects With Huntington Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01085266",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "latrepirdine",
+                    "drug": {
+                      "id": "CHEMBL589390",
+                      "name": "LATREPIRDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00497159",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multi-Center, Phase 2 Randomized, Double-Blinded, Placebo-Controlled Study of Dimebon in Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00497159",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "dimebon",
+                    "drug": {
+                      "id": "CHEMBL589390",
+                      "name": "LATREPIRDINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00387270",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Phase 1-2A, Open-Label, Dosage-Escalation and Randomized, Double-Blinded, Placebo-Controlled Study of Dimebon in Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00387270",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "dimebon",
+                    "drug": {
+                      "id": "CHEMBL589390",
+                      "name": "LATREPIRDINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c5470d928ee0d3041fd027dac7c72b2252f5032adb169caccfb594e2886da061",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL807",
+              "name": "MEMANTINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01458470",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Trial of Memantine as Symptomatic Treatment for Early Huntington Disease; a Phase IIb Study",
+                "url": "https://clinicaltrials.gov/study/NCT01458470",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "memantine",
+                    "drug": {
+                      "id": "CHEMBL807",
+                      "name": "MEMANTINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c987e81c17368066dd0c29646b16459b128a3a207836a462988917075c374dc4",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL297453",
+              "name": "EPIGALOCATECHIN GALLATE",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01357681",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Effects of EGCG (Epigallocatechin Gallate) in Huntington's Disease The ETON-Study - A Randomized, Double-blind, Stratified, Placebo-controlled Prospective Investigator Initiated Multicenter Trial -",
+                "url": "https://clinicaltrials.gov/study/NCT01357681",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "epigallocatechin gallate",
+                    "drug": {
+                      "id": "CHEMBL297453",
+                      "name": "EPIGALOCATECHIN GALLATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c9e24fdae423db6b251b821961536ac7fc44bac3defa096b89c3a427432db3cd",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL715",
+              "name": "OLANZAPINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00632645",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Neuroleptic and Huntington Disease. Comparison of : Olanzapine, la Tetrabenazine and Tiapride. A Multicentric, Randomised, Controlled Study.",
+                "url": "https://clinicaltrials.gov/study/NCT00632645",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tiapride",
+                    "drug": {
+                      "id": "CHEMBL84158",
+                      "name": "TIAPRIDE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "olanzapine",
+                    "drug": {
+                      "id": "CHEMBL715",
+                      "name": "OLANZAPINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cb21365b6820f2003f8a57430c01d8bb2d1576e291e8f0d97047e99400f87ab6",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL549",
+              "name": "CITALOPRAM",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00271596",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Placebo-Controlled Pilot Study in Huntington's Disease (CIT-HD)",
+                "url": "https://clinicaltrials.gov/study/NCT00271596",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "citalopram",
+                    "drug": {
+                      "id": "CHEMBL549",
+                      "name": "CITALOPRAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ccbfd03d1c4c33ab150d0765deee8b6e4508feea3f804a60a597f19f239e7ffa",
+            "maxClinicalStage": "IND",
+            "drug": {
+              "id": "CHEMBL1229168",
+              "name": "CALMIDAZOLIUM",
+              "maximumClinicalStage": "IND",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "dw56qv/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "IND",
+                "phaseFromSource": "investigative",
+                "year": null,
+                "countries": [],
+                "title": "Report in Ind stage for Calmidazolium and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/DW56QV",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "calmidazolium",
+                    "drug": {
+                      "id": "CHEMBL1229168",
+                      "name": "CALMIDAZOLIUM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d45442e8d7c5a5c4d1fc260e4d59124cf147a0c62de0a848eb195cb50e4de028",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL672",
+              "name": "FENOFIBRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct03515213",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase IIa, Randomized, Double-blind, Placebo-controlled Study of the Safety and Efficacy of Fenofibrate as a Treatment for Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03515213",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "fenofibrate",
+                    "drug": {
+                      "id": "CHEMBL672",
+                      "name": "FENOFIBRATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d739673e1b2f8eb489d132a7f07fcfd20bb6ebbd20158de2d6ab30095705ea54",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL119385",
+              "name": "NEFLAMAPIMOD",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct03980938",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Double-Blind, Placebo-Controlled Two-Period 10-Week Treatment Within-Subject Crossover Study Of Cognitive Effects Of Neflamapimod in Early-Stage Huntington Disease (HD)",
+                "url": "https://clinicaltrials.gov/study/NCT03980938",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "neflamapimod",
+                    "drug": {
+                      "id": "CHEMBL119385",
+                      "name": "NEFLAMAPIMOD"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "db4d6a115a06eaf83baa1e02e489df107199f0f26a997842bb3af0040566c157",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4297585",
+              "name": "TRIHEPTANOIN",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01882062",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "ETUDE PREUVE DE CONCEPT D'UNE APPROCHE ANAPLEROTIQUE UTILISANT LA SPECTROSCOPIE RMN CEREBRALE AU PHOSPHORE-31 DANS LA MALADIE DE HUNTINGTON",
+                "url": "https://clinicaltrials.gov/study/NCT01882062",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "triheptanoin",
+                    "drug": {
+                      "id": "CHEMBL4297585",
+                      "name": "TRIHEPTANOIN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02453061",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Comparative Phase 2 Study Assessing the Efficacy of Triheptanoin, an Anaplerotic Therapy in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT02453061",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "triheptanoin",
+                    "drug": {
+                      "id": "CHEMBL4297585",
+                      "name": "TRIHEPTANOIN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dd6240ed7d5614cd6635b3825c4cf71c5e5e9519e39a2fa50b616abe8a01f23e",
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL4650262",
+              "name": "LEXANERSEN",
+              "maximumClinicalStage": "PHASE_1_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d04zfo/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "phase 1/2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 1 2 stage for Wve-120102 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D04ZFO",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "wve-120102",
+                    "drug": {
+                      "id": "CHEMBL4650262",
+                      "name": "LEXANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03225846",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Randomized, Double-blind, Placebo-controlled, Phase 1b/2a Study of WVE-120102 Administered Intrathecally in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT03225846",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "WVE-120102",
+                    "drug": {
+                      "id": "CHEMBL4650262",
+                      "name": "LEXANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct04617860",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1_2",
+                "phaseFromSource": "PHASE1/PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Open-label Extension Study to Evaluate the Safety, Pharmacodynamics, and Clinical Effects of WVE-120102 in Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04617860",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "WVE-120102",
+                    "drug": {
+                      "id": "CHEMBL4650262",
+                      "name": "LEXANERSEN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "lexanersen",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Lexanersen and Huntington Disease",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/LEXANERSEN/relevant/1/",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "LEXANERSEN",
+                    "drug": {
+                      "id": "CHEMBL4650262",
+                      "name": "LEXANERSEN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e10ee079c23cee1be8f667ff7ac802dd96284ff283b23ee90bceb1f70fb58157",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL244243",
+              "name": "SRX246",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "dns58l/huntington disease",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "phase 2",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 2 stage for Srx246 and Huntington Disease",
+                "url": "https://ttd.idrblab.cn/data/drug/details/DNS58L",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "srx246",
+                    "drug": {
+                      "id": "CHEMBL244243",
+                      "name": "SRX246"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02507284",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "An Exploratory Phase II Study to Determine the Tolerability, Safety, and Activity of a Novel Vasopressin 1a Receptor Antagonist (SRX246) in Irritable Subjects With Huntington's Disease (HD)",
+                "url": "https://clinicaltrials.gov/study/NCT02507284",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "irritability",
+                    "disease": {
+                      "id": "HP_0000737",
+                      "name": "Irritability"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "SRX246",
+                    "drug": {
+                      "id": "CHEMBL244243",
+                      "name": "SRX246"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e2f86f6f6e57588e58c357ac7fef1113df6f3a4f498edafd0b316dacbb80eb84",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1588",
+              "name": "THIAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL1547",
+                "name": "THIAMINE ION"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04478734",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Multicentric Trial on the Use of Combined Therapy of Thiamine and Biotine in Patients With Huntington\u00b4s Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04478734",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "biotin",
+                    "drug": {
+                      "id": "CHEMBL857",
+                      "name": "BIOTIN"
+                    }
+                  },
+                  {
+                    "drugFromSource": "thiamine",
+                    "drug": {
+                      "id": "CHEMBL1588",
+                      "name": "THIAMINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ea36b3b86e23ff2378a3abbc958dc07d128181070a56215f86ad545e84bf739f",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL465",
+              "name": "DRONABINOL",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01502046",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Double Blind, Randomized, Cross Over, Placebo Controlled Phase 2 Clinical Trial to Asses Neuroprotection by Cannabinoids in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT01502046",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "cannabidiol",
+                    "drug": {
+                      "id": "CHEMBL190461",
+                      "name": "CANNABIDIOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "delta-9-tetrahydrocannabinol",
+                    "drug": {
+                      "id": "CHEMBL465",
+                      "name": "DRONABINOL"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ecd08358f4e2590ecc52caaaf18344878381809bad242a430c33e1adcb001704",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL84158",
+              "name": "TIAPRIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00632645",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Neuroleptic and Huntington Disease. Comparison of : Olanzapine, la Tetrabenazine and Tiapride. A Multicentric, Randomised, Controlled Study.",
+                "url": "https://clinicaltrials.gov/study/NCT00632645",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tiapride",
+                    "drug": {
+                      "id": "CHEMBL84158",
+                      "name": "TIAPRIDE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "olanzapine",
+                    "drug": {
+                      "id": "CHEMBL715",
+                      "name": "OLANZAPINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ed82c52c42f0380773fb84f017dd8a4f3140bcb1cbac5ed5caa228f63aed1c9a",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL870",
+              "name": "ALENDRONIC ACID",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct06585449",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-blind, Placebo-controlled Study, to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of Intrathecally Administered Single Ascending Doses of ALN-HTT02 in Adult Patients With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT06585449",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ALN-HTT02",
+                    "drug": {
+                      "id": "CHEMBL675",
+                      "name": "ALENDRONATE SODIUM"
+                    }
+                  },
+                  {
+                    "drugFromSource": "ALN-HTT02",
+                    "drug": {
+                      "id": "CHEMBL870",
+                      "name": "ALENDRONIC ACID"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ef742ba00f62adbf91389cca5488994932d99c7282b2b854cb5d618e98b128bb",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2105745",
+              "name": "GLYCEROL PHENYLBUTYRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00212316",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Phenylbutyrate Development for Huntington's Disease (PHEND-HD): A Multi-Center, Double-Blind, Placebo-Controlled Study With Open-Label Follow-Up to Determine the Safety and Tolerability of Phenylbutyrate in Subjects With Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00212316",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "phenylbutyrate",
+                    "drug": {
+                      "id": "CHEMBL1746",
+                      "name": "SODIUM PHENYLBUTYRATE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "phenylbutyrate",
+                    "drug": {
+                      "id": "CHEMBL2105745",
+                      "name": "GLYCEROL PHENYLBUTYRATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f25dba0c55f71a5d816e394a1858aede899d72ceff73b0d3d553033463f14611",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1200826",
+              "name": "LITHIUM CARBONATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00095355",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "Stimulation of Tyrosine Kinase and ERK Signaling Pathways in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00095355",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "lithium carbonate",
+                    "drug": {
+                      "id": "CHEMBL1200826",
+                      "name": "LITHIUM CARBONATE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "divalproex",
+                    "drug": {
+                      "id": "CHEMBL2105613",
+                      "name": "DIVALPROEX SODIUM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f41985ea62605265da130c7fbc222f774f4817b17e08cf40517c95ac4dded3e0",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4650442",
+              "name": "ANX-005",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04514367",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2a Open Label Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Intravenous ANX005 in Subjects With, or at Risk for, Manifest Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT04514367",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ANX005",
+                    "drug": {
+                      "id": "CHEMBL4650442",
+                      "name": "ANX-005"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f4e3b98b0867b8f628e9375cb7807d6651beb227d146ed339b9270f25bb9c381",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL1551",
+              "name": "URSODIOL",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00514774",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Ursodiol in Huntington's Disease",
+                "url": "https://clinicaltrials.gov/study/NCT00514774",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ursodiol",
+                    "drug": {
+                      "id": "CHEMBL1551",
+                      "name": "URSODIOL"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ff35b9d5bd40ee86b3d82a04c3f4d8e2f384306b989d197794d2b21da1578d2b",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1722",
+              "name": "METHYLPHENIDATE HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL796",
+                "name": "METHYLPHENIDATE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "1cccb6631e0f40fba5429e364a7d4c27da179697aa660acc6b4bc13251b43e85",
+                "type": "INDICATION",
+                "source": "PMDA",
+                "provider": "PMDA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approval",
+                "year": 2014,
+                "countries": [],
+                "title": "Report in Approval stage for Methylphenidate Hydrochloride and Hd",
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "hd",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "methylphenidate hydrochloride",
+                    "drug": {
+                      "id": "CHEMBL1722",
+                      "name": "METHYLPHENIDATE HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ff42a6c779d8d24ef48108e734028b258e46ecc5cf9b1306c0cb92ab07ee1719",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL85",
+              "name": "RISPERIDONE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct04071639",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Non-randomized Control Clinical Trial to Evaluate the Efficacy and Safety of Symptomatic Drug Therapy for Mild to Moderate Huntington's Disease Patients",
+                "url": "https://clinicaltrials.gov/study/NCT04071639",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Huntington's disease",
+                    "disease": {
+                      "id": "MONDO_0007739",
+                      "name": "Huntington disease"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sertraline",
+                    "drug": {
+                      "id": "CHEMBL809",
+                      "name": "SERTRALINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "risperidone",
+                    "drug": {
+                      "id": "CHEMBL85",
+                      "name": "RISPERIDONE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "haloperidol",
+                    "drug": {
+                      "id": "CHEMBL54",
+                      "name": "HALOPERIDOL"
+                    }
+                  },
+                  {
+                    "drugFromSource": "idebenone",
+                    "drug": {
+                      "id": "CHEMBL252556",
+                      "name": "IDEBENONE"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

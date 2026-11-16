@@ -1,0 +1,1815 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0005395",
+      "name": "movement disorder",
+      "drugAndClinicalCandidates": {
+        "count": 18,
+        "rows": [
+          {
+            "id": "3be87db7734931577ffa1837bcbac76fbeee435a8f6e9767fd044566c5710e92",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL2364639",
+              "name": "VALBENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "d0ix1i/movement disorder",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "phase 3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for 2 molecules and Movement Disorder",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0IX1I",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "nbi-98854",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "nbi-98854",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02274558",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Parallel, Fixed-Dose Study to Assess the Efficacy, Safety, and Tolerability of NBI-98854 for the Treatment of Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02274558",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02405091",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Open-Label, Safety and Tolerability Study of NBI-98854 for the Treatment of Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02405091",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02736955",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Open-Label Rollover Study for Continuing Valbenazine (NBI-98854) Administration for the Treatment of Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02736955",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05206513",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 3, Randomized, Double-Blind, Placebo-Controlled Study to Assess the Efficacy, Safety, and Tolerability of Valbenazine for the Treatment of Dyskinesia Due to Cerebral Palsy",
+                "url": "https://clinicaltrials.gov/study/NCT05206513",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03176771",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Double-Blind, Randomized, Multicenter, Placebo-Controlled, Parallel, Fixed-Dose Study to Evaluate the Efficacy and Safety of MT-5199 for the Treatment in Patients With Tardive Dyskinesia (J-KINECT)",
+                "url": "https://clinicaltrials.gov/study/NCT03176771",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01267188",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Open-Label, Dose Titration Study to Evaluate the Efficacy and Safety of NBI-98854 for the Treatment of Tardive Dyskinesia in Subjects With Schizophrenia or Schizoaffective Disorder",
+                "url": "https://clinicaltrials.gov/study/NCT01267188",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "NBI-98854",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01393600",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Double-Blind, Randomized, Placebo-Controlled, Two-Period Cross-Over Study to Evaluate the Efficacy and Safety of NBI-98854 for the Treatment of Tardive Dyskinesia in Subjects With Schizophrenia or Schizoaffective Disorder",
+                "url": "https://clinicaltrials.gov/study/NCT01393600",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "nbi-98854",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01688037",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled Study to Assess the Efficacy and Safety of NBI-98854 for the Treatment of Tardive Dyskinesia in Subjects With Schizophrenia or Schizoaffective Disorder",
+                "url": "https://clinicaltrials.gov/study/NCT01688037",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct01733121",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Randomized, Double-Blind, Placebo-Controlled, Dose-Titration Study to Assess the Safety, Tolerability, and Efficacy of NBI-98854 for the Treatment of Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT01733121",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "NBI-98854",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct05053321",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "Reduction of Demoralization in Patients With Tardive Dyskinesia After Treatment With Valbenazine",
+                "url": "https://clinicaltrials.gov/study/NCT05053321",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3ff5eb4ea40f009159e73ddfec41d06c609073848d59d2b983f5c1cd5da755b2",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL117785",
+              "name": "TETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01543321",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Study of Efficacy and Acceptability of Tetrabenazine in the Late Dyskinetic Syndrome With Neuroleptics: A Randomized, Parallel Group, Double-blind Placebo Controlled Multicentre Trial",
+                "url": "https://clinicaltrials.gov/study/NCT01543321",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "tetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL117785",
+                      "name": "TETRABENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "41c771d95e615e7dd1c50a2a47a5bce867bf195cff3c947507dda322a5ad3555",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989777",
+              "name": "TRIENTINE HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL609",
+                "name": "TRIENTINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "c34f77a7-996b-4470-b5df-d946a7fe5dbe",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Trientine Hydrochloride and 3 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c34f77a7-996b-4470-b5df-d946a7fe5dbe",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "biliary liver cirrhosis",
+                    "disease": {
+                      "id": "EFO_0004267",
+                      "name": "biliary liver cirrhosis"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "rheumatoid arthritis",
+                    "disease": {
+                      "id": "MONDO_0008383",
+                      "name": "rheumatoid arthritis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "TRIENTINE HYDROCHLORIDE",
+                    "drug": {
+                      "id": "CHEMBL3989777",
+                      "name": "TRIENTINE HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4c0746b45b86fd6707673094e6b6d60ea9f118cfbe4a5e2ae23b15a8c10a3ece",
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL4297272",
+              "name": "COBALAMIN",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct03790345",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Effect of Vitamin B6 and B12 in the Treatment of Movement Disorders Induced by Antipsychotics",
+                "url": "https://clinicaltrials.gov/study/NCT03790345",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "dystonia",
+                    "disease": {
+                      "id": "MONDO_0003441",
+                      "name": "dystonic disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "parkinsonism",
+                    "disease": {
+                      "id": "HP_0001300",
+                      "name": "Parkinsonism"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pyridoxine",
+                    "drug": {
+                      "id": "CHEMBL1364",
+                      "name": "PYRIDOXINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "cobalamin",
+                    "drug": {
+                      "id": "CHEMBL4297272",
+                      "name": "COBALAMIN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "505d5d260f9119ce08989924184971a7d6f698319a69088bdcb7190631d34f93",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3137326",
+              "name": "DEUTETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL117785",
+                "name": "TETRABENAZINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "d0e7zu/tardive dyskinesia",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approved",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Deutetrabenazine and Tardive Dyskinesia",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0E7ZU",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "emea/h/c/006371",
+                "type": "INDICATION",
+                "source": "EMA Human Drugs",
+                "provider": "EMA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "authorised",
+                "year": 2026,
+                "countries": [],
+                "title": "Report in Approval stage for Deutetrabenazine and Tardive Dyskinesia",
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/austedo",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02198794",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "An Open-Label, Long-Term Safety Study of SD-809 (Deutetrabenazine) for the Treatment of Moderate to Severe Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02198794",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02291861",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-Blind, Placebo-Controlled, Fixed-Dose Study of SD-809 (Deutetrabenazine) for the Treatment of Moderate to Severe Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02291861",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct02195700",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-Blind, Placebo-Controlled Study of SD-809 (Deutetrabenazine) for the Treatment of Moderate to Severe Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT02195700",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "deutetrabenazine",
+                    "drug": {
+                      "id": "CHEMBL3137326",
+                      "name": "DEUTETRABENAZINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "60014918187f4cd4000c6ccbae1e0a3e7c74092628d8bfc67585d16c0e993fc4",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989517",
+              "name": "IOFLUPANE I 123",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL1945778",
+                "name": "IOFLUPANE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "ef7804d7-c691-495b-8aaf-5bc54fd5d9f6",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Ioflupane I 123 and 2 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ef7804d7-c691-495b-8aaf-5bc54fd5d9f6",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "multiple system atrophy",
+                    "disease": {
+                      "id": "MONDO_0007803",
+                      "name": "multiple system atrophy"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "IOFLUPANE I 123",
+                    "drug": {
+                      "id": "CHEMBL3989517",
+                      "name": "IOFLUPANE I 123"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "emea/h/c/004745",
+                "type": "INDICATION",
+                "source": "EMA Human Drugs",
+                "provider": "EMA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "authorised",
+                "year": 2019,
+                "countries": [],
+                "title": "Report in Approval stage for Ioflupane (123L) and 3 diseases",
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/striascan",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "radionuclide imaging",
+                    "disease": null
+                  },
+                  {
+                    "diseaseFromSource": "dementia",
+                    "disease": {
+                      "id": "MONDO_0001627",
+                      "name": "dementia"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "movement disorders",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ioflupane (123l)",
+                    "drug": {
+                      "id": "CHEMBL3989517",
+                      "name": "IOFLUPANE I 123"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "emea/h/c/005135",
+                "type": "INDICATION",
+                "source": "EMA Human Drugs",
+                "provider": "EMA",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "authorised",
+                "year": 2021,
+                "countries": [],
+                "title": "Report in Approval stage for Ioflupane (123I) and 3 diseases",
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/celsunax",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "radionuclide imaging",
+                    "disease": null
+                  },
+                  {
+                    "diseaseFromSource": "dementia",
+                    "disease": {
+                      "id": "MONDO_0001627",
+                      "name": "dementia"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "movement disorders",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ioflupane (123i)",
+                    "drug": {
+                      "id": "CHEMBL3989517",
+                      "name": "IOFLUPANE I 123"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7959abe087423b3e7cad0a50ac5da52e4d19326912511320daebf8e79b4dc696",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3707248",
+              "name": "VALBENAZINE TOSYLATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL2364639",
+                "name": "VALBENAZINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "4c970164-cafb-421f-9eb5-c226ef0a3417",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Valbenazine Tosylate and Movement Disorder",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4c970164-cafb-421f-9eb5-c226ef0a3417",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "VALBENAZINE TOSYLATE",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d0jj7s/tardive dyskinesia",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "approved",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Valbenazine Tosylate and Tardive Dyskinesia",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0JJ7S",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "valbenazine tosylate",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d63wmq/tardive dyskinesia",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_4",
+                "phaseFromSource": "phase 4",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 4 stage for Ingrezza and Tardive Dyskinesia",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D63WMQ",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ingrezza",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "label/2017/209241lbl.pdf",
+                "type": "INDICATION",
+                "source": "FDA",
+                "provider": "ChEMBL",
+                "origin": "REGULATORY_AGENCY",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Valbenazine Tosylate and Movement Disorder",
+                "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "VALBENAZINE TOSYLATE",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d0ix1i/movement disorder",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "phase 3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for 2 molecules and Movement Disorder",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0IX1I",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "nbi-98854",
+                    "drug": {
+                      "id": "CHEMBL2364639",
+                      "name": "VALBENAZINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "nbi-98854",
+                    "drug": {
+                      "id": "CHEMBL3707248",
+                      "name": "VALBENAZINE TOSYLATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "7b9498ddda61b3dfaabbf2a75e21ae3433d2921f15c1a1c424b641639bc7ed8c",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3184986",
+              "name": "ZINC ACETATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL1200928",
+                "name": "ZINC ACETATE ANHYDROUS"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "a0c72bff-20f3-4241-b966-34a95178d1a3",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Zinc Acetate and Movement Disorder",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a0c72bff-20f3-4241-b966-34a95178d1a3",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ZINC ACETATE",
+                    "drug": {
+                      "id": "CHEMBL3184986",
+                      "name": "ZINC ACETATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "82f402c8d9281ac8371cef9e1ae4eaf2af14f45f07d01d5e90ac8602a180451e",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2146110",
+              "name": "SARIZOTAN HYDROCHLORIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": {
+                "id": "CHEMBL220808",
+                "name": "SARIZOTAN"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00314288",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Multicenter, Multinational, Randomised, Double-blind, Placebo-controlled, Parallel-group, Dose-finding Study to Investigate the Anti-dyskinetic Efficacy and Safety of Sarizotan in Parkinson Patients With L-dopa-induced Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT00314288",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sarizotan hcl",
+                    "drug": {
+                      "id": "CHEMBL2146110",
+                      "name": "SARIZOTAN HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a9b8b5753de7adcfa73c20e03491b22e2c5aaec637e5b107a835de2c5ab6d5ed",
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL27",
+              "name": "PROPRANOLOL",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct03254186",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Safety and Efficacy of Propranolol in the Treatment of Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT03254186",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "propranolol",
+                    "drug": {
+                      "id": "CHEMBL27",
+                      "name": "PROPRANOLOL"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b7020e387bb383450b5687a363c8c2d451d1e6d124786f85163e4b03e8f2b17f",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL45",
+              "name": "MELATONIN",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01391390",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": null,
+                "year": null,
+                "countries": [],
+                "title": "The Effect of Melatonin Treatment on Tardive Dyskinesia and Oxidative Stress: A Double-Blind Placebo-Controlled Trial",
+                "url": "https://clinicaltrials.gov/study/NCT01391390",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "melatonin",
+                    "drug": {
+                      "id": "CHEMBL45",
+                      "name": "MELATONIN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b73f5f59fbe205c1c07e7133a10c8fe1153c5648a07bb79f1fc638cc00e59f21",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL2106060",
+              "name": "BEVANTOLOL HYDROCHLORIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": {
+                "id": "CHEMBL314010",
+                "name": "BEVANTOLOL"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "d0xt8w/tardive dyskinesia",
+                "type": "INDICATION",
+                "source": "TTD",
+                "provider": "TTD",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "phase 1",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 1 stage for Som3355 and Tardive Dyskinesia",
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0XT8W",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "som3355",
+                    "drug": {
+                      "id": "CHEMBL2106060",
+                      "name": "BEVANTOLOL HYDROCHLORIDE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c58b223a3c6055f48418a88cb986e1aa77be5cdade4114481d41564471837224",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3181870",
+              "name": "PYRIDOXAL PHOSPHATE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL82202",
+                "name": "PYRIDOXAL PHOSPHATE ANHYDROUS"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00917293",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized, Double-Blind, Placebo-Controlled, Comparative Study to Evaluate the Safety and Efficacy of Pyridoxal 5' -Phosphate in the Treatment of Tardive Dyskinesia in Patients With Schizophrenia and Schizoaffective Disorders",
+                "url": "https://clinicaltrials.gov/study/NCT00917293",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pyridoxal 5'-phosphate",
+                    "drug": {
+                      "id": "CHEMBL3181870",
+                      "name": "PYRIDOXAL PHOSPHATE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c67725a31b7a76f2a01ce61227a1d8082486930758f491f772b9eef33cb8c6a7",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1286",
+              "name": "LEVETIRACETAM",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00291213",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Report in Phase 3 stage for Levetiracetam and Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT00291213",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "levetiracetam",
+                    "drug": {
+                      "id": "CHEMBL1286",
+                      "name": "LEVETIRACETAM"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00175955",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "An 8-week Exploratory, Double-blind, Placebo Controlled, Randomized Trial: Evaluation of the Efficacy and Safety of Levetiracetam up to 3000 mg/Day (250-500 mg Oral Tablets in b.i.d. Administration) on Neuroleptic-induced Tardive Dyskinesia in Subjects With Stable Axis I Psychiatric Disorder, Aged From at Least 18 Years to 80 Years.",
+                "url": "https://clinicaltrials.gov/study/NCT00175955",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "levetiracetam",
+                    "drug": {
+                      "id": "CHEMBL1286",
+                      "name": "LEVETIRACETAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d8d2b0925cddecf908e6871ba4847116ece4a7db1c357b7d7d2861ed9bed1685",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL36715",
+              "name": "PIRACETAM",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00190008",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Therapeutic Use of Piracetam for Treatment of Patients Suffering From Tardive Dyskinesia: a Double Blind, Placebo-Controlled Crossover Study",
+                "url": "https://clinicaltrials.gov/study/NCT00190008",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "piracetam",
+                    "drug": {
+                      "id": "CHEMBL36715",
+                      "name": "PIRACETAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "e6817467ac567aa45703db9527b1ab233b7ed9b1b6f6d552ff8b88d472e5bbb0",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1364",
+              "name": "PYRIDOXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01908452",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Pyridoxal Kinase Activity in Schizophrenia Patients Without Versus With Tardive Dyskinesia Treated With Vitamin B6",
+                "url": "https://clinicaltrials.gov/study/NCT01908452",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pyridoxine",
+                    "drug": {
+                      "id": "CHEMBL1364",
+                      "name": "PYRIDOXINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct03790345",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2_3",
+                "phaseFromSource": "PHASE2/PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Effect of Vitamin B6 and B12 in the Treatment of Movement Disorders Induced by Antipsychotics",
+                "url": "https://clinicaltrials.gov/study/NCT03790345",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "dystonia",
+                    "disease": {
+                      "id": "MONDO_0003441",
+                      "name": "dystonic disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "parkinsonism",
+                    "disease": {
+                      "id": "HP_0001300",
+                      "name": "Parkinsonism"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "pyridoxine",
+                    "drug": {
+                      "id": "CHEMBL1364",
+                      "name": "PYRIDOXINE"
+                    }
+                  },
+                  {
+                    "drugFromSource": "cobalamin",
+                    "drug": {
+                      "id": "CHEMBL4297272",
+                      "name": "COBALAMIN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eed850b9e80f9a2bd2d62e3cc284448d28f793c85900ea9fcd2fbcf6db81ce21",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL220808",
+              "name": "SARIZOTAN",
+              "maximumClinicalStage": "PHASE_3",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00105508",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Double-blind, Placebo-controlled, Multicenter, Multinational Phase III Study to Evaluate the Safety and Efficacy of Sarizotan HCl 1 mg b.i.d. in Patients With Parkinson's Disease Suffering From Treatment-associated Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT00105508",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Parkinson's disease",
+                    "disease": {
+                      "id": "MONDO_0005180",
+                      "name": "Parkinson disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sarizotan",
+                    "drug": {
+                      "id": "CHEMBL220808",
+                      "name": "SARIZOTAN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00105521",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Double-Blind, Placebo-Controlled, Multicenter, Multinational Phase III Study to Evaluate the Safety and Efficacy of Sarizotan in Patients With Parkinson's Disease Suffering From Treatment-Associated Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT00105521",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "Parkinson's disease",
+                    "disease": {
+                      "id": "MONDO_0005180",
+                      "name": "Parkinson disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sarizotan",
+                    "drug": {
+                      "id": "CHEMBL220808",
+                      "name": "SARIZOTAN"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "nct00310661",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": null,
+                "year": null,
+                "countries": [],
+                "title": "A Dual-centre, Double-blind, Randomized, Placebo-controlled, Parallel-group Study to Determine the Effects of Various Adjunctive Doses of Sarizotan in the Treatment of Patients With Neuroleptic-induced Tardive Dyskinesia",
+                "url": "https://clinicaltrials.gov/study/NCT00310661",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "cognitive deficits",
+                    "disease": {
+                      "id": "MONDO_0002039",
+                      "name": "cognitive disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "cognitive deficits",
+                    "disease": {
+                      "id": "HP_0100543",
+                      "name": "Cognitive impairment"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "tardive dyskinesia",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "sarizotan",
+                    "drug": {
+                      "id": "CHEMBL220808",
+                      "name": "SARIZOTAN"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fab028a1a832e30d571b18933e979ef41a301f9cafb93a954b506fc26412c2f3",
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1430",
+              "name": "PENICILLAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "80e736d3-2017-4d68-94b4-38255c3c59c6",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Penicillamine and 6 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=80e736d3-2017-4d68-94b4-38255c3c59c6",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "inflammation",
+                    "disease": {
+                      "id": "MP_0001845",
+                      "name": "inflammation"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "wilson disease",
+                    "disease": {
+                      "id": "MONDO_0010200",
+                      "name": "Wilson disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "cystinuria",
+                    "disease": {
+                      "id": "MONDO_0009067",
+                      "name": "cystinuria"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "spondylitis",
+                    "disease": {
+                      "id": "MONDO_0003937",
+                      "name": "spondylitis"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "rheumatoid arthritis",
+                    "disease": {
+                      "id": "MONDO_0008383",
+                      "name": "rheumatoid arthritis"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PENICILLAMINE",
+                    "drug": {
+                      "id": "CHEMBL1430",
+                      "name": "PENICILLAMINE"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "b9527635-8f7a-4a77-b39c-cdf678cff827",
+                "type": "INDICATION",
+                "source": "DailyMed",
+                "provider": "ChEMBL",
+                "origin": "DRUG_LABEL",
+                "clinicalStage": "APPROVAL",
+                "phaseFromSource": "APPROVAL",
+                "year": null,
+                "countries": [],
+                "title": "Report in Approval stage for Penicillamine and 3 diseases",
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b9527635-8f7a-4a77-b39c-cdf678cff827",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "spondylitis",
+                    "disease": {
+                      "id": "MONDO_0003937",
+                      "name": "spondylitis"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "movement disorder",
+                    "disease": {
+                      "id": "MONDO_0005395",
+                      "name": "movement disorder"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "rheumatoid arthritis",
+                    "disease": {
+                      "id": "MONDO_0008383",
+                      "name": "rheumatoid arthritis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "PENICILLAMINE",
+                    "drug": {
+                      "id": "CHEMBL1430",
+                      "name": "PENICILLAMINE"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

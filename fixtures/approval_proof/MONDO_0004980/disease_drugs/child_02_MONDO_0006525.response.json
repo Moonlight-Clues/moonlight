@@ -1,0 +1,118 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0006525",
+      "drugAndClinicalCandidates": {
+        "count": 6,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1743068",
+              "name": "SECUKINUMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02778711",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL514800",
+              "name": "APREMILAST",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00931242",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL2109379",
+              "name": "NI-0801",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01244607",
+                "clinicalStage": "PHASE_1"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1382627",
+              "name": "SULFADIAZINE, SILVER",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL439",
+                "name": "SULFADIAZINE",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02109718",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1201718",
+              "name": "HYALURONIDASE (HUMAN RECOMBINANT)",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00928447",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1201570",
+              "name": "ANAKINRA",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05498467",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

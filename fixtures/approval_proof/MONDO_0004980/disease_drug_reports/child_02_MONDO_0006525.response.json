@@ -1,0 +1,312 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0006525",
+      "name": "allergic contact dermatitis",
+      "drugAndClinicalCandidates": {
+        "count": 6,
+        "rows": [
+          {
+            "id": "3291b652e0481ca156cd2d15c3fae7c715759dcc425ef21a749cd75d9ada2e1f",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1743068",
+              "name": "SECUKINUMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct02778711",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "Anti-IL-17 a New Treatment for Contact Dermatititis",
+                "url": "https://clinicaltrials.gov/study/NCT02778711",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "secukinumab",
+                    "drug": {
+                      "id": "CHEMBL1743068",
+                      "name": "SECUKINUMAB"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "457eac4fdaa619678ea371e834443619d7df6d320c66d214d62b40cb98038d63",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL514800",
+              "name": "APREMILAST",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00931242",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Phase 2, Open-label, Investigator-Initiated Study to Evaluate the Safety and Efficacy of Apremilast in Subjects With Recalcitrant Contact or Atopic Dermatitis",
+                "url": "https://clinicaltrials.gov/study/NCT00931242",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "atopic dermatitis",
+                    "disease": {
+                      "id": "MONDO_0004980",
+                      "name": "atopic eczema"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "apremilast",
+                    "drug": {
+                      "id": "CHEMBL514800",
+                      "name": "APREMILAST"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "690a0ee084ec3873083b13537239518d9b0c0f79bf75be731df2d44fac886e8f",
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL2109379",
+              "name": "NI-0801",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct01244607",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_1",
+                "phaseFromSource": "PHASE1",
+                "year": null,
+                "countries": [],
+                "title": "A Proof-of-Principle Study Investigating the Effect of Single Doses of NI-0801 on Nickel Induced Contact Dermatitis",
+                "url": "https://clinicaltrials.gov/study/NCT01244607",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "NI-0801",
+                    "drug": {
+                      "id": "CHEMBL2109379",
+                      "name": "NI-0801"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9727258102e8d59ae9bda861ff08816f52d28e35c17ddfb0a0639f2cefce8aac",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1382627",
+              "name": "SULFADIAZINE, SILVER",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": {
+                "id": "CHEMBL439",
+                "name": "SULFADIAZINE"
+              }
+            },
+            "clinicalReports": [
+              {
+                "id": "nct02109718",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "A Randomized Controlled Clinical Trial Comparing The Efficacy and Safety of Open Dressing With Petrolatum Jelly vs. Standard Gauze Dressing With Silver Sulfadiazine in the Treatment of Filipino Adults Aged 18-45 Years Old With Superficial Partial Thickness Burns Less Than or Equal to 10% Total Surface Area Who Are Seen at the Philippine General Hospital Burn Outpatient Clinic",
+                "url": "https://clinicaltrials.gov/study/NCT02109718",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "wound infection",
+                    "disease": null
+                  },
+                  {
+                    "diseaseFromSource": "superficial partial thickness burns",
+                    "disease": {
+                      "id": "EFO_0009516",
+                      "name": "burn"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "silver sulfadiazine",
+                    "drug": {
+                      "id": "CHEMBL1382627",
+                      "name": "SULFADIAZINE, SILVER"
+                    }
+                  },
+                  {
+                    "drugFromSource": "petrolatum jelly",
+                    "drug": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a25438a29ca8a258d4449a7350966412f6b05de1374e23666bf9b6a60fbe5f8d",
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1201718",
+              "name": "HYALURONIDASE (HUMAN RECOMBINANT)",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct00928447",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_2",
+                "phaseFromSource": "PHASE2",
+                "year": null,
+                "countries": [],
+                "title": "A Prospective, Randomized, Double-Blind, Placebo-Controlled, Single-Center Study of the Intradermal Injection of rHuPH20 or Placebo in Subjects With Nickel Allergic Contact Dermatitis",
+                "url": "https://clinicaltrials.gov/study/NCT00928447",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "cutaneous reactions to nickel",
+                    "disease": null
+                  },
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "rHuPH20",
+                    "drug": {
+                      "id": "CHEMBL1201718",
+                      "name": "HYALURONIDASE (HUMAN RECOMBINANT)"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b4dd22ec882f18f6b0d427d20ed6aeb2b392ae2c8acfa258264c4ebc6524b5b4",
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1201570",
+              "name": "ANAKINRA",
+              "maximumClinicalStage": "APPROVAL",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "nct05498467",
+                "type": "INDICATION",
+                "source": "ClinicalTrials.gov",
+                "provider": "AACT",
+                "origin": "CLINICAL_TRIAL",
+                "clinicalStage": "PHASE_3",
+                "phaseFromSource": "PHASE3",
+                "year": null,
+                "countries": [],
+                "title": "The Role of Interleukin-1 Beta Targeted Therapy for Patients Suffering From Allergic Contact Dermatitis: A Randomized Controlled Trial With Anakinra vs. Placebo",
+                "url": "https://clinicaltrials.gov/study/NCT05498467",
+                "qualityControls": [],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "allergic contact dermatitis",
+                    "disease": {
+                      "id": "MONDO_0006525",
+                      "name": "allergic contact dermatitis"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "anakinra",
+                    "drug": {
+                      "id": "CHEMBL1201570",
+                      "name": "ANAKINRA"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

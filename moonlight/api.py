@@ -51,7 +51,7 @@ import threading
 import time
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
-from typing import Deque, Dict, List, Optional, Tuple
+from typing import Deque, Dict, Iterable, List, Optional, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
@@ -59,7 +59,7 @@ from fastapi.responses import HTMLResponse
 
 from moonlight import explain, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
-from moonlight.engine import sort_into_tabs
+from moonlight.engine import WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -285,12 +285,17 @@ def _clue_json(clue: Clue, disease: Disease) -> dict:
     }
 
 
-def _approved_json(medicine: ApprovedMedicine) -> dict:
+def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dict:
     """One medicine already approved for the disease. It is not a clue, so
     it has no rank, no explanation and no ending.
 
     proteins is empty when the medicine acts on none of the top proteins.
     label is only there for a medicine found on a parent or child entry.
+
+    Ticket 2.13. proof_note is only there when Japan's general list is the
+    card's only approval receipt. warning is only there when the medicine's
+    id is in wrong: the corrections list for this disease. Neither moves
+    the card or takes anything off it.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
@@ -305,6 +310,10 @@ def _approved_json(medicine: ApprovedMedicine) -> dict:
     }
     if medicine.label:
         item["label"] = medicine.label  # the engine's words, never changed here
+    if medicine.proof_note:
+        item["proof_note"] = medicine.proof_note  # the engine's words too
+    if medicine.id in wrong:
+        item["warning"] = WRONG_WARNING
     return item
 
 
@@ -388,19 +397,20 @@ def search(request: Request, q: str = "") -> dict:
 def clues(disease_id: str) -> dict:
     found = _find(disease_id)
     disease = found.disease
+    wrong = looks_wrong(disease.id)  # the corrections list, for this disease only
     answer = {
         "disease": {"id": disease.id, "name": disease.name},
         "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
-        "approved": [_approved_json(medicine) for medicine in found.approved],
+        "approved": [_approved_json(medicine, wrong) for medicine in found.approved],
         "being_studied": [_clue_json(clue, disease) for clue in found.being_studied],
         "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
     if found.wider_group:
         # The folded box in the Approved tab. Only there when it holds something.
-        answer["wider_group"] = [_approved_json(medicine) for medicine in found.wider_group]
+        answer["wider_group"] = [_approved_json(medicine, wrong) for medicine in found.wider_group]
     return answer
 
 
