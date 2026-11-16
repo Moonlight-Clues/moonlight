@@ -1357,17 +1357,16 @@ def test_53_the_page_still_names_no_medicine_before_a_search(client):
 #
 # New tests only. They read the page from GET / and touch no network.
 
+# Ticket 5.8: the guide is condensed. It has seven headings now. The parts
+# for doctors and the sources are folded, with titles that are not headings.
 GUIDE_HEADINGS = [
     "How to read what Moonlight finds.",
-    "Are you a doctor, pharmacist or researcher?",
-    "A medicine made for one disease may act on a protein linked to another.",
+    "A medicine for one disease may act on a protein linked to another.",
     "Three steps",
     "The three tabs",
     "How to read a card",
-    "For everyone: what Moonlight can and cannot tell you",
-    "For doctors: what Moonlight can and cannot tell you",
-    "Good ways to use it",
-    "Where the facts come from",
+    "What Moonlight can and cannot tell you",
+    "Doctor, pharmacist or researcher?",
 ]
 FOOTER_LINE = "Made with care by a family in Kochi"
 FOOTER_NOTE = (
@@ -1394,13 +1393,15 @@ def links_to_the_guide(page):
 
 # ---- Example 1 ----
 
-def test_54_example_1_the_page_holds_the_guides_ten_headings_and_the_safety_line(client):
+# This test used to be
+# test_54_example_1_the_page_holds_the_guides_ten_headings_and_the_safety_line.
+def test_54_example_1_the_page_holds_the_guides_seven_headings_and_the_safety_line(client):
     page = client.get("/").text
     assert SAFETY_LINE in page
     guide = guide_of(page)
     headings = [plain(h) for h in re.findall(r"(?s)<h[12][^>]*>(.*?)</h[12]>", guide)]
     assert headings == GUIDE_HEADINGS
-    assert len(headings) == 10
+    assert len(headings) == 7
 
 
 def test_54_the_guide_is_inside_the_page_and_hidden_until_opened(client):
@@ -1424,7 +1425,7 @@ def test_54_back_to_search_closes_the_guide(client):
 def test_54_the_sentence_about_the_data_release_is_not_copied(client):
     page = client.get("/").text
     assert "which release of the data" not in page
-    assert "The facts are from the Open Targets Platform." in page
+    assert "Open Targets Platform, a free and open research database." in page
 
 
 # ---- Example 2 ----
@@ -1447,18 +1448,21 @@ def test_54_the_only_visit_counter_is_umami(client):
     page = without_the_umami_script(client.get("/").text)
     seen = words_people_can_see(page).lower()
     assert "visitor" not in seen and "counter" not in seen
-    assert seen.count("counts visits with umami") == 1
+    assert seen.count("counted with umami") == 1
 
 
 # ---- Example 3 ----
 
-def test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_the_footer_line(client):
+# Sidha's design decision, 2026-11-16 (ticket 5.8): the footer line "Made with
+# care by a family in Kochi" is removed. This test used to be
+# test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_the_footer_line.
+def test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_not_the_footer_line(client):
     page = client.get("/").text
     assert links_to_the_guide(page) == [
         ("guide", "How to use Moonlight."),
         ("guide-card", "How to read a card"),
     ]
-    assert FOOTER_LINE in page
+    assert FOOTER_LINE not in page
 
 
 def test_54_the_small_line_is_under_the_search_box(client):
@@ -1476,19 +1480,21 @@ def test_54_how_to_read_a_card_is_beside_the_tabs_and_opens_at_the_card_and_its_
     guide = guide_of(page)
     card_part = guide[guide.index('id="guide-card"'):]
     assert card_part.index("How to read a card") < card_part.index('<article class="card"') \
-        < card_part.index('<dl class="key"')
+        < card_part.index('<ul class="key"')
 
 
-def test_54_the_footer_has_the_contact_line_the_handwritten_line_and_its_note(client):
+# Ticket 5.8: the handwritten line and its heart are removed. This test used to be
+# test_54_the_footer_has_the_contact_line_the_handwritten_line_and_its_note.
+def test_54_the_footer_has_the_contact_line_and_its_note_and_no_handwritten_line(client):
     page = client.get("/").text
     footer = page[page.index("<footer"):page.index("</footer>")]
     assert "About Us" not in page
     assert not re.search(r'<a [^>]*data-guide[^>]*>', footer)
     assert ("Found something wrong or have any feedback? Contact "
             '<a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a>') in footer
-    assert footer.index("Found something wrong") < footer.index(FOOTER_LINE)
-    assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)  # the small heart
-    assert FOOTER_NOTE in footer
+    assert FOOTER_LINE not in footer
+    assert 'class="made"' not in footer and "<svg" not in footer  # the small heart
+    assert footer.index("Found something wrong") < footer.index(FOOTER_NOTE)
 
 
 def test_54_a_link_can_open_the_guide(client):
@@ -1498,13 +1504,16 @@ def test_54_a_link_can_open_the_guide(client):
 
 # ---- Example 4 ----
 
-def test_54_example_4_the_do_not_use_it_to_list_holds_start_stop_or_change_any_medicine(client):
-    guide = guide_of(client.get("/").text)
-    box = guide[guide.index("Do not use it to"):]
-    box = box[:box.index("</ul>")]
-    items = [plain(item) for item in re.findall(r"(?s)<li>(.*?)</li>", box)]
-    assert "start, stop or change any medicine" in items
-    assert len(items) == 4
+# Ticket 5.8: the guide is condensed and its "Do not use it to" box is
+# removed. The same words stay on every page, in the pinned safety line.
+# This test used to be
+# test_54_example_4_the_do_not_use_it_to_list_holds_start_stop_or_change_any_medicine.
+def test_54_example_4_the_do_not_use_it_to_list_is_removed_and_the_safety_line_says_it(client):
+    page = client.get("/").text
+    guide = guide_of(page)
+    assert "Do not use it to" not in guide
+    assert "Never start, stop or change any medicine without a doctor." in page
+    assert SAFETY_LINE not in guide  # it is pinned above the guide, not copied into it
 
 
 # ---- Rules 5 and 6 for copying the draft ----
@@ -1537,41 +1546,32 @@ def test_54_the_example_cards_facts_match_the_saved_answer(client):
     assert doxapram["ending"] == ENDING
 
 
-def test_54_the_words_under_the_three_tabs_say_what_the_real_tabs_say(client):
+# Ticket 5.8: the guide is condensed. Each tile holds a short line of its
+# own, no longer the first sentence under the real tab. This test used to be
+# test_54_the_words_under_the_three_tabs_say_what_the_real_tabs_say.
+def test_54_the_three_tiles_are_named_after_the_real_tabs(client):
     page = client.get("/").text
     guide = guide_of(page)
-    # The first sentence under each real tab is in the guide, word for word.
     for words in (APPROVED_WORDS, TRIALS_WORDS, CLUES_WORDS):
         first = words.split(". ")[0] + "."
-        assert first in guide, first
-        assert page.count(first) == 2  # once under the real tab, once in the guide
+        assert page.count(first) == 1  # under the real tab only
     names = re.findall(r'<div class="tab-note"><h3>([^<]+)</h3>', guide)
     assert names == ["Approved", "In trials", "New clues"]
-    assert "not a prediction" in guide  # in trials: never hinted to be more likely to work
-    assert "First on the list does not mean best." in guide
+    assert "Not a prediction." in guide  # in trials: never hinted to be more likely to work
 
 
-# Kashish's decision, 2026-11-15: four sentences in the guide's key were
-# wrong in the draft. These are her exact words.
-KEY_C = ("Medicine, then protein, then disease. Every clue has all three steps. "
-         "An approved medicine can be shown without a path, and its card says why.")
-KEY_D = ("What the medicine does to the protein, like a volume knob. On this "
-         "same list, other medicines turn KCNK3 up. All of them are clues, because "
-         "the data does not say which way helps. “Unknown” means the data does not "
-         "say which way, so Moonlight does not guess. “Mixed” means it does both.")
-KEY_F = ("The facts about this clue, rewritten in plain words. It is checked, so "
-         "it adds no medicine, protein or number of its own.")
-KEY_G = ("On every clue and every trial card. The data does not say whether the "
-         "disease needs the protein turned up or down, so a clue can point the "
-         "wrong way. Approved cards do not have it.")
-
-
-def test_54_the_four_corrected_sentences_are_in_the_guides_key(client):
+# Ticket 5.8: the guide is condensed. The long key is replaced by eight
+# chips, a gold letter and a few words each, so Kashish's four corrected
+# sentences of 2026-11-15 are no longer in it. The four wrong sentences of
+# the draft must still never come back. This test used to be
+# test_54_the_four_corrected_sentences_are_in_the_guides_key.
+def test_54_the_guides_key_is_chips_and_the_four_wrong_sentences_stay_out(client):
     guide = guide_of(client.get("/").text)
-    key = guide[guide.index('<dl class="key"'):guide.index("</dl>")]
-    for letter, title, words in (("C", "The path", KEY_C), ("D", "Up, down or unknown", KEY_D),
-                                 ("F", "The explanation", KEY_F), ("G", "The catch", KEY_G)):
-        assert '>%s</span><dt>%s</dt><dd>%s</dd>' % (letter, title, words) in key, letter
+    key = guide[guide.index('<ul class="key"'):]
+    key = key[:key.index("</ul>")]
+    for letter, words in (("C", "The path, in three steps"), ("D", "Up, down or unknown"),
+                          ("F", "The clue in plain words"), ("G", "The catch, on every clue")):
+        assert '>%s</span><span>%s</span>' % (letter, words) in key, letter
     for old in ("If any step is missing", "The same on every card",
                 "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
         assert old not in guide, old
@@ -1677,10 +1677,11 @@ def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(c
 # examples (RFC 5737), so they belong to nobody.
 
 TOO_MANY = "Too many requests. Please wait a minute."
+# Ticket 5.8: the guide is condensed. This is the line as it is now, in
+# the folded part "Where the facts come from".
 GUIDE_LINE = (
-    "Moonlight uses Google's Gemini, an AI, to guess which disease you "
-    "mean and to write the explanations. The words you type are sent to "
-    "Gemini. Do not type names or private details."
+    "Explanations come from Google’s Gemini or Moonlight’s own template. "
+    "What you type is sent to Gemini, so type no names or private details."
 )
 TOO_LONG = "That search is too long. Please use 100 letters or fewer."
 VISITOR_A = {"X-Forwarded-For": "203.0.113.7"}
@@ -1924,11 +1925,13 @@ def test_82_example_6_the_page_holds_the_guide_line_inside_the_guide(client):
     assert GUIDE_LINE in plain(guide_of(page))
 
 
-def test_82_the_guide_line_is_right_after_the_open_targets_paragraph(client):
+# Ticket 5.8: the lines are list items in a folded part now. This test used
+# to be test_82_the_guide_line_is_right_after_the_open_targets_paragraph.
+def test_82_the_guide_line_is_right_after_the_open_targets_line(client):
     guide = guide_of(client.get("/").text)
-    paragraphs = [plain(p) for p in re.findall(r"(?s)<p\b[^>]*>.*?</p>", guide)]
-    place = paragraphs.index(GUIDE_LINE)
-    assert paragraphs[place - 1].startswith("The facts are from the Open Targets Platform.")
+    lines = [plain(line) for line in re.findall(r"(?s)<li>.*?</li>", guide)]
+    place = lines.index("Words. " + GUIDE_LINE)
+    assert lines[place - 1] == "Facts. Open Targets Platform, a free and open research database."
 
 
 def test_82_the_safety_line_is_unchanged(client):

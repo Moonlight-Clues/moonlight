@@ -38,11 +38,10 @@ SAVED_SCRIPT = HERE / "script.saved.js"
 SCRIPT_ADDRESS = "https://cloud.umami.is/script.js"
 WEBSITE_ID = "dad3a425-ea8e-4028-9768-88a183fc9140"
 DOMAINS = "moonlightclues.com,www.moonlightclues.com,moonlight-1038733794937.asia-south1.run.app"
-GUIDE_LINE = (
-    "Moonlight counts visits with Umami. It uses no cookies, and it never "
-    "receives the disease or anything you type."
-)
-GEMINI_LINE = "The words you type are sent to Gemini. Do not type names or private details."
+# Ticket 5.8: the guide is condensed. These are the two lines as they are
+# now, in the folded part "Where the facts come from".
+GUIDE_LINE = "Counted with Umami. No cookies. Never the disease or anything you type."
+GEMINI_LINE = "What you type is sent to Gemini, so type no names or private details."
 DECISION = (
     "- 2026-11-16: I changed my mind about counting visitors. Moonlight uses "
     "Umami to count visits and which country they come from. It never gets "
@@ -161,8 +160,11 @@ def test_the_guide_says_visits_are_counted_after_the_gemini_line(page):
     facts = guide[guide.index("Where the facts come from"):]
     assert GEMINI_LINE in facts
     after_gemini = facts[facts.index(GEMINI_LINE) + len(GEMINI_LINE):]
-    assert after_gemini.lstrip().startswith("</p>")
-    assert after_gemini.lstrip()[len("</p>"):].lstrip().startswith("<p>" + GUIDE_LINE + "</p>")
+    # Ticket 5.8: the lines are list items now. The Umami line is the next item.
+    after_gemini = after_gemini.lstrip()
+    assert after_gemini.startswith("</span></div></li>")
+    next_item = after_gemini[len("</span></div></li>"):].lstrip()
+    assert next_item.startswith("<li><div><b>Visits.</b> <span>" + GUIDE_LINE + "</span></div></li>")
 
 
 def test_the_safety_line_is_unchanged(page):

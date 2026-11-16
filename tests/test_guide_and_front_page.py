@@ -31,20 +31,22 @@ MOTTO = "Old medicines. New questions."
 CONTACT = "Found something wrong or have any feedback? Contact hello@moonlightclues.com"
 ADDRESS = "hello@moonlightclues.com"
 
-EVERYONE = "For everyone: what Moonlight can and cannot tell you"
+# Ticket 5.8: the guide is condensed. The words below are the new design's.
+EVERYONE = "What Moonlight can and cannot tell you"
 CAN = [
-    "show which medicines are already approved for a disease",
-    "show which medicines are being tested for it",
-    "show new connections that scientists might find worth reading about",
-    "help you write down questions to take to your doctor",
+    "medicines approved for a disease",
+    "medicines being tested for it",
+    "new connections worth reading about",
+    "questions to take to your doctor",
 ]
 CANNOT = [
-    "tell you whether a medicine will help or harm you",
-    "tell you which medicine is best",
-    "tell you what is approved in your country",
-    "replace your doctor",
+    "if a medicine will help or harm",
+    "which medicine is best",
+    "what is approved in your country",
+    "anything in place of your doctor",
 ]
-# The six points that were in the section before this ticket, word for word.
+# The six points that were in the section before ticket 5.8, word for word.
+# They are removed now.
 SIX_POINTS = [
     "Whether a clue would help or harm. That takes trials in people.",
     "Which direction the disease needs. A medicine that turns a protein the "
@@ -58,42 +60,25 @@ SIX_POINTS = [
     "mistakes, and they change.",
 ]
 
-INVITE_HEADING = "Are you a doctor, pharmacist or researcher?"
-INVITE_TEXT = (
-    "Moonlight gets better when people who know the medicines test it. "
-    "Search a condition you know well. Tell us what is missing, what is "
-    "wrong, and what you would not want a patient to see."
-)
+INVITE_HEADING = "Doctor, pharmacist or researcher?"
+INVITE_TEXT = "Test a condition you know well. Tell us what is missing or wrong."
 MAIL_LINK = '<a href="mailto:%s">%s</a>' % (ADDRESS, ADDRESS)
 
-DOCTORS = "For doctors: what Moonlight can and cannot tell you"
+DOCTORS = "For doctors: how far to trust each part"
 # Kashish's words, 16 Nov. Each was checked against the code on main.
 DOCTOR_POINTS = [
-    "Where the facts come from. The Open Targets Platform, a free and open "
-    "research database.",
-    "What “Approved” means here. Approved for this disease in at least one "
-    "country, according to the database. It says nothing about how well a "
-    "medicine works or what guidelines recommend.",
-    "What is left out. Medicines withdrawn in any country and medicines not "
-    "approved anywhere are counted, never named. Medicines whose link to the "
-    "disease is unclear are counted separately.",
-    "Wider and narrower diseases. Approvals the database files one step above "
-    "or below the disease are shown with a label. Wider-group approvals sit in "
-    "a folded box.",
-    "Known gaps. The database can be behind real life. If a medicine you know "
-    "is approved is missing, it may be withdrawn in some country, filed further "
-    "away in the database, or not recorded yet. Please tell us.",
-    "Weak proof is marked. Some approvals rest only on Japan’s general list "
-    "and say so. A card a doctor has confirmed as a mistake carries a red warning.",
-    "How new clues are ranked. By the strength of the link between the disease "
-    "and each protein, across the 25 most-linked proteins. Parts of one protein "
-    "machine count once, and different machines add up. Ties go to more reports, "
-    "then A to Z. Each card says whether the medicine turns the protein up or "
-    "down, or both, or that the data does not say.",
-    "Where AI is used. Google’s Gemini guesses which disease you mean and "
-    "writes the clue explanations from records it is handed. It never adds a "
-    "medicine, a protein or a link. The disease description is Open Targets’ "
-    "own words.",
+    "Source. Open Targets Platform.",
+    "“Approved”. In at least one country, per the database. Not a measure of efficacy.",
+    "Left out. Withdrawn anywhere, or approved nowhere: counted, never named. "
+    "Unclear link to the disease: counted separately.",
+    "Wider and narrower diseases. Shown with a label. The wider group sits in a folded box.",
+    "Known gaps. A missing medicine may be withdrawn somewhere, filed further away, "
+    "or not recorded yet.",
+    "Weak proof. Japan-list-only approvals say so. Confirmed mistakes carry a red warning.",
+    "Ranking. Link strength across the top 25 proteins. One protein machine counts once.",
+    "AI. Gemini suggests which disease you mean, and Open Targets confirms it. "
+    "Explanations are written by Gemini from the card’s records, or by "
+    "Moonlight’s own template.",
 ]
 LAST_SENTENCE = "Moonlight is not a prescribing reference."
 
@@ -138,12 +123,13 @@ def test_the_line_under_the_heading_has_the_new_words(page):
     assert "not treatment recommendations" in page
 
 
-def test_old_medicines_new_questions_stays_smaller_and_lower_down(page):
+# Sidha's design decision, 2026-11-16 (ticket 5.8): the line is removed. This
+# test used to be test_old_medicines_new_questions_stays_smaller_and_lower_down.
+def test_old_medicines_new_questions_is_removed(page):
     home = home_of(page)
-    assert page.count(MOTTO) == 1 and MOTTO in home
-    # No longer a heading, and under the search box and the quick-start chip.
-    assert not re.search(r"(?s)<h\d[^>]*>[^<]*%s" % re.escape(MOTTO), home)
-    assert home.index('class="search-box"') < home.index('data-slot="chips"') < home.index(MOTTO)
+    assert MOTTO not in page
+    # The search box and the quick-start chip are still in their order.
+    assert home.index('class="search-box"') < home.index('data-slot="chips"')
 
 
 def test_the_search_box_the_chip_and_the_new_here_line_do_not_change(page):
@@ -174,12 +160,13 @@ def test_the_footer_has_no_link_to_the_guide(page):
     assert "How to use Moonlight" not in footer
 
 
-def test_the_footers_two_other_lines_stay(page):
+# Ticket 5.8: "Made with care by a family in Kochi" is removed. This test used
+# to be test_the_footers_two_other_lines_stay.
+def test_the_footers_last_line_stays_and_the_handwritten_line_is_removed(page):
     footer = footer_of(page)
-    assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)
+    assert FOOTER_LINE not in footer
     assert FOOTER_NOTE in footer
-    assert footer.index(CONTACT.split("?")[0]) < footer.index(FOOTER_LINE) \
-        < footer.index(FOOTER_NOTE)
+    assert footer.index(CONTACT.split("?")[0]) < footer.index(FOOTER_NOTE)
 
 
 # ---- Example 3: the guide's list for everyone ----
@@ -192,39 +179,44 @@ def test_the_section_has_its_new_name_and_the_old_name_is_gone(page):
 
 def test_the_two_boxes_hold_kashishs_lines_word_for_word(page):
     section = everyone_of(page)
-    assert box_items(section, "Moonlight can") == CAN
-    assert box_items(section, "Moonlight cannot") == CANNOT
+    assert box_items(section, "It can show") == CAN
+    assert box_items(section, "It cannot tell you") == CANNOT
 
 
 def test_the_two_boxes_look_like_use_it_to_and_do_not_use_it_to(page):
     section = everyone_of(page)
     assert re.search(
-        r'(?s)<div class="pair">\s*<div class="box do"><h3>Moonlight can</h3>.*?'
-        r'<div class="box dont"><h3>Moonlight cannot</h3>', section)
+        r'(?s)<div class="pair">\s*<div class="box do"><h3>It can show</h3>.*?'
+        r'<div class="box dont"><h3>It cannot tell you</h3>', section)
 
 
-def test_the_six_old_points_stay_underneath_unchanged(page):
+# Ticket 5.8: the two boxes replace the six long points. This test used to
+# be test_the_six_old_points_stay_underneath_unchanged.
+def test_the_six_old_points_are_removed(page):
     section = everyone_of(page)
-    points = section[section.index('<ul class="limits">'):]
-    points = points[:points.index("</ul>")]
-    assert [plain(item) for item in re.findall(r"(?s)<li>(.*?)</li>", points)] == SIX_POINTS
-    assert section.index("Moonlight cannot</h3>") < section.index('<ul class="limits">')
-    assert "Knowing these makes the rest more useful." in section  # nothing is removed
+    assert '<ul class="limits">' not in section
+    words = plain(guide_of(page))
+    for point in SIX_POINTS:
+        assert point not in words, point
+    assert "Knowing these makes the rest more useful." not in page
 
 
 # ---- Example 3: the invitation ----
 
-def test_the_invitation_is_a_navy_block_straight_after_the_guides_opening(page):
+# Ticket 5.8: the invitation is shorter and is the guide's last part. This
+# test used to be
+# test_the_invitation_is_a_navy_block_straight_after_the_guides_opening.
+def test_the_invitation_is_a_navy_strip_at_the_end_of_the_guide(page):
     guide = guide_of(page)
     sections = re.findall(r'(?s)<section[^>]*>.*?</section>', guide[guide.index(">") + 1:])
     assert 'class="intro"' in sections[0]
-    invitation = sections[1]
-    assert invitation.startswith('<section class="idea"')  # the navy block's own style
+    invitation = sections[-1]
+    assert invitation.startswith('<section class="idea strip"')  # the navy block's own style
     assert re.search(r'<h2[^>]*>%s</h2>' % re.escape(INVITE_HEADING), invitation)
     assert "<p>%s</p>" % INVITE_TEXT in invitation
     assert invitation.index(INVITE_HEADING) < invitation.index(INVITE_TEXT) \
         < invitation.index(MAIL_LINK)
-    assert "A medicine made for one disease" in sections[2]  # the old block comes next
+    assert "A medicine for one disease" in sections[1]  # the picture is straight after the opening
 
 
 # ---- Example 3: the guide's list for doctors ----
@@ -232,14 +224,15 @@ def test_the_invitation_is_a_navy_block_straight_after_the_guides_opening(page):
 def doctors_of(page):
     guide = guide_of(page)
     section = guide[guide.index('id="guide-doctors-title"'):]
-    return section[:section.index("</section>")]
+    return section[:section.index("</details>")]  # ticket 5.8: a folded part now
 
 
+# Ticket 5.8: "For doctors" is a folded part, straight after the two boxes.
 def test_for_doctors_comes_straight_after_for_everyone(page):
     guide = guide_of(page)
-    assert '<h2 id="guide-doctors-title">%s</h2>' % DOCTORS in guide
-    headings = re.findall(r'<h2 id="([a-z-]+)"', guide)
-    assert headings.index("guide-doctors-title") == headings.index("guide-limits-title") + 1
+    assert '<summary id="guide-doctors-title">%s</summary>' % DOCTORS in guide
+    marks = re.findall(r'<(?:h2|summary) id="([a-z-]+)"', guide)
+    assert marks.index("guide-doctors-title") == marks.index("guide-limits-title") + 1
 
 
 def test_for_doctors_holds_kashishs_points_word_for_word_in_the_same_list_style(page):
