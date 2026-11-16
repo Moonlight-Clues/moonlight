@@ -1369,7 +1369,7 @@ def links_to_the_guide(page):
 
 # ---- Example 1 ----
 
-def test_54_example_1_the_page_holds_the_guides_eight_headings_and_the_safety_line(client):
+def test_54_example_1_the_page_holds_the_guides_ten_headings_and_the_safety_line(client):
     page = client.get("/").text
     assert SAFETY_LINE in page
     guide = guide_of(page)
