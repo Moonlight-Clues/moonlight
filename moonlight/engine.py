@@ -16,17 +16,26 @@ direct parents and direct children (ticket 2.12), side by side.
 sort_into_tabs gives a medicine found only there a label saying where the
 database lists it.
 
+Ticket 2.13, honest proof on Approved cards. An Approved card whose only
+approval receipt is the link to Japan's general list gets the line
+JAPAN_LINE (ApprovedMedicine.proof_note). looks_wrong(disease_id) reads the
+corrections list in moonlight/corrections.json: the medicines a doctor
+confirmed look wrong for that disease. Their cards get WRONG_WARNING.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
     python -m moonlight.engine MONDO_0015924 EFO_0000685
 """
 
+import datetime
+import json
+import pathlib
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
-from typing import Callable, Dict, Iterable, List, Optional, Tuple, TypeVar
+from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 
 from moonlight import fetch
 from moonlight.fetch import fetch_approved, fetch_disease, fetch_family, fetch_paths
@@ -47,6 +56,26 @@ from moonlight.records import Disease, Medicine, Path, Target
 
 AT_ONCE = 5  # the most proteins, or extra disease entries, fetched at the same time
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
+
+# Ticket 2.13, Kashish's decisions of 16 Nov.
+# Every report from Japan's medicines agency carries this one link, to its
+# general list of approved medicines, not to a record about the medicine
+# and the disease. Read from the live API on 2026-11-16 and saved in
+# fixtures/approval_proof/: all 52 of its reports there have this link and
+# no report from anywhere else has it. Compared letter for letter.
+JAPAN_LIST = (
+    "https://www.pmda.go.jp/english/review-services/reviews/"
+    "approved-information/drugs/0001.html"
+)
+# Kashish's words, exactly. Changing them needs her approval.
+JAPAN_LINE = (
+    "Approved in Japan, according to the database. Moonlight could not "
+    "find the exact record for this disease."
+)
+WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
+CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the note in every entry
+CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
+CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 
 
 @dataclass(frozen=True)
@@ -77,6 +106,23 @@ class ApprovedMedicine:
     # Ticket 2.12. None if it is approved on the disease's own entry. If it
     # was found only on a child or parent entry, the sentence saying which.
     label: Optional[str] = None
+    # Ticket 2.13. The approval receipts from the lists naming it: the links
+    # of reports whose own stage is approval. Trial links are not here, and
+    # neither are its paths' links: those are about the medicine and the
+    # protein, for any disease.
+    approval_sources: Tuple[str, ...] = ()
+
+    @property
+    def proof_note(self) -> Optional[str]:
+        """JAPAN_LINE if Japan's general list is its only approval receipt.
+
+        None if it has an approval receipt with its own link. Also None if
+        it has no approval receipt at all: that card is not decided, and is
+        left as it is.
+        """
+        if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
+            return JAPAN_LINE
+        return None
 
     @property
     def sources(self) -> Tuple[str, ...]:
@@ -417,10 +463,13 @@ def _approved_medicine(
         for form in path.medicine.forms:
             forms.setdefault(form.id, form.name)
     sources: List[str] = []
+    approval_sources: List[str] = []
     for entry in entries:
         for form_id, name in entry.forms:
             forms.setdefault(form_id, name)
         sources.extend(source for source in entry.sources if source not in sources)
+        approval_sources.extend(
+            source for source in entry.approval_sources if source not in approval_sources)
     return ApprovedMedicine(
         id=family_id,
         name=clue.medicine.name if clue else entries[0].name,
@@ -428,7 +477,48 @@ def _approved_medicine(
         clue=clue,
         listed_sources=tuple(sources),
         label=label,
+        approval_sources=tuple(approval_sources),
     )
+
+
+def _read_corrections() -> list:
+    """The one place the corrections file is read. Tests replace this."""
+    return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+
+
+def corrections() -> Set[Tuple[str, str]]:
+    """The corrections list as (medicine id, disease id) pairs.
+
+    Each entry holds exactly four things: the medicine's id, the disease's
+    id, the date (like "2026-11-16") and the note CORRECTION_NOTE. No doctor
+    is ever named, so an entry holding anything else is refused. An entry
+    that is not written this way raises ValueError: a warning is never
+    dropped quietly.
+    """
+    entries = _read_corrections()
+    if not isinstance(entries, list):
+        raise ValueError("corrections.json must hold a list.")
+    pairs = set()
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != CORRECTION_KEYS:
+            raise ValueError(f"A correction must hold exactly {sorted(CORRECTION_KEYS)}: {entry!r}")
+        medicine_id, disease_id, date = entry["medicine_id"], entry["disease_id"], entry["date"]
+        if not all(isinstance(value, str) and value for value in (medicine_id, disease_id, date)):
+            raise ValueError(f"A correction needs a medicine id, a disease id and a date: {entry!r}")
+        datetime.date.fromisoformat(date)  # ValueError if it is not a real date
+        if entry["note"] != CORRECTION_NOTE:
+            raise ValueError(f"A correction's note must be exactly {CORRECTION_NOTE!r}: {entry!r}")
+        pairs.add((medicine_id, disease_id))
+    return pairs
+
+
+def looks_wrong(disease_id: str) -> Set[str]:
+    """The ids of the medicines on the corrections list for this disease.
+
+    Their Approved cards show WRONG_WARNING. The same medicine under
+    another disease is not in the answer.
+    """
+    return {medicine_id for medicine_id, listed_for in corrections() if listed_for == disease_id}
 
 
 def _parent_first(family_id: str, forms: Dict[str, str]) -> Tuple[str, ...]:

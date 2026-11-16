@@ -17,7 +17,10 @@ disease, MONDO_0004980 atopic eczema.
 - `<disease id>/disease_drugs/own_<id>.*`, `parent_<lane>_<id>.*`,
   `child_<lane>_<id>.*`: fetch.py's DISEASE_DRUGS_QUERY, word for word, for
   the disease's own entry and each direct parent and child. Each was asked
-  twice (the ask-twice rule) and the kept answer saved.
+  twice (the ask-twice rule) and the kept answer saved. Part 2 of the ticket
+  added `clinicalStage` to the question's reports, so these 20 lists were
+  asked again the same day with the new words. Every new answer was the old
+  one plus `clinicalStage` on each report, and nothing else.
 - `<disease id>/disease_drug_reports/<same names>.*`: a probe-only question
   about the same entries. Moonlight does not ask it. It shows more about each
   report than its link: `source`, `provider`, `origin`, `clinicalStage`,
