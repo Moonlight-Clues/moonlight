@@ -226,6 +226,7 @@ def all_api_text(client):
         said.append(clues.text)
         with patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
             for clue in clues.json()["new_clues"] + clues.json()["being_studied"]:
+                api.forget_visitors()  # this test is not about the limit
                 answer = client.get(
                     "/api/explain", params={"disease_id": PAH_ID, "clue_id": clue["id"]}
                 )
@@ -1020,6 +1021,7 @@ def everything_the_api_says(client):
         said.append(("clues", clues.text))
         with patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
             for clue in clues.json()["new_clues"] + clues.json()["being_studied"]:
+                api.forget_visitors()  # this test is not about the limit
                 answer = client.get(
                     "/api/explain", params={"disease_id": PAH_ID, "clue_id": clue["id"]}
                 )
@@ -1157,6 +1159,7 @@ def test_53_no_approved_medicine_can_be_explained(client, disease_list):
     gemini = CountingGemini()
     with with_targets(*FIVE), patch("moonlight.explain._gemini_request", side_effect=gemini):
         for item in data["approved"]:
+            api.forget_visitors()  # this test is not about the limit
             answer = client.get(
                 "/api/explain", params={"disease_id": PAH_ID, "clue_id": item["id"]})
             assert answer.status_code == 404, item["medicine"]
@@ -1643,6 +1646,7 @@ GUIDE_LINE = (
     "mean and to write the explanations. The words you type are sent to "
     "Gemini. Do not type names or private details."
 )
+TOO_LONG = "That search is too long. Please use 100 letters or fewer."
 VISITOR_A = {"X-Forwarded-For": "203.0.113.7"}
 VISITOR_B = {"X-Forwarded-For": "198.51.100.23"}
 
@@ -1711,7 +1715,8 @@ def test_82_a_refused_search_asks_open_targets_and_gemini_nothing(client, clock)
 
 
 def test_82_the_limit_is_10_in_any_60_seconds(client, clock):
-    assert (api.MAX_A_MINUTE, api.MINUTE_SECONDS) == (10, 60)
+    assert api.MAX_A_MINUTE == {"search": 10, "explain": 30}
+    assert api.MINUTE_SECONDS == 60
     for _ in range(10):
         assert one_search(client, VISITOR_A).status_code == 200
     clock.now += 59.9
@@ -1758,16 +1763,17 @@ def test_82_with_no_forwarding_header_the_visitor_is_the_direct_caller(client, c
     assert one_search(client, VISITOR_B).status_code == 200
 
 
-# ---- Example 3: 10 searches do not use up the 10 explanations ----
+# ---- Example 3: 10 searches do not use up the 30 explanations ----
+# Kashish, 2026-11-16: explanations are 30 a minute, searches stay at 10.
 
-def test_82_example_3_ten_searches_do_not_use_up_the_ten_explanations(client, clock):
+def test_82_example_3_ten_searches_do_not_use_up_the_thirty_explanations(client, clock):
     clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
     for _ in range(10):
         assert one_search(client, VISITOR_A).status_code == 200
     assert one_search(client, VISITOR_A).status_code == 429
-    for _ in range(10):
+    for _ in range(30):
         assert one_explain(client, VISITOR_A, clue_id).status_code == 200
-    refused = one_explain(client, VISITOR_A, clue_id)
+    refused = one_explain(client, VISITOR_A, clue_id)  # the 31st
     assert refused.status_code == 429
     assert refused.json() == {"detail": TOO_MANY}
     assert one_explain(client, VISITOR_B, clue_id).status_code == 200
@@ -1775,16 +1781,19 @@ def test_82_example_3_ten_searches_do_not_use_up_the_ten_explanations(client, cl
     assert one_explain(client, VISITOR_A, clue_id).status_code == 200
 
 
-def test_82_ten_explanations_do_not_use_up_the_ten_searches(client, clock):
+def test_82_thirty_explanations_do_not_use_up_the_ten_searches(client, clock):
     clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
-    for _ in range(10):
+    for _ in range(30):
         assert one_explain(client, VISITOR_A, clue_id).status_code == 200
-    assert one_search(client, VISITOR_A).status_code == 200
+    assert one_explain(client, VISITOR_A, clue_id).status_code == 429
+    for _ in range(10):
+        assert one_search(client, VISITOR_A).status_code == 200
+    assert one_search(client, VISITOR_A).status_code == 429
 
 
 def test_82_a_refused_explanation_is_not_the_template_and_asks_nothing(client, clock):
     clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
-    for _ in range(10):
+    for _ in range(30):
         one_explain(client, VISITOR_A, clue_id)
     with patch("moonlight.fetch._post_json") as open_targets, \
             patch("moonlight.explain._gemini_request") as gemini, \
@@ -1831,7 +1840,7 @@ def test_82_example_4_a_search_of_101_characters_is_refused_and_nothing_is_calle
             patch("moonlight.api.translate.did_you_mean") as guess_door:
         answer = client.get("/api/search", params={"q": "a" * 101}, headers=VISITOR_A)
     assert answer.status_code == 400
-    assert set(answer.json()) == {"detail"}
+    assert answer.json() == {"detail": TOO_LONG}
     for door in (open_targets, translate_gemini, explain_gemini,
                  search_door, matches_door, guess_door):
         door.assert_not_called()

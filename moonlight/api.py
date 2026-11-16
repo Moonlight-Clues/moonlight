@@ -22,8 +22,10 @@ saved, and asking for the same clue again makes no Gemini call.
 
 The cost guard (ticket 8.2, Kashish's decisions of 2026-11-16). Like a
 ticket counter with one small notepad per visitor: each visitor may make
-MAX_A_MINUTE requests to /api/search in any MINUTE_SECONDS, and, counted
-on a separate notepad, the same number to /api/explain. One more than
+10 requests to /api/search in any MINUTE_SECONDS, and, counted on a
+separate notepad, 30 to /api/explain (the numbers are in MAX_A_MINUTE;
+30 because opening the New clues tab asks for 5 explanations by itself).
+One more than
 that gets HTTP 429 and the words in TOO_MANY, and nothing is asked of
 Open Targets or Gemini. A search longer than MAX_SEARCH_LETTERS is
 refused the same way, before anything is sent anywhere.
@@ -84,15 +86,16 @@ DID_YOU_MEAN_SECONDS = translate.GEMINI_SECONDS + 2
 _side_lane = ThreadPoolExecutor(max_workers=8, thread_name_prefix="did-you-mean")
 
 # ---- the cost guard (ticket 8.2) ----
-MAX_A_MINUTE = 10  # requests one visitor may make, for search and for explain separately
+# Requests one visitor may make in a minute. Each lane has its own notepad.
+MAX_A_MINUTE = {"search": 10, "explain": 30}
 MINUTE_SECONDS = 60
 MAX_SEARCH_LETTERS = 100  # the search box on the page stops here too
 # Word for word from the ticket. The page shows exactly this.
 TOO_MANY = "Too many requests. Please wait a minute."
-# Not decided yet: Kashish has not chosen the words for a search that is
-# too long. The page cannot send one (its box stops at 100), so this is
-# only seen by someone who goes around the page.
-TOO_LONG = f"A search can be {MAX_SEARCH_LETTERS} characters at most."
+# Kashish's exact words, 2026-11-16. The page cannot send a search this
+# long (its box stops at 100), so this is only seen by someone who goes
+# around the page.
+TOO_LONG = "That search is too long. Please use 100 letters or fewer."
 # How many services Google runs between the visitor and this program.
 # On Cloud Run with nothing else in front it is 1: Google's front door.
 # It writes the address it saw as the last entry of X-Forwarded-For.
@@ -163,7 +166,7 @@ def _count_visit(lane: str, request: Request) -> None:
         times = _visits.setdefault(key, deque())
         while times and times[0] <= oldest_kept:
             times.popleft()
-        allowed = len(times) < MAX_A_MINUTE
+        allowed = len(times) < MAX_A_MINUTE[lane]
         if allowed:
             times.append(now)
         elif not times:  # never left empty: the sweep reads the last entry

@@ -43,6 +43,6 @@ Format: date, the decision, why.
 - 2026-11-15: Moonlight has a guide inside the page called "How to use Moonlight". It shows how to read the tabs and a card, and what Moonlight cannot tell you.
 - 2026-11-15: No visitor counter on the page. It is not useful for Moonlight right now, and the page loads nothing from outside.
 - 2026-11-15: The guide shows one real card, Doxapram, from my paper graph, so people can see how to read a card. It is the only medicine the page names before a search, and only inside the guide.
-- 2026-11-16: One visitor can make 10 searches a minute and get 10 explanations a minute. After that the page says "Too many requests. Please wait a minute."
+- 2026-11-16: One visitor can make 10 searches a minute and get 30 explanations a minute. After that the page says "Too many requests. Please wait a minute."
 - 2026-11-16: A search can be 100 letters at most.
 - 2026-11-16: The guide says that Gemini, an AI, guesses the disease and writes the explanations, and that the words you type are sent to Gemini.
