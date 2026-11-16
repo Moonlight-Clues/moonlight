@@ -657,19 +657,22 @@ div.explanation{padding:12px 13px}
   }
 
   /* One disease the person can tap. Moonlight never taps for them.
-     The small print is Open Targets' own "also called" word. */
+     alsoCalled is Open Targets' own "also called" word, when it is exactly
+     what was typed. Then that word is the big name, and the database's own
+     name for the entry is written under it. Both are Open Targets' words. */
   function choice(entry, alsoCalled, ending) {
     const button = document.createElement("button");
     const name = document.createElement("strong"), small = document.createElement("span");
+    const shown = capital(alsoCalled || entry.name);
     button.type = "button";
-    name.textContent = capital(entry.name) + ending;
+    name.textContent = shown + ending;
     small.className = "secondary";
-    small.textContent = (alsoCalled ? "Also called: " + alsoCalled + " · " : "") + entry.id;
+    small.textContent = (alsoCalled ? "Database name: " + entry.name + " · " : "") + entry.id;
     button.append(name, small);
     button.addEventListener("click", () => {
       clearChoices();
       note.textContent = "";
-      input.value = capital(entry.name);
+      input.value = shown;
       showClues(entry.id);
     });
     return button;

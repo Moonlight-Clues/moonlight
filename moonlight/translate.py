@@ -17,6 +17,15 @@ Kashish's decisions, 2026-11-13:
   own "also called" list for an entry, that word is shown beside the
   entry's name. The word shown is Open Targets' word.
 
+Kashish's decisions, 2026-11-16 (ticket 5.9):
+- That word is now the big name in the list, and the entry's own name is
+  written under it as "Database name: ...". So "multiple sclerosis" shows
+  as "multiple sclerosis", with Open Targets' own name for the entry,
+  "multiple sclerosis symptom measurement", under it.
+- "Did you mean" follows the search's rules, because each of Gemini's names
+  is looked up with the same search: an entry that is only a measurement is
+  left out, and the entry whose name is exactly Gemini's name comes first.
+
 Gemini gets GEMINI_SECONDS in total, the model list included. If it is
 slow, busy, unreachable or says something that is not a list of names,
 the answer is simply no suggestions. Nothing here raises for that.
@@ -90,8 +99,9 @@ def _gemini_request(method: str, path: str, body: Optional[dict],
 
 
 def _plain(text: str) -> str:
-    """Words in small letters with single spaces, for comparing."""
-    return " ".join(text.split()).casefold()
+    """Words in small letters with single spaces, for comparing. The same
+    comparing the search uses to find the exact name a person typed."""
+    return fetch.plain_words(text)
 
 
 def small_print(words: str, match: fetch.Match) -> Optional[str]:

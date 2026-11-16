@@ -61,3 +61,5 @@ Format: date, the decision, why.
 - 2026-11-16: The guide has an invitation for doctors, a list for everyone and a list for doctors, both called "what Moonlight can and cannot tell you".
 - 2026-11-16: "Old medicines. New questions." and "Made with care by a family in Kochi" are removed from the page. The page has equal space on both sides. This is Mumma's design decision.
 - 2026-11-16: The guide is condensed: the same pictures with far fewer words. The detail for doctors and the sources are folded and open with one tap.
+- 2026-11-16: A disease is hidden from search only if "measurement" is its only group. The exact name a person typed is never hidden and always comes first.
+- 2026-11-16: If the typed words are one of the database's "also called" names, the list shows those words first and the database's own name under them.

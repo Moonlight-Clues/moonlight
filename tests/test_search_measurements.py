@@ -299,7 +299,18 @@ def test_a_name_that_only_nearly_matches_is_not_exact():
     )
     with patch("moonlight.fetch._post_json", return_value=answer):
         assert [d.id for d in fetch.search_diseases("sneeze coun")] == ["X_1"]
-        assert [d.id for d in fetch.search_diseases("sneeze  count")] == ["X_1"]
+        assert [d.id for d in fetch.search_diseases("sneezecount")] == ["X_1"]
+
+
+def test_two_spaces_between_words_count_as_one():
+    # The same comparing as the small print has used since 2026-11-13
+    # ("capitals and extra spaces do not count"), so the two always agree.
+    answer = hits_answer(
+        hit("X_1", "sneezing disease", ["respiratory or thoracic disease"]),
+        hit("X_2", "sneeze count", ["measurement"]),
+    )
+    with patch("moonlight.fetch._post_json", return_value=answer):
+        assert [d.id for d in fetch.search_diseases("sneeze  count")] == ["X_2", "X_1"]
 
 
 def test_only_the_exact_also_called_group_counts():
