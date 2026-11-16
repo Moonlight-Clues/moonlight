@@ -2,7 +2,7 @@
 
 Five questions, five functions:
 
-    search_diseases(text)          -> list of Disease, best match first
+    search_diseases(text)          -> list of Disease, the exact name typed first
     search_matches(text)           -> the same list, each with its "also called" names
     fetch_disease(disease_id)      -> one Disease with its description and its
                                       exact "also called" names filled in
@@ -106,8 +106,13 @@ query DiseaseSearch($text: String!, $size: Int!) {
 
 # Kashish's decision, 2026-11-13. Measurements are hidden from the list of
 # matches. Open Targets says which entries they are: each search hit has a
-# "category" list, and a measurement's list holds this word. Nothing is
-# guessed from the name or the id.
+# "category" list (its groups), and a measurement's list holds this word.
+# Nothing is guessed from the name or the id.
+# Kashish's decisions, 2026-11-16 (ticket 5.9). Open Targets files some real
+# diseases, multiple sclerosis for one, under "measurement" as well as under
+# disease groups. So a match is hidden only when "measurement" is its ONLY
+# group. And a match whose name, or exact "also called" name, is exactly
+# what the person typed is never hidden and always comes first.
 MEASUREMENT = "measurement"
 # The group of "also called" names that mean exactly the same disease.
 EXACT_SYNONYM = "hasExactSynonym"
@@ -383,24 +388,56 @@ def _exact_names(hit: dict) -> Tuple[str, ...]:
     return _exact_terms((hit.get("object") or {}).get("synonyms"))
 
 
+def plain_words(text: str) -> str:
+    """Words in small letters with single spaces, for comparing."""
+    return " ".join(text.split()).casefold()
+
+
+def _only_a_measurement(hit: dict) -> bool:
+    """Is "measurement" the hit's only group? No groups at all means no."""
+    return set(hit.get("category") or []) == {MEASUREMENT}
+
+
+def _is_what_was_typed(text: str, match: Match) -> bool:
+    """Is the entry's name, or one of its exact "also called" names, exactly
+    the words typed? Capitals and spaces at the ends do not count."""
+    wanted = plain_words(text)
+    names = (match.disease.name, *match.also_called)
+    return bool(wanted) and wanted in [plain_words(name) for name in names]
+
+
 def search_matches(text: str) -> List[Match]:
-    """Diseases matching the words, in the order Open Targets ranks them,
-    each with its exact "also called" names. Measurements are left out.
+    """Diseases matching the words, each with its exact "also called" names.
+
+    Like a librarian's pile of books. A book is left off the pile only if
+    its ONLY shelf is "measurement". The book whose title, or exact "also
+    called" title, is exactly what the person asked for is never left off,
+    and goes on top. Every other book stays in the order Open Targets
+    ranked it.
 
     An answer saved before 2026-11-13 has no "category" and no "object".
     Then nothing is hidden and there are no "also called" names.
     """
     data = _ask(SEARCH_QUERY, {"text": text, "size": SEARCH_SIZE})
-    return [
-        Match(disease=Disease(id=hit["id"], name=hit["name"]), also_called=_exact_names(hit))
-        for hit in data["search"]["hits"]
-        if hit["entity"] == "disease" and MEASUREMENT not in (hit.get("category") or [])
-    ]
+    typed: List[Match] = []
+    others: List[Match] = []
+    for hit in data["search"]["hits"]:
+        if hit["entity"] != "disease":
+            continue
+        match = Match(
+            disease=Disease(id=hit["id"], name=hit["name"]), also_called=_exact_names(hit)
+        )
+        if _is_what_was_typed(text, match):
+            typed.append(match)
+        elif not _only_a_measurement(hit):
+            others.append(match)
+    return typed + others
 
 
 def search_diseases(text: str) -> List[Disease]:
-    """Diseases matching the words, in the order Open Targets ranks them.
-    Measurements are left out."""
+    """Diseases matching the words: the exact name typed first, then the
+    order Open Targets ranks them. Entries that are only measurements are
+    left out."""
     return [match.disease for match in search_matches(text)]
 
 

@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"breast cancer\",\n  \"ductal carcinoma in situ\",\n  \"lobular carcinoma in situ\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0TQ1OcFRvixtZJtjRitdmuG01T6EtuWHMNywrZCbjqEb7vo7tIm7Q28StgqQaprq/X52dAyx9DVwC+oQrM0tbZ/gW8RrdLrjMpcon7hBbR/CsQ01sgaVHR64DwButqK0auKB0="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 78,
+      "candidatesTokenCount": 27,
+      "totalTokenCount": 105,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 78
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "_sL6atLBB9LQ-8YPiJ-_cQ"
+  }
+}

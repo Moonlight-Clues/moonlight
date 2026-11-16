@@ -64,3 +64,5 @@ Format: date, the decision, why.
 - 2026-11-16: The main Approved list holds only medicines approved for this exact disease. Medicines approved for a narrower disease go in their own folded box, because the database sometimes files one disease under another.
 - 2026-11-16: The source link on an Approved card shows an approval record first, then Japan's general list, then any other link.
 - 2026-11-16: When medicines sit in a folded box, the top of the Approved tab says how many, and each box says "Tap to open".
+- 2026-11-16: A disease is hidden from search only if "measurement" is its only group. The exact name a person typed is never hidden and always comes first.
+- 2026-11-16: If the typed words are one of the database's "also called" names, the list shows those words first and the database's own name under them.

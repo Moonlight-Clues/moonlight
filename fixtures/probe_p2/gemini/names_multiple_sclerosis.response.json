@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\"Multiple Sclerosis\"]",
+              "thoughtSignature": "EmkKZwFpFH0T9mdnlbIi7rA5ZW4RsURKYqQfPDVhSFqTDS1hK0tHY/HupXvTfWMo+WB5C9r7yAgv9ftcm+WXwkTMOJWybXCYmdQ2ilREpSrvIaViK3D4GLx/4avREKmkGvaq+rOouJZnJfw="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 78,
+      "candidatesTokenCount": 5,
+      "totalTokenCount": 83,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 78
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "9cL6aoeLFvaF1MkPutveoQs"
+  }
+}
