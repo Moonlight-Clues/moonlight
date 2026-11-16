@@ -743,7 +743,7 @@ def test_the_page_opens_the_box_when_the_main_list_is_empty_and_hides_the_empty_
     assert 'byId("wider-box").open = !approvedCards.length' in script
     assert 'byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length' in script
     # The number on the tab counts everything in the tab: main list and box.
-    assert "approved: approvedCards.length + widerCards.length," in script
+    assert "approved: approvedCards.length + narrowerCards.length + widerCards.length," in script
     assert 'byId("wider-count").textContent = widerCards.length' in script
 
 
@@ -752,7 +752,7 @@ def test_the_page_keeps_the_approved_tabs_sentences_and_adds_no_ending():
     assert ("Already approved for this disease in at least one country, according to "
             "the database. Nothing here says how well any of them works.") in PAGE
     panel = PAGE[PAGE.index('id="panel-approved"'):PAGE.index('id="panel-trials"')]
-    assert panel.count("Talk to your doctor before changing any medicine.") == 2  # tab and box
+    assert panel.count("Talk to your doctor before changing any medicine.") == 3  # tab and box
     assert "Do not try it" not in panel
 
 

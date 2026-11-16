@@ -246,7 +246,7 @@ def test_example_atopic_eczema_exactly_twelve_cards_show_the_line(saved_tabs):
     tabs = saved_tabs(ECZEMA)
     assert with_line(tabs.approved) == ECZEMA_TWELVE
     assert with_line(tabs.wider_group) == []
-    assert len(tabs.approved) == 45 and len(tabs.wider_group) == 68
+    assert len(tabs.approved) == 41 and len(tabs.narrower) == 4 and len(tabs.wider_group) == 68
 
 
 def test_the_line_is_kashishs_words_exactly(saved_tabs):
@@ -308,8 +308,8 @@ def test_the_line_can_be_on_a_card_in_the_wider_group_box_and_on_a_child_card():
     ]
     tabs = sort_into_tabs({}, [], (), neighbours)
     assert [(m.name, m.proof_note) for m in tabs.wider_group] == [("UPINE", JAPAN_LINE)]
-    assert [(m.name, m.proof_note) for m in tabs.approved] == [("DOWNINE", JAPAN_LINE)]
-    assert tabs.wider_group[0].label and tabs.approved[0].label  # the label stays too
+    assert [(m.name, m.proof_note) for m in tabs.narrower] == [("DOWNINE", JAPAN_LINE)]
+    assert tabs.wider_group[0].label and tabs.narrower[0].label  # the label stays too
 
 
 def test_an_exact_record_on_a_second_parent_takes_the_line_away():
@@ -521,7 +521,7 @@ def test_the_page_keeps_the_approved_tabs_two_sentences_and_the_doctor_line():
     assert ("Already approved for this disease in at least one country, according to "
             "the database. Nothing here says how well any of them works.") in PAGE
     panel = PAGE[PAGE.index('id="panel-approved"'):PAGE.index('id="panel-trials"')]
-    assert panel.count("Talk to your doctor before changing any medicine.") == 2
+    assert panel.count("Talk to your doctor before changing any medicine.") == 3
     assert "Do not try it" not in panel
     assert ("For learning and research exploration, not medical advice. Never start, "
             "stop or change any medicine without a doctor.") in PAGE
