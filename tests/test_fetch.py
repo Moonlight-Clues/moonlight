@@ -40,6 +40,10 @@ def fake_post_json(body):
     if "targetId" in variables:
         return load(target_drugs_file(variables["targetId"]))
     if "diseaseId" in variables:
+        if "parents" in body["query"] and variables["diseaseId"] != PAH.id:
+            # Ticket 2.12: the family of another disease. No parents, no children.
+            return {"data": {"disease": {
+                "id": variables["diseaseId"], "name": "", "parents": [], "children": []}}}
         assert variables["diseaseId"] == PAH.id
         return load(GOLDEN / "associated_targets.response.json")
     raise AssertionError(f"unexpected request variables: {variables}")

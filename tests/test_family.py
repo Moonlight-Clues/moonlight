@@ -609,6 +609,51 @@ def test_with_no_neighbours_everything_is_as_before():
     assert sort_into_tabs(tray, [listed("OWNMIL")]).wider_group == []
 
 
+# ---- the runner (cli.py) follows the same rule as the page ----
+
+def test_the_runner_does_not_print_a_labelled_medicine_as_a_new_clue():
+    import cli
+    with searching(AMYLOIDOSIS):
+        lines = cli.clue_lines(AMYLOIDOSIS, fetch.fetch_targets(AMYLOIDOSIS, 25))
+    text = "\n".join(lines).upper()
+    assert "NEW CLUES" in text and "TAFAMIDIS" not in text  # approved: never printed
+    assert "VUTRISIRAN SODIUM" not in text
+    assert lines[-1] == f"- {cli.MOVED_LABEL}: 1"
+    assert sum(1 for line in lines if line.startswith("- ") and "| protein" in line) == 11 + 2
+
+
+def test_the_runner_counts_33_for_atopic_eczema_and_keeps_in_trials(saved_tabs):
+    with searching(ECZEMA):
+        targets = fetch.fetch_targets(ECZEMA, 25)
+        today = engine.find_ranked_clues(ECZEMA, targets)
+        ranked = engine.find_ranked_clues(ECZEMA, targets, engine.fetch_neighbours(ECZEMA))
+    assert today.moved_to_approved == 0
+    assert ranked.moved_to_approved == 33
+    assert len(today.new_clues) - len(ranked.new_clues) == 33
+    assert ranked.being_studied == today.being_studied
+    _, tabs = saved_tabs(ECZEMA)
+    labelled = {m.id for m in tabs.approved + tabs.wider_group if m.label}
+    assert labelled & set(clue_ids(ranked.new_clues)) == set()
+
+
+def test_the_runner_prints_no_extra_line_when_nothing_moved(offline):
+    import cli
+    offline.side_effect = pah_post_json
+    by_symbol = {t.symbol: t for t in fetch.fetch_targets(PAH)}
+    lines = cli.clue_lines(PAH, [by_symbol[symbol] for symbol in FIVE])
+    assert not any(cli.MOVED_LABEL in line for line in lines)
+    assert lines[-1].startswith("- unclear link:")
+
+
+def test_the_runner_leaves_out_a_medicine_withdrawn_on_a_parent_entry():
+    gone = listed("GONEMIL")
+    paths = [[made_up_path("GONEMIL", withdrawn=None), made_up_path("CLUEMIL")]]
+    with patch("moonlight.engine._fetch_all", return_value=paths):
+        ranked = engine.find_ranked_clues(PAH, [], [parent(withdrawn=[gone])])
+    assert [clue.medicine.name for clue in ranked.new_clues] == ["CLUEMIL"]
+    assert ranked.left_out["not_approved"] == 1 and ranked.moved_to_approved == 0
+
+
 # ---- the API ----
 
 @pytest.fixture
@@ -694,8 +739,8 @@ def test_the_page_opens_the_box_when_the_main_list_is_empty_and_hides_the_empty_
     assert 'byId("wider-box").hidden = !widerCards.length' in script
     assert 'byId("wider-box").open = !approvedCards.length' in script
     assert 'byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length' in script
-    # The number on the tab counts the main list only.
-    assert "approved: approvedCards.length," in script
+    # The number on the tab counts everything in the tab: main list and box.
+    assert "approved: approvedCards.length + widerCards.length," in script
     assert 'byId("wider-count").textContent = widerCards.length' in script
 
 

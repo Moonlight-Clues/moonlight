@@ -6,7 +6,8 @@
 It prints the safety line first, then the diseases that matched, then two
 sections ("New clues" and "Already being studied for this disease"), then
 how many medicines were left out, as counts only. A medicine from a group
-that is not shown is never named.
+that is not shown is never named. A medicine approved on a direct parent or
+child entry of the disease is not a new clue, as on the page: it is counted.
 
 Both sections are in Kashish's ranked order (moonlight/rank.py), and each
 medicine is printed once, on one line that names every protein it acts on
@@ -19,7 +20,7 @@ from typing import List, Optional
 
 import requests
 
-from moonlight.engine import find_ranked_clues
+from moonlight.engine import fetch_neighbours, find_ranked_clues
 from moonlight.fetch import FetchError, fetch_targets, search_diseases
 from moonlight.filter import ALREADY_APPROVED, NOT_APPROVED, UNCLEAR_LINK
 from moonlight.rank import RULE_TEXT, Clue
@@ -51,6 +52,10 @@ LEFT_OUT_LABELS = (
     (NOT_APPROVED, "not approved anywhere"),
     (ALREADY_APPROVED, "already approved for this disease"),
     (UNCLEAR_LINK, "unclear link"),
+)
+# Ticket 2.12. Only printed when there is at least one.
+MOVED_LABEL = (
+    "approved for a disease the database lists under this one, or for a wider group"
 )
 
 
@@ -104,7 +109,7 @@ def _section(heading: str, clues: List[Clue], with_phase: bool) -> List[str]:
 
 def clue_lines(disease: Disease, targets: List[Target]) -> List[str]:
     """The two shown sections, then the left-out counts, as lines of text."""
-    ranked = find_ranked_clues(disease, targets)
+    ranked = find_ranked_clues(disease, targets, fetch_neighbours(disease))
 
     new = _section(NEW_HEADING, ranked.new_clues, with_phase=False)
     lines = [new[0], RULE_TEXT] + new[1:]  # the rule sits directly under the heading
@@ -114,6 +119,9 @@ def clue_lines(disease: Disease, targets: List[Target]) -> List[str]:
     lines.append(LEFT_OUT_HEADING)
     for group, label in LEFT_OUT_LABELS:
         lines.append(f"- {label}: {ranked.left_out[group]}")
+    if ranked.moved_to_approved:
+        # Ticket 2.12. Not new clues. The page shows them in its Approved tab.
+        lines.append(f"- {MOVED_LABEL}: {ranked.moved_to_approved}")
     return lines
 
 

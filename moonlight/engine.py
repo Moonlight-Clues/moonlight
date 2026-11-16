@@ -56,6 +56,9 @@ class RankedClues:
     new_clues: List[Clue]  # one per medicine, ranked
     being_studied: List[Clue]  # one per medicine, ranked
     left_out: Dict[str, int]  # group -> number of medicines. Counts only.
+    # Ticket 2.12. How many medicines are not new clues because they are
+    # approved on a parent or child entry. Only counted if neighbours are given.
+    moved_to_approved: int = 0
 
 
 @dataclass(frozen=True)
@@ -209,23 +212,50 @@ def fetch_neighbours(disease: Disease) -> List[Neighbour]:
     return _in_lanes(len(entries), one)
 
 
-def find_ranked_clues(disease: Disease, targets: Iterable[Target]) -> RankedClues:
+def find_ranked_clues(
+    disease: Disease, targets: Iterable[Target], neighbours: Iterable[Neighbour] = ()
+) -> RankedClues:
     """The shown groups as ranked Clues, and the left-out groups as counts.
 
     A medicine that acts on two proteins is one Clue, and one in a count.
     No medicine from a left-out group is named in the answer.
+
+    With neighbours (ticket 2.12) the same rule as the page is followed:
+      - a medicine approved on a parent or child entry is never a new clue.
+        It is only counted, in moved_to_approved;
+      - a medicine in trials for this exact disease stays as it is;
+      - a medicine a parent's or child's list marks as withdrawn is shown
+        nowhere, and is counted in not_approved.
     """
     tray = find_clues(disease, targets)
+    neighbours = list(neighbours)
+    withdrawn_ids = {entry.id for neighbour in neighbours for entry in neighbour.withdrawn}
+    labelled_ids = {
+        entry.id for neighbour in neighbours for entry in neighbour.approved
+    } - withdrawn_ids
+
+    kept: Dict[str, List[Path]] = {group: [] for group in GROUPS}
+    moved = set()  # names. A medicine that acts on two proteins is still one.
+    for group, paths in tray.items():
+        for path in paths:
+            family_id = _family_id(path.medicine)
+            if group in SHOWN_GROUPS and family_id in withdrawn_ids:
+                kept[NOT_APPROVED].append(path)  # counted, never named
+            elif group == NEW_CLUE and family_id in labelled_ids:
+                moved.add(path.medicine.name)
+            else:
+                kept[group].append(path)
     left_out = {
         # A medicine that acts on two proteins is still one medicine.
-        group: len({path.medicine.name for path in tray[group]})
+        group: len({path.medicine.name for path in kept[group]})
         for group in GROUPS
         if group not in SHOWN_GROUPS
     }
     return RankedClues(
-        new_clues=rank_clues(tray[NEW_CLUE]),
-        being_studied=rank_clues(tray[BEING_STUDIED]),
+        new_clues=rank_clues(kept[NEW_CLUE]),
+        being_studied=rank_clues(kept[BEING_STUDIED]),
         left_out=left_out,
+        moved_to_approved=len(moved),
     )
 
 

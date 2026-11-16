@@ -756,7 +756,7 @@ div.explanation{padding:12px 13px}
     byId("rule-text").textContent = data.rule_text;
 
     const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
-    // Approved only for a wider group: the folded box. Not counted on the tab.
+    // Approved only for a wider group: the folded box at the bottom of the tab.
     const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
     const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
     const studiedCards = data.being_studied.map(clue => card(clue, disease, diseaseName, null));
@@ -775,7 +775,7 @@ div.explanation{padding:12px 13px}
       : "No medicine in this data is being studied for this disease.";
 
     const counts = {
-      approved: approvedCards.length,  // the main list only, not the box
+      approved: approvedCards.length + widerCards.length,  // the main list and the box together
       trials: studiedCards.length, clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
