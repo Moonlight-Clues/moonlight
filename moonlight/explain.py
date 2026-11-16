@@ -128,9 +128,14 @@ def _phase_words(stage: str) -> str:
 def facts_for(clue: Clue, disease) -> dict:
     """The only facts Gemini is given, and the only facts the template uses.
 
-    disease is anything with a .name and, if it has one, a .description.
+    disease is anything with a .name. Only the name is used.
     No IDs, no long protein names, no source links and no action words
     (the action words are the jargon Kashish banned; only up/down is kept).
+
+    Kashish's decision, 2026-11-16 (ticket 5.5). The disease's description
+    is NOT handed over, and neither are its "also called" names. Gemini no
+    longer describes the disease: the page shows Open Targets' own
+    description, word for word, under the disease name.
     """
     medicine = clue.medicine
     group = group_of(medicine)
@@ -153,13 +158,6 @@ def facts_for(clue: Clue, disease) -> dict:
             }
         )
 
-    disease_facts = {"name": disease.name}
-    # An empty description is left out, so nobody is asked to describe
-    # the disease from nothing.
-    description = (getattr(disease, "description", None) or "").strip()
-    if description:
-        disease_facts["description"] = description
-
     facts = {
         "medicine": {
             "name": _display(medicine.name),
@@ -168,7 +166,7 @@ def facts_for(clue: Clue, disease) -> dict:
             "approved_for_another_disease": "yes",
         },
         "proteins": proteins,
-        "disease": disease_facts,
+        "disease": {"name": disease.name},  # the name and nothing else
         "link_to_disease": NO_LINK if group == NEW_CLUE else IN_TRIALS,
     }
     if group == BEING_STUDIED:
@@ -540,14 +538,15 @@ def _prompt(facts: dict, problems: List[str]) -> str:
         "- Do not write a warning or an ending. The website adds its own.",
         "- Plain sentences in one paragraph. No lists, no headings, no stars.",
     ]
-    if "description" in facts["disease"]:
-        lines.append(
-            "- Say what the disease is in one or two short sentences, using "
-            "only the description in FACTS. Use small everyday words. Do not "
-            "copy its long or hard words, and do not say anything scary."
-        )
-    else:
-        lines.append("- FACTS has no description of the disease, so do not describe it.")
+    # Kashish's decision, 2026-11-16 (ticket 5.5). Said in every case.
+    lines += [
+        "- FACTS has no description of the disease, so do not describe it. "
+        "Write only its name, copied from FACTS.",
+        "- Never say what the disease is, what it does to the body, or what "
+        "its name means. The website shows the disease's own description.",
+        "- The PATTERN below says what its disease is, in two sentences. "
+        "Do not copy that part. Leave it out.",
+    ]
     if facts["link_to_disease"] == IN_TRIALS:
         lines.append(
             "- This medicine is being studied. Say that doctors are already "

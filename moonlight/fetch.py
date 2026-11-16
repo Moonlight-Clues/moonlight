@@ -4,7 +4,8 @@ Five questions, five functions:
 
     search_diseases(text)          -> list of Disease, best match first
     search_matches(text)           -> the same list, each with its "also called" names
-    fetch_disease(disease_id)      -> one Disease with its description filled in
+    fetch_disease(disease_id)      -> one Disease with its description and its
+                                      exact "also called" names filled in
     fetch_targets(disease, limit)  -> list of Target, highest score first
     fetch_paths(disease, target)   -> list of Path, one per Medicine family
     fetch_approved(disease)        -> list of Listed: the medicines Open Targets'
@@ -35,6 +36,9 @@ fixtures/withdrawn/.
 The fields of the disease's own medicine list ("drugAndClinicalCandidates"
 on a disease, "maxClinicalStage" on its rows) were read from
 fixtures/MONDO_0015924/disease_drugs.* and the live API on 2026-11-15.
+"description" and "synonyms" ("relation", "terms") on a disease were read
+from the live API on 2026-11-16 and are saved in
+fixtures/MONDO_0015924/disease_about.* and fixtures/MONDO_0100338/disease_about.*.
 """
 
 import logging
@@ -112,7 +116,7 @@ _log = logging.getLogger(__name__)
 
 DISEASE_QUERY = """
 query DiseaseRecord($diseaseId: String!) {
-  disease(efoId: $diseaseId) { id name description }
+  disease(efoId: $diseaseId) { id name description synonyms { relation terms } }
 }
 """
 
@@ -340,13 +344,19 @@ class Match:
     also_called: Tuple[str, ...]
 
 
-def _exact_names(hit: dict) -> Tuple[str, ...]:
-    """The names Open Targets says mean exactly this disease. () if none."""
+def _exact_terms(groups: Optional[List[dict]]) -> Tuple[str, ...]:
+    """The names in the group Open Targets calls exact, word for word and
+    in its order. () if there is no such group, or no groups at all."""
     names: List[str] = []
-    for group in (hit.get("object") or {}).get("synonyms") or []:
+    for group in groups or []:
         if group["relation"] == EXACT_SYNONYM:
             names.extend(group["terms"])
     return tuple(names)
+
+
+def _exact_names(hit: dict) -> Tuple[str, ...]:
+    """The names Open Targets says mean exactly this disease. () if none."""
+    return _exact_terms((hit.get("object") or {}).get("synonyms"))
 
 
 def search_matches(text: str) -> List[Match]:
@@ -371,10 +381,13 @@ def search_diseases(text: str) -> List[Disease]:
 
 
 def fetch_disease(disease_id: str) -> Optional[Disease]:
-    """The disease with its description filled in. None if the id is not known.
+    """The disease with its description and its exact "also called" names
+    filled in. None if the id is not known.
 
+    Both are Open Targets' own words, kept word for word (ticket 5.5).
     Open Targets may send no description at all. Then it stays "", and
-    nothing is made up to fill the gap.
+    nothing is made up to fill the gap. An answer saved before 2026-11-16
+    has no "synonyms". Then there are no "also called" names.
     """
     data = _ask(DISEASE_QUERY, {"diseaseId": disease_id})
     record = data["disease"]
@@ -384,6 +397,7 @@ def fetch_disease(disease_id: str) -> Optional[Disease]:
         id=record["id"],
         name=record["name"],
         description=(record["description"] or "").strip(),
+        also_called=_exact_terms(record.get("synonyms")),
     )
 
 

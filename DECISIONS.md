@@ -46,3 +46,4 @@ Format: date, the decision, why.
 - 2026-11-16: One visitor can make 10 searches a minute and get 30 explanations a minute. After that the page says "Too many requests. Please wait a minute."
 - 2026-11-16: A search can be 100 letters at most.
 - 2026-11-16: The guide says that Gemini, an AI, guesses the disease and writes the explanations, and that the words you type are sent to Gemini.
+- 2026-11-16: The page shows Open Targets' own description of the disease, with its source. Gemini no longer describes the disease, because it sometimes wrote things that meant nothing.

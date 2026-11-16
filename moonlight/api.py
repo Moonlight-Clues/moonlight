@@ -3,7 +3,9 @@
     GET /                                   the page (web/index.html)
     GET /api/search?q=                      matching diseases, best first, and "did you mean"
     GET /api/clues?disease_id=              the three tabs: approved, being studied
-                                            and new clues. No explanations
+                                            and new clues. No explanations. Also
+                                            "about_disease": Open Targets' own
+                                            description and "also called" names
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -74,6 +76,9 @@ from moonlight.records import Disease, Path
 
 PAGE = pathlib.Path(__file__).resolve().parent.parent / "web" / "index.html"
 TOP_TARGETS = 25  # the same number of proteins the terminal runner looks at
+
+# Who wrote the disease's description. The page shows "Source: " and this.
+DESCRIPTION_SOURCE = "Open Targets"
 
 # The left-out groups, in the order they are sent. Counts only.
 LEFT_OUT_GROUPS = (NOT_APPROVED, UNCLEAR_LINK)
@@ -294,6 +299,26 @@ def _approved_json(medicine: ApprovedMedicine) -> dict:
     }
 
 
+def _about_json(disease: Disease) -> dict:
+    """The disease in Open Targets' own words (ticket 5.5).
+
+    The description is sent word for word. Nothing here, and nothing
+    anywhere else in Moonlight, writes one: if Open Targets has none, the
+    description is "" and there is no source, so the page shows neither.
+    The "also called" names are Open Targets' exact ones, as it spells them
+    and in its order. The disease's own name is not repeated among them.
+    """
+    own_name = " ".join(disease.name.lower().split())
+    return {
+        "description": disease.description,
+        "source": DESCRIPTION_SOURCE if disease.description else None,
+        "also_called": [
+            name for name in disease.also_called
+            if " ".join(name.lower().split()) != own_name
+        ],
+    }
+
+
 @app.get("/", response_class=HTMLResponse)
 def page() -> str:
     return PAGE.read_text(encoding="utf-8")
@@ -356,6 +381,7 @@ def clues(disease_id: str) -> dict:
     disease = found.disease
     return {
         "disease": {"id": disease.id, "name": disease.name},
+        "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
         "approved": [_approved_json(medicine) for medicine in found.approved],
