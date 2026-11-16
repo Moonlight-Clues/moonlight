@@ -1,0 +1,499 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0005395",
+      "drugAndClinicalCandidates": {
+        "count": 18,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL2364639",
+              "name": "VALBENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL3707248",
+                  "name": "VALBENAZINE TOSYLATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0IX1I"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02274558"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02405091"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02736955"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05206513"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03176771"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01267188"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01393600"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01688037"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01733121"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05053321"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL117785",
+              "name": "TETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL3137326",
+                  "name": "DEUTETRABENAZINE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01543321"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989777",
+              "name": "TRIENTINE HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL609",
+                "name": "TRIENTINE",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c34f77a7-996b-4470-b5df-d946a7fe5dbe"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL4297272",
+              "name": "COBALAMIN",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03790345"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3137326",
+              "name": "DEUTETRABENAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL117785",
+                "name": "TETRABENAZINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0E7ZU"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/austedo"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02198794"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02291861"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02195700"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989517",
+              "name": "IOFLUPANE I 123",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1945778",
+                "name": "IOFLUPANE",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ef7804d7-c691-495b-8aaf-5bc54fd5d9f6"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/striascan"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/celsunax"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3707248",
+              "name": "VALBENAZINE TOSYLATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL2364639",
+                "name": "VALBENAZINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4c970164-cafb-421f-9eb5-c226ef0a3417"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0JJ7S"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D63WMQ"
+              },
+              {
+                "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0IX1I"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3184986",
+              "name": "ZINC ACETATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1200928",
+                "name": "ZINC ACETATE ANHYDROUS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a0c72bff-20f3-4241-b966-34a95178d1a3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2146110",
+              "name": "SARIZOTAN HYDROCHLORIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL220808",
+                "name": "SARIZOTAN",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00314288"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL27",
+              "name": "PROPRANOLOL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1671",
+                  "name": "PROPRANOLOL HYDROCHLORIDE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03254186"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL45",
+              "name": "MELATONIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01391390"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL2106060",
+              "name": "BEVANTOLOL HYDROCHLORIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL314010",
+                "name": "BEVANTOLOL",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0XT8W"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3181870",
+              "name": "PYRIDOXAL PHOSPHATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL82202",
+                "name": "PYRIDOXAL PHOSPHATE ANHYDROUS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00917293"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1286",
+              "name": "LEVETIRACETAM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00291213"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00175955"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL36715",
+              "name": "PIRACETAM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00190008"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1364",
+              "name": "PYRIDOXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200756",
+                  "name": "PYRIDOXINE HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01908452"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03790345"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL220808",
+              "name": "SARIZOTAN",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL2146110",
+                  "name": "SARIZOTAN HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00105508"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00105521"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00310661"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1430",
+              "name": "PENICILLAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=80e736d3-2017-4d68-94b4-38255c3c59c6"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b9527635-8f7a-4a77-b39c-cdf678cff827"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

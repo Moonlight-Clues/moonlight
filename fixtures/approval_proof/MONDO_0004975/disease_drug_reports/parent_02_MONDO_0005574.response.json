@@ -1,0 +1,66 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0005574",
+      "name": "tauopathy",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "id": "b7b46d165f2b4baaad5b62b38ddae8c475a0c2174fb81b23248e14433c2ef0ce",
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4298021",
+              "name": "ZAGOTENEMAB",
+              "maximumClinicalStage": "PHASE_2",
+              "parentMolecule": null
+            },
+            "clinicalReports": [
+              {
+                "id": "zagotenemab",
+                "type": "INDICATION",
+                "source": "USAN",
+                "provider": "ChEMBL",
+                "origin": "CURATED_RESOURCE",
+                "clinicalStage": "UNKNOWN",
+                "phaseFromSource": "UNKNOWN",
+                "year": null,
+                "countries": [],
+                "title": "Report in Unknown stage for Zagotenemab and 2 diseases",
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ZAGOTENEMAB/relevant/1/",
+                "qualityControls": [
+                  "UNVALIDATED_INDICATION"
+                ],
+                "diseases": [
+                  {
+                    "diseaseFromSource": "alzheimer disease",
+                    "disease": {
+                      "id": "MONDO_0004975",
+                      "name": "Alzheimer disease"
+                    }
+                  },
+                  {
+                    "diseaseFromSource": "tauopathy",
+                    "disease": {
+                      "id": "MONDO_0005574",
+                      "name": "tauopathy"
+                    }
+                  }
+                ],
+                "drugs": [
+                  {
+                    "drugFromSource": "ZAGOTENEMAB",
+                    "drug": {
+                      "id": "CHEMBL4298021",
+                      "name": "ZAGOTENEMAB"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

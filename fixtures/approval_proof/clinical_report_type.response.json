@@ -1,0 +1,349 @@
+{
+  "data": {
+    "__type": {
+      "name": "ClinicalReport",
+      "fields": [
+        {
+          "name": "id",
+          "description": "Report ID",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "origin",
+          "description": "Nature of the record the report originates from (e.g. CLINICAL_TRIAL, DRUG_LABEL, REGULATORY_AGENCY, CURATED_RESOURCE).",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialStartDate",
+          "description": "Start date of the trial associated with the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialStudyType",
+          "description": "Type of clinical study (e.g. Interventional, Observational)",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "provider",
+          "description": "Resource or organisation that distributes the data fetched from the primary source (e.g. AACT, ChEMBL, EMA, PMDA, TTD).",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "title",
+          "description": "Title of the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "url",
+          "description": "URL linking to the source record",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialDescription",
+          "description": "Description of the trial associated with the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "clinicalStage",
+          "description": "Harmonised clinical stage",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialWhyStopped",
+          "description": "Free-text reason for early stoppage of the trial associated with the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialPrimaryPurpose",
+          "description": "Purpose for the intervention of the clinical trial associated with the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialStopReasonCategories",
+          "description": "Assigned categories based on trialWhyStopped",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "qualityControls",
+          "description": "Flags related to report concerns",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "trialOfficialTitle",
+          "description": "Official title of the clinical trial as registered",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialSponsor",
+          "description": "Information on the entity or individual initiating the study.",
+          "type": {
+            "name": "TrialSponsor",
+            "kind": "OBJECT",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialNumberOfArms",
+          "description": "Number of arms in the trial associated with the clinical report",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "year",
+          "description": "The year to which the clinical report refers.",
+          "type": {
+            "name": "Int",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "countries",
+          "description": "List of countries where the clinical report was conducted/reported",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "String",
+                  "kind": "SCALAR"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "type",
+          "description": "Type of clinical report. List of possible values: INDICATION, SAFETY.",
+          "type": {
+            "name": "ClinicalReportType",
+            "kind": "ENUM",
+            "ofType": null
+          }
+        },
+        {
+          "name": "phaseFromSource",
+          "description": "Clinical phase reported at source",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "source",
+          "description": "Source of the clinical report (e.g., AACT)",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "trialLiterature",
+          "description": "List of PMIDs linked to the trial associated with the clinical report",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "TrialLiterature",
+                  "kind": "OBJECT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "drugs",
+          "description": "List of drugs mentioned in the report",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "ClinRepDrugListItem",
+                  "kind": "OBJECT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "trialOverallStatus",
+          "description": "Overall status of the trial associated with the clinical report",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "trialPhase",
+          "description": "Phase of the clinical trial",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        },
+        {
+          "name": "diseases",
+          "description": "Diseases associated with the clinical report.",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "ClinicalDiseaseListItem",
+                  "kind": "OBJECT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "sideEffects",
+          "description": "Side effects associated with the clinical report.",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST",
+              "ofType": {
+                "name": null,
+                "kind": "NON_NULL",
+                "ofType": {
+                  "name": "ClinicalDiseaseListItem",
+                  "kind": "OBJECT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

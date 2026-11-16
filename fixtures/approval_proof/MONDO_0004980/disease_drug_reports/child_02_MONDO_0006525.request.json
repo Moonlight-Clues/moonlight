@@ -1,0 +1,6 @@
+{
+  "query": "\nquery DiseaseDrugReports($diseaseId: String!) {\n  disease(efoId: $diseaseId) {\n    id\n    name\n    drugAndClinicalCandidates {\n      count\n      rows {\n        id\n        maxClinicalStage\n        drug { id name maximumClinicalStage parentMolecule { id name } }\n        clinicalReports {\n          id\n          type\n          source\n          provider\n          origin\n          clinicalStage\n          phaseFromSource\n          year\n          countries\n          title\n          url\n          qualityControls\n          diseases { diseaseFromSource disease { id name } }\n          drugs { drugFromSource drug { id name } }\n        }\n      }\n    }\n  }\n}\n",
+  "variables": {
+    "diseaseId": "MONDO_0006525"
+  }
+}
