@@ -56,7 +56,7 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .about-source{margin:6px 0 0}
 
 /* search */
-.search-area{max-width:760px}
+.search-area{max-width:760px;scroll-margin-top:96px}
 .search-box{border:1px solid #C4D4D1;background:var(--paper);border-radius:var(--radius);padding:8px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px #101F3108}
 .search-box svg{flex:none;color:var(--teal);margin-left:6px}
 .search-box input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:var(--navy);padding:9px 0;font-size:15px}
@@ -280,7 +280,7 @@ div.explanation{padding:12px 13px}
         <button class="btn" type="submit">Explore</button>
       </div>
     </form>
-    <p class="guide-line">New here? <a href="#guide" data-guide>How to read Moonlight.</a></p>
+    <p class="guide-line">New here? <a href="#guide" data-guide>How to use Moonlight.</a></p>
     <p id="search-note" class="selection-note" role="status"></p>
     <div id="did-you-mean" class="did-you-mean" data-slot="did-you-mean" hidden>
       <p class="chip-label">Did you mean:</p>
@@ -330,7 +330,7 @@ div.explanation{padding:12px 13px}
           <div class="cards" id="approved-cards"></div>
         </div>
         <div class="state-box empty-box" id="approved-empty" hidden>
-          <h3>The database lists no medicine approved for this disease.</h3>
+          <h3>The database lists no approved medicine under this exact name. That does not mean there is none. Ask a doctor.</h3>
         </div>
         <!-- Approved only for a wider group. Folded, at the bottom of the tab. -->
         <details class="wider-box" id="wider-box" hidden>
