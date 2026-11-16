@@ -1,0 +1,4 @@
+{
+  "query": "\nquery DiseaseType {\n  meta { dataVersion { year month iteration } }\n  __type(name: \"Disease\") {\n    fields { name description type { kind name ofType { kind name ofType { kind name ofType { kind name } } } } }\n  }\n}\n",
+  "variables": {}
+}

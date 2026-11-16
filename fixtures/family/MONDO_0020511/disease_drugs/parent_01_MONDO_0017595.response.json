@@ -1,0 +1,181 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0017595",
+      "drugAndClinicalCandidates": {
+        "count": 6,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1201576",
+              "name": "RITUXIMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278421"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL635",
+              "name": "PREDNISONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278421"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1200796",
+              "name": "CYCLOPHOSPHAMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL88",
+                "name": "CYCLOPHOSPHAMIDE ANHYDROUS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278421"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL90555",
+              "name": "VINCRISTINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL501867",
+                  "name": "VINCRISTINE SULFATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278421"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1201567",
+              "name": "FILGRASTIM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL359744",
+              "name": "DOXORUBICIN HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL53463",
+                "name": "DOXORUBICIN",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278408"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00278421"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

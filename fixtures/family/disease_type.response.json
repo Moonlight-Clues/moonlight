@@ -1,0 +1,432 @@
+{
+  "data": {
+    "meta": {
+      "dataVersion": {
+        "year": "26",
+        "month": "09",
+        "iteration": null
+      }
+    },
+    "__type": {
+      "fields": [
+        {
+          "name": "descendants",
+          "description": "Descendant disease nodes in the EFO ontology below this term",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "directLocationIds",
+          "description": "EFO terms for direct anatomical locations",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "indirectLocationIds",
+          "description": "EFO terms for indirect anatomical locations (propagated)",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "obsoleteTerms",
+          "description": "Obsoleted ontology terms replaced by this term",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "ancestors",
+          "description": "Ancestor disease nodes in the EFO ontology up to the top-level therapeutic area",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "isTherapeuticArea",
+          "description": null,
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "id",
+          "description": "Open Targets disease identifier [bioregistry:efo]",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "dbXRefs",
+          "description": "Cross-references to external disease ontologies",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "description",
+          "description": "Short description of the disease or phenotype",
+          "type": {
+            "kind": "SCALAR",
+            "name": "String",
+            "ofType": null
+          }
+        },
+        {
+          "name": "synonyms",
+          "description": "Synonymous disease or phenotype labels",
+          "type": {
+            "kind": "LIST",
+            "name": null,
+            "ofType": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "DiseaseSynonyms",
+                "ofType": null
+              }
+            }
+          }
+        },
+        {
+          "name": "name",
+          "description": "Preferred disease or phenotype label",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "therapeuticAreas",
+          "description": "Ancestor therapeutic area nodes the disease or phenotype term belongs in the EFO ontology",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "parents",
+          "description": "Immediate parent disease nodes in the ontology",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "children",
+          "description": "Direct child disease nodes in the ontology",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "directLocations",
+          "description": "Diseases mapped to direct anatomical locations",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "indirectLocations",
+          "description": "Diseases mapped via indirect (propagated) anatomical locations",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "similarEntities",
+          "description": "Semantically similar diseases based on a PubMed word embedding model",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Similarity"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "literatureOcurrences",
+          "description": "Publications that mention this disease, alone or alongside other entities",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "Publications",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "phenotypes",
+          "description": "Human Phenotype Ontology (HPO) annotations linked to this disease as clinical signs or symptoms",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "DiseaseHPOs",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "evidences",
+          "description": "Target\u2013disease evidence items supporting associations for this disease",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "Evidences",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "otarProjects",
+          "description": "Open Targets (OTAR) projects linked to this disease. Data only available in Partner Platform Preview (PPP)",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "OtarProject"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "associatedTargets",
+          "description": "Target\u2013disease associations computed on the fly with configurable datasource weights and filters",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "AssociatedTargets",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "resolvedAncestors",
+          "description": "All ancestor diseases in the ontology from this term up to the top-level therapeutic area",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Disease"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "drugAndClinicalCandidates",
+          "description": "Clinical indications for this disease as reported by clinical trial records.",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "clinicalIndicationsFromDiseaseImp",
+              "ofType": null
+            }
+          }
+        },
+        {
+          "name": "associationTimeSeries",
+          "description": "Association time series",
+          "type": {
+            "kind": "NON_NULL",
+            "name": null,
+            "ofType": {
+              "kind": "OBJECT",
+              "name": "AssociationTimeSeriesResults",
+              "ofType": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -11,6 +11,11 @@ sort_into_tabs makes the three tabs of the page (ticket 5.3): Approved,
 In trials and New clues. It joins the medicines the tray found to be
 already approved with Open Targets' own list for the disease.
 
+fetch_neighbours(disease) asks for the medicine lists of the disease's
+direct parents and direct children (ticket 2.12), side by side.
+sort_into_tabs gives a medicine found only there a label saying where the
+database lists it.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -20,11 +25,12 @@ of time. From a terminal:
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
-from typing import Dict, Iterable, List, Optional, Tuple
+from dataclasses import dataclass, field
+from typing import Callable, Dict, Iterable, List, Optional, Tuple, TypeVar
 
 from moonlight import fetch
-from moonlight.fetch import fetch_disease, fetch_paths, fetch_targets
+from moonlight.fetch import fetch_approved, fetch_disease, fetch_family, fetch_paths
+from moonlight.fetch import fetch_targets, fetch_withdrawn
 from moonlight.fetch import Listed
 from moonlight.filter import (
     ALREADY_APPROVED,
@@ -39,7 +45,7 @@ from moonlight.filter import (
 from moonlight.rank import Clue, rank_clues
 from moonlight.records import Disease, Medicine, Path, Target
 
-AT_ONCE = 5  # the most proteins fetched at the same time
+AT_ONCE = 5  # the most proteins, or extra disease entries, fetched at the same time
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
 
 
@@ -50,6 +56,9 @@ class RankedClues:
     new_clues: List[Clue]  # one per medicine, ranked
     being_studied: List[Clue]  # one per medicine, ranked
     left_out: Dict[str, int]  # group -> number of medicines. Counts only.
+    # Ticket 2.12. How many medicines are not new clues because they are
+    # approved on a parent or child entry. Only counted if neighbours are given.
+    moved_to_approved: int = 0
 
 
 @dataclass(frozen=True)
@@ -65,6 +74,9 @@ class ApprovedMedicine:
     forms: Tuple[str, ...]  # the names of its forms, the parent first
     clue: Optional[Clue]  # None if it acts on none of the proteins looked at
     listed_sources: Tuple[str, ...]  # report links from the disease's own list
+    # Ticket 2.12. None if it is approved on the disease's own entry. If it
+    # was found only on a child or parent entry, the sentence saying which.
+    label: Optional[str] = None
 
     @property
     def sources(self) -> Tuple[str, ...]:
@@ -90,6 +102,41 @@ class Tabs:
     being_studied: List[Clue]  # one per medicine, ranked
     new_clues: List[Clue]  # one per medicine, ranked
     left_out: Dict[str, int]  # not_approved and unclear_link. Counts only.
+    # Ticket 2.12. Approved only on a parent entry: the folded box
+    # "Approved for a wider group". A to Z. No rank. Not counted on the tab.
+    wider_group: List[ApprovedMedicine] = field(default_factory=list)
+
+
+PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
+CHILD = "child"  # one sheet down: a disease the database lists under this one
+
+
+@dataclass(frozen=True)
+class Neighbour:
+    """One direct parent or direct child of the disease, with its own list."""
+
+    role: str  # PARENT or CHILD
+    disease: Disease
+    approved: Tuple[Listed, ...]  # approved on that entry, withdrawn ones left out
+    withdrawn: Tuple[Listed, ...]  # on that entry's list and withdrawn in any country
+
+
+def _joined(names: List[str]) -> str:
+    """["a"] -> "a", ["a", "b"] -> "a and b", three -> "a, b and c"."""
+    if len(names) == 1:
+        return names[0]
+    return ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def child_label(names: List[str]) -> str:
+    """Kashish's words, 16 Nov. They say only what the database does."""
+    return f"Approved for {_joined(names)}, which the database lists under this disease."
+
+
+def parent_label(names: List[str]) -> str:
+    """Kashish's words, 16 Nov. With two or more names the grammar is for many."""
+    group = "a wider group" if len(names) == 1 else "wider groups"
+    return f"Approved for {_joined(names)}, {group} the database puts this disease in."
 
 
 def find_clues(disease: Disease, targets: Iterable[Target]) -> Dict[str, List[Path]]:
@@ -104,31 +151,34 @@ def find_clues(disease: Disease, targets: Iterable[Target]) -> Dict[str, List[Pa
     return sort_paths(paths)
 
 
-def _fetch_all(disease: Disease, targets: List[Target]) -> List[List[Path]]:
-    """fetch_paths for every target, AT_ONCE at a time, answers in target order.
+Answer = TypeVar("Answer")
+
+
+def _in_lanes(count: int, work: Callable[[int], Answer]) -> List[Answer]:
+    """work(0) ... work(count - 1), AT_ONCE at a time, answers by lane number.
 
     Like swimmers in five lanes. Each swimmer dives in only after the one
     before has dived in, so they always start in the order given. They swim
     at the same time, and the results are written down by lane number, not
     by who touched the wall first.
     """
-    if not targets:
+    if not count:
         return []
-    # go[n] is set when target n may start. The first may start at once.
-    go = [threading.Event() for _ in range(len(targets) + 1)]
+    # go[n] is set when number n may start. The first may start at once.
+    go = [threading.Event() for _ in range(count + 1)]
     go[0].set()
 
-    def one(number: int) -> List[Path]:
+    def one(number: int) -> Answer:
         go[number].wait()
         fetch.started(go[number + 1].set)  # the next starts when this one has begun
         try:
-            return fetch_paths(disease, targets[number])
+            return work(number)
         finally:
             fetch.started(None)
             go[number + 1].set()  # also if it never asked, or went wrong
 
     with ThreadPoolExecutor(max_workers=AT_ONCE) as pool:
-        waiting = [pool.submit(one, number) for number in range(len(targets))]
+        waiting = [pool.submit(one, number) for number in range(count)]
         try:
             return [answer.result() for answer in waiting]
         except BaseException:
@@ -137,23 +187,75 @@ def _fetch_all(disease: Disease, targets: List[Target]) -> List[List[Path]]:
             raise
 
 
-def find_ranked_clues(disease: Disease, targets: Iterable[Target]) -> RankedClues:
+def _fetch_all(disease: Disease, targets: List[Target]) -> List[List[Path]]:
+    """fetch_paths for every target, side by side, answers in target order."""
+    return _in_lanes(len(targets), lambda number: fetch_paths(disease, targets[number]))
+
+
+def fetch_neighbours(disease: Disease) -> List[Neighbour]:
+    """The medicine list of every direct parent and direct child (ticket 2.12).
+
+    One step up and one step down only. Parents first, then children, each
+    in Open Targets' order. The lists are asked for side by side, by lane
+    number, with the same question as the disease's own list. So they are
+    asked twice and saved for a day like every other answer.
+    """
+    family = fetch_family(disease)
+    entries = [(PARENT, entry) for entry in family.parents]
+    entries += [(CHILD, entry) for entry in family.children]
+
+    def one(number: int) -> Neighbour:
+        role, entry = entries[number]
+        # The second question is the same one, answered from the saved results.
+        return Neighbour(role, entry, tuple(fetch_approved(entry)), tuple(fetch_withdrawn(entry)))
+
+    return _in_lanes(len(entries), one)
+
+
+def find_ranked_clues(
+    disease: Disease, targets: Iterable[Target], neighbours: Iterable[Neighbour] = ()
+) -> RankedClues:
     """The shown groups as ranked Clues, and the left-out groups as counts.
 
     A medicine that acts on two proteins is one Clue, and one in a count.
     No medicine from a left-out group is named in the answer.
+
+    With neighbours (ticket 2.12) the same rule as the page is followed:
+      - a medicine approved on a parent or child entry is never a new clue.
+        It is only counted, in moved_to_approved;
+      - a medicine in trials for this exact disease stays as it is;
+      - a medicine a parent's or child's list marks as withdrawn is shown
+        nowhere, and is counted in not_approved.
     """
     tray = find_clues(disease, targets)
+    neighbours = list(neighbours)
+    withdrawn_ids = {entry.id for neighbour in neighbours for entry in neighbour.withdrawn}
+    labelled_ids = {
+        entry.id for neighbour in neighbours for entry in neighbour.approved
+    } - withdrawn_ids
+
+    kept: Dict[str, List[Path]] = {group: [] for group in GROUPS}
+    moved = set()  # names. A medicine that acts on two proteins is still one.
+    for group, paths in tray.items():
+        for path in paths:
+            family_id = _family_id(path.medicine)
+            if group in SHOWN_GROUPS and family_id in withdrawn_ids:
+                kept[NOT_APPROVED].append(path)  # counted, never named
+            elif group == NEW_CLUE and family_id in labelled_ids:
+                moved.add(path.medicine.name)
+            else:
+                kept[group].append(path)
     left_out = {
         # A medicine that acts on two proteins is still one medicine.
-        group: len({path.medicine.name for path in tray[group]})
+        group: len({path.medicine.name for path in kept[group]})
         for group in GROUPS
         if group not in SHOWN_GROUPS
     }
     return RankedClues(
-        new_clues=rank_clues(tray[NEW_CLUE]),
-        being_studied=rank_clues(tray[BEING_STUDIED]),
+        new_clues=rank_clues(kept[NEW_CLUE]),
+        being_studied=rank_clues(kept[BEING_STUDIED]),
         left_out=left_out,
+        moved_to_approved=len(moved),
     )
 
 
@@ -167,6 +269,7 @@ def sort_into_tabs(
     tray: Dict[str, List[Path]],
     listed: Iterable[Listed],
     withdrawn_listed: Iterable[Listed] = (),
+    neighbours: Iterable[Neighbour] = (),
 ) -> Tabs:
     """The tray from find_clues and the disease's own list -> the three tabs.
 
@@ -191,24 +294,67 @@ def sort_into_tabs(
     list marks as withdrawn (fetch.fetch_withdrawn). They are withdrawn in
     every source too, even when a path has no note. One that is approved
     for the disease is counted in not_approved even if it has no path.
+
+    neighbours (ticket 2.12, Kashish's decisions of 16 Nov) are the direct
+    parents and direct children with their own lists (fetch_neighbours).
+      - Approved on the disease's own entry: as before, no label.
+      - Approved only on a child entry, or on a child and a parent: in the
+        Approved list with the child label. The child wins.
+      - Approved only on a parent entry: in wider_group, the folded box,
+        with the parent label.
+      - Two children, or two parents: both are named in the one label.
+      - A medicine with a label is never a new clue. Its paths go with it.
+      - What the data says about this exact disease comes first: a medicine
+        in trials for the disease stays in being_studied exactly as before,
+        and is also shown in Approved or the box with its label. One with
+        an unclear link to the disease stays counted in unclear_link too.
+      - Withdrawn on a parent's or child's list is withdrawn in every
+        source, and counted in not_approved if it was approved there.
     """
     withdrawn_listed = list(withdrawn_listed)
+    neighbours = list(neighbours)
+    withdrawn_nearby = [entry for neighbour in neighbours for entry in neighbour.withdrawn]
     withdrawn_ids = {
         _family_id(path.medicine)
         for paths in tray.values()
         for path in paths
         if path.medicine.withdrawn is True
-    } | {entry.id for entry in withdrawn_listed}
+    } | {entry.id for entry in withdrawn_listed} | {entry.id for entry in withdrawn_nearby}
     listed_by_id = {entry.id: entry for entry in listed if entry.id not in withdrawn_ids}
 
+    # Approved for this exact disease, from either source. These get no label.
+    own_ids = set(listed_by_id) | {
+        _family_id(path.medicine) for path in tray.get(ALREADY_APPROVED, [])
+    }
+    # family id -> where else it is approved: [child names, parent names, entries]
+    nearby: Dict[str, Tuple[List[str], List[str], List[Listed]]] = {}
+    for neighbour in neighbours:
+        for entry in neighbour.approved:
+            if entry.id in withdrawn_ids or entry.id in own_ids:
+                continue
+            found = nearby.setdefault(entry.id, ([], [], []))
+            names = found[0] if neighbour.role == CHILD else found[1]
+            if neighbour.disease.name not in names:
+                names.append(neighbour.disease.name)
+            found[2].append(entry)
+
     approved_paths: List[Path] = []
+    nearby_paths: Dict[str, List[Path]] = {}
     others: Dict[str, List[Path]] = {group: [] for group in GROUPS if group != ALREADY_APPROVED}
     for group, paths in tray.items():
         for path in paths:
-            if _family_id(path.medicine) in withdrawn_ids:
+            family_id = _family_id(path.medicine)
+            if family_id in withdrawn_ids:
                 others[NOT_APPROVED].append(path)  # counted, never named
-            elif group == ALREADY_APPROVED or _family_id(path.medicine) in listed_by_id:
+            elif group == ALREADY_APPROVED or family_id in listed_by_id:
                 approved_paths.append(path)
+            elif family_id in nearby:
+                nearby_paths.setdefault(family_id, []).append(path)
+                if group in (BEING_STUDIED, UNCLEAR_LINK):
+                    # What the data says about this exact disease comes
+                    # first: it stays in In trials, or stays counted as an
+                    # unclear link, exactly as before.
+                    others[group].append(path)
             else:
                 others[group].append(path)
 
@@ -218,35 +364,28 @@ def sort_into_tabs(
         family_id = _family_id(clue.medicine)
         seen.add(family_id)
         entry = listed_by_id.get(family_id)
-        forms: Dict[str, str] = {}  # form id -> name, each form once
-        for path in clue.paths:
-            for form in path.medicine.forms:
-                forms.setdefault(form.id, form.name)
-        for form_id, name in entry.forms if entry else ():
-            forms.setdefault(form_id, name)
-        approved.append(
-            ApprovedMedicine(
-                id=family_id,
-                name=clue.medicine.name,
-                forms=_parent_first(family_id, forms),
-                clue=clue,
-                listed_sources=entry.sources if entry else (),
-            )
-        )
+        approved.append(_approved_medicine(family_id, clue, [entry] if entry else []))
     for entry in listed_by_id.values():
         if entry.id not in seen:
-            approved.append(
-                ApprovedMedicine(
-                    id=entry.id,
-                    name=entry.name,
-                    forms=_parent_first(entry.id, dict(entry.forms)),
-                    clue=None,
-                    listed_sources=entry.sources,
-                )
-            )
+            approved.append(_approved_medicine(entry.id, None, [entry]))
+
+    wider_group: List[ApprovedMedicine] = []
+    for family_id, (children, parents, entries) in nearby.items():
+        paths = nearby_paths.get(family_id)
+        clue = rank_clues(paths)[0] if paths else None  # only to join its paths
+        if children:  # the child wins over the parent
+            approved.append(_approved_medicine(family_id, clue, entries, child_label(children)))
+        else:
+            wider_group.append(
+                _approved_medicine(family_id, clue, entries, parent_label(parents)))
+
     # A to Z, ignoring capitals. The last two only make the order the same
     # every time.
-    approved.sort(key=lambda medicine: (medicine.name.casefold(), medicine.name, medicine.id))
+    def a_to_z(medicine: ApprovedMedicine):
+        return (medicine.name.casefold(), medicine.name, medicine.id)
+
+    approved.sort(key=a_to_z)
+    wider_group.sort(key=a_to_z)
 
     return Tabs(
         approved=approved,
@@ -254,13 +393,41 @@ def sort_into_tabs(
         new_clues=rank_clues(others[NEW_CLUE]),
         left_out={
             # A medicine that acts on two proteins is still one medicine.
-            # So is one that has a path and is also on the withdrawn list.
+            # So is one that has a path and is also on a withdrawn list.
             NOT_APPROVED: len(
                 {path.medicine.name for path in others[NOT_APPROVED]}
-                | {entry.name for entry in withdrawn_listed if entry.approved}
+                | {entry.name for entry in withdrawn_listed + withdrawn_nearby if entry.approved}
             ),
             UNCLEAR_LINK: len({path.medicine.name for path in others[UNCLEAR_LINK]}),
         },
+        wider_group=wider_group,
+    )
+
+
+def _approved_medicine(
+    family_id: str, clue: Optional[Clue], entries: List[Listed], label: Optional[str] = None
+) -> ApprovedMedicine:
+    """One item of the Approved tab, from its paths and the lists naming it.
+
+    Named as its paths name it, or as the first list does if it has none.
+    Its forms: the ones on its paths first, then the lists', each once.
+    """
+    forms: Dict[str, str] = {}  # form id -> name, each form once
+    for path in clue.paths if clue else ():
+        for form in path.medicine.forms:
+            forms.setdefault(form.id, form.name)
+    sources: List[str] = []
+    for entry in entries:
+        for form_id, name in entry.forms:
+            forms.setdefault(form_id, name)
+        sources.extend(source for source in entry.sources if source not in sources)
+    return ApprovedMedicine(
+        id=family_id,
+        name=clue.medicine.name if clue else entries[0].name,
+        forms=_parent_first(family_id, forms),
+        clue=clue,
+        listed_sources=tuple(sources),
+        label=label,
     )
 
 

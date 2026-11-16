@@ -1,0 +1,253 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0001358",
+      "drugAndClinicalCandidates": {
+        "count": 12,
+        "rows": [
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL79",
+              "name": "LIDOCAINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200409",
+                  "name": "LIDOCAINE HYDROCHLORIDE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04085744"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL714",
+              "name": "ALBUTEROL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1441059",
+                  "name": "ALBUTEROL SULFATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01714401"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL529",
+              "name": "AZITHROMYCIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00360464"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL742",
+              "name": "KETAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1714",
+                  "name": "KETAMINE HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03000413"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL3989693",
+              "name": "LEVALBUTEROL TARTRATE",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1002",
+                "name": "LEVOSALBUTAMOL",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02150499"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL405821",
+              "name": "SENICAPOC",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00861211"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1200694",
+              "name": "SEVOFLURANE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06936761"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1114",
+              "name": "THEOBROMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01416480"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1288810",
+              "name": "LEVODROPROPIZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01416480"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL2134724",
+              "name": "IPRATROPIUM BROMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1621597",
+                "name": "IPRATROPIUM",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01714401"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1201404",
+              "name": "MOMETASONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04085744"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL526",
+              "name": "PROPOFOL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06936761"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

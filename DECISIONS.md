@@ -47,3 +47,6 @@ Format: date, the decision, why.
 - 2026-11-16: A search can be 100 letters at most.
 - 2026-11-16: The guide says that Gemini, an AI, guesses the disease and writes the explanations, and that the words you type are sent to Gemini.
 - 2026-11-16: The page shows Open Targets' own description of the disease, with its source. Gemini no longer describes the disease, because it sometimes wrote things that meant nothing.
+- 2026-11-16: The Approved tab also looks one step up and one step down from the disease. A medicine found there gets a label saying where the database lists it. Medicines from the wider group go in a folded box. It is never a new clue.
+- 2026-11-16: What the data says about this exact disease comes first. A medicine in trials for the disease stays in In trials, even if it is approved for a wider group.
+- 2026-11-16: Daratumumab is not shown as approved for amyloidosis, because Open Targets does not say so. Moonlight never creates an approval.
