@@ -85,6 +85,11 @@ class Disease:
     id: str
     name: str
     description: str = ""  # what the disease is, in Open Targets' words; "" if not known
+    # Open Targets' exact "also called" names, as it spells them; () if none.
+    also_called: Tuple[str, ...] = ()
+
+    def __post_init__(self):
+        object.__setattr__(self, "also_called", tuple(self.also_called))
 
 
 @dataclass(frozen=True)

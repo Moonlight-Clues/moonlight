@@ -42,6 +42,19 @@ h3{font-size:22px;line-height:1.2;margin:0}
 small,.fine{font-size:12px}.muted{color:var(--muted)}
 .intro{max-width:760px;margin-bottom:24px}.intro h1{max-width:650px}.intro p{color:var(--muted);margin:0}
 
+/* the disease in Open Targets' own words, under its name (ticket 5.5).
+   A long description shows its first --about-lines lines, and the names their
+   first --names-lines lines, until "Show more" is tapped. The words themselves
+   are never changed or shortened: the rest is only folded away. */
+.about{--about-lines:4;--names-lines:2;max-width:68ch;margin:0 0 16px}
+.also-called{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 10px;overflow-wrap:anywhere}
+.about-text{font-size:14px;line-height:1.6;margin:0;overflow-wrap:anywhere}
+.about:not(.open) .about-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--about-lines);line-clamp:var(--about-lines);overflow:hidden}
+.about.described:not(.open) .also-called{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--names-lines);line-clamp:var(--names-lines);overflow:hidden}
+.about-more{display:block;border:0;background:transparent;padding:0;margin:4px 0 0;min-height:36px;color:#327F80;font-size:13px;font-weight:750}
+.about-more:hover{text-decoration:underline;text-underline-offset:3px}
+.about-source{margin:6px 0 0}
+
 /* search */
 .search-area{max-width:760px}
 .search-box{border:1px solid #C4D4D1;background:var(--paper);border-radius:var(--radius);padding:8px;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px #101F3108}
@@ -289,6 +302,14 @@ div.explanation{padding:12px 13px}
     <div id="found" hidden>
       <div class="eyebrow">Disease results</div>
       <h1 id="disease-title"></h1>
+      <div class="about" id="about" data-slot="about-disease">
+        <p id="disease-also-called" class="also-called" hidden></p>
+        <div id="disease-about" hidden>
+          <p id="disease-description" class="about-text"></p>
+          <button id="about-more" class="about-more" type="button" aria-expanded="false" aria-controls="disease-description disease-also-called" hidden>Show more</button>
+          <p class="fine muted about-source">Source: Open Targets</p>
+        </div>
+      </div>
       <p class="muted">What open research data says about medicines and this disease. Nothing here is medical advice.</p>
 
       <div class="tabs" data-slot="tabs" role="tablist" aria-label="Kinds of medicine for this disease">
@@ -596,6 +617,10 @@ div.explanation{padding:12px 13px}
     byId("problem").hidden = true;
     byId("loading").hidden = true;
     byId("disease-title").textContent = "";
+    byId("disease-description").textContent = "";
+    byId("disease-also-called").textContent = "";
+    byId("disease-about").hidden = true;
+    byId("disease-also-called").hidden = true;
     byId("approved-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
@@ -738,9 +763,51 @@ div.explanation{padding:12px 13px}
     });
   });
 
+  /* ---- the disease in Open Targets' own words (ticket 5.5) ----
+     The description and the "also called" names are written exactly as
+     Open Targets sent them. With no description, the box that holds it and
+     its source line stays hidden. Nothing is written in
+     its place. */
+
+  const aboutBox = byId("about"), aboutMore = byId("about-more");
+
+  function drawAbout(about) {
+    const names = about.also_called;
+    // Some names hold a comma themselves ("Hypertension, Pulmonary"), so
+    // the names are divided by a semicolon.
+    byId("disease-also-called").textContent = names.length ? "Also called: " + names.join("; ") : "";
+    byId("disease-also-called").hidden = !names.length;
+    byId("disease-description").textContent = about.description;
+    byId("disease-about").hidden = !about.description;
+    // Names are only ever folded when there is a description, because the
+    // "Show more" button lives in the description's box.
+    aboutBox.classList.toggle("described", !!about.description);
+    foldAbout(true);
+    // The page is still hidden while it is drawn. Measured once it shows.
+    requestAnimationFrame(fitAbout);
+  }
+
+  function foldAbout(folded) {
+    aboutBox.classList.toggle("open", !folded);
+    aboutMore.setAttribute("aria-expanded", String(!folded));
+    aboutMore.textContent = folded ? "Show more" : "Show less";
+  }
+
+  /* "Show more" is only offered when some words are really folded away. */
+  function fitAbout() {
+    if (aboutBox.classList.contains("open") || byId("results").hidden) return;
+    const folded = [byId("disease-description"), byId("disease-also-called")]
+      .some(el => el.scrollHeight > el.clientHeight + 1);
+    aboutMore.hidden = !folded;
+  }
+
+  aboutMore.addEventListener("click", () => foldAbout(aboutBox.classList.contains("open")));
+  window.addEventListener("resize", fitAbout);
+
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
     byId("disease-title").textContent = diseaseName;
+    drawAbout(data.about_disease);
     byId("rule-text").textContent = data.rule_text;
 
     const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
