@@ -1,0 +1,32 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0019439",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL2107338",
+              "name": "EPRODISATE DISODIUM",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL2111092",
+                "name": "EPRODISATE",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01215747"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
