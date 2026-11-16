@@ -1,0 +1,6 @@
+{
+  "query": "query ProbeDisease($diseaseId: String!) { disease(efoId: $diseaseId) { id name description therapeuticAreas { id name } synonyms { relation terms } parents { id name } children { id name } } }",
+  "variables": {
+    "diseaseId": "MONDO_0005314"
+  }
+}

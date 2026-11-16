@@ -1,0 +1,1567 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0019065",
+      "drugAndClinicalCandidates": {
+        "count": 55,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL44657",
+              "name": "ETOPOSIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL325041",
+              "name": "BORTEZOMIB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL5315122",
+                  "name": "BORTEZOMIB D-MANNITOL",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04504825",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04512235",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04304144",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01383759",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL1201599",
+              "name": "HUMAN IMMUNOGLOBULIN G",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00547365",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL888",
+              "name": "GEMCITABINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1637",
+                  "name": "GEMCITABINE HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02791373",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL3833345",
+              "name": "BIRTAMIMAB",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0XP7T",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4594335",
+              "name": "EPLONTERSEN SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/EPLONTERSEN%20SODIUM/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL2103837",
+              "name": "TAFAMIDIS",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL2105675",
+                  "name": "TAFAMIDIS MEGLUMINE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1b4121ee-a733-4456-a917-be2603477839",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211996s000,212161s000lbl.pdf",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/vyndaqel",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211996s000,212161s000lbl.pdf",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4594505",
+              "name": "TECLISTAMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07110844",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5314633",
+              "name": "IODINE I124 EVUZAMITIDE",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/IODINE%20I124%20EVUZAMITIDE/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL451887",
+              "name": "CARFILZOMIB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02545907",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL468",
+              "name": "THALIDOMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Withdrawn"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02966522",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02545907",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5314696",
+              "name": "NEXIGURAN",
+              "maximumClinicalStage": "UNKNOWN",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/NEXIGURAN/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL1324",
+              "name": "TOLCAPONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Withdrawn"
+                },
+                {
+                  "warningType": "Withdrawn"
+                },
+                {
+                  "warningType": "Withdrawn"
+                },
+                {
+                  "warningType": "Withdrawn"
+                },
+                {
+                  "warningType": "Withdrawn"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02191826",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297770",
+              "name": "INOTERSEN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL4297537",
+                  "name": "INOTERSEN SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/tegsedi",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297537",
+              "name": "INOTERSEN SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL4297770",
+                "name": "INOTERSEN",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8513207e-b55f-417b-9473-af785146a543",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL11359",
+              "name": "CISPLATIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989987",
+              "name": "PATISIRAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D02UYB",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02510261",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05023889",
+                "clinicalStage": "EARLY_PHASE_1"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3545432",
+              "name": "IXAZOMIB CITRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D01MML",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL272427",
+              "name": "TAURURSODIOL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01855360",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4594511",
+              "name": "VUTRISIRAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/VUTRISIRAN/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1200863",
+              "name": "MELPHALAN HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL852",
+                "name": "MELPHALAN",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02994784",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1200796",
+              "name": "CYCLOPHOSPHAMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL88",
+                "name": "CYCLOPHOSPHAMIDE ANHYDROUS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04504825",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04512235",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04304144",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL43452",
+              "name": "POMALIDOMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00558896",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03959358",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04270175",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01570387",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL3940890",
+              "name": "ACORAMIDIS",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL4650226",
+                  "name": "ACORAMIDIS HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ACORAMIDIS/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3545131",
+              "name": "ISATUXIMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04943302",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL2105675",
+              "name": "TAFAMIDIS MEGLUMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL2103837",
+                "name": "TAFAMIDIS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211996s000,212161s000lbl.pdf",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211996s000,212161s000lbl.pdf",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL671",
+              "name": "THIOTEPA",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL384467",
+              "name": "DEXAMETHASONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00344526",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04504825",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04512235",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00558896",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02966522",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04270175",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04304144",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01570387",
+                "clinicalStage": "PHASE_1_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02545907",
+                "clinicalStage": "PHASE_1_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01383759",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL513",
+              "name": "CARMUSTINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL53463",
+              "name": "DOXORUBICIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL359744",
+                  "name": "DOXORUBICIN HYDROCHLORIDE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297536",
+              "name": "PATISIRAN SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e87ec36f-b4b4-49d4-aea4-d4ffb09b0970",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL6068552",
+              "name": "GSK-294",
+              "maximumClinicalStage": "PHASE_1",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02603172",
+                "clinicalStage": "PHASE_1"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL852",
+              "name": "MELPHALAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200863",
+                  "name": "MELPHALAN HYDROCHLORIDE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00344526",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00651937",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01548573",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02909036",
+                "clinicalStage": "PHASE_1"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL820",
+              "name": "BUSULFAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1_2",
+            "drug": {
+              "id": "CHEMBL5314973",
+              "name": "ETENTAMIG",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06158854",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2216870",
+              "name": "IDELALISIB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02590588",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1201572",
+              "name": "ETANERCEPT",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00224393",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL487253",
+              "name": "BENDAMUSTINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1201734",
+                  "name": "BENDAMUSTINE HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04943302",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1743007",
+              "name": "DARATUMUMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04270175",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04304144",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04991103",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07110844",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06571864",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1201568",
+              "name": "PEGFILGRASTIM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00651937",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL848",
+              "name": "LENALIDOMIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL6068337",
+                  "name": "LENALIDOMIDE HYDROCHLORIDE MONOHYDRATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03959358",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL2107338",
+              "name": "EPRODISATE DISODIUM",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL2111092",
+                "name": "EPRODISATE",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0ZG5K",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00035334",
+                "clinicalStage": "PHASE_2_3"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kiacta",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL4594492",
+              "name": "REVUSIRAN",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D01ZHB",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02595983",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4594334",
+              "name": "EPLONTERSEN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/EPLONTERSEN/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1743070",
+              "name": "SILTUXIMAB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03315026",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL2109128",
+              "name": "LENOGRASTIM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00651937",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1200699",
+              "name": "DOXYCYCLINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL1433",
+                "name": "DOXYCYCLINE ANHYDROUS",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01677286",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01855360",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4297966",
+              "name": "DEZAMIZUMAB",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D09HFL",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D07LBQ",
+                "clinicalStage": "PHASE_1"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01777243",
+                "clinicalStage": "PHASE_1"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1351",
+              "name": "CARBOPLATIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00060255",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00536601",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5314720",
+              "name": "ZICLUMERAN",
+              "maximumClinicalStage": "UNKNOWN",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ZICLUMERAN/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL553025",
+              "name": "VINORELBINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL538943",
+                  "name": "VINORELBINE TARTRATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02791373",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL5315016",
+              "name": "ANSELAMIMAB",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04504825",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04512235",
+                "clinicalStage": "PHASE_3"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04304144",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0W1SD",
+                "clinicalStage": "PHASE_1"
+              },
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ANSELAMIMAB/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1201567",
+              "name": "FILGRASTIM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00651937",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL25263",
+              "name": "MIRIDESAP",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D09HFL",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0AY1I",
+                "clinicalStage": "PHASE_1"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01777243",
+                "clinicalStage": "PHASE_1"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4650226",
+              "name": "ACORAMIDIS HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL3940890",
+                "name": "ACORAMIDIS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ACORAMIDIS%20HYDROCHLORIDE/relevant/1/",
+                "clinicalStage": "UNKNOWN"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

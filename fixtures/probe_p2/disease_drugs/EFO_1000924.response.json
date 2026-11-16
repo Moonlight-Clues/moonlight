@@ -1,0 +1,36 @@
+{
+  "data": {
+    "disease": {
+      "id": "EFO_1000924",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL70418",
+              "name": "CLOBAZAM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02134366",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "disease": {
+      "id": "HP_0012042",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3301673",
+              "name": "IFETROBAN",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL3301674",
+                  "name": "IFETROBAN SODIUM",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D8N9VF",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0018634",
+      "drugAndClinicalCandidates": {
+        "count": 4,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4594511",
+              "name": "VUTRISIRAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/DXRP68",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297770",
+              "name": "INOTERSEN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL4297537",
+                  "name": "INOTERSEN SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0R3BV",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989987",
+              "name": "PATISIRAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D02UYB",
+                "clinicalStage": "APPROVAL"
+              },
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/onpattro",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL2105675",
+              "name": "TAFAMIDIS MEGLUMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL2103837",
+                "name": "TAFAMIDIS",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D03MGL",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"Amyotrophic lateral sclerosis\",\n  \"Advanced liver disease\",\n  \"Alport syndrome\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0TQlADJXCTRlIhGW6VuWx9lbnoRmPXWYCXKJzgDdL9sIk0TXpjdhcYuxJ7JA3/s+aVOn3l6cKetuvtf6+byLsfxYtoKyNR/STuxeKaZb+7wLsW4VKGEuJ2VwxEZ1jaFwCIAuk="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 77,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 102,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 77
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "-sL6atygNbKgjMcP4O6VaA"
+  }
+}

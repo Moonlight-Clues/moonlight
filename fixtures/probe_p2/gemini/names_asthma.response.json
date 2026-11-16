@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"Asthma\",\n  \"Cough variant asthma\",\n  \"Exercise-induced bronchoconstriction\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0TJ5+g3l1ueq2VdzsfSVzdJvs0YlVIMwT/wg6VVo+HoH0Us4RtYxf/fEo7GJa4Hl/0clWpY1iBCFn4y1oTZh0F09TCebYfy+rOd4/gLNWjPGtVqr1PwmmbKYblJo3BjZU65lw="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 78,
+      "candidatesTokenCount": 27,
+      "totalTokenCount": 105,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 78
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "98L6avLAK_Sj1MkP2Im26AU"
+  }
+}

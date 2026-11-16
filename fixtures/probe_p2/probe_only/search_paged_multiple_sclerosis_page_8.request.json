@@ -1,0 +1,8 @@
+{
+  "query": "\nquery ProbeSearchPaged($text: String!, $size: Int!, $index: Int!) {\n  search(queryString: $text, entityNames: [\"disease\"], page: {index: $index, size: $size}) {\n    total\n    hits {\n      id\n      entity\n      name\n      category\n      object { ... on Disease { synonyms { relation terms } } }\n    }\n  }\n}\n",
+  "variables": {
+    "text": "multiple sclerosis",
+    "size": 50,
+    "index": 8
+  }
+}

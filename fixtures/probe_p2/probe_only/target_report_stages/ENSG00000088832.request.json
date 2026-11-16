@@ -1,0 +1,6 @@
+{
+  "query": "\nquery ProbeTargetReportStages($targetId: String!) {\n  target(ensemblId: $targetId) {\n    id\n    drugAndClinicalCandidates {\n      rows {\n        maxClinicalStage\n        drug { id name parentMolecule { id } }\n        clinicalReports { url clinicalStage source }\n      }\n    }\n  }\n}\n",
+  "variables": {
+    "targetId": "ENSG00000088832"
+  }
+}

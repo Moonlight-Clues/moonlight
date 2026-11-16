@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"Precursor B-cell acute lymphoblastic leukemia\",\n  \"B-cell acute lymphoblastic leukemia\",\n  \"Acute lymphoblastic leukemia\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0TM/4SStdNgo7jqFHuPSNN+lN93bXgE6/LJ3iB3CKnePhFU5f5QLj69Td+A6C2KKgmiawo+79tlEbJyf1TN7JC9asgPqqbFCWGgpxe+qm5zDsEsXk26A1lYW17zxL0xE7JoSU="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 80,
+      "candidatesTokenCount": 32,
+      "totalTokenCount": 112,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 80
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "_ML6av6zD6DO_uMPxduvyQk"
+  }
+}

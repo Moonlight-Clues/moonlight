@@ -1,0 +1,88 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0100620",
+      "drugAndClinicalCandidates": {
+        "count": 4,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL6068116",
+              "name": "ELSUNERSEN",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07019922",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL4298172",
+              "name": "SOTICLESTAT",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03635073",
+                "clinicalStage": "PHASE_2"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03166215",
+                "clinicalStage": "PHASE_1_2"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL41355",
+              "name": "EZOGABINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04639310",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL5314507",
+              "name": "BEXICASERIN",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05626634",
+                "clinicalStage": "PHASE_2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
