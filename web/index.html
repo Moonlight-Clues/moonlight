@@ -99,6 +99,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .wider-box{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:17px 0 0;padding:0 14px}
 .wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
 .wider-box[open]{padding-bottom:14px}
+.wider-box summary [data-part="tap"]{font-weight:500;color:var(--muted);white-space:nowrap}
+.more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
 .rule{background:var(--mist);border-left:3px solid var(--teal);padding:14px 15px;border-radius:0 11px 11px 0;font-size:13px;line-height:1.55;margin:6px 0 17px}
@@ -330,14 +332,22 @@ div.explanation{padding:12px 13px}
         <div id="approved-list">
           <p class="tab-words">Already approved for this disease in at least one country, according to the database. Nothing here says how well any of them works.</p>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
+          <!-- How many more cards are in the folded boxes. Only when the main list and a box both hold cards. -->
+          <p class="more-line" id="more-line" hidden></p>
           <div class="cards" id="approved-cards"></div>
         </div>
         <div class="state-box empty-box" id="approved-empty" hidden>
           <h3>The database lists no approved medicine under this exact name. That does not mean there is none. Ask a doctor.</h3>
         </div>
+        <!-- Approved only for a narrower disease. Folded, above the wider-group box. -->
+        <details class="wider-box" id="narrower-box" hidden>
+          <summary>Approved for a narrower disease (<span id="narrower-count"></span>) <span data-part="tap">· Tap to open</span></summary>
+          <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
+          <div class="cards" id="narrower-cards"></div>
+        </details>
         <!-- Approved only for a wider group. Folded, at the bottom of the tab. -->
         <details class="wider-box" id="wider-box" hidden>
-          <summary>Approved for a wider group (<span id="wider-count"></span>)</summary>
+          <summary>Approved for a wider group (<span id="wider-count"></span>) <span data-part="tap">· Tap to open</span></summary>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="wider-cards"></div>
         </details>
@@ -477,7 +487,7 @@ div.explanation{padding:12px 13px}
           <li><div><b>Source.</b> <span>Open Targets Platform.</span></div></li>
           <li><div><b>“Approved”.</b> <span>In at least one country, per the database. Not a measure of efficacy.</span></div></li>
           <li><div><b>Left out.</b> <span>Withdrawn anywhere, or approved nowhere: counted, never named. Unclear link to the disease: counted separately.</span></div></li>
-          <li><div><b>Wider and narrower diseases.</b> <span>Shown with a label. The wider group sits in a folded box.</span></div></li>
+          <li><div><b>Wider and narrower diseases.</b> <span>Shown with a label, each in its own folded box.</span></div></li>
           <li><div><b>Known gaps.</b> <span>A missing medicine may be withdrawn somewhere, filed further away, or not recorded yet.</span></div></li>
           <li><div><b>Weak proof.</b> <span>Japan-list-only approvals say so. Confirmed mistakes carry a red warning.</span></div></li>
           <li><div><b>Ranking.</b> <span>Link strength across the top 25 proteins. One protein machine counts once.</span></div></li>
@@ -642,6 +652,7 @@ div.explanation{padding:12px 13px}
     byId("disease-about").hidden = true;
     byId("disease-also-called").hidden = true;
     byId("approved-cards").replaceChildren();
+    byId("narrower-cards").replaceChildren();
     byId("wider-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
@@ -835,6 +846,8 @@ div.explanation{padding:12px 13px}
     byId("rule-text").textContent = data.rule_text;
 
     const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
+    // Approved only for a narrower disease: its own folded box, above the wider one.
+    const narrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
     // Approved only for a wider group: the folded box at the bottom of the tab.
     const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
     const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
@@ -843,18 +856,30 @@ div.explanation{padding:12px 13px}
     byId("new-cards").replaceChildren(...newCards);
     byId("studied-cards").replaceChildren(...studiedCards);
     byId("approved-list").hidden = !approvedCards.length;
-    byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length;
+    byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length || !!narrowerCards.length;
+    byId("narrower-cards").replaceChildren(...narrowerCards);
+    byId("narrower-count").textContent = narrowerCards.length;
+    byId("narrower-box").hidden = !narrowerCards.length;
+    byId("narrower-box").open = !approvedCards.length;  // each box opens when the main list is empty
     byId("wider-cards").replaceChildren(...widerCards);
     byId("wider-count").textContent = widerCards.length;
     byId("wider-box").hidden = !widerCards.length;
     byId("wider-box").open = !approvedCards.length;  // open only when it is all there is
+    tapWords(byId("narrower-box"));
+    tapWords(byId("wider-box"));
+    // So nobody misses the boxes: how many more cards they hold, both together.
+    const boxedCards = narrowerCards.length + widerCards.length;
+    byId("more-line").textContent = boxedCards === 1
+      ? "1 more approved medicine is in the folded box below."
+      : boxedCards + " more approved medicines are in the folded boxes below.";
+    byId("more-line").hidden = !approvedCards.length || !boxedCards;
     byId("new-list").hidden = !newCards.length;
     byId("empty").hidden = !!newCards.length;
     byId("studied-note").textContent = studiedCards.length ? ""
       : "No medicine in this data is being studied for this disease.";
 
     const counts = {
-      approved: approvedCards.length + widerCards.length,  // the main list and the box together
+      approved: approvedCards.length + narrowerCards.length + widerCards.length,  // the main list and both boxes
       trials: studiedCards.length, clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
@@ -866,6 +891,12 @@ div.explanation{padding:12px 13px}
 
     waiting = newCards.slice(0, FIRST_EXPLAINED);
   }
+
+  /* A folded box says how to work it: "Tap to open" while closed, "Tap to close" while open. */
+  function tapWords(box) {
+    part(box, "tap").textContent = box.open ? "· Tap to close" : "· Tap to open";
+  }
+  for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
 
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {

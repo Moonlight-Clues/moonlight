@@ -1,0 +1,33 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0020512",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201112",
+              "name": "NELARABINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/atriance",
+                "clinicalStage": "APPROVAL"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

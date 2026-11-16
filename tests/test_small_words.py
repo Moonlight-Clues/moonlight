@@ -35,7 +35,7 @@ SAFETY_LINE = (
     "Never start, stop or change any medicine without a doctor."
 )
 # The page's rule: the sentence is hidden when the tab has anything in it.
-EMPTY_RULE = 'byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length;'
+EMPTY_RULE = 'byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length || !!narrowerCards.length;'
 
 
 @pytest.fixture(autouse=True)

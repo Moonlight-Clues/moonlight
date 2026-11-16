@@ -22,6 +22,12 @@ JAPAN_LINE (ApprovedMedicine.proof_note). looks_wrong(disease_id) reads the
 corrections list in moonlight/corrections.json: the medicines a doctor
 confirmed look wrong for that disease. Their cards get WRONG_WARNING.
 
+Ticket 2.14, a box for narrower diseases. The main Approved list holds
+only medicines approved on the disease's own entry. One approved only on a
+child entry goes in Tabs.narrower, the folded box "Approved for a narrower
+disease". ApprovedMedicine.source_record picks the link a card shows as
+"Source record": an approval receipt first.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -125,6 +131,26 @@ class ApprovedMedicine:
         return None
 
     @property
+    def source_record(self) -> Optional[str]:
+        """The one link the card shows as "Source record" (ticket 2.14).
+
+        Like looking for a receipt in three drawers, in this order:
+          1. an exact approval receipt: the first of approval_sources that
+             is not Japan's general list;
+          2. Japan's general list, if that is its only kind of receipt;
+          3. the link shown before this ticket: the first of sources.
+        Only an https link is ever chosen. None if it has no such link.
+        """
+        receipts = [link for link in self.approval_sources if link.startswith("https://")]
+        for link in receipts:
+            if link != JAPAN_LIST:
+                return link
+        for link in receipts[:1] + list(self.sources):
+            if link.startswith("https://"):
+                return link
+        return None
+
+    @property
     def sources(self) -> Tuple[str, ...]:
         """Its report links: the ones on its paths first, then the list's."""
         found: List[str] = []
@@ -144,13 +170,17 @@ class ApprovedMedicine:
 class Tabs:
     """The three tabs of the page, and how many medicines were left out."""
 
-    approved: List[ApprovedMedicine]  # A to Z by name. No rank.
+    # Approved on the disease's own entry, and nothing else. A to Z. No rank.
+    approved: List[ApprovedMedicine]
     being_studied: List[Clue]  # one per medicine, ranked
     new_clues: List[Clue]  # one per medicine, ranked
     left_out: Dict[str, int]  # not_approved and unclear_link. Counts only.
     # Ticket 2.12. Approved only on a parent entry: the folded box
     # "Approved for a wider group". A to Z. No rank. Not counted on the tab.
     wider_group: List[ApprovedMedicine] = field(default_factory=list)
+    # Ticket 2.14. Approved only on a child entry, or on a child and a
+    # parent: the folded box "Approved for a narrower disease". A to Z. No rank.
+    narrower: List[ApprovedMedicine] = field(default_factory=list)
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -344,8 +374,10 @@ def sort_into_tabs(
     neighbours (ticket 2.12, Kashish's decisions of 16 Nov) are the direct
     parents and direct children with their own lists (fetch_neighbours).
       - Approved on the disease's own entry: as before, no label.
-      - Approved only on a child entry, or on a child and a parent: in the
-        Approved list with the child label. The child wins.
+      - Approved only on a child entry, or on a child and a parent: in
+        narrower, its own folded box (ticket 2.14), with the child label.
+        The child wins. The database sometimes files one disease under
+        another, so these are kept out of the main list.
       - Approved only on a parent entry: in wider_group, the folded box,
         with the parent label.
       - Two children, or two parents: both are named in the one label.
@@ -415,12 +447,13 @@ def sort_into_tabs(
         if entry.id not in seen:
             approved.append(_approved_medicine(entry.id, None, [entry]))
 
+    narrower: List[ApprovedMedicine] = []
     wider_group: List[ApprovedMedicine] = []
     for family_id, (children, parents, entries) in nearby.items():
         paths = nearby_paths.get(family_id)
         clue = rank_clues(paths)[0] if paths else None  # only to join its paths
         if children:  # the child wins over the parent
-            approved.append(_approved_medicine(family_id, clue, entries, child_label(children)))
+            narrower.append(_approved_medicine(family_id, clue, entries, child_label(children)))
         else:
             wider_group.append(
                 _approved_medicine(family_id, clue, entries, parent_label(parents)))
@@ -431,6 +464,7 @@ def sort_into_tabs(
         return (medicine.name.casefold(), medicine.name, medicine.id)
 
     approved.sort(key=a_to_z)
+    narrower.sort(key=a_to_z)
     wider_group.sort(key=a_to_z)
 
     return Tabs(
@@ -447,6 +481,7 @@ def sort_into_tabs(
             UNCLEAR_LINK: len({path.medicine.name for path in others[UNCLEAR_LINK]}),
         },
         wider_group=wider_group,
+        narrower=narrower,
     )
 
 
