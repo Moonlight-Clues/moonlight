@@ -160,9 +160,9 @@ def named(medicines, name):
 
 
 def everyone_shown(tabs):
-    """Every medicine and form name in any tab or in the box, in capitals."""
+    """Every medicine and form name in any tab or in a box, in capitals."""
     found = set()
-    for medicine in tabs.approved + tabs.wider_group:
+    for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
         found.add(medicine.name.upper())
         found.update(name.upper() for name in medicine.forms)
     for clue in tabs.being_studied + tabs.new_clues:
@@ -307,11 +307,11 @@ def test_pre_b_all_six_medicines_are_in_trials_and_also_in_the_box(saved_tabs):
 
 # ---- EXAMPLE: atopic eczema ----
 
-def test_atopic_eczema_main_list_is_45_and_the_box_is_68(saved_tabs):
+def test_atopic_eczema_main_list_is_41_the_narrower_box_is_4_and_the_box_is_68(saved_tabs):
     today, tabs = saved_tabs(ECZEMA)
     assert len(today.approved) == 41
-    assert len(tabs.approved) == 45 and len(tabs.wider_group) == 68
-    for group in (tabs.approved, tabs.wider_group):
+    assert len(tabs.approved) == 41 and len(tabs.narrower) == 4 and len(tabs.wider_group) == 68
+    for group in (tabs.approved, tabs.narrower, tabs.wider_group):
         assert names(group) == sorted(names(group), key=str.casefold)
     # The 41 from the disease's own entry are as today, with no label.
     assert [m for m in tabs.approved if m.label is None] == today.approved
@@ -319,7 +319,7 @@ def test_atopic_eczema_main_list_is_45_and_the_box_is_68(saved_tabs):
 
 def test_atopic_eczema_four_carry_the_child_label(saved_tabs):
     _, tabs = saved_tabs(ECZEMA)
-    labelled = {m.name: m.label for m in tabs.approved if m.label}
+    labelled = {m.name: m.label for m in tabs.narrower if m.label}
     assert labelled == {
         name: "Approved for seborrheic dermatitis" + CHILD_WORDS
         for name in ("CICLOPIROX", "COAL TAR", "SALICYLIC ACID", "SELENIUM SULFIDE")
@@ -332,7 +332,7 @@ def test_atopic_eczema_child_wins_over_parent(saved_tabs):
     _, tabs = saved_tabs(ECZEMA)
     boxed = names(tabs.wider_group)
     assert "SALICYLIC ACID" not in boxed and "SELENIUM SULFIDE" not in boxed
-    assert "dermatitis, a wider group" not in named(tabs.approved, "SALICYLIC ACID").label
+    assert "dermatitis, a wider group" not in named(tabs.narrower, "SALICYLIC ACID").label
 
 
 def test_atopic_eczema_box_labels_name_the_parent(saved_tabs):
@@ -357,7 +357,7 @@ def test_atopic_eczema_33_medicines_leave_new_clues_and_in_trials_is_unchanged(s
 def test_a_labelled_medicine_is_never_a_new_clue(saved_tabs):
     for disease in (ECZEMA, AMYLOIDOSIS, PRE_B_ALL):
         _, tabs = saved_tabs(disease)
-        labelled = {m.id for m in tabs.approved + tabs.wider_group if m.label}
+        labelled = {m.id for m in tabs.approved + tabs.narrower + tabs.wider_group if m.label}
         assert labelled
         assert labelled & set(clue_ids(tabs.new_clues)) == set()
 
@@ -376,20 +376,20 @@ def test_atopic_eczema_withdrawn_on_a_parent_or_child_is_left_out_and_counted(sa
 
 # ---- EXAMPLE: amyloidosis ----
 
-def test_amyloidosis_main_list_is_11_and_the_box_is_empty(saved_tabs):
+def test_amyloidosis_main_list_is_5_the_narrower_box_is_6_and_the_box_is_empty(saved_tabs):
     today, tabs = saved_tabs(AMYLOIDOSIS)
     assert len(today.approved) == 5
-    assert len(tabs.approved) == 11 and tabs.wider_group == []
-    assert sorted(m.name for m in tabs.approved if m.label) == [
+    assert len(tabs.approved) == 5 and len(tabs.narrower) == 6 and tabs.wider_group == []
+    assert sorted(m.name for m in tabs.narrower if m.label) == [
         "ACORAMIDIS", "DIFLUNISAL", "EPLONTERSEN", "EPLONTERSEN SODIUM", "VUTRISIRAN",
         "VUTRISIRAN SODIUM"]
 
 
 def test_acoramidis_names_both_children(saved_tabs):
     _, tabs = saved_tabs(AMYLOIDOSIS)
-    assert named(tabs.approved, "ACORAMIDIS").label == (
+    assert named(tabs.narrower, "ACORAMIDIS").label == (
         "Approved for hereditary ATTR amyloidosis and cardiac amyloidosis" + CHILD_WORDS)
-    assert named(tabs.approved, "DIFLUNISAL").label == (
+    assert named(tabs.narrower, "DIFLUNISAL").label == (
         "Approved for hereditary ATTR amyloidosis" + CHILD_WORDS)
 
 
@@ -401,7 +401,7 @@ def test_daratumumab_is_not_approved_for_amyloidosis(saved_tabs):
               for row in saved["data"]["drug"]["indications"]["rows"]}
     assert stages["MONDO_0019065"] == "PHASE_2" and stages["MONDO_0019438"] == "PHASE_3"
     _, tabs = saved_tabs(AMYLOIDOSIS)
-    for medicine in tabs.approved + tabs.wider_group:
+    for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
         assert "DARATUMUMAB" not in medicine.name.upper()
         assert not any("DARATUMUMAB" in form.upper() for form in medicine.forms)
 
@@ -409,7 +409,7 @@ def test_daratumumab_is_not_approved_for_amyloidosis(saved_tabs):
 def test_amyloidosis_one_medicine_leaves_new_clues(saved_tabs):
     today, tabs = saved_tabs(AMYLOIDOSIS)
     gone = set(clue_ids(today.new_clues)) - set(clue_ids(tabs.new_clues))
-    assert [m.name for m in tabs.approved if m.id in gone] == ["VUTRISIRAN SODIUM"]
+    assert [m.name for m in tabs.narrower if m.id in gone] == ["VUTRISIRAN SODIUM"]
     assert tabs.being_studied == today.being_studied
 
 
@@ -506,12 +506,12 @@ def test_approved_for_the_disease_through_a_protein_and_on_a_child_has_no_label(
     assert names(tabs.approved) == ["OWNMIL"] and tabs.approved[0].label is None
 
 
-def test_only_on_a_child_goes_in_the_main_list_with_the_child_label():
+def test_only_on_a_child_goes_in_the_narrower_box_with_the_child_label():
     tabs = sort_into_tabs(sort_paths([]), [listed("OWNMIL")], (),
                           [child(approved=[listed("CHILDMIL")])])
-    assert names(tabs.approved) == ["CHILDMIL", "OWNMIL"]  # A to Z together
-    assert tabs.approved[0].label == "Approved for narrow disease" + CHILD_WORDS
-    assert tabs.approved[0].sources == ("https://example.org/CHILDMIL",)
+    assert names(tabs.approved) == ["OWNMIL"] and names(tabs.narrower) == ["CHILDMIL"]
+    assert tabs.narrower[0].label == "Approved for narrow disease" + CHILD_WORDS
+    assert tabs.narrower[0].sources == ("https://example.org/CHILDMIL",)
     assert tabs.wider_group == []
 
 
@@ -526,14 +526,14 @@ def test_only_on_a_parent_goes_in_the_box_with_the_parent_label():
 def test_on_a_child_and_on_a_parent_the_child_wins():
     tabs = sort_into_tabs(sort_paths([]), [], (), [
         parent(approved=[listed("BOTHMIL")]), child(approved=[listed("BOTHMIL")])])
-    assert names(tabs.approved) == ["BOTHMIL"] and tabs.wider_group == []
-    assert tabs.approved[0].label == "Approved for narrow disease" + CHILD_WORDS
+    assert names(tabs.narrower) == ["BOTHMIL"] and tabs.wider_group == []
+    assert tabs.narrower[0].label == "Approved for narrow disease" + CHILD_WORDS
 
 
 def test_two_children_are_both_named_joined_with_and():
     tabs = sort_into_tabs(sort_paths([]), [], (), [
         child(NARROW, approved=[listed("TWOMIL")]), child(SLIM, approved=[listed("TWOMIL")])])
-    assert tabs.approved[0].label == (
+    assert tabs.narrower[0].label == (
         "Approved for narrow disease and slim disease" + CHILD_WORDS)
 
 
@@ -548,7 +548,7 @@ def test_two_parents_are_both_named_and_the_grammar_is_for_two():
 def test_three_children_are_named_with_a_comma_and_one_and():
     tabs = sort_into_tabs(sort_paths([]), [], (), [
         child(d, approved=[listed("MANYMIL")]) for d in (NARROW, SLIM, THIN)])
-    assert tabs.approved[0].label == (
+    assert tabs.narrower[0].label == (
         "Approved for narrow disease, slim disease and thin disease" + CHILD_WORDS)
 
 
@@ -577,8 +577,8 @@ def test_in_trials_for_this_disease_stays_in_trials_and_is_also_shown_with_its_l
     tabs = sort_into_tabs(tray, [], (), [parent(approved=[listed("TRIALMIL")]),
                                          child(approved=[listed("KIDMIL")])])
     assert tabs.being_studied == alone.being_studied and len(tabs.being_studied) == 2
-    assert names(tabs.wider_group) == ["TRIALMIL"] and names(tabs.approved) == ["KIDMIL"]
-    assert tabs.wider_group[0].label and tabs.approved[0].label
+    assert names(tabs.wider_group) == ["TRIALMIL"] and names(tabs.narrower) == ["KIDMIL"]
+    assert tabs.wider_group[0].label and tabs.narrower[0].label
 
 
 def test_withdrawn_on_a_parent_entry_is_left_out_and_counted():
@@ -691,13 +691,13 @@ def test_api_a_box_item_has_the_facts_of_an_approved_item_and_its_label(client):
 
 def test_api_amyloidosis_labels_only_on_the_six_from_children(client):
     data = clues_json(client, AMYLOIDOSIS)
-    assert len(data["approved"]) == 11 and "wider_group" not in data
-    labelled = [item for item in data["approved"] if "label" in item]
-    assert len(labelled) == 6
+    assert len(data["approved"]) == 5 and "wider_group" not in data
+    labelled = [item for item in data["approved"] + data["narrower"] if "label" in item]
+    assert len(labelled) == 6 and labelled == data["narrower"]
     acoramidis = [item for item in labelled if item["medicine"] == "Acoramidis"][0]
     assert acoramidis["label"] == (
         "Approved for hereditary ATTR amyloidosis and cardiac amyloidosis" + CHILD_WORDS)
-    assert "DARATUMUMAB" not in json.dumps(data["approved"]).upper()
+    assert "DARATUMUMAB" not in json.dumps(data["approved"] + data["narrower"]).upper()
     new = [item["medicine"].upper() for item in data["new_clues"]]
     assert "VUTRISIRAN SODIUM" not in new
 

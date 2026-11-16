@@ -1,0 +1,35 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0017148",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL494",
+              "name": "ILOPROST",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL5315118",
+                  "name": "ILOPROST TROMETHAMINE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00709956",
+                "clinicalStage": "PHASE_3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "query": "\nquery AssociatedTargets($diseaseId: String!, $size: Int!) {\n  disease(efoId: $diseaseId) {\n    id\n    associatedTargets(page: {index: 0, size: $size}) {\n      count\n      rows {\n        score\n        target { id approvedSymbol approvedName }\n      }\n    }\n  }\n}\n",
+  "variables": {
+    "diseaseId": "MONDO_0004967",
+    "size": 25
+  }
+}
