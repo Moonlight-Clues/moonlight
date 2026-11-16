@@ -93,6 +93,10 @@ def fake_post_json(body):
     if "drugAndClinicalCandidates" in query:
         assert variables["diseaseId"] == PAH_ID
         return load(GOLDEN / "disease_drugs.response.json")
+    if "parents" in query:
+        # Ticket 2.12: the family question. No parents, no children.
+        return {"data": {"disease": {
+            "id": variables["diseaseId"], "name": "", "parents": [], "children": []}}}
     # The disease record. The question must be the one that was saved.
     folder = FIXTURES / variables["diseaseId"]
     assert body == load(folder / "disease_about.request.json")
