@@ -188,7 +188,6 @@ def test_facts_are_exactly_what_the_ticket_lists(facts, disease):
         ],
         "disease": {
             "name": "pulmonary arterial hypertension",
-            "description": disease.description,
         },
         "link_to_disease": "no link to this disease in the database",
     }
@@ -655,13 +654,12 @@ def test_35_the_other_names_are_never_shown_to_gemini(sevoflurane, disease):
 
 # ---- EXAMPLE 3: the disease description ----
 
-def test_35_3_with_a_description_the_facts_hold_it(sevoflurane):
+def test_35_3_with_a_description_the_facts_still_hold_only_the_name(sevoflurane):
     described = Disease(id=PAH.id, name=PAH.name,
                         description="High blood pressure in the arteries of the lungs.")
     facts = explain.facts_for(sevoflurane, described)
     assert facts["disease"] == {
         "name": "pulmonary arterial hypertension",
-        "description": "High blood pressure in the arteries of the lungs.",
     }
 
 

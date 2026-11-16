@@ -1105,7 +1105,8 @@ def test_53_example_2_new_clues_are_the_same_16_and_being_studied_the_same_2(
 def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
     data = clues_json(client, *FIVE)
     assert list(data) == [
-        "disease", "rule_text", "approved", "being_studied", "new_clues", "left_out",
+        "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
+        "left_out",
     ]
     assert data["rule_text"] == RULE_TEXT
 

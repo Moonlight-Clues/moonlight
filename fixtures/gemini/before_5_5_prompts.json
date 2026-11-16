@@ -1,0 +1,52 @@
+{
+  "_what_this_is": "The facts and the prompt explain.py made for Sevoflurane and PAH before ticket 5.5 (made from the code at commit 6a8393b on 2026-11-16). Tests use it to show that an explanation saved under the old prompt is never served.",
+  "with_description": {
+    "facts": {
+      "medicine": {
+        "name": "Sevoflurane",
+        "forms": [
+          "Sevoflurane"
+        ],
+        "approved_for_another_disease": "yes"
+      },
+      "proteins": [
+        {
+          "name": "KCNK3",
+          "link_score": "0.79",
+          "link_score_as_points": "79 points out of 100",
+          "medicine_turns_it": "up"
+        }
+      ],
+      "disease": {
+        "name": "pulmonary arterial hypertension",
+        "description": "Pulmonary arterial hypertension (PAH) is a group of diseases characterized by mean pulmonary artery pressure >20 mmHg and elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, have overt features of venous/capillary involvement (pulmonary veno-occlusive disease, PVOD/pulmonary capillary hemangiomatosis, PCH), induced by drug or toxin (drug-or toxin-induced PAH), or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease)."
+      },
+      "link_to_disease": "no link to this disease in the database"
+    },
+    "prompt": "You explain one drug-repurposing clue for a learning website.\nWrite for a five-year-old who can read.\n\nRULES\n- Use ONLY the facts in FACTS. Add nothing else: no other medicine, disease, body part name, number or name.\n- Every number you write must be written in FACTS exactly that way.\n- A word with a capital letter may only be the first word of a sentence or a name copied from FACTS.\n- No sentence longer than 20 words. Shorter is better.\n- Explain every big word in a short sentence of its own.\n- If you write \"protein\", also say a protein is a \"tiny machine\".\n- Say up or down like a volume knob. Never use these words: inhibitor, antagonist, agonist, blocker, opener, modulator, activator, binding agent.\n- Never say where or how to get a medicine. Never use these words, or words that start with them: buy, shop, pharmacy, chemist, order, online, price, dose, prescription.\n- Never say or hint that the medicine will help. Never use these words, or words that start with them: cure, heal, treat, will work, works for, should take, safe, best, recommended, more likely.\n- Do not write a warning or an ending. The website adds its own.\n- Plain sentences in one paragraph. No lists, no headings, no stars.\n- Say what the disease is in one or two short sentences, using only the description in FACTS. Use small everyday words. Do not copy its long or hard words, and do not say anything scary.\n\nPATTERN (written by a child for a different clue; copy its style, not its facts)\nSevoflurane is a medicine. Doctors already use it for something else. It grabs a protein called KCNK3. A protein is a tiny machine in your body. Sevoflurane turns KCNK3 up, like a volume knob. KCNK3 is linked to pulmonary arterial hypertension. That is high blood pressure in the arteries of the lungs. An artery is like a pipe for blood. The link score is 0.79. That is like 79 points out of 100. Sevoflurane has no link to this disease in the database. The database is a huge web with lots of information.\n\nFACTS\n{\n  \"medicine\": {\n    \"name\": \"Sevoflurane\",\n    \"forms\": [\n      \"Sevoflurane\"\n    ],\n    \"approved_for_another_disease\": \"yes\"\n  },\n  \"proteins\": [\n    {\n      \"name\": \"KCNK3\",\n      \"link_score\": \"0.79\",\n      \"link_score_as_points\": \"79 points out of 100\",\n      \"medicine_turns_it\": \"up\"\n    }\n  ],\n  \"disease\": {\n    \"name\": \"pulmonary arterial hypertension\",\n    \"description\": \"Pulmonary arterial hypertension (PAH) is a group of diseases characterized by mean pulmonary artery pressure >20 mmHg and elevated pulmonary arterial resistance leading to right heart failure. PAH is progressive and potentially fatal. PAH may be idiopathic and/ or familial, have overt features of venous/capillary involvement (pulmonary veno-occlusive disease, PVOD/pulmonary capillary hemangiomatosis, PCH), induced by drug or toxin (drug-or toxin-induced PAH), or associated with other diseases like congenital heart disease, connective tissue disease, HIV, schistosomiasis, portal hypertension (PAH associated with other disease).\"\n  },\n  \"link_to_disease\": \"no link to this disease in the database\"\n}"
+  },
+  "without_description": {
+    "facts": {
+      "medicine": {
+        "name": "Sevoflurane",
+        "forms": [
+          "Sevoflurane"
+        ],
+        "approved_for_another_disease": "yes"
+      },
+      "proteins": [
+        {
+          "name": "KCNK3",
+          "link_score": "0.79",
+          "link_score_as_points": "79 points out of 100",
+          "medicine_turns_it": "up"
+        }
+      ],
+      "disease": {
+        "name": "pulmonary arterial hypertension"
+      },
+      "link_to_disease": "no link to this disease in the database"
+    },
+    "prompt": "You explain one drug-repurposing clue for a learning website.\nWrite for a five-year-old who can read.\n\nRULES\n- Use ONLY the facts in FACTS. Add nothing else: no other medicine, disease, body part name, number or name.\n- Every number you write must be written in FACTS exactly that way.\n- A word with a capital letter may only be the first word of a sentence or a name copied from FACTS.\n- No sentence longer than 20 words. Shorter is better.\n- Explain every big word in a short sentence of its own.\n- If you write \"protein\", also say a protein is a \"tiny machine\".\n- Say up or down like a volume knob. Never use these words: inhibitor, antagonist, agonist, blocker, opener, modulator, activator, binding agent.\n- Never say where or how to get a medicine. Never use these words, or words that start with them: buy, shop, pharmacy, chemist, order, online, price, dose, prescription.\n- Never say or hint that the medicine will help. Never use these words, or words that start with them: cure, heal, treat, will work, works for, should take, safe, best, recommended, more likely.\n- Do not write a warning or an ending. The website adds its own.\n- Plain sentences in one paragraph. No lists, no headings, no stars.\n- FACTS has no description of the disease, so do not describe it.\n\nPATTERN (written by a child for a different clue; copy its style, not its facts)\nSevoflurane is a medicine. Doctors already use it for something else. It grabs a protein called KCNK3. A protein is a tiny machine in your body. Sevoflurane turns KCNK3 up, like a volume knob. KCNK3 is linked to pulmonary arterial hypertension. That is high blood pressure in the arteries of the lungs. An artery is like a pipe for blood. The link score is 0.79. That is like 79 points out of 100. Sevoflurane has no link to this disease in the database. The database is a huge web with lots of information.\n\nFACTS\n{\n  \"medicine\": {\n    \"name\": \"Sevoflurane\",\n    \"forms\": [\n      \"Sevoflurane\"\n    ],\n    \"approved_for_another_disease\": \"yes\"\n  },\n  \"proteins\": [\n    {\n      \"name\": \"KCNK3\",\n      \"link_score\": \"0.79\",\n      \"link_score_as_points\": \"79 points out of 100\",\n      \"medicine_turns_it\": \"up\"\n    }\n  ],\n  \"disease\": {\n    \"name\": \"pulmonary arterial hypertension\"\n  },\n  \"link_to_disease\": \"no link to this disease in the database\"\n}"
+  }
+}
