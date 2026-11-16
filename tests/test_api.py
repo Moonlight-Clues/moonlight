@@ -411,8 +411,33 @@ def test_the_page_has_the_rule_text_slot_and_sidhas_other_slots(client):
         assert f'data-slot="{slot}"' in page, slot
 
 
+# Kashish's decision, 2026-11-16 (ticket 8.3, asked under STOP). The page
+# loads one thing from outside: Umami's script, in exactly this tag. The two
+# "nothing from outside" tests lift this one tag out and then check
+# everything else as before. Any other outside address still fails them.
+UMAMI_TAG = (
+    '<script defer crossorigin="anonymous" src="https://cloud.umami.is/script.js"'
+    ' data-website-id="dad3a425-ea8e-4028-9768-88a183fc9140"'
+    ' data-domains="moonlightclues.com,www.moonlightclues.com,'
+    'moonlight-1038733794937.asia-south1.run.app"'
+    ' data-exclude-search="true" data-exclude-hash="true"'
+    ' data-do-not-track="true" data-before-send="moonlightVisit"></script>'
+)
+
+
+def without_the_umami_script(page):
+    assert page.count(UMAMI_TAG) == 1
+    return page.replace(UMAMI_TAG, "")
+
+
+def words_people_can_see(page):
+    """The page without its styles, scripts, notes and tags."""
+    page = re.sub(r"(?s)<(script|style)\b.*?</\1>|<!--.*?-->", " ", page)
+    return re.sub(r"<[^>]+>", " ", page)
+
+
 def test_the_page_has_no_outside_link(client):
-    page = client.get("/").text
+    page = without_the_umami_script(client.get("/").text)
     assert "http" not in page.lower()  # no font, script, stylesheet or any other outside address
     assert "//" not in re.sub(r"(?s)<script>.*?</script>", "", page)  # no "//host" address either
     assert "@import" not in page
@@ -1403,7 +1428,7 @@ def test_54_the_sentence_about_the_data_release_is_not_copied(client):
 # ---- Example 2 ----
 
 def test_54_example_2_no_http_link_to_any_outside_font_script_or_stylesheet(client):
-    page = client.get("/").text
+    page = without_the_umami_script(client.get("/").text)
     assert "http" not in page.lower()
     assert "<link" not in page.lower()
     assert "@import" not in page
@@ -1414,9 +1439,13 @@ def test_54_example_2_no_http_link_to_any_outside_font_script_or_stylesheet(clie
     assert all(address.startswith("data:") for address in addresses), addresses
 
 
-def test_54_no_visitor_counter_on_the_page(client):
-    page = client.get("/").text.lower()
-    assert "visitor" not in page and "counter" not in page.replace("counter-reset", "")
+# Kashish changed her mind on 2026-11-16 (ticket 8.3). This test used to be
+# test_54_no_visitor_counter_on_the_page.
+def test_54_the_only_visit_counter_is_umami(client):
+    page = without_the_umami_script(client.get("/").text)
+    seen = words_people_can_see(page).lower()
+    assert "visitor" not in seen and "counter" not in seen
+    assert seen.count("counts visits with umami") == 1
 
 
 # ---- Example 3 ----
