@@ -55,3 +55,5 @@ Format: date, the decision, why.
 - 2026-11-16: An approved medicine whose only proof is Japan's general list stays on the page, with a line saying Moonlight could not find the exact record.
 - 2026-11-16: If a doctor confirms a card looks wrong, the card stays and gets a bright red warning. The corrections are written in a file anyone can read, and no doctor is named.
 - 2026-11-16: A trial report does not count as proof of approval. The Japan line shows when Japan's general list is the only approval proof a card has.
+- 2026-11-16: The front page speaks to both doctors and families. Its heading is "Disease → protein → medicine. One search."
+- 2026-11-16: The footer says "Found something wrong or have any feedback? Contact hello@moonlightclues.com".

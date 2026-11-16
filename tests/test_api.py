@@ -1338,7 +1338,7 @@ GUIDE_HEADINGS = [
     "Three steps",
     "The three tabs",
     "How to read a card",
-    "What Moonlight cannot tell you",
+    "For everyone: what Moonlight can and cannot tell you",
     "Good ways to use it",
     "Where the facts come from",
 ]
@@ -1426,7 +1426,6 @@ def test_54_example_3_the_page_holds_the_three_links_to_the_guide_and_the_footer
     assert links_to_the_guide(page) == [
         ("guide", "How to use Moonlight."),
         ("guide-card", "How to read a card"),
-        ("guide", "How to use Moonlight"),
     ]
     assert FOOTER_LINE in page
 
@@ -1453,8 +1452,10 @@ def test_54_the_footer_has_the_guide_link_the_handwritten_line_and_its_note(clie
     page = client.get("/").text
     footer = page[page.index("<footer"):page.index("</footer>")]
     assert "About Us" not in page
-    assert re.search(r'<a [^>]*data-guide[^>]*>How to use Moonlight</a>', footer)
-    assert footer.index("How to use Moonlight") < footer.index(FOOTER_LINE)
+    assert not re.search(r'<a [^>]*data-guide[^>]*>', footer)
+    assert ("Found something wrong or have any feedback? Contact "
+            '<a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a>') in footer
+    assert footer.index("Found something wrong") < footer.index(FOOTER_LINE)
     assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)  # the small heart
     assert FOOTER_NOTE in footer
 
