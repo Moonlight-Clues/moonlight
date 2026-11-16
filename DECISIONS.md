@@ -57,3 +57,4 @@ Format: date, the decision, why.
 - 2026-11-16: A trial report does not count as proof of approval. The Japan line shows when Japan's general list is the only approval proof a card has.
 - 2026-11-16: The front page speaks to both doctors and families. Its heading is "Disease → protein → medicine. One search."
 - 2026-11-16: The footer says "Found something wrong or have any feedback? Contact hello@moonlightclues.com".
+- 2026-11-16: The guide has an invitation for doctors, a list for everyone and a list for doctors, both called "what Moonlight can and cannot tell you".

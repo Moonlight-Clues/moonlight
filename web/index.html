@@ -229,6 +229,10 @@ div.explanation{padding:12px 13px}
 
 /* for everyone: what Moonlight can and cannot tell you */
 .pair+.limits{margin-top:18px}
+/* for doctors: the same list, then one sentence set apart */
+.guide h2+.limits{margin-top:12px}
+.not-reference{margin-top:18px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);font-size:15px;font-weight:700;color:var(--navy)}
+.idea .contact a{color:var(--cream)}
 .limits{display:grid;border-top:1px solid var(--line)}
 .limits li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14px}
 .limits li::before{content:"";width:9px;height:2px;background:var(--neutral);margin-top:11px;border-radius:2px}
@@ -396,6 +400,12 @@ div.explanation{padding:12px 13px}
       <a class="ghost-btn" href="#home" data-guide-close>Back to search</a>
     </section>
 
+    <section class="idea" aria-labelledby="guide-invite-title">
+      <h2 id="guide-invite-title">Are you a doctor, pharmacist or researcher?</h2>
+      <p>Moonlight gets better when people who know the medicines test it. Search a condition you know well. Tell us what is missing, what is wrong, and what you would not want a patient to see.</p>
+      <p class="contact"><a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></p>
+    </section>
+
     <section class="idea" aria-labelledby="guide-idea-title">
       <h2 id="guide-idea-title">A medicine made for one disease may act on a protein linked to another.</h2>
       <div class="chain">
@@ -487,6 +497,20 @@ div.explanation{padding:12px 13px}
         <li><div><b>What is approved where you live.</b> <span>The database records approval in at least one country.</span></div></li>
         <li><div><b>That the record is complete or current.</b> <span>Public databases have gaps and mistakes, and they change.</span></div></li>
       </ul>
+    </section>
+
+    <section aria-labelledby="guide-doctors-title">
+      <h2 id="guide-doctors-title">For doctors: what Moonlight can and cannot tell you</h2>
+      <ul class="limits">
+        <li><div><b>Where the facts come from.</b> <span>The Open Targets Platform, a free and open research database.</span></div></li>
+        <li><div><b>What “Approved” means here.</b> <span>Approved for this disease in at least one country, according to the database. It says nothing about how well a medicine works or what guidelines recommend.</span></div></li>
+        <li><div><b>Wider and narrower diseases.</b> <span>Approvals the database files one step above or below the disease are shown with a label. Wider-group approvals sit in a folded box.</span></div></li>
+        <li><div><b>Known gaps.</b> <span>The database can be behind real life. If a medicine you know is approved is missing, it may be withdrawn in some country, filed further away in the database, or not recorded yet. Please tell us.</span></div></li>
+        <li><div><b>Weak proof is marked.</b> <span>Some approvals rest only on Japan’s general list and say so. A card a doctor has confirmed as a mistake carries a red warning.</span></div></li>
+        <li><div><b>How new clues are ranked.</b> <span>By the strength of the link between the disease and each protein, across the 25 most-linked proteins. Parts of one protein machine count once, and different machines add up. Ties go to more reports, then A to Z. Each card says whether the medicine turns the protein up or down, or both, or that the data does not say.</span></div></li>
+        <li><div><b>Where AI is used.</b> <span>Google’s Gemini guesses which disease you mean and writes the clue explanations from records it is handed. It never adds a medicine, a protein or a link. The disease description is Open Targets’ own words.</span></div></li>
+      </ul>
+      <p class="not-reference">Moonlight is not a prescribing reference.</p>
     </section>
 
     <section aria-labelledby="guide-use-title">
