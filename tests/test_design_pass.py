@@ -5,7 +5,9 @@ Decisions, 16 Nov (Sidha is the designer; Kashish approved). Layout and words on
 2. "Made with care by a family in Kochi" and its heart are removed, and the
    handwriting font (Caveat) with them. The contact line and the last footer
    line stay.
-3. Everything on the page is centred.
+3. The page has equal space on both sides: on a wide screen the content
+   column sits in the middle. Text is aligned as before. (The first build
+   centred every line of text. Kashish corrected that on 16 Nov.)
 
 The page is read from GET /. No network.
 """
@@ -121,22 +123,40 @@ def test_outside_the_guide_the_page_still_names_no_medicine(page):
         assert name.upper() not in outside, name
 
 
-# ---- Decision 3: everything is centred ----
-
-def test_the_whole_page_is_centred_and_nothing_is_pushed_left_or_right(page):
-    styles = styles_of(page)
-    assert re.search(r"body\{[^}]*text-align:center", styles)
-    assert "text-align:left" not in styles
-    assert "text-align:right" not in styles
-    # The script and the templates set no side of their own either.
-    assert not re.search(r"text-align\s*:\s*(left|right)", page)
-    assert not re.search(r"textAlign", page)
-
+# ---- Decision 3, corrected by Kashish on 16 Nov: equal space on both sides ----
+# The first build centred every line of text. That was a misunderstanding.
+# Text is aligned as on main. Only the content column moves to the middle.
 
 def test_the_columns_sit_in_the_middle_of_the_screen(page):
     """The search, the results and the guide are narrower than a wide screen.
-    Each one must sit in the middle, not against the left edge."""
+    Each one must sit in the middle, with the same space on its left and right."""
     styles = styles_of(page)
     for name in (".search-area", ".results", ".guide"):
         rule = re.search(r"(?m)^%s\{[^}]*\}" % re.escape(name), styles).group(0)
+        assert "max-width:760px" in rule, rule
         assert "margin-inline:auto" in rule, rule
+
+
+def test_on_a_phone_the_space_is_16px_on_each_side_as_before(page):
+    assert ".wrap{width:min(100% - 32px,1060px);margin-inline:auto}" in styles_of(page)
+
+
+def test_text_is_not_centred_it_is_aligned_as_on_main(page):
+    styles = styles_of(page)
+    body = re.search(r"(?m)^body\{[^}]*\}", styles).group(0)
+    assert "text-align" not in body
+    # The rules the first build changed, word for word as on main.
+    for rule in (
+        ".brandline{display:flex;align-items:center;gap:10px}",
+        ".tagline{margin:8px 0 0;color:#C4D2D9;font-size:13px;max-width:640px}",
+        ".match-list button{width:100%;text-align:left;",
+        ".chips{display:flex;flex-wrap:wrap;gap:7px}",
+        ".card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}",
+        ".card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}",
+        ".reports{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;flex:none}",
+        ".protein-row{display:flex;align-items:center;justify-content:space-between;gap:10px;",
+        ".card-foot{display:flex;justify-content:space-between;align-items:center;",
+        ".card-help{font-size:12px;text-align:right;margin:8px 2px 0}",
+    ):
+        assert rule in styles, rule
+    assert ".safety-inner{justify-content:center}" not in styles

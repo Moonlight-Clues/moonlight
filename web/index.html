@@ -16,7 +16,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-align:center}
+body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 button,input{font:inherit}button{cursor:pointer}a{color:var(--teal);text-underline-offset:3px}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 .wordmark,h1,h2,h3,.display{font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em}
@@ -25,14 +25,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 
 /* header and the pinned safety line */
 .site-header{background:var(--navy);color:#F5F0E8;padding:20px 0}
-.brandline{display:flex;align-items:center;justify-content:center;gap:10px}
+.brandline{display:flex;align-items:center;gap:10px}
 .wordmark{font-size:clamp(27px,5.5vw,35px);line-height:1.12;font-weight:700;color:#F5F0E8}
 .brand-dot{background:var(--gold);width:7px;height:7px;border-radius:100%;flex:none}
-.tagline{margin:8px auto 0;color:#C4D2D9;font-size:13px;max-width:640px}
+.tagline{margin:8px 0 0;color:#C4D2D9;font-size:13px;max-width:640px}
 .safety{position:sticky;top:0;z-index:10;background:#203448;color:white;border-bottom:1px solid #5F9E9B}
 .safety-inner{display:flex;align-items:flex-start;gap:10px;padding:11px 0;font-size:12px;line-height:1.45;color:#F4F0E9}
 .safety svg{flex:none;margin-top:1px}
-.safety-inner{justify-content:center}
 
 /* type */
 .main{padding:28px 0 58px;min-height:60vh}
@@ -42,18 +41,18 @@ h1{font-size:clamp(29px,6vw,43px);line-height:1.15;margin:9px 0 10px;font-weight
 h2{font-size:clamp(23px,4vw,29px);line-height:1.2;margin:0 0 11px}
 h3{font-size:22px;line-height:1.2;margin:0}
 small,.fine{font-size:12px}.muted{color:var(--muted)}
-.intro{max-width:760px;margin-inline:auto;margin-bottom:24px}.intro h1{max-width:650px;margin-inline:auto}.intro p{color:var(--muted);margin:0}
+.intro{max-width:760px;margin-bottom:24px}.intro h1{max-width:650px}.intro p{color:var(--muted);margin:0}
 
 /* the disease in Open Targets' own words, under its name (ticket 5.5).
    A long description shows its first --about-lines lines, and the names their
    first --names-lines lines, until "Show more" is tapped. The words themselves
    are never changed or shortened: the rest is only folded away. */
-.about{--about-lines:4;--names-lines:2;max-width:68ch;margin:0 auto 16px}
+.about{--about-lines:4;--names-lines:2;max-width:68ch;margin:0 0 16px}
 .also-called{font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 10px;overflow-wrap:anywhere}
 .about-text{font-size:14px;line-height:1.6;margin:0;overflow-wrap:anywhere}
 .about:not(.open) .about-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--about-lines);line-clamp:var(--about-lines);overflow:hidden}
 .about.described:not(.open) .also-called{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--names-lines);line-clamp:var(--names-lines);overflow:hidden}
-.about-more{display:block;border:0;background:transparent;padding:0;margin:4px auto 0;min-height:36px;color:#327F80;font-size:13px;font-weight:750}
+.about-more{display:block;border:0;background:transparent;padding:0;margin:4px 0 0;min-height:36px;color:#327F80;font-size:13px;font-weight:750}
 .about-more:hover{text-decoration:underline;text-underline-offset:3px}
 .about-source{margin:6px 0 0}
 
@@ -65,15 +64,15 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .search-box input:focus-visible{outline:none}.search-box:focus-within{outline:2px solid var(--teal);outline-offset:2px}
 .btn{border:0;border-radius:9px;background:#287D7C;color:#fff;padding:11px 14px;font-weight:650;font-size:13px;min-height:42px}
 .btn:hover{background:#2C7977}
-.match-list{margin:8px auto 0;padding:5px;list-style:none;border:1px solid var(--line);background:var(--paper);border-radius:12px;max-width:720px}
+.match-list{margin:8px 0 0;padding:5px;list-style:none;border:1px solid var(--line);background:var(--paper);border-radius:12px;max-width:720px}
 .match-list li+li{border-top:1px solid var(--line)}
-.match-list button{width:100%;text-align:center;border:0;background:transparent;padding:11px;border-radius:8px;color:var(--navy)}
+.match-list button{width:100%;text-align:left;border:0;background:transparent;padding:11px;border-radius:8px;color:var(--navy)}
 .match-list button:hover,.match-list button:focus-visible{background:var(--mist)}
 .match-list .secondary{display:block;font-size:11px;color:var(--muted)}
 .did-you-mean{margin-top:10px}.did-you-mean .chip-label{margin:0 0 9px;font-size:13px;font-weight:700;color:var(--navy)}
-.chip .secondary{display:block;font-size:11px;color:var(--muted)}.did-you-mean .chip{text-align:center;border-radius:14px}
+.chip .secondary{display:block;font-size:11px;color:var(--muted)}.did-you-mean .chip{text-align:left;border-radius:14px}
 .chip-label{font-size:12px;color:var(--muted);margin:16px 0 9px}
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{border:1px solid #C7D7D9;border-radius:999px;padding:8px 12px;background:var(--paper);font-size:12px;color:var(--navy);min-height:36px}
 .chip:hover,.chip:focus-visible{background:var(--mist);border-color:var(--teal)}
 .selection-note{min-height:19px;font-size:12px;color:var(--muted);margin-top:10px}
@@ -94,13 +93,13 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .where-label{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
 .proof-note{font-size:13px;line-height:1.5;color:var(--navy);background:var(--slate);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
 /* Bright red on purpose: it is outside the page's palette so it cannot be missed. The sign and the words carry the warning too. */
-.wrong-warning{display:flex;align-items:flex-start;justify-content:center;gap:9px;font-size:14px;line-height:1.45;font-weight:750;color:#D40000;background:#FFF1F1;border:2px solid #D40000;border-radius:9px;padding:10px 12px;margin:12px 0 0}
+.wrong-warning{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.45;font-weight:750;color:#D40000;background:#FFF1F1;border:2px solid #D40000;border-radius:9px;padding:10px 12px;margin:12px 0 0}
 .wrong-warning[hidden]{display:none}
 .wrong-warning svg{flex:none;margin-top:1px}
 .wider-box{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:17px 0 0;padding:0 14px}
 .wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
 .wider-box[open]{padding-bottom:14px}
-.section{margin-top:46px}.section-head{display:flex;align-items:center;justify-content:center;gap:12px}
+.section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
 .rule{background:var(--mist);border-left:3px solid var(--teal);padding:14px 15px;border-radius:0 11px 11px 0;font-size:13px;line-height:1.55;margin:6px 0 17px}
 .filter-label{font-size:12px;color:var(--muted);margin:0 0 9px}
@@ -112,22 +111,22 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 
 /* cards */
 .card{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:var(--radius);padding:18px 16px 17px;box-shadow:0 4px 13px #101F3107;min-width:0}
-.card-top{display:flex;flex-direction:column;align-items:center;gap:12px}
-.card-title{display:flex;flex-direction:column;align-items:center;gap:11px;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}
 .rank{flex:none;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
 .card h3{overflow-wrap:anywhere}
 .forms{font-size:12px;color:var(--muted);margin:8px 0 0}
-.reports{font-size:11px;color:var(--muted);white-space:nowrap;text-align:center;flex:none}
+.reports{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;flex:none}
 .card-subhead{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:750;margin:18px 0 8px}
-.path{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0 12px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 12px}
 .path-node{background:var(--mist);border-radius:7px;padding:6px 9px;font-size:11px;overflow-wrap:anywhere}
 .path-node.protein-node{font-weight:700;color:#327F80}
 .path-arrow{color:var(--teal);font-size:16px;line-height:1}
 .protein-list{display:grid;gap:8px;margin:13px 0}
-.protein-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;border-bottom:1px solid var(--line);padding:0 0 8px}
+.protein-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:0 0 8px}
 .protein-row:last-child{border-bottom:0;padding-bottom:0}
 .protein-id{font-weight:700;font-size:13px}
-.protein-facts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.protein-facts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .score{font-weight:750;color:var(--navy);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
 .machine-note{font-size:12px;background:var(--slate);border-radius:6px;padding:8px 10px;margin:4px 0 12px;color:var(--neutral)}
 .direction{display:inline-flex;align-items:center;gap:5px;border:1px solid #C8CFD6;background:var(--neutral-bg);color:var(--neutral);border-radius:6px;padding:4px 8px;font-size:12px;font-weight:650;white-space:nowrap}
@@ -149,7 +148,7 @@ div.explanation{padding:12px 13px}
 .ghost-btn{display:inline-block;text-decoration:none;color:#287D7C;border:1px solid #A9CACB;background:white;padding:9px 12px;border-radius:9px;font-size:12px;font-weight:700}
 .ghost-btn:hover{background:var(--mist)}
 .ending{background:var(--cream);padding:12px;border-radius:9px;font-size:12px;line-height:1.6;margin:13px 0;border:1px solid #EAE4D8}
-.card-foot{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}
 .source-link{font-size:12px;font-weight:700}
 .phase{display:inline-flex;border-radius:6px;border:1px solid #CBD3DB;background:var(--neutral-bg);font-size:12px;padding:4px 8px;color:var(--neutral);font-weight:700}
 
@@ -161,21 +160,21 @@ div.explanation{padding:12px 13px}
 .count{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 8px;text-align:center}
 .count strong{display:block;font-size:26px;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.2}
 .count span{display:block;font-size:11px;color:var(--muted);margin-top:5px}
-.page-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:28px}
+.page-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
 
 /* states */
 .state-box{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:17px}
-.loading-line{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700}
+.loading-line{display:flex;align-items:center;gap:10px;font-weight:700}
 .spinner{width:17px;height:17px;border:2px solid var(--line);border-top-color:var(--teal);border-radius:50%;animation:spin .8s linear infinite}
 .skeleton{border-radius:5px;background:linear-gradient(90deg,#E8EEEC 20%,#F5F8F7 50%,#E8EEEC 80%);background-size:200% 100%;animation:shimmer 2s linear infinite;height:12px;margin:10px 0}
-.skeleton.short{width:58%;margin-inline:auto}.skeleton.medium{width:80%;margin-inline:auto}
+.skeleton.short{width:58%}.skeleton.medium{width:80%}
 .empty-box h3{font-size:19px}.empty-box p{font-size:13px;color:var(--muted);margin:8px 0 0}
 
 /* the guide, "How to use Moonlight". Hidden until one of its links is tapped.
    It uses the page's own card, tab, rank and button styles. Only what is new is here. */
 .guide-line{font-size:12px;color:var(--muted);margin:10px 0 0}
 .intro h1{text-wrap:balance}
-.card-help{font-size:12px;text-align:center;margin:8px 2px 0}
+.card-help{font-size:12px;text-align:right;margin:8px 2px 0}
 .guide{max-width:760px;margin-inline:auto;display:grid;gap:56px}
 .guide,.guide>section{scroll-margin-top:70px;min-width:0}
 :where(.guide) :where(p,ul,ol,dl,dd){margin:0}
@@ -183,13 +182,13 @@ div.explanation{padding:12px 13px}
 .guide :where(h1,h2,h3){text-wrap:balance}
 .guide h2{color:#327F80;margin-bottom:6px}
 .guide h3{font-size:17px;line-height:1.25;letter-spacing:-.02em}
-.guide .intro{margin-bottom:0}.guide .intro p{max-width:62ch;margin-inline:auto}.guide .intro .ghost-btn{margin-top:18px}
-.guide-sub{color:var(--muted);font-size:14px;max-width:62ch;margin-inline:auto;margin-bottom:18px}
+.guide .intro{margin-bottom:0}.guide .intro p{max-width:62ch}.guide .intro .ghost-btn{margin-top:18px}
+.guide-sub{color:var(--muted);font-size:14px;max-width:62ch;margin-bottom:18px}
 
 /* the idea: medicine, protein, disease */
 .idea{background:var(--navy);color:var(--cream);border-radius:18px;padding:26px 20px;display:grid;gap:22px}
-.guide .idea h2{color:var(--cream);margin:0 auto;max-width:22ch}
-.idea p{color:#C4D2D9;font-size:14px;max-width:60ch;margin-inline:auto}
+.guide .idea h2{color:var(--cream);margin:0;max-width:22ch}
+.idea p{color:#C4D2D9;font-size:14px;max-width:60ch}
 .chain{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:8px;text-align:center}
 .chain .shape{width:54px;height:54px;margin:0 auto 12px}
 .chain .circle{border-radius:50%;background:var(--gold)}
@@ -201,8 +200,8 @@ div.explanation{padding:12px 13px}
 
 /* three steps */
 .steps{display:grid;gap:12px}
-.steps li{display:grid;grid-template-columns:1fr;gap:14px;justify-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-.steps .rank{justify-self:center}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.steps .rank{justify-self:start}
 .steps p{font-size:14px;color:var(--muted);margin-top:3px}
 
 /* a picture of the three tabs, and what each one holds */
@@ -215,17 +214,17 @@ div.explanation{padding:12px 13px}
 
 /* the example card, with its lettered key */
 .guide .card h3{font-size:22px;letter-spacing:-.035em}
-.guide .reports,.guide .card-subhead,.guide .slot-label{display:flex;align-items:center;justify-content:center;gap:7px}
+.guide .reports,.guide .card-subhead,.guide .slot-label{display:flex;align-items:center;gap:7px}
 .guide .explanation{min-height:0;font-size:12px;line-height:1.6}
-.guide .ending{display:grid;grid-template-columns:1fr;justify-items:center;gap:9px}
-.guide .card-foot{justify-content:center;gap:7px}
+.guide .ending{display:grid;grid-template-columns:auto 1fr;gap:9px}
+.guide .card-foot{justify-content:flex-start;gap:7px}
 .guide .source-link{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
 .k{flex:none;width:19px;height:19px;border-radius:50%;background:var(--gold);color:var(--navy);font:750 11px/19px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:center;letter-spacing:0;text-transform:none;text-decoration:none;display:inline-block}
 .key{display:grid;margin-top:16px;border-top:1px solid var(--line)}
-.key div{display:grid;grid-template-columns:1fr;justify-items:center;gap:6px;padding:13px 2px;border-bottom:1px solid var(--line)}
-.key dt{font-weight:700;font-size:14px}
-.key dd{font-size:14px;color:var(--muted)}
-.key .k{margin-top:2px}
+.key div{display:grid;grid-template-columns:19px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.key dt{grid-column:2;font-weight:700;font-size:14px}
+.key dd{grid-column:2;font-size:14px;color:var(--muted)}
+.key .k{grid-row:1 / span 2;margin-top:2px}
 
 /* for everyone: what Moonlight can and cannot tell you */
 .pair+.limits{margin-top:18px}
@@ -234,9 +233,8 @@ div.explanation{padding:12px 13px}
 .not-reference{margin-top:18px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);font-size:15px;font-weight:700;color:var(--navy)}
 .idea .contact a{color:var(--cream)}
 .limits{display:grid;border-top:1px solid var(--line)}
-.limits li{padding:13px 2px;border-bottom:1px solid var(--line);font-size:14px}
-.limits li>div{display:inline}
-.limits li::before{content:"";display:inline-block;vertical-align:middle;width:9px;height:2px;background:var(--neutral);margin-right:11px;border-radius:2px}
+.limits li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14px}
+.limits li::before{content:"";width:9px;height:2px;background:var(--neutral);margin-top:11px;border-radius:2px}
 .limits span{color:var(--muted)}
 
 /* use it to, do not use it to */
@@ -245,22 +243,23 @@ div.explanation{padding:12px 13px}
 .box.do{background:var(--mist)}
 .box.dont{background:var(--paper);border:1px solid var(--line)}
 .box ul{display:grid;gap:8px;font-size:14px}
-.box li::before{display:inline-block;vertical-align:middle;margin-right:10px}
-.box.do li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal)}
-.box.dont li::before{content:"";width:9px;height:2px;background:var(--navy)}
+.box li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.box.do li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:8px}
+.box.dont li::before{content:"";width:9px;height:2px;background:var(--navy);margin-top:11px}
 
 .facts{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;display:grid;gap:14px}
 .facts p{font-size:14px;color:var(--muted)}
 .facts b{color:var(--navy)}
 
 .site-footer{border-top:1px solid var(--line);padding:24px 0 36px}
-.footer-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
 .contact{color:var(--muted)}.contact a{user-select:text;-webkit-user-select:text}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
 @media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.tabs{gap:6px;padding:5px}.tab{font-size:14px;padding:10px 8px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}.guide{gap:68px}.idea{padding:34px}.tab-notes{grid-template-columns:repeat(3,1fr)}.pair{grid-template-columns:1fr 1fr}.chain .shape{width:66px;height:66px}}
 @media(max-width:540px){.card-top{gap:8px}.reports{white-space:normal}.safety-inner{padding:9px 0;font-size:11px}.site-header{padding:16px 0}.page-actions{flex-direction:column}.page-actions button{text-align:center}.chain{grid-template-columns:1fr;gap:6px}.chain .arrow{padding:0;transform:rotate(90deg);justify-self:center}}
+
 </style>
 </head>
 <body>
