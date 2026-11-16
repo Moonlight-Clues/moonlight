@@ -60,3 +60,4 @@ Format: date, the decision, why.
 - 2026-11-16: The footer says "Found something wrong or have any feedback? Contact hello@moonlightclues.com".
 - 2026-11-16: The guide has an invitation for doctors, a list for everyone and a list for doctors, both called "what Moonlight can and cannot tell you".
 - 2026-11-16: "Old medicines. New questions." and "Made with care by a family in Kochi" are removed from the page. The page has equal space on both sides. This is Mumma's design decision.
+- 2026-11-16: The guide is condensed: the same pictures with far fewer words. The detail for doctors and the sources are folded and open with one tap.
