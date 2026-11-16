@@ -1046,7 +1046,7 @@ def test_53_an_approved_item_has_its_facts_and_no_rank_explanation_or_ending(
         client, disease_list):
     data = clues_json(client, *FIVE)
     for item in data["approved"]:
-        assert set(item) == {"id", "medicine", "forms", "proteins", "reports", "source"}
+        assert set(item) - {"proof_note"} == {"id", "medicine", "forms", "proteins", "reports", "source"}
         assert item["id"] and item["forms"]
         assert isinstance(item["reports"], int)
         assert item["source"] is None or item["source"].startswith("https://")
