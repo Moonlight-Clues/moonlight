@@ -1452,13 +1452,16 @@ def test_54_the_only_visit_counter_is_umami(client):
 
 # ---- Example 3 ----
 
-def test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_the_footer_line(client):
+# Sidha's design decision, 2026-11-16 (ticket 5.8): the footer line "Made with
+# care by a family in Kochi" is removed. This test used to be
+# test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_the_footer_line.
+def test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_not_the_footer_line(client):
     page = client.get("/").text
     assert links_to_the_guide(page) == [
         ("guide", "How to use Moonlight."),
         ("guide-card", "How to read a card"),
     ]
-    assert FOOTER_LINE in page
+    assert FOOTER_LINE not in page
 
 
 def test_54_the_small_line_is_under_the_search_box(client):
@@ -1479,16 +1482,18 @@ def test_54_how_to_read_a_card_is_beside_the_tabs_and_opens_at_the_card_and_its_
         < card_part.index('<dl class="key"')
 
 
-def test_54_the_footer_has_the_contact_line_the_handwritten_line_and_its_note(client):
+# Ticket 5.8: the handwritten line and its heart are removed. This test used to be
+# test_54_the_footer_has_the_contact_line_the_handwritten_line_and_its_note.
+def test_54_the_footer_has_the_contact_line_and_its_note_and_no_handwritten_line(client):
     page = client.get("/").text
     footer = page[page.index("<footer"):page.index("</footer>")]
     assert "About Us" not in page
     assert not re.search(r'<a [^>]*data-guide[^>]*>', footer)
     assert ("Found something wrong or have any feedback? Contact "
             '<a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a>') in footer
-    assert footer.index("Found something wrong") < footer.index(FOOTER_LINE)
-    assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)  # the small heart
-    assert FOOTER_NOTE in footer
+    assert FOOTER_LINE not in footer
+    assert 'class="made"' not in footer and "<svg" not in footer  # the small heart
+    assert footer.index("Found something wrong") < footer.index(FOOTER_NOTE)
 
 
 def test_54_a_link_can_open_the_guide(client):

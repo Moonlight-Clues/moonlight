@@ -138,12 +138,13 @@ def test_the_line_under_the_heading_has_the_new_words(page):
     assert "not treatment recommendations" in page
 
 
-def test_old_medicines_new_questions_stays_smaller_and_lower_down(page):
+# Sidha's design decision, 2026-11-16 (ticket 5.8): the line is removed. This
+# test used to be test_old_medicines_new_questions_stays_smaller_and_lower_down.
+def test_old_medicines_new_questions_is_removed(page):
     home = home_of(page)
-    assert page.count(MOTTO) == 1 and MOTTO in home
-    # No longer a heading, and under the search box and the quick-start chip.
-    assert not re.search(r"(?s)<h\d[^>]*>[^<]*%s" % re.escape(MOTTO), home)
-    assert home.index('class="search-box"') < home.index('data-slot="chips"') < home.index(MOTTO)
+    assert MOTTO not in page
+    # The search box and the quick-start chip are still in their order.
+    assert home.index('class="search-box"') < home.index('data-slot="chips"')
 
 
 def test_the_search_box_the_chip_and_the_new_here_line_do_not_change(page):
@@ -174,12 +175,13 @@ def test_the_footer_has_no_link_to_the_guide(page):
     assert "How to use Moonlight" not in footer
 
 
-def test_the_footers_two_other_lines_stay(page):
+# Ticket 5.8: "Made with care by a family in Kochi" is removed. This test used
+# to be test_the_footers_two_other_lines_stay.
+def test_the_footers_last_line_stays_and_the_handwritten_line_is_removed(page):
     footer = footer_of(page)
-    assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)
+    assert FOOTER_LINE not in footer
     assert FOOTER_NOTE in footer
-    assert footer.index(CONTACT.split("?")[0]) < footer.index(FOOTER_LINE) \
-        < footer.index(FOOTER_NOTE)
+    assert footer.index(CONTACT.split("?")[0]) < footer.index(FOOTER_NOTE)
 
 
 # ---- Example 3: the guide's list for everyone ----
