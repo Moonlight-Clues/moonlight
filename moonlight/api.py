@@ -19,15 +19,38 @@ as two counts and nothing else.
 /api/explain looks the disease up again to find its clue. It gives
 explain.py the Open Targets data version, so a finished explanation is
 saved, and asking for the same clue again makes no Gemini call.
+
+The cost guard (ticket 8.2, Kashish's decisions of 2026-11-16). Like a
+ticket counter with one small notepad per visitor: each visitor may make
+MAX_A_MINUTE requests to /api/search in any MINUTE_SECONDS, and, counted
+on a separate notepad, the same number to /api/explain. One more than
+that gets HTTP 429 and the words in TOO_MANY, and nothing is asked of
+Open Targets or Gemini. A search longer than MAX_SEARCH_LETTERS is
+refused the same way, before anything is sent anywhere.
+
+Who is "one visitor"? Their address. On Cloud Run the direct caller is
+always Google's front door, never the visitor, and the visitor's address
+arrives in the X-Forwarded-For header. That header is a list. The visitor
+can write anything they like at the start of it, and the front door adds
+the address it really saw at the END. So Moonlight reads only the entry
+PROXIES_IN_FRONT from the end (1: the last one) and ignores the rest. If
+another service is put in front later, read _visitor before deploying:
+that number must change.
+
+The notepads live in this program's memory and nowhere else. An address
+is never printed, never written to a file and never sent to anyone, and
+it is forgotten once its minute has passed.
 """
 
 import pathlib
+import threading
 import time
+from collections import deque
 from concurrent.futures import ThreadPoolExecutor
-from typing import Dict, List, Optional, Tuple
+from typing import Deque, Dict, List, Optional, Tuple
 
 import requests
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 
 from moonlight import explain, translate
@@ -59,6 +82,95 @@ LEFT_OUT_GROUPS = (NOT_APPROVED, UNCLEAR_LINK)
 DID_YOU_MEAN_SECONDS = translate.GEMINI_SECONDS + 2
 # Where "did you mean" runs while the normal search runs.
 _side_lane = ThreadPoolExecutor(max_workers=8, thread_name_prefix="did-you-mean")
+
+# ---- the cost guard (ticket 8.2) ----
+MAX_A_MINUTE = 10  # requests one visitor may make, for search and for explain separately
+MINUTE_SECONDS = 60
+MAX_SEARCH_LETTERS = 100  # the search box on the page stops here too
+# Word for word from the ticket. The page shows exactly this.
+TOO_MANY = "Too many requests. Please wait a minute."
+# Not decided yet: Kashish has not chosen the words for a search that is
+# too long. The page cannot send one (its box stops at 100), so this is
+# only seen by someone who goes around the page.
+TOO_LONG = f"A search can be {MAX_SEARCH_LETTERS} characters at most."
+# How many services Google runs between the visitor and this program.
+# On Cloud Run with nothing else in front it is 1: Google's front door.
+# It writes the address it saw as the last entry of X-Forwarded-For.
+PROXIES_IN_FRONT = 1
+FORWARDING_HEADER = "x-forwarded-for"
+
+# One notepad per lane ("search", "explain") and visitor: the times of the
+# requests that were answered in the last minute, oldest first.
+_visits: Dict[Tuple[str, str], Deque[float]] = {}
+_visits_lock = threading.Lock()
+_swept_at = 0.0  # when the old notepads were last thrown away
+
+
+def _now() -> float:
+    """The cost guard's clock, in seconds. Tests replace this."""
+    return time.monotonic()
+
+
+def forget_visitors() -> None:
+    """Throw every notepad away."""
+    global _swept_at
+    with _visits_lock:
+        _visits.clear()
+        _swept_at = 0.0
+
+
+def visitors_remembered() -> int:
+    """How many notepads there are just now. A number, never an address."""
+    with _visits_lock:
+        return len(_visits)
+
+
+def _visitor(request: Request) -> str:
+    """The address that tells one visitor from another.
+
+    With a forwarding header: the entry PROXIES_IN_FRONT from the end,
+    the one Google's front door wrote. Earlier entries are whatever the
+    visitor sent and are never trusted. With no header (a laptop, a
+    test): the direct caller. This value is only ever a key in _visits.
+    """
+    entries = [
+        entry.strip()
+        for value in request.headers.getlist(FORWARDING_HEADER)
+        for entry in value.split(",")
+        if entry.strip()
+    ]
+    if len(entries) >= PROXIES_IN_FRONT:
+        return entries[-PROXIES_IN_FRONT]
+    return request.client.host if request.client else "unknown"
+
+
+def _count_visit(lane: str, request: Request) -> None:
+    """Write this request on the visitor's notepad, or refuse it with 429.
+
+    A refused request is not written down, so asking again while over the
+    limit does not make the wait any longer.
+    """
+    global _swept_at
+    now = _now()
+    oldest_kept = now - MINUTE_SECONDS
+    key = (lane, _visitor(request))
+    with _visits_lock:
+        if now - _swept_at >= MINUTE_SECONDS:
+            # Once a minute, notepads with nothing recent on them go in the bin.
+            for old in [k for k, times in _visits.items() if times[-1] <= oldest_kept]:
+                del _visits[old]
+            _swept_at = now
+        times = _visits.setdefault(key, deque())
+        while times and times[0] <= oldest_kept:
+            times.popleft()
+        allowed = len(times) < MAX_A_MINUTE
+        if allowed:
+            times.append(now)
+        elif not times:  # never left empty: the sweep reads the last entry
+            del _visits[key]
+    if not allowed:
+        raise HTTPException(status_code=429, detail=TOO_MANY)
+
 
 app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None)
 
@@ -185,14 +297,20 @@ def page() -> str:
 
 
 @app.get("/api/search")
-def search(q: str = "") -> dict:
+def search(request: Request, q: str = "") -> dict:
     """The matches, as before, plus "did_you_mean" and "also_called".
 
     Two swimmers, two lanes. Gemini's guesses set off in the side lane
     while the normal Open Targets search swims here. If the side lane is
     slow or goes wrong, the matches still come back, with no suggestions
     and no error. Moonlight never picks a disease: it only offers them.
+
+    Before any of that, the cost guard: the visitor's count, then the
+    length of what they typed.
     """
+    _count_visit("search", request)
+    if len(q) > MAX_SEARCH_LETTERS:
+        raise HTTPException(status_code=400, detail=TOO_LONG)
     text = q.strip()
     if not text:
         return {"matches": []}
@@ -245,7 +363,9 @@ def clues(disease_id: str) -> dict:
 
 
 @app.get("/api/explain")
-def explain_clue(disease_id: str, clue_id: str) -> dict:
+def explain_clue(request: Request, disease_id: str, clue_id: str) -> dict:
+    # Over the limit is a 429 and nothing else: no template explanation.
+    _count_visit("explain", request)
     found = _find(disease_id)
     # Only a new clue or a medicine being studied can be explained. A
     # medicine already approved for the disease is not a clue: it is

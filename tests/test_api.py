@@ -1623,3 +1623,285 @@ def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(c
     assert len(data["approved"]) == 13
     assert len(data["new_clues"]) == 16 and len(data["being_studied"]) == 2
     assert data["left_out"] == {"not_approved": 13, "unclear_link": 0}
+
+
+# ---------------------------------------------------------------------------
+# Ticket 8.2: cost guard and privacy
+# ---------------------------------------------------------------------------
+# New tests only. Saved files, no network, and no sleeping: the clock is
+# api._now, and every test here sets it by hand.
+#
+# A visitor is told apart by their address. On Cloud Run the address
+# arrives in the X-Forwarded-For header, and the LAST entry is the one
+# Google's front door wrote. Anything before it was sent by the visitor
+# and can be made up. The addresses below are from the ranges kept for
+# examples (RFC 5737), so they belong to nobody.
+
+TOO_MANY = "Too many requests. Please wait a minute."
+GUIDE_LINE = (
+    "Moonlight uses Google's Gemini, an AI, to guess which disease you "
+    "mean and to write the explanations. The words you type are sent to "
+    "Gemini. Do not type names or private details."
+)
+VISITOR_A = {"X-Forwarded-For": "203.0.113.7"}
+VISITOR_B = {"X-Forwarded-For": "198.51.100.23"}
+
+
+@pytest.fixture(autouse=True)
+def nobody_has_visited_yet():
+    """Every test starts and ends with the visitor counters at zero."""
+    api.forget_visitors()
+    yield
+    api.forget_visitors()
+
+
+class Clock:
+    """Stands in for api._now. It only moves when a test moves it."""
+
+    def __init__(self):
+        self.now = 5000.0
+
+    def __call__(self):
+        return self.now
+
+
+@pytest.fixture
+def clock():
+    held = Clock()
+    with patch("moonlight.api._now", side_effect=held):
+        yield held
+
+
+def one_search(client, visitor, words="flu"):
+    with search_world(gemini_names("flu")):
+        return client.get("/api/search", params={"q": words}, headers=visitor)
+
+
+def one_explain(client, visitor, clue_id):
+    with with_targets("KCNK3"), \
+            patch("moonlight.explain._gemini_request", side_effect=gemini_unreachable):
+        return client.get(
+            "/api/explain", params={"disease_id": PAH_ID, "clue_id": clue_id}, headers=visitor
+        )
+
+
+# ---- Example 1: 10 a minute, the 11th is 429, then the minute passes ----
+
+def test_82_example_1_ten_searches_are_answered_the_11th_is_429_then_the_minute_passes(
+        client, clock):
+    for _ in range(10):
+        clock.now += 5  # ten searches inside 50 seconds
+        assert one_search(client, VISITOR_A).status_code == 200
+    clock.now += 5
+    refused = one_search(client, VISITOR_A)
+    assert refused.status_code == 429
+    assert refused.json() == {"detail": TOO_MANY}
+    clock.now += 60  # the minute has passed
+    assert one_search(client, VISITOR_A).status_code == 200
+
+
+def test_82_a_refused_search_asks_open_targets_and_gemini_nothing(client, clock):
+    for _ in range(10):
+        one_search(client, VISITOR_A)
+    with patch("moonlight.fetch._post_json") as open_targets, \
+            patch("moonlight.translate._gemini_request") as gemini:
+        assert client.get("/api/search", params={"q": "flu"}, headers=VISITOR_A).status_code == 429
+    open_targets.assert_not_called()
+    gemini.assert_not_called()
+
+
+def test_82_the_limit_is_10_in_any_60_seconds(client, clock):
+    assert (api.MAX_A_MINUTE, api.MINUTE_SECONDS) == (10, 60)
+    for _ in range(10):
+        assert one_search(client, VISITOR_A).status_code == 200
+    clock.now += 59.9
+    assert one_search(client, VISITOR_A).status_code == 429
+    clock.now += 0.1
+    assert one_search(client, VISITOR_A).status_code == 200
+
+
+def test_82_a_refused_request_does_not_make_the_wait_longer(client, clock):
+    for _ in range(10):
+        one_search(client, VISITOR_A)
+    for _ in range(20):
+        clock.now += 2
+        assert one_search(client, VISITOR_A).status_code == 429
+    clock.now += 20  # 60 seconds after the ten that were answered
+    assert one_search(client, VISITOR_A).status_code == 200
+
+
+# ---- Example 2: visitor A is over the limit, visitor B is still answered ----
+
+def test_82_example_2_visitor_b_is_answered_while_visitor_a_is_over_the_limit(client, clock):
+    for _ in range(10):
+        one_search(client, VISITOR_A)
+    assert one_search(client, VISITOR_A).status_code == 429
+    assert one_search(client, VISITOR_B).status_code == 200
+
+
+def test_82_the_visitor_is_the_last_address_in_the_forwarding_header(client, clock):
+    # The entries before the last one are whatever the visitor sent, so a
+    # visitor who makes up a new one each time is still the same visitor.
+    for number in range(10):
+        made_up = {"X-Forwarded-For": f"192.0.2.{number}, 203.0.113.7"}
+        assert one_search(client, made_up).status_code == 200
+    assert one_search(client, {"X-Forwarded-For": "192.0.2.99, 203.0.113.7"}).status_code == 429
+    # And two visitors who send the same made-up entry are still two visitors.
+    assert one_search(client, {"X-Forwarded-For": "192.0.2.99, 198.51.100.23"}).status_code == 200
+
+
+def test_82_with_no_forwarding_header_the_visitor_is_the_direct_caller(client, clock):
+    # Running on a laptop: nothing sits in front, so there is no header.
+    for _ in range(10):
+        assert one_search(client, {}).status_code == 200
+    assert one_search(client, {}).status_code == 429
+    assert one_search(client, VISITOR_B).status_code == 200
+
+
+# ---- Example 3: 10 searches do not use up the 10 explanations ----
+
+def test_82_example_3_ten_searches_do_not_use_up_the_ten_explanations(client, clock):
+    clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
+    for _ in range(10):
+        assert one_search(client, VISITOR_A).status_code == 200
+    assert one_search(client, VISITOR_A).status_code == 429
+    for _ in range(10):
+        assert one_explain(client, VISITOR_A, clue_id).status_code == 200
+    refused = one_explain(client, VISITOR_A, clue_id)
+    assert refused.status_code == 429
+    assert refused.json() == {"detail": TOO_MANY}
+    assert one_explain(client, VISITOR_B, clue_id).status_code == 200
+    clock.now += 60
+    assert one_explain(client, VISITOR_A, clue_id).status_code == 200
+
+
+def test_82_ten_explanations_do_not_use_up_the_ten_searches(client, clock):
+    clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
+    for _ in range(10):
+        assert one_explain(client, VISITOR_A, clue_id).status_code == 200
+    assert one_search(client, VISITOR_A).status_code == 200
+
+
+def test_82_a_refused_explanation_is_not_the_template_and_asks_nothing(client, clock):
+    clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
+    for _ in range(10):
+        one_explain(client, VISITOR_A, clue_id)
+    with patch("moonlight.fetch._post_json") as open_targets, \
+            patch("moonlight.explain._gemini_request") as gemini, \
+            patch("moonlight.api.explain.explain") as explainer:
+        refused = client.get(
+            "/api/explain", params={"disease_id": PAH_ID, "clue_id": clue_id}, headers=VISITOR_A
+        )
+    assert refused.status_code == 429
+    assert set(refused.json()) == {"detail"}  # no text, no "template"
+    open_targets.assert_not_called()
+    gemini.assert_not_called()
+    explainer.assert_not_called()
+
+
+def test_82_looking_at_the_clues_is_not_counted(client, clock):
+    # The ticket limits /api/search and /api/explain. Nothing else.
+    for _ in range(12):
+        with with_targets("KCNK3"):
+            answer = client.get("/api/clues", params={"disease_id": PAH_ID}, headers=VISITOR_A)
+        assert answer.status_code == 200
+    assert one_search(client, VISITOR_A).status_code == 200
+
+
+# ---- Example 4: 100 characters is answered, 101 is refused ----
+
+def test_82_example_4_a_search_of_100_characters_is_answered(client, clock):
+    words = "a" * 100
+    with patch("moonlight.api.search_diseases", return_value=[]) as asked, \
+            patch("moonlight.api.search_matches", return_value=[]), \
+            patch("moonlight.api.translate.did_you_mean", return_value=[]):
+        answer = client.get("/api/search", params={"q": words}, headers=VISITOR_A)
+    assert answer.status_code == 200
+    assert answer.json() == {"matches": [], "did_you_mean": [], "also_called": {}}
+    asked.assert_called_once_with(words)
+
+
+def test_82_example_4_a_search_of_101_characters_is_refused_and_nothing_is_called(client, clock):
+    assert api.MAX_SEARCH_LETTERS == 100
+    with patch("moonlight.fetch._post_json") as open_targets, \
+            patch("moonlight.translate._gemini_request") as translate_gemini, \
+            patch("moonlight.explain._gemini_request") as explain_gemini, \
+            patch("moonlight.api.search_diseases") as search_door, \
+            patch("moonlight.api.search_matches") as matches_door, \
+            patch("moonlight.api.translate.did_you_mean") as guess_door:
+        answer = client.get("/api/search", params={"q": "a" * 101}, headers=VISITOR_A)
+    assert answer.status_code == 400
+    assert set(answer.json()) == {"detail"}
+    for door in (open_targets, translate_gemini, explain_gemini,
+                 search_door, matches_door, guess_door):
+        door.assert_not_called()
+
+
+def test_82_spaces_around_the_words_do_not_get_a_long_search_through(client, clock):
+    with patch("moonlight.fetch._post_json") as open_targets, \
+            patch("moonlight.translate._gemini_request") as gemini:
+        answer = client.get("/api/search", params={"q": " " + "a" * 101 + " "}, headers=VISITOR_A)
+    assert answer.status_code == 400
+    open_targets.assert_not_called()
+    gemini.assert_not_called()
+
+
+def test_82_the_search_box_stops_at_100(client):
+    box = re.search(r'<input id="disease-search"[^>]*>', client.get("/").text).group(0)
+    assert 'maxlength="100"' in box
+
+
+# ---- the page says the exact words ----
+
+def test_82_the_page_shows_the_too_many_requests_words_exactly(client):
+    script = page_script(client)
+    assert script.count('"' + TOO_MANY + '"') == 1  # written once, used for both
+    assert "429" in script
+
+
+def test_82_the_page_does_not_show_the_template_explanation_for_too_many_requests(client):
+    page = client.get("/").text
+    block = re.search(r'(?s)<template id="explanation-too-many">(.*?)</template>', page).group(1)
+    # The words are filled in by the script, and nothing here is the
+    # code-written explanation.
+    assert 'data-part="message"' in block
+    assert "template" not in plain(block).lower()
+    read = re.search(r"(?s)async function readExplanation\(.*?\n  }\n", page_script(client)).group(0)
+    assert read.index("429") < read.index("explanation-failed")
+    assert "explanation-too-many" in read
+
+
+# ---- Example 6: the guide line ----
+
+def test_82_example_6_the_page_holds_the_guide_line_inside_the_guide(client):
+    page = client.get("/").text
+    assert plain(page).count(GUIDE_LINE) == 1
+    assert GUIDE_LINE in plain(guide_of(page))
+
+
+def test_82_the_guide_line_is_right_after_the_open_targets_paragraph(client):
+    guide = guide_of(client.get("/").text)
+    paragraphs = [plain(p) for p in re.findall(r"(?s)<p\b[^>]*>.*?</p>", guide)]
+    place = paragraphs.index(GUIDE_LINE)
+    assert paragraphs[place - 1].startswith("The facts are from the Open Targets Platform.")
+
+
+def test_82_the_safety_line_is_unchanged(client):
+    assert SAFETY_LINE in client.get("/").text
+
+
+# ---- nothing about a visitor is written down ----
+
+def test_82_the_api_never_logs_or_prints():
+    source = (ROOT / "moonlight" / "api.py").read_text(encoding="utf-8")
+    assert "logging" not in source
+    assert not re.search(r"(?<![\w.])print\(", source)
+
+
+def test_82_addresses_are_forgotten_after_the_minute(client, clock):
+    one_search(client, VISITOR_A)
+    one_search(client, VISITOR_B)
+    assert api.visitors_remembered() == 2
+    clock.now += 61
+    one_search(client, VISITOR_B)  # anyone's next visit sweeps the old ones out
+    assert api.visitors_remembered() == 1

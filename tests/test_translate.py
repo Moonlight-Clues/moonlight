@@ -10,6 +10,7 @@ read from the live APIs on 2026-11-13.
 import json
 import pathlib
 import re
+import time
 from unittest.mock import patch
 
 import pytest
@@ -380,3 +381,58 @@ def test_no_small_print_for_other_words_or_the_entry_s_own_name():
     assert translate.small_print("fl", first) is None
     assert translate.small_print("bird flu", first) is None
     assert translate.small_print(HARD_NAME.upper(), first) is None
+
+
+# ---------------------------------------------------------------------------
+# Ticket 8.2: "store": false in every Gemini request translate.py sends
+# ---------------------------------------------------------------------------
+# The field was checked against explain.py (_ask_gemini puts "store": False
+# at the top level of its body) and against tests/test_explain.py's ticket
+# 6.3 tests, which hold explain.py to the same shape.
+
+def test_82_the_body_translate_sends_to_gemini_has_store_false_at_the_top_level():
+    calls = []
+    with with_gemini(gemini_saved("flu", calls=calls)):
+        translate.did_you_mean("flu")
+    bodies = [body for method, _, body, _ in calls if method == "POST"]
+    assert len(bodies) == 1
+    assert bodies[0]["store"] is False
+    assert "store" not in bodies[0]["generationConfig"]
+    assert set(bodies[0]) == {"contents", "generationConfig", "store"}
+
+
+def test_82_every_model_translate_asks_gets_store_false():
+    calls = []
+
+    def busy_then_fine(method, path, body=None, timeout=None):
+        calls.append((method, path, body))
+        if method == "GET":
+            return 200, listing("gemini-3.5-flash", "gemini-3.5-flash-lite")
+        if "lite" not in path:
+            return 503, {}
+        return 200, {"candidates": [{"content": {"parts": [{"text": "[]"}]}}]}
+
+    with with_gemini(busy_then_fine):
+        translate.did_you_mean("flu")
+    bodies = [body for method, _, body in calls if method == "POST"]
+    assert len(bodies) == 2
+    assert all(body["store"] is False for body in bodies)
+
+
+def test_82_translate_and_explain_send_store_the_same_way():
+    from moonlight import explain
+    sent = []
+
+    def fake(method, path, body=None, timeout=None):
+        if method == "GET":
+            return 200, listing("gemini-3.5-flash")
+        sent.append(body)
+        return 200, {"candidates": [{"content": {"parts": [{"text": "[]"}]}}]}
+
+    explain.forget_everything()
+    with patch("moonlight.explain._gemini_request", side_effect=fake):
+        explain._ask_gemini("hello", time.monotonic() + 5)
+        translate.did_you_mean("flu")
+    explain.forget_everything()
+    from_explain, from_translate = sent
+    assert from_explain["store"] is False and from_translate["store"] is False
