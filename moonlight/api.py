@@ -194,6 +194,8 @@ class _Found:
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
+        # Approved only for a narrower disease (ticket 2.14): its own folded box.
+        self.narrower = tabs.narrower
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
         self.left_out = tabs.left_out
@@ -205,7 +207,7 @@ class _Found:
                 names.add(path.medicine.name)
                 names.update(form.name for form in path.medicine.forms)
         # Also the ones only on the disease's own list, or on a parent's or child's.
-        for medicine in tabs.approved + tabs.wider_group:
+        for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
             names.add(medicine.name)
             names.update(medicine.forms)
         self.known_names = names
@@ -296,6 +298,9 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dic
     card's only approval receipt. warning is only there when the medicine's
     id is in wrong: the corrections list for this disease. Neither moves
     the card or takes anything off it.
+
+    Ticket 2.14. source is the engine's choice (source_record): an exact
+    approval receipt, else Japan's general list, else the link shown before.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
@@ -306,7 +311,7 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dic
         "forms": [display(name) for name in medicine.forms],
         "proteins": _proteins_json(medicine.clue) if medicine.clue else [],
         "reports": medicine.reports,
-        "source": _first_link(medicine.sources),
+        "source": medicine.source_record,
     }
     if medicine.label:
         item["label"] = medicine.label  # the engine's words, never changed here
@@ -408,6 +413,10 @@ def clues(disease_id: str) -> dict:
         "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
+    if found.narrower:
+        # The folded box "Approved for a narrower disease". Only there when
+        # it holds something. The page shows it above the wider-group box.
+        answer["narrower"] = [_approved_json(medicine, wrong) for medicine in found.narrower]
     if found.wider_group:
         # The folded box in the Approved tab. Only there when it holds something.
         answer["wider_group"] = [_approved_json(medicine, wrong) for medicine in found.wider_group]

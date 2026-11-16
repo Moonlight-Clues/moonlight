@@ -1,0 +1,6 @@
+{
+  "query": "\nquery DiseaseFamily($diseaseId: String!) {\n  disease(efoId: $diseaseId) {\n    id\n    name\n    parents { id name }\n    children { id name }\n  }\n}\n",
+  "variables": {
+    "diseaseId": "MONDO_0007254"
+  }
+}

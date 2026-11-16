@@ -43,9 +43,10 @@ MedicineForm, Medicine, Path.
 - Already approved for the disease: shown in its own tab, Approved, in
   A to Z order. Never ranked, never explained as a clue. It is not a clue.
 - A medicine approved for a disease the database lists under this one,
-  or for a wider group, is shown in the Approved tab with a label saying
-  which. Wider-group medicines sit in a folded box. It is not a new clue.
-  If it is in trials for this disease, it stays in In trials too.
+  or for a wider group, is shown in the Approved tab with a label, in
+  its own folded box: one box for narrower diseases, one for the wider
+  group. It is not a new clue. If it is in trials for this disease, it
+  stays in In trials too.
 
 ## Safety rules. No ticket may weaken these.
 - Every page shows: "For learning and research exploration, not medical advice.

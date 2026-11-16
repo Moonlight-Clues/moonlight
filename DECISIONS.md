@@ -61,3 +61,6 @@ Format: date, the decision, why.
 - 2026-11-16: The guide has an invitation for doctors, a list for everyone and a list for doctors, both called "what Moonlight can and cannot tell you".
 - 2026-11-16: "Old medicines. New questions." and "Made with care by a family in Kochi" are removed from the page. The page has equal space on both sides. This is Mumma's design decision.
 - 2026-11-16: The guide is condensed: the same pictures with far fewer words. The detail for doctors and the sources are folded and open with one tap.
+- 2026-11-16: The main Approved list holds only medicines approved for this exact disease. Medicines approved for a narrower disease go in their own folded box, because the database sometimes files one disease under another.
+- 2026-11-16: The source link on an Approved card shows an approval record first, then Japan's general list, then any other link.
+- 2026-11-16: When medicines sit in a folded box, the top of the Approved tab says how many, and each box says "Tap to open".

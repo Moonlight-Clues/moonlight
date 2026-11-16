@@ -71,7 +71,7 @@ DOCTOR_POINTS = [
     "“Approved”. In at least one country, per the database. Not a measure of efficacy.",
     "Left out. Withdrawn anywhere, or approved nowhere: counted, never named. "
     "Unclear link to the disease: counted separately.",
-    "Wider and narrower diseases. Shown with a label. The wider group sits in a folded box.",
+    "Wider and narrower diseases. Shown with a label, each in its own folded box.",
     "Known gaps. A missing medicine may be withdrawn somewhere, filed further away, "
     "or not recorded yet.",
     "Weak proof. Japan-list-only approvals say so. Confirmed mistakes carry a red warning.",
