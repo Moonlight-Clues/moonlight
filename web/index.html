@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Moonlight</title>
 <style>
-/* MOONLIGHT / LUNAR OBSERVATORY. Sidha's design. One file, mobile first, no outside assets. */
+/* MOONLIGHT / LUNAR OBSERVATORY. Sidha's design. One file, mobile first. The only outside asset is the visit counter at the end of the page. */
 :root{
   --cream:#F5F0E8;--navy:#101F31;--teal:#429D9A;--gold:#E9B45B;
   --paper:#FFFFFF;--mist:#E7F1EF;--slate:#EAEFF2;--line:#D5E0E2;
@@ -494,6 +495,7 @@ div.explanation{padding:12px 13px}
       <div class="facts">
         <p><b>The facts are from the Open Targets Platform.</b> It is a free, open research database that brings together public sources such as ChEMBL for medicines, ClinicalTrials.gov for trials, Europe PMC for published research, and others.</p>
         <p>Moonlight uses Google's Gemini, an AI, to guess which disease you mean and to write the explanations. The words you type are sent to Gemini. Do not type names or private details.</p>
+        <p>Moonlight counts visits with Umami. It uses no cookies, and it never receives the disease or anything you type.</p>
         <p><b>The order is decided by plain rules.</b> The ranking rule is printed above the list of new clues. No AI ranks or chooses anything.</p>
         <p><b>The plain-language explanation is written by Gemini.</b> It is given only the facts on the card, and its answer is checked against them. If Gemini is busy, Moonlight writes the explanation from its own template.</p>
       </div>
@@ -1072,5 +1074,33 @@ div.explanation{padding:12px 13px}
   if (linked.get("guide") === "1") openGuide("guide");
 })();
 </script>
+
+<!-- Counting visits with Umami. Kashish's decision, 16 Nov (ticket 8.3).
+     This is the one thing the page loads from outside. If it is blocked
+     or fails to load, the page works exactly the same. -->
+<script>
+/* Umami calls this just before it sends anything. Whatever Umami wanted
+   to send is thrown away, and a fresh note is written with only these
+   seven things. The disease, the tab, the guide and anything typed are
+   never in it. Anything that is not a plain page visit is not sent. */
+window.moonlightVisit = function (type, payload) {
+  if (type !== "event" || !payload || payload.name || payload.data) return false;
+  var cameFrom = "";  /* only the site the visitor came from, never its full address */
+  try {
+    if (document.referrer) cameFrom = new URL(document.referrer).origin;
+    if (cameFrom === "null") cameFrom = "";
+  } catch (problem) { cameFrom = ""; }
+  return {
+    website: payload.website,
+    hostname: location.hostname,
+    screen: payload.screen,
+    language: payload.language,
+    title: "Moonlight",
+    url: location.pathname,
+    referrer: cameFrom
+  };
+};
+</script>
+<script defer crossorigin="anonymous" src="https://cloud.umami.is/script.js" data-website-id="dad3a425-ea8e-4028-9768-88a183fc9140" data-domains="moonlightclues.com,www.moonlightclues.com,moonlight-1038733794937.asia-south1.run.app" data-exclude-search="true" data-exclude-hash="true" data-do-not-track="true" data-before-send="moonlightVisit"></script>
 </body>
 </html>
