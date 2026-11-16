@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"Diabetes mellitus\",\n  \"Diabetes insipidus\",\n  \"Gestational diabetes\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0THT9+G06ZksS1MZ8IV8YyjNOyASDFXWJRyJwCKUFTEtgLwzf8gea5BByGguHWL5ZBcERqZacQnJyGs0prb+wvzPqOOPQEVMs/eHIIRcmVca+NOgHQsPW/5ZEtgcqTEK86KEI="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 77,
+      "candidatesTokenCount": 24,
+      "totalTokenCount": 101,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 77
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "-cL6aq23Ju_f-sAPrvSR0QY"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": 200,
+  "answer": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "[\n  \"Systemic lupus erythematosus\",\n  \"Cutaneous lupus erythematosus\",\n  \"Drug-induced lupus erythematosus\"\n]",
+              "thoughtSignature": "EmkKZwFpFH0T9aH+OCtRuRwTyk9oH7iBWLfuBlFGg8zSz6I87WV2UHk/y3j+Lw9mjY+miX7qC+7xfevnPRn5AqieTVcswYqdJ508u55e2ASsulkF5u1XMz669nuaRwholLzFukJTjHjTsO0="
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "index": 0
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 79,
+      "candidatesTokenCount": 28,
+      "totalTokenCount": 107,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 79
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "modelVersion": "gemini-3.6-flash",
+    "responseId": "AcP6arucA46tjrEPp9qOsAM"
+  }
+}
