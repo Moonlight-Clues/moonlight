@@ -40,7 +40,10 @@ CHILD_WORDS = ", which the database lists under this disease."
 PARENT_WORDS = ", a wider group the database puts this disease in."
 ALL_LABEL = "Approved for acute lymphoblastic leukemia" + PARENT_WORDS
 BOX_TITLE = "Approved for a wider group"
-APPROVED_EMPTY = "The database lists no medicine approved for this disease."
+APPROVED_EMPTY = (
+    "The database lists no approved medicine under this exact name. That "
+    "does not mean there is none. Ask a doctor."
+)
 
 ALL_15 = [
     "ASPARAGINASE ERWINIA CHRYSANTHEMI", "BLINATUMOMAB", "CALASPARGASE PEGOL",

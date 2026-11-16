@@ -978,7 +978,10 @@ APPROVED_WORDS = (
     "Already approved for this disease in at least one country, according to "
     "the database. Nothing here says how well any of them works."
 )
-APPROVED_EMPTY = "The database lists no medicine approved for this disease."
+APPROVED_EMPTY = (
+    "The database lists no approved medicine under this exact name. That "
+    "does not mean there is none. Ask a doctor."
+)
 TRIALS_WORDS = (
     "Approved for another disease and now being tested for this one. A "
     "separate research category, not a prediction of effectiveness."
@@ -1421,7 +1424,7 @@ def test_54_no_visitor_counter_on_the_page(client):
 def test_54_example_3_the_page_holds_the_three_links_to_the_guide_and_the_footer_line(client):
     page = client.get("/").text
     assert links_to_the_guide(page) == [
-        ("guide", "How to read Moonlight."),
+        ("guide", "How to use Moonlight."),
         ("guide-card", "How to read a card"),
         ("guide", "How to use Moonlight"),
     ]
@@ -1431,7 +1434,7 @@ def test_54_example_3_the_page_holds_the_three_links_to_the_guide_and_the_footer
 def test_54_the_small_line_is_under_the_search_box(client):
     page = client.get("/").text
     home = page[page.index('<section id="home"'):page.index('<section id="results"')]
-    assert "New here? How to read Moonlight." in plain(home)
+    assert "New here? How to use Moonlight." in plain(home)
     assert home.index('class="search-box"') < home.index("New here?") \
         < home.index('data-slot="matches"')
 

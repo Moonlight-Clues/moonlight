@@ -50,6 +50,8 @@ Format: date, the decision, why.
 - 2026-11-16: The Approved tab also looks one step up and one step down from the disease. A medicine found there gets a label saying where the database lists it. Medicines from the wider group go in a folded box. It is never a new clue.
 - 2026-11-16: What the data says about this exact disease comes first. A medicine in trials for the disease stays in In trials, even if it is approved for a wider group.
 - 2026-11-16: Daratumumab is not shown as approved for amyloidosis, because Open Targets does not say so. Moonlight never creates an approval.
+- 2026-11-16: An empty Approved tab says "The database lists no approved medicine under this exact name. That does not mean there is none. Ask a doctor."
+- 2026-11-16: The guide has one name everywhere, "How to use Moonlight".
 - 2026-11-16: An approved medicine whose only proof is Japan's general list stays on the page, with a line saying Moonlight could not find the exact record.
 - 2026-11-16: If a doctor confirms a card looks wrong, the card stays and gets a bright red warning. The corrections are written in a file anyone can read, and no doctor is named.
 - 2026-11-16: A trial report does not count as proof of approval. The Japan line shows when Japan's general list is the only approval proof a card has.
