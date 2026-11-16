@@ -52,3 +52,4 @@ Format: date, the decision, why.
 - 2026-11-16: Daratumumab is not shown as approved for amyloidosis, because Open Targets does not say so. Moonlight never creates an approval.
 - 2026-11-16: An empty Approved tab says "The database lists no approved medicine under this exact name. That does not mean there is none. Ask a doctor."
 - 2026-11-16: The guide has one name everywhere, "How to use Moonlight".
+- 2026-11-16: I changed my mind about counting visitors. Moonlight uses Umami to count visits and which country they come from. It never gets the disease or any words someone types, and it uses no cookies. It is the only thing my page loads from outside.
