@@ -173,6 +173,9 @@ div.explanation{padding:12px 13px}
 /* the guide, "How to use Moonlight". Hidden until one of its links is tapped.
    It uses the page's own card, tab, rank and button styles. Only what is new is here. */
 .guide-line{font-size:12px;color:var(--muted);margin:10px 0 0}
+.intro h1{text-wrap:balance}
+/* the old heading, kept smaller and lower down, under the quick-start chip */
+.motto{font-size:17px;line-height:1.25;font-weight:650;color:#327F80;margin:28px 0 0;padding-top:16px;border-top:1px solid var(--line)}
 .card-help{font-size:12px;text-align:right;margin:8px 2px 0}
 .guide{max-width:760px;display:grid;gap:56px}
 .guide,.guide>section{scroll-margin-top:70px;min-width:0}
@@ -225,7 +228,12 @@ div.explanation{padding:12px 13px}
 .key dd{grid-column:2;font-size:14px;color:var(--muted)}
 .key .k{grid-row:1 / span 2;margin-top:2px}
 
-/* what Moonlight cannot tell you */
+/* for everyone: what Moonlight can and cannot tell you */
+.pair+.limits{margin-top:18px}
+/* for doctors: the same list, then one sentence set apart */
+.guide h2+.limits{margin-top:12px}
+.not-reference{margin-top:18px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);font-size:15px;font-weight:700;color:var(--navy)}
+.idea .contact a{color:var(--cream)}
 .limits{display:grid;border-top:1px solid var(--line)}
 .limits li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14px}
 .limits li::before{content:"";width:9px;height:2px;background:var(--neutral);margin-top:11px;border-radius:2px}
@@ -249,6 +257,7 @@ div.explanation{padding:12px 13px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
 .made{display:inline-flex;align-items:center;gap:9px;font-family:"Caveat","Segoe Script","Bradley Hand",cursive;font-weight:600;font-size:clamp(22px,6.2vw,27px);line-height:1.1;color:var(--navy);transform:rotate(-2deg);transform-origin:left center}
 .made svg{flex:none;width:20px;height:20px;fill:var(--gold);transform:rotate(8deg)}
+.contact{color:var(--muted)}.contact a{user-select:text;-webkit-user-select:text}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
@@ -275,8 +284,8 @@ div.explanation{padding:12px 13px}
   <section id="home" class="search-area">
     <div class="intro">
       <div class="eyebrow">Explore open research</div>
-      <h1>Old medicines. New questions.</h1>
-      <p>Start with a disease. Follow the research clues, not treatment recommendations.</p>
+      <h1>Disease → protein → medicine. One search.</h1>
+      <p>Moonlight follows Open Targets research data from a disease to its proteins, then to medicines that act on them. Research clues, not treatment recommendations.</p>
     </div>
     <form id="search-form" data-slot="search" autocomplete="off">
       <label for="disease-search" class="fine muted">Search by disease name</label>
@@ -295,6 +304,7 @@ div.explanation{padding:12px 13px}
     <ul id="disease-matches" class="match-list" data-slot="matches" aria-label="Disease matches" hidden></ul>
     <p class="chip-label">Quick start</p>
     <div class="chips" data-slot="chips"><button class="chip" type="button" data-disease-id="MONDO_0015924">Pulmonary arterial hypertension</button></div>
+    <p class="motto display">Old medicines. New questions.</p>
   </section>
 
   <section id="results" class="results" hidden>
@@ -391,6 +401,12 @@ div.explanation{padding:12px 13px}
       <a class="ghost-btn" href="#home" data-guide-close>Back to search</a>
     </section>
 
+    <section class="idea" aria-labelledby="guide-invite-title">
+      <h2 id="guide-invite-title">Are you a doctor, pharmacist or researcher?</h2>
+      <p>Moonlight gets better when people who know the medicines test it. Search a condition you know well. Tell us what is missing, what is wrong, and what you would not want a patient to see.</p>
+      <p class="contact"><a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></p>
+    </section>
+
     <section class="idea" aria-labelledby="guide-idea-title">
       <h2 id="guide-idea-title">A medicine made for one disease may act on a protein linked to another.</h2>
       <div class="chain">
@@ -458,8 +474,22 @@ div.explanation{padding:12px 13px}
     </section>
 
     <section aria-labelledby="guide-limits-title">
-      <h2 id="guide-limits-title">What Moonlight cannot tell you</h2>
+      <h2 id="guide-limits-title">For everyone: what Moonlight can and cannot tell you</h2>
       <p class="guide-sub">Knowing these makes the rest more useful.</p>
+      <div class="pair">
+        <div class="box do"><h3>Moonlight can</h3><ul>
+          <li><span>show which medicines are already approved for a disease</span></li>
+          <li><span>show which medicines are being tested for it</span></li>
+          <li><span>show new connections that scientists might find worth reading about</span></li>
+          <li><span>help you write down questions to take to your doctor</span></li>
+        </ul></div>
+        <div class="box dont"><h3>Moonlight cannot</h3><ul>
+          <li><span>tell you whether a medicine will help or harm you</span></li>
+          <li><span>tell you which medicine is best</span></li>
+          <li><span>tell you what is approved in your country</span></li>
+          <li><span>replace your doctor</span></li>
+        </ul></div>
+      </div>
       <ul class="limits">
         <li><div><b>Whether a clue would help or harm.</b> <span>That takes trials in people.</span></div></li>
         <li><div><b>Which direction the disease needs.</b> <span>A medicine that turns a protein the wrong way could make things worse.</span></div></li>
@@ -468,6 +498,21 @@ div.explanation{padding:12px 13px}
         <li><div><b>What is approved where you live.</b> <span>The database records approval in at least one country.</span></div></li>
         <li><div><b>That the record is complete or current.</b> <span>Public databases have gaps and mistakes, and they change.</span></div></li>
       </ul>
+    </section>
+
+    <section aria-labelledby="guide-doctors-title">
+      <h2 id="guide-doctors-title">For doctors: what Moonlight can and cannot tell you</h2>
+      <ul class="limits">
+        <li><div><b>Where the facts come from.</b> <span>The Open Targets Platform, a free and open research database.</span></div></li>
+        <li><div><b>What “Approved” means here.</b> <span>Approved for this disease in at least one country, according to the database. It says nothing about how well a medicine works or what guidelines recommend.</span></div></li>
+        <li><div><b>What is left out.</b> <span>Medicines withdrawn in any country and medicines not approved anywhere are counted, never named. Medicines whose link to the disease is unclear are counted separately.</span></div></li>
+        <li><div><b>Wider and narrower diseases.</b> <span>Approvals the database files one step above or below the disease are shown with a label. Wider-group approvals sit in a folded box.</span></div></li>
+        <li><div><b>Known gaps.</b> <span>The database can be behind real life. If a medicine you know is approved is missing, it may be withdrawn in some country, filed further away in the database, or not recorded yet. Please tell us.</span></div></li>
+        <li><div><b>Weak proof is marked.</b> <span>Some approvals rest only on Japan’s general list and say so. A card a doctor has confirmed as a mistake carries a red warning.</span></div></li>
+        <li><div><b>How new clues are ranked.</b> <span>By the strength of the link between the disease and each protein, across the 25 most-linked proteins. Parts of one protein machine count once, and different machines add up. Ties go to more reports, then A to Z. Each card says whether the medicine turns the protein up or down, or both, or that the data does not say.</span></div></li>
+        <li><div><b>Where AI is used.</b> <span>Google’s Gemini guesses which disease you mean and writes the clue explanations from records it is handed. It never adds a medicine, a protein or a link. The disease description is Open Targets’ own words.</span></div></li>
+      </ul>
+      <p class="not-reference">Moonlight is not a prescribing reference.</p>
     </section>
 
     <section aria-labelledby="guide-use-title">
@@ -507,7 +552,7 @@ div.explanation{padding:12px 13px}
 </main>
 
 <footer class="site-footer" id="about"><div class="wrap">
-  <div class="footer-row"><a href="#guide" data-guide>How to use Moonlight</a><span class="made">Made with care by a family in Kochi <svg viewBox="0 0 24 24" role="img" aria-label="love"><path d="M12 21s-7.5-4.7-9.6-9.3C.9 8.300 2.700 4.500 6.300 4.500c2.100 0 3.600 1.100 4.700 2.800h2c1.100-1.700 2.600-2.800 4.700-2.800 3.600 0 5.400 3.800 3.900 7.200C19.500 16.300 12 21 12 21Z"/></svg></span></div>
+  <div class="footer-row"><span class="contact">Found something wrong or have any feedback? Contact <a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></span><span class="made">Made with care by a family in Kochi <svg viewBox="0 0 24 24" role="img" aria-label="love"><path d="M12 21s-7.5-4.7-9.6-9.3C.9 8.300 2.700 4.500 6.300 4.500c2.100 0 3.600 1.100 4.700 2.800h2c1.100-1.700 2.600-2.800 4.700-2.800 3.600 0 5.400 3.800 3.900 7.200C19.500 16.300 12 21 12 21Z"/></svg></span></div>
   <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</div>
 </div></footer>
 

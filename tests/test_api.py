@@ -1359,11 +1359,13 @@ def test_53_the_page_still_names_no_medicine_before_a_search(client):
 
 GUIDE_HEADINGS = [
     "How to read what Moonlight finds.",
+    "Are you a doctor, pharmacist or researcher?",
     "A medicine made for one disease may act on a protein linked to another.",
     "Three steps",
     "The three tabs",
     "How to read a card",
-    "What Moonlight cannot tell you",
+    "For everyone: what Moonlight can and cannot tell you",
+    "For doctors: what Moonlight can and cannot tell you",
     "Good ways to use it",
     "Where the facts come from",
 ]
@@ -1392,13 +1394,13 @@ def links_to_the_guide(page):
 
 # ---- Example 1 ----
 
-def test_54_example_1_the_page_holds_the_guides_eight_headings_and_the_safety_line(client):
+def test_54_example_1_the_page_holds_the_guides_ten_headings_and_the_safety_line(client):
     page = client.get("/").text
     assert SAFETY_LINE in page
     guide = guide_of(page)
     headings = [plain(h) for h in re.findall(r"(?s)<h[12][^>]*>(.*?)</h[12]>", guide)]
     assert headings == GUIDE_HEADINGS
-    assert len(headings) == 8
+    assert len(headings) == 10
 
 
 def test_54_the_guide_is_inside_the_page_and_hidden_until_opened(client):
@@ -1450,12 +1452,11 @@ def test_54_the_only_visit_counter_is_umami(client):
 
 # ---- Example 3 ----
 
-def test_54_example_3_the_page_holds_the_three_links_to_the_guide_and_the_footer_line(client):
+def test_54_example_3_the_page_holds_the_two_links_to_the_guide_and_the_footer_line(client):
     page = client.get("/").text
     assert links_to_the_guide(page) == [
         ("guide", "How to use Moonlight."),
         ("guide-card", "How to read a card"),
-        ("guide", "How to use Moonlight"),
     ]
     assert FOOTER_LINE in page
 
@@ -1478,12 +1479,14 @@ def test_54_how_to_read_a_card_is_beside_the_tabs_and_opens_at_the_card_and_its_
         < card_part.index('<dl class="key"')
 
 
-def test_54_the_footer_has_the_guide_link_the_handwritten_line_and_its_note(client):
+def test_54_the_footer_has_the_contact_line_the_handwritten_line_and_its_note(client):
     page = client.get("/").text
     footer = page[page.index("<footer"):page.index("</footer>")]
     assert "About Us" not in page
-    assert re.search(r'<a [^>]*data-guide[^>]*>How to use Moonlight</a>', footer)
-    assert footer.index("How to use Moonlight") < footer.index(FOOTER_LINE)
+    assert not re.search(r'<a [^>]*data-guide[^>]*>', footer)
+    assert ("Found something wrong or have any feedback? Contact "
+            '<a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a>') in footer
+    assert footer.index("Found something wrong") < footer.index(FOOTER_LINE)
     assert re.search(r'class="made"[^>]*>\s*%s\s*<svg' % FOOTER_LINE, footer)  # the small heart
     assert FOOTER_NOTE in footer
 
