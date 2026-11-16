@@ -23,7 +23,9 @@ the answer is simply no suggestions. Nothing here raises for that.
 
 Every Gemini call goes through _gemini_request. It hands the call to
 explain.py's one Gemini function, so the rule about the key lives in a
-single place and this module never touches it. The model name is picked
+single place and this module never touches it. Every request carries
+"store": false at the top level, as explain.py's do (ticket 8.2; the
+field was checked against explain.py and a live answer). The model name is picked
 from the API's own model list. The fields of Gemini's answer were read
 from the saved answers in fixtures/gemini/, not taken from memory.
 """
@@ -136,6 +138,9 @@ def _ask_gemini(prompt: str, deadline: float) -> str:
             "thinkingConfig": {"thinkingBudget": 0},
             "responseMimeType": "application/json",
         },
+        # Asks Gemini not to keep this request, the same way explain.py
+        # does: at the top level, not inside generationConfig.
+        "store": False,
     }
     for model in _models_to_try(deadline):
         left = deadline - time.monotonic()

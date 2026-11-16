@@ -263,7 +263,7 @@ div.explanation{padding:12px 13px}
       <label for="disease-search" class="fine muted">Search by disease name</label>
       <div class="search-box">
         <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7.5"/><path d="m17 17 4.5 4.5"/></svg>
-        <input id="disease-search" type="search" placeholder="Type a disease name" aria-controls="disease-matches">
+        <input id="disease-search" type="search" maxlength="100" placeholder="Type a disease name" aria-controls="disease-matches">
         <button class="btn" type="submit">Explore</button>
       </div>
     </form>
@@ -467,6 +467,7 @@ div.explanation{padding:12px 13px}
       <p class="guide-sub">Every fact has a public source.</p>
       <div class="facts">
         <p><b>The facts are from the Open Targets Platform.</b> It is a free, open research database that brings together public sources such as ChEMBL for medicines, ClinicalTrials.gov for trials, Europe PMC for published research, and others.</p>
+        <p>Moonlight uses Google's Gemini, an AI, to guess which disease you mean and to write the explanations. The words you type are sent to Gemini. Do not type names or private details.</p>
         <p><b>The order is decided by plain rules.</b> The ranking rule is printed above the list of new clues. No AI ranks or chooses anything.</p>
         <p><b>The plain-language explanation is written by Gemini.</b> It is given only the facts on the card, and its answer is checked against them. If Gemini is busy, Moonlight writes the explanation from its own template.</p>
       </div>
@@ -551,6 +552,16 @@ div.explanation{padding:12px 13px}
   </div>
 </template>
 
+<!-- Over the limit (status 429). The script fills in the words. This is
+     never the code-written explanation. -->
+<template id="explanation-too-many">
+  <div class="explanation" data-slot="explanation">
+    <div class="slot-label">Plain-language explanation</div>
+    <p class="placeholder" data-part="message"></p>
+    <button class="ghost-btn" type="button" data-part="read">Try again</button>
+  </div>
+</template>
+
 <script>
 (() => {
   "use strict";
@@ -569,9 +580,16 @@ div.explanation{padding:12px 13px}
   let chosen = null;    // the protein whose filter button is pressed, or null
   let waiting = [];     // new-clue cards that fetch their explanation when their tab first opens
 
+  // What the page says when the API answers 429. Kashish's exact words.
+  const TOO_MANY = "Too many requests. Please wait a minute.";
+
   async function ask(path, params) {
     const answer = await fetch(path + "?" + new URLSearchParams(params));
-    if (!answer.ok) throw new Error("status " + answer.status);
+    if (!answer.ok) {
+      const problem = new Error("status " + answer.status);
+      problem.status = answer.status;
+      throw problem;
+    }
     return answer.json();
   }
 
@@ -632,7 +650,9 @@ div.explanation{padding:12px 13px}
     try {
       answer = await ask("/api/search", {q: text});
     } catch (problem) {
-      if (mine === latest) note.textContent = "Moonlight could not search just now. Please try again.";
+      if (mine === latest) note.textContent = problem.status === 429
+        ? TOO_MANY
+        : "Moonlight could not search just now. Please try again.";
       return;
     }
     if (mine !== latest) return;
@@ -903,6 +923,14 @@ div.explanation{padding:12px 13px}
     try {
       answer = await ask("/api/explain", {disease_id: disease.id, clue_id: clue.id});
     } catch (problem) {
+      if (problem.status === 429) {
+        // Over the limit: say so. No explanation of any kind is shown.
+        const wait = copyOf("explanation-too-many");
+        part(wait, "message").textContent = TOO_MANY;
+        part(wait, "read").addEventListener("click", el.readNow);
+        slot(el, "explanation").replaceWith(wait);
+        return;
+      }
       const failed = copyOf("explanation-failed");
       part(failed, "read").addEventListener("click", el.readNow);
       slot(el, "explanation").replaceWith(failed);

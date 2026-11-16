@@ -370,6 +370,7 @@ def test_29_example_4_no_api_response_names_any_of_the_six(
         data = clues.json()
         texts = [clues.text]
         for clue in data["new_clues"] + data["being_studied"]:
+            api.forget_visitors()  # this test is not about the limit
             answer = client.get(
                 "/api/explain", params={"disease_id": FIBRO.id, "clue_id": clue["id"]})
             assert answer.status_code == 200
@@ -475,6 +476,7 @@ def test_29_with_the_note_no_api_response_names_sitaxentan(noted_files):
         data = clues.json()
         texts = [clues.text]
         for clue in data["new_clues"] + data["being_studied"]:
+            api.forget_visitors()  # this test is not about the limit
             answer = client.get(
                 "/api/explain", params={"disease_id": PAH_GOLDEN.id, "clue_id": clue["id"]})
             assert answer.status_code == 200

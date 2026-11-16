@@ -43,6 +43,9 @@ Format: date, the decision, why.
 - 2026-11-15: Moonlight has a guide inside the page called "How to use Moonlight". It shows how to read the tabs and a card, and what Moonlight cannot tell you.
 - 2026-11-15: No visitor counter on the page. It is not useful for Moonlight right now, and the page loads nothing from outside.
 - 2026-11-15: The guide shows one real card, Doxapram, from my paper graph, so people can see how to read a card. It is the only medicine the page names before a search, and only inside the guide.
+- 2026-11-16: One visitor can make 10 searches a minute and get 30 explanations a minute. After that the page says "Too many requests. Please wait a minute."
+- 2026-11-16: A search can be 100 letters at most.
+- 2026-11-16: The guide says that Gemini, an AI, guesses the disease and writes the explanations, and that the words you type are sent to Gemini.
 - 2026-11-16: The Approved tab also looks one step up and one step down from the disease. A medicine found there gets a label saying where the database lists it. Medicines from the wider group go in a folded box. It is never a new clue.
 - 2026-11-16: What the data says about this exact disease comes first. A medicine in trials for the disease stays in In trials, even if it is approved for a wider group.
 - 2026-11-16: Daratumumab is not shown as approved for amyloidosis, because Open Targets does not say so. Moonlight never creates an approval.
