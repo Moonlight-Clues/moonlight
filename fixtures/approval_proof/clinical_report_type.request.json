@@ -1,0 +1,4 @@
+{
+  "query": "\nquery ReportType {\n  __type(name: \"ClinicalReport\") {\n    name\n    fields { name description type { name kind ofType { name kind ofType { name kind ofType { name kind } } } } }\n  }\n}\n",
+  "variables": {}
+}

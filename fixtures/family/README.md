@@ -23,3 +23,9 @@ exact body that was posted.
 The five diseases: MONDO_0019065 amyloidosis, MONDO_0020511 precursor B-cell
 acute lymphoblastic leukemia, MONDO_0004980 atopic eczema, MONDO_0015924
 pulmonary arterial hypertension, MONDO_0004979 asthma.
+
+Ticket 2.13, 2026-11-16: fetch.py's DISEASE_DRUGS_QUERY now also asks for
+each report's `clinicalStage`. The 48 `disease_drugs` lists here, and
+`fixtures/withdrawn/MONDO_0015924/disease_drugs.*`, were asked again live
+with the new words. Each was saved only after checking that the new answer
+was the old saved one plus `clinicalStage` on each report, and nothing else.

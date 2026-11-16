@@ -91,6 +91,11 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .doctor-line{background:var(--paper);border:1px solid #EADFC8;border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:12px 15px;font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .no-path{margin:16px 0 4px}
 .where-label{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
+.proof-note{font-size:13px;line-height:1.5;color:var(--navy);background:var(--slate);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
+/* Bright red on purpose: it is outside the page's palette so it cannot be missed. The sign and the words carry the warning too. */
+.wrong-warning{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.45;font-weight:750;color:#D40000;background:#FFF1F1;border:2px solid #D40000;border-radius:9px;padding:10px 12px;margin:12px 0 0}
+.wrong-warning[hidden]{display:none}
+.wrong-warning svg{flex:none;margin-top:1px}
 .wider-box{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:17px 0 0;padding:0 14px}
 .wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
 .wider-box[open]{padding-bottom:14px}
@@ -517,6 +522,8 @@ div.explanation{padding:12px 13px}
       <span class="reports" data-slot="reports"></span>
     </div>
     <p class="where-label" data-slot="label" hidden></p>
+    <p class="proof-note" data-slot="proof-note" hidden></p>
+    <p class="wrong-warning" data-slot="warning" hidden><svg role="img" aria-label="Warning" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v5"/><path d="M12 17.6v.4"/></svg><span data-part="warning-words"></span></p>
     <p class="card-subhead" data-part="path-head">Research pathway</p>
     <div class="path" data-slot="path"></div>
     <div class="protein-list" data-part="proteins"></div>
@@ -867,6 +874,14 @@ div.explanation{padding:12px 13px}
     if (medicine.label) {  // found on a parent or child entry: say which
       slot(el, "label").textContent = medicine.label;
       slot(el, "label").hidden = false;
+    }
+    if (medicine.proof_note) {  // only Japan's general list says it is approved
+      slot(el, "proof-note").textContent = medicine.proof_note;
+      slot(el, "proof-note").hidden = false;
+    }
+    if (medicine.warning) {  // on the corrections list for this disease
+      part(slot(el, "warning"), "warning-words").textContent = medicine.warning;
+      slot(el, "warning").hidden = false;
     }
     if (!medicine.proteins.length) {
       part(el, "path-head").remove();

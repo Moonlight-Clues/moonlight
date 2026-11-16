@@ -43,6 +43,8 @@ fixtures/MONDO_0015924/disease_drugs.* and the live API on 2026-11-15.
 "description" and "synonyms" ("relation", "terms") on a disease were read
 from the live API on 2026-11-16 and are saved in
 fixtures/MONDO_0015924/disease_about.* and fixtures/MONDO_0100338/disease_about.*.
+"clinicalStage" on a clinical report was read from the live API on
+2026-11-16 and is saved in fixtures/approval_proof/.
 """
 
 import logging
@@ -188,6 +190,10 @@ query TargetDrugs($targetId: String!) {
 # one medicine form, and "maxClinicalStage" on the row is how far that form
 # got for THIS disease. "maximumClinicalStage" on the drug is how far it got
 # for any disease.
+# Ticket 2.13. Each report is one receipt. "clinicalStage" on the report says
+# what kind: "APPROVAL" for an approval record, a phase word for a trial.
+# Adding it changed the question's words, so an answer saved for the old
+# question is filed under another name and is never read for this one.
 DISEASE_DRUGS_QUERY = """
 query DiseaseDrugs($diseaseId: String!) {
   disease(efoId: $diseaseId) {
@@ -204,7 +210,7 @@ query DiseaseDrugs($diseaseId: String!) {
           parentMolecule { id name drugWarnings { warningType } }
           childMolecules { id name drugWarnings { warningType } }
         }
-        clinicalReports { url }
+        clinicalReports { url clinicalStage }
       }
     }
   }
@@ -613,6 +619,12 @@ class Listed:
 
     forms holds (id, name) for every form of the family on that list, the
     parent first. sources holds the family's report links, each once.
+
+    approval_sources (ticket 2.13) holds only the links of the reports whose
+    own stage is approval: the approval receipts. A trial's link is in
+    sources but not here. It is empty if the answer did not say each
+    report's stage, as answers saved before ticket 2.13 did not: nothing
+    is guessed.
     """
 
     id: str  # the id shared by the medicine and its tablet forms
@@ -622,6 +634,7 @@ class Listed:
     # Always True from fetch_approved. fetch_withdrawn also hands over
     # families that are only in trials for the disease: then it is False.
     approved: bool = True
+    approval_sources: Tuple[str, ...] = ()
 
 
 def _list_families(disease: Disease) -> Dict[str, dict]:
@@ -640,7 +653,8 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         family_id = parent["id"] if parent else drug["id"]
         family = families.setdefault(
             family_id,
-            {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": []},
+            {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
+             "approval_sources": []},
         )
         family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
@@ -660,6 +674,10 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             url = report["url"]
             if url and url not in family["sources"]:
                 family["sources"].append(url)
+            # .get: an answer to the old question has no stage on its reports.
+            is_approval = report.get("clinicalStage") == APPROVAL
+            if url and is_approval and url not in family["approval_sources"]:
+                family["approval_sources"].append(url)
     return families
 
 
@@ -670,6 +688,7 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         forms=tuple(family["forms"]),
         sources=tuple(family["sources"]),
         approved=family["approved"],
+        approval_sources=tuple(family["approval_sources"]),
     )
 
 
