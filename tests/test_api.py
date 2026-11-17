@@ -1001,7 +1001,7 @@ APPROVED_14 = [
 DOCTOR_LINE = "Talk to your doctor before changing any medicine."
 APPROVED_WORDS = (
     "Already approved for this disease in at least one country, according to "
-    "the database. Nothing here says how well any of them works."
+    "the database. Nothing here says how well any of them works. Listed A to Z."
 )
 APPROVED_EMPTY = (
     "The database lists no approved medicine under this exact name. That "

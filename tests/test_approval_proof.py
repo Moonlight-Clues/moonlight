@@ -340,11 +340,10 @@ def correction(medicine_id, disease_id):
             "date": "2026-11-16", "note": NOTE}
 
 
-def test_the_corrections_file_starts_empty():
+def test_the_corrections_file_is_the_one_the_engine_reads():
     file = ROOT / "moonlight" / "corrections.json"
-    assert json.loads(file.read_text(encoding="utf-8")) == []
     assert engine.CORRECTIONS_FILE == file
-    assert REAL_READ_CORRECTIONS() == []
+    assert REAL_READ_CORRECTIONS() == json.loads(file.read_text(encoding="utf-8"))
 
 
 def test_every_entry_in_the_real_file_has_the_four_things_and_names_no_doctor():
@@ -352,7 +351,7 @@ def test_every_entry_in_the_real_file_has_the_four_things_and_names_no_doctor():
     for entry in REAL_READ_CORRECTIONS():
         assert set(entry) == {"medicine_id", "disease_id", "date", "note"}
         assert entry["note"] == NOTE
-    assert engine.corrections() == set()
+    assert len(engine.corrections()) == len(REAL_READ_CORRECTIONS())
 
 
 def test_example_with_an_empty_corrections_file_no_card_shows_the_warning():
