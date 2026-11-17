@@ -1,0 +1,7414 @@
+{
+  "started": "2026-11-17T13:29:29Z",
+  "finished": "2026-11-17T13:39:55Z",
+  "data_version": {
+    "year": "26",
+    "month": "09",
+    "iteration": null
+  },
+  "requests_sent_this_run": 400,
+  "diseases": [
+    {
+      "asked": "asthma",
+      "found": true,
+      "id": "MONDO_0004979",
+      "name": "asthma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004979",
+          "name": "asthma"
+        },
+        {
+          "id": "MONDO_0005405",
+          "name": "childhood onset asthma"
+        },
+        {
+          "id": "MONDO_0004784",
+          "name": "allergic asthma"
+        },
+        {
+          "id": "OBA_2001001",
+          "name": "age of onset of asthma"
+        },
+        {
+          "id": "EFO_0010638",
+          "name": "atopic asthma"
+        },
+        {
+          "id": "OBA_2001015",
+          "name": "age of onset of childhood onset asthma"
+        },
+        {
+          "id": "EFO_1002011",
+          "name": "adult onset asthma"
+        },
+        {
+          "id": "EFO_0009759",
+          "name": "Chronic Obstructive Asthma"
+        },
+        {
+          "id": "EFO_0007614",
+          "name": "asthma exacerbation measurement"
+        },
+        {
+          "id": "EFO_0010049",
+          "name": "asthma symptoms measurement"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0004979",
+        "asks": 2,
+        "report_counts": [
+          3042,
+          3042
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "type 2 diabetes mellitus",
+      "found": true,
+      "id": "MONDO_0005148",
+      "name": "type 2 diabetes mellitus",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005148",
+          "name": "type 2 diabetes mellitus"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005148",
+        "asks": 2,
+        "report_counts": [
+          6201,
+          6201
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hypertension",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005044",
+          "name": "hypertensive disorder"
+        },
+        {
+          "id": "MONDO_0015924",
+          "name": "pulmonary arterial hypertension"
+        },
+        {
+          "id": "MONDO_0007781",
+          "name": "essential hypertension, genetic"
+        },
+        {
+          "id": "MONDO_0001134",
+          "name": "essential hypertension"
+        },
+        {
+          "id": "EFO_0009197",
+          "name": "Pulmonary arterial hypertension associated with portal hypertension"
+        },
+        {
+          "id": "MONDO_0017148",
+          "name": "heritable pulmonary arterial hypertension"
+        },
+        {
+          "id": "MONDO_0007211",
+          "name": "brachydactyly-arterial hypertension syndrome"
+        },
+        {
+          "id": "MONDO_0024664",
+          "name": "hypertension, pregnancy-induced"
+        },
+        {
+          "id": "MONDO_0006846",
+          "name": "malignant hypertension"
+        },
+        {
+          "id": "EFO_0009054",
+          "name": "Pulmonary arterial hypertension associated with congenital heart disease"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "migraine",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005277",
+          "name": "migraine disorder"
+        },
+        {
+          "id": "MONDO_0018925",
+          "name": "familial or sporadic hemiplegic migraine"
+        },
+        {
+          "id": "MONDO_0100539",
+          "name": "hemiplegic migraine-developmental and epileptic encephalopathy spectrum"
+        },
+        {
+          "id": "OBA_2001026",
+          "name": "age of onset of migraine disorder"
+        },
+        {
+          "id": "OBA_2001027",
+          "name": "age of onset of migraine with aura"
+        },
+        {
+          "id": "MONDO_0000700",
+          "name": "familial hemiplegic migraine"
+        },
+        {
+          "id": "MONDO_0011232",
+          "name": "migraine, familial hemiplegic, 2"
+        },
+        {
+          "id": "MONDO_0012320",
+          "name": "migraine, familial hemiplegic, 3"
+        },
+        {
+          "id": "MONDO_0005475",
+          "name": "migraine with aura"
+        },
+        {
+          "id": "MONDO_0100431",
+          "name": "migraine without aura"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "epilepsy",
+      "found": true,
+      "id": "MONDO_0005027",
+      "name": "epilepsy",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005027",
+          "name": "epilepsy"
+        },
+        {
+          "id": "HP_0001250",
+          "name": "Seizure"
+        },
+        {
+          "id": "MONDO_0100577",
+          "name": "myoclonic epilepsy"
+        },
+        {
+          "id": "MONDO_0019448",
+          "name": "benign adult familial myoclonic epilepsy"
+        },
+        {
+          "id": "MONDO_0100619",
+          "name": "variable age epilepsy syndrome"
+        },
+        {
+          "id": "MONDO_0020072",
+          "name": "childhood-onset epilepsy syndrome"
+        },
+        {
+          "id": "MONDO_0018125",
+          "name": "focal epilepsy-intellectual disability-cerebro-cerebellar malformation"
+        },
+        {
+          "id": "MONDO_0005579",
+          "name": "idiopathic generalized epilepsy"
+        },
+        {
+          "id": "MONDO_0007295",
+          "name": "self-limited epilepsy with centrotemporal spikes"
+        },
+        {
+          "id": "MONDO_0800495",
+          "name": "variable-age epilepsy syndrome with developmental and/or epileptic encephalopathy or progressive neurological deterioration"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005027",
+        "asks": 2,
+        "report_counts": [
+          1210,
+          1210
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "rheumatoid arthritis",
+      "found": true,
+      "id": "MONDO_0008383",
+      "name": "rheumatoid arthritis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008383",
+          "name": "rheumatoid arthritis"
+        },
+        {
+          "id": "EFO_0009460",
+          "name": "ACPA-negative rheumatoid arthritis"
+        },
+        {
+          "id": "EFO_0009459",
+          "name": "ACPA-positive rheumatoid arthritis"
+        },
+        {
+          "id": "MONDO_0019435",
+          "name": "rheumatoid factor-positive polyarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019432",
+          "name": "rheumatoid factor-negative juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0011429",
+          "name": "juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0004586",
+          "name": "rheumatoid arthritis-associated interstitial lung disease"
+        },
+        {
+          "id": "EFO_0007791",
+          "name": "rheumatoid factor seropositivity measurement"
+        },
+        {
+          "id": "MONDO_0019433",
+          "name": "oligoarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019434",
+          "name": "systemic-onset juvenile idiopathic arthritis"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0008383",
+        "asks": 2,
+        "report_counts": [
+          2851,
+          2851
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "psoriasis",
+      "found": true,
+      "id": "MONDO_0005083",
+      "name": "psoriasis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005083",
+          "name": "psoriasis"
+        },
+        {
+          "id": "EFO_1001494",
+          "name": "psoriasis vulgaris"
+        },
+        {
+          "id": "MONDO_0100491",
+          "name": "generalized pustular psoriasis"
+        },
+        {
+          "id": "MONDO_0013626",
+          "name": "psoriasis 14, pustular"
+        },
+        {
+          "id": "MONDO_0011269",
+          "name": "psoriasis 2"
+        },
+        {
+          "id": "MONDO_0019436",
+          "name": "psoriasis-related juvenile idiopathic arthritis"
+        },
+        {
+          "id": "EFO_0007773",
+          "name": "cutaneous psoriasis measurement"
+        },
+        {
+          "id": "MONDO_0023297",
+          "name": "guttate psoriasis"
+        },
+        {
+          "id": "MONDO_0022205",
+          "name": "pustular psoriasis"
+        },
+        {
+          "id": "MONDO_0011849",
+          "name": "psoriatic arthritis"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005083",
+        "asks": 2,
+        "report_counts": [
+          879,
+          879
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "atopic eczema",
+      "found": true,
+      "id": "MONDO_0004980",
+      "name": "atopic eczema",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004980",
+          "name": "atopic eczema"
+        },
+        {
+          "id": "EFO_0007755",
+          "name": "atopic march"
+        },
+        {
+          "id": "MONDO_0018904",
+          "name": "primary membranoproliferative glomerulonephritis"
+        },
+        {
+          "id": "MONDO_0010627",
+          "name": "X-linked lymphoproliferative syndrome"
+        },
+        {
+          "id": "MONDO_0033558",
+          "name": "autoinflammation, immune dysregulation, and eosinophilia"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0004980",
+        "asks": 2,
+        "report_counts": [
+          1030,
+          1030
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Crohn's disease",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005011",
+          "name": "Crohn disease"
+        },
+        {
+          "id": "MONDO_0005265",
+          "name": "inflammatory bowel disease"
+        },
+        {
+          "id": "MONDO_0005532",
+          "name": "Crohn's colitis"
+        },
+        {
+          "id": "MONDO_0018353",
+          "name": "refractory celiac disease"
+        },
+        {
+          "id": "MONDO_0005534",
+          "name": "ileocolitis"
+        },
+        {
+          "id": "MONDO_0005539",
+          "name": "small bowel Crohn disease"
+        },
+        {
+          "id": "MONDO_0000710",
+          "name": "gastroduodenal Crohn disease"
+        },
+        {
+          "id": "MONDO_0005537",
+          "name": "perianal Crohn disease"
+        },
+        {
+          "id": "MONDO_0009960",
+          "name": "inflammatory bowel disease 1"
+        },
+        {
+          "id": "MONDO_0016542",
+          "name": "IL10-related early-onset inflammatory bowel disease"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "ulcerative colitis",
+      "found": true,
+      "id": "MONDO_0005101",
+      "name": "ulcerative colitis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005101",
+          "name": "ulcerative colitis"
+        },
+        {
+          "id": "EFO_1000226",
+          "name": "Dysplasia in Ulcerative Colitis"
+        },
+        {
+          "id": "MONDO_0030314",
+          "name": "inflammatory bowel disease (infantile ulcerative colitis) 31, autosomal recessive"
+        },
+        {
+          "id": "MONDO_0006038",
+          "name": "indeterminate colitis"
+        },
+        {
+          "id": "MONDO_0005533",
+          "name": "distal colitis"
+        },
+        {
+          "id": "MONDO_0005265",
+          "name": "inflammatory bowel disease"
+        },
+        {
+          "id": "MONDO_0009960",
+          "name": "inflammatory bowel disease 1"
+        },
+        {
+          "id": "MONDO_0005536",
+          "name": "pancolitis"
+        },
+        {
+          "id": "MONDO_0018646",
+          "name": "sclerosing cholangitis"
+        },
+        {
+          "id": "EFO_0006835",
+          "name": "pyoderma gangrenosum"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005101",
+        "asks": 2,
+        "report_counts": [
+          1102,
+          1102
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "osteoporosis",
+      "found": true,
+      "id": "MONDO_0005298",
+      "name": "osteoporosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005298",
+          "name": "osteoporosis"
+        },
+        {
+          "id": "MONDO_0019409",
+          "name": "idiopathic juvenile osteoporosis"
+        },
+        {
+          "id": "MONDO_0011020",
+          "name": "osteoporosis-oculocutaneous hypopigmentation syndrome"
+        },
+        {
+          "id": "MONDO_0009820",
+          "name": "osteoporosis-pseudoglioma syndrome"
+        },
+        {
+          "id": "MONDO_0008159",
+          "name": "postmenopausal osteoporosis"
+        },
+        {
+          "id": "MONDO_0044675",
+          "name": "LRP5-related primary osteoporosis"
+        },
+        {
+          "id": "MONDO_0018315",
+          "name": "X-linked osteoporosis with fractures"
+        },
+        {
+          "id": "MONDO_0859253",
+          "name": "osteoporosis, childhood- or juvenile-onset, with developmental delay"
+        },
+        {
+          "id": "MONDO_0979880",
+          "name": "brain small vessel disease 5 with osteoporosis"
+        },
+        {
+          "id": "MONDO_0700228",
+          "name": "LRP5-related exudative vitreoretinopathy"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005298",
+        "asks": 2,
+        "report_counts": [
+          727,
+          727
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "gout",
+      "found": true,
+      "id": "MONDO_0005393",
+      "name": "gout",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005393",
+          "name": "gout"
+        },
+        {
+          "id": "EFO_0021525",
+          "name": "renal overload-type gout"
+        },
+        {
+          "id": "EFO_0004761",
+          "name": "uric acid measurement"
+        },
+        {
+          "id": "MONDO_0010299",
+          "name": "hypoxanthine guanine phosphoribosyltransferase partial deficiency"
+        },
+        {
+          "id": "MONDO_0010395",
+          "name": "phosphoribosylpyrophosphate synthetase superactivity"
+        },
+        {
+          "id": "MONDO_0000608",
+          "name": "familial juvenile hyperuricemic nephropathy"
+        },
+        {
+          "id": "EFO_0008618",
+          "name": "Medullary Cystic Kidney Disease Type II"
+        },
+        {
+          "id": "MONDO_0008383",
+          "name": "rheumatoid arthritis"
+        },
+        {
+          "id": "MONDO_0004855",
+          "name": "tenosynovitis"
+        },
+        {
+          "id": "EFO_0004531",
+          "name": "urate measurement"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005393",
+        "asks": 2,
+        "report_counts": [
+          509,
+          509
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "heart failure",
+      "found": true,
+      "id": "MONDO_0005252",
+      "name": "heart failure",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005252",
+          "name": "heart failure"
+        },
+        {
+          "id": "MONDO_0005009",
+          "name": "congestive heart failure"
+        },
+        {
+          "id": "MONDO_0005253",
+          "name": "high output heart failure"
+        },
+        {
+          "id": "HP_0009805",
+          "name": "Low-output congestive heart failure"
+        },
+        {
+          "id": "MONDO_0006993",
+          "name": "systolic heart failure"
+        },
+        {
+          "id": "MONDO_0006727",
+          "name": "diastolic heart failure"
+        },
+        {
+          "id": "MONDO_0005256",
+          "name": "moderate heart failure"
+        },
+        {
+          "id": "MONDO_0005254",
+          "name": "symptomatic heart failure"
+        },
+        {
+          "id": "MONDO_0005257",
+          "name": "advanced heart failure"
+        },
+        {
+          "id": "MONDO_0005255",
+          "name": "mild heart failure"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005252",
+        "asks": 2,
+        "report_counts": [
+          1185,
+          1185
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "atrial fibrillation",
+      "found": true,
+      "id": "MONDO_0004981",
+      "name": "atrial fibrillation",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004981",
+          "name": "atrial fibrillation"
+        },
+        {
+          "id": "MONDO_0013545",
+          "name": "atrial fibrillation, familial, 12"
+        },
+        {
+          "id": "MONDO_0014340",
+          "name": "atrial fibrillation, familial, 15"
+        },
+        {
+          "id": "MONDO_0013530",
+          "name": "atrial fibrillation, familial, 10"
+        },
+        {
+          "id": "MONDO_0018054",
+          "name": "familial atrial fibrillation"
+        },
+        {
+          "id": "MONDO_0013513",
+          "name": "atrial fibrillation, familial, 9"
+        },
+        {
+          "id": "MONDO_0014155",
+          "name": "atrial fibrillation, familial, 13"
+        },
+        {
+          "id": "MONDO_0011857",
+          "name": "atrial fibrillation, familial, 3"
+        },
+        {
+          "id": "HP_0004757",
+          "name": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "id": "MONDO_0013100",
+          "name": "atrial fibrillation, familial, 8"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0004981",
+        "asks": 2,
+        "report_counts": [
+          760,
+          760
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "chronic obstructive pulmonary disease",
+      "found": true,
+      "id": "MONDO_0005002",
+      "name": "chronic obstructive pulmonary disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005002",
+          "name": "chronic obstructive pulmonary disease"
+        },
+        {
+          "id": "OBA_2055786",
+          "name": "age of onset of chronic obstructive pulmonary disease"
+        },
+        {
+          "id": "MONDO_0005087",
+          "name": "respiratory system disorder"
+        },
+        {
+          "id": "MONDO_0005607",
+          "name": "chronic bronchitis"
+        },
+        {
+          "id": "MONDO_0004849",
+          "name": "pulmonary emphysema"
+        },
+        {
+          "id": "MONDO_0004596",
+          "name": "cor pulmonale"
+        },
+        {
+          "id": "MONDO_0009061",
+          "name": "cystic fibrosis"
+        },
+        {
+          "id": "MONDO_0021113",
+          "name": "respiratory failure"
+        },
+        {
+          "id": "MONDO_0010220",
+          "name": "Young syndrome"
+        },
+        {
+          "id": "EFO_0010721",
+          "name": "lung transplantation"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005002",
+        "asks": 2,
+        "report_counts": [
+          2312,
+          2312
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "chronic kidney disease",
+      "found": true,
+      "id": "MONDO_0005300",
+      "name": "chronic kidney disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005300",
+          "name": "chronic kidney disease"
+        },
+        {
+          "id": "EFO_0009909",
+          "name": "stage 5 chronic kidney disease"
+        },
+        {
+          "id": "MONDO_0004691",
+          "name": "autosomal dominant polycystic kidney disease"
+        },
+        {
+          "id": "MONDO_0054842",
+          "name": "polycystic kidney disease 6 with or without polycystic liver disease"
+        },
+        {
+          "id": "MONDO_0013131",
+          "name": "polycystic kidney disease 2"
+        },
+        {
+          "id": "MONDO_0033281",
+          "name": "polycystic kidney disease 5"
+        },
+        {
+          "id": "MONDO_0001106",
+          "name": "kidney failure"
+        },
+        {
+          "id": "EFO_0008618",
+          "name": "Medullary Cystic Kidney Disease Type II"
+        },
+        {
+          "id": "MONDO_0020726",
+          "name": "tubulointerstitial kidney disease, autosomal dominant, 2"
+        },
+        {
+          "id": "MONDO_0024327",
+          "name": "chronic renal failure syndrome"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005300",
+        "asks": 2,
+        "report_counts": [
+          1336,
+          1336
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hypothyroidism",
+      "found": true,
+      "id": "MONDO_0005420",
+      "name": "hypothyroidism",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005420",
+          "name": "hypothyroidism"
+        },
+        {
+          "id": "MONDO_0016410",
+          "name": "central congenital hypothyroidism"
+        },
+        {
+          "id": "MONDO_0010142",
+          "name": "hypothyroidism due to TSH receptor mutations"
+        },
+        {
+          "id": "MONDO_0016408",
+          "name": "permanent congenital hypothyroidism"
+        },
+        {
+          "id": "MONDO_0010475",
+          "name": "X-linked central congenital hypothyroidism with late-onset testicular enlargement"
+        },
+        {
+          "id": "MONDO_0009154",
+          "name": "hypothyroidism, congenital, nongoitrous, 5"
+        },
+        {
+          "id": "HP_0011787",
+          "name": "Central hypothyroidism"
+        },
+        {
+          "id": "MONDO_0016412",
+          "name": "peripheral hypothyroidism"
+        },
+        {
+          "id": "EFO_0700040",
+          "name": "syndromic hypothyroidism"
+        },
+        {
+          "id": "MONDO_0016411",
+          "name": "hypothyroidism due to deficient transcription factors involved in pituitary development or function"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005420",
+        "asks": 2,
+        "report_counts": [
+          217,
+          217
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "depressive disorder",
+      "found": true,
+      "id": "MONDO_0002050",
+      "name": "depressive disorder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0002050",
+          "name": "depressive disorder"
+        },
+        {
+          "id": "MONDO_0002009",
+          "name": "major depressive disorder"
+        },
+        {
+          "id": "MONDO_1060152",
+          "name": "schizoaffective depressive disorder"
+        },
+        {
+          "id": "EFO_0007634",
+          "name": "major depressive episode"
+        },
+        {
+          "id": "MONDO_0004985",
+          "name": "bipolar disorder"
+        },
+        {
+          "id": "EFO_0007704",
+          "name": "depressive episode measurement"
+        },
+        {
+          "id": "MONDO_0005379",
+          "name": "neurotic disorder"
+        },
+        {
+          "id": "MONDO_0041086",
+          "name": "mixed anxiety and depressive disorder"
+        },
+        {
+          "id": "EFO_0009964",
+          "name": "bipolar II disorder"
+        },
+        {
+          "id": "MONDO_0001442",
+          "name": "dysthymic disorder"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0002050",
+        "asks": 2,
+        "report_counts": [
+          964,
+          964
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "schizophrenia",
+      "found": true,
+      "id": "MONDO_0005090",
+      "name": "schizophrenia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005090",
+          "name": "schizophrenia"
+        },
+        {
+          "id": "MONDO_0013498",
+          "name": "schizophrenia 15"
+        },
+        {
+          "id": "EFO_0007927",
+          "name": "schizophrenia symptom severity measurement"
+        },
+        {
+          "id": "MONDO_0005414",
+          "name": "treatment-refractory schizophrenia"
+        },
+        {
+          "id": "MONDO_0033312",
+          "name": "schizophrenia 19"
+        },
+        {
+          "id": "EFO_0004785",
+          "name": "South Texas Assessment of Neurocognition"
+        },
+        {
+          "id": "MONDO_0012960",
+          "name": "intellectual disability, autosomal dominant 5"
+        },
+        {
+          "id": "EFO_0010474",
+          "name": "cystathionine measurement"
+        },
+        {
+          "id": "MONDO_0002025",
+          "name": "psychiatric disorder"
+        },
+        {
+          "id": "EFO_0009603",
+          "name": "stroke outcome severity measurement"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005090",
+        "asks": 2,
+        "report_counts": [
+          2287,
+          2287
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "bipolar disorder",
+      "found": true,
+      "id": "MONDO_0004985",
+      "name": "bipolar disorder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004985",
+          "name": "bipolar disorder"
+        },
+        {
+          "id": "EFO_0009963",
+          "name": "bipolar I disorder"
+        },
+        {
+          "id": "EFO_0009964",
+          "name": "bipolar II disorder"
+        },
+        {
+          "id": "MONDO_0015286",
+          "name": "congenital disorder of glycosylation"
+        },
+        {
+          "id": "MONDO_0012117",
+          "name": "ALG9-congenital disorder of glycosylation"
+        },
+        {
+          "id": "MONDO_0005500",
+          "name": "congenital disorder of glycosylation type I"
+        },
+        {
+          "id": "MONDO_0017740",
+          "name": "disorder of protein N-glycosylation"
+        },
+        {
+          "id": "MONDO_0700000",
+          "name": "ALG9-associated autosomal dominant polycystic kidney disease"
+        },
+        {
+          "id": "MONDO_0004691",
+          "name": "autosomal dominant polycystic kidney disease"
+        },
+        {
+          "id": "EFO_1001505",
+          "name": "cystic liver disease"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0004985",
+        "asks": 2,
+        "report_counts": [
+          1216,
+          1216
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Parkinson disease",
+      "found": true,
+      "id": "MONDO_0005180",
+      "name": "Parkinson disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005180",
+          "name": "Parkinson disease"
+        },
+        {
+          "id": "MONDO_0021095",
+          "name": "parkinsonian disorder"
+        },
+        {
+          "id": "MONDO_0017279",
+          "name": "young-onset Parkinson disease"
+        },
+        {
+          "id": "OBA_2001009",
+          "name": "age of onset of Parkinson disease"
+        },
+        {
+          "id": "MONDO_0008199",
+          "name": "late-onset Parkinson disease"
+        },
+        {
+          "id": "Orphanet_307055",
+          "name": "Rare parkinsonian syndrome due to genetic neurodegenerative disease"
+        },
+        {
+          "id": "OBA_2052551",
+          "name": "amount of parkinson disease protein 7 (human) in blood"
+        },
+        {
+          "id": "MONDO_0010360",
+          "name": "Parkinson disease 12"
+        },
+        {
+          "id": "Orphanet_307052",
+          "name": "Rare genetic parkinsonian disorder"
+        },
+        {
+          "id": "MONDO_0006966",
+          "name": "secondary Parkinson disease"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005180",
+        "asks": 2,
+        "report_counts": [
+          1439,
+          1439
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Alzheimer disease",
+      "found": true,
+      "id": "MONDO_0004975",
+      "name": "Alzheimer disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004975",
+          "name": "Alzheimer disease"
+        },
+        {
+          "id": "MONDO_0100087",
+          "name": "familial Alzheimer disease"
+        },
+        {
+          "id": "MONDO_0015140",
+          "name": "early-onset autosomal dominant Alzheimer disease"
+        },
+        {
+          "id": "EFO_1001870",
+          "name": "late-onset Alzheimers disease"
+        },
+        {
+          "id": "MONDO_0011913",
+          "name": "Alzheimer disease 3"
+        },
+        {
+          "id": "EFO_0009268",
+          "name": "family history of Alzheimer’s disease"
+        },
+        {
+          "id": "EFO_0006514",
+          "name": "Alzheimer's disease biomarker measurement"
+        },
+        {
+          "id": "EFO_0022957",
+          "name": "early-onset Alzheimers disease"
+        },
+        {
+          "id": "MONDO_0007088",
+          "name": "Alzheimer disease type 1"
+        },
+        {
+          "id": "MONDO_0014265",
+          "name": "Alzheimer disease 18"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0004975",
+        "asks": 2,
+        "report_counts": [
+          1282,
+          1282
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "multiple sclerosis",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "EFO_0803536",
+          "name": "multiple sclerosis symptom measurement"
+        },
+        {
+          "id": "MONDO_0005284",
+          "name": "chronic progressive multiple sclerosis"
+        },
+        {
+          "id": "MONDO_0005314",
+          "name": "relapsing-remitting multiple sclerosis"
+        },
+        {
+          "id": "MONDO_0017837",
+          "name": "multiple sclerosis-ichthyosis-factor VIII deficiency syndrome"
+        },
+        {
+          "id": "MONDO_0000451",
+          "name": "primary progressive multiple sclerosis"
+        },
+        {
+          "id": "MONDO_0000450",
+          "name": "secondary progressive multiple sclerosis"
+        },
+        {
+          "id": "MONDO_0008612",
+          "name": "tuberous sclerosis 1"
+        },
+        {
+          "id": "MONDO_0010856",
+          "name": "autosomal dominant polycystic kidney disease type 1 with tuberous sclerosis"
+        },
+        {
+          "id": "MONDO_0013199",
+          "name": "tuberous sclerosis 2"
+        },
+        {
+          "id": "HP_0001967",
+          "name": "Diffuse mesangial sclerosis"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "glaucoma",
+      "found": true,
+      "id": "MONDO_0005041",
+      "name": "glaucoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005041",
+          "name": "glaucoma"
+        },
+        {
+          "id": "MONDO_0018174",
+          "name": "hereditary glaucoma"
+        },
+        {
+          "id": "MONDO_0020367",
+          "name": "juvenile open angle glaucoma"
+        },
+        {
+          "id": "MONDO_0005338",
+          "name": "open-angle glaucoma"
+        },
+        {
+          "id": "MONDO_0001868",
+          "name": "primary angle-closure glaucoma"
+        },
+        {
+          "id": "MONDO_0007664",
+          "name": "glaucoma 1, open angle, A"
+        },
+        {
+          "id": "MONDO_0001554",
+          "name": "phacogenic glaucoma"
+        },
+        {
+          "id": "MONDO_0000365",
+          "name": "primary congenital glaucoma"
+        },
+        {
+          "id": "MONDO_0019783",
+          "name": "neovascular glaucoma"
+        },
+        {
+          "id": "MONDO_0001966",
+          "name": "chronic closed-angle glaucoma"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005041",
+        "asks": 2,
+        "report_counts": [
+          392,
+          392
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "endometriosis",
+      "found": true,
+      "id": "MONDO_0005133",
+      "name": "endometriosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005133",
+          "name": "endometriosis"
+        },
+        {
+          "id": "MONDO_0001288",
+          "name": "endometriosis of rectovaginal septum and vagina"
+        },
+        {
+          "id": "MONDO_0001282",
+          "name": "fallopian tube endometriosis"
+        },
+        {
+          "id": "MONDO_0002706",
+          "name": "cervix endometriosis"
+        },
+        {
+          "id": "MONDO_0001284",
+          "name": "endometriosis of intestine"
+        },
+        {
+          "id": "MONDO_0006337",
+          "name": "ovarian endometriosis"
+        },
+        {
+          "id": "MONDO_0001285",
+          "name": "endometriosis of pelvic peritoneum"
+        },
+        {
+          "id": "MONDO_0010888",
+          "name": "adenomyosis"
+        },
+        {
+          "id": "MONDO_0006045",
+          "name": "ovarian clear cell adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0005047",
+          "name": "infertility disorder"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005133",
+        "asks": 2,
+        "report_counts": [
+          240,
+          240
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "tuberculosis",
+      "found": true,
+      "id": "MONDO_0018076",
+      "name": "tuberculosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018076",
+          "name": "tuberculosis"
+        },
+        {
+          "id": "MONDO_0006052",
+          "name": "pulmonary tuberculosis"
+        },
+        {
+          "id": "MONDO_0005848",
+          "name": "miliary tuberculosis"
+        },
+        {
+          "id": "MONDO_0005768",
+          "name": "gastrointestinal tuberculosis"
+        },
+        {
+          "id": "MONDO_0005922",
+          "name": "pleural tuberculosis"
+        },
+        {
+          "id": "MONDO_0041806",
+          "name": "drug-resistant tuberculosis"
+        },
+        {
+          "id": "MONDO_0004189",
+          "name": "esophageal tuberculosis"
+        },
+        {
+          "id": "MONDO_0005787",
+          "name": "hepatic tuberculosis"
+        },
+        {
+          "id": "MONDO_0043836",
+          "name": "tuberculosis, spinal"
+        },
+        {
+          "id": "MONDO_0005962",
+          "name": "skeletal tuberculosis"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0018076",
+        "asks": 2,
+        "report_counts": [
+          724,
+          724
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "malaria",
+      "found": true,
+      "id": "MONDO_0005136",
+      "name": "malaria",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005136",
+          "name": "malaria"
+        },
+        {
+          "id": "MONDO_0005920",
+          "name": "Plasmodium falciparum malaria"
+        },
+        {
+          "id": "MONDO_0005921",
+          "name": "Plasmodium vivax malaria"
+        },
+        {
+          "id": "EFO_0010970",
+          "name": "severe malarial anemia"
+        },
+        {
+          "id": "MONDO_0005625",
+          "name": "cerebral malaria"
+        },
+        {
+          "id": "EFO_0009157",
+          "name": "susceptibility to malaria"
+        },
+        {
+          "id": "MONDO_0005670",
+          "name": "blackwater fever"
+        },
+        {
+          "id": "EFO_1001954",
+          "name": "Epstein-Barr virus-related Burkitts lymphoma"
+        }
+      ],
+      "set": "COMMON",
+      "asks": {
+        "disease_id": "MONDO_0005136",
+        "asks": 2,
+        "report_counts": [
+          787,
+          787
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "HIV infection",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005109",
+          "name": "HIV infectious disease"
+        },
+        {
+          "id": "EFO_0000180",
+          "name": "HIV-1 infection"
+        },
+        {
+          "id": "EFO_0007948",
+          "name": "HIV-associated neurocognitive disorder"
+        },
+        {
+          "id": "EFO_1001348",
+          "name": "HIV-Associated Lipodystrophy Syndrome"
+        },
+        {
+          "id": "MONDO_0022034",
+          "name": "lentivirus infection"
+        },
+        {
+          "id": "MONDO_0005797",
+          "name": "HIV wasting syndrome"
+        },
+        {
+          "id": "MONDO_0005163",
+          "name": "simian immunodeficiency virus infection"
+        },
+        {
+          "id": "MONDO_0020944",
+          "name": "fungal infection of eye"
+        },
+        {
+          "id": "MONDO_0020689",
+          "name": "AIDS dementia complex"
+        },
+        {
+          "id": "MONDO_0010455",
+          "name": "X-linked immunodeficiency with magnesium defect, Epstein-Barr virus infection and neoplasia"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "hepatitis B",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005344",
+          "name": "hepatitis B virus infection"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "hepatitis C",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0005231",
+          "name": "hepatitis C virus infection"
+        }
+      ],
+      "set": "COMMON"
+    },
+    {
+      "asked": "breast cancer",
+      "found": true,
+      "id": "MONDO_0007254",
+      "name": "breast cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007254",
+          "name": "breast cancer"
+        },
+        {
+          "id": "MONDO_0004989",
+          "name": "breast carcinoma"
+        },
+        {
+          "id": "MONDO_0003582",
+          "name": "hereditary breast ovarian cancer syndrome"
+        },
+        {
+          "id": "MONDO_0011450",
+          "name": "breast-ovarian cancer, familial, susceptibility to, 1"
+        },
+        {
+          "id": "MONDO_0012933",
+          "name": "breast-ovarian cancer, familial, susceptibility to, 2"
+        },
+        {
+          "id": "MONDO_0016419",
+          "name": "hereditary breast carcinoma"
+        },
+        {
+          "id": "MONDO_0021100",
+          "name": "breast neoplasm"
+        },
+        {
+          "id": "MONDO_0006512",
+          "name": "estrogen-receptor positive breast cancer"
+        },
+        {
+          "id": "MONDO_0006513",
+          "name": "estrogen-receptor negative breast cancer"
+        },
+        {
+          "id": "EFO_0022984",
+          "name": "bilateral breast cancer"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0007254",
+        "asks": 2,
+        "report_counts": [
+          11546,
+          11546
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "prostate cancer",
+      "found": true,
+      "id": "MONDO_0008315",
+      "name": "prostate cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008315",
+          "name": "prostate cancer"
+        },
+        {
+          "id": "MONDO_0005159",
+          "name": "prostate carcinoma"
+        },
+        {
+          "id": "MONDO_0013872",
+          "name": "prostate cancer, hereditary, 2"
+        },
+        {
+          "id": "Orphanet_1331",
+          "name": "Familial prostate cancer"
+        },
+        {
+          "id": "MONDO_0700275",
+          "name": "prostate cancer, hereditary"
+        },
+        {
+          "id": "OBA_2050200",
+          "name": "prostate specific antigen amount"
+        },
+        {
+          "id": "MONDO_0021259",
+          "name": "prostate neoplasm"
+        },
+        {
+          "id": "MONDO_0003105",
+          "name": "prostate disorder"
+        },
+        {
+          "id": "MONDO_0005082",
+          "name": "prostate adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0002477",
+          "name": "prostate neuroendocrine neoplasm"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0008315",
+        "asks": 2,
+        "report_counts": [
+          4686,
+          4686
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "colorectal cancer",
+      "found": true,
+      "id": "MONDO_0005575",
+      "name": "colorectal cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005575",
+          "name": "colorectal cancer"
+        },
+        {
+          "id": "MONDO_0024331",
+          "name": "colorectal carcinoma"
+        },
+        {
+          "id": "MONDO_0023113",
+          "name": "familial colorectal cancer"
+        },
+        {
+          "id": "MONDO_0012132",
+          "name": "colorectal cancer, susceptibility to, 1"
+        },
+        {
+          "id": "MONDO_0100287",
+          "name": "POLE-related polyposis and colorectal cancer syndrome"
+        },
+        {
+          "id": "MONDO_0018630",
+          "name": "hereditary nonpolyposis colon cancer"
+        },
+        {
+          "id": "MONDO_0014038",
+          "name": "colorectal cancer, susceptibility to, 12"
+        },
+        {
+          "id": "MONDO_0018604",
+          "name": "familial colorectal cancer type X"
+        },
+        {
+          "id": "MONDO_0012953",
+          "name": "colorectal cancer, susceptibility to, 10"
+        },
+        {
+          "id": "EFO_1001480",
+          "name": "metastatic colorectal cancer"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0005575",
+        "asks": 2,
+        "report_counts": [
+          6186,
+          6186
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "lung cancer",
+      "found": true,
+      "id": "MONDO_0008903",
+      "name": "lung cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008903",
+          "name": "lung cancer"
+        },
+        {
+          "id": "MONDO_0005138",
+          "name": "lung carcinoma"
+        },
+        {
+          "id": "MONDO_0021117",
+          "name": "lung neoplasm"
+        },
+        {
+          "id": "EFO_0022194",
+          "name": "EGFR-related lung cancer"
+        },
+        {
+          "id": "EFO_0006953",
+          "name": "family history of lung cancer"
+        },
+        {
+          "id": "MONDO_0005233",
+          "name": "non-small cell lung carcinoma"
+        },
+        {
+          "id": "MONDO_0008433",
+          "name": "small cell lung carcinoma"
+        },
+        {
+          "id": "MONDO_0005097",
+          "name": "squamous cell lung carcinoma"
+        },
+        {
+          "id": "MONDO_0005061",
+          "name": "lung adenocarcinoma"
+        },
+        {
+          "id": "EFO_1000016",
+          "name": "anaplastic lung carcinoma"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0008903",
+        "asks": 2,
+        "report_counts": [
+          665,
+          665
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "melanoma",
+      "found": true,
+      "id": "MONDO_0005105",
+      "name": "melanoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005105",
+          "name": "melanoma"
+        },
+        {
+          "id": "MONDO_0005012",
+          "name": "cutaneous melanoma"
+        },
+        {
+          "id": "MONDO_0006486",
+          "name": "uveal melanoma"
+        },
+        {
+          "id": "OBA_2050157",
+          "name": "melanoma-derived growth regulatory protein  level"
+        },
+        {
+          "id": "MONDO_0013759",
+          "name": "melanoma, cutaneous malignant, susceptibility to, 8"
+        },
+        {
+          "id": "MONDO_0020638",
+          "name": "superficial spreading melanoma"
+        },
+        {
+          "id": "MONDO_0004561",
+          "name": "retinal melanoma"
+        },
+        {
+          "id": "MONDO_0000930",
+          "name": "nodular malignant melanoma"
+        },
+        {
+          "id": "MONDO_0001192",
+          "name": "esophageal melanoma"
+        },
+        {
+          "id": "OBA_2051518",
+          "name": "level of melanoma-associated antigen D1 in blood"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0005105",
+        "asks": 2,
+        "report_counts": [
+          3370,
+          3370
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "multiple myeloma",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0009693",
+          "name": "plasma cell myeloma"
+        },
+        {
+          "id": "MONDO_0005235",
+          "name": "smoldering plasma cell myeloma"
+        },
+        {
+          "id": "MONDO_0006336",
+          "name": "ovarian endometrioid adenocarcinoma with squamous differentiation"
+        },
+        {
+          "id": "MONDO_0021634",
+          "name": "epithelial skin neoplasm"
+        },
+        {
+          "id": "MONDO_0002656",
+          "name": "skin carcinoma"
+        },
+        {
+          "id": "HP_0012021",
+          "name": "Persistent patent ductus venosus"
+        },
+        {
+          "id": "OBA_2041245",
+          "name": "level of deoxycytidylate deaminase in blood serum"
+        },
+        {
+          "id": "OBA_2050588",
+          "name": "level of deoxycytidylate deaminase in blood"
+        },
+        {
+          "id": "HP_0000221",
+          "name": "Furrowed tongue"
+        },
+        {
+          "id": "EFO_0000551",
+          "name": "intracranial hemorrhage"
+        }
+      ],
+      "set": "CANCER"
+    },
+    {
+      "asked": "chronic myeloid leukemia",
+      "found": true,
+      "id": "MONDO_0011996",
+      "name": "chronic myeloid leukemia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0011996",
+          "name": "chronic myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0004643",
+          "name": "myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0018874",
+          "name": "acute myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0001014",
+          "name": "chronic leukemia"
+        },
+        {
+          "id": "MONDO_0004948",
+          "name": "B-cell chronic lymphocytic leukemia"
+        },
+        {
+          "id": "MONDO_0006115",
+          "name": "blast phase chronic myelogenous leukemia, BCR-ABL1 positive"
+        },
+        {
+          "id": "MONDO_0005059",
+          "name": "leukemia"
+        },
+        {
+          "id": "MONDO_0004653",
+          "name": "atypical chronic myeloid leukemia, BCR-ABL1 negative"
+        },
+        {
+          "id": "EFO_1000178",
+          "name": "Chronic Eosinophilic Leukemia, Not Otherwise Specified"
+        },
+        {
+          "id": "MONDO_0004967",
+          "name": "acute lymphoblastic leukemia"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0011996",
+        "asks": 2,
+        "report_counts": [
+          1205,
+          1205
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "acute myeloid leukemia",
+      "found": true,
+      "id": "MONDO_0018874",
+      "name": "acute myeloid leukemia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018874",
+          "name": "acute myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0015667",
+          "name": "acute myeloid leukemia by FAB classification"
+        },
+        {
+          "id": "MONDO_0005223",
+          "name": "acute myeloid leukemia with minimal differentiation"
+        },
+        {
+          "id": "MONDO_0100409",
+          "name": "acute myeloid leukemia, t(3;5)(q25;q34)"
+        },
+        {
+          "id": "MONDO_0004643",
+          "name": "myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0019457",
+          "name": "therapy related acute myeloid leukemia and myelodysplastic syndrome"
+        },
+        {
+          "id": "MONDO_0044923",
+          "name": "acute myeloid leukemia with mutated NPM1"
+        },
+        {
+          "id": "MONDO_0010643",
+          "name": "acute leukemia"
+        },
+        {
+          "id": "MONDO_0017893",
+          "name": "inherited acute myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0004967",
+          "name": "acute lymphoblastic leukemia"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0018874",
+        "asks": 2,
+        "report_counts": [
+          5528,
+          5528
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "acute lymphoblastic leukemia",
+      "found": true,
+      "id": "MONDO_0004967",
+      "name": "acute lymphoblastic leukemia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004967",
+          "name": "acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0004963",
+          "name": "T-cell acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0020511",
+          "name": "precursor B-cell acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0004947",
+          "name": "B-cell acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0000870",
+          "name": "childhood acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0003541",
+          "name": "adult acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0100291",
+          "name": "early T cell progenitor acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0000872",
+          "name": "B-cell childhood acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0018874",
+          "name": "acute myeloid leukemia"
+        },
+        {
+          "id": "MONDO_0003537",
+          "name": "T lymphoblastic leukemia/lymphoma"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0004967",
+        "asks": 2,
+        "report_counts": [
+          3481,
+          3481
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "chronic lymphocytic leukemia",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0004948",
+          "name": "B-cell chronic lymphocytic leukemia"
+        },
+        {
+          "id": "MONDO_0001014",
+          "name": "chronic leukemia"
+        },
+        {
+          "id": "MONDO_0005402",
+          "name": "lymphoid leukemia"
+        },
+        {
+          "id": "MONDO_0004967",
+          "name": "acute lymphoblastic leukemia"
+        },
+        {
+          "id": "MONDO_0006115",
+          "name": "blast phase chronic myelogenous leukemia, BCR-ABL1 positive"
+        },
+        {
+          "id": "MONDO_0005059",
+          "name": "leukemia"
+        },
+        {
+          "id": "MONDO_0003539",
+          "name": "T-cell adult acute lymphocytic leukemia"
+        },
+        {
+          "id": "EFO_1000178",
+          "name": "Chronic Eosinophilic Leukemia, Not Otherwise Specified"
+        },
+        {
+          "id": "MONDO_0012934",
+          "name": "leukemia, chronic lymphocytic, susceptibility to, 3"
+        },
+        {
+          "id": "MONDO_0002083",
+          "name": "Richter transformation"
+        }
+      ],
+      "set": "CANCER"
+    },
+    {
+      "asked": "Hodgkin lymphoma",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0004952",
+          "name": "Hodgkins lymphoma"
+        },
+        {
+          "id": "MONDO_0009348",
+          "name": "classic Hodgkin lymphoma"
+        },
+        {
+          "id": "MONDO_0004665",
+          "name": "nodular sclerosis classical Hodgkin lymphoma"
+        },
+        {
+          "id": "MONDO_0004633",
+          "name": "Hodgkin's lymphoma, mixed cellularity"
+        },
+        {
+          "id": "MONDO_0015759",
+          "name": "B-cell non-Hodgkin lymphoma"
+        },
+        {
+          "id": "MONDO_0005062",
+          "name": "lymphoma"
+        },
+        {
+          "id": "MONDO_0018908",
+          "name": "non-Hodgkin lymphoma"
+        },
+        {
+          "id": "MONDO_0001852",
+          "name": "small intestine lymphoma"
+        },
+        {
+          "id": "MONDO_0010762",
+          "name": "lymphoma, Hodgkin, Y-linked pseudoautosomal"
+        },
+        {
+          "id": "MONDO_0002571",
+          "name": "primary central nervous system lymphoma"
+        }
+      ],
+      "set": "CANCER"
+    },
+    {
+      "asked": "ovarian cancer",
+      "found": true,
+      "id": "MONDO_0008170",
+      "name": "ovarian cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008170",
+          "name": "ovarian cancer"
+        },
+        {
+          "id": "MONDO_0005140",
+          "name": "ovarian carcinoma"
+        },
+        {
+          "id": "MONDO_0003582",
+          "name": "hereditary breast ovarian cancer syndrome"
+        },
+        {
+          "id": "MONDO_0016249",
+          "name": "hereditary site-specific ovarian cancer syndrome"
+        },
+        {
+          "id": "MONDO_0003812",
+          "name": "ovarian endometrial cancer"
+        },
+        {
+          "id": "MONDO_0011450",
+          "name": "breast-ovarian cancer, familial, susceptibility to, 1"
+        },
+        {
+          "id": "MONDO_0012933",
+          "name": "breast-ovarian cancer, familial, susceptibility to, 2"
+        },
+        {
+          "id": "MONDO_0016248",
+          "name": "familial ovarian cancer"
+        },
+        {
+          "id": "MONDO_0001416",
+          "name": "female reproductive organ cancer"
+        },
+        {
+          "id": "MONDO_0700268",
+          "name": "BRCA1-related cancer predisposition"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0008170",
+        "asks": 2,
+        "report_counts": [
+          2536,
+          2536
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "pancreatic cancer",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0021040",
+          "name": "pancreatic neoplasm"
+        },
+        {
+          "id": "MONDO_0005192",
+          "name": "exocrine pancreatic carcinoma"
+        },
+        {
+          "id": "MONDO_0009831",
+          "name": "malignant pancreatic neoplasm"
+        },
+        {
+          "id": "MONDO_0013685",
+          "name": "pancreatic cancer, susceptibility to, 4"
+        },
+        {
+          "id": "MONDO_0015278",
+          "name": "familial pancreatic carcinoma"
+        },
+        {
+          "id": "MONDO_0021076",
+          "name": "pancreatic exocrine neoplasm"
+        },
+        {
+          "id": "MONDO_0006479",
+          "name": "undifferentiated pancreatic carcinoma with osteoclast-like giant cells"
+        },
+        {
+          "id": "MONDO_0002116",
+          "name": "malignant exocrine pancreas neoplasm"
+        },
+        {
+          "id": "MONDO_0700268",
+          "name": "BRCA1-related cancer predisposition"
+        },
+        {
+          "id": "MONDO_0019954",
+          "name": "pancreatic neuroendocrine tumor"
+        }
+      ],
+      "set": "CANCER"
+    },
+    {
+      "asked": "glioblastoma",
+      "found": true,
+      "id": "MONDO_0018177",
+      "name": "glioblastoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018177",
+          "name": "glioblastoma"
+        },
+        {
+          "id": "MONDO_0020690",
+          "name": "adult glioblastoma"
+        },
+        {
+          "id": "MONDO_0002501",
+          "name": "brain glioblastoma"
+        },
+        {
+          "id": "MONDO_0019781",
+          "name": "astrocytoma (excluding glioblastoma)"
+        },
+        {
+          "id": "MONDO_0016682",
+          "name": "giant cell glioblastoma"
+        },
+        {
+          "id": "EFO_1000141",
+          "name": "Brain Stem Glioblastoma"
+        },
+        {
+          "id": "MONDO_0021631",
+          "name": "brain astrocytoma"
+        },
+        {
+          "id": "MONDO_0016681",
+          "name": "gliosarcoma"
+        },
+        {
+          "id": "MONDO_0003234",
+          "name": "optic nerve astrocytoma"
+        },
+        {
+          "id": "EFO_0004713",
+          "name": "FEV/FVC ratio"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0018177",
+        "asks": 2,
+        "report_counts": [
+          1834,
+          1834
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hepatocellular carcinoma",
+      "found": true,
+      "id": "MONDO_0007256",
+      "name": "hepatocellular carcinoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007256",
+          "name": "hepatocellular carcinoma"
+        },
+        {
+          "id": "MONDO_0006210",
+          "name": "fibrolamellar hepatocellular carcinoma"
+        },
+        {
+          "id": "MONDO_0044791",
+          "name": "combined hepatocellular carcinoma and cholangiocarcinoma"
+        },
+        {
+          "id": "MONDO_0018055",
+          "name": "pediatric hepatocellular carcinoma"
+        },
+        {
+          "id": "MONDO_0003243",
+          "name": "hepatocellular clear cell carcinoma"
+        },
+        {
+          "id": "MONDO_0018531",
+          "name": "carcinoma of liver and intrahepatic biliary tract"
+        },
+        {
+          "id": "EFO_0008504",
+          "name": "hepatitis C virus induced hepatocellular carcinoma"
+        },
+        {
+          "id": "EFO_0008503",
+          "name": "hepatitis B virus induced hepatocellular carcinoma"
+        },
+        {
+          "id": "MONDO_0016216",
+          "name": "adult hepatocellular carcinoma"
+        },
+        {
+          "id": "MONDO_0018902",
+          "name": "hepatocellular adenoma"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0007256",
+        "asks": 2,
+        "report_counts": [
+          3023,
+          3023
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "renal cell carcinoma",
+      "found": true,
+      "id": "MONDO_0005086",
+      "name": "renal cell carcinoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005086",
+          "name": "renal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0005549",
+          "name": "renal cell adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0007763",
+          "name": "nonpapillary renal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0017884",
+          "name": "papillary renal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0017885",
+          "name": "chromophobe renal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0005206",
+          "name": "renal carcinoma"
+        },
+        {
+          "id": "MONDO_0020654",
+          "name": "renal pelvis/ureter urothelial carcinoma"
+        },
+        {
+          "id": "MONDO_0005005",
+          "name": "clear cell renal carcinoma"
+        },
+        {
+          "id": "EFO_1000603",
+          "name": "Unclassified Renal Cell Carcinoma"
+        },
+        {
+          "id": "MONDO_0006397",
+          "name": "renal cell carcinoma associated with Xp11.2 translocations/TFE3 gene fusions"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0005086",
+        "asks": 2,
+        "report_counts": [
+          1609,
+          1609
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "thyroid cancer",
+      "found": true,
+      "id": "MONDO_0002108",
+      "name": "thyroid cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0002108",
+          "name": "thyroid cancer"
+        },
+        {
+          "id": "MONDO_0015075",
+          "name": "thyroid gland carcinoma"
+        },
+        {
+          "id": "MONDO_0005034",
+          "name": "thyroid gland follicular carcinoma"
+        },
+        {
+          "id": "MONDO_0005075",
+          "name": "thyroid gland papillary carcinoma"
+        },
+        {
+          "id": "MONDO_0015447",
+          "name": "differentiated thyroid carcinoma"
+        },
+        {
+          "id": "MONDO_0014681",
+          "name": "thyroid cancer, nonmedullary, 4"
+        },
+        {
+          "id": "MONDO_0015277",
+          "name": "medullary thyroid gland carcinoma"
+        },
+        {
+          "id": "MONDO_0014682",
+          "name": "thyroid cancer, nonmedullary, 5"
+        },
+        {
+          "id": "MONDO_0003240",
+          "name": "thyroid gland disorder"
+        },
+        {
+          "id": "MONDO_0005623",
+          "name": "autoimmune thyroid disease"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0002108",
+        "asks": 2,
+        "report_counts": [
+          200,
+          200
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "bladder cancer",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0004986",
+          "name": "urinary bladder carcinoma"
+        },
+        {
+          "id": "MONDO_0001187",
+          "name": "urinary bladder cancer"
+        },
+        {
+          "id": "MONDO_0003715",
+          "name": "bladder urachal carcinoma"
+        },
+        {
+          "id": "MONDO_0004987",
+          "name": "urinary bladder neoplasm"
+        },
+        {
+          "id": "MONDO_0006026",
+          "name": "urinary bladder disorder"
+        },
+        {
+          "id": "MONDO_0005611",
+          "name": "bladder transitional cell carcinoma"
+        },
+        {
+          "id": "MONDO_0004703",
+          "name": "bladder carcinoma in situ"
+        },
+        {
+          "id": "MONDO_0004114",
+          "name": "urinary bladder small cell neuroendocrine carcinoma"
+        },
+        {
+          "id": "MONDO_0018630",
+          "name": "hereditary nonpolyposis colon cancer"
+        },
+        {
+          "id": "MONDO_0002760",
+          "name": "bladder squamous cell carcinoma"
+        }
+      ],
+      "set": "CANCER"
+    },
+    {
+      "asked": "neuroblastoma",
+      "found": true,
+      "id": "MONDO_0005072",
+      "name": "neuroblastoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005072",
+          "name": "neuroblastoma"
+        },
+        {
+          "id": "MONDO_0006076",
+          "name": "adrenal gland neuroblastoma"
+        },
+        {
+          "id": "MONDO_0000551",
+          "name": "retroperitoneal neuroblastoma"
+        },
+        {
+          "id": "OBA_2057807",
+          "name": "level of neuroblastoma suppressor of tumorigenicity 1 (human) in cerebrospinal fluid"
+        },
+        {
+          "id": "OBA_2052421",
+          "name": "amount of neuroblastoma suppressor of tumorigenicity 1 (human) in blood"
+        },
+        {
+          "id": "MONDO_0013083",
+          "name": "neuroblastoma, susceptibility to, 3"
+        },
+        {
+          "id": "MONDO_0001095",
+          "name": "mediastinum neuroblastoma"
+        },
+        {
+          "id": "MONDO_0006329",
+          "name": "olfactory neuroblastoma"
+        },
+        {
+          "id": "MONDO_0002749",
+          "name": "extracranial neuroblastoma"
+        },
+        {
+          "id": "MONDO_0700041",
+          "name": "neuroblastoma, susceptibility to, 2"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0005072",
+        "asks": 2,
+        "report_counts": [
+          1088,
+          1088
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "osteosarcoma",
+      "found": true,
+      "id": "MONDO_0009807",
+      "name": "osteosarcoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0009807",
+          "name": "osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002623",
+          "name": "pediatric osteosarcoma"
+        },
+        {
+          "id": "MONDO_0004301",
+          "name": "fibrosarcomatous osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002621",
+          "name": "extraosseous osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002627",
+          "name": "chondroblastic osteosarcoma"
+        },
+        {
+          "id": "MONDO_0020660",
+          "name": "osteoblastic osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002629",
+          "name": "bone osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002631",
+          "name": "conventional osteosarcoma"
+        },
+        {
+          "id": "MONDO_0006246",
+          "name": "high grade surface osteosarcoma"
+        },
+        {
+          "id": "MONDO_0002628",
+          "name": "peripheral osteosarcoma"
+        }
+      ],
+      "set": "CANCER",
+      "asks": {
+        "disease_id": "MONDO_0009807",
+        "asks": 2,
+        "report_counts": [
+          403,
+          403
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "cystic fibrosis",
+      "found": true,
+      "id": "MONDO_0009061",
+      "name": "cystic fibrosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0009061",
+          "name": "cystic fibrosis"
+        },
+        {
+          "id": "EFO_0801077",
+          "name": "cystic fibrosis-related diabetes"
+        },
+        {
+          "id": "MONDO_7770005",
+          "name": "cystic fibrosis-related liver disease"
+        },
+        {
+          "id": "MONDO_0005413",
+          "name": "cystic fibrosis associated meconium ileus"
+        },
+        {
+          "id": "MONDO_0009062",
+          "name": "cystic fibrosis-gastritis-megaloblastic anemia syndrome"
+        },
+        {
+          "id": "EFO_0009797",
+          "name": "lung disease associated with cystic fibrosis"
+        },
+        {
+          "id": "MONDO_0014613",
+          "name": "pulmonary fibrosis and/or bone marrow failure, Telomere-related, 3"
+        },
+        {
+          "id": "MONDO_0010178",
+          "name": "congenital bilateral aplasia of vas deferens from CFTR mutation"
+        },
+        {
+          "id": "EFO_0008618",
+          "name": "Medullary Cystic Kidney Disease Type II"
+        },
+        {
+          "id": "MONDO_7770004",
+          "name": "CFTR-related disorder"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0009061",
+        "asks": 2,
+        "report_counts": [
+          730,
+          730
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Duchenne muscular dystrophy",
+      "found": true,
+      "id": "MONDO_0010679",
+      "name": "Duchenne muscular dystrophy",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010679",
+          "name": "Duchenne muscular dystrophy"
+        },
+        {
+          "id": "MONDO_0020121",
+          "name": "muscular dystrophy"
+        },
+        {
+          "id": "MONDO_0016097",
+          "name": "symptomatic form of muscular dystrophy of Duchenne and Becker in female carriers"
+        },
+        {
+          "id": "EFO_0700060",
+          "name": "Duchenne and Becker muscular dystrophy"
+        },
+        {
+          "id": "MONDO_0015152",
+          "name": "autosomal recessive limb-girdle muscular dystrophy"
+        },
+        {
+          "id": "MONDO_0010311",
+          "name": "Becker muscular dystrophy"
+        },
+        {
+          "id": "MONDO_0009677",
+          "name": "autosomal recessive limb-girdle muscular dystrophy type 2C"
+        },
+        {
+          "id": "MONDO_0011968",
+          "name": "autosomal recessive limb-girdle muscular dystrophy type 2D"
+        },
+        {
+          "id": "MONDO_0011423",
+          "name": "autosomal recessive limb-girdle muscular dystrophy type 2E"
+        },
+        {
+          "id": "MONDO_0011170",
+          "name": "autosomal recessive limb-girdle muscular dystrophy type 2G"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010679",
+        "asks": 2,
+        "report_counts": [
+          202,
+          202
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "spinal muscular atrophy",
+      "found": true,
+      "id": "MONDO_0001516",
+      "name": "spinal muscular atrophy",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0001516",
+          "name": "spinal muscular atrophy"
+        },
+        {
+          "id": "MONDO_0010056",
+          "name": "spinal muscular atrophy, type IV"
+        },
+        {
+          "id": "MONDO_0009672",
+          "name": "spinal muscular atrophy, type III"
+        },
+        {
+          "id": "MONDO_0009673",
+          "name": "spinal muscular atrophy, type II"
+        },
+        {
+          "id": "MONDO_0010338",
+          "name": "X-linked distal spinal muscular atrophy type 3"
+        },
+        {
+          "id": "MONDO_0011436",
+          "name": "autosomal recessive distal spinal muscular atrophy 1"
+        },
+        {
+          "id": "MONDO_0009669",
+          "name": "spinal muscular atrophy, type 1"
+        },
+        {
+          "id": "MONDO_0010532",
+          "name": "infantile-onset X-linked spinal muscular atrophy"
+        },
+        {
+          "id": "MONDO_0018450",
+          "name": "spinal muscular atrophy with respiratory distress type 2"
+        },
+        {
+          "id": "MONDO_0008045",
+          "name": "spinal muscular atrophy-progressive myoclonic epilepsy syndrome"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0001516",
+        "asks": 2,
+        "report_counts": [
+          84,
+          84
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Huntington disease",
+      "found": true,
+      "id": "MONDO_0007739",
+      "name": "Huntington disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007739",
+          "name": "Huntington disease"
+        },
+        {
+          "id": "MONDO_0000167",
+          "name": "Huntington disease and related disorders"
+        },
+        {
+          "id": "MONDO_0016621",
+          "name": "juvenile Huntington disease"
+        },
+        {
+          "id": "OBA_2001024",
+          "name": "age of onset of Huntington disease"
+        },
+        {
+          "id": "MONDO_0011487",
+          "name": "Huntington disease-like 3"
+        },
+        {
+          "id": "MONDO_0011671",
+          "name": "Huntington disease-like 2"
+        },
+        {
+          "id": "MONDO_0011299",
+          "name": "Huntington disease-like 1"
+        },
+        {
+          "id": "MONDO_0015548",
+          "name": "Huntington disease-like syndrome"
+        },
+        {
+          "id": "MONDO_0018425",
+          "name": "Huntington disease-like syndrome due to C9ORF72 expansions"
+        },
+        {
+          "id": "MONDO_0008695",
+          "name": "VPS13A-related neurodegenerative disease"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0007739",
+        "asks": 2,
+        "report_counts": [
+          122,
+          122
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "amyotrophic lateral sclerosis",
+      "found": true,
+      "id": "MONDO_0004976",
+      "name": "amyotrophic lateral sclerosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004976",
+          "name": "amyotrophic lateral sclerosis"
+        },
+        {
+          "id": "MONDO_0005144",
+          "name": "familial amyotrophic lateral sclerosis"
+        },
+        {
+          "id": "MONDO_0017593",
+          "name": "juvenile amyotrophic lateral sclerosis"
+        },
+        {
+          "id": "MONDO_0008780",
+          "name": "amyotrophic lateral sclerosis type 2, juvenile"
+        },
+        {
+          "id": "MONDO_0011223",
+          "name": "amyotrophic lateral sclerosis type 4"
+        },
+        {
+          "id": "MONDO_0011196",
+          "name": "amyotrophic lateral sclerosis type 5"
+        },
+        {
+          "id": "MONDO_0018155",
+          "name": "lateral sclerosis"
+        },
+        {
+          "id": "MONDO_0010459",
+          "name": "amyotrophic lateral sclerosis type 15"
+        },
+        {
+          "id": "MONDO_0014181",
+          "name": "amyotrophic lateral sclerosis type 20"
+        },
+        {
+          "id": "MONDO_0012077",
+          "name": "amyotrophic lateral sclerosis type 8"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0004976",
+        "asks": 2,
+        "report_counts": [
+          392,
+          392
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Gaucher disease",
+      "found": true,
+      "id": "MONDO_0018150",
+      "name": "Gaucher disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018150",
+          "name": "Gaucher disease"
+        },
+        {
+          "id": "MONDO_0009267",
+          "name": "Gaucher disease type III"
+        },
+        {
+          "id": "MONDO_0012517",
+          "name": "Gaucher disease due to saposin C deficiency"
+        },
+        {
+          "id": "MONDO_0009268",
+          "name": "Gaucher disease-ophthalmoplegia-cardiovascular calcification syndrome"
+        },
+        {
+          "id": "MONDO_0009266",
+          "name": "Gaucher disease type II"
+        },
+        {
+          "id": "MONDO_0009265",
+          "name": "Gaucher disease type I"
+        },
+        {
+          "id": "MONDO_0011945",
+          "name": "Gaucher disease perinatal lethal"
+        },
+        {
+          "id": "MONDO_0004975",
+          "name": "Alzheimer disease"
+        },
+        {
+          "id": "MONDO_0005180",
+          "name": "Parkinson disease"
+        },
+        {
+          "id": "MONDO_0011873",
+          "name": "Niemann-Pick disease, type C2"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0018150",
+        "asks": 2,
+        "report_counts": [
+          63,
+          63
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Fabry disease",
+      "found": true,
+      "id": "MONDO_0010526",
+      "name": "Fabry disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010526",
+          "name": "Fabry disease"
+        },
+        {
+          "id": "MONDO_0001300",
+          "name": "autonomic neuropathy"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010526",
+        "asks": 2,
+        "report_counts": [
+          122,
+          122
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Pompe disease",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0009290",
+          "name": "glycogen storage disease II"
+        },
+        {
+          "id": "EFO_0002970",
+          "name": "muscular disease"
+        },
+        {
+          "id": "MONDO_0037792",
+          "name": "carbohydrate metabolism disease"
+        },
+        {
+          "id": "Orphanet_183497",
+          "name": "Genetic neuromuscular disease"
+        },
+        {
+          "id": "Orphanet_206634",
+          "name": "Genetic skeletal muscle disease"
+        },
+        {
+          "id": "Orphanet_98054",
+          "name": "Rare genetic cardiac disease"
+        },
+        {
+          "id": "MONDO_0018485",
+          "name": "glycogen storage disease due to acid maltase deficiency, late-onset"
+        },
+        {
+          "id": "MONDO_0017694",
+          "name": "glycogen storage disease due to acid maltase deficiency, infantile onset"
+        },
+        {
+          "id": "MONDO_0009292",
+          "name": "glycogen storage disease due to glycogen branching enzyme deficiency"
+        },
+        {
+          "id": "MONDO_0002413",
+          "name": "glycogen storage disease I"
+        }
+      ],
+      "set": "RARE"
+    },
+    {
+      "asked": "phenylketonuria",
+      "found": true,
+      "id": "MONDO_0009861",
+      "name": "phenylketonuria",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0009861",
+          "name": "phenylketonuria"
+        },
+        {
+          "id": "MONDO_0019259",
+          "name": "classic phenylketonuria"
+        },
+        {
+          "id": "MONDO_0019258",
+          "name": "mild phenylketonuria"
+        },
+        {
+          "id": "MONDO_0016366",
+          "name": "maternal phenylketonuria"
+        },
+        {
+          "id": "MONDO_0017389",
+          "name": "tetrahydrobiopterin-responsive hyperphenylalaninemia/phenylketonuria"
+        },
+        {
+          "id": "MONDO_0004736",
+          "name": "inborn disorder of amino acid metabolism"
+        },
+        {
+          "id": "MONDO_0016543",
+          "name": "hyperphenylalaninemia due to tetrahydrobiopterin deficiency"
+        },
+        {
+          "id": "MONDO_0019335",
+          "name": "mild hyperphenylalaninemia"
+        },
+        {
+          "id": "MONDO_0009862",
+          "name": "dihydropteridine reductase deficiency"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0009861",
+        "asks": 2,
+        "report_counts": [
+          61,
+          61
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hemophilia A",
+      "found": true,
+      "id": "MONDO_0010602",
+      "name": "hemophilia A",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010602",
+          "name": "hemophilia A"
+        },
+        {
+          "id": "MONDO_0005570",
+          "name": "hematologic disorder"
+        },
+        {
+          "id": "Orphanet_158300",
+          "name": "Rare genetic hematologic disease"
+        },
+        {
+          "id": "MONDO_0000425",
+          "name": "X-linked disease"
+        },
+        {
+          "id": "MONDO_0001531",
+          "name": "blood coagulation disease"
+        },
+        {
+          "id": "MONDO_0021181",
+          "name": "inherited blood coagulation disorder"
+        },
+        {
+          "id": "MONDO_0002243",
+          "name": "hemorrhagic disease"
+        },
+        {
+          "id": "MONDO_0002242",
+          "name": "coagulation protein disease"
+        },
+        {
+          "id": "MONDO_0015721",
+          "name": "mild hemophilia A"
+        },
+        {
+          "id": "MONDO_0015631",
+          "name": "von Willebrand disease type 2N"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010602",
+        "asks": 2,
+        "report_counts": [
+          618,
+          618
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hemophilia B",
+      "found": true,
+      "id": "MONDO_0010604",
+      "name": "hemophilia B",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010604",
+          "name": "hemophilia B"
+        },
+        {
+          "id": "Orphanet_158300",
+          "name": "Rare genetic hematologic disease"
+        },
+        {
+          "id": "MONDO_0001531",
+          "name": "blood coagulation disease"
+        },
+        {
+          "id": "MONDO_0021181",
+          "name": "inherited blood coagulation disorder"
+        },
+        {
+          "id": "MONDO_0002243",
+          "name": "hemorrhagic disease"
+        },
+        {
+          "id": "MONDO_0010432",
+          "name": "thrombophilia, X-linked, due to factor 9 defect"
+        },
+        {
+          "id": "EFO_0021801",
+          "name": "x-linked warfarin sensitivity"
+        },
+        {
+          "id": "MONDO_0002242",
+          "name": "coagulation protein disease"
+        },
+        {
+          "id": "EFO_0009154",
+          "name": "hemophilia b leyden"
+        },
+        {
+          "id": "MONDO_0015716",
+          "name": "moderately severe hemophilia B"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010604",
+        "asks": 2,
+        "report_counts": [
+          113,
+          113
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "sickle cell anemia",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0011382",
+          "name": "sickle cell disease"
+        },
+        {
+          "id": "MONDO_0016669",
+          "name": "sickle cell-hemoglobin c disease syndrome"
+        },
+        {
+          "id": "MONDO_0016668",
+          "name": "sickle cell-beta-thalassemia disease syndrome"
+        },
+        {
+          "id": "MONDO_0016670",
+          "name": "sickle cell-hemoglobin d disease syndrome"
+        },
+        {
+          "id": "EFO_1001797",
+          "name": "Hemoglobin SC Disease"
+        },
+        {
+          "id": "MONDO_0000984",
+          "name": "thalassemia"
+        },
+        {
+          "id": "EFO_1001930",
+          "name": "idiopathic osteonecrosis of the femoral head"
+        }
+      ],
+      "set": "RARE"
+    },
+    {
+      "asked": "beta-thalassemia",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0019402",
+          "name": "beta thalassemia"
+        }
+      ],
+      "set": "RARE"
+    },
+    {
+      "asked": "myasthenia gravis",
+      "found": true,
+      "id": "MONDO_0009688",
+      "name": "myasthenia gravis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0009688",
+          "name": "myasthenia gravis"
+        },
+        {
+          "id": "MONDO_0018324",
+          "name": "adult-onset myasthenia gravis"
+        },
+        {
+          "id": "MONDO_0018325",
+          "name": "juvenile myasthenia gravis"
+        },
+        {
+          "id": "MONDO_0018940",
+          "name": "congenital myasthenic syndrome"
+        },
+        {
+          "id": "MONDO_0000462",
+          "name": "eye adnexa disorder"
+        },
+        {
+          "id": "MONDO_0003382",
+          "name": "eyelid disorder"
+        },
+        {
+          "id": "Orphanet_183598",
+          "name": "Rare genetic palpebral, lacrimal system and conjunctival disease"
+        },
+        {
+          "id": "Orphanet_183616",
+          "name": "Genetic neuro-ophthalmological disease"
+        },
+        {
+          "id": "Orphanet_98560",
+          "name": "Rare palpebral disease"
+        },
+        {
+          "id": "MONDO_0020124",
+          "name": "neuromuscular junction disease"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0009688",
+        "asks": 2,
+        "report_counts": [
+          189,
+          189
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "narcolepsy",
+      "found": true,
+      "id": "MONDO_0021107",
+      "name": "narcolepsy",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0021107",
+          "name": "narcolepsy"
+        },
+        {
+          "id": "MONDO_0016158",
+          "name": "narcolepsy-cataplexy syndrome"
+        },
+        {
+          "id": "HP_0002524",
+          "name": "Cataplexy"
+        },
+        {
+          "id": "MONDO_0011397",
+          "name": "autosomal dominant cerebellar ataxia, deafness and narcolepsy"
+        },
+        {
+          "id": "MONDO_0019371",
+          "name": "narcolepsy without cataplexy"
+        },
+        {
+          "id": "MONDO_0004617",
+          "name": "recurrent hypersomnia"
+        },
+        {
+          "id": "EFO_0008323",
+          "name": "hypocretin deficiency"
+        },
+        {
+          "id": "MONDO_0006446",
+          "name": "testicular embryonal carcinoma"
+        },
+        {
+          "id": "OBA_2001032",
+          "name": "age of onset of narcolepsy-cataplexy syndrome"
+        },
+        {
+          "id": "MONDO_0100554",
+          "name": "hereditary narcolepsy"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0021107",
+        "asks": 2,
+        "report_counts": [
+          63,
+          63
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Wilson disease",
+      "found": true,
+      "id": "MONDO_0010200",
+      "name": "Wilson disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010200",
+          "name": "Wilson disease"
+        },
+        {
+          "id": "MONDO_0004689",
+          "name": "inborn metal metabolism disorder"
+        },
+        {
+          "id": "MONDO_0017761",
+          "name": "disorder of mineral absorption and transport"
+        },
+        {
+          "id": "MONDO_0010665",
+          "name": "Wilson-Turner syndrome"
+        },
+        {
+          "id": "MONDO_0017762",
+          "name": "disorder of copper metabolism"
+        },
+        {
+          "id": "HP_0200032",
+          "name": "Kayser-Fleischer ring"
+        },
+        {
+          "id": "MONDO_0700076",
+          "name": "glutaric acidemia IIc"
+        },
+        {
+          "id": "Orphanet_254793",
+          "name": "Mitochondrial oxidative phosphorylation disorder due to a duplication of mitochondrial DNA"
+        },
+        {
+          "id": "HP_0002378",
+          "name": "Hand tremor"
+        },
+        {
+          "id": "OBA_2050226",
+          "name": "endoplasmic reticulum resident protein 29 amount"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010200",
+        "asks": 2,
+        "report_counts": [
+          45,
+          45
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hereditary angioedema",
+      "found": true,
+      "id": "MONDO_0019623",
+      "name": "hereditary angioedema",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019623",
+          "name": "hereditary angioedema"
+        },
+        {
+          "id": "MONDO_0012526",
+          "name": "hereditary angioedema type 3"
+        },
+        {
+          "id": "MONDO_0033946",
+          "name": "hereditary angioedema with C1Inh deficiency"
+        },
+        {
+          "id": "MONDO_0015053",
+          "name": "hereditary angioedema type 1"
+        },
+        {
+          "id": "MONDO_0015054",
+          "name": "hereditary angioedema type 2"
+        },
+        {
+          "id": "MONDO_0010481",
+          "name": "angioedema"
+        },
+        {
+          "id": "MONDO_0100567",
+          "name": "hereditary angioedema with normal C1Inh"
+        },
+        {
+          "id": "MONDO_0019624",
+          "name": "acquired angioedema"
+        },
+        {
+          "id": "MONDO_0100118",
+          "name": "hereditary skin disorder"
+        },
+        {
+          "id": "HP_0002715",
+          "name": "Abnormality of the immune system"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019623",
+        "asks": 2,
+        "report_counts": [
+          96,
+          96
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "acromegaly",
+      "found": true,
+      "id": "MONDO_0019933",
+      "name": "acromegaly",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019933",
+          "name": "acromegaly"
+        },
+        {
+          "id": "MONDO_0019424",
+          "name": "X-linked intellectual disability-acromegaly-hyperactivity syndrome"
+        },
+        {
+          "id": "MONDO_0006238",
+          "name": "growth hormone-producing pituitary gland adenoma"
+        },
+        {
+          "id": "MONDO_0017582",
+          "name": "pituitary adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0015496",
+          "name": "macroglossia"
+        },
+        {
+          "id": "MONDO_0003828",
+          "name": "growth hormone-producing pituitary gland carcinoma"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019933",
+        "asks": 2,
+        "report_counts": [
+          140,
+          140
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Cushing syndrome",
+      "found": true,
+      "id": "MONDO_0018912",
+      "name": "Cushing syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018912",
+          "name": "Cushing syndrome"
+        },
+        {
+          "id": "MONDO_0020528",
+          "name": "ACTH-dependent Cushing syndrome"
+        },
+        {
+          "id": "MONDO_0020529",
+          "name": "ACTH-independent Cushing syndrome"
+        },
+        {
+          "id": "MONDO_0009049",
+          "name": "Cushing syndrome due to macronodular adrenal hyperplasia"
+        },
+        {
+          "id": "MONDO_0957431",
+          "name": "endogenous Cushing syndrome"
+        },
+        {
+          "id": "MONDO_0800377",
+          "name": "ACTH-independent adrenal Cushing syndrome, somatic"
+        },
+        {
+          "id": "MONDO_0008211",
+          "name": "pseudoleprechaunism syndrome, Patterson type"
+        },
+        {
+          "id": "MONDO_0020735",
+          "name": "ACTH-independent macronodular adrenal hyperplasia 1"
+        },
+        {
+          "id": "MONDO_0700299",
+          "name": "ACTH-independent macronodular adrenal hyperplasia 3"
+        },
+        {
+          "id": "MONDO_0022435",
+          "name": "Mauriac syndrome"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0018912",
+        "asks": 2,
+        "report_counts": [
+          29,
+          29
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "sarcoidosis",
+      "found": true,
+      "id": "MONDO_0019338",
+      "name": "sarcoidosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019338",
+          "name": "sarcoidosis"
+        },
+        {
+          "id": "MONDO_0001708",
+          "name": "pulmonary sarcoidosis"
+        },
+        {
+          "id": "MONDO_0006611",
+          "name": "skin sarcoidosis"
+        },
+        {
+          "id": "MONDO_0001707",
+          "name": "cardiac sarcoidosis"
+        },
+        {
+          "id": "EFO_0010723",
+          "name": "ocular sarcoidosis"
+        },
+        {
+          "id": "MONDO_0008523",
+          "name": "Blau syndrome"
+        },
+        {
+          "id": "MONDO_0045047",
+          "name": "neurosarcoidosis"
+        },
+        {
+          "id": "MONDO_0017255",
+          "name": "panuveitis"
+        },
+        {
+          "id": "EFO_0010721",
+          "name": "lung transplantation"
+        },
+        {
+          "id": "MONDO_0016318",
+          "name": "progressive multifocal leukoencephalopathy"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019338",
+        "asks": 2,
+        "report_counts": [
+          117,
+          117
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "systemic sclerosis",
+      "found": true,
+      "id": "MONDO_0005100",
+      "name": "systemic sclerosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005100",
+          "name": "systemic sclerosis"
+        },
+        {
+          "id": "EFO_0803536",
+          "name": "multiple sclerosis symptom measurement"
+        },
+        {
+          "id": "EFO_0008537",
+          "name": "anti-topoisomerase-I-antibody-positive systemic scleroderma"
+        },
+        {
+          "id": "EFO_0008536",
+          "name": "anti-centromere-antibody-positive systemic scleroderma"
+        },
+        {
+          "id": "MONDO_0005019",
+          "name": "diffuse scleroderma"
+        },
+        {
+          "id": "MONDO_0020283",
+          "name": "uveitis"
+        },
+        {
+          "id": "EFO_1001017",
+          "name": "limited scleroderma"
+        },
+        {
+          "id": "MONDO_0017287",
+          "name": "immunoglobulin G4-related sclerosing disease"
+        },
+        {
+          "id": "MONDO_0019340",
+          "name": "scleroderma"
+        },
+        {
+          "id": "MONDO_0013276",
+          "name": "Reynolds syndrome"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0005100",
+        "asks": 2,
+        "report_counts": [
+          220,
+          220
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Behcet disease",
+      "found": true,
+      "id": "MONDO_0007191",
+      "name": "Behcet disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007191",
+          "name": "Behcet disease"
+        },
+        {
+          "id": "MONDO_0800045",
+          "name": "autoinflammatory syndrome, familial, Behcet-like 1"
+        },
+        {
+          "id": "EFO_0020034",
+          "name": "familial Behcet-like autoinflammatory syndrome"
+        },
+        {
+          "id": "MONDO_0031384",
+          "name": "autoinflammatory syndrome, familial, Behcet-like"
+        },
+        {
+          "id": "MONDO_0024770",
+          "name": "autoinflammatory syndrome, familial, X-linked, Behcet-like 2"
+        },
+        {
+          "id": "MONDO_0018882",
+          "name": "vasculitis"
+        },
+        {
+          "id": "MONDO_0006950",
+          "name": "retinal vasculitis"
+        },
+        {
+          "id": "MONDO_0007851",
+          "name": "keratoconus 1"
+        },
+        {
+          "id": "MONDO_0013830",
+          "name": "keratoconus 5"
+        },
+        {
+          "id": "MONDO_0005918",
+          "name": "placenta praevia"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0007191",
+        "asks": 2,
+        "report_counts": [
+          56,
+          56
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hidradenitis suppurativa",
+      "found": true,
+      "id": "MONDO_0006559",
+      "name": "hidradenitis suppurativa",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0006559",
+          "name": "hidradenitis suppurativa"
+        },
+        {
+          "id": "MONDO_0024516",
+          "name": "familial acne inversa"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0006559",
+        "asks": 2,
+        "report_counts": [
+          167,
+          167
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "idiopathic pulmonary fibrosis",
+      "found": true,
+      "id": "EFO_0000768",
+      "name": "idiopathic pulmonary fibrosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "EFO_0000768",
+          "name": "idiopathic pulmonary fibrosis"
+        },
+        {
+          "id": "MONDO_0002771",
+          "name": "pulmonary fibrosis"
+        },
+        {
+          "id": "MONDO_0001437",
+          "name": "pulmonary alveolar proteinosis"
+        },
+        {
+          "id": "MONDO_0012579",
+          "name": "autoimmune pulmonary alveolar proteinosis"
+        },
+        {
+          "id": "MONDO_0018956",
+          "name": "idiopathic bronchiectasis"
+        },
+        {
+          "id": "MONDO_0016466",
+          "name": "asbestosis"
+        },
+        {
+          "id": "MONDO_0014226",
+          "name": "idiopathic CD4 lymphocytopenia"
+        },
+        {
+          "id": "MONDO_0005045",
+          "name": "hypertrophic cardiomyopathy"
+        },
+        {
+          "id": "MONDO_0859175",
+          "name": "nephronophthisis-like nephropathy 2"
+        },
+        {
+          "id": "Orphanet_101992",
+          "name": "Immunodeficiency due to a complement cascade protein anomaly"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "EFO_0000768",
+        "asks": 2,
+        "report_counts": [
+          322,
+          322
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "pulmonary arterial hypertension",
+      "found": true,
+      "id": "MONDO_0015924",
+      "name": "pulmonary arterial hypertension",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0015924",
+          "name": "pulmonary arterial hypertension"
+        },
+        {
+          "id": "MONDO_0017148",
+          "name": "heritable pulmonary arterial hypertension"
+        },
+        {
+          "id": "EFO_0009054",
+          "name": "Pulmonary arterial hypertension associated with congenital heart disease"
+        },
+        {
+          "id": "MONDO_0001999",
+          "name": "idiopathic pulmonary arterial hypertension"
+        },
+        {
+          "id": "EFO_0009197",
+          "name": "Pulmonary arterial hypertension associated with portal hypertension"
+        },
+        {
+          "id": "EFO_0009193",
+          "name": "Pulmonary arterial hypertension associated with another disease"
+        },
+        {
+          "id": "EFO_0009196",
+          "name": "Pulmonary arterial hypertension associated with connective tissue disease"
+        },
+        {
+          "id": "MONDO_0014135",
+          "name": "pulmonary hypertension, primary, 3"
+        },
+        {
+          "id": "MONDO_0024533",
+          "name": "pulmonary hypertension, primary, 1"
+        },
+        {
+          "id": "MONDO_0014134",
+          "name": "pulmonary hypertension, primary, 2"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0015924",
+        "asks": 2,
+        "report_counts": [
+          486,
+          486
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "amyloidosis",
+      "found": true,
+      "id": "MONDO_0019065",
+      "name": "amyloidosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019065",
+          "name": "amyloidosis"
+        },
+        {
+          "id": "MONDO_0018634",
+          "name": "hereditary amyloidosis"
+        },
+        {
+          "id": "MONDO_0019438",
+          "name": "AL amyloidosis"
+        },
+        {
+          "id": "MONDO_0015302",
+          "name": "nodular cutaneous amyloidosis"
+        },
+        {
+          "id": "EFO_1001984",
+          "name": "cardiac amyloidosis"
+        },
+        {
+          "id": "MONDO_0015301",
+          "name": "primary cutaneous amyloidosis"
+        },
+        {
+          "id": "MONDO_0019441",
+          "name": "ATTRV122I amyloidosis"
+        },
+        {
+          "id": "EFO_1001885",
+          "name": "diffuse alveolar-septal amyloidosis"
+        },
+        {
+          "id": "EFO_1001910",
+          "name": "pulmonary amyloidosis"
+        },
+        {
+          "id": "MONDO_0018339",
+          "name": "PrP systemic amyloidosis"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019065",
+        "asks": 2,
+        "report_counts": [
+          114,
+          114
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Friedreich ataxia",
+      "found": true,
+      "id": "MONDO_0100339",
+      "name": "Friedreich ataxia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0100339",
+          "name": "Friedreich ataxia"
+        },
+        {
+          "id": "MONDO_0100310",
+          "name": "hereditary cerebellar ataxia"
+        },
+        {
+          "id": "MONDO_0015244",
+          "name": "autosomal recessive cerebellar ataxia"
+        },
+        {
+          "id": "MONDO_0000437",
+          "name": "cerebellar ataxia"
+        },
+        {
+          "id": "MONDO_0100309",
+          "name": "hereditary ataxia"
+        },
+        {
+          "id": "MONDO_0020046",
+          "name": "autosomal recessive degenerative and progressive cerebellar ataxia"
+        },
+        {
+          "id": "MONDO_0002427",
+          "name": "cerebellar disorder"
+        },
+        {
+          "id": "MONDO_0010188",
+          "name": "familial isolated deficiency of vitamin E"
+        },
+        {
+          "id": "HP_0002070",
+          "name": "Limb ataxia"
+        },
+        {
+          "id": "HP_0002073",
+          "name": "Progressive cerebellar ataxia"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0100339",
+        "asks": 2,
+        "report_counts": [
+          0,
+          0
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Rett syndrome",
+      "found": true,
+      "id": "MONDO_0010726",
+      "name": "Rett syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010726",
+          "name": "Rett syndrome"
+        },
+        {
+          "id": "MONDO_0017746",
+          "name": "atypical Rett syndrome"
+        },
+        {
+          "id": "MONDO_0100040",
+          "name": "FOXG1 disorder"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0010726",
+        "asks": 2,
+        "report_counts": [
+          44,
+          44
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Dravet syndrome",
+      "found": true,
+      "id": "MONDO_0100135",
+      "name": "Dravet syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0100135",
+          "name": "Dravet syndrome"
+        },
+        {
+          "id": "MONDO_0014960",
+          "name": "encephalopathy, progressive, early-onset, with brain edema and/or leukoencephalopathy"
+        },
+        {
+          "id": "MONDO_0018214",
+          "name": "generalized epilepsy with febrile seizures plus"
+        },
+        {
+          "id": "MONDO_0100573",
+          "name": "combined generalized and focal epilepsy"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0100135",
+        "asks": 2,
+        "report_counts": [
+          39,
+          39
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "tuberous sclerosis",
+      "found": true,
+      "id": "MONDO_0001734",
+      "name": "tuberous sclerosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0001734",
+          "name": "tuberous sclerosis"
+        },
+        {
+          "id": "MONDO_0010856",
+          "name": "autosomal dominant polycystic kidney disease type 1 with tuberous sclerosis"
+        },
+        {
+          "id": "MONDO_0008612",
+          "name": "tuberous sclerosis 1"
+        },
+        {
+          "id": "MONDO_0013199",
+          "name": "tuberous sclerosis 2"
+        },
+        {
+          "id": "MONDO_0006123",
+          "name": "cardiac rhabdomyoma"
+        },
+        {
+          "id": "MONDO_0016693",
+          "name": "subependymal giant cell astrocytoma"
+        },
+        {
+          "id": "MONDO_0002603",
+          "name": "angiomyolipoma"
+        },
+        {
+          "id": "MONDO_0042983",
+          "name": "neurocutaneous syndrome"
+        },
+        {
+          "id": "MONDO_0044334",
+          "name": "connective and soft tissue neoplasm"
+        },
+        {
+          "id": "MONDO_0006424",
+          "name": "soft tissue neoplasm"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0001734",
+        "asks": 2,
+        "report_counts": [
+          36,
+          36
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "neurofibromatosis type 1",
+      "found": true,
+      "id": "MONDO_0018975",
+      "name": "neurofibromatosis type 1",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018975",
+          "name": "neurofibromatosis type 1"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0018975",
+        "asks": 2,
+        "report_counts": [
+          73,
+          73
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "retinitis pigmentosa",
+      "found": true,
+      "id": "MONDO_0019200",
+      "name": "retinitis pigmentosa",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019200",
+          "name": "retinitis pigmentosa"
+        },
+        {
+          "id": "MONDO_0008377",
+          "name": "retinitis pigmentosa 1"
+        },
+        {
+          "id": "EFO_0020026",
+          "name": "autosomal recessive retinitis pigmentosa"
+        },
+        {
+          "id": "MONDO_0010227",
+          "name": "retinitis pigmentosa 3"
+        },
+        {
+          "id": "MONDO_0012796",
+          "name": "retinitis pigmentosa 41"
+        },
+        {
+          "id": "MONDO_0012367",
+          "name": "retinitis pigmentosa 31"
+        },
+        {
+          "id": "MONDO_0013413",
+          "name": "retinitis pigmentosa 45"
+        },
+        {
+          "id": "MONDO_0008378",
+          "name": "retinitis pigmentosa 9"
+        },
+        {
+          "id": "MONDO_0012363",
+          "name": "retinitis pigmentosa 32"
+        },
+        {
+          "id": "MONDO_0010723",
+          "name": "retinitis pigmentosa 2"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019200",
+        "asks": 2,
+        "report_counts": [
+          53,
+          53
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "achondroplasia",
+      "found": true,
+      "id": "MONDO_0007037",
+      "name": "achondroplasia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007037",
+          "name": "achondroplasia"
+        },
+        {
+          "id": "MONDO_0014658",
+          "name": "severe achondroplasia-developmental delay-acanthosis nigricans syndrome"
+        },
+        {
+          "id": "MONDO_0008704",
+          "name": "short-limb skeletal dysplasia with severe combined immunodeficiency"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0007037",
+        "asks": 2,
+        "report_counts": [
+          32,
+          32
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "osteogenesis imperfecta",
+      "found": true,
+      "id": "MONDO_0019019",
+      "name": "osteogenesis imperfecta",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0019019",
+          "name": "osteogenesis imperfecta"
+        },
+        {
+          "id": "MONDO_0009804",
+          "name": "osteogenesis imperfecta type 3"
+        },
+        {
+          "id": "MONDO_0800064",
+          "name": "osteogenesis imperfecta and a reduction of bone mineral density."
+        },
+        {
+          "id": "MONDO_0008148",
+          "name": "osteogenesis imperfecta type 4"
+        },
+        {
+          "id": "MONDO_0008147",
+          "name": "osteogenesis imperfecta type 2"
+        },
+        {
+          "id": "MONDO_0008146",
+          "name": "osteogenesis imperfecta type 1"
+        },
+        {
+          "id": "MONDO_0100596",
+          "name": "COL1A2-related osteogenesis imperfecta"
+        },
+        {
+          "id": "MONDO_0012591",
+          "name": "osteogenesis imperfecta type 5"
+        },
+        {
+          "id": "MONDO_0017196",
+          "name": "osteogenesis imperfecta-retinopathy-seizures-intellectual disability syndrome"
+        },
+        {
+          "id": "MONDO_0009805",
+          "name": "osteogenesis imperfecta type 9"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0019019",
+        "asks": 2,
+        "report_counts": [
+          37,
+          37
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "paroxysmal nocturnal hemoglobinuria",
+      "found": true,
+      "id": "MONDO_0100244",
+      "name": "paroxysmal nocturnal hemoglobinuria",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0100244",
+          "name": "paroxysmal nocturnal hemoglobinuria"
+        },
+        {
+          "id": "MONDO_0010438",
+          "name": "paroxysmal nocturnal hemoglobinuria 1"
+        },
+        {
+          "id": "MONDO_0014166",
+          "name": "paroxysmal nocturnal hemoglobinuria 2"
+        },
+        {
+          "id": "MONDO_0003656",
+          "name": "hemoglobinuria"
+        },
+        {
+          "id": "MONDO_0024322",
+          "name": "disorder of glycosylation"
+        },
+        {
+          "id": "MONDO_0024321",
+          "name": "disorder of GPI anchor biosynthesis"
+        },
+        {
+          "id": "MONDO_0006504",
+          "name": "acquired metabolic disease"
+        },
+        {
+          "id": "MONDO_0017748",
+          "name": "inborn disorder of glycosphingolipid and glycosylphosphatidylinositol anchor glycosylation"
+        },
+        {
+          "id": "Orphanet_371047",
+          "name": "Congenital disorder of glycosylation with neurological involvement"
+        },
+        {
+          "id": "Orphanet_371235",
+          "name": "Congenital disorder of glycosylation with developmental anomaly"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0100244",
+        "asks": 2,
+        "report_counts": [
+          177,
+          177
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "immune thrombocytopenia",
+      "found": false,
+      "why": "no hit with exactly this name",
+      "hits_seen": [
+        {
+          "id": "MONDO_0008558",
+          "name": "autoimmune thrombocytopenic purpura"
+        },
+        {
+          "id": "MONDO_0005046",
+          "name": "immune system disorder"
+        },
+        {
+          "id": "HP_0002715",
+          "name": "Abnormality of the immune system"
+        },
+        {
+          "id": "HP_0010987",
+          "name": "Abnormal cellular immune system morphology"
+        },
+        {
+          "id": "HP_0010978",
+          "name": "Abnormality of immune system physiology"
+        },
+        {
+          "id": "MONDO_0014536",
+          "name": "thrombocytopenia 5"
+        },
+        {
+          "id": "MONDO_0010743",
+          "name": "thrombocytopenia 1"
+        },
+        {
+          "id": "MONDO_0100083",
+          "name": "hereditary thrombocytopenia and hematological cancer predisposition syndrome associated with RUNX1"
+        },
+        {
+          "id": "Orphanet_275729",
+          "name": "Rare hemorrhagic disorder due to a constitutional thrombocytopenia"
+        },
+        {
+          "id": "MONDO_0010120",
+          "name": "thrombocytopenia 3"
+        }
+      ],
+      "set": "RARE"
+    },
+    {
+      "asked": "systemic lupus erythematosus",
+      "found": true,
+      "id": "MONDO_0007915",
+      "name": "systemic lupus erythematosus",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007915",
+          "name": "systemic lupus erythematosus"
+        },
+        {
+          "id": "MONDO_0013743",
+          "name": "autosomal systemic lupus erythematosus type 16"
+        },
+        {
+          "id": "MONDO_1060174",
+          "name": "systemic lupus erythematosus related to C1QA"
+        },
+        {
+          "id": "MONDO_0005282",
+          "name": "cutaneous lupus erythematosus"
+        },
+        {
+          "id": "MONDO_0004670",
+          "name": "lupus erythematosus"
+        },
+        {
+          "id": "MONDO_1060185",
+          "name": "systemic lupus erythematosus 18"
+        },
+        {
+          "id": "MONDO_0859083",
+          "name": "systemic lupus erythematosus 17"
+        },
+        {
+          "id": "MONDO_0018360",
+          "name": "neonatal lupus erythematosus"
+        },
+        {
+          "id": "MONDO_0016474",
+          "name": "drug-induced lupus erythematosus"
+        },
+        {
+          "id": "MONDO_0019558",
+          "name": "discoid lupus erythematosus"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0007915",
+        "asks": 2,
+        "report_counts": [
+          597,
+          597
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "ankylosing spondylitis",
+      "found": true,
+      "id": "MONDO_0005306",
+      "name": "ankylosing spondylitis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005306",
+          "name": "ankylosing spondylitis"
+        },
+        {
+          "id": "EFO_0022377",
+          "name": "ankylosing spondylitis disease activity score"
+        },
+        {
+          "id": "MONDO_0020655",
+          "name": "juvenile ankylosing spondylitis"
+        },
+        {
+          "id": "MONDO_0005095",
+          "name": "spondyloarthropathy"
+        },
+        {
+          "id": "MONDO_0020283",
+          "name": "uveitis"
+        },
+        {
+          "id": "EFO_0011055",
+          "name": "musculoskeletal toxicity"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0005306",
+        "asks": 2,
+        "report_counts": [
+          400,
+          400
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "vitiligo",
+      "found": true,
+      "id": "MONDO_0008661",
+      "name": "vitiligo",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008661",
+          "name": "vitiligo"
+        },
+        {
+          "id": "MONDO_0009085",
+          "name": "deafness-vitiligo-achalasia syndrome"
+        },
+        {
+          "id": "MONDO_0010046",
+          "name": "hereditary spastic paraplegia 23"
+        },
+        {
+          "id": "MONDO_0005213",
+          "name": "uterine carcinoma"
+        },
+        {
+          "id": "EFO_0004230",
+          "name": "endometrial neoplasm"
+        },
+        {
+          "id": "MONDO_0011962",
+          "name": "endometrial cancer"
+        },
+        {
+          "id": "MONDO_0002447",
+          "name": "endometrial carcinoma"
+        },
+        {
+          "id": "MONDO_0006509",
+          "name": "papillary carcinoma"
+        },
+        {
+          "id": "MONDO_0016268",
+          "name": "papillary carcinoma of the corpus uteri"
+        },
+        {
+          "id": "MONDO_0006003",
+          "name": "uterine corpus cancer"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0008661",
+        "asks": 2,
+        "report_counts": [
+          122,
+          122
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "alopecia areata",
+      "found": true,
+      "id": "MONDO_0005340",
+      "name": "alopecia areata",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005340",
+          "name": "alopecia areata"
+        },
+        {
+          "id": "MONDO_0004907",
+          "name": "alopecia"
+        },
+        {
+          "id": "MONDO_0008757",
+          "name": "alopecia universalis congenita"
+        },
+        {
+          "id": "MONDO_0019080",
+          "name": "alopecia totalis"
+        },
+        {
+          "id": "MONDO_0014160",
+          "name": "TCR-alpha-beta-positive T-cell deficiency"
+        }
+      ],
+      "set": "RARE",
+      "asks": {
+        "disease_id": "MONDO_0005340",
+        "asks": 2,
+        "report_counts": [
+          147,
+          147
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "angina pectoris",
+      "found": true,
+      "id": "EFO_0003913",
+      "name": "angina pectoris",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "EFO_0003913",
+          "name": "angina pectoris"
+        },
+        {
+          "id": "EFO_0020925",
+          "name": "angina unstable"
+        },
+        {
+          "id": "MONDO_0006805",
+          "name": "intermediate coronary syndrome"
+        },
+        {
+          "id": "MONDO_0005045",
+          "name": "hypertrophic cardiomyopathy"
+        },
+        {
+          "id": "MONDO_0008310",
+          "name": "Hutchinson-Gilford progeria syndrome"
+        },
+        {
+          "id": "MONDO_0010526",
+          "name": "Fabry disease"
+        },
+        {
+          "id": "Orphanet_758",
+          "name": "Pseudoxanthoma elasticum"
+        },
+        {
+          "id": "MONDO_0013533",
+          "name": "hyperlipidemia due to hepatic triglyceride lipase deficiency"
+        },
+        {
+          "id": "MONDO_0012799",
+          "name": "hypertrophic cardiomyopathy 11"
+        },
+        {
+          "id": "MONDO_0013474",
+          "name": "hypertrophic cardiomyopathy 17"
+        }
+      ],
+      "set": "AGENT",
+      "system": "heart and blood vessels",
+      "asks": {
+        "disease_id": "EFO_0003913",
+        "asks": 2,
+        "report_counts": [
+          391,
+          391
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "allergic rhinitis",
+      "found": true,
+      "id": "MONDO_0011786",
+      "name": "allergic rhinitis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0011786",
+          "name": "allergic rhinitis"
+        },
+        {
+          "id": "MONDO_0005324",
+          "name": "seasonal allergic rhinitis"
+        },
+        {
+          "id": "MONDO_0024332",
+          "name": "perennial allergic rhinitis"
+        },
+        {
+          "id": "MONDO_0005271",
+          "name": "allergic disease"
+        },
+        {
+          "id": "MONDO_0000771",
+          "name": "allergic respiratory disease"
+        },
+        {
+          "id": "MONDO_0004784",
+          "name": "allergic asthma"
+        },
+        {
+          "id": "MONDO_0004980",
+          "name": "atopic eczema"
+        },
+        {
+          "id": "MONDO_0003014",
+          "name": "rhinitis"
+        },
+        {
+          "id": "EFO_0009364",
+          "name": "non-allergic rhinitis"
+        },
+        {
+          "id": "MONDO_0015243",
+          "name": "allergic bronchopulmonary aspergillosis"
+        }
+      ],
+      "set": "AGENT",
+      "system": "lungs and airways",
+      "asks": {
+        "disease_id": "MONDO_0011786",
+        "asks": 2,
+        "report_counts": [
+          445,
+          445
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "gastroesophageal reflux disease",
+      "found": true,
+      "id": "MONDO_0007186",
+      "name": "gastroesophageal reflux disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0007186",
+          "name": "gastroesophageal reflux disease"
+        },
+        {
+          "id": "MONDO_0037871",
+          "name": "amino acid metabolism disease"
+        },
+        {
+          "id": "MONDO_0015091",
+          "name": "autosomal dominant spastic paraplegia type 9"
+        },
+        {
+          "id": "EFO_1001355",
+          "name": "Laryngopharyngeal Reflux"
+        },
+        {
+          "id": "MONDO_0019189",
+          "name": "inborn disorder of amino acid and other organic acid metabolism"
+        },
+        {
+          "id": "MONDO_0004736",
+          "name": "inborn disorder of amino acid metabolism"
+        },
+        {
+          "id": "MONDO_0016175",
+          "name": "cutis laxa"
+        },
+        {
+          "id": "MONDO_0100237",
+          "name": "inherited cutis laxa"
+        },
+        {
+          "id": "MONDO_0002268",
+          "name": "dyspepsia"
+        },
+        {
+          "id": "HP_0008067",
+          "name": "Abnormally lax or hyperextensible skin"
+        }
+      ],
+      "set": "AGENT",
+      "system": "stomach, gut and liver",
+      "asks": {
+        "disease_id": "MONDO_0007186",
+        "asks": 2,
+        "report_counts": [
+          534,
+          534
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "overactive bladder",
+      "found": true,
+      "id": "MONDO_0006624",
+      "name": "overactive bladder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0006624",
+          "name": "overactive bladder"
+        },
+        {
+          "id": "EFO_0008008",
+          "name": "lower urinary tract symptom"
+        }
+      ],
+      "set": "AGENT",
+      "system": "kidney and bladder",
+      "asks": {
+        "disease_id": "MONDO_0006624",
+        "asks": 2,
+        "report_counts": [
+          553,
+          553
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "type 1 diabetes mellitus",
+      "found": true,
+      "id": "MONDO_0005147",
+      "name": "type 1 diabetes mellitus",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005147",
+          "name": "type 1 diabetes mellitus"
+        }
+      ],
+      "set": "AGENT",
+      "system": "hormones and metabolism",
+      "asks": {
+        "disease_id": "MONDO_0005147",
+        "asks": 2,
+        "report_counts": [
+          1456,
+          1456
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "insomnia",
+      "found": true,
+      "id": "MONDO_0013600",
+      "name": "insomnia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0013600",
+          "name": "insomnia"
+        },
+        {
+          "id": "MONDO_0010808",
+          "name": "fatal familial insomnia"
+        },
+        {
+          "id": "EFO_0007876",
+          "name": "insomnia measurement"
+        },
+        {
+          "id": "MONDO_0018926",
+          "name": "human prion disease"
+        },
+        {
+          "id": "MONDO_0004425",
+          "name": "hyperthyroidism"
+        },
+        {
+          "id": "MONDO_0005567",
+          "name": "substance withdrawal syndrome"
+        },
+        {
+          "id": "MONDO_0008201",
+          "name": "Perry syndrome"
+        },
+        {
+          "id": "MONDO_0005550",
+          "name": "infectious disease"
+        },
+        {
+          "id": "MONDO_0016028",
+          "name": "erythromelalgia"
+        },
+        {
+          "id": "MONDO_0100081",
+          "name": "sleep disorder"
+        }
+      ],
+      "set": "AGENT",
+      "system": "brain and nerves",
+      "asks": {
+        "disease_id": "MONDO_0013600",
+        "asks": 2,
+        "report_counts": [
+          638,
+          638
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "anxiety disorder",
+      "found": true,
+      "id": "MONDO_0005618",
+      "name": "anxiety disorder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005618",
+          "name": "anxiety disorder"
+        },
+        {
+          "id": "MONDO_0001942",
+          "name": "generalized anxiety disorder"
+        },
+        {
+          "id": "MONDO_0001098",
+          "name": "separation anxiety disorder"
+        },
+        {
+          "id": "EFO_0007795",
+          "name": "anxiety disorder measurement"
+        },
+        {
+          "id": "MONDO_0005146",
+          "name": "post-traumatic stress disorder"
+        },
+        {
+          "id": "MONDO_0005383",
+          "name": "panic disorder"
+        },
+        {
+          "id": "MONDO_0002025",
+          "name": "psychiatric disorder"
+        },
+        {
+          "id": "MONDO_0005379",
+          "name": "neurotic disorder"
+        },
+        {
+          "id": "MONDO_0041086",
+          "name": "mixed anxiety and depressive disorder"
+        },
+        {
+          "id": "MONDO_0008114",
+          "name": "obsessive-compulsive disorder"
+        }
+      ],
+      "set": "AGENT",
+      "system": "mind",
+      "asks": {
+        "disease_id": "MONDO_0005618",
+        "asks": 2,
+        "report_counts": [
+          294,
+          294
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "age-related macular degeneration",
+      "found": true,
+      "id": "MONDO_0005150",
+      "name": "age-related macular degeneration",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005150",
+          "name": "age-related macular degeneration"
+        }
+      ],
+      "set": "AGENT",
+      "system": "eye and ear",
+      "asks": {
+        "disease_id": "MONDO_0005150",
+        "asks": 2,
+        "report_counts": [
+          567,
+          567
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "acne",
+      "found": true,
+      "id": "MONDO_0011438",
+      "name": "acne",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0011438",
+          "name": "acne"
+        },
+        {
+          "id": "MONDO_0007728",
+          "name": "acne inversa, familial, 1"
+        },
+        {
+          "id": "MONDO_0013398",
+          "name": "acne inversa, familial, 3"
+        },
+        {
+          "id": "MONDO_0013397",
+          "name": "acne inversa, familial, 2"
+        },
+        {
+          "id": "MONDO_0006521",
+          "name": "acneiform dermatitis"
+        },
+        {
+          "id": "MONDO_0006604",
+          "name": "rosacea"
+        },
+        {
+          "id": "MONDO_0024516",
+          "name": "familial acne inversa"
+        },
+        {
+          "id": "MONDO_0019266",
+          "name": "SAPHO syndrome"
+        },
+        {
+          "id": "EFO_1001777",
+          "name": "chloracne"
+        },
+        {
+          "id": "MONDO_0006559",
+          "name": "hidradenitis suppurativa"
+        }
+      ],
+      "set": "AGENT",
+      "system": "skin",
+      "asks": {
+        "disease_id": "MONDO_0011438",
+        "asks": 2,
+        "report_counts": [
+          963,
+          963
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "osteoarthritis",
+      "found": true,
+      "id": "MONDO_0005178",
+      "name": "osteoarthritis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005178",
+          "name": "osteoarthritis"
+        },
+        {
+          "id": "MONDO_0006632",
+          "name": "osteoarthritis, hand"
+        },
+        {
+          "id": "EFO_0007942",
+          "name": "hip osteoarthritis symptom severity measurement"
+        },
+        {
+          "id": "MONDO_0005416",
+          "name": "osteoarthritis, knee"
+        },
+        {
+          "id": "EFO_0005890",
+          "name": "osteoarthritis biomarker measurement"
+        },
+        {
+          "id": "MONDO_0006629",
+          "name": "osteoarthritis, hip"
+        },
+        {
+          "id": "MONDO_0011496",
+          "name": "mild spondyloepiphyseal dysplasia due to COL2A1 mutation with early-onset osteoarthritis"
+        },
+        {
+          "id": "MONDO_0006630",
+          "name": "osteoarthritis, spine"
+        },
+        {
+          "id": "MONDO_0018566",
+          "name": "short stature-advanced bone age-early-onset osteoarthritis syndrome"
+        },
+        {
+          "id": "MONDO_0017178",
+          "name": "osteochondritis dissecans"
+        }
+      ],
+      "set": "AGENT",
+      "system": "bones, joints and muscles",
+      "asks": {
+        "disease_id": "MONDO_0005178",
+        "asks": 2,
+        "report_counts": [
+          1670,
+          1670
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "iron deficiency anemia",
+      "found": true,
+      "id": "HP_0001891",
+      "name": "Iron deficiency anemia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "HP_0001891",
+          "name": "Iron deficiency anemia"
+        },
+        {
+          "id": "MONDO_0008787",
+          "name": "microcytic anemia with liver iron overload"
+        },
+        {
+          "id": "MONDO_0002280",
+          "name": "anemia"
+        },
+        {
+          "id": "MONDO_0001639",
+          "name": "deficiency anemia"
+        },
+        {
+          "id": "HP_0010972",
+          "name": "Anemia of inadequate production"
+        },
+        {
+          "id": "EFO_0004272",
+          "name": "anemia (phenotype)"
+        },
+        {
+          "id": "MONDO_0016624",
+          "name": "hereditary anemia"
+        },
+        {
+          "id": "MONDO_0008788",
+          "name": "IRIDA syndrome"
+        },
+        {
+          "id": "MONDO_0020721",
+          "name": "X-linked sideroblastic anemia 1"
+        },
+        {
+          "id": "MONDO_0001357",
+          "name": "hypochromic anemia"
+        }
+      ],
+      "set": "AGENT",
+      "system": "blood",
+      "asks": {
+        "disease_id": "HP_0001891",
+        "asks": 2,
+        "report_counts": [
+          539,
+          539
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "herpes zoster",
+      "found": true,
+      "id": "MONDO_0005609",
+      "name": "herpes zoster",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005609",
+          "name": "herpes zoster"
+        },
+        {
+          "id": "MONDO_0005883",
+          "name": "ophthalmic herpes zoster"
+        },
+        {
+          "id": "MONDO_0005769",
+          "name": "geniculate herpes zoster"
+        },
+        {
+          "id": "EFO_1001310",
+          "name": "Encephalitis, Varicella Zoster"
+        },
+        {
+          "id": "MONDO_0020283",
+          "name": "uveitis"
+        },
+        {
+          "id": "MONDO_0014160",
+          "name": "TCR-alpha-beta-positive T-cell deficiency"
+        },
+        {
+          "id": "MONDO_0003778",
+          "name": "inborn error of immunity"
+        },
+        {
+          "id": "MONDO_0021032",
+          "name": "herpes zoster with dermatitis of eyelid"
+        },
+        {
+          "id": "MONDO_0976229",
+          "name": "immunodeficiency 131"
+        },
+        {
+          "id": "MONDO_0014313",
+          "name": "autosomal recessive primary immunodeficiency with defective spontaneous natural killer cell cytotoxicity"
+        }
+      ],
+      "set": "AGENT",
+      "system": "infections",
+      "asks": {
+        "disease_id": "MONDO_0005609",
+        "asks": 2,
+        "report_counts": [
+          138,
+          138
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "polycystic ovary syndrome",
+      "found": true,
+      "id": "MONDO_0008487",
+      "name": "polycystic ovary syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008487",
+          "name": "polycystic ovary syndrome"
+        },
+        {
+          "id": "MONDO_0005047",
+          "name": "infertility disorder"
+        },
+        {
+          "id": "EFO_0004533",
+          "name": "alkaline phosphatase measurement"
+        },
+        {
+          "id": "EFO_0004512",
+          "name": "bone measurement"
+        }
+      ],
+      "set": "AGENT",
+      "system": "women's and men's health",
+      "asks": {
+        "disease_id": "MONDO_0008487",
+        "asks": 2,
+        "report_counts": [
+          627,
+          627
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "basal cell carcinoma",
+      "found": true,
+      "id": "MONDO_0020804",
+      "name": "basal cell carcinoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0020804",
+          "name": "basal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0005341",
+          "name": "skin basal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0013876",
+          "name": "basal cell carcinoma, susceptibility to, 7"
+        },
+        {
+          "id": "MONDO_0020799",
+          "name": "basal cell neoplasm"
+        },
+        {
+          "id": "MONDO_0007187",
+          "name": "nevoid basal cell carcinoma syndrome"
+        },
+        {
+          "id": "MONDO_0002955",
+          "name": "vulva basal cell carcinoma"
+        },
+        {
+          "id": "OBA_2050275",
+          "name": "basal cell adhesion molecule amount"
+        },
+        {
+          "id": "MONDO_0006402",
+          "name": "salivary gland basal cell adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0002951",
+          "name": "skin adenoid basal cell carcinoma"
+        },
+        {
+          "id": "MONDO_0004114",
+          "name": "urinary bladder small cell neuroendocrine carcinoma"
+        }
+      ],
+      "set": "AGENT",
+      "system": "more cancers",
+      "asks": {
+        "disease_id": "MONDO_0020804",
+        "asks": 2,
+        "report_counts": [
+          181,
+          181
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "myocardial infarction",
+      "found": true,
+      "id": "MONDO_0005068",
+      "name": "myocardial infarction",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005068",
+          "name": "myocardial infarction"
+        },
+        {
+          "id": "MONDO_0006652",
+          "name": "anterolateral myocardial infarction"
+        },
+        {
+          "id": "EFO_0008585",
+          "name": "ST Elevation Myocardial Infarction"
+        },
+        {
+          "id": "EFO_0008586",
+          "name": "Non-ST Elevation Myocardial Infarction"
+        },
+        {
+          "id": "MONDO_0004781",
+          "name": "acute myocardial infarction"
+        },
+        {
+          "id": "MONDO_0006803",
+          "name": "inferior myocardial infarction"
+        },
+        {
+          "id": "MONDO_0024644",
+          "name": "myocardial ischemia"
+        },
+        {
+          "id": "MONDO_0024643",
+          "name": "myocardial disorder"
+        },
+        {
+          "id": "EFO_0008584",
+          "name": "Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction"
+        },
+        {
+          "id": "HP_0001700",
+          "name": "Myocardial necrosis"
+        }
+      ],
+      "set": "AGENT",
+      "system": "heart and blood vessels",
+      "asks": {
+        "disease_id": "MONDO_0005068",
+        "asks": 2,
+        "report_counts": [
+          1184,
+          1184
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "pneumonia",
+      "found": true,
+      "id": "MONDO_0005249",
+      "name": "pneumonia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005249",
+          "name": "pneumonia"
+        },
+        {
+          "id": "MONDO_0004652",
+          "name": "bacterial pneumonia"
+        },
+        {
+          "id": "MONDO_0005867",
+          "name": "Mycoplasma pneumoniae pneumonia"
+        },
+        {
+          "id": "MONDO_0015264",
+          "name": "cryptogenic organizing pneumonia"
+        },
+        {
+          "id": "EFO_1001474",
+          "name": "pneumococcal pneumonia"
+        },
+        {
+          "id": "MONDO_0005749",
+          "name": "eosinophilic pneumonia"
+        },
+        {
+          "id": "MONDO_0005970",
+          "name": "staphylococcal pneumonia"
+        },
+        {
+          "id": "MONDO_0024354",
+          "name": "cytomegalovirus pneumonia"
+        },
+        {
+          "id": "MONDO_0005826",
+          "name": "lipid pneumonia"
+        },
+        {
+          "id": "MONDO_0030602",
+          "name": "Klebsiella pneumonia"
+        }
+      ],
+      "set": "AGENT",
+      "system": "lungs and airways",
+      "asks": {
+        "disease_id": "MONDO_0005249",
+        "asks": 2,
+        "report_counts": [
+          805,
+          805
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "irritable bowel syndrome",
+      "found": true,
+      "id": "MONDO_0005052",
+      "name": "irritable bowel syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005052",
+          "name": "irritable bowel syndrome"
+        },
+        {
+          "id": "EFO_0021536",
+          "name": "irritable bowel syndrome symptom measurement"
+        }
+      ],
+      "set": "AGENT",
+      "system": "stomach, gut and liver",
+      "asks": {
+        "disease_id": "MONDO_0005052",
+        "asks": 2,
+        "report_counts": [
+          211,
+          211
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "benign prostatic hyperplasia",
+      "found": true,
+      "id": "MONDO_0010811",
+      "name": "benign prostatic hyperplasia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0010811",
+          "name": "benign prostatic hyperplasia"
+        },
+        {
+          "id": "MONDO_0002450",
+          "name": "prostatic adenoma"
+        },
+        {
+          "id": "MONDO_0024582",
+          "name": "male reproductive system neoplasm"
+        }
+      ],
+      "set": "AGENT",
+      "system": "kidney and bladder",
+      "asks": {
+        "disease_id": "MONDO_0010811",
+        "asks": 2,
+        "report_counts": [
+          381,
+          381
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "restless legs syndrome",
+      "found": true,
+      "id": "MONDO_0005391",
+      "name": "restless legs syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005391",
+          "name": "restless legs syndrome"
+        },
+        {
+          "id": "MONDO_0005180",
+          "name": "Parkinson disease"
+        },
+        {
+          "id": "MONDO_0014742",
+          "name": "Parkinson disease 22, autosomal dominant"
+        },
+        {
+          "id": "MONDO_0957576",
+          "name": "Parkinson disease 25, autosomal recessive early-onset, with impaired intellectual development"
+        },
+        {
+          "id": "MONDO_0014274",
+          "name": "L-ferritin deficiency"
+        },
+        {
+          "id": "MONDO_0957875",
+          "name": "neuronopathy, distal hereditary motor, autosomal dominant 11"
+        }
+      ],
+      "set": "AGENT",
+      "system": "brain and nerves",
+      "asks": {
+        "disease_id": "MONDO_0005391",
+        "asks": 2,
+        "report_counts": [
+          151,
+          151
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "dry eye syndrome",
+      "found": true,
+      "id": "MONDO_0006733",
+      "name": "dry eye syndrome",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0006733",
+          "name": "dry eye syndrome"
+        },
+        {
+          "id": "MONDO_0010030",
+          "name": "Sjogren syndrome"
+        },
+        {
+          "id": "MONDO_0009149",
+          "name": "ectodermal dysplasia-intellectual disability-central nervous system malformation syndrome"
+        },
+        {
+          "id": "MONDO_0008598",
+          "name": "trichodysplasia-xeroderma syndrome"
+        },
+        {
+          "id": "MONDO_0008693",
+          "name": "ablepharon macrostomia syndrome"
+        },
+        {
+          "id": "MONDO_0013090",
+          "name": "chromosome 19q13.11 deletion syndrome"
+        },
+        {
+          "id": "MONDO_0009145",
+          "name": "Schöpf-Schulz-Passarge syndrome"
+        },
+        {
+          "id": "MONDO_0008998",
+          "name": "Cockayne syndrome type 3"
+        },
+        {
+          "id": "MONDO_0010461",
+          "name": "syndromic X-linked intellectual disability Nascimento type"
+        },
+        {
+          "id": "MONDO_0033664",
+          "name": "Kilquist syndrome"
+        }
+      ],
+      "set": "AGENT",
+      "system": "eye and ear",
+      "asks": {
+        "disease_id": "MONDO_0006733",
+        "asks": 2,
+        "report_counts": [
+          254,
+          254
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "rosacea",
+      "found": true,
+      "id": "MONDO_0006604",
+      "name": "rosacea",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0006604",
+          "name": "rosacea"
+        },
+        {
+          "id": "EFO_0009180",
+          "name": "rosacea severity measurement"
+        },
+        {
+          "id": "MONDO_0043777",
+          "name": "rhinophyma"
+        }
+      ],
+      "set": "AGENT",
+      "system": "skin",
+      "asks": {
+        "disease_id": "MONDO_0006604",
+        "asks": 2,
+        "report_counts": [
+          146,
+          146
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "psoriatic arthritis",
+      "found": true,
+      "id": "MONDO_0011849",
+      "name": "psoriatic arthritis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0011849",
+          "name": "psoriatic arthritis"
+        },
+        {
+          "id": "MONDO_0019436",
+          "name": "psoriasis-related juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0005095",
+          "name": "spondyloarthropathy"
+        },
+        {
+          "id": "MONDO_0015597",
+          "name": "palmoplantar pustulosis"
+        },
+        {
+          "id": "EFO_0007773",
+          "name": "cutaneous psoriasis measurement"
+        }
+      ],
+      "set": "AGENT",
+      "system": "bones, joints and muscles",
+      "asks": {
+        "disease_id": "MONDO_0011849",
+        "asks": 2,
+        "report_counts": [
+          447,
+          447
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "neutropenia",
+      "found": true,
+      "id": "MONDO_0001475",
+      "name": "neutropenia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0001475",
+          "name": "neutropenia"
+        },
+        {
+          "id": "MONDO_0011405",
+          "name": "poikiloderma with neutropenia"
+        },
+        {
+          "id": "MONDO_0015134",
+          "name": "constitutional neutropenia"
+        },
+        {
+          "id": "MONDO_0010294",
+          "name": "X-linked severe congenital neutropenia"
+        },
+        {
+          "id": "MONDO_0017100",
+          "name": "neutropenia-monocytopenia-deafness syndrome"
+        },
+        {
+          "id": "MONDO_0008742",
+          "name": "autosomal dominant severe congenital neutropenia"
+        },
+        {
+          "id": "MONDO_0013139",
+          "name": "neutropenia, severe congenital, 2, autosomal dominant"
+        },
+        {
+          "id": "EFO_0700041",
+          "name": "acquired neutropenia"
+        },
+        {
+          "id": "MONDO_0018542",
+          "name": "severe congenital neutropenia"
+        },
+        {
+          "id": "MONDO_1060165",
+          "name": "ELANE-related neutropenia"
+        }
+      ],
+      "set": "AGENT",
+      "system": "blood",
+      "asks": {
+        "disease_id": "MONDO_0001475",
+        "asks": 2,
+        "report_counts": [
+          152,
+          152
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "candidiasis",
+      "found": true,
+      "id": "MONDO_0002026",
+      "name": "candidiasis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0002026",
+          "name": "candidiasis"
+        },
+        {
+          "id": "MONDO_0014230",
+          "name": "candidiasis, familial, 8"
+        },
+        {
+          "id": "MONDO_0013140",
+          "name": "candidiasis, familial, 4"
+        },
+        {
+          "id": "MONDO_0015279",
+          "name": "chronic mucocutaneous candidiasis"
+        },
+        {
+          "id": "EFO_1001283",
+          "name": "Candidiasis, Invasive"
+        },
+        {
+          "id": "MONDO_0000879",
+          "name": "cutaneous candidiasis"
+        },
+        {
+          "id": "MONDO_0042233",
+          "name": "disseminated candidiasis"
+        },
+        {
+          "id": "MONDO_0009411",
+          "name": "autoimmune polyendocrine syndrome type 1"
+        },
+        {
+          "id": "MONDO_0006014",
+          "name": "vulvovaginal candidiasis"
+        },
+        {
+          "id": "MONDO_0005886",
+          "name": "oral candidiasis"
+        }
+      ],
+      "set": "AGENT",
+      "system": "infections",
+      "asks": {
+        "disease_id": "MONDO_0002026",
+        "asks": 2,
+        "report_counts": [
+          161,
+          161
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "gastric cancer",
+      "found": true,
+      "id": "MONDO_0001056",
+      "name": "gastric cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0001056",
+          "name": "gastric cancer"
+        },
+        {
+          "id": "MONDO_0021085",
+          "name": "gastric neoplasm"
+        },
+        {
+          "id": "MONDO_0004950",
+          "name": "gastric carcinoma"
+        },
+        {
+          "id": "MONDO_0018502",
+          "name": "hereditary gastric cancer"
+        },
+        {
+          "id": "MONDO_0100488",
+          "name": "CDH1-related diffuse gastric and lobular breast cancer syndrome"
+        },
+        {
+          "id": "MONDO_0001126",
+          "name": "gastric ulcer"
+        },
+        {
+          "id": "Orphanet_26106",
+          "name": "Familial gastric cancer"
+        },
+        {
+          "id": "MONDO_0018630",
+          "name": "hereditary nonpolyposis colon cancer"
+        },
+        {
+          "id": "EFO_1000273",
+          "name": "Gastric Metaplasia"
+        },
+        {
+          "id": "MONDO_0017790",
+          "name": "gastric adenocarcinoma and proximal polyposis of the stomach"
+        }
+      ],
+      "set": "AGENT",
+      "system": "more cancers",
+      "asks": {
+        "disease_id": "MONDO_0001056",
+        "asks": 2,
+        "report_counts": [
+          2767,
+          2767
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "deep vein thrombosis",
+      "found": true,
+      "id": "EFO_0003907",
+      "name": "deep vein thrombosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "EFO_0003907",
+          "name": "deep vein thrombosis"
+        },
+        {
+          "id": "HP_0004936",
+          "name": "Venous thrombosis"
+        },
+        {
+          "id": "MONDO_0026777",
+          "name": "VEXAS syndrome"
+        },
+        {
+          "id": "MONDO_0013144",
+          "name": "hereditary antithrombin deficiency"
+        },
+        {
+          "id": "MONDO_0008559",
+          "name": "thrombophilia due to thrombin defect"
+        },
+        {
+          "id": "MONDO_0859082",
+          "name": "thrombophilia, X-linked, due to factor 8 defect"
+        },
+        {
+          "id": "MONDO_0012876",
+          "name": "heparin cofactor 2 deficiency"
+        },
+        {
+          "id": "EFO_0009153",
+          "name": "lymphedema, hereditary, iii"
+        },
+        {
+          "id": "MONDO_0012860",
+          "name": "thrombophilia due to protein C deficiency, autosomal recessive"
+        }
+      ],
+      "set": "AGENT",
+      "system": "heart and blood vessels",
+      "asks": {
+        "disease_id": "EFO_0003907",
+        "asks": 2,
+        "report_counts": [
+          218,
+          218
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "peptic ulcer disease",
+      "found": true,
+      "id": "MONDO_0004247",
+      "name": "peptic ulcer disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004247",
+          "name": "peptic ulcer disease"
+        },
+        {
+          "id": "EFO_0009923",
+          "name": "Peptic ulcer and gastro-oesophageal reflux disease (GORD) drug use measurement"
+        },
+        {
+          "id": "MONDO_0001126",
+          "name": "gastric ulcer"
+        },
+        {
+          "id": "MONDO_0006781",
+          "name": "Helicobacter pylori infectious disease"
+        },
+        {
+          "id": "MONDO_0019610",
+          "name": "Zollinger-Ellison syndrome"
+        },
+        {
+          "id": "MONDO_0024638",
+          "name": "pancreatic gastrinoma"
+        }
+      ],
+      "set": "AGENT",
+      "system": "stomach, gut and liver",
+      "asks": {
+        "disease_id": "MONDO_0004247",
+        "asks": 2,
+        "report_counts": [
+          139,
+          139
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "urinary tract infection",
+      "found": true,
+      "id": "MONDO_0100338",
+      "name": "urinary tract infection",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0100338",
+          "name": "urinary tract infection"
+        },
+        {
+          "id": "MONDO_0005247",
+          "name": "bacterial urinary tract infection"
+        },
+        {
+          "id": "HP_0000010",
+          "name": "Recurrent urinary tract infections"
+        },
+        {
+          "id": "OBA_2045258",
+          "name": "susceptibility to urinary tract infection"
+        },
+        {
+          "id": "MONDO_0005141",
+          "name": "Pseudomonas infection"
+        },
+        {
+          "id": "MONDO_0008630",
+          "name": "urinary bladder, atony of"
+        },
+        {
+          "id": "MONDO_0015268",
+          "name": "medullary sponge kidney"
+        },
+        {
+          "id": "MONDO_0009550",
+          "name": "renal hypomagnesemia 3"
+        },
+        {
+          "id": "MONDO_0016829",
+          "name": "familial visceral myopathy"
+        },
+        {
+          "id": "MONDO_0010209",
+          "name": "xanthinuria type I"
+        }
+      ],
+      "set": "AGENT",
+      "system": "kidney and bladder",
+      "asks": {
+        "disease_id": "MONDO_0100338",
+        "asks": 2,
+        "report_counts": [
+          624,
+          624
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hyperthyroidism",
+      "found": true,
+      "id": "MONDO_0004425",
+      "name": "hyperthyroidism",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004425",
+          "name": "hyperthyroidism"
+        },
+        {
+          "id": "MONDO_1060200",
+          "name": "primary hyperthyroidism"
+        },
+        {
+          "id": "MONDO_0012203",
+          "name": "familial hyperthyroidism due to mutations in TSH receptor"
+        },
+        {
+          "id": "MONDO_1060201",
+          "name": "secondary hyperthyroidism"
+        },
+        {
+          "id": "MONDO_0011309",
+          "name": "familial gestational hyperthyroidism"
+        },
+        {
+          "id": "MONDO_0005364",
+          "name": "Graves disease"
+        },
+        {
+          "id": "MONDO_0005397",
+          "name": "goiter"
+        },
+        {
+          "id": "EFO_0007838",
+          "name": "response to anti-thyroid drug"
+        },
+        {
+          "id": "MONDO_0001220",
+          "name": "hypoparathyroidism"
+        },
+        {
+          "id": "MONDO_0001252",
+          "name": "toxic multinodular goitre"
+        }
+      ],
+      "set": "AGENT",
+      "system": "hormones and metabolism",
+      "asks": {
+        "disease_id": "MONDO_0004425",
+        "asks": 2,
+        "report_counts": [
+          28,
+          28
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "neuropathic pain",
+      "found": true,
+      "id": "EFO_0005762",
+      "name": "neuropathic pain",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "EFO_0005762",
+          "name": "neuropathic pain"
+        },
+        {
+          "id": "MONDO_0017937",
+          "name": "autosomal dominant intermediate Charcot-Marie-Tooth disease with neuropathic pain"
+        },
+        {
+          "id": "MONDO_0009459",
+          "name": "channelopathy-associated congenital insensitivity to pain, autosomal recessive"
+        },
+        {
+          "id": "HP_0008443",
+          "name": "Neuropathic spinal arthropathy"
+        },
+        {
+          "id": "MONDO_0021667",
+          "name": "neuralgia"
+        },
+        {
+          "id": "MONDO_0011909",
+          "name": "Charcot-Marie-Tooth disease dominant intermediate D"
+        },
+        {
+          "id": "EFO_0700072",
+          "name": "sodium channelopathy-related small fiber neuropathy"
+        },
+        {
+          "id": "MONDO_0014566",
+          "name": "Charcot-Marie-Tooth disease axonal type 2U"
+        },
+        {
+          "id": "MONDO_0009746",
+          "name": "hereditary sensory and autonomic neuropathy type 4"
+        },
+        {
+          "id": "MONDO_0018993",
+          "name": "Charcot-Marie-Tooth disease type 2"
+        }
+      ],
+      "set": "AGENT",
+      "system": "brain and nerves",
+      "asks": {
+        "disease_id": "EFO_0005762",
+        "asks": 2,
+        "report_counts": [
+          413,
+          413
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "obsessive-compulsive disorder",
+      "found": true,
+      "id": "MONDO_0008114",
+      "name": "obsessive-compulsive disorder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0008114",
+          "name": "obsessive-compulsive disorder"
+        }
+      ],
+      "set": "AGENT",
+      "system": "mind",
+      "asks": {
+        "disease_id": "MONDO_0008114",
+        "asks": 2,
+        "report_counts": [
+          179,
+          179
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "uveitis",
+      "found": true,
+      "id": "MONDO_0020283",
+      "name": "uveitis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0020283",
+          "name": "uveitis"
+        },
+        {
+          "id": "MONDO_0006918",
+          "name": "posterior uveitis"
+        },
+        {
+          "id": "EFO_0700108",
+          "name": "non-infectious posterior uveitis"
+        },
+        {
+          "id": "MONDO_0031012",
+          "name": "autoimmune uveitis"
+        },
+        {
+          "id": "MONDO_0006651",
+          "name": "anterior uveitis"
+        },
+        {
+          "id": "MONDO_0006806",
+          "name": "intermediate uveitis"
+        },
+        {
+          "id": "MONDO_0017634",
+          "name": "non-infectious anterior uveitis"
+        },
+        {
+          "id": "MONDO_0017256",
+          "name": "idiopathic anterior uveitis"
+        },
+        {
+          "id": "MONDO_0017209",
+          "name": "infectious posterior uveitis"
+        },
+        {
+          "id": "MONDO_0017210",
+          "name": "infectious anterior uveitis"
+        }
+      ],
+      "set": "AGENT",
+      "system": "eye and ear",
+      "asks": {
+        "disease_id": "MONDO_0020283",
+        "asks": 2,
+        "report_counts": [
+          150,
+          150
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "urticaria",
+      "found": true,
+      "id": "MONDO_0005492",
+      "name": "urticaria",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005492",
+          "name": "urticaria"
+        },
+        {
+          "id": "MONDO_0044212",
+          "name": "chronic idiopathic urticaria"
+        },
+        {
+          "id": "MONDO_0022799",
+          "name": "cold urticaria"
+        },
+        {
+          "id": "MONDO_0006526",
+          "name": "allergic urticaria"
+        },
+        {
+          "id": "MONDO_0006618",
+          "name": "vibratory urticaria"
+        },
+        {
+          "id": "EFO_1001871",
+          "name": "acquired cold urticaria"
+        },
+        {
+          "id": "MONDO_0025513",
+          "name": "autoimmune urticaria"
+        },
+        {
+          "id": "MONDO_0044213",
+          "name": "acute idiopathic urticaria"
+        },
+        {
+          "id": "MONDO_0006599",
+          "name": "physical urticaria"
+        },
+        {
+          "id": "MONDO_0007447",
+          "name": "autosomal dominant vibratory urticaria"
+        }
+      ],
+      "set": "AGENT",
+      "system": "skin",
+      "asks": {
+        "disease_id": "MONDO_0005492",
+        "asks": 2,
+        "report_counts": [
+          121,
+          121
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "fibromyalgia",
+      "found": true,
+      "id": "MONDO_0005546",
+      "name": "fibromyalgia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005546",
+          "name": "fibromyalgia"
+        }
+      ],
+      "set": "AGENT",
+      "system": "bones, joints and muscles",
+      "asks": {
+        "disease_id": "MONDO_0005546",
+        "asks": 2,
+        "report_counts": [
+          343,
+          343
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "venous thromboembolism",
+      "found": true,
+      "id": "MONDO_0005399",
+      "name": "venous thromboembolism",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005399",
+          "name": "venous thromboembolism"
+        },
+        {
+          "id": "MONDO_0008559",
+          "name": "thrombophilia due to thrombin defect"
+        },
+        {
+          "id": "HP_0004936",
+          "name": "Venous thrombosis"
+        },
+        {
+          "id": "MONDO_0013144",
+          "name": "hereditary antithrombin deficiency"
+        },
+        {
+          "id": "MONDO_0100319",
+          "name": "COVID-19–associated multisystem inflammatory syndrome in adults"
+        },
+        {
+          "id": "MONDO_0026777",
+          "name": "VEXAS syndrome"
+        }
+      ],
+      "set": "AGENT",
+      "system": "blood",
+      "asks": {
+        "disease_id": "MONDO_0005399",
+        "asks": 2,
+        "report_counts": [
+          246,
+          246
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "leprosy",
+      "found": true,
+      "id": "MONDO_0005124",
+      "name": "leprosy",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005124",
+          "name": "leprosy"
+        },
+        {
+          "id": "MONDO_0005126",
+          "name": "tuberculoid leprosy"
+        },
+        {
+          "id": "EFO_1001358",
+          "name": "Leprosy, Paucibacillary"
+        },
+        {
+          "id": "MONDO_0005127",
+          "name": "lepromatous leprosy"
+        },
+        {
+          "id": "MONDO_0005125",
+          "name": "borderline leprosy"
+        },
+        {
+          "id": "MONDO_0002128",
+          "name": "mononeuritis multiplex"
+        },
+        {
+          "id": "EFO_0007926",
+          "name": "hyper-inflammatory immune response"
+        }
+      ],
+      "set": "AGENT",
+      "system": "infections",
+      "asks": {
+        "disease_id": "MONDO_0005124",
+        "asks": 2,
+        "report_counts": [
+          7,
+          7
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "infertility",
+      "found": true,
+      "id": "HP_0000789",
+      "name": "Infertility",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "HP_0000789",
+          "name": "Infertility"
+        },
+        {
+          "id": "MONDO_0005047",
+          "name": "infertility disorder"
+        },
+        {
+          "id": "MONDO_0005372",
+          "name": "male infertility"
+        },
+        {
+          "id": "EFO_0700067",
+          "name": "non-syndromic male infertility due to sperm motility disorder"
+        },
+        {
+          "id": "EFO_0700088",
+          "name": "male infertility with azoospermia or oligozoospermia due to single gene mutation"
+        },
+        {
+          "id": "MONDO_0021124",
+          "name": "female infertility"
+        },
+        {
+          "id": "MONDO_0015746",
+          "name": "male infertility due to globozoospermia"
+        },
+        {
+          "id": "Orphanet_399983",
+          "name": "Rare male infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin"
+        },
+        {
+          "id": "Orphanet_400011",
+          "name": "Rare female infertility due to hypothalamic-pituitary-gonadal axis disorder of genetic origin"
+        },
+        {
+          "id": "MONDO_0018394",
+          "name": "male infertility with teratozoospermia due to single gene mutation"
+        }
+      ],
+      "set": "AGENT",
+      "system": "women's and men's health",
+      "asks": {
+        "disease_id": "HP_0000789",
+        "asks": 2,
+        "report_counts": [
+          653,
+          653
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "cervical cancer",
+      "found": true,
+      "id": "MONDO_0002974",
+      "name": "cervical cancer",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0002974",
+          "name": "cervical cancer"
+        },
+        {
+          "id": "MONDO_0005131",
+          "name": "cervical carcinoma"
+        },
+        {
+          "id": "MONDO_0006143",
+          "name": "cervical squamous cell carcinoma"
+        },
+        {
+          "id": "MONDO_0001416",
+          "name": "female reproductive organ cancer"
+        },
+        {
+          "id": "MONDO_0005153",
+          "name": "cervical adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0000481",
+          "name": "cervical dystonia"
+        },
+        {
+          "id": "MONDO_0006134",
+          "name": "cervical adenosquamous carcinoma"
+        },
+        {
+          "id": "MONDO_0003665",
+          "name": "cervical endometrioid adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0006135",
+          "name": "cervical clear cell adenocarcinoma"
+        },
+        {
+          "id": "MONDO_0044343",
+          "name": "cervical disk degenerative disorder"
+        }
+      ],
+      "set": "AGENT",
+      "system": "more cancers",
+      "asks": {
+        "disease_id": "MONDO_0002974",
+        "asks": 2,
+        "report_counts": [
+          1034,
+          1034
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "hypercholesterolemia",
+      "found": true,
+      "id": "HP_0003124",
+      "name": "Hypercholesterolemia",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "HP_0003124",
+          "name": "Hypercholesterolemia"
+        },
+        {
+          "id": "MONDO_0005439",
+          "name": "familial hypercholesterolemia"
+        },
+        {
+          "id": "MONDO_0007750",
+          "name": "hypercholesterolemia, familial, 1"
+        },
+        {
+          "id": "MONDO_0011369",
+          "name": "hypercholesterolemia, autosomal dominant, 3"
+        },
+        {
+          "id": "MONDO_0018328",
+          "name": "homozygous familial hypercholesterolemia"
+        },
+        {
+          "id": "MONDO_0007751",
+          "name": "hypercholesterolemia, autosomal dominant, type B"
+        },
+        {
+          "id": "MONDO_0016203",
+          "name": "hypercholesterolemia due to cholesterol 7alpha-hydroxylase deficiency"
+        },
+        {
+          "id": "MONDO_0010776",
+          "name": "hypomagnesemia, hypertension, and hypercholesterolemia, mitochondrial"
+        },
+        {
+          "id": "MONDO_0037748",
+          "name": "hyperlipoproteinemia"
+        },
+        {
+          "id": "HP_0003119",
+          "name": "Abnormal circulating lipid concentration"
+        }
+      ],
+      "set": "AGENT",
+      "system": "heart and blood vessels",
+      "asks": {
+        "disease_id": "HP_0003124",
+        "asks": 2,
+        "report_counts": [
+          803,
+          803
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "COVID-19",
+      "found": true,
+      "id": "MONDO_0100096",
+      "name": "COVID-19",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0100096",
+          "name": "COVID-19"
+        }
+      ],
+      "set": "AGENT",
+      "system": "lungs and airways",
+      "asks": {
+        "disease_id": "MONDO_0100096",
+        "asks": 2,
+        "report_counts": [
+          1983,
+          1983
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "erectile dysfunction",
+      "found": true,
+      "id": "MONDO_0005362",
+      "name": "erectile dysfunction",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005362",
+          "name": "erectile dysfunction"
+        },
+        {
+          "id": "MONDO_0002146",
+          "name": "hypogonadism"
+        },
+        {
+          "id": "MONDO_0700275",
+          "name": "prostate cancer, hereditary"
+        },
+        {
+          "id": "MONDO_0008215",
+          "name": "adult-onset autosomal dominant demyelinating leukodystrophy"
+        },
+        {
+          "id": "MONDO_0007013",
+          "name": "vasculogenic impotence"
+        }
+      ],
+      "set": "AGENT",
+      "system": "kidney and bladder",
+      "asks": {
+        "disease_id": "MONDO_0005362",
+        "asks": 2,
+        "report_counts": [
+          375,
+          375
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "Graves disease",
+      "found": true,
+      "id": "MONDO_0005364",
+      "name": "Graves disease",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005364",
+          "name": "Graves disease"
+        },
+        {
+          "id": "EFO_1001466",
+          "name": "Graves ophthalmopathy"
+        },
+        {
+          "id": "MONDO_0033925",
+          "name": "pediatric-onset Graves disease"
+        },
+        {
+          "id": "MONDO_0010138",
+          "name": "thyrotoxicosis"
+        },
+        {
+          "id": "EFO_0021912",
+          "name": "myc proto-oncogene protein measurement"
+        },
+        {
+          "id": "MONDO_0002884",
+          "name": "nail disorder"
+        },
+        {
+          "id": "MONDO_0019284",
+          "name": "inherited isolated nail anomaly"
+        },
+        {
+          "id": "MONDO_0024330",
+          "name": "infectious otitis media"
+        },
+        {
+          "id": "MONDO_0009411",
+          "name": "autoimmune polyendocrine syndrome type 1"
+        },
+        {
+          "id": "MONDO_0042233",
+          "name": "disseminated candidiasis"
+        }
+      ],
+      "set": "AGENT",
+      "system": "hormones and metabolism",
+      "asks": {
+        "disease_id": "MONDO_0005364",
+        "asks": 2,
+        "report_counts": [
+          49,
+          49
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "panic disorder",
+      "found": true,
+      "id": "MONDO_0005383",
+      "name": "panic disorder",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005383",
+          "name": "panic disorder"
+        },
+        {
+          "id": "EFO_1001907",
+          "name": "panic disorder without agoraphobia"
+        },
+        {
+          "id": "MONDO_0008187",
+          "name": "panic disorder 1"
+        },
+        {
+          "id": "MONDO_0031240",
+          "name": "familial panic disorder"
+        },
+        {
+          "id": "MONDO_0003709",
+          "name": "agoraphobia"
+        },
+        {
+          "id": "MONDO_0859225",
+          "name": "neurodevelopmental disorder with or without variable movement or behavioral abnormalities"
+        },
+        {
+          "id": "MONDO_0044144",
+          "name": "panic disorder with agoraphobia"
+        }
+      ],
+      "set": "AGENT",
+      "system": "mind",
+      "asks": {
+        "disease_id": "MONDO_0005383",
+        "asks": 2,
+        "report_counts": [
+          176,
+          176
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "actinic keratosis",
+      "found": true,
+      "id": "MONDO_0005173",
+      "name": "actinic keratosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005173",
+          "name": "actinic keratosis"
+        },
+        {
+          "id": "MONDO_0021074",
+          "name": "precancerous condition"
+        },
+        {
+          "id": "MONDO_0013806",
+          "name": "familial cutaneous telangiectasia and oropharyngeal predisposition cancer syndrome"
+        },
+        {
+          "id": "MONDO_0010211",
+          "name": "xeroderma pigmentosum group C"
+        }
+      ],
+      "set": "AGENT",
+      "system": "skin",
+      "asks": {
+        "disease_id": "MONDO_0005173",
+        "asks": 2,
+        "report_counts": [
+          195,
+          195
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "juvenile idiopathic arthritis",
+      "found": true,
+      "id": "MONDO_0011429",
+      "name": "juvenile idiopathic arthritis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0011429",
+          "name": "juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019437",
+          "name": "enthesitis-related juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019433",
+          "name": "oligoarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019434",
+          "name": "systemic-onset juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019435",
+          "name": "rheumatoid factor-positive polyarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "EFO_0009746",
+          "name": "extended oligoarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019432",
+          "name": "rheumatoid factor-negative juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0019436",
+          "name": "psoriasis-related juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0018456",
+          "name": "polyarticular juvenile idiopathic arthritis"
+        },
+        {
+          "id": "MONDO_0005180",
+          "name": "Parkinson disease"
+        }
+      ],
+      "set": "AGENT",
+      "system": "bones, joints and muscles",
+      "asks": {
+        "disease_id": "MONDO_0011429",
+        "asks": 2,
+        "report_counts": [
+          376,
+          376
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "toxoplasmosis",
+      "found": true,
+      "id": "MONDO_0005989",
+      "name": "toxoplasmosis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005989",
+          "name": "toxoplasmosis"
+        },
+        {
+          "id": "MONDO_0005879",
+          "name": "ocular toxoplasmosis"
+        },
+        {
+          "id": "MONDO_0005715",
+          "name": "congenital toxoplasmosis"
+        },
+        {
+          "id": "MONDO_0005697",
+          "name": "cerebral toxoplasmosis"
+        },
+        {
+          "id": "EFO_0007047",
+          "name": "Toxoplasma gondii seropositivity"
+        }
+      ],
+      "set": "AGENT",
+      "system": "infections",
+      "asks": {
+        "disease_id": "MONDO_0005989",
+        "asks": 2,
+        "report_counts": [
+          9,
+          9
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "mantle cell lymphoma",
+      "found": true,
+      "id": "MONDO_0018876",
+      "name": "mantle cell lymphoma",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0018876",
+          "name": "mantle cell lymphoma"
+        },
+        {
+          "id": "MONDO_0006225",
+          "name": "gastric mantle cell lymphoma"
+        },
+        {
+          "id": "MONDO_0006430",
+          "name": "splenic mantle cell lymphoma"
+        }
+      ],
+      "set": "AGENT",
+      "system": "more cancers",
+      "asks": {
+        "disease_id": "MONDO_0018876",
+        "asks": 2,
+        "report_counts": [
+          1212,
+          1212
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "pulmonary embolism",
+      "found": true,
+      "id": "MONDO_0005279",
+      "name": "pulmonary embolism",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005279",
+          "name": "pulmonary embolism"
+        },
+        {
+          "id": "MONDO_0004596",
+          "name": "cor pulmonale"
+        },
+        {
+          "id": "EFO_1001802",
+          "name": "isolated noncompaction of the ventricular myocardium"
+        },
+        {
+          "id": "EFO_0011060",
+          "name": "respiratory toxicity"
+        }
+      ],
+      "set": "AGENT",
+      "system": "heart and blood vessels",
+      "asks": {
+        "disease_id": "MONDO_0005279",
+        "asks": 2,
+        "report_counts": [
+          250,
+          250
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "bronchiectasis",
+      "found": true,
+      "id": "MONDO_0004822",
+      "name": "bronchiectasis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0004822",
+          "name": "bronchiectasis"
+        },
+        {
+          "id": "EFO_0920036",
+          "name": "eosinophilic bronchiectasis"
+        },
+        {
+          "id": "MONDO_0013087",
+          "name": "bronchiectasis with or without elevated sweat chloride 2"
+        },
+        {
+          "id": "MONDO_0013112",
+          "name": "bronchiectasis with or without elevated sweat chloride 3"
+        },
+        {
+          "id": "EFO_0920041",
+          "name": "heritable connective tissue disorder-associated bronchiectasis"
+        },
+        {
+          "id": "MONDO_0018956",
+          "name": "idiopathic bronchiectasis"
+        },
+        {
+          "id": "MONDO_0008887",
+          "name": "bronchiectasis with or without elevated sweat chloride 1"
+        },
+        {
+          "id": "MONDO_0975835",
+          "name": "bronchiectasis and nasal polyposis"
+        },
+        {
+          "id": "EFO_1001352",
+          "name": "Kartagener Syndrome"
+        },
+        {
+          "id": "EFO_0009910",
+          "name": "chronic lung disease"
+        }
+      ],
+      "set": "AGENT",
+      "system": "lungs and airways",
+      "asks": {
+        "disease_id": "MONDO_0004822",
+        "asks": 2,
+        "report_counts": [
+          72,
+          72
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    },
+    {
+      "asked": "primary biliary cholangitis",
+      "found": true,
+      "id": "MONDO_0005388",
+      "name": "primary biliary cholangitis",
+      "exact_hits": 1,
+      "hits_seen": [
+        {
+          "id": "MONDO_0005388",
+          "name": "primary biliary cholangitis"
+        },
+        {
+          "id": "MONDO_0018536",
+          "name": "adenocarcinoma of gallbladder and extrahepatic biliary tract"
+        },
+        {
+          "id": "MONDO_0018646",
+          "name": "sclerosing cholangitis"
+        },
+        {
+          "id": "MONDO_0002515",
+          "name": "hepatobiliary disorder"
+        }
+      ],
+      "set": "AGENT",
+      "system": "stomach, gut and liver",
+      "asks": {
+        "disease_id": "MONDO_0005388",
+        "asks": 2,
+        "report_counts": [
+          185,
+          185
+        ],
+        "kept": 1,
+        "problem": null,
+        "answers_all_equal": true
+      }
+    }
+  ]
+}
