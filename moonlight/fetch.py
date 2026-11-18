@@ -683,11 +683,11 @@ class Listed:
 
     regulator_record (ticket 2.17) answers: does the family, all its forms
     together, have a report whose stage is approval and whose source is one
-    of REGULATOR_SOURCES? True: yes. False: the answer named its reports'
-    sources and none of the family's approval reports is a regulator's, or
-    it has no approval report at all. None: the whole answer held no source
-    at all, as answers saved before ticket 2.17 do not. Not said is not
-    the same as no.
+    of REGULATOR_SOURCES? True: yes. False: none of the family's approval
+    reports is a regulator's, or it has no approval report, or it has no
+    report of any kind. None: not said. The family HAS reports and none of
+    them carries a source value, as in answers saved before ticket 2.17.
+    Not said is not the same as no (Kashish, 18 Nov).
     """
 
     id: str  # the id shared by the medicine and its tablet forms
@@ -709,11 +709,8 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         return {}
 
     rows = data["disease"]["drugAndClinicalCandidates"]["rows"]
-    # Ticket 2.17. Did this answer name the source of any report at all?
-    # An answer saved for the old question did not. Then nobody can tell
-    # which family has a regulator record, and every family gets None.
+    # Ticket 2.17. Every source value named anywhere in this answer.
     met = {report.get("source") for row in rows for report in row["clinicalReports"]}
-    sources_said = any(met)
     never_met = sorted(source for source in met if source and source not in KNOWN_SOURCES)
     if never_met:
         # Said out loud, never guessed. Only the source's own name is written.
@@ -733,7 +730,8 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         family = families.setdefault(
             family_id,
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
-             "approval_sources": [], "regulator_record": False if sources_said else None},
+             "approval_sources": [], "reports": 0, "source_said": False,
+             "regulator_report": False},
         )
         family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
@@ -757,11 +755,29 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             is_approval = report.get("clinicalStage") == APPROVAL
             if url and is_approval and url not in family["approval_sources"]:
                 family["approval_sources"].append(url)
-            # The source is matched exactly. No source, or one that is not
-            # on the list, is not a regulator. A link is not needed.
-            if sources_said and is_approval and report.get("source") in REGULATOR_SOURCES:
-                family["regulator_record"] = True
+            # Ticket 2.17. The source is matched exactly. No source, or one
+            # that is not on the list, is not a regulator. A link is not needed.
+            family["reports"] += 1
+            if report.get("source"):
+                family["source_said"] = True
+            if is_approval and report.get("source") in REGULATOR_SOURCES:
+                family["regulator_report"] = True
     return families
+
+
+def _regulator_record(family: dict) -> Optional[bool]:
+    """Does the family have an approval report from a regulator?
+
+    Like checking a folder of receipts. A regulator's approval receipt in
+    it: True. An empty folder: False, there is no such receipt. Receipts
+    that all have the "who wrote this" corner torn off: None, not said.
+    Anything else: False.
+    """
+    if family["regulator_report"]:
+        return True
+    if family["reports"] and not family["source_said"]:
+        return None
+    return False
 
 
 def _as_listed(family_id: str, family: dict) -> Listed:
@@ -772,7 +788,7 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         sources=tuple(family["sources"]),
         approved=family["approved"],
         approval_sources=tuple(family["approval_sources"]),
-        regulator_record=family["regulator_record"],
+        regulator_record=_regulator_record(family),
     )
 
 

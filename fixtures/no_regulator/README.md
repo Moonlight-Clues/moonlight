@@ -12,9 +12,12 @@ Five diseases, each with a whole search:
 - MONDO_0021107 narcolepsy (1 parent, 3 children)
 - MONDO_0004425 hyperthyroidism (1 parent, 11 children)
 
+One more list, with no whole search: MONDO_0100339 Friedreich ataxia. Its
+answer holds 25 medicines and no reports at all.
+
 Where the files came from
 
-- `disease_drugs/<one of the five ids>.*`: copied, not changed, from the
+- `disease_drugs/<one of the five ids, or MONDO_0100339>.*`: copied, not changed, from the
   branch `probe-approval-proof`, folder
   `fixtures/probe_p3/responses/disease_drugs/` (the study of 124 diseases,
   saved live on 2026-11-17). The question is fetch.py's DISEASE_DRUGS_QUERY
@@ -35,7 +38,7 @@ Where the files came from
 What the saved lists show
 
 - `source` is the field's name on a clinical report. Every saved report
-  has one. The values in these 33 lists: `ClinicalTrials.gov`, `DailyMed`,
+  has one. The values in these 34 lists: `ClinicalTrials.gov`, `DailyMed`,
   `EMA Human Drugs`, `FDA`, `INN`, `PMDA`, `TTD`, `USAN`. The study met one
   more in its 124 lists: `ATC`.
 - Sarcoidosis: collagenase clostridium histolyticum has one approval
@@ -46,6 +49,9 @@ What the saved lists show
 - Duchenne muscular dystrophy: ataluren has no report whose stage is
   `APPROVAL`. It has 13 trial reports and one `WITHDRAWAL` report from
   `EMA Human Drugs`. Its row's stage word still says `APPROVAL`.
+- Friedreich ataxia: idebenone and omaveloxolone are approved by their
+  rows' stage words, and neither has a report of any kind. No row on the
+  list has one.
 - Narcolepsy: aceprometazine is approved only on the parent entry
   sleep-wake disorder (MONDO_0003406), with one approval report, from `TTD`.
 - Hyperthyroidism: potassium iodide is approved only on the child entry

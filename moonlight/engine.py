@@ -32,8 +32,9 @@ Ticket 2.17, a quiet line on approvals with no regulator record. An
 Approved card whose medicine has no approval report from a regulator
 (fetch.REGULATOR_SOURCES) gets the line NO_REGULATOR_LINE, in the same
 place as the Japan line (ApprovedMedicine.proof_note). The card stays
-where it is. If the lists naming it did not say where their reports come
-from, the card gets no line: not said is not the same as no.
+where it is. A medicine with no reports at all gets the line too. If it
+has reports and none says where it comes from (answers saved before this
+ticket), the card gets no line: not said is not the same as no.
 
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
@@ -130,9 +131,9 @@ class ApprovedMedicine:
     # protein, for any disease.
     approval_sources: Tuple[str, ...] = ()
     # Ticket 2.17. Do the lists naming it hold an approval report from a
-    # regulator, for any of its forms? True: yes. False: every one of those
-    # lists named its reports' sources, and none holds such a report. None:
-    # not said. It is on no list, or a list did not name its sources.
+    # regulator, for any of its forms? True: yes. False: none of those
+    # lists holds such a report. None: not said. It is on no list, or on
+    # one of them its reports carry no source value.
     regulator_record: Optional[bool] = None
 
     @property

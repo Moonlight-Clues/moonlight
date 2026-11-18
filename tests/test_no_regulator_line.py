@@ -14,8 +14,10 @@ THE RULE
    has NO report with the stage APPROVAL from DailyMed, FDA, EMA Human
    Drugs or PMDA. No APPROVAL report at all counts too.
 3. The source is matched exactly. A missing or unknown value is not a
-   regulator. A whole answer with no "source" values gives no line: not
-   said is not the same as no.
+   regulator. Not said is not the same as no. Made clearer by Kashish on
+   18 Nov: "not said" is only for a medicine that HAS reports and none of
+   them carries a source value (the old saved files): no line. A medicine
+   with NO reports at all has no regulator approval report: the line.
 4. Approved main list and both folded boxes. Never In trials or New clues.
 5. The Japan line and the red warning work as before. Japan line and new
    line on one card: only the Japan line.
@@ -58,6 +60,8 @@ DUCHENNE = Disease(id="MONDO_0010679", name="Duchenne muscular dystrophy")
 NARCOLEPSY = Disease(id="MONDO_0021107", name="narcolepsy")
 HYPERTHYROIDISM = Disease(id="MONDO_0004425", name="hyperthyroidism")
 THE_FIVE = (SARCOIDOSIS, HUNTINGTON, DUCHENNE, NARCOLEPSY, HYPERTHYROIDISM)
+# Its own list only, with no whole search: 25 medicines and no reports at all.
+FRIEDREICH = Disease(id="MONDO_0100339", name="Friedreich ataxia")
 
 REGULATORS = {"DailyMed", "FDA", "EMA Human Drugs", "PMDA"}
 # Every value met in the study of 124 diseases (its REPORT.md, part 2).
@@ -193,7 +197,8 @@ def test_the_list_question_asks_for_each_reports_source_by_its_saved_name():
 
 def test_the_saved_lists_were_made_with_the_question_fetch_asks_now():
     requests_saved = list((SAVED / "disease_drugs").glob("*.request.json"))
-    assert len(requests_saved) == 33  # 5 own entries, 6 parents and 22 children
+    # 5 own entries with 6 parents and 22 children, and Friedreich ataxia's own.
+    assert len(requests_saved) == 34
     for file in requests_saved:
         body = load(file)
         assert body["query"] == fetch.DISEASE_DRUGS_QUERY
@@ -214,7 +219,7 @@ def test_every_source_value_in_the_saved_lists_is_one_moonlight_has_met():
     met = {report["source"] for file in (SAVED / "disease_drugs").glob("*.response.json")
            for row in load(file)["data"]["disease"]["drugAndClinicalCandidates"]["rows"]
            for report in row["clinicalReports"]}
-    assert met == MET - {"ATC"}  # ATC was met in the study, not in these 33 lists
+    assert met == MET - {"ATC"}  # ATC was met in the study, not in these 34 lists
 
 
 # ---- rule 2 in fetch: does the family have a regulator's approval report? ----
@@ -284,15 +289,16 @@ def test_an_approval_report_from_any_other_source_met_does_not_count(offline, so
     "Pmda", "FDA/EMA", "Health Canada", "",
 ])
 def test_the_source_is_matched_exactly_and_a_new_value_is_never_guessed(offline, source):
-    assert newine(offline, made_up_list([report(source)], [SOMEONE_SAID])).regulator_record is False
+    answer = made_up_list([report(source), report("ClinicalTrials.gov", "PHASE_2")])
+    assert newine(offline, answer).regulator_record is False
 
 
 def test_a_report_with_no_source_value_does_not_count_as_a_regulator(offline):
-    # Other reports in the answer have a source, so the answer did say.
-    answer = made_up_list([report(None)], [SOMEONE_SAID])
+    # Another of its reports has a source, so its sources were said.
+    answer = made_up_list([report(None), report("TTD", "PHASE_2")])
     assert newine(offline, answer).regulator_record is False
-    answer = made_up_list([{"url": "https://example.org/1", "clinicalStage": "APPROVAL"}],
-                          [SOMEONE_SAID])
+    answer = made_up_list([{"url": "https://example.org/1", "clinicalStage": "APPROVAL"},
+                           report("ClinicalTrials.gov", "PHASE_3")])
     assert newine(offline, answer).regulator_record is False
 
 
@@ -304,6 +310,29 @@ def test_a_regulators_report_that_is_not_an_approval_does_not_count(offline):
 
 def test_a_medicine_with_no_reports_at_all_has_no_regulator_record(offline):
     assert newine(offline, made_up_list([], [SOMEONE_SAID])).regulator_record is False
+    # Also when no other medicine on the list has a report either.
+    assert newine(offline, made_up_list([])).regulator_record is False
+    silent = ("C9", "OTHERINE", [{"url": "https://example.org/1", "clinicalStage": "PHASE_2"}])
+    assert newine(offline, made_up_list([], [silent])).regulator_record is False
+
+
+def test_all_forms_together_no_form_has_a_report(offline):
+    salt = ("C2", "NEWINE HYDROCHLORIDE", [], {"id": "C1", "name": "NEWINE", "drugWarnings": []})
+    assert newine(offline, made_up_list([], [salt])).regulator_record is False
+
+
+def test_example_friedreich_ataxia_two_cards_with_no_reports_at_all_carry_the_line():
+    rows = rows_of(FRIEDREICH.id)
+    assert len(rows) == 25 and all(row["clinicalReports"] == [] for row in rows)
+    listed = fetch.fetch_approved(FRIEDREICH)
+    assert [entry.name for entry in listed] == ["IDEBENONE", "OMAVELOXOLONE"]
+    assert all(entry.sources == () and entry.approval_sources == () for entry in listed)
+    assert [entry.regulator_record for entry in listed] == [False, False]
+    tabs = sort_into_tabs({}, listed, fetch.fetch_withdrawn(FRIEDREICH))
+    assert [(medicine.name, medicine.proof_note) for medicine in tabs.approved] == [
+        ("IDEBENONE", LINE), ("OMAVELOXOLONE", LINE)]
+    assert [api._approved_json(medicine)["proof_note"] for medicine in tabs.approved] == [LINE] * 2
+    assert tabs.narrower == [] and tabs.wider_group == []
 
 
 def test_all_forms_together_one_forms_regulator_report_is_enough(offline):
@@ -347,10 +376,25 @@ def test_example_7_an_answer_with_no_source_anywhere_is_not_said(offline):
     assert [medicine.proof_note for medicine in tabs.approved] == [None] * 5
 
 
-def test_an_answer_where_every_source_is_empty_is_not_said_either(offline):
+def test_a_medicine_whose_reports_all_have_an_empty_source_is_not_said_either(offline):
     answer = made_up_list([report(None)], [("C9", "OTHERINE", [report(None, "PHASE_2")])])
     assert newine(offline, answer).regulator_record is None
-    assert newine(offline, made_up_list([])).regulator_record is None
+    assert newine(offline, made_up_list([report(None), report("")])).regulator_record is None
+
+
+def test_not_said_is_about_the_medicines_own_reports_not_the_rest_of_the_list(offline):
+    """Kashish, 18 Nov: "not said" is for a medicine that HAS reports and
+    none of them carries a source value."""
+    bare = {"url": "https://example.org/1", "clinicalStage": "APPROVAL"}
+    # Another medicine's reports name their source. NEWINE's own do not.
+    assert newine(offline, made_up_list([bare], [SOMEONE_SAID])).regulator_record is None
+    assert newine(offline, made_up_list([report(None)], [SOMEONE_SAID])).regulator_record is None
+    # One of its own reports names a source: then it was said.
+    answer = made_up_list([bare, report("ClinicalTrials.gov", "PHASE_2")])
+    assert newine(offline, answer).regulator_record is False
+    salt = ("C2", "NEWINE HYDROCHLORIDE", [report("TTD")],
+            {"id": "C1", "name": "NEWINE", "drugWarnings": []})
+    assert newine(offline, made_up_list([bare], [salt])).regulator_record is False
 
 
 @pytest.mark.parametrize("disease", [
