@@ -29,6 +29,8 @@ from moonlight.fetch import Listed
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
+import test_fetch
+
 REAL_POST_JSON = fetch._post_json  # kept before any test swaps it
 REAL_READ_CORRECTIONS = engine._read_corrections
 
@@ -132,7 +134,7 @@ def with_line(medicines):
 # ---- fetch: the one extra thing asked about each report ----
 
 def test_the_list_question_asks_for_each_reports_stage_by_its_live_name():
-    assert "clinicalReports { url clinicalStage }" in fetch.DISEASE_DRUGS_QUERY
+    assert "clinicalReports { url clinicalStage source }" in fetch.DISEASE_DRUGS_QUERY
     # The name was read from the API's own list of a report's fields.
     fields = load(PROOF / "clinical_report_type.response.json")["data"]["__type"]["fields"]
     assert "clinicalStage" in [field["name"] for field in fields]
@@ -142,7 +144,7 @@ def test_the_saved_lists_were_made_with_the_question_fetch_asks_now():
     requests_saved = list(PROOF.glob("*/disease_drugs/*.request.json"))
     assert len(requests_saved) == 20  # 3 own entries, 6 parents and 11 children
     for file in requests_saved:
-        assert load(file)["query"] == fetch.DISEASE_DRUGS_QUERY
+        assert load(file)["query"] == test_fetch.list_question_before_2_17()
     for file in PROOF.glob("*/disease_drugs/*.response.json"):
         for row in load(file)["data"]["disease"]["drugAndClinicalCandidates"]["rows"]:
             for report in row["clinicalReports"]:
@@ -204,7 +206,7 @@ def test_an_answer_saved_for_the_old_question_is_never_read_for_the_new_one(tmp_
     monkeypatch.setenv(cache.FOLDER_VARIABLE, str(tmp_path))
     cache.forget_memory()
     old_question = fetch.DISEASE_DRUGS_QUERY.replace(
-        "clinicalReports { url clinicalStage }", "clinicalReports { url }")
+        "clinicalReports { url clinicalStage source }", "clinicalReports { url }")
     assert old_question != fetch.DISEASE_DRUGS_QUERY
     variables = {"diseaseId": ALZHEIMER.id}
     old_answer = {"data": {"disease": {"id": ALZHEIMER.id, "drugAndClinicalCandidates": {
