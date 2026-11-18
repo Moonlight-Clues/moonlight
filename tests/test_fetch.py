@@ -717,9 +717,18 @@ def noted(offline):
     return offline
 
 
+def list_question_before_2_17():
+    """The list question as it was when these files were saved: the same
+    words without "source" on each report (ticket 2.17 added it)."""
+    old = fetch.DISEASE_DRUGS_QUERY.replace(
+        "clinicalReports { url clinicalStage source }", "clinicalReports { url clinicalStage }")
+    assert old != fetch.DISEASE_DRUGS_QUERY
+    return old
+
+
 def test_29_the_noted_pah_files_were_made_with_the_questions_fetch_asks():
     assert (load(PAH_NOTED / "disease_drugs.request.json")["query"]
-            == fetch.DISEASE_DRUGS_QUERY)
+            == list_question_before_2_17())
     files = list((PAH_NOTED / "target_drugs").glob("*.request.json"))
     assert len(files) == 14
     for file in files:

@@ -79,7 +79,8 @@ DOCTORS = [
     ("Wider and narrower diseases.", "Shown with a label, each in its own folded box."),
     ("Known gaps.", "A missing medicine may be withdrawn somewhere, filed further away, "
                     "or not recorded yet."),
-    ("Weak proof.", "Japan-list-only approvals say so. Confirmed mistakes carry a red warning."),
+    ("Weak proof.", "Japan-list-only approvals say so. Approvals with no regulator "
+                    "record say so. Confirmed mistakes carry a red warning."),
     ("Ranking.", "Link strength across the top 25 proteins. One protein machine counts once."),
     ("AI.", "Gemini suggests which disease you mean, and Open Targets confirms it. "
             "Explanations are written by Gemini from the card’s records, or by "

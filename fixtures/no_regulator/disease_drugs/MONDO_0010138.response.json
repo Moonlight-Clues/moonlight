@@ -1,0 +1,120 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0010138",
+      "drugAndClinicalCandidates": {
+        "count": 5,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL41632",
+              "name": "TIRATRICOL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/emcitate",
+                "clinicalStage": "APPROVAL",
+                "source": "EMA Human Drugs"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02060474",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02396459",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1518",
+              "name": "PROPYLTHIOURACIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01436994",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1141",
+              "name": "POTASSIUM IODIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D02URS",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL42115",
+              "name": "THYROXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01436994",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL508102",
+              "name": "CARBIMAZOLE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01436994",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

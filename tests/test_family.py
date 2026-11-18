@@ -23,7 +23,7 @@ from moonlight.fetch import Listed
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
-from test_fetch import PAH, noted_post_json
+from test_fetch import PAH, list_question_before_2_17, noted_post_json
 
 REAL_POST_JSON = fetch._post_json  # kept before any test swaps it
 
@@ -180,7 +180,7 @@ def test_the_saved_files_were_made_with_the_questions_fetch_asks():
     for file in families:
         assert load(file)["query"] == fetch.FAMILY_QUERY
     for file in lists:
-        assert load(file)["query"] == fetch.DISEASE_DRUGS_QUERY
+        assert load(file)["query"] == list_question_before_2_17()
 
 
 def test_the_family_question_asks_for_parents_and_children_by_those_names():

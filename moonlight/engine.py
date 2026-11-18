@@ -28,6 +28,14 @@ child entry goes in Tabs.narrower, the folded box "Approved for a narrower
 disease". ApprovedMedicine.source_record picks the link a card shows as
 "Source record": an approval receipt first.
 
+Ticket 2.17, a quiet line on approvals with no regulator record. An
+Approved card whose medicine has no approval report from a regulator
+(fetch.REGULATOR_SOURCES) gets the line NO_REGULATOR_LINE, in the same
+place as the Japan line (ApprovedMedicine.proof_note). The card stays
+where it is. A medicine with no reports at all gets the line too. If it
+has reports and none says where it comes from (answers saved before this
+ticket), the card gets no line: not said is not the same as no.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -78,6 +86,11 @@ JAPAN_LINE = (
     "Approved in Japan, according to the database. Moonlight could not "
     "find the exact record for this disease."
 )
+# Ticket 2.17, Kashish's decision of 18 Nov. Her words, exactly. Changing
+# them needs her approval.
+NO_REGULATOR_LINE = (
+    "The database lists this as approved, but gives no regulator record for it."
+)
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
 CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the note in every entry
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
@@ -117,17 +130,29 @@ class ApprovedMedicine:
     # neither are its paths' links: those are about the medicine and the
     # protein, for any disease.
     approval_sources: Tuple[str, ...] = ()
+    # Ticket 2.17. Do the lists naming it hold an approval report from a
+    # regulator, for any of its forms? True: yes. False: none of those
+    # lists holds such a report. None: not said. It is on no list, or on
+    # one of them its reports carry no source value.
+    regulator_record: Optional[bool] = None
 
     @property
     def proof_note(self) -> Optional[str]:
-        """JAPAN_LINE if Japan's general list is its only approval receipt.
+        """The one quiet grey line the card carries, or None.
 
-        None if it has an approval receipt with its own link. Also None if
-        it has no approval receipt at all: that card is not decided, and is
-        left as it is.
+        Like a receipt check with two questions, asked in this order:
+          1. Is Japan's general list its only approval receipt? Then
+             JAPAN_LINE (ticket 2.13), and nothing else.
+          2. Is it known to have no approval report from a regulator
+             (regulator_record is False)? Then NO_REGULATOR_LINE
+             (ticket 2.17). That includes no approval report at all.
+        None if it has a regulator's approval report, or if nobody said
+        where its reports come from. The line never moves or hides a card.
         """
         if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
             return JAPAN_LINE
+        if self.regulator_record is False:
+            return NO_REGULATOR_LINE
         return None
 
     @property
@@ -505,6 +530,16 @@ def _approved_medicine(
         sources.extend(source for source in entry.sources if source not in sources)
         approval_sources.extend(
             source for source in entry.approval_sources if source not in approval_sources)
+    # Ticket 2.17. One list with a regulator's approval report is enough.
+    # "No regulator record" needs every list naming it to have said so. If
+    # one of them did not say, or it is on no list at all, it is not known.
+    said = [entry.regulator_record for entry in entries]
+    if True in said:
+        regulator_record: Optional[bool] = True
+    elif said and all(answer is False for answer in said):
+        regulator_record = False
+    else:
+        regulator_record = None
     return ApprovedMedicine(
         id=family_id,
         name=clue.medicine.name if clue else entries[0].name,
@@ -513,6 +548,7 @@ def _approved_medicine(
         listed_sources=tuple(sources),
         label=label,
         approval_sources=tuple(approval_sources),
+        regulator_record=regulator_record,
     )
 
 

@@ -1,0 +1,6 @@
+{
+  "query": "\nquery DiseaseRecord($diseaseId: String!) {\n  disease(efoId: $diseaseId) { id name description synonyms { relation terms } }\n}\n",
+  "variables": {
+    "diseaseId": "MONDO_0010679"
+  }
+}

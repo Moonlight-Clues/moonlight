@@ -36,6 +36,7 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease
 
 import test_family
+import test_fetch
 from test_family import AMYLOIDOSIS, ECZEMA, PRE_B_ALL, CHILD_WORDS, PARENT_WORDS
 from test_family import child, made_up_path, parent
 
@@ -142,7 +143,7 @@ def in_tab(tabs):
 def test_the_saved_files_were_made_with_the_questions_fetch_asks():
     questions = {
         "disease": fetch.DISEASE_QUERY, "associated_targets": fetch.TARGETS_QUERY,
-        "family": fetch.FAMILY_QUERY, "disease_drugs": fetch.DISEASE_DRUGS_QUERY,
+        "family": fetch.FAMILY_QUERY, "disease_drugs": test_fetch.list_question_before_2_17(),
         "target_drugs": fetch.TARGET_DRUGS_QUERY,
     }
     counted = {}
