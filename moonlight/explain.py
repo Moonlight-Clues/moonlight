@@ -51,11 +51,14 @@ TOTAL_SECONDS = 25  # one explain() never waits longer than this, all Gemini cal
 REQUEST_SECONDS = 25  # one HTTP call never waits longer than this
 WAIT_SECONDS = 1  # the brief wait before trying another model
 
-# Word for word from the ticket. Changing these needs Kashish's approval.
+# Word for word from ticket 3.6. Kashish approved this wording on 18 Nov
+# 2026: a person may be taking the medicine because their doctor said so.
+# The last sentence is the second half of the page's safety line.
+# Changing these needs Kashish's approval.
 ENDING = (
     "But there is a catch. Nobody knows from our information if the "
     "disease needs this protein turned up or down. So this is a clue to "
-    "read about. It is not a treatment. Do not try it."
+    "read about. Never start, stop or change any medicine without a doctor."
 )
 ENDING_MANY = ENDING.replace("this protein", "these proteins")
 
@@ -293,8 +296,8 @@ def check_explanation(text: str, facts: dict,
             "Rule 5: it must not talk about getting medicines: " + ", ".join(getting) + "."
         )
 
-    # Rule 6: no promises. The ENDING is the code's own words and says
-    # "treatment", so it is taken off before this rule looks.
+    # Rule 6: no promises. The ENDING is the code's own words, not
+    # Gemini's, so it is taken off before this rule looks.
     body = text.rstrip()
     for ending in (ENDING, ENDING_MANY):
         if body.endswith(ending):

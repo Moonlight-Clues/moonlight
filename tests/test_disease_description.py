@@ -44,7 +44,7 @@ KASHISH_EXAMPLE = (
 ENDING = (
     "But there is a catch. Nobody knows from our information if the "
     "disease needs this protein turned up or down. So this is a clue to "
-    "read about. It is not a treatment. Do not try it."
+    "read about. Never start, stop or change any medicine without a doctor."
 )
 SAFETY_LINE = (
     "For learning and research exploration, not medical advice. "
