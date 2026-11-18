@@ -45,6 +45,9 @@ from the live API on 2026-11-16 and are saved in
 fixtures/MONDO_0015924/disease_about.* and fixtures/MONDO_0100338/disease_about.*.
 "clinicalStage" on a clinical report was read from the live API on
 2026-11-16 and is saved in fixtures/approval_proof/.
+"source" on a clinical report, and its values, were read from the answers
+saved in fixtures/probe_p3/ on the branch probe-approval-proof (2026-11-17)
+and from the live API on 2026-11-18. They are saved in fixtures/no_regulator/.
 """
 
 import logging
@@ -199,6 +202,9 @@ query TargetDrugs($targetId: String!) {
 # what kind: "APPROVAL" for an approval record, a phase word for a trial.
 # Adding it changed the question's words, so an answer saved for the old
 # question is filed under another name and is never read for this one.
+# Ticket 2.17. "source" on the report says who wrote the receipt: a
+# regulator like "DailyMed", or a second-hand list like "TTD". The same
+# goes for this change: old saved answers are never read for the new words.
 DISEASE_DRUGS_QUERY = """
 query DiseaseDrugs($diseaseId: String!) {
   disease(efoId: $diseaseId) {
@@ -215,13 +221,25 @@ query DiseaseDrugs($diseaseId: String!) {
           parentMolecule { id name drugWarnings { warningType } }
           childMolecules { id name drugWarnings { warningType } }
         }
-        clinicalReports { url clinicalStage }
+        clinicalReports { url clinicalStage source }
       }
     }
   }
 }
 """
 APPROVAL = "APPROVAL"  # the stage word for "approved", in both stage fields
+
+# Ticket 2.17, Kashish's decisions of 18 Nov. The Open Targets team told us
+# which values of "source" are regulators: the offices that approve
+# medicines. An approval report from one of these is a regulator record.
+# Compared letter for letter. Nothing that only looks like one counts.
+REGULATOR_SOURCES = ("DailyMed", "FDA", "EMA Human Drugs", "PMDA")
+# Every value met so far: the regulators, the two second-hand lists the
+# team named ("TTD", "ATC"), and three more met in the study of 124
+# diseases. None of the others is a regulator. A value that is not here is
+# new to Moonlight: it does not count as a regulator either, and it is
+# written in the log so Kashish can be told.
+KNOWN_SOURCES = REGULATOR_SOURCES + ("TTD", "ATC", "ClinicalTrials.gov", "USAN", "INN")
 
 # The two "which medicines?" questions. Both are asked twice, see below.
 MEDICINE_QUERIES = (TARGET_DRUGS_QUERY, DISEASE_DRUGS_QUERY)
@@ -662,6 +680,14 @@ class Listed:
     sources but not here. It is empty if the answer did not say each
     report's stage, as answers saved before ticket 2.13 did not: nothing
     is guessed.
+
+    regulator_record (ticket 2.17) answers: does the family, all its forms
+    together, have a report whose stage is approval and whose source is one
+    of REGULATOR_SOURCES? True: yes. False: the answer named its reports'
+    sources and none of the family's approval reports is a regulator's, or
+    it has no approval report at all. None: the whole answer held no source
+    at all, as answers saved before ticket 2.17 do not. Not said is not
+    the same as no.
     """
 
     id: str  # the id shared by the medicine and its tablet forms
@@ -672,6 +698,7 @@ class Listed:
     # families that are only in trials for the disease: then it is False.
     approved: bool = True
     approval_sources: Tuple[str, ...] = ()
+    regulator_record: Optional[bool] = None
 
 
 def _list_families(disease: Disease) -> Dict[str, dict]:
@@ -681,8 +708,23 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
     if data["disease"] is None:
         return {}
 
+    rows = data["disease"]["drugAndClinicalCandidates"]["rows"]
+    # Ticket 2.17. Did this answer name the source of any report at all?
+    # An answer saved for the old question did not. Then nobody can tell
+    # which family has a regulator record, and every family gets None.
+    met = {report.get("source") for row in rows for report in row["clinicalReports"]}
+    sources_said = any(met)
+    never_met = sorted(source for source in met if source and source not in KNOWN_SOURCES)
+    if never_met:
+        # Said out loud, never guessed. Only the source's own name is written.
+        _log.warning(
+            "Open Targets named a report source Moonlight has never met: %s. "
+            "It does not count as a regulator. Please tell Kashish.",
+            ", ".join(never_met),
+        )
+
     families: Dict[str, dict] = {}  # family id -> what we have gathered so far
-    for row in data["disease"]["drugAndClinicalCandidates"]["rows"]:
+    for row in rows:
         drug = row["drug"]
         if drug is None:
             continue
@@ -691,7 +733,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         family = families.setdefault(
             family_id,
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
-             "approval_sources": []},
+             "approval_sources": [], "regulator_record": False if sources_said else None},
         )
         family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
@@ -715,6 +757,10 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             is_approval = report.get("clinicalStage") == APPROVAL
             if url and is_approval and url not in family["approval_sources"]:
                 family["approval_sources"].append(url)
+            # The source is matched exactly. No source, or one that is not
+            # on the list, is not a regulator. A link is not needed.
+            if sources_said and is_approval and report.get("source") in REGULATOR_SOURCES:
+                family["regulator_record"] = True
     return families
 
 
@@ -726,6 +772,7 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         sources=tuple(family["sources"]),
         approved=family["approved"],
         approval_sources=tuple(family["approval_sources"]),
+        regulator_record=family["regulator_record"],
     )
 
 

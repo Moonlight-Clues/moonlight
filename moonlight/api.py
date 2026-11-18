@@ -299,6 +299,10 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dic
     id is in wrong: the corrections list for this disease. Neither moves
     the card or takes anything off it.
 
+    Ticket 2.17. proof_note also carries the engine's other grey line: the
+    card's medicine has no approval report from a regulator. One card has
+    at most one grey line, and the Japan line comes first.
+
     Ticket 2.14. source is the engine's choice (source_record): an exact
     approval receipt, else Japan's general list, else the link shown before.
     """

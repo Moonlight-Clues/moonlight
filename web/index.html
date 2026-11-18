@@ -909,7 +909,7 @@ div.explanation{padding:12px 13px}
       slot(el, "label").textContent = medicine.label;
       slot(el, "label").hidden = false;
     }
-    if (medicine.proof_note) {  // only Japan's general list says it is approved
+    if (medicine.proof_note) {  // the one grey line: only Japan's general list, or no regulator record
       slot(el, "proof-note").textContent = medicine.proof_note;
       slot(el, "proof-note").hidden = false;
     }
