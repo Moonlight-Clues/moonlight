@@ -61,8 +61,15 @@ for entry in chosen["diseases"]:
         results.append(load(path))
     else:
         missing.append(entry)
-index = [json.loads(line) for line in (RESPONSES / "index.jsonl").read_text().splitlines()]
+all_requests = [json.loads(line) for line in (RESPONSES / "index.jsonl").read_text().splitlines()]
+MAIN_REQUESTS = runs[-1]["requests_sent_in_all"]
+index = [e for e in all_requests if e["n"] <= MAIN_REQUESTS]  # the 50 study diseases
+extra_requests = [e for e in all_requests if e["n"] > MAIN_REQUESTS]  # A3 only, see probe_alfuzosin.py
+main_files = {e["file"] for e in index}
+extra_results = [load(path) for path in sorted((HERE / "results_extra").glob("*.json"))]
 symbol_of = {t["id"]: t["symbol"] for r in results for t in r["targets"]}
+symbol_any = dict(symbol_of)
+symbol_any.update({t["id"]: t["symbol"] for r in extra_results for t in r["targets"]})
 
 # ---------------------------------------------------------------- Part A
 # Every medicine-protein pair Moonlight built, shown or not. The same pair
@@ -113,8 +120,8 @@ raw_values = collections.Counter()
 seen_mechanisms = set()
 alfuzosin_rows = []
 alfuzosin_listed = []
-files = sorted({e["file"] for e in index})
-for name in files:
+files = sorted(main_files)
+for name in sorted({e["file"] for e in all_requests}):
     kind = name.split("/")[0]
     if kind not in ("target_drugs", "disease_drugs"):
         continue
@@ -137,7 +144,7 @@ for name in files:
         for place, mechanism in enumerate(mechanisms):
             ids = tuple(t["id"] for t in mechanism.get("targets") or [])
             key = (drug.get("id"), place, mechanism.get("actionType"), ids)
-            if key not in seen_mechanisms:
+            if name in main_files and key not in seen_mechanisms:
                 seen_mechanisms.add(key)
                 raw_values[mechanism.get("actionType") or "(empty)"] += 1
         parent = drug.get("parentMolecule") or {}
@@ -150,17 +157,38 @@ for name in files:
                         on_target.append(mechanism["actionType"])
             alfuzosin_rows.append({
                 "file": name, "target_id": target["id"],
-                "target": symbol_of.get(target["id"], target["id"]),
+                "target": symbol_any.get(target["id"], target["id"]),
+                "in_the_50_study_diseases": name in main_files,
                 "drug_id": drug.get("id"), "drug": drug.get("name"),
                 "parent": parent.get("name"),
                 "mechanism_rows": [
                     {"actionType": m.get("actionType"),
-                     "targets": [symbol_of.get(t["id"], t["id"]) for t in m.get("targets") or []]}
+                     "targets": [symbol_any.get(t["id"], t["id"]) for t in m.get("targets") or []]}
                     for m in mechanisms],
                 "action_words_on_this_protein": on_target,
                 "direction_of_this_row_alone": direction_from_action_types(on_target),
             })
-alfuzosin_pairs = [p for p in pairs.values() if "ALFUZOSIN" in p["medicine"].upper()]
+alfuzosin_cards = []  # every card naming alfuzosin, study diseases and extra ones
+alfuzosin_company = []  # every shown card on the same proteins, in the same diseases
+for r in results + extra_results:
+    proteins = set()
+    for tab, label in TABS:
+        for card in r[tab]:
+            if "ALFUZOSIN" in card["medicine"].upper():
+                for p in card["paths"]:
+                    proteins.add(p["target_id"])
+                    alfuzosin_cards.append([r["name"], label, card["medicine"], p["target"],
+                                            words(p["action_types"]), p["direction"]])
+                if not card["paths"]:
+                    alfuzosin_cards.append([r["name"], label, card["medicine"],
+                                            "(no path: none of its proteins is in the 25)", "-", "-"])
+    for tab, label in TABS:
+        for card in r[tab]:
+            for p in card["paths"]:
+                if p["target_id"] in proteins and "ALFUZOSIN" not in card["medicine"].upper():
+                    alfuzosin_company.append([r["name"], p["target"], label, card["medicine"],
+                                              words(p["action_types"]), p["direction"]])
+alfuzosin_company.sort(key=lambda row: (row[0], row[1], row[2], row[3]))
 
 mixed_unknown = sorted((p for p in pairs.values() if p["direction"] in ("mixed", "unknown")),
                        key=lambda p: (p["direction"], p["medicine"].casefold(), p["target"]))
@@ -510,34 +538,46 @@ a2 = ["### A2. Every pair whose direction is \"mixed\" or \"unknown\"\n",
 L[MIXED_UNKNOWN_PLACEHOLDER] = "\n".join(a2) + "\n"
 
 a3 = []
-if not alfuzosin_rows:
-    a3.append("Alfuzosin is in **none** of the saved \"which medicines act on this protein?\" "
-              f"answers: none of the {len(symbol_of)} proteins of these {len(results)} diseases has it.")
-else:
-    a3.append(f"Rows naming alfuzosin (or a form of it) in the saved protein answers: "
-              f"**{len(alfuzosin_rows)}**. Moonlight asks each question twice, so the same row "
-              "can be in two saved files.\n")
-    a3.append(table(
-        ["saved file", "protein", "form (id)", "ALL its mechanism rows: actionType -> proteins",
-         "action words Moonlight takes for this protein", "direction from this row"],
-        [[a["file"], a["target"], f"{a['drug']} ({a['drug_id']})",
-          "; ".join(f"{m['actionType']} -> {', '.join(m['targets'])}" for m in a["mechanism_rows"])
-          or "(none)",
-          words(a["action_words_on_this_protein"]), a["direction_of_this_row_alone"]]
-         for a in alfuzosin_rows]))
-    a3.append("")
-    a3.append("As Moonlight's own pairs (all forms pooled):\n")
-    a3.append(table(["medicine", "protein", "action words", "Moonlight's direction", "where shown"],
-                    [[p["medicine"], p["target"], words(p["action_types"]), p["direction"],
-                      where_shown(p)] for p in alfuzosin_pairs]))
-    ups = [p for p in alfuzosin_pairs if p["direction"] == "up"]
-    a3.append("")
-    a3.append("Alfuzosin shown as \"up\" in this data: " + (
-        "**yes**, on " + ", ".join(p["target"] for p in ups) if ups else "**nowhere**") + ".")
+in_main = [a for a in alfuzosin_rows if a["in_the_50_study_diseases"]]
+a3.append(f"**In the 50 study diseases:** rows naming alfuzosin in the saved protein answers: "
+          f"**{len(in_main)}**. None of the {len(symbol_of)} proteins looked at for those diseases "
+          "has alfuzosin among its medicines, so it is on no card there.\n" if not in_main else
+          f"**In the 50 study diseases:** {len(in_main)} rows name alfuzosin.\n")
+if extra_results:
+    a3.append("So one extra step was taken, for this question only (`probe_alfuzosin.py`). The "
+              "medicine lists saved by probe P3 name alfuzosin under these diseases: "
+              + ", ".join(f"{r['name']} ({r['id']})" for r in extra_results)
+              + f". The same Moonlight steps were run for them ({len(extra_requests)} more requests). "
+              "**These extra diseases are not counted in A1, A2, A4 or Part B.**\n")
+a3.append("Every card naming alfuzosin:\n")
+a3.append(table(["disease", "tab", "medicine", "protein", "action words", "Moonlight's direction"],
+                alfuzosin_cards))
 a3.append("")
-a3.append("On the diseases' own medicine lists (these carry no action words): " + (
-    "; ".join(sorted({f"{a['drug']} on {a['disease_id']} ({a['maxClinicalStage']})"
-                      for a in alfuzosin_listed})) or "alfuzosin is on none of them") + ".")
+ups = [row for row in alfuzosin_cards if row[5] == "up"]
+a3.append("**Alfuzosin is shown as \"up\"** on " + (
+    ", ".join(sorted({f"{row[3]} ({row[0]})" for row in ups})) if ups else "no card") + ".\n")
+a3.append("**Exactly which field made it so.** Every raw row naming alfuzosin in the saved "
+          "answers to \"which medicines act on this protein?\" (`target.drugAndClinicalCandidates"
+          ".rows[].drug`). The field Moonlight reads is `drug.mechanismsOfAction.rows[].actionType`. "
+          "Moonlight asks each question twice; answers that were letter for letter the same are "
+          "saved once.\n")
+a3.append(table(
+    ["saved file (under responses/)", "protein asked about", "form (id)",
+     "ALL its mechanism rows, as sent: actionType -> proteins",
+     "action words Moonlight takes for this protein", "direction"],
+    [[a["file"], a["target"], f"{a['drug']} ({a['drug_id']})",
+      "; ".join(f"{m['actionType']} -> {', '.join(m['targets'])}" for m in a["mechanism_rows"])
+      or "(none)",
+      words(a["action_words_on_this_protein"]), a["direction_of_this_row_alone"]]
+     for a in alfuzosin_rows]))
+a3.append("")
+a3.append("So the word behind \"up\" is the database's own `actionType` value for alfuzosin on "
+          "these proteins, as printed above. Moonlight's list turns that word into \"up\"; it did "
+          "not pick a different word or mix up two medicines. Whether the database's word is "
+          "pharmacologically right is for a doctor to say.\n")
+a3.append("For comparison only, every other shown card on the same proteins in the same diseases:\n")
+a3.append(table(["disease", "protein", "tab", "medicine", "action words", "Moonlight's direction"],
+                alfuzosin_company))
 L[ALFUZOSIN_PLACEHOLDER] = "\n".join(a3) + "\n"
 
 tail = HERE / "REPORT_NOTES.md"  # the hand-written end of the report
@@ -548,7 +588,7 @@ print("diseases:", len(results), "missing:", len(missing), "requests:", len(inde
 print("pairs:", len(pairs), dict(by_direction))
 print("unmapped:", unmapped)
 print("mixed/unknown pairs:", len(mixed_unknown))
-print("alfuzosin rows:", len(alfuzosin_rows), [(p["target"], p["action_types"], p["direction"]) for p in alfuzosin_pairs])
+print("alfuzosin raw rows:", len(alfuzosin_rows), "cards:", alfuzosin_cards)
 print("totals:", json.dumps(totals))
 print("diseases with an opposite card:", len(with_opposite))
 print("opposite rows:", len(opposite_rows), "both-ways proteins:", len(both_ways_rows))

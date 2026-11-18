@@ -1,0 +1,1507 @@
+{
+ "id": "MONDO_0005420",
+ "name": "hypothyroidism",
+ "set": "COMMON",
+ "targets": [
+  {
+   "id": "ENSG00000165409",
+   "symbol": "TSHR",
+   "name": "thyroid stimulating hormone receptor",
+   "score": 0.9001867864809405
+  },
+  {
+   "id": "ENSG00000091137",
+   "symbol": "SLC26A4",
+   "name": "solute carrier family 26 member 4",
+   "score": 0.8483409829462818
+  },
+  {
+   "id": "ENSG00000042832",
+   "symbol": "TG",
+   "name": "thyroglobulin",
+   "score": 0.8401383234029588
+  },
+  {
+   "id": "ENSG00000126351",
+   "symbol": "THRA",
+   "name": "thyroid hormone receptor alpha",
+   "score": 0.8378535795467121
+  },
+  {
+   "id": "ENSG00000105641",
+   "symbol": "SLC5A5",
+   "name": "solute carrier family 5 member 5",
+   "score": 0.8191336221120499
+  },
+  {
+   "id": "ENSG00000140279",
+   "symbol": "DUOX2",
+   "name": "dual oxidase 2",
+   "score": 0.8084134630327792
+  },
+  {
+   "id": "ENSG00000187742",
+   "symbol": "SECISBP2",
+   "name": "SECIS binding protein 2",
+   "score": 0.7956234799380504
+  },
+  {
+   "id": "ENSG00000115705",
+   "symbol": "TPO",
+   "name": "thyroid peroxidase",
+   "score": 0.7874850205718769
+  },
+  {
+   "id": "ENSG00000147255",
+   "symbol": "IGSF1",
+   "name": "immunoglobulin superfamily member 1",
+   "score": 0.7806083944980372
+  },
+  {
+   "id": "ENSG00000156650",
+   "symbol": "KAT6B",
+   "name": "lysine acetyltransferase 6B",
+   "score": 0.7772968997949905
+  },
+  {
+   "id": "ENSG00000125618",
+   "symbol": "PAX8",
+   "name": "paired box 8",
+   "score": 0.7728364566290769
+  },
+  {
+   "id": "ENSG00000134200",
+   "symbol": "TSHB",
+   "name": "thyroid stimulating hormone subunit beta",
+   "score": 0.7644768697923077
+  },
+  {
+   "id": "ENSG00000140274",
+   "symbol": "DUOXA2",
+   "name": "dual oxidase maturation factor 2",
+   "score": 0.7186014413779017
+  },
+  {
+   "id": "ENSG00000174417",
+   "symbol": "TRHR",
+   "name": "thyrotropin releasing hormone receptor",
+   "score": 0.7181496685757139
+  },
+  {
+   "id": "ENSG00000183072",
+   "symbol": "NKX2-5",
+   "name": "NK2 homeobox 5",
+   "score": 0.7135521513023035
+  },
+  {
+   "id": "ENSG00000107249",
+   "symbol": "GLIS3",
+   "name": "GLIS family zinc finger 3",
+   "score": 0.6599904402125149
+  },
+  {
+   "id": "ENSG00000115267",
+   "symbol": "IFIH1",
+   "name": "interferon induced with helicase C domain 1",
+   "score": 0.6566504499321698
+  },
+  {
+   "id": "ENSG00000009765",
+   "symbol": "IYD",
+   "name": "iodotyrosine deiodinase",
+   "score": 0.6553300743870237
+  },
+  {
+   "id": "ENSG00000151090",
+   "symbol": "THRB",
+   "name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213
+  },
+  {
+   "id": "ENSG00000163599",
+   "symbol": "CTLA4",
+   "name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347
+  },
+  {
+   "id": "ENSG00000121281",
+   "symbol": "ADCY7",
+   "name": "adenylate cyclase 7",
+   "score": 0.5988250775119224
+  },
+  {
+   "id": "ENSG00000177807",
+   "symbol": "KCNJ10",
+   "name": "potassium inwardly rectifying channel subfamily J member 10",
+   "score": 0.5922841260234774
+  },
+  {
+   "id": "ENSG00000111252",
+   "symbol": "SH2B3",
+   "name": "SH2B adaptor protein 3",
+   "score": 0.5922427787681239
+  },
+  {
+   "id": "ENSG00000105397",
+   "symbol": "TYK2",
+   "name": "tyrosine kinase 2",
+   "score": 0.5859639336388545
+  },
+  {
+   "id": "ENSG00000168685",
+   "symbol": "IL7R",
+   "name": "interleukin 7 receptor",
+   "score": 0.5842370109744113
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0003240",
+   "name": "thyroid gland disorder"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009718",
+   "name": "myxedema"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0018612",
+   "name": "congenital hypothyroidism"
+  },
+  {
+   "role": "child",
+   "id": "EFO_0008614",
+   "name": "Iodine Deficiency Hypothyroidism"
+  },
+  {
+   "role": "child",
+   "id": "Orphanet_181396",
+   "name": "Rare hypothyroidism"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL4297622",
+   "medicine": "ROVATIRELIN",
+   "forms": [
+    "ROVATIRELIN"
+   ],
+   "target_id": "ENSG00000174417",
+   "target": "TRHR",
+   "target_name": "thyrotropin releasing hormone receptor",
+   "score": 0.7181496685757139,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2035874",
+   "medicine": "EPROTIROME",
+   "forms": [
+    "EPROTIROME"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL471897",
+   "medicine": "MB07811",
+   "forms": [
+    "MB07811"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650419",
+   "medicine": "QUAVONLIMAB",
+   "forms": [
+    "QUAVONLIMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297876",
+   "medicine": "ZALIFRELIMAB",
+   "forms": [
+    "ZALIFRELIMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594456",
+   "medicine": "CADONILIMAB",
+   "forms": [
+    "CADONILIMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650483",
+   "medicine": "ERFONRILIMAB",
+   "forms": [
+    "ERFONRILIMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297477",
+   "medicine": "BREPOCITINIB",
+   "forms": [
+    "BREPOCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650343",
+   "medicine": "IZENCITINIB",
+   "forms": [
+    "IZENCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4116008",
+   "medicine": "CERDULATINIB",
+   "forms": [
+    "CERDULATINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137308",
+   "medicine": "PEFICITINIB",
+   "forms": [
+    "PEFICITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802163",
+   "medicine": "NEZULCITINIB",
+   "forms": [
+    "NEZULCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4459585",
+   "medicine": "ROPSACITINIB",
+   "forms": [
+    "ROPSACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594275",
+   "medicine": "GUSACITINIB",
+   "forms": [
+    "GUSACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1201533",
+   "medicine": "THYROTROPIN ALFA",
+   "forms": [
+    "THYROTROPIN ALFA"
+   ],
+   "target_id": "ENSG00000165409",
+   "target": "TSHR",
+   "target_name": "thyroid stimulating hormone receptor",
+   "score": 0.9001867864809405,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL559",
+   "medicine": "DEXTROTHYROXINE",
+   "forms": [
+    "DEXTROTHYROXINE",
+    "DEXTROTHYROXINE SODIUM"
+   ],
+   "target_id": "ENSG00000126351",
+   "target": "THRA",
+   "target_name": "thyroid hormone receptor alpha",
+   "score": 0.8378535795467121,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL41632",
+   "medicine": "TIRATRICOL",
+   "forms": [
+    "TIRATRICOL"
+   ],
+   "target_id": "ENSG00000126351",
+   "target": "THRA",
+   "target_name": "thyroid hormone receptor alpha",
+   "score": 0.8378535795467121,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1515",
+   "medicine": "METHIMAZOLE",
+   "forms": [
+    "METHIMAZOLE"
+   ],
+   "target_id": "ENSG00000115705",
+   "target": "TPO",
+   "target_name": "thyroid peroxidase",
+   "score": 0.7874850205718769,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL508102",
+   "medicine": "CARBIMAZOLE",
+   "forms": [
+    "CARBIMAZOLE"
+   ],
+   "target_id": "ENSG00000115705",
+   "target": "TPO",
+   "target_name": "thyroid peroxidase",
+   "score": 0.7874850205718769,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2107016",
+   "medicine": "TALTIRELIN",
+   "forms": [
+    "TALTIRELIN"
+   ],
+   "target_id": "ENSG00000174417",
+   "target": "TRHR",
+   "target_name": "thyrotropin releasing hormone receptor",
+   "score": 0.7181496685757139,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1472",
+   "medicine": "PROTIRELIN",
+   "forms": [
+    "PROTIRELIN"
+   ],
+   "target_id": "ENSG00000174417",
+   "target": "TRHR",
+   "target_name": "thyrotropin releasing hormone receptor",
+   "score": 0.7181496685757139,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL41632",
+   "medicine": "TIRATRICOL",
+   "forms": [
+    "TIRATRICOL"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL559",
+   "medicine": "DEXTROTHYROXINE",
+   "forms": [
+    "DEXTROTHYROXINE",
+    "DEXTROTHYROXINE SODIUM"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3261331",
+   "medicine": "RESMETIROM",
+   "forms": [
+    "RESMETIROM"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1789844",
+   "medicine": "IPILIMUMAB",
+   "forms": [
+    "IPILIMUMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108658",
+   "medicine": "TREMELIMUMAB",
+   "forms": [
+    "TREMELIMUMAB"
+   ],
+   "target_id": "ENSG00000163599",
+   "target": "CTLA4",
+   "target_name": "cytotoxic T-lymphocyte associated protein 4",
+   "score": 0.6007686289616347,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "forms": [
+    "DELGOCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "forms": [
+    "TOFACITINIB",
+    "TOFACITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "forms": [
+    "FILGOTINIB",
+    "FILGOTINIB MALEATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4596392",
+   "medicine": "CRAVACITINIB",
+   "forms": [
+    "DEUCRAVACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "NEGATIVE ALLOSTERIC MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "forms": [
+    "UPADACITINIB",
+    "UPADACITINIB HEMIHYDRATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "forms": [
+    "RUXOLITINIB",
+    "DEURUXOLITINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.5859639336388545,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201532",
+   "medicine": "THYROTROPIN",
+   "forms": [
+    "THYROTROPIN"
+   ],
+   "target_id": "ENSG00000165409",
+   "target": "TSHR",
+   "target_name": "thyroid stimulating hormone receptor",
+   "score": 0.9001867864809405,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1624",
+   "medicine": "LEVOTHYROXINE",
+   "forms": [
+    "LEVOTHYROXINE",
+    "LEVOTHYROXINE SODIUM"
+   ],
+   "target_id": "ENSG00000126351",
+   "target": "THRA",
+   "target_name": "thyroid hormone receptor alpha",
+   "score": 0.8378535795467121,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1544",
+   "medicine": "LIOTHYRONINE",
+   "forms": [
+    "LIOTHYRONINE",
+    "LIOTHYRONINE SODIUM"
+   ],
+   "target_id": "ENSG00000126351",
+   "target": "THRA",
+   "target_name": "thyroid hormone receptor alpha",
+   "score": 0.8378535795467121,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1624",
+   "medicine": "LEVOTHYROXINE",
+   "forms": [
+    "LEVOTHYROXINE",
+    "LEVOTHYROXINE SODIUM"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1544",
+   "medicine": "LIOTHYRONINE",
+   "forms": [
+    "LIOTHYRONINE",
+    "LIOTHYRONINE SODIUM"
+   ],
+   "target_id": "ENSG00000151090",
+   "target": "THRB",
+   "target_name": "thyroid hormone receptor beta",
+   "score": 0.6301604905159213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1518",
+   "medicine": "PROPYLTHIOURACIL",
+   "forms": [
+    "PROPYLTHIOURACIL"
+   ],
+   "target_id": "ENSG00000115705",
+   "target": "TPO",
+   "target_name": "thyroid peroxidase",
+   "score": 0.7874850205718769,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL1201625",
+   "medicine": "CHOLESTYRAMINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL672",
+   "medicine": "FENOFIBRATE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1624",
+   "medicine": "LEVOTHYROXINE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1624",
+     "medicine": "LEVOTHYROXINE",
+     "forms": [
+      "LEVOTHYROXINE",
+      "LEVOTHYROXINE SODIUM"
+     ],
+     "target_id": "ENSG00000126351",
+     "target": "THRA",
+     "target_name": "thyroid hormone receptor alpha",
+     "score": 0.8378535795467121,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1624",
+     "medicine": "LEVOTHYROXINE",
+     "forms": [
+      "LEVOTHYROXINE",
+      "LEVOTHYROXINE SODIUM"
+     ],
+     "target_id": "ENSG00000151090",
+     "target": "THRB",
+     "target_name": "thyroid hormone receptor beta",
+     "score": 0.6301604905159213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1544",
+   "medicine": "LIOTHYRONINE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1544",
+     "medicine": "LIOTHYRONINE",
+     "forms": [
+      "LIOTHYRONINE",
+      "LIOTHYRONINE SODIUM"
+     ],
+     "target_id": "ENSG00000126351",
+     "target": "THRA",
+     "target_name": "thyroid hormone receptor alpha",
+     "score": 0.8378535795467121,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1544",
+     "medicine": "LIOTHYRONINE",
+     "forms": [
+      "LIOTHYRONINE",
+      "LIOTHYRONINE SODIUM"
+     ],
+     "target_id": "ENSG00000151090",
+     "target": "THRB",
+     "target_name": "thyroid hormone receptor beta",
+     "score": 0.6301604905159213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201716",
+   "medicine": "MECASERMIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200711",
+   "medicine": "OMEGA-3-ACID ETHYL ESTERS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1201650",
+   "medicine": "THYROGLOBULIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1201532",
+   "medicine": "THYROTROPIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201532",
+     "medicine": "THYROTROPIN",
+     "forms": [
+      "THYROTROPIN"
+     ],
+     "target_id": "ENSG00000165409",
+     "target": "TSHR",
+     "target_name": "thyroid stimulating hormone receptor",
+     "score": 0.9001867864809405,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "narrower": [],
+ "wider_group": [
+  {
+   "medicine_id": "CHEMBL1644695",
+   "medicine": "SODIUM IODIDE",
+   "label": "Not listed as approved for this exact disease. Approved for thyroid gland disorder, a wider group the database puts this disease in.",
+   "paths": []
+  }
+ ],
+ "being_studied": [],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL1201533",
+   "medicine": "THYROTROPIN ALFA",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201533",
+     "medicine": "THYROTROPIN ALFA",
+     "forms": [
+      "THYROTROPIN ALFA"
+     ],
+     "target_id": "ENSG00000165409",
+     "target": "TSHR",
+     "target_name": "thyroid stimulating hormone receptor",
+     "score": 0.9001867864809405,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL41632",
+   "medicine": "TIRATRICOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL41632",
+     "medicine": "TIRATRICOL",
+     "forms": [
+      "TIRATRICOL"
+     ],
+     "target_id": "ENSG00000126351",
+     "target": "THRA",
+     "target_name": "thyroid hormone receptor alpha",
+     "score": 0.8378535795467121,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL41632",
+     "medicine": "TIRATRICOL",
+     "forms": [
+      "TIRATRICOL"
+     ],
+     "target_id": "ENSG00000151090",
+     "target": "THRB",
+     "target_name": "thyroid hormone receptor beta",
+     "score": 0.6301604905159213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL559",
+   "medicine": "DEXTROTHYROXINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL559",
+     "medicine": "DEXTROTHYROXINE",
+     "forms": [
+      "DEXTROTHYROXINE",
+      "DEXTROTHYROXINE SODIUM"
+     ],
+     "target_id": "ENSG00000126351",
+     "target": "THRA",
+     "target_name": "thyroid hormone receptor alpha",
+     "score": 0.8378535795467121,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL559",
+     "medicine": "DEXTROTHYROXINE",
+     "forms": [
+      "DEXTROTHYROXINE",
+      "DEXTROTHYROXINE SODIUM"
+     ],
+     "target_id": "ENSG00000151090",
+     "target": "THRB",
+     "target_name": "thyroid hormone receptor beta",
+     "score": 0.6301604905159213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1515",
+   "medicine": "METHIMAZOLE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1515",
+     "medicine": "METHIMAZOLE",
+     "forms": [
+      "METHIMAZOLE"
+     ],
+     "target_id": "ENSG00000115705",
+     "target": "TPO",
+     "target_name": "thyroid peroxidase",
+     "score": 0.7874850205718769,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL508102",
+   "medicine": "CARBIMAZOLE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL508102",
+     "medicine": "CARBIMAZOLE",
+     "forms": [
+      "CARBIMAZOLE"
+     ],
+     "target_id": "ENSG00000115705",
+     "target": "TPO",
+     "target_name": "thyroid peroxidase",
+     "score": 0.7874850205718769,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1472",
+   "medicine": "PROTIRELIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1472",
+     "medicine": "PROTIRELIN",
+     "forms": [
+      "PROTIRELIN"
+     ],
+     "target_id": "ENSG00000174417",
+     "target": "TRHR",
+     "target_name": "thyrotropin releasing hormone receptor",
+     "score": 0.7181496685757139,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2107016",
+   "medicine": "TALTIRELIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2107016",
+     "medicine": "TALTIRELIN",
+     "forms": [
+      "TALTIRELIN"
+     ],
+     "target_id": "ENSG00000174417",
+     "target": "TRHR",
+     "target_name": "thyrotropin releasing hormone receptor",
+     "score": 0.7181496685757139,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3261331",
+   "medicine": "RESMETIROM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3261331",
+     "medicine": "RESMETIROM",
+     "forms": [
+      "RESMETIROM"
+     ],
+     "target_id": "ENSG00000151090",
+     "target": "THRB",
+     "target_name": "thyroid hormone receptor beta",
+     "score": 0.6301604905159213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1789844",
+   "medicine": "IPILIMUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1789844",
+     "medicine": "IPILIMUMAB",
+     "forms": [
+      "IPILIMUMAB"
+     ],
+     "target_id": "ENSG00000163599",
+     "target": "CTLA4",
+     "target_name": "cytotoxic T-lymphocyte associated protein 4",
+     "score": 0.6007686289616347,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108658",
+   "medicine": "TREMELIMUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108658",
+     "medicine": "TREMELIMUMAB",
+     "forms": [
+      "TREMELIMUMAB"
+     ],
+     "target_id": "ENSG00000163599",
+     "target": "CTLA4",
+     "target_name": "cytotoxic T-lymphocyte associated protein 4",
+     "score": 0.6007686289616347,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1789941",
+     "medicine": "RUXOLITINIB",
+     "forms": [
+      "RUXOLITINIB",
+      "DEURUXOLITINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL221959",
+     "medicine": "TOFACITINIB",
+     "forms": [
+      "TOFACITINIB",
+      "TOFACITINIB CITRATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3622821",
+     "medicine": "UPADACITINIB",
+     "forms": [
+      "UPADACITINIB",
+      "UPADACITINIB HEMIHYDRATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4596392",
+   "medicine": "CRAVACITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4596392",
+     "medicine": "CRAVACITINIB",
+     "forms": [
+      "DEUCRAVACITINIB"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "NEGATIVE ALLOSTERIC MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3301607",
+     "medicine": "FILGOTINIB",
+     "forms": [
+      "FILGOTINIB",
+      "FILGOTINIB MALEATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297507",
+     "medicine": "DELGOCITINIB",
+     "forms": [
+      "DELGOCITINIB"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.5859639336388545,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 14,
+  "unclear_link": 1
+ }
+}

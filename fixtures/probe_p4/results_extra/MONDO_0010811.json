@@ -1,0 +1,7708 @@
+{
+ "id": "MONDO_0010811",
+ "name": "benign prostatic hyperplasia",
+ "set": "EXTRA (alfuzosin, AGENT)",
+ "targets": [
+  {
+   "id": "ENSG00000277893",
+   "symbol": "SRD5A2",
+   "name": "steroid 5 alpha-reductase 2",
+   "score": 0.6312686092923253
+  },
+  {
+   "id": "ENSG00000120907",
+   "symbol": "ADRA1A",
+   "name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589
+  },
+  {
+   "id": "ENSG00000171873",
+   "symbol": "ADRA1D",
+   "name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394
+  },
+  {
+   "id": "ENSG00000170214",
+   "symbol": "ADRA1B",
+   "name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162
+  },
+  {
+   "id": "ENSG00000138735",
+   "symbol": "PDE5A",
+   "name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674
+  },
+  {
+   "id": "ENSG00000128039",
+   "symbol": "SRD5A3",
+   "name": "steroid 5 alpha-reductase 3",
+   "score": 0.6000118154790716
+  },
+  {
+   "id": "ENSG00000145545",
+   "symbol": "SRD5A1",
+   "name": "steroid 5 alpha-reductase 1",
+   "score": 0.5937486336101303
+  },
+  {
+   "id": "ENSG00000136104",
+   "symbol": "RNASEH2B",
+   "name": "ribonuclease H2 subunit B",
+   "score": 0.5654871740147291
+  },
+  {
+   "id": "ENSG00000066468",
+   "symbol": "FGFR2",
+   "name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319
+  },
+  {
+   "id": "ENSG00000049656",
+   "symbol": "CLPTM1L",
+   "name": "CLPTM1 like",
+   "score": 0.5251214478960997
+  },
+  {
+   "id": "ENSG00000119866",
+   "symbol": "BCL11A",
+   "name": "BCL11 transcription factor A",
+   "score": 0.514482765196033
+  },
+  {
+   "id": "ENSG00000164362",
+   "symbol": "TERT",
+   "name": "telomerase reverse transcriptase",
+   "score": 0.48508137284992925
+  },
+  {
+   "id": "ENSG00000130700",
+   "symbol": "GATA5",
+   "name": "GATA binding protein 5",
+   "score": 0.4753440286338651
+  },
+  {
+   "id": "ENSG00000101412",
+   "symbol": "E2F1",
+   "name": "E2F transcription factor 1",
+   "score": 0.45972177586778884
+  },
+  {
+   "id": "ENSG00000143013",
+   "symbol": "LMO4",
+   "name": "LIM domain only 4",
+   "score": 0.4576976490897123
+  },
+  {
+   "id": "ENSG00000107960",
+   "symbol": "STN1",
+   "name": "STN1 subunit of CST complex",
+   "score": 0.4519828847715409
+  },
+  {
+   "id": "ENSG00000103241",
+   "symbol": "FOXF1",
+   "name": "forkhead box F1",
+   "score": 0.45116918265149636
+  },
+  {
+   "id": "ENSG00000120008",
+   "symbol": "WDR11",
+   "name": "WD repeat domain 11",
+   "score": 0.45104820580499133
+  },
+  {
+   "id": "ENSG00000141052",
+   "symbol": "MYOCD",
+   "name": "myocardin",
+   "score": 0.44329993672214946
+  },
+  {
+   "id": "ENSG00000133019",
+   "symbol": "CHRM3",
+   "name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653
+  },
+  {
+   "id": "ENSG00000006468",
+   "symbol": "ETV1",
+   "name": "ETS variant transcription factor 1",
+   "score": 0.43648933120842404
+  },
+  {
+   "id": "ENSG00000177311",
+   "symbol": "ZBTB38",
+   "name": "zinc finger and BTB domain containing 38",
+   "score": 0.41646779442514026
+  },
+  {
+   "id": "ENSG00000125999",
+   "symbol": "BPIFB1",
+   "name": "BPI fold containing family B member 1",
+   "score": 0.41458910239640523
+  },
+  {
+   "id": "ENSG00000136770",
+   "symbol": "DNAJC1",
+   "name": "DnaJ heat shock protein family (Hsp40) member C1",
+   "score": 0.4044466969477943
+  },
+  {
+   "id": "ENSG00000180875",
+   "symbol": "GREM2",
+   "name": "gremlin 2, DAN family BMP antagonist",
+   "score": 0.3988536841636185
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0003105",
+   "name": "prostate disorder"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0005043",
+   "name": "hyperplasia"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL257978",
+   "medicine": "DABUZALGRON",
+   "forms": [
+    "DABUZALGRON"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "PARTIAL AGONIST"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL61006",
+   "medicine": "PHENYLPROPANOLAMINE",
+   "forms": [
+    "PHENYLPROPANOLAMINE",
+    "PHENYLPROPANOLAMINE HYDROCHLORIDE",
+    "PHENYLPROPANOLAMINE POLISTIREX"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL211456",
+   "medicine": "EPHEDRINE",
+   "forms": [
+    "EPHEDRINE",
+    "EPHEDRINE SULFATE",
+    "EPHEDRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL442",
+   "medicine": "ERGOTAMINE",
+   "forms": [
+    "ERGOTAMINE",
+    "ERGOTAMINE TARTRATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2104986",
+   "medicine": "TEDATIOXETINE",
+   "forms": [
+    "TEDATIOXETINE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1981592",
+   "medicine": "AVIPTADIL",
+   "forms": [
+    "AVIPTADIL"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL12713",
+   "medicine": "SERTINDOLE",
+   "forms": [
+    "SERTINDOLE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL159226",
+   "medicine": "MOXISYLYTE",
+   "forms": [
+    "MOXISYLYTE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL211456",
+   "medicine": "EPHEDRINE",
+   "forms": [
+    "EPHEDRINE",
+    "EPHEDRINE SULFATE",
+    "EPHEDRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1981592",
+   "medicine": "AVIPTADIL",
+   "forms": [
+    "AVIPTADIL"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL159226",
+   "medicine": "MOXISYLYTE",
+   "forms": [
+    "MOXISYLYTE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL442",
+   "medicine": "ERGOTAMINE",
+   "forms": [
+    "ERGOTAMINE",
+    "ERGOTAMINE TARTRATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL12713",
+   "medicine": "SERTINDOLE",
+   "forms": [
+    "SERTINDOLE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL442",
+   "medicine": "ERGOTAMINE",
+   "forms": [
+    "ERGOTAMINE",
+    "ERGOTAMINE TARTRATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL211456",
+   "medicine": "EPHEDRINE",
+   "forms": [
+    "EPHEDRINE",
+    "EPHEDRINE HYDROCHLORIDE",
+    "EPHEDRINE SULFATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL159226",
+   "medicine": "MOXISYLYTE",
+   "forms": [
+    "MOXISYLYTE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL12713",
+   "medicine": "SERTINDOLE",
+   "forms": [
+    "SERTINDOLE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1981592",
+   "medicine": "AVIPTADIL",
+   "forms": [
+    "AVIPTADIL"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1928262",
+   "medicine": "GISADENAFIL",
+   "forms": [
+    "GISADENAFIL"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4210847",
+   "medicine": "PF-00489791",
+   "forms": [
+    "PF-00489791"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL591501",
+   "medicine": "PF-03049423",
+   "forms": [
+    "PF-03049423"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3963485",
+   "medicine": "ROGARATINIB",
+   "forms": [
+    "ROGARATINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650297",
+   "medicine": "HMPL-453",
+   "forms": [
+    "HMPL-453"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3907479",
+   "medicine": "FGFR INHIBITOR DEBIO 1347",
+   "forms": [
+    "FGFR INHIBITOR DEBIO 1347"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2220486",
+   "medicine": "LUCITANIB",
+   "forms": [
+    "LUCITANIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3348846",
+   "medicine": "FEXAGRATINIB",
+   "forms": [
+    "FEXAGRATINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650293",
+   "medicine": "APRUTUMAB IXADOTIN",
+   "forms": [
+    "APRUTUMAB IXADOTIN"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL52885",
+   "medicine": "ENMD-981693",
+   "forms": [
+    "ENMD-981693"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314391",
+   "medicine": "XL-999",
+   "forms": [
+    "XL-999"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL274654",
+   "medicine": "ORANTINIB",
+   "forms": [
+    "ORANTINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL270995",
+   "medicine": "BRIVANIB ALANINATE",
+   "forms": [
+    "BRIVANIB ALANINATE"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802165",
+   "medicine": "BEMARITUZUMAB",
+   "forms": [
+    "BEMARITUZUMAB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1980391",
+   "medicine": "RG-1530",
+   "forms": [
+    "RG-1530"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297187",
+   "medicine": "DERAZANTINIB",
+   "forms": [
+    "DERAZANTINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3828009",
+   "medicine": "LY-2874455",
+   "forms": [
+    "LY-2874455"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL377300",
+   "medicine": "BRIVANIB",
+   "forms": [
+    "BRIVANIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL403989",
+   "medicine": "TG100-801",
+   "forms": [
+    "TG100-801"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109058",
+   "medicine": "EDIFOLIGIDE SODIUM",
+   "forms": [
+    "EDIFOLIGIDE SODIUM"
+   ],
+   "target_id": "ENSG00000101412",
+   "target": "E2F1",
+   "target_name": "E2F transcription factor 1",
+   "score": 0.45972177586778884,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2365940",
+   "medicine": "DAROTROPIUM",
+   "forms": [
+    "DAROTROPIUM",
+    "DAROTROPIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2111051",
+   "medicine": "TALSACLIDINE",
+   "forms": [
+    "TALSACLIDINE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "PARTIAL AGONIST"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707249",
+   "medicine": "ASM-024",
+   "forms": [
+    "ASM-024"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3916700",
+   "medicine": "LAS190792",
+   "forms": [
+    "LAS190792"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1123",
+   "medicine": "DICYCLOMINE",
+   "forms": [
+    "DICYCLOMINE",
+    "DICYCLOMINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545165",
+   "medicine": "AFACIFENACIN",
+   "forms": [
+    "AFACIFENACIN"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL363295",
+   "medicine": "TERODILINE",
+   "forms": [
+    "TERODILINE",
+    "TERODILINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3039518",
+   "medicine": "BATEFENTEROL",
+   "forms": [
+    "BATEFENTEROL"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1921904",
+   "medicine": "AZD-9164",
+   "forms": [
+    "AZD-9164"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545222",
+   "medicine": "AZD8683",
+   "forms": [
+    "AZD8683"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1779046",
+   "medicine": "TARAFENACIN",
+   "forms": [
+    "TARAFENACIN"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297483",
+   "medicine": "NAVAFENTEROL",
+   "forms": [
+    "NAVAFENTEROL"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL254328",
+   "medicine": "ABIRATERONE",
+   "forms": [
+    "ABIRATERONE"
+   ],
+   "target_id": "ENSG00000277893",
+   "target": "SRD5A2",
+   "target_name": "steroid 5 alpha-reductase 2",
+   "score": 0.6312686092923253,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL597",
+   "medicine": "PHENTOLAMINE",
+   "forms": [
+    "PHENTOLAMINE",
+    "PHENTOLAMINE MESYLATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1437",
+   "medicine": "NOREPINEPHRINE",
+   "forms": [
+    "NOREPINEPHRINE",
+    "NOREPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL761",
+   "medicine": "NAPHAZOLINE",
+   "forms": [
+    "NAPHAZOLINE",
+    "NAPHAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL312448",
+   "medicine": "XYLOMETAZOLINE",
+   "forms": [
+    "XYLOMETAZOLINE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201234",
+   "medicine": "MEPHENTERMINE",
+   "forms": [
+    "MEPHENTERMINE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL679",
+   "medicine": "EPINEPHRINE",
+   "forms": [
+    "EPINEPHRINE",
+    "EPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1266",
+   "medicine": "TETRAHYDROZOLINE",
+   "forms": [
+    "TETRAHYDROZOLINE",
+    "TETRAHYDROZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1215",
+   "medicine": "PHENYLEPHRINE",
+   "forms": [
+    "PHENYLEPHRINE",
+    "PHENYLEPHRINE HYDROCHLORIDE",
+    "PHENYLEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1197051",
+   "medicine": "ISOXSUPRINE",
+   "forms": [
+    "ISOXSUPRINE",
+    "ISOXSUPRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1546",
+   "medicine": "HYDROXYAMPHETAMINE",
+   "forms": [
+    "HYDROXYAMPHETAMINE HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2103827",
+   "medicine": "DROXIDOPA",
+   "forms": [
+    "DROXIDOPA"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "forms": [
+    "TRIMIPRAMINE",
+    "TRIMIPRAMINE MALEATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL188185",
+   "medicine": "BUNAZOSIN",
+   "forms": [
+    "BUNAZOSIN"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201216",
+   "medicine": "DAPIPRAZOLE",
+   "forms": [
+    "DAPIPRAZOLE",
+    "DAPIPRAZOLE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL753",
+   "medicine": "PHENOXYBENZAMINE",
+   "forms": [
+    "PHENOXYBENZAMINE",
+    "PHENOXYBENZAMINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201262",
+   "medicine": "DIPIVEFRIN",
+   "forms": [
+    "DIPIVEFRIN"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL762",
+   "medicine": "OXYMETAZOLINE",
+   "forms": [
+    "OXYMETAZOLINE",
+    "OXYMETAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201212",
+   "medicine": "MIDODRINE",
+   "forms": [
+    "MIDODRINE",
+    "MIDODRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3559672",
+   "medicine": "RAUWOLFIA SERPENTINA",
+   "forms": [
+    "RAUWOLFIA SERPENTINA"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201454",
+   "medicine": "ALSEROXYLON",
+   "forms": [
+    "ALSEROXYLON"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL770",
+   "medicine": "TOLAZOLINE",
+   "forms": [
+    "TOLAZOLINE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL723",
+   "medicine": "CARVEDILOL",
+   "forms": [
+    "CARVEDILOL",
+    "CARVEDILOL PHOSPHATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL524",
+   "medicine": "METHOXAMINE",
+   "forms": [
+    "METHOXAMINE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201319",
+   "medicine": "METARAMINOL",
+   "forms": [
+    "METARAMINOL"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL429",
+   "medicine": "LABETALOL",
+   "forms": [
+    "LABETALOL",
+    "LABETALOL HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2364968",
+   "medicine": "ERGOLOID",
+   "forms": [
+    "ERGOLOID MESYLATES"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL321582",
+   "medicine": "BUCINDOLOL",
+   "forms": [
+    "BUCINDOLOL"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL429",
+   "medicine": "LABETALOL",
+   "forms": [
+    "LABETALOL",
+    "LABETALOL HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL312448",
+   "medicine": "XYLOMETAZOLINE",
+   "forms": [
+    "XYLOMETAZOLINE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL762",
+   "medicine": "OXYMETAZOLINE",
+   "forms": [
+    "OXYMETAZOLINE",
+    "OXYMETAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL321582",
+   "medicine": "BUCINDOLOL",
+   "forms": [
+    "BUCINDOLOL"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1266",
+   "medicine": "TETRAHYDROZOLINE",
+   "forms": [
+    "TETRAHYDROZOLINE",
+    "TETRAHYDROZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL524",
+   "medicine": "METHOXAMINE",
+   "forms": [
+    "METHOXAMINE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201234",
+   "medicine": "MEPHENTERMINE",
+   "forms": [
+    "MEPHENTERMINE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201212",
+   "medicine": "MIDODRINE",
+   "forms": [
+    "MIDODRINE",
+    "MIDODRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL753",
+   "medicine": "PHENOXYBENZAMINE",
+   "forms": [
+    "PHENOXYBENZAMINE",
+    "PHENOXYBENZAMINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3559672",
+   "medicine": "RAUWOLFIA SERPENTINA",
+   "forms": [
+    "RAUWOLFIA SERPENTINA"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL770",
+   "medicine": "TOLAZOLINE",
+   "forms": [
+    "TOLAZOLINE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL723",
+   "medicine": "CARVEDILOL",
+   "forms": [
+    "CARVEDILOL",
+    "CARVEDILOL PHOSPHATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL761",
+   "medicine": "NAPHAZOLINE",
+   "forms": [
+    "NAPHAZOLINE",
+    "NAPHAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1197051",
+   "medicine": "ISOXSUPRINE",
+   "forms": [
+    "ISOXSUPRINE",
+    "ISOXSUPRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL679",
+   "medicine": "EPINEPHRINE",
+   "forms": [
+    "EPINEPHRINE",
+    "EPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL597",
+   "medicine": "PHENTOLAMINE",
+   "forms": [
+    "PHENTOLAMINE",
+    "PHENTOLAMINE MESYLATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1437",
+   "medicine": "NOREPINEPHRINE",
+   "forms": [
+    "NOREPINEPHRINE",
+    "NOREPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2364968",
+   "medicine": "ERGOLOID",
+   "forms": [
+    "ERGOLOID MESYLATES"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201262",
+   "medicine": "DIPIVEFRIN",
+   "forms": [
+    "DIPIVEFRIN"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1215",
+   "medicine": "PHENYLEPHRINE",
+   "forms": [
+    "PHENYLEPHRINE",
+    "PHENYLEPHRINE HYDROCHLORIDE",
+    "PHENYLEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "forms": [
+    "TRIMIPRAMINE",
+    "TRIMIPRAMINE MALEATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201319",
+   "medicine": "METARAMINOL",
+   "forms": [
+    "METARAMINOL"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1546",
+   "medicine": "HYDROXYAMPHETAMINE",
+   "forms": [
+    "HYDROXYAMPHETAMINE HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL188185",
+   "medicine": "BUNAZOSIN",
+   "forms": [
+    "BUNAZOSIN"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201454",
+   "medicine": "ALSEROXYLON",
+   "forms": [
+    "ALSEROXYLON"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2103827",
+   "medicine": "DROXIDOPA",
+   "forms": [
+    "DROXIDOPA"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1266",
+   "medicine": "TETRAHYDROZOLINE",
+   "forms": [
+    "TETRAHYDROZOLINE",
+    "TETRAHYDROZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2364968",
+   "medicine": "ERGOLOID",
+   "forms": [
+    "ERGOLOID MESYLATES"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL188185",
+   "medicine": "BUNAZOSIN",
+   "forms": [
+    "BUNAZOSIN"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL679",
+   "medicine": "EPINEPHRINE",
+   "forms": [
+    "EPINEPHRINE",
+    "EPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL761",
+   "medicine": "NAPHAZOLINE",
+   "forms": [
+    "NAPHAZOLINE",
+    "NAPHAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1437",
+   "medicine": "NOREPINEPHRINE",
+   "forms": [
+    "NOREPINEPHRINE",
+    "NOREPINEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1546",
+   "medicine": "HYDROXYAMPHETAMINE",
+   "forms": [
+    "HYDROXYAMPHETAMINE HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "forms": [
+    "TRIMIPRAMINE",
+    "TRIMIPRAMINE MALEATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL312448",
+   "medicine": "XYLOMETAZOLINE",
+   "forms": [
+    "XYLOMETAZOLINE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201454",
+   "medicine": "ALSEROXYLON",
+   "forms": [
+    "ALSEROXYLON"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201234",
+   "medicine": "MEPHENTERMINE",
+   "forms": [
+    "MEPHENTERMINE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL597",
+   "medicine": "PHENTOLAMINE",
+   "forms": [
+    "PHENTOLAMINE",
+    "PHENTOLAMINE MESYLATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL753",
+   "medicine": "PHENOXYBENZAMINE",
+   "forms": [
+    "PHENOXYBENZAMINE",
+    "PHENOXYBENZAMINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL524",
+   "medicine": "METHOXAMINE",
+   "forms": [
+    "METHOXAMINE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL723",
+   "medicine": "CARVEDILOL",
+   "forms": [
+    "CARVEDILOL",
+    "CARVEDILOL PHOSPHATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201212",
+   "medicine": "MIDODRINE",
+   "forms": [
+    "MIDODRINE",
+    "MIDODRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3559672",
+   "medicine": "RAUWOLFIA SERPENTINA",
+   "forms": [
+    "RAUWOLFIA SERPENTINA"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1197051",
+   "medicine": "ISOXSUPRINE",
+   "forms": [
+    "ISOXSUPRINE",
+    "ISOXSUPRINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL762",
+   "medicine": "OXYMETAZOLINE",
+   "forms": [
+    "OXYMETAZOLINE",
+    "OXYMETAZOLINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2103827",
+   "medicine": "DROXIDOPA",
+   "forms": [
+    "DROXIDOPA"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL321582",
+   "medicine": "BUCINDOLOL",
+   "forms": [
+    "BUCINDOLOL"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1215",
+   "medicine": "PHENYLEPHRINE",
+   "forms": [
+    "PHENYLEPHRINE",
+    "PHENYLEPHRINE HYDROCHLORIDE",
+    "PHENYLEPHRINE BITARTRATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201262",
+   "medicine": "DIPIVEFRIN",
+   "forms": [
+    "DIPIVEFRIN"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201319",
+   "medicine": "METARAMINOL",
+   "forms": [
+    "METARAMINOL"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL429",
+   "medicine": "LABETALOL",
+   "forms": [
+    "LABETALOL",
+    "LABETALOL HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL770",
+   "medicine": "TOLAZOLINE",
+   "forms": [
+    "TOLAZOLINE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1963681",
+   "medicine": "AVANAFIL",
+   "forms": [
+    "AVANAFIL"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL932",
+   "medicine": "DIPYRIDAMOLE",
+   "forms": [
+    "DIPYRIDAMOLE"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL19449",
+   "medicine": "IBUDILAST",
+   "forms": [
+    "IBUDILAST"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL628",
+   "medicine": "PENTOXIFYLLINE",
+   "forms": [
+    "PENTOXIFYLLINE"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL254328",
+   "medicine": "ABIRATERONE",
+   "forms": [
+    "ABIRATERONE"
+   ],
+   "target_id": "ENSG00000128039",
+   "target": "SRD5A3",
+   "target_name": "steroid 5 alpha-reductase 3",
+   "score": 0.6000118154790716,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL254328",
+   "medicine": "ABIRATERONE",
+   "forms": [
+    "ABIRATERONE"
+   ],
+   "target_id": "ENSG00000145545",
+   "target": "SRD5A1",
+   "target_name": "steroid 5 alpha-reductase 1",
+   "score": 0.5937486336101303,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL502835",
+   "medicine": "NINTEDANIB",
+   "forms": [
+    "NINTEDANIB",
+    "NINTEDANIB ESYLATE"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297522",
+   "medicine": "PEMIGATINIB",
+   "forms": [
+    "PEMIGATINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3545376",
+   "medicine": "ERDAFITINIB",
+   "forms": [
+    "ERDAFITINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108081",
+   "medicine": "TRAFERMIN",
+   "forms": [
+    "TRAFERMIN"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201821",
+   "medicine": "PALIFERMIN",
+   "forms": [
+    "PALIFERMIN"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1852688",
+   "medicine": "INFIGRATINIB",
+   "forms": [
+    "INFIGRATINIB",
+    "INFIGRATINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3701238",
+   "medicine": "FUTIBATINIB",
+   "forms": [
+    "FUTIBATINIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3686884",
+   "medicine": "E-7090",
+   "forms": [
+    "E-7090"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1946170",
+   "medicine": "REGORAFENIB",
+   "forms": [
+    "REGORAFENIB"
+   ],
+   "target_id": "ENSG00000066468",
+   "target": "FGFR2",
+   "target_name": "fibroblast growth factor receptor 2",
+   "score": 0.5301955402586319,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL5095474",
+   "medicine": "EXAGAMGLOGENE AUTOTEMCEL",
+   "forms": [
+    "EXAGAMGLOGENE AUTOTEMCEL"
+   ],
+   "target_id": "ENSG00000119866",
+   "target": "BCL11A",
+   "target_name": "BCL11 transcription factor A",
+   "score": 0.514482765196033,
+   "action_types": [
+    "GENE EDITING NEGATIVE MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2107856",
+   "medicine": "IMETELSTAT",
+   "forms": [
+    "IMETELSTAT"
+   ],
+   "target_id": "ENSG00000164362",
+   "target": "TERT",
+   "target_name": "telomerase reverse transcriptase",
+   "score": 0.48508137284992925,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108702",
+   "medicine": "IMETELSTAT SODIUM",
+   "forms": [
+    "IMETELSTAT SODIUM"
+   ],
+   "target_id": "ENSG00000164362",
+   "target": "TERT",
+   "target_name": "telomerase reverse transcriptase",
+   "score": 0.48508137284992925,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201335",
+   "medicine": "GLYCOPYRRONIUM",
+   "forms": [
+    "GLYCOPYRRONIUM",
+    "GLYCOPYRRONIUM TOSYLATE",
+    "GLYCOPYRRONIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "INHIBITOR",
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201232",
+   "medicine": "ISOPROPAMIDE",
+   "forms": [
+    "ISOPROPAMIDE",
+    "ISOPROPAMIDE IODIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1482",
+   "medicine": "BETHANECHOL",
+   "forms": [
+    "BETHANECHOL",
+    "BETHANECHOL CHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL965",
+   "medicine": "CARBAMOYLCHOLINE",
+   "forms": [
+    "CARBACHOL"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1180725",
+   "medicine": "PROPANTHELINE",
+   "forms": [
+    "PROPANTHELINE",
+    "PROPANTHELINE BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201325",
+   "medicine": "HEXOCYCLIUM",
+   "forms": [
+    "HEXOCYCLIUM"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1187833",
+   "medicine": "UMECLIDINIUM",
+   "forms": [
+    "UMECLIDINIUM",
+    "UMECLIDINIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL168815",
+   "medicine": "CEVIMELINE",
+   "forms": [
+    "CEVIMELINE",
+    "CEVIMELINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1186610",
+   "medicine": "ANISOTROPINE",
+   "forms": [
+    "ANISOTROPINE METHYLBROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3707224",
+   "medicine": "SOFPIRONIUM",
+   "forms": [
+    "SOFPIRONIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL517712",
+   "medicine": "ATROPINE",
+   "forms": [
+    "ATROPINE",
+    "ATROPINE SULFATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1194325",
+   "medicine": "ACLIDINIUM",
+   "forms": [
+    "ACLIDINIUM",
+    "ACLIDINIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1231",
+   "medicine": "OXYBUTYNIN",
+   "forms": [
+    "OXYBUTYNIN",
+    "OXYBUTYNIN CHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1888176",
+   "medicine": "TROSPIUM",
+   "forms": [
+    "TROSPIUM",
+    "TROSPIUM CHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1495",
+   "medicine": "OXYPHENCYCLIMINE",
+   "forms": [
+    "OXYPHENCYCLIMINE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL667",
+   "medicine": "ACETYLCHOLINE",
+   "forms": [
+    "ACETYLCHOLINE",
+    "ACETYLCHOLINE CHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1382",
+   "medicine": "TOLTERODINE",
+   "forms": [
+    "TOLTERODINE",
+    "TOLTERODINE TARTRATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201354",
+   "medicine": "TRIDIHEXETHYL",
+   "forms": [
+    "TRIDIHEXETHYL"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1621597",
+   "medicine": "IPRATROPIUM",
+   "forms": [
+    "IPRATROPIUM",
+    "IPRATROPIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3833319",
+   "medicine": "REVEFENACIN",
+   "forms": [
+    "REVEFENACIN"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL620",
+   "medicine": "CLIDINIUM",
+   "forms": [
+    "CLIDINIUM",
+    "CLIDINIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1900528",
+   "medicine": "TIOTROPIUM",
+   "forms": [
+    "TIOTROPIUM",
+    "TIOTROPIUM BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL550",
+   "medicine": "PILOCARPINE",
+   "forms": [
+    "PILOCARPINE",
+    "PILOCARPINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201764",
+   "medicine": "FESOTERODINE",
+   "forms": [
+    "FESOTERODINE",
+    "FESOTERODINE FUMARATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201338",
+   "medicine": "CYCLOPENTOLATE",
+   "forms": [
+    "CYCLOPENTOLATE",
+    "CYCLOPENTOLATE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1346",
+   "medicine": "DARIFENACIN",
+   "forms": [
+    "DARIFENACIN",
+    "DARIFENACIN HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL524004",
+   "medicine": "MEPENZOLATE",
+   "forms": [
+    "MEPENZOLATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL376897",
+   "medicine": "METHSCOPOLAMINE",
+   "forms": [
+    "METHSCOPOLAMINE",
+    "METHSCOPOLAMINE BROMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201340",
+   "medicine": "DIPHEMANIL",
+   "forms": [
+    "DIPHEMANIL",
+    "DIPHEMANIL METHYLSULFATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1200604",
+   "medicine": "TROPICAMIDE",
+   "forms": [
+    "TROPICAMIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL53366",
+   "medicine": "IMIDAFENACIN",
+   "forms": [
+    "IMIDAFENACIN"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL978",
+   "medicine": "METHACHOLINE",
+   "forms": [
+    "METHACHOLINE CHLORIDE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201286",
+   "medicine": "OXYPHENONIUM",
+   "forms": [
+    "OXYPHENONIUM"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL142635",
+   "medicine": "NAFTOPIDIL",
+   "forms": [
+    "NAFTOPIDIL"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL192",
+   "medicine": "SILDENAFIL",
+   "forms": [
+    "SILDENAFIL",
+    "SILDENAFIL CITRATE"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL2103849",
+   "medicine": "UDENAFIL",
+   "forms": [
+    "UDENAFIL"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1520",
+   "medicine": "VARDENAFIL",
+   "forms": [
+    "VARDENAFIL",
+    "VARDENAFIL HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1734",
+   "medicine": "SOLIFENACIN",
+   "forms": [
+    "SOLIFENACIN",
+    "SOLIFENACIN SUCCINATE"
+   ],
+   "target_id": "ENSG00000133019",
+   "target": "CHRM3",
+   "target_name": "cholinergic receptor muscarinic 3",
+   "score": 0.4424664905217653,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1200969",
+   "medicine": "DUTASTERIDE",
+   "forms": [
+    "DUTASTERIDE"
+   ],
+   "target_id": "ENSG00000277893",
+   "target": "SRD5A2",
+   "target_name": "steroid 5 alpha-reductase 2",
+   "score": 0.6312686092923253,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL710",
+   "medicine": "FINASTERIDE",
+   "forms": [
+    "FINASTERIDE"
+   ],
+   "target_id": "ENSG00000277893",
+   "target": "SRD5A2",
+   "target_name": "steroid 5 alpha-reductase 2",
+   "score": 0.6312686092923253,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL24778",
+   "medicine": "SILODOSIN",
+   "forms": [
+    "SILODOSIN"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL709",
+   "medicine": "ALFUZOSIN",
+   "forms": [
+    "ALFUZOSIN",
+    "ALFUZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL836",
+   "medicine": "TAMSULOSIN",
+   "forms": [
+    "TAMSULOSIN",
+    "TAMSULOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL707",
+   "medicine": "DOXAZOSIN",
+   "forms": [
+    "DOXAZOSIN",
+    "DOXAZOSIN MESYLATE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL611",
+   "medicine": "TERAZOSIN",
+   "forms": [
+    "TERAZOSIN",
+    "TERAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "forms": [
+    "PRAZOSIN",
+    "PRAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000120907",
+   "target": "ADRA1A",
+   "target_name": "adrenoceptor alpha 1A",
+   "score": 0.6124216059239589,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL709",
+   "medicine": "ALFUZOSIN",
+   "forms": [
+    "ALFUZOSIN",
+    "ALFUZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL836",
+   "medicine": "TAMSULOSIN",
+   "forms": [
+    "TAMSULOSIN",
+    "TAMSULOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL611",
+   "medicine": "TERAZOSIN",
+   "forms": [
+    "TERAZOSIN",
+    "TERAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL707",
+   "medicine": "DOXAZOSIN",
+   "forms": [
+    "DOXAZOSIN",
+    "DOXAZOSIN MESYLATE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "forms": [
+    "PRAZOSIN",
+    "PRAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000171873",
+   "target": "ADRA1D",
+   "target_name": "adrenoceptor alpha 1D",
+   "score": 0.6089539261278394,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL709",
+   "medicine": "ALFUZOSIN",
+   "forms": [
+    "ALFUZOSIN",
+    "ALFUZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL836",
+   "medicine": "TAMSULOSIN",
+   "forms": [
+    "TAMSULOSIN",
+    "TAMSULOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "forms": [
+    "PRAZOSIN",
+    "PRAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL611",
+   "medicine": "TERAZOSIN",
+   "forms": [
+    "TERAZOSIN",
+    "TERAZOSIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL707",
+   "medicine": "DOXAZOSIN",
+   "forms": [
+    "DOXAZOSIN",
+    "DOXAZOSIN MESYLATE"
+   ],
+   "target_id": "ENSG00000170214",
+   "target": "ADRA1B",
+   "target_name": "adrenoceptor alpha 1B",
+   "score": 0.607299049474162,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL779",
+   "medicine": "TADALAFIL",
+   "forms": [
+    "TADALAFIL"
+   ],
+   "target_id": "ENSG00000138735",
+   "target": "PDE5A",
+   "target_name": "phosphodiesterase 5A",
+   "score": 0.6067597621427674,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1200969",
+   "medicine": "DUTASTERIDE",
+   "forms": [
+    "DUTASTERIDE"
+   ],
+   "target_id": "ENSG00000128039",
+   "target": "SRD5A3",
+   "target_name": "steroid 5 alpha-reductase 3",
+   "score": 0.6000118154790716,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1200969",
+   "medicine": "DUTASTERIDE",
+   "forms": [
+    "DUTASTERIDE"
+   ],
+   "target_id": "ENSG00000145545",
+   "target": "SRD5A1",
+   "target_name": "steroid 5 alpha-reductase 1",
+   "score": 0.5937486336101303,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL709",
+   "medicine": "ALFUZOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL709",
+     "medicine": "ALFUZOSIN",
+     "forms": [
+      "ALFUZOSIN",
+      "ALFUZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL709",
+     "medicine": "ALFUZOSIN",
+     "forms": [
+      "ALFUZOSIN",
+      "ALFUZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL709",
+     "medicine": "ALFUZOSIN",
+     "forms": [
+      "ALFUZOSIN",
+      "ALFUZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL707",
+   "medicine": "DOXAZOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL707",
+     "medicine": "DOXAZOSIN",
+     "forms": [
+      "DOXAZOSIN",
+      "DOXAZOSIN MESYLATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL707",
+     "medicine": "DOXAZOSIN",
+     "forms": [
+      "DOXAZOSIN",
+      "DOXAZOSIN MESYLATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL707",
+     "medicine": "DOXAZOSIN",
+     "forms": [
+      "DOXAZOSIN",
+      "DOXAZOSIN MESYLATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1200969",
+   "medicine": "DUTASTERIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1200969",
+     "medicine": "DUTASTERIDE",
+     "forms": [
+      "DUTASTERIDE"
+     ],
+     "target_id": "ENSG00000277893",
+     "target": "SRD5A2",
+     "target_name": "steroid 5 alpha-reductase 2",
+     "score": 0.6312686092923253,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1200969",
+     "medicine": "DUTASTERIDE",
+     "forms": [
+      "DUTASTERIDE"
+     ],
+     "target_id": "ENSG00000128039",
+     "target": "SRD5A3",
+     "target_name": "steroid 5 alpha-reductase 3",
+     "score": 0.6000118154790716,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1200969",
+     "medicine": "DUTASTERIDE",
+     "forms": [
+      "DUTASTERIDE"
+     ],
+     "target_id": "ENSG00000145545",
+     "target": "SRD5A1",
+     "target_name": "steroid 5 alpha-reductase 1",
+     "score": 0.5937486336101303,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3545061",
+   "medicine": "FEXAPOTIDE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL710",
+   "medicine": "FINASTERIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL710",
+     "medicine": "FINASTERIDE",
+     "forms": [
+      "FINASTERIDE"
+     ],
+     "target_id": "ENSG00000277893",
+     "target": "SRD5A2",
+     "target_name": "steroid 5 alpha-reductase 2",
+     "score": 0.6312686092923253,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3989893",
+   "medicine": "MEPARTRICIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2",
+     "medicine": "PRAZOSIN",
+     "forms": [
+      "PRAZOSIN",
+      "PRAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2",
+     "medicine": "PRAZOSIN",
+     "forms": [
+      "PRAZOSIN",
+      "PRAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2",
+     "medicine": "PRAZOSIN",
+     "forms": [
+      "PRAZOSIN",
+      "PRAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL24778",
+   "medicine": "SILODOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL24778",
+     "medicine": "SILODOSIN",
+     "forms": [
+      "SILODOSIN"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL779",
+   "medicine": "TADALAFIL",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL779",
+     "medicine": "TADALAFIL",
+     "forms": [
+      "TADALAFIL"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL836",
+   "medicine": "TAMSULOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL836",
+     "medicine": "TAMSULOSIN",
+     "forms": [
+      "TAMSULOSIN",
+      "TAMSULOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL836",
+     "medicine": "TAMSULOSIN",
+     "forms": [
+      "TAMSULOSIN",
+      "TAMSULOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL836",
+     "medicine": "TAMSULOSIN",
+     "forms": [
+      "TAMSULOSIN",
+      "TAMSULOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL611",
+   "medicine": "TERAZOSIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL611",
+     "medicine": "TERAZOSIN",
+     "forms": [
+      "TERAZOSIN",
+      "TERAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL611",
+     "medicine": "TERAZOSIN",
+     "forms": [
+      "TERAZOSIN",
+      "TERAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL611",
+     "medicine": "TERAZOSIN",
+     "forms": [
+      "TERAZOSIN",
+      "TERAZOSIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "narrower": [],
+ "wider_group": [
+  {
+   "medicine_id": "CHEMBL717",
+   "medicine": "MEDROXYPROGESTERONE ACETATE",
+   "label": "Not listed as approved for this exact disease. Approved for hyperplasia, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1650559",
+   "medicine": "PLAZOMICIN",
+   "label": "Not listed as approved for this exact disease. Approved for prostate disorder, a wider group the database puts this disease in.",
+   "paths": []
+  }
+ ],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL142635",
+   "medicine": "NAFTOPIDIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL142635",
+     "medicine": "NAFTOPIDIL",
+     "forms": [
+      "NAFTOPIDIL"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL192",
+   "medicine": "SILDENAFIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL192",
+     "medicine": "SILDENAFIL",
+     "forms": [
+      "SILDENAFIL",
+      "SILDENAFIL CITRATE"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1520",
+   "medicine": "VARDENAFIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1520",
+     "medicine": "VARDENAFIL",
+     "forms": [
+      "VARDENAFIL",
+      "VARDENAFIL HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2103849",
+   "medicine": "UDENAFIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2103849",
+     "medicine": "UDENAFIL",
+     "forms": [
+      "UDENAFIL"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1734",
+   "medicine": "SOLIFENACIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1734",
+     "medicine": "SOLIFENACIN",
+     "forms": [
+      "SOLIFENACIN",
+      "SOLIFENACIN SUCCINATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL254328",
+   "medicine": "ABIRATERONE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL254328",
+     "medicine": "ABIRATERONE",
+     "forms": [
+      "ABIRATERONE"
+     ],
+     "target_id": "ENSG00000277893",
+     "target": "SRD5A2",
+     "target_name": "steroid 5 alpha-reductase 2",
+     "score": 0.6312686092923253,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL254328",
+     "medicine": "ABIRATERONE",
+     "forms": [
+      "ABIRATERONE"
+     ],
+     "target_id": "ENSG00000128039",
+     "target": "SRD5A3",
+     "target_name": "steroid 5 alpha-reductase 3",
+     "score": 0.6000118154790716,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL254328",
+     "medicine": "ABIRATERONE",
+     "forms": [
+      "ABIRATERONE"
+     ],
+     "target_id": "ENSG00000145545",
+     "target": "SRD5A1",
+     "target_name": "steroid 5 alpha-reductase 1",
+     "score": 0.5937486336101303,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1215",
+   "medicine": "PHENYLEPHRINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1215",
+     "medicine": "PHENYLEPHRINE",
+     "forms": [
+      "PHENYLEPHRINE",
+      "PHENYLEPHRINE HYDROCHLORIDE",
+      "PHENYLEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1215",
+     "medicine": "PHENYLEPHRINE",
+     "forms": [
+      "PHENYLEPHRINE",
+      "PHENYLEPHRINE HYDROCHLORIDE",
+      "PHENYLEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1215",
+     "medicine": "PHENYLEPHRINE",
+     "forms": [
+      "PHENYLEPHRINE",
+      "PHENYLEPHRINE HYDROCHLORIDE",
+      "PHENYLEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL679",
+   "medicine": "EPINEPHRINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL679",
+     "medicine": "EPINEPHRINE",
+     "forms": [
+      "EPINEPHRINE",
+      "EPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL679",
+     "medicine": "EPINEPHRINE",
+     "forms": [
+      "EPINEPHRINE",
+      "EPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL679",
+     "medicine": "EPINEPHRINE",
+     "forms": [
+      "EPINEPHRINE",
+      "EPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL723",
+   "medicine": "CARVEDILOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL723",
+     "medicine": "CARVEDILOL",
+     "forms": [
+      "CARVEDILOL",
+      "CARVEDILOL PHOSPHATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL723",
+     "medicine": "CARVEDILOL",
+     "forms": [
+      "CARVEDILOL",
+      "CARVEDILOL PHOSPHATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL723",
+     "medicine": "CARVEDILOL",
+     "forms": [
+      "CARVEDILOL",
+      "CARVEDILOL PHOSPHATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1437",
+   "medicine": "NOREPINEPHRINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1437",
+     "medicine": "NOREPINEPHRINE",
+     "forms": [
+      "NOREPINEPHRINE",
+      "NOREPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1437",
+     "medicine": "NOREPINEPHRINE",
+     "forms": [
+      "NOREPINEPHRINE",
+      "NOREPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1437",
+     "medicine": "NOREPINEPHRINE",
+     "forms": [
+      "NOREPINEPHRINE",
+      "NOREPINEPHRINE BITARTRATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL762",
+   "medicine": "OXYMETAZOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL762",
+     "medicine": "OXYMETAZOLINE",
+     "forms": [
+      "OXYMETAZOLINE",
+      "OXYMETAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL762",
+     "medicine": "OXYMETAZOLINE",
+     "forms": [
+      "OXYMETAZOLINE",
+      "OXYMETAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL762",
+     "medicine": "OXYMETAZOLINE",
+     "forms": [
+      "OXYMETAZOLINE",
+      "OXYMETAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201212",
+   "medicine": "MIDODRINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201212",
+     "medicine": "MIDODRINE",
+     "forms": [
+      "MIDODRINE",
+      "MIDODRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201212",
+     "medicine": "MIDODRINE",
+     "forms": [
+      "MIDODRINE",
+      "MIDODRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201212",
+     "medicine": "MIDODRINE",
+     "forms": [
+      "MIDODRINE",
+      "MIDODRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL429",
+   "medicine": "LABETALOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL429",
+     "medicine": "LABETALOL",
+     "forms": [
+      "LABETALOL",
+      "LABETALOL HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL429",
+     "medicine": "LABETALOL",
+     "forms": [
+      "LABETALOL",
+      "LABETALOL HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL429",
+     "medicine": "LABETALOL",
+     "forms": [
+      "LABETALOL",
+      "LABETALOL HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL597",
+   "medicine": "PHENTOLAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL597",
+     "medicine": "PHENTOLAMINE",
+     "forms": [
+      "PHENTOLAMINE",
+      "PHENTOLAMINE MESYLATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL597",
+     "medicine": "PHENTOLAMINE",
+     "forms": [
+      "PHENTOLAMINE",
+      "PHENTOLAMINE MESYLATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL597",
+     "medicine": "PHENTOLAMINE",
+     "forms": [
+      "PHENTOLAMINE",
+      "PHENTOLAMINE MESYLATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2103827",
+   "medicine": "DROXIDOPA",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2103827",
+     "medicine": "DROXIDOPA",
+     "forms": [
+      "DROXIDOPA"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2103827",
+     "medicine": "DROXIDOPA",
+     "forms": [
+      "DROXIDOPA"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2103827",
+     "medicine": "DROXIDOPA",
+     "forms": [
+      "DROXIDOPA"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL761",
+   "medicine": "NAPHAZOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL761",
+     "medicine": "NAPHAZOLINE",
+     "forms": [
+      "NAPHAZOLINE",
+      "NAPHAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL761",
+     "medicine": "NAPHAZOLINE",
+     "forms": [
+      "NAPHAZOLINE",
+      "NAPHAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL761",
+     "medicine": "NAPHAZOLINE",
+     "forms": [
+      "NAPHAZOLINE",
+      "NAPHAZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL312448",
+   "medicine": "XYLOMETAZOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL312448",
+     "medicine": "XYLOMETAZOLINE",
+     "forms": [
+      "XYLOMETAZOLINE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL312448",
+     "medicine": "XYLOMETAZOLINE",
+     "forms": [
+      "XYLOMETAZOLINE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL312448",
+     "medicine": "XYLOMETAZOLINE",
+     "forms": [
+      "XYLOMETAZOLINE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL753",
+   "medicine": "PHENOXYBENZAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL753",
+     "medicine": "PHENOXYBENZAMINE",
+     "forms": [
+      "PHENOXYBENZAMINE",
+      "PHENOXYBENZAMINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL753",
+     "medicine": "PHENOXYBENZAMINE",
+     "forms": [
+      "PHENOXYBENZAMINE",
+      "PHENOXYBENZAMINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL753",
+     "medicine": "PHENOXYBENZAMINE",
+     "forms": [
+      "PHENOXYBENZAMINE",
+      "PHENOXYBENZAMINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1266",
+   "medicine": "TETRAHYDROZOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1266",
+     "medicine": "TETRAHYDROZOLINE",
+     "forms": [
+      "TETRAHYDROZOLINE",
+      "TETRAHYDROZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1266",
+     "medicine": "TETRAHYDROZOLINE",
+     "forms": [
+      "TETRAHYDROZOLINE",
+      "TETRAHYDROZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1266",
+     "medicine": "TETRAHYDROZOLINE",
+     "forms": [
+      "TETRAHYDROZOLINE",
+      "TETRAHYDROZOLINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL644",
+     "medicine": "TRIMIPRAMINE",
+     "forms": [
+      "TRIMIPRAMINE",
+      "TRIMIPRAMINE MALEATE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL644",
+     "medicine": "TRIMIPRAMINE",
+     "forms": [
+      "TRIMIPRAMINE",
+      "TRIMIPRAMINE MALEATE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL644",
+     "medicine": "TRIMIPRAMINE",
+     "forms": [
+      "TRIMIPRAMINE",
+      "TRIMIPRAMINE MALEATE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201319",
+   "medicine": "METARAMINOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201319",
+     "medicine": "METARAMINOL",
+     "forms": [
+      "METARAMINOL"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201319",
+     "medicine": "METARAMINOL",
+     "forms": [
+      "METARAMINOL"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201319",
+     "medicine": "METARAMINOL",
+     "forms": [
+      "METARAMINOL"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3559672",
+   "medicine": "RAUWOLFIA SERPENTINA",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3559672",
+     "medicine": "RAUWOLFIA SERPENTINA",
+     "forms": [
+      "RAUWOLFIA SERPENTINA"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3559672",
+     "medicine": "RAUWOLFIA SERPENTINA",
+     "forms": [
+      "RAUWOLFIA SERPENTINA"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3559672",
+     "medicine": "RAUWOLFIA SERPENTINA",
+     "forms": [
+      "RAUWOLFIA SERPENTINA"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2364968",
+   "medicine": "ERGOLOID",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2364968",
+     "medicine": "ERGOLOID",
+     "forms": [
+      "ERGOLOID MESYLATES"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2364968",
+     "medicine": "ERGOLOID",
+     "forms": [
+      "ERGOLOID MESYLATES"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2364968",
+     "medicine": "ERGOLOID",
+     "forms": [
+      "ERGOLOID MESYLATES"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL524",
+   "medicine": "METHOXAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL524",
+     "medicine": "METHOXAMINE",
+     "forms": [
+      "METHOXAMINE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL524",
+     "medicine": "METHOXAMINE",
+     "forms": [
+      "METHOXAMINE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL524",
+     "medicine": "METHOXAMINE",
+     "forms": [
+      "METHOXAMINE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1197051",
+   "medicine": "ISOXSUPRINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1197051",
+     "medicine": "ISOXSUPRINE",
+     "forms": [
+      "ISOXSUPRINE",
+      "ISOXSUPRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1197051",
+     "medicine": "ISOXSUPRINE",
+     "forms": [
+      "ISOXSUPRINE",
+      "ISOXSUPRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1197051",
+     "medicine": "ISOXSUPRINE",
+     "forms": [
+      "ISOXSUPRINE",
+      "ISOXSUPRINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201234",
+   "medicine": "MEPHENTERMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201234",
+     "medicine": "MEPHENTERMINE",
+     "forms": [
+      "MEPHENTERMINE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201234",
+     "medicine": "MEPHENTERMINE",
+     "forms": [
+      "MEPHENTERMINE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201234",
+     "medicine": "MEPHENTERMINE",
+     "forms": [
+      "MEPHENTERMINE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL770",
+   "medicine": "TOLAZOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL770",
+     "medicine": "TOLAZOLINE",
+     "forms": [
+      "TOLAZOLINE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL770",
+     "medicine": "TOLAZOLINE",
+     "forms": [
+      "TOLAZOLINE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL770",
+     "medicine": "TOLAZOLINE",
+     "forms": [
+      "TOLAZOLINE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL321582",
+   "medicine": "BUCINDOLOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL321582",
+     "medicine": "BUCINDOLOL",
+     "forms": [
+      "BUCINDOLOL"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL321582",
+     "medicine": "BUCINDOLOL",
+     "forms": [
+      "BUCINDOLOL"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL321582",
+     "medicine": "BUCINDOLOL",
+     "forms": [
+      "BUCINDOLOL"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201262",
+   "medicine": "DIPIVEFRIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201262",
+     "medicine": "DIPIVEFRIN",
+     "forms": [
+      "DIPIVEFRIN"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201262",
+     "medicine": "DIPIVEFRIN",
+     "forms": [
+      "DIPIVEFRIN"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201262",
+     "medicine": "DIPIVEFRIN",
+     "forms": [
+      "DIPIVEFRIN"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201454",
+   "medicine": "ALSEROXYLON",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201454",
+     "medicine": "ALSEROXYLON",
+     "forms": [
+      "ALSEROXYLON"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201454",
+     "medicine": "ALSEROXYLON",
+     "forms": [
+      "ALSEROXYLON"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201454",
+     "medicine": "ALSEROXYLON",
+     "forms": [
+      "ALSEROXYLON"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL188185",
+   "medicine": "BUNAZOSIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL188185",
+     "medicine": "BUNAZOSIN",
+     "forms": [
+      "BUNAZOSIN"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL188185",
+     "medicine": "BUNAZOSIN",
+     "forms": [
+      "BUNAZOSIN"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL188185",
+     "medicine": "BUNAZOSIN",
+     "forms": [
+      "BUNAZOSIN"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201216",
+   "medicine": "DAPIPRAZOLE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201216",
+     "medicine": "DAPIPRAZOLE",
+     "forms": [
+      "DAPIPRAZOLE",
+      "DAPIPRAZOLE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1546",
+   "medicine": "HYDROXYAMPHETAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1546",
+     "medicine": "HYDROXYAMPHETAMINE",
+     "forms": [
+      "HYDROXYAMPHETAMINE HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000120907",
+     "target": "ADRA1A",
+     "target_name": "adrenoceptor alpha 1A",
+     "score": 0.6124216059239589,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1546",
+     "medicine": "HYDROXYAMPHETAMINE",
+     "forms": [
+      "HYDROXYAMPHETAMINE HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000171873",
+     "target": "ADRA1D",
+     "target_name": "adrenoceptor alpha 1D",
+     "score": 0.6089539261278394,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1546",
+     "medicine": "HYDROXYAMPHETAMINE",
+     "forms": [
+      "HYDROXYAMPHETAMINE HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000170214",
+     "target": "ADRA1B",
+     "target_name": "adrenoceptor alpha 1B",
+     "score": 0.607299049474162,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL932",
+   "medicine": "DIPYRIDAMOLE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL932",
+     "medicine": "DIPYRIDAMOLE",
+     "forms": [
+      "DIPYRIDAMOLE"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1963681",
+   "medicine": "AVANAFIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1963681",
+     "medicine": "AVANAFIL",
+     "forms": [
+      "AVANAFIL"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL19449",
+   "medicine": "IBUDILAST",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL19449",
+     "medicine": "IBUDILAST",
+     "forms": [
+      "IBUDILAST"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL628",
+   "medicine": "PENTOXIFYLLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL628",
+     "medicine": "PENTOXIFYLLINE",
+     "forms": [
+      "PENTOXIFYLLINE"
+     ],
+     "target_id": "ENSG00000138735",
+     "target": "PDE5A",
+     "target_name": "phosphodiesterase 5A",
+     "score": 0.6067597621427674,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1946170",
+   "medicine": "REGORAFENIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1946170",
+     "medicine": "REGORAFENIB",
+     "forms": [
+      "REGORAFENIB"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL502835",
+   "medicine": "NINTEDANIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL502835",
+     "medicine": "NINTEDANIB",
+     "forms": [
+      "NINTEDANIB",
+      "NINTEDANIB ESYLATE"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297522",
+   "medicine": "PEMIGATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297522",
+     "medicine": "PEMIGATINIB",
+     "forms": [
+      "PEMIGATINIB"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3545376",
+   "medicine": "ERDAFITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3545376",
+     "medicine": "ERDAFITINIB",
+     "forms": [
+      "ERDAFITINIB"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1852688",
+   "medicine": "INFIGRATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1852688",
+     "medicine": "INFIGRATINIB",
+     "forms": [
+      "INFIGRATINIB",
+      "INFIGRATINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3701238",
+   "medicine": "FUTIBATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3701238",
+     "medicine": "FUTIBATINIB",
+     "forms": [
+      "FUTIBATINIB"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201821",
+   "medicine": "PALIFERMIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201821",
+     "medicine": "PALIFERMIN",
+     "forms": [
+      "PALIFERMIN"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108081",
+   "medicine": "TRAFERMIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108081",
+     "medicine": "TRAFERMIN",
+     "forms": [
+      "TRAFERMIN"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3686884",
+   "medicine": "E-7090",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3686884",
+     "medicine": "E-7090",
+     "forms": [
+      "E-7090"
+     ],
+     "target_id": "ENSG00000066468",
+     "target": "FGFR2",
+     "target_name": "fibroblast growth factor receptor 2",
+     "score": 0.5301955402586319,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL5095474",
+   "medicine": "EXAGAMGLOGENE AUTOTEMCEL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL5095474",
+     "medicine": "EXAGAMGLOGENE AUTOTEMCEL",
+     "forms": [
+      "EXAGAMGLOGENE AUTOTEMCEL"
+     ],
+     "target_id": "ENSG00000119866",
+     "target": "BCL11A",
+     "target_name": "BCL11 transcription factor A",
+     "score": 0.514482765196033,
+     "action_types": [
+      "GENE EDITING NEGATIVE MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2107856",
+   "medicine": "IMETELSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2107856",
+     "medicine": "IMETELSTAT",
+     "forms": [
+      "IMETELSTAT"
+     ],
+     "target_id": "ENSG00000164362",
+     "target": "TERT",
+     "target_name": "telomerase reverse transcriptase",
+     "score": 0.48508137284992925,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108702",
+   "medicine": "IMETELSTAT SODIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108702",
+     "medicine": "IMETELSTAT SODIUM",
+     "forms": [
+      "IMETELSTAT SODIUM"
+     ],
+     "target_id": "ENSG00000164362",
+     "target": "TERT",
+     "target_name": "telomerase reverse transcriptase",
+     "score": 0.48508137284992925,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1900528",
+   "medicine": "TIOTROPIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1900528",
+     "medicine": "TIOTROPIUM",
+     "forms": [
+      "TIOTROPIUM",
+      "TIOTROPIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201335",
+   "medicine": "GLYCOPYRRONIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201335",
+     "medicine": "GLYCOPYRRONIUM",
+     "forms": [
+      "GLYCOPYRRONIUM",
+      "GLYCOPYRRONIUM TOSYLATE",
+      "GLYCOPYRRONIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "INHIBITOR",
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1621597",
+   "medicine": "IPRATROPIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1621597",
+     "medicine": "IPRATROPIUM",
+     "forms": [
+      "IPRATROPIUM",
+      "IPRATROPIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1231",
+   "medicine": "OXYBUTYNIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1231",
+     "medicine": "OXYBUTYNIN",
+     "forms": [
+      "OXYBUTYNIN",
+      "OXYBUTYNIN CHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL517712",
+   "medicine": "ATROPINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL517712",
+     "medicine": "ATROPINE",
+     "forms": [
+      "ATROPINE",
+      "ATROPINE SULFATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1187833",
+   "medicine": "UMECLIDINIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1187833",
+     "medicine": "UMECLIDINIUM",
+     "forms": [
+      "UMECLIDINIUM",
+      "UMECLIDINIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1382",
+   "medicine": "TOLTERODINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1382",
+     "medicine": "TOLTERODINE",
+     "forms": [
+      "TOLTERODINE",
+      "TOLTERODINE TARTRATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1888176",
+   "medicine": "TROSPIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1888176",
+     "medicine": "TROSPIUM",
+     "forms": [
+      "TROSPIUM",
+      "TROSPIUM CHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201764",
+   "medicine": "FESOTERODINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201764",
+     "medicine": "FESOTERODINE",
+     "forms": [
+      "FESOTERODINE",
+      "FESOTERODINE FUMARATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1194325",
+   "medicine": "ACLIDINIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1194325",
+     "medicine": "ACLIDINIUM",
+     "forms": [
+      "ACLIDINIUM",
+      "ACLIDINIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL550",
+   "medicine": "PILOCARPINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL550",
+     "medicine": "PILOCARPINE",
+     "forms": [
+      "PILOCARPINE",
+      "PILOCARPINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1346",
+   "medicine": "DARIFENACIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1346",
+     "medicine": "DARIFENACIN",
+     "forms": [
+      "DARIFENACIN",
+      "DARIFENACIN HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3833319",
+   "medicine": "REVEFENACIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3833319",
+     "medicine": "REVEFENACIN",
+     "forms": [
+      "REVEFENACIN"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL667",
+   "medicine": "ACETYLCHOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL667",
+     "medicine": "ACETYLCHOLINE",
+     "forms": [
+      "ACETYLCHOLINE",
+      "ACETYLCHOLINE CHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1200604",
+   "medicine": "TROPICAMIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1200604",
+     "medicine": "TROPICAMIDE",
+     "forms": [
+      "TROPICAMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3707224",
+   "medicine": "SOFPIRONIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3707224",
+     "medicine": "SOFPIRONIUM",
+     "forms": [
+      "SOFPIRONIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1482",
+   "medicine": "BETHANECHOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1482",
+     "medicine": "BETHANECHOL",
+     "forms": [
+      "BETHANECHOL",
+      "BETHANECHOL CHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL53366",
+   "medicine": "IMIDAFENACIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL53366",
+     "medicine": "IMIDAFENACIN",
+     "forms": [
+      "IMIDAFENACIN"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL965",
+   "medicine": "CARBAMOYLCHOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL965",
+     "medicine": "CARBAMOYLCHOLINE",
+     "forms": [
+      "CARBACHOL"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201338",
+   "medicine": "CYCLOPENTOLATE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201338",
+     "medicine": "CYCLOPENTOLATE",
+     "forms": [
+      "CYCLOPENTOLATE",
+      "CYCLOPENTOLATE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL168815",
+   "medicine": "CEVIMELINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL168815",
+     "medicine": "CEVIMELINE",
+     "forms": [
+      "CEVIMELINE",
+      "CEVIMELINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL620",
+   "medicine": "CLIDINIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL620",
+     "medicine": "CLIDINIUM",
+     "forms": [
+      "CLIDINIUM",
+      "CLIDINIUM BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1180725",
+   "medicine": "PROPANTHELINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1180725",
+     "medicine": "PROPANTHELINE",
+     "forms": [
+      "PROPANTHELINE",
+      "PROPANTHELINE BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL978",
+   "medicine": "METHACHOLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL978",
+     "medicine": "METHACHOLINE",
+     "forms": [
+      "METHACHOLINE CHLORIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL376897",
+   "medicine": "METHSCOPOLAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL376897",
+     "medicine": "METHSCOPOLAMINE",
+     "forms": [
+      "METHSCOPOLAMINE",
+      "METHSCOPOLAMINE BROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201286",
+   "medicine": "OXYPHENONIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201286",
+     "medicine": "OXYPHENONIUM",
+     "forms": [
+      "OXYPHENONIUM"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201340",
+   "medicine": "DIPHEMANIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201340",
+     "medicine": "DIPHEMANIL",
+     "forms": [
+      "DIPHEMANIL",
+      "DIPHEMANIL METHYLSULFATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201232",
+   "medicine": "ISOPROPAMIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201232",
+     "medicine": "ISOPROPAMIDE",
+     "forms": [
+      "ISOPROPAMIDE",
+      "ISOPROPAMIDE IODIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL524004",
+   "medicine": "MEPENZOLATE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL524004",
+     "medicine": "MEPENZOLATE",
+     "forms": [
+      "MEPENZOLATE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1495",
+   "medicine": "OXYPHENCYCLIMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1495",
+     "medicine": "OXYPHENCYCLIMINE",
+     "forms": [
+      "OXYPHENCYCLIMINE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201354",
+   "medicine": "TRIDIHEXETHYL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201354",
+     "medicine": "TRIDIHEXETHYL",
+     "forms": [
+      "TRIDIHEXETHYL"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1186610",
+   "medicine": "ANISOTROPINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1186610",
+     "medicine": "ANISOTROPINE",
+     "forms": [
+      "ANISOTROPINE METHYLBROMIDE"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201325",
+   "medicine": "HEXOCYCLIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201325",
+     "medicine": "HEXOCYCLIUM",
+     "forms": [
+      "HEXOCYCLIUM"
+     ],
+     "target_id": "ENSG00000133019",
+     "target": "CHRM3",
+     "target_name": "cholinergic receptor muscarinic 3",
+     "score": 0.4424664905217653,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 40,
+  "unclear_link": 0
+ }
+}

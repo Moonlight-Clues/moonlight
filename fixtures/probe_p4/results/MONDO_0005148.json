@@ -1,0 +1,4753 @@
+{
+ "id": "MONDO_0005148",
+ "name": "type 2 diabetes mellitus",
+ "set": "COMMON",
+ "targets": [
+  {
+   "id": "ENSG00000187486",
+   "symbol": "KCNJ11",
+   "name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883
+  },
+  {
+   "id": "ENSG00000006071",
+   "symbol": "ABCC8",
+   "name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745
+  },
+  {
+   "id": "ENSG00000106633",
+   "symbol": "GCK",
+   "name": "glucokinase",
+   "score": 0.8679864643690597
+  },
+  {
+   "id": "ENSG00000132170",
+   "symbol": "PPARG",
+   "name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995
+  },
+  {
+   "id": "ENSG00000135100",
+   "symbol": "HNF1A",
+   "name": "HNF1 homeobox A",
+   "score": 0.8498006482361665
+  },
+  {
+   "id": "ENSG00000101076",
+   "symbol": "HNF4A",
+   "name": "hepatocyte nuclear factor 4 alpha",
+   "score": 0.7992035751395097
+  },
+  {
+   "id": "ENSG00000275410",
+   "symbol": "HNF1B",
+   "name": "HNF1 homeobox B",
+   "score": 0.7768015094007761
+  },
+  {
+   "id": "ENSG00000171105",
+   "symbol": "INSR",
+   "name": "insulin receptor",
+   "score": 0.7702043607097213
+  },
+  {
+   "id": "ENSG00000112164",
+   "symbol": "GLP1R",
+   "name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472
+  },
+  {
+   "id": "ENSG00000109501",
+   "symbol": "WFS1",
+   "name": "wolframin ER transmembrane glycoprotein",
+   "score": 0.7639156818834071
+  },
+  {
+   "id": "ENSG00000163581",
+   "symbol": "SLC2A2",
+   "name": "solute carrier family 2 member 2",
+   "score": 0.745443006103505
+  },
+  {
+   "id": "ENSG00000106331",
+   "symbol": "PAX4",
+   "name": "paired box 4",
+   "score": 0.7343882913133891
+  },
+  {
+   "id": "ENSG00000164756",
+   "symbol": "SLC30A8",
+   "name": "solute carrier family 30 member 8",
+   "score": 0.7236769788709322
+  },
+  {
+   "id": "ENSG00000105221",
+   "symbol": "AKT2",
+   "name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469
+  },
+  {
+   "id": "ENSG00000115159",
+   "symbol": "GPD2",
+   "name": "glycerol-3-phosphate dehydrogenase 2",
+   "score": 0.7093948664405427
+  },
+  {
+   "id": "ENSG00000010310",
+   "symbol": "GIPR",
+   "name": "gastric inhibitory polypeptide receptor",
+   "score": 0.6960778874224164
+  },
+  {
+   "id": "ENSG00000164258",
+   "symbol": "NDUFS4",
+   "name": "NADH:ubiquinone oxidoreductase subunit S4",
+   "score": 0.6890528215922364
+  },
+  {
+   "id": "ENSG00000145996",
+   "symbol": "CDKAL1",
+   "name": "CDKAL1 threonylcarbamoyladenosine tRNA methylthiotransferase",
+   "score": 0.6880306713750315
+  },
+  {
+   "id": "ENSG00000162992",
+   "symbol": "NEUROD1",
+   "name": "neuronal differentiation 1",
+   "score": 0.6865027257533113
+  },
+  {
+   "id": "ENSG00000148737",
+   "symbol": "TCF7L2",
+   "name": "transcription factor 7 like 2",
+   "score": 0.6841589275293578
+  },
+  {
+   "id": "ENSG00000169047",
+   "symbol": "IRS1",
+   "name": "insulin receptor substrate 1",
+   "score": 0.6585175744317724
+  },
+  {
+   "id": "ENSG00000146830",
+   "symbol": "GIGYF1",
+   "name": "GRB10 interacting GYF protein 1",
+   "score": 0.6574462951508908
+  },
+  {
+   "id": "ENSG00000198888",
+   "symbol": "MT-ND1",
+   "name": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 1",
+   "score": 0.6555397375776173
+  },
+  {
+   "id": "ENSG00000197594",
+   "symbol": "ENPP1",
+   "name": "ectonucleotide pyrophosphatase/phosphodiesterase 1",
+   "score": 0.6548632202858855
+  },
+  {
+   "id": "ENSG00000166136",
+   "symbol": "NDUFB8",
+   "name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.654862573073902
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0005015",
+   "name": "diabetes mellitus"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0005827",
+   "name": "lipoatrophic diabetes"
+  },
+  {
+   "role": "child",
+   "id": "EFO_1001503",
+   "name": "type II diabetes mellitus with acanthosis nigricans"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL2165620",
+   "medicine": "PF-04991532",
+   "forms": [
+    "PF-04991532"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3219124",
+   "medicine": "AZD-1656",
+   "forms": [
+    "AZD-1656"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297399",
+   "medicine": "LY-2608204",
+   "forms": [
+    "LY-2608204"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3580737",
+   "medicine": "MK-0941 FREE BASE",
+   "forms": [
+    "MK-0941"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2165615",
+   "medicine": "NERIGLIATIN",
+   "forms": [
+    "NERIGLIATIN"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297404",
+   "medicine": "MK-0767",
+   "forms": [
+    "MK-0767"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545176",
+   "medicine": "DB959",
+   "forms": [
+    "DB959"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL490029",
+   "medicine": "MK-0533",
+   "forms": [
+    "MK-0533"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1267",
+   "medicine": "LERIGLITAZONE",
+   "forms": [
+    "LERIGLITAZONE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1232583",
+   "medicine": "INDEGLITAZAR",
+   "forms": [
+    "INDEGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL329123",
+   "medicine": "ETALOCIB",
+   "forms": [
+    "ETALOCIB"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545278",
+   "medicine": "ATX08-001",
+   "forms": [
+    "ATX08-001"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4091374",
+   "medicine": "LANIFIBRANOR",
+   "forms": [
+    "LANIFIBRANOR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL107367",
+   "medicine": "FARGLITAZAR",
+   "forms": [
+    "FARGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545280",
+   "medicine": "EFATUTAZONE",
+   "forms": [
+    "EFATUTAZONE",
+    "EFATUTAZONE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1762621",
+   "medicine": "BARDOXOLONE METHYL",
+   "forms": [
+    "BARDOXOLONE METHYL"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103824",
+   "medicine": "ARHALOFENATE",
+   "forms": [
+    "ARHALOFENATE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": "PHASE_2_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL186179",
+   "medicine": "MURAGLITAZAR",
+   "forms": [
+    "MURAGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545020",
+   "medicine": "MBX-2044",
+   "forms": [
+    "MBX-2044"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL408",
+   "medicine": "TROGLITAZONE",
+   "forms": [
+    "TROGLITAZONE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL592054",
+   "medicine": "IMIGLITAZAR",
+   "forms": [
+    "IMIGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103991",
+   "medicine": "BALAGLITAZONE",
+   "forms": [
+    "BALAGLITAZONE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "PARTIAL AGONIST"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2104984",
+   "medicine": "SODELGLITAZAR",
+   "forms": [
+    "SODELGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL519504",
+   "medicine": "ALEGLITAZAR",
+   "forms": [
+    "ALEGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545295",
+   "medicine": "AVE0847",
+   "forms": [
+    "AVE0847"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2104753",
+   "medicine": "RIVOGLITAZONE",
+   "forms": [
+    "RIVOGLITAZONE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650349",
+   "medicine": "CHIGLITAZAR",
+   "forms": [
+    "CHIGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL121",
+   "medicine": "ROSIGLITAZONE",
+   "forms": [
+    "ROSIGLITAZONE",
+    "ROSIGLITAZONE MALEATE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314405",
+   "medicine": "CLX-0921",
+   "forms": [
+    "CLX-0921"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_1",
+   "disease_stage": "PHASE_1",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5095027",
+   "medicine": "OMS405",
+   "forms": [
+    "OMS405"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1236924",
+   "medicine": "INT131",
+   "forms": [
+    "INT131"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL282686",
+   "medicine": "TESAGLITAZAR",
+   "forms": [
+    "TESAGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL181954",
+   "medicine": "NAVEGLITAZAR",
+   "forms": [
+    "NAVEGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL93747",
+   "medicine": "NETOGLITAZONE",
+   "forms": [
+    "NETOGLITAZONE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL575448",
+   "medicine": "BMS-754807",
+   "forms": [
+    "BMS-754807"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108569",
+   "medicine": "INSULIN PEGLISPRO",
+   "forms": [
+    "INSULIN PEGLISPRO"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1091644",
+   "medicine": "LINSITINIB",
+   "forms": [
+    "LINSITINIB"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5315324",
+   "medicine": "KW-2450 FREE BASE",
+   "forms": [
+    "KW-2450"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108305",
+   "medicine": "INSULIN TREGOPIL",
+   "forms": [
+    "INSULIN TREGOPIL"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": "PHASE_2_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4518483",
+   "medicine": "DANUGLIPRON",
+   "forms": [
+    "DANUGLIPRON"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297630",
+   "medicine": "COTADUTIDE",
+   "forms": [
+    "COTADUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650495",
+   "medicine": "PEGSEBRENATIDE",
+   "forms": [
+    "PEGSEBRENATIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5095485",
+   "medicine": "RETATRUTIDE",
+   "forms": [
+    "RETATRUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107860",
+   "medicine": "TASPOGLUTIDE",
+   "forms": [
+    "TASPOGLUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3990012",
+   "medicine": "PEGAPAMODUTIDE",
+   "forms": [
+    "PEGAPAMODUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297576",
+   "medicine": "EFINOPEGDUTIDE",
+   "forms": [
+    "EFINOPEGDUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314776",
+   "medicine": "SURVODUTIDE",
+   "forms": [
+    "SURVODUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650470",
+   "medicine": "EFPEGLENATIDE",
+   "forms": [
+    "EFPEGLENATIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2016893",
+   "medicine": "XL-418",
+   "forms": [
+    "XL-418"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297188",
+   "medicine": "MIRANSERTIB",
+   "forms": [
+    "MIRANSERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297329",
+   "medicine": "PIFUSERTIB",
+   "forms": [
+    "PIFUSERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "NEGATIVE ALLOSTERIC MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4751394",
+   "medicine": "BAY-1125976",
+   "forms": [
+    "BAY-1125976"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650277",
+   "medicine": "TAS0612",
+   "forms": [
+    "TAS0612"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL494089",
+   "medicine": "GSK-690693",
+   "forms": [
+    "GSK-690693"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2177390",
+   "medicine": "IPATASERTIB",
+   "forms": [
+    "IPATASERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL462018",
+   "medicine": "TRICIRIBINE PHOSPHATE",
+   "forms": [
+    "TRICIRIBINE PHOSPHATE"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137336",
+   "medicine": "UPROSERTIB",
+   "forms": [
+    "UPROSERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545134",
+   "medicine": "LY-2780301",
+   "forms": [
+    "LY-2780301"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2219422",
+   "medicine": "AFURESERTIB",
+   "forms": [
+    "AFURESERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1079175",
+   "medicine": "MK-2206",
+   "forms": [
+    "MK-2206"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5095485",
+   "medicine": "RETATRUTIDE",
+   "forms": [
+    "RETATRUTIDE"
+   ],
+   "target_id": "ENSG00000010310",
+   "target": "GIPR",
+   "target_name": "gastric inhibitory polypeptide receptor",
+   "score": 0.6960778874224164,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000164258",
+   "target": "NDUFS4",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit S4",
+   "score": 0.6890528215922364,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108296",
+   "medicine": "AGANIRSEN",
+   "forms": [
+    "AGANIRSEN"
+   ],
+   "target_id": "ENSG00000169047",
+   "target": "IRS1",
+   "target_name": "insulin receptor substrate 1",
+   "score": 0.6585175744317724,
+   "action_types": [
+    "ANTISENSE INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000198888",
+   "target": "MT-ND1",
+   "target_name": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 1",
+   "score": 0.6555397375776173,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000166136",
+   "target": "NDUFB8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.654862573073902,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1589",
+   "medicine": "ACETOHEXAMIDE",
+   "forms": [
+    "ACETOHEXAMIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL802",
+   "medicine": "MINOXIDIL",
+   "forms": [
+    "MINOXIDIL"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1159",
+   "medicine": "PINACIDIL ANHYDROUS",
+   "forms": [
+    "PINACIDIL"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1589",
+   "medicine": "ACETOHEXAMIDE",
+   "forms": [
+    "ACETOHEXAMIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201346",
+   "medicine": "BALSALAZIDE",
+   "forms": [
+    "BALSALAZIDE",
+    "BALSALAZIDE DISODIUM"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL704",
+   "medicine": "MESALAMINE",
+   "forms": [
+    "MESALAMINE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL425",
+   "medicine": "OLSALAZINE",
+   "forms": [
+    "OLSALAZINE",
+    "OLSALAZINE SODIUM"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL264374",
+   "medicine": "BEZAFIBRATE",
+   "forms": [
+    "BEZAFIBRATE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297530",
+   "medicine": "SAROGLITAZAR",
+   "forms": [
+    "SAROGLITAZAR"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL253371",
+   "medicine": "ALVERINE",
+   "forms": [
+    "ALVERINE"
+   ],
+   "target_id": "ENSG00000101076",
+   "target": "HNF4A",
+   "target_name": "hepatocyte nuclear factor 4 alpha",
+   "score": 0.7992035751395097,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201540",
+   "medicine": "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN",
+   "forms": [
+    "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201629",
+   "medicine": "INSULIN PURIFIED BEEF",
+   "forms": [
+    "INSULIN PURIFIED BEEF"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201630",
+   "medicine": "INSULIN PURIFIED PORK",
+   "forms": [
+    "INSULIN PURIFIED PORK"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201644",
+   "medicine": "INSULIN ZINC SUSP RECOMBINANT HUMAN",
+   "forms": [
+    "INSULIN ZINC SUSP RECOMBINANT HUMAN"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2325741",
+   "medicine": "CAPIVASERTIB",
+   "forms": [
+    "CAPIVASERTIB"
+   ],
+   "target_id": "ENSG00000105221",
+   "target": "AKT2",
+   "target_name": "AKT serine/threonine kinase 2",
+   "score": 0.7207451387369469,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL181",
+   "medicine": "DIAZOXIDE",
+   "forms": [
+    "DIAZOXIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL471498",
+   "medicine": "MITIGLINIDE",
+   "forms": [
+    "MITIGLINIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL427216",
+   "medicine": "GLICLAZIDE",
+   "forms": [
+    "GLICLAZIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL471498",
+   "medicine": "MITIGLINIDE",
+   "forms": [
+    "MITIGLINIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL427216",
+   "medicine": "GLICLAZIDE",
+   "forms": [
+    "GLICLAZIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4297508",
+   "medicine": "DORZAGLIATIN",
+   "forms": [
+    "DORZAGLIATIN"
+   ],
+   "target_id": "ENSG00000106633",
+   "target": "GCK",
+   "target_name": "glucokinase",
+   "score": 0.8679864643690597,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL2108973",
+   "medicine": "INSULIN HUMAN, ISOPHANE",
+   "forms": [
+    "INSULIN HUMAN, ISOPHANE"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201613",
+   "medicine": "INSULIN GLULISINE",
+   "forms": [
+    "INSULIN GLULISINE"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201545",
+   "medicine": "INSULIN SUSP ISOPHANE BEEF",
+   "forms": [
+    "INSULIN SUSP ISOPHANE BEEF"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201496",
+   "medicine": "INSULIN ASPART",
+   "forms": [
+    "INSULIN ASPART"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201539",
+   "medicine": "INSULIN PORK",
+   "forms": [
+    "INSULIN PORK"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201538",
+   "medicine": "INSULIN LISPRO",
+   "forms": [
+    "INSULIN LISPRO"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4297949",
+   "medicine": "AVEXITIDE",
+   "forms": [
+    "AVEXITIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1073",
+   "medicine": "GLIPIZIDE",
+   "forms": [
+    "GLIPIZIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL498",
+   "medicine": "CHLORPROPAMIDE",
+   "forms": [
+    "CHLORPROPAMIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1272",
+   "medicine": "REPAGLINIDE",
+   "forms": [
+    "REPAGLINIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298005",
+   "medicine": "MITIGLINIDE CALCIUM DIHYDRATE",
+   "forms": [
+    "MITIGLINIDE CALCIUM DIHYDRATE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1481",
+   "medicine": "GLIMEPIRIDE",
+   "forms": [
+    "GLIMEPIRIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL817",
+   "medicine": "TOLAZAMIDE",
+   "forms": [
+    "TOLAZAMIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL783",
+   "medicine": "NATEGLINIDE",
+   "forms": [
+    "NATEGLINIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL782",
+   "medicine": "TOLBUTAMIDE",
+   "forms": [
+    "TOLBUTAMIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL472",
+   "medicine": "GLYBURIDE",
+   "forms": [
+    "GLYBURIDE"
+   ],
+   "target_id": "ENSG00000187486",
+   "target": "KCNJ11",
+   "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+   "score": 0.8772147341544883,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL782",
+   "medicine": "TOLBUTAMIDE",
+   "forms": [
+    "TOLBUTAMIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1073",
+   "medicine": "GLIPIZIDE",
+   "forms": [
+    "GLIPIZIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1481",
+   "medicine": "GLIMEPIRIDE",
+   "forms": [
+    "GLIMEPIRIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL817",
+   "medicine": "TOLAZAMIDE",
+   "forms": [
+    "TOLAZAMIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298005",
+   "medicine": "MITIGLINIDE CALCIUM DIHYDRATE",
+   "forms": [
+    "MITIGLINIDE CALCIUM DIHYDRATE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL498",
+   "medicine": "CHLORPROPAMIDE",
+   "forms": [
+    "CHLORPROPAMIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL783",
+   "medicine": "NATEGLINIDE",
+   "forms": [
+    "NATEGLINIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL472",
+   "medicine": "GLYBURIDE",
+   "forms": [
+    "GLYBURIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1272",
+   "medicine": "REPAGLINIDE",
+   "forms": [
+    "REPAGLINIDE"
+   ],
+   "target_id": "ENSG00000006071",
+   "target": "ABCC8",
+   "target_name": "ATP binding cassette subfamily C member 8",
+   "score": 0.8764122840406745,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL595",
+   "medicine": "PIOGLITAZONE",
+   "forms": [
+    "PIOGLITAZONE",
+    "PIOGLITAZONE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000132170",
+   "target": "PPARG",
+   "target_name": "peroxisome proliferator activated receptor gamma",
+   "score": 0.8609754807916995,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1201497",
+   "medicine": "INSULIN GLARGINE",
+   "forms": [
+    "INSULIN GLARGINE"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107869",
+   "medicine": "INSULIN DEGLUDEC",
+   "forms": [
+    "INSULIN DEGLUDEC"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2104391",
+   "medicine": "INSULIN DETEMIR",
+   "forms": [
+    "INSULIN DETEMIR"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594581",
+   "medicine": "INSULIN ICODEC",
+   "forms": [
+    "INSULIN ICODEC"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1201631",
+   "medicine": "INSULIN HUMAN",
+   "forms": [
+    "INSULIN HUMAN"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL414357",
+   "medicine": "EXENATIDE",
+   "forms": [
+    "EXENATIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4084119",
+   "medicine": "LIRAGLUTIDE",
+   "forms": [
+    "LIRAGLUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108724",
+   "medicine": "SEMAGLUTIDE",
+   "forms": [
+    "SEMAGLUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108336",
+   "medicine": "LIXISENATIDE",
+   "forms": [
+    "LIXISENATIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107841",
+   "medicine": "ALBIGLUTIDE",
+   "forms": [
+    "ALBIGLUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297839",
+   "medicine": "TIRZEPATIDE",
+   "forms": [
+    "TIRZEPATIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108027",
+   "medicine": "DULAGLUTIDE",
+   "forms": [
+    "DULAGLUTIDE"
+   ],
+   "target_id": "ENSG00000112164",
+   "target": "GLP1R",
+   "target_name": "glucagon like peptide 1 receptor",
+   "score": 0.7686888126020472,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000115159",
+   "target": "GPD2",
+   "target_name": "glycerol-3-phosphate dehydrogenase 2",
+   "score": 0.7093948664405427,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297839",
+   "medicine": "TIRZEPATIDE",
+   "forms": [
+    "TIRZEPATIDE"
+   ],
+   "target_id": "ENSG00000010310",
+   "target": "GIPR",
+   "target_name": "gastric inhibitory polypeptide receptor",
+   "score": 0.6960778874224164,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000164258",
+   "target": "NDUFS4",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit S4",
+   "score": 0.6890528215922364,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000198888",
+   "target": "MT-ND1",
+   "target_name": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 1",
+   "score": 0.6555397375776173,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000166136",
+   "target": "NDUFB8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.654862573073902,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108964",
+   "medicine": "INSULIN, ISOPHANE",
+   "forms": [
+    "INSULIN, ISOPHANE"
+   ],
+   "target_id": "ENSG00000171105",
+   "target": "INSR",
+   "target_name": "insulin receptor",
+   "score": 0.7702043607097213,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL404271",
+   "medicine": "ACARBOSE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2107841",
+   "medicine": "ALBIGLUTIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2107841",
+     "medicine": "ALBIGLUTIDE",
+     "forms": [
+      "ALBIGLUTIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL376359",
+   "medicine": "ALOGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1929396",
+   "medicine": "ANAGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1808388",
+   "medicine": "BEXAGLIFLOZIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL857",
+   "medicine": "BIOTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL493",
+   "medicine": "BROMOCRIPTINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2048484",
+   "medicine": "CANAGLIFLOZIN ANHYDROUS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2103825",
+   "medicine": "CETILISTAT",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL498",
+   "medicine": "CHLORPROPAMIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL498",
+     "medicine": "CHLORPROPAMIDE",
+     "forms": [
+      "CHLORPROPAMIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL498",
+     "medicine": "CHLORPROPAMIDE",
+     "forms": [
+      "CHLORPROPAMIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL6068331",
+   "medicine": "COLESEVELAM",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2110563",
+   "medicine": "CYANOCOBALAMIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL429910",
+   "medicine": "DAPAGLIFLOZIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2108027",
+   "medicine": "DULAGLUTIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108027",
+     "medicine": "DULAGLUTIDE",
+     "forms": [
+      "DULAGLUTIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2107830",
+   "medicine": "EMPAGLIFLOZIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1770248",
+   "medicine": "ERTUGLIFLOZIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL414357",
+   "medicine": "EXENATIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL414357",
+     "medicine": "EXENATIDE",
+     "forms": [
+      "EXENATIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL672",
+   "medicine": "FENOFIBRATE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL981",
+   "medicine": "FENOFIBRIC ACID",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2181927",
+   "medicine": "FINERENONE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1622",
+   "medicine": "FOLIC ACID",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1481",
+   "medicine": "GLIMEPIRIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1481",
+     "medicine": "GLIMEPIRIDE",
+     "forms": [
+      "GLIMEPIRIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1481",
+     "medicine": "GLIMEPIRIDE",
+     "forms": [
+      "GLIMEPIRIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1073",
+   "medicine": "GLIPIZIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1073",
+     "medicine": "GLIPIZIDE",
+     "forms": [
+      "GLIPIZIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1073",
+     "medicine": "GLIPIZIDE",
+     "forms": [
+      "GLIPIZIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2106618",
+   "medicine": "GLISOXEPIDE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL472",
+   "medicine": "GLYBURIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL472",
+     "medicine": "GLYBURIDE",
+     "forms": [
+      "GLYBURIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL472",
+     "medicine": "GLYBURIDE",
+     "forms": [
+      "GLYBURIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2107869",
+   "medicine": "INSULIN DEGLUDEC",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2107869",
+     "medicine": "INSULIN DEGLUDEC",
+     "forms": [
+      "INSULIN DEGLUDEC"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2104391",
+   "medicine": "INSULIN DETEMIR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2104391",
+     "medicine": "INSULIN DETEMIR",
+     "forms": [
+      "INSULIN DETEMIR"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201497",
+   "medicine": "INSULIN GLARGINE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201497",
+     "medicine": "INSULIN GLARGINE",
+     "forms": [
+      "INSULIN GLARGINE"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201631",
+   "medicine": "INSULIN HUMAN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201631",
+     "medicine": "INSULIN HUMAN",
+     "forms": [
+      "INSULIN HUMAN"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4594581",
+   "medicine": "INSULIN ICODEC",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4594581",
+     "medicine": "INSULIN ICODEC",
+     "forms": [
+      "INSULIN ICODEC"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297658",
+   "medicine": "IPRAGLIFLOZIN L-PROLINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1513",
+   "medicine": "IRBESARTAN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL237500",
+   "medicine": "LINAGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4084119",
+   "medicine": "LIRAGLUTIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4084119",
+     "medicine": "LIRAGLUTIDE",
+     "forms": [
+      "LIRAGLUTIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108336",
+   "medicine": "LIXISENATIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108336",
+     "medicine": "LIXISENATIDE",
+     "forms": [
+      "LIXISENATIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3585580",
+   "medicine": "LOBEGLITAZONE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000115159",
+     "target": "GPD2",
+     "target_name": "glycerol-3-phosphate dehydrogenase 2",
+     "score": 0.7093948664405427,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000164258",
+     "target": "NDUFS4",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit S4",
+     "score": 0.6890528215922364,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000198888",
+     "target": "MT-ND1",
+     "target_name": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 1",
+     "score": 0.6555397375776173,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000166136",
+     "target": "NDUFB8",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+     "score": 0.654862573073902,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1561",
+   "medicine": "MIGLITOL",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4298005",
+   "medicine": "MITIGLINIDE CALCIUM DIHYDRATE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298005",
+     "medicine": "MITIGLINIDE CALCIUM DIHYDRATE",
+     "forms": [
+      "MITIGLINIDE CALCIUM DIHYDRATE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4298005",
+     "medicine": "MITIGLINIDE CALCIUM DIHYDRATE",
+     "forms": [
+      "MITIGLINIDE CALCIUM DIHYDRATE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL783",
+   "medicine": "NATEGLINIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL783",
+     "medicine": "NATEGLINIDE",
+     "forms": [
+      "NATEGLINIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL783",
+     "medicine": "NATEGLINIDE",
+     "forms": [
+      "NATEGLINIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2105762",
+   "medicine": "OMARIGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200711",
+   "medicine": "OMEGA-3-ACID ETHYL ESTERS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL595",
+   "medicine": "PIOGLITAZONE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL595",
+     "medicine": "PIOGLITAZONE",
+     "forms": [
+      "PIOGLITAZONE",
+      "PIOGLITAZONE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1364",
+   "medicine": "PYRIDOXINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1272",
+   "medicine": "REPAGLINIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1272",
+     "medicine": "REPAGLINIDE",
+     "forms": [
+      "REPAGLINIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1272",
+     "medicine": "REPAGLINIDE",
+     "forms": [
+      "REPAGLINIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL385517",
+   "medicine": "SAXAGLIPTIN ANHYDROUS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2108724",
+   "medicine": "SEMAGLUTIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108724",
+     "medicine": "SEMAGLUTIDE",
+     "forms": [
+      "SEMAGLUTIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1064",
+   "medicine": "SIMVASTATIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1422",
+   "medicine": "SITAGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3039507",
+   "medicine": "SOTAGLIFLOZIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL398435",
+   "medicine": "TICAGRELOR",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4297839",
+   "medicine": "TIRZEPATIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297839",
+     "medicine": "TIRZEPATIDE",
+     "forms": [
+      "TIRZEPATIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4297839",
+     "medicine": "TIRZEPATIDE",
+     "forms": [
+      "TIRZEPATIDE"
+     ],
+     "target_id": "ENSG00000010310",
+     "target": "GIPR",
+     "target_name": "gastric inhibitory polypeptide receptor",
+     "score": 0.6960778874224164,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2110731",
+   "medicine": "TOFOGLIFLOZIN ANHYDROUS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL817",
+   "medicine": "TOLAZAMIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL817",
+     "medicine": "TOLAZAMIDE",
+     "forms": [
+      "TOLAZAMIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL817",
+     "medicine": "TOLAZAMIDE",
+     "forms": [
+      "TOLAZAMIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL782",
+   "medicine": "TOLBUTAMIDE",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL782",
+     "medicine": "TOLBUTAMIDE",
+     "forms": [
+      "TOLBUTAMIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL782",
+     "medicine": "TOLBUTAMIDE",
+     "forms": [
+      "TOLBUTAMIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1650443",
+   "medicine": "TRELAGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL925",
+   "medicine": "TYROSINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL142703",
+   "medicine": "VILDAGLIPTIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL476960",
+   "medicine": "VOGLIBOSE",
+   "label": null,
+   "paths": []
+  }
+ ],
+ "narrower": [],
+ "wider_group": [
+  {
+   "medicine_id": "CHEMBL1589",
+   "medicine": "ACETOHEXAMIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1589",
+     "medicine": "ACETOHEXAMIDE",
+     "forms": [
+      "ACETOHEXAMIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1589",
+     "medicine": "ACETOHEXAMIDE",
+     "forms": [
+      "ACETOHEXAMIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1491",
+   "medicine": "AMLODIPINE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL24",
+   "medicine": "ATENOLOL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL5095267",
+   "medicine": "BEINAGLUTIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL838",
+   "medicine": "BENAZEPRIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1014",
+   "medicine": "CANDESARTAN CILEXETIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL448570",
+   "medicine": "CARBUTAMIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL6068005",
+   "medicine": "CARFLOGLITAZAR",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1055",
+   "medicine": "CHLORTHALIDONE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4297741",
+   "medicine": "DASIGLUCAGON",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4297508",
+   "medicine": "DORZAGLIATIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297508",
+     "medicine": "DORZAGLIATIN",
+     "forms": [
+      "DORZAGLIATIN"
+     ],
+     "target_id": "ENSG00000106633",
+     "target": "GCK",
+     "target_name": "glucokinase",
+     "score": 0.8679864643690597,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1175",
+   "medicine": "DULOXETINE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3703921",
+   "medicine": "ENAVOGLIFLOZIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1779710",
+   "medicine": "EVOGLIPTIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1480",
+   "medicine": "FELODIPINE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3707235",
+   "medicine": "GEMIGLIPTIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL529888",
+   "medicine": "GLIBORNURIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL427216",
+   "medicine": "GLICLAZIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL427216",
+     "medicine": "GLICLAZIDE",
+     "forms": [
+      "GLICLAZIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL427216",
+     "medicine": "GLICLAZIDE",
+     "forms": [
+      "GLICLAZIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL383634",
+   "medicine": "GLIQUIDONE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL5314341",
+   "medicine": "GLUCAGON",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1697838",
+   "medicine": "GLYMIDINE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2108446",
+   "medicine": "GUAR GUM",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL435",
+   "medicine": "HYDROCHLOROTHIAZIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4297514",
+   "medicine": "IMEGLIMIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1201496",
+   "medicine": "INSULIN ASPART",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201496",
+     "medicine": "INSULIN ASPART",
+     "forms": [
+      "INSULIN ASPART"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201613",
+   "medicine": "INSULIN GLULISINE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201613",
+     "medicine": "INSULIN GLULISINE",
+     "forms": [
+      "INSULIN GLULISINE"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201538",
+   "medicine": "INSULIN LISPRO",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201538",
+     "medicine": "INSULIN LISPRO",
+     "forms": [
+      "INSULIN LISPRO"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201629",
+   "medicine": "INSULIN PURIFIED BEEF",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201629",
+     "medicine": "INSULIN PURIFIED BEEF",
+     "forms": [
+      "INSULIN PURIFIED BEEF"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201630",
+   "medicine": "INSULIN PURIFIED PORK",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201630",
+     "medicine": "INSULIN PURIFIED PORK",
+     "forms": [
+      "INSULIN PURIFIED PORK"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2018096",
+   "medicine": "IPRAGLIFLOZIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1237",
+   "medicine": "LISINOPRIL ANHYDROUS",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1093423",
+   "medicine": "LUSEOGLIFLOZIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL507419",
+   "medicine": "METAHEXAMIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL471498",
+   "medicine": "MITIGLINIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL471498",
+     "medicine": "MITIGLINIDE",
+     "forms": [
+      "MITIGLINIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL471498",
+     "medicine": "MITIGLINIDE",
+     "forms": [
+      "MITIGLINIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1200692",
+   "medicine": "OLMESARTAN MEDOXOMIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2103758",
+   "medicine": "PRAMLINTIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1592",
+   "medicine": "QUINAPRIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1168",
+   "medicine": "RAMIPRIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200574",
+   "medicine": "SODIUM CHLORIDE",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1017",
+   "medicine": "TELMISARTAN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2147777",
+   "medicine": "TENELIGLIPTIN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1069",
+   "medicine": "VALSARTAN",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL6966",
+   "medicine": "VERAPAMIL",
+   "label": "Not listed as approved for this exact disease. Approved for diabetes mellitus, a wider group the database puts this disease in.",
+   "paths": []
+  }
+ ],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL427216",
+   "medicine": "GLICLAZIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL427216",
+     "medicine": "GLICLAZIDE",
+     "forms": [
+      "GLICLAZIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL427216",
+     "medicine": "GLICLAZIDE",
+     "forms": [
+      "GLICLAZIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL181",
+   "medicine": "DIAZOXIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL181",
+     "medicine": "DIAZOXIDE",
+     "forms": [
+      "DIAZOXIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL471498",
+   "medicine": "MITIGLINIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL471498",
+     "medicine": "MITIGLINIDE",
+     "forms": [
+      "MITIGLINIDE"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL471498",
+     "medicine": "MITIGLINIDE",
+     "forms": [
+      "MITIGLINIDE"
+     ],
+     "target_id": "ENSG00000006071",
+     "target": "ABCC8",
+     "target_name": "ATP binding cassette subfamily C member 8",
+     "score": 0.8764122840406745,
+     "action_types": [
+      "BLOCKER"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297508",
+   "medicine": "DORZAGLIATIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297508",
+     "medicine": "DORZAGLIATIN",
+     "forms": [
+      "DORZAGLIATIN"
+     ],
+     "target_id": "ENSG00000106633",
+     "target": "GCK",
+     "target_name": "glucokinase",
+     "score": 0.8679864643690597,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201496",
+   "medicine": "INSULIN ASPART",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201496",
+     "medicine": "INSULIN ASPART",
+     "forms": [
+      "INSULIN ASPART"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201538",
+   "medicine": "INSULIN LISPRO",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201538",
+     "medicine": "INSULIN LISPRO",
+     "forms": [
+      "INSULIN LISPRO"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201613",
+   "medicine": "INSULIN GLULISINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201613",
+     "medicine": "INSULIN GLULISINE",
+     "forms": [
+      "INSULIN GLULISINE"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201545",
+   "medicine": "INSULIN SUSP ISOPHANE BEEF",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201545",
+     "medicine": "INSULIN SUSP ISOPHANE BEEF",
+     "forms": [
+      "INSULIN SUSP ISOPHANE BEEF"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108973",
+   "medicine": "INSULIN HUMAN, ISOPHANE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108973",
+     "medicine": "INSULIN HUMAN, ISOPHANE",
+     "forms": [
+      "INSULIN HUMAN, ISOPHANE"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201539",
+   "medicine": "INSULIN PORK",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201539",
+     "medicine": "INSULIN PORK",
+     "forms": [
+      "INSULIN PORK"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297949",
+   "medicine": "AVEXITIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297949",
+     "medicine": "AVEXITIDE",
+     "forms": [
+      "AVEXITIDE"
+     ],
+     "target_id": "ENSG00000112164",
+     "target": "GLP1R",
+     "target_name": "glucagon like peptide 1 receptor",
+     "score": 0.7686888126020472,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL802",
+   "medicine": "MINOXIDIL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL802",
+     "medicine": "MINOXIDIL",
+     "forms": [
+      "MINOXIDIL"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1159",
+   "medicine": "PINACIDIL ANHYDROUS",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1159",
+     "medicine": "PINACIDIL ANHYDROUS",
+     "forms": [
+      "PINACIDIL"
+     ],
+     "target_id": "ENSG00000187486",
+     "target": "KCNJ11",
+     "target_name": "potassium inwardly rectifying channel subfamily J member 11",
+     "score": 0.8772147341544883,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL704",
+   "medicine": "MESALAMINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL704",
+     "medicine": "MESALAMINE",
+     "forms": [
+      "MESALAMINE"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL264374",
+   "medicine": "BEZAFIBRATE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL264374",
+     "medicine": "BEZAFIBRATE",
+     "forms": [
+      "BEZAFIBRATE"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297530",
+   "medicine": "SAROGLITAZAR",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297530",
+     "medicine": "SAROGLITAZAR",
+     "forms": [
+      "SAROGLITAZAR"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201346",
+   "medicine": "BALSALAZIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201346",
+     "medicine": "BALSALAZIDE",
+     "forms": [
+      "BALSALAZIDE",
+      "BALSALAZIDE DISODIUM"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL425",
+   "medicine": "OLSALAZINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL425",
+     "medicine": "OLSALAZINE",
+     "forms": [
+      "OLSALAZINE",
+      "OLSALAZINE SODIUM"
+     ],
+     "target_id": "ENSG00000132170",
+     "target": "PPARG",
+     "target_name": "peroxisome proliferator activated receptor gamma",
+     "score": 0.8609754807916995,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL253371",
+   "medicine": "ALVERINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL253371",
+     "medicine": "ALVERINE",
+     "forms": [
+      "ALVERINE"
+     ],
+     "target_id": "ENSG00000101076",
+     "target": "HNF4A",
+     "target_name": "hepatocyte nuclear factor 4 alpha",
+     "score": 0.7992035751395097,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201540",
+   "medicine": "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201540",
+     "medicine": "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN",
+     "forms": [
+      "INSULIN SUSP ISOPHANE RECOMBINANT HUMAN"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201644",
+   "medicine": "INSULIN ZINC SUSP RECOMBINANT HUMAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201644",
+     "medicine": "INSULIN ZINC SUSP RECOMBINANT HUMAN",
+     "forms": [
+      "INSULIN ZINC SUSP RECOMBINANT HUMAN"
+     ],
+     "target_id": "ENSG00000171105",
+     "target": "INSR",
+     "target_name": "insulin receptor",
+     "score": 0.7702043607097213,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2325741",
+   "medicine": "CAPIVASERTIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2325741",
+     "medicine": "CAPIVASERTIB",
+     "forms": [
+      "CAPIVASERTIB"
+     ],
+     "target_id": "ENSG00000105221",
+     "target": "AKT2",
+     "target_name": "AKT serine/threonine kinase 2",
+     "score": 0.7207451387369469,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 66,
+  "unclear_link": 1
+ }
+}

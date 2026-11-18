@@ -1,0 +1,3401 @@
+{
+ "id": "MONDO_0010526",
+ "name": "Fabry disease",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000102393",
+   "symbol": "GLA",
+   "name": "galactosidase alpha",
+   "score": 0.8942221939319474
+  },
+  {
+   "id": "ENSG00000148154",
+   "symbol": "UGCG",
+   "name": "UDP-glucose ceramide glucosyltransferase",
+   "score": 0.3896445701994366
+  },
+  {
+   "id": "ENSG00000054983",
+   "symbol": "GALC",
+   "name": "galactosylceramidase",
+   "score": 0.341207328720817
+  },
+  {
+   "id": "ENSG00000126945",
+   "symbol": "HNRNPH2",
+   "name": "heterogeneous nuclear ribonucleoprotein H2",
+   "score": 0.18408355632190335
+  },
+  {
+   "id": "ENSG00000070061",
+   "symbol": "ELP1",
+   "name": "elongator acetyltransferase complex subunit 1",
+   "score": 0.12402951733210751
+  },
+  {
+   "id": "ENSG00000101306",
+   "symbol": "MYLK2",
+   "name": "myosin light chain kinase 2",
+   "score": 0.11087395640541053
+  },
+  {
+   "id": "ENSG00000112715",
+   "symbol": "VEGFA",
+   "name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887
+  },
+  {
+   "id": "ENSG00000087460",
+   "symbol": "GNAS",
+   "name": "GNAS complex locus",
+   "score": 0.10555333092637754
+  },
+  {
+   "id": "ENSG00000157017",
+   "symbol": "GHRL",
+   "name": "ghrelin and obestatin prepropeptide",
+   "score": 0.09863266537896175
+  },
+  {
+   "id": "ENSG00000130203",
+   "symbol": "APOE",
+   "name": "apolipoprotein E",
+   "score": 0.09628025701700584
+  },
+  {
+   "id": "ENSG00000120659",
+   "symbol": "TNFSF11",
+   "name": "TNF superfamily member 11",
+   "score": 0.09582525253969602
+  },
+  {
+   "id": "ENSG00000105329",
+   "symbol": "TGFB1",
+   "name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619
+  },
+  {
+   "id": "ENSG00000125730",
+   "symbol": "C3",
+   "name": "complement C3",
+   "score": 0.08593697057875926
+  },
+  {
+   "id": "ENSG00000140675",
+   "symbol": "SLC5A2",
+   "name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311
+  },
+  {
+   "id": "ENSG00000197405",
+   "symbol": "C5AR1",
+   "name": "complement C5a receptor 1",
+   "score": 0.0831554673040579
+  },
+  {
+   "id": "ENSG00000147099",
+   "symbol": "HDAC8",
+   "name": "histone deacetylase 8",
+   "score": 0.08248817034421053
+  },
+  {
+   "id": "ENSG00000104783",
+   "symbol": "KCNN4",
+   "name": "potassium calcium-activated channel subfamily N member 4",
+   "score": 0.0823913142742032
+  },
+  {
+   "id": "ENSG00000106804",
+   "symbol": "C5",
+   "name": "complement C5",
+   "score": 0.08124597138818694
+  },
+  {
+   "id": "ENSG00000129991",
+   "symbol": "TNNI3",
+   "name": "troponin I3, cardiac type",
+   "score": 0.08070084110252702
+  },
+  {
+   "id": "ENSG00000196839",
+   "symbol": "ADA",
+   "name": "adenosine deaminase",
+   "score": 0.07833219946447002
+  },
+  {
+   "id": "ENSG00000136244",
+   "symbol": "IL6",
+   "name": "interleukin 6",
+   "score": 0.07557087857651258
+  },
+  {
+   "id": "ENSG00000091128",
+   "symbol": "LAMB4",
+   "name": "laminin subunit beta 4",
+   "score": 0.07474752560998092
+  },
+  {
+   "id": "ENSG00000157150",
+   "symbol": "TIMP4",
+   "name": "TIMP metallopeptidase inhibitor 4",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000196689",
+   "symbol": "TRPV1",
+   "name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323
+  },
+  {
+   "id": "ENSG00000010610",
+   "symbol": "CD4",
+   "name": "CD4 molecule",
+   "score": 0.07200168672366895
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "HP_0011276",
+   "name": "Vascular skin abnormality"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0019255",
+   "name": "sphingolipidosis"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0015327",
+   "name": "developmental anomaly of metabolic origin"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL4297611",
+   "medicine": "VENGLUSTAT",
+   "forms": [
+    "VENGLUSTAT"
+   ],
+   "target_id": "ENSG00000148154",
+   "target": "UGCG",
+   "target_name": "UDP-glucose ceramide glucosyltransferase",
+   "score": 0.3896445701994366,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1086997",
+   "medicine": "LUCERASTAT",
+   "forms": [
+    "LUCERASTAT"
+   ],
+   "target_id": "ENSG00000148154",
+   "target": "UGCG",
+   "target_name": "UDP-glucose ceramide glucosyltransferase",
+   "score": 0.3896445701994366,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108752",
+   "medicine": "PEGAPTANIB OCTASODIUM",
+   "forms": [
+    "PEGAPTANIB OCTASODIUM"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545259",
+   "medicine": "VANUCIZUMAB",
+   "forms": [
+    "VANUCIZUMAB"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297163",
+   "medicine": "MUPARFOSTAT",
+   "forms": [
+    "MUPARFOSTAT"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2110581",
+   "medicine": "BEVASIRANIB",
+   "forms": [
+    "BEVASIRANIB",
+    "BEVASIRANIB SODIUM"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "RNAI INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298024",
+   "medicine": "BINTRAFUSP ALFA",
+   "forms": [
+    "BINTRAFUSP ALFA"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743022",
+   "medicine": "FRESOLIMUMAB",
+   "forms": [
+    "FRESOLIMUMAB"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108431",
+   "medicine": "METELIMUMAB",
+   "forms": [
+    "METELIMUMAB"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109585",
+   "medicine": "LY-2382770",
+   "forms": [
+    "LY-2382770"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594457",
+   "medicine": "AL-78898A",
+   "forms": [
+    "AL-78898A"
+   ],
+   "target_id": "ENSG00000125730",
+   "target": "C3",
+   "target_name": "complement C3",
+   "score": 0.08593697057875926,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297260",
+   "medicine": "AMY-101",
+   "forms": [
+    "AMY-101"
+   ],
+   "target_id": "ENSG00000125730",
+   "target": "C3",
+   "target_name": "complement C3",
+   "score": 0.08593697057875926,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297625",
+   "medicine": "LICOGLIFLOZIN",
+   "forms": [
+    "LICOGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2397450",
+   "medicine": "YM-543 FREE ACID",
+   "forms": [
+    "YM-543"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2028665",
+   "medicine": "REMOGLIFLOZIN ETABONATE",
+   "forms": [
+    "REMOGLIFLOZIN ETABONATE"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594463",
+   "medicine": "AVDORALIMAB",
+   "forms": [
+    "AVDORALIMAB"
+   ],
+   "target_id": "ENSG00000197405",
+   "target": "C5AR1",
+   "target_name": "complement C5a receptor 1",
+   "score": 0.0831554673040579,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL235191",
+   "medicine": "TACEDINALINE",
+   "forms": [
+    "TACEDINALINE"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2105763",
+   "medicine": "QUISINOSTAT",
+   "forms": [
+    "QUISINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL272980",
+   "medicine": "MOCETINOSTAT",
+   "forms": [
+    "MOCETINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL598797",
+   "medicine": "CUDC-101",
+   "forms": [
+    "CUDC-101"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3622533",
+   "medicine": "FIMEPINOSTAT",
+   "forms": [
+    "FIMEPINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103863",
+   "medicine": "ABEXINOSTAT",
+   "forms": [
+    "ABEXINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL405821",
+   "medicine": "SENICAPOC",
+   "forms": [
+    "SENICAPOC"
+   ],
+   "target_id": "ENSG00000104783",
+   "target": "KCNN4",
+   "target_name": "potassium calcium-activated channel subfamily N member 4",
+   "score": 0.0823913142742032,
+   "action_types": [
+    "BLOCKER"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3990025",
+   "medicine": "OLENDALIZUMAB",
+   "forms": [
+    "OLENDALIZUMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107979",
+   "medicine": "PEXELIZUMAB",
+   "forms": [
+    "PEXELIZUMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297928",
+   "medicine": "NOMACOPAN",
+   "forms": [
+    "NOMACOPAN"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298012",
+   "medicine": "TESIDOLUMAB",
+   "forms": [
+    "TESIDOLUMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297722",
+   "medicine": "CEMDISIRAN",
+   "forms": [
+    "CEMDISIRAN"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "RNAI INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297732",
+   "medicine": "ZILTIVEKIMAB",
+   "forms": [
+    "ZILTIVEKIMAB"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "INHIBITOR",
+    "BINDING AGENT"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108589",
+   "medicine": "CLAZAKIZUMAB",
+   "forms": [
+    "CLAZAKIZUMAB"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL6068160",
+   "medicine": "PACIBEKITUG",
+   "forms": [
+    "PACIBEKITUG"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL398338",
+   "medicine": "ABT-102",
+   "forms": [
+    "ABT-102"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2364618",
+   "medicine": "MAVATREP",
+   "forms": [
+    "MAVATREP"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL207433",
+   "medicine": "SB-705498",
+   "forms": [
+    "SB-705498"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707398",
+   "medicine": "PAC-14028",
+   "forms": [
+    "PAC-14028"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545039",
+   "medicine": "AZD1386",
+   "forms": [
+    "AZD1386"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3544953",
+   "medicine": "SAF312",
+   "forms": [
+    "SAF312"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545148",
+   "medicine": "PHE377",
+   "forms": [
+    "PHE377"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314400",
+   "medicine": "DWP05195",
+   "forms": [
+    "DWP05195"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707397",
+   "medicine": "MR-1817",
+   "forms": [
+    "MR-1817"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL17976",
+   "medicine": "RESINIFERATOXIN",
+   "forms": [
+    "RESINIFERATOXIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707356",
+   "medicine": "TIVANISIRAN",
+   "forms": [
+    "TIVANISIRAN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTISENSE INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707293",
+   "medicine": "XEN-D0501",
+   "forms": [
+    "XEN-D0501"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL214796",
+   "medicine": "NGD-8243",
+   "forms": [
+    "NGD-8243"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314399",
+   "medicine": "JTS-653",
+   "forms": [
+    "JTS-653"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL229430",
+   "medicine": "AMG-517",
+   "forms": [
+    "AMG-517"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314398",
+   "medicine": "GRC-6211",
+   "forms": [
+    "GRC-6211"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109474",
+   "medicine": "TRX-1",
+   "forms": [
+    "TRX-1"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108187",
+   "medicine": "CLENOLIXIMAB",
+   "forms": [
+    "CLENOLIXIMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297846",
+   "medicine": "SEMZUVOLIMAB",
+   "forms": [
+    "SEMZUVOLIMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108063",
+   "medicine": "ZANOLIMUMAB",
+   "forms": [
+    "ZANOLIMUMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "OTHER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108475",
+   "medicine": "PRILIXIMAB",
+   "forms": [
+    "PRILIXIMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "NEGATIVE MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298127",
+   "medicine": "VRC-01LS",
+   "forms": [
+    "VRC-01LS"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743083",
+   "medicine": "TREGALIZUMAB",
+   "forms": [
+    "TREGALIZUMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2110588",
+   "medicine": "ELIGLUSTAT",
+   "forms": [
+    "ELIGLUSTAT",
+    "ELIGLUSTAT TARTRATE"
+   ],
+   "target_id": "ENSG00000148154",
+   "target": "UGCG",
+   "target_name": "UDP-glucose ceramide glucosyltransferase",
+   "score": 0.3896445701994366,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1029",
+   "medicine": "MIGLUSTAT",
+   "forms": [
+    "MIGLUSTAT"
+   ],
+   "target_id": "ENSG00000148154",
+   "target": "UGCG",
+   "target_name": "UDP-glucose ceramide glucosyltransferase",
+   "score": 0.3896445701994366,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297750",
+   "medicine": "FARICIMAB",
+   "forms": [
+    "FARICIMAB"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201825",
+   "medicine": "RANIBIZUMAB",
+   "forms": [
+    "RANIBIZUMAB"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201583",
+   "medicine": "BEVACIZUMAB",
+   "forms": [
+    "BEVACIZUMAB"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201421",
+   "medicine": "PEGAPTANIB SODIUM",
+   "forms": [
+    "PEGAPTANIB SODIUM"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297684",
+   "medicine": "ABICIPAR PEGOL",
+   "forms": [
+    "ABICIPAR PEGOL"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1742982",
+   "medicine": "AFLIBERCEPT",
+   "forms": [
+    "AFLIBERCEPT"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3707357",
+   "medicine": "BROLUCIZUMAB",
+   "forms": [
+    "BROLUCIZUMAB"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108313",
+   "medicine": "CONBERCEPT",
+   "forms": [
+    "CONBERCEPT"
+   ],
+   "target_id": "ENSG00000112715",
+   "target": "VEGFA",
+   "target_name": "vascular endothelial growth factor A",
+   "score": 0.11080646129409887,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1237023",
+   "medicine": "DENOSUMAB",
+   "forms": [
+    "DENOSUMAB"
+   ],
+   "target_id": "ENSG00000120659",
+   "target": "TNFSF11",
+   "target_name": "TNF superfamily member 11",
+   "score": 0.09582525253969602,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3039545",
+   "medicine": "LUSPATERCEPT",
+   "forms": [
+    "LUSPATERCEPT"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.08628685299612619,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4298211",
+   "medicine": "PEGCETACOPLAN",
+   "forms": [
+    "PEGCETACOPLAN"
+   ],
+   "target_id": "ENSG00000125730",
+   "target": "C3",
+   "target_name": "complement C3",
+   "score": 0.08593697057875926,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1808388",
+   "medicine": "BEXAGLIFLOZIN",
+   "forms": [
+    "BEXAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2110731",
+   "medicine": "TOFOGLIFLOZIN ANHYDROUS",
+   "forms": [
+    "TOFOGLIFLOZIN ANHYDROUS",
+    "TOFOGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1770248",
+   "medicine": "ERTUGLIFLOZIN",
+   "forms": [
+    "ERTUGLIFLOZIN",
+    "ERTUGLIFLOZIN PIDOLATE"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297431",
+   "medicine": "HENAGLIFLOZIN",
+   "forms": [
+    "HENAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2048484",
+   "medicine": "CANAGLIFLOZIN ANHYDROUS",
+   "forms": [
+    "CANAGLIFLOZIN ANHYDROUS",
+    "CANAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297658",
+   "medicine": "IPRAGLIFLOZIN L-PROLINE",
+   "forms": [
+    "IPRAGLIFLOZIN L-PROLINE"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2018096",
+   "medicine": "IPRAGLIFLOZIN",
+   "forms": [
+    "IPRAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3039507",
+   "medicine": "SOTAGLIFLOZIN",
+   "forms": [
+    "SOTAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2107830",
+   "medicine": "EMPAGLIFLOZIN",
+   "forms": [
+    "EMPAGLIFLOZIN"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3989871",
+   "medicine": "AVACOPAN",
+   "forms": [
+    "AVACOPAN"
+   ],
+   "target_id": "ENSG00000197405",
+   "target": "C5AR1",
+   "target_name": "complement C5a receptor 1",
+   "score": 0.0831554673040579,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1213492",
+   "medicine": "GIVINOSTAT",
+   "forms": [
+    "GIVINOSTAT",
+    "GIVINOSTAT HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL483254",
+   "medicine": "PANOBINOSTAT",
+   "forms": [
+    "PANOBINOSTAT",
+    "PANOBINOSTAT LACTATE"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL343448",
+   "medicine": "ROMIDEPSIN",
+   "forms": [
+    "ROMIDEPSIN"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL27759",
+   "medicine": "ENTINOSTAT",
+   "forms": [
+    "ENTINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL408513",
+   "medicine": "BELINOSTAT",
+   "forms": [
+    "BELINOSTAT"
+   ],
+   "target_id": "ENSG00000147099",
+   "target": "HDAC8",
+   "target_name": "histone deacetylase 8",
+   "score": 0.08248817034421053,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1371",
+   "medicine": "CHLORZOXAZONE",
+   "forms": [
+    "CHLORZOXAZONE"
+   ],
+   "target_id": "ENSG00000104783",
+   "target": "KCNN4",
+   "target_name": "potassium calcium-activated channel subfamily N member 4",
+   "score": 0.0823913142742032,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4298086",
+   "medicine": "POZELIMAB",
+   "forms": [
+    "POZELIMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2109636",
+   "medicine": "VILOBELIMAB",
+   "forms": [
+    "VILOBELIMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201828",
+   "medicine": "ECULIZUMAB",
+   "forms": [
+    "ECULIZUMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4298207",
+   "medicine": "ZILUCOPLAN",
+   "forms": [
+    "ZILUCOPLAN"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3989986",
+   "medicine": "RAVULIZUMAB",
+   "forms": [
+    "RAVULIZUMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297889",
+   "medicine": "AVACINCAPTAD PEGOL SODIUM",
+   "forms": [
+    "AVACINCAPTAD PEGOL SODIUM"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL5315048",
+   "medicine": "ZILUCOPLAN SODIUM",
+   "forms": [
+    "ZILUCOPLAN SODIUM"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4594316",
+   "medicine": "CROVALIMAB",
+   "forms": [
+    "CROVALIMAB"
+   ],
+   "target_id": "ENSG00000106804",
+   "target": "C5",
+   "target_name": "complement C5",
+   "score": 0.08124597138818694,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2051955",
+   "medicine": "LEVOSIMENDAN",
+   "forms": [
+    "LEVOSIMENDAN"
+   ],
+   "target_id": "ENSG00000129991",
+   "target": "TNNI3",
+   "target_name": "troponin I3, cardiac type",
+   "score": 0.08070084110252702,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL5315093",
+   "medicine": "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE",
+   "forms": [
+    "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE"
+   ],
+   "target_id": "ENSG00000196839",
+   "target": "ADA",
+   "target_name": "adenosine deaminase",
+   "score": 0.07833219946447002,
+   "action_types": [
+    "EXOGENOUS GENE"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1580",
+   "medicine": "PENTOSTATIN",
+   "forms": [
+    "PENTOSTATIN"
+   ],
+   "target_id": "ENSG00000196839",
+   "target": "ADA",
+   "target_name": "adenosine deaminase",
+   "score": 0.07833219946447002,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743070",
+   "medicine": "SILTUXIMAB",
+   "forms": [
+    "SILTUXIMAB"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743050",
+   "medicine": "OLOKIZUMAB",
+   "forms": [
+    "OLOKIZUMAB"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743071",
+   "medicine": "SIRUKUMAB",
+   "forms": [
+    "SIRUKUMAB"
+   ],
+   "target_id": "ENSG00000136244",
+   "target": "IL6",
+   "target_name": "interleukin 6",
+   "score": 0.07557087857651258,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2095222",
+   "medicine": "OCRIPLASMIN",
+   "forms": [
+    "OCRIPLASMIN"
+   ],
+   "target_id": "ENSG00000091128",
+   "target": "LAMB4",
+   "target_name": "laminin subunit beta 4",
+   "score": 0.07474752560998092,
+   "action_types": [
+    "HYDROLYTIC ENZYME"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL313971",
+   "medicine": "ZUCAPSAICIN",
+   "forms": [
+    "ZUCAPSAICIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL112",
+   "medicine": "ACETAMINOPHEN",
+   "forms": [
+    "ACETAMINOPHEN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL294199",
+   "medicine": "CAPSAICIN",
+   "forms": [
+    "CAPSAICIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.07220295562589323,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743029",
+   "medicine": "IBALIZUMAB",
+   "forms": [
+    "IBALIZUMAB"
+   ],
+   "target_id": "ENSG00000010610",
+   "target": "CD4",
+   "target_name": "CD4 molecule",
+   "score": 0.07200168672366895,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL429910",
+   "medicine": "DAPAGLIFLOZIN",
+   "forms": [
+    "DAPAGLIFLOZIN",
+    "DAPAGLIFLOZIN PROPANEDIOL"
+   ],
+   "target_id": "ENSG00000140675",
+   "target": "SLC5A2",
+   "target_name": "solute carrier family 5 member 2",
+   "score": 0.08537565360254311,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL110458",
+   "medicine": "MIGALASTAT",
+   "forms": [
+    "MIGALASTAT",
+    "MIGALASTAT HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000102393",
+   "target": "GLA",
+   "target_name": "galactosidase alpha",
+   "score": 0.8942221939319474,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL2108214",
+   "medicine": "AGALSIDASE ALFA",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2108888",
+   "medicine": "AGALSIDASE BETA",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL110458",
+   "medicine": "MIGALASTAT",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL110458",
+     "medicine": "MIGALASTAT",
+     "forms": [
+      "MIGALASTAT",
+      "MIGALASTAT HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000102393",
+     "target": "GLA",
+     "target_name": "galactosidase alpha",
+     "score": 0.8942221939319474,
+     "action_types": [
+      "STABILISER"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297801",
+   "medicine": "PEGUNIGALSIDASE ALFA",
+   "label": null,
+   "paths": []
+  }
+ ],
+ "narrower": [],
+ "wider_group": [],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL429910",
+   "medicine": "DAPAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL429910",
+     "medicine": "DAPAGLIFLOZIN",
+     "forms": [
+      "DAPAGLIFLOZIN",
+      "DAPAGLIFLOZIN PROPANEDIOL"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL1029",
+   "medicine": "MIGLUSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1029",
+     "medicine": "MIGLUSTAT",
+     "forms": [
+      "MIGLUSTAT"
+     ],
+     "target_id": "ENSG00000148154",
+     "target": "UGCG",
+     "target_name": "UDP-glucose ceramide glucosyltransferase",
+     "score": 0.3896445701994366,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2110588",
+   "medicine": "ELIGLUSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2110588",
+     "medicine": "ELIGLUSTAT",
+     "forms": [
+      "ELIGLUSTAT",
+      "ELIGLUSTAT TARTRATE"
+     ],
+     "target_id": "ENSG00000148154",
+     "target": "UGCG",
+     "target_name": "UDP-glucose ceramide glucosyltransferase",
+     "score": 0.3896445701994366,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201583",
+   "medicine": "BEVACIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201583",
+     "medicine": "BEVACIZUMAB",
+     "forms": [
+      "BEVACIZUMAB"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201825",
+   "medicine": "RANIBIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201825",
+     "medicine": "RANIBIZUMAB",
+     "forms": [
+      "RANIBIZUMAB"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1742982",
+   "medicine": "AFLIBERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1742982",
+     "medicine": "AFLIBERCEPT",
+     "forms": [
+      "AFLIBERCEPT"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297750",
+   "medicine": "FARICIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297750",
+     "medicine": "FARICIMAB",
+     "forms": [
+      "FARICIMAB"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3707357",
+   "medicine": "BROLUCIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3707357",
+     "medicine": "BROLUCIZUMAB",
+     "forms": [
+      "BROLUCIZUMAB"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201421",
+   "medicine": "PEGAPTANIB SODIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201421",
+     "medicine": "PEGAPTANIB SODIUM",
+     "forms": [
+      "PEGAPTANIB SODIUM"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108313",
+   "medicine": "CONBERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108313",
+     "medicine": "CONBERCEPT",
+     "forms": [
+      "CONBERCEPT"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297684",
+   "medicine": "ABICIPAR PEGOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297684",
+     "medicine": "ABICIPAR PEGOL",
+     "forms": [
+      "ABICIPAR PEGOL"
+     ],
+     "target_id": "ENSG00000112715",
+     "target": "VEGFA",
+     "target_name": "vascular endothelial growth factor A",
+     "score": 0.11080646129409887,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1237023",
+   "medicine": "DENOSUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1237023",
+     "medicine": "DENOSUMAB",
+     "forms": [
+      "DENOSUMAB"
+     ],
+     "target_id": "ENSG00000120659",
+     "target": "TNFSF11",
+     "target_name": "TNF superfamily member 11",
+     "score": 0.09582525253969602,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3039545",
+   "medicine": "LUSPATERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3039545",
+     "medicine": "LUSPATERCEPT",
+     "forms": [
+      "LUSPATERCEPT"
+     ],
+     "target_id": "ENSG00000105329",
+     "target": "TGFB1",
+     "target_name": "transforming growth factor beta 1",
+     "score": 0.08628685299612619,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4298211",
+   "medicine": "PEGCETACOPLAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298211",
+     "medicine": "PEGCETACOPLAN",
+     "forms": [
+      "PEGCETACOPLAN"
+     ],
+     "target_id": "ENSG00000125730",
+     "target": "C3",
+     "target_name": "complement C3",
+     "score": 0.08593697057875926,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2107830",
+   "medicine": "EMPAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2107830",
+     "medicine": "EMPAGLIFLOZIN",
+     "forms": [
+      "EMPAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2048484",
+   "medicine": "CANAGLIFLOZIN ANHYDROUS",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2048484",
+     "medicine": "CANAGLIFLOZIN ANHYDROUS",
+     "forms": [
+      "CANAGLIFLOZIN ANHYDROUS",
+      "CANAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3039507",
+   "medicine": "SOTAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3039507",
+     "medicine": "SOTAGLIFLOZIN",
+     "forms": [
+      "SOTAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1770248",
+   "medicine": "ERTUGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1770248",
+     "medicine": "ERTUGLIFLOZIN",
+     "forms": [
+      "ERTUGLIFLOZIN",
+      "ERTUGLIFLOZIN PIDOLATE"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2018096",
+   "medicine": "IPRAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2018096",
+     "medicine": "IPRAGLIFLOZIN",
+     "forms": [
+      "IPRAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1808388",
+   "medicine": "BEXAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1808388",
+     "medicine": "BEXAGLIFLOZIN",
+     "forms": [
+      "BEXAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297431",
+   "medicine": "HENAGLIFLOZIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297431",
+     "medicine": "HENAGLIFLOZIN",
+     "forms": [
+      "HENAGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2110731",
+   "medicine": "TOFOGLIFLOZIN ANHYDROUS",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2110731",
+     "medicine": "TOFOGLIFLOZIN ANHYDROUS",
+     "forms": [
+      "TOFOGLIFLOZIN ANHYDROUS",
+      "TOFOGLIFLOZIN"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297658",
+   "medicine": "IPRAGLIFLOZIN L-PROLINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297658",
+     "medicine": "IPRAGLIFLOZIN L-PROLINE",
+     "forms": [
+      "IPRAGLIFLOZIN L-PROLINE"
+     ],
+     "target_id": "ENSG00000140675",
+     "target": "SLC5A2",
+     "target_name": "solute carrier family 5 member 2",
+     "score": 0.08537565360254311,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3989871",
+   "medicine": "AVACOPAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3989871",
+     "medicine": "AVACOPAN",
+     "forms": [
+      "AVACOPAN"
+     ],
+     "target_id": "ENSG00000197405",
+     "target": "C5AR1",
+     "target_name": "complement C5a receptor 1",
+     "score": 0.0831554673040579,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL483254",
+   "medicine": "PANOBINOSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL483254",
+     "medicine": "PANOBINOSTAT",
+     "forms": [
+      "PANOBINOSTAT",
+      "PANOBINOSTAT LACTATE"
+     ],
+     "target_id": "ENSG00000147099",
+     "target": "HDAC8",
+     "target_name": "histone deacetylase 8",
+     "score": 0.08248817034421053,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL343448",
+   "medicine": "ROMIDEPSIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL343448",
+     "medicine": "ROMIDEPSIN",
+     "forms": [
+      "ROMIDEPSIN"
+     ],
+     "target_id": "ENSG00000147099",
+     "target": "HDAC8",
+     "target_name": "histone deacetylase 8",
+     "score": 0.08248817034421053,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL27759",
+   "medicine": "ENTINOSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL27759",
+     "medicine": "ENTINOSTAT",
+     "forms": [
+      "ENTINOSTAT"
+     ],
+     "target_id": "ENSG00000147099",
+     "target": "HDAC8",
+     "target_name": "histone deacetylase 8",
+     "score": 0.08248817034421053,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL408513",
+   "medicine": "BELINOSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL408513",
+     "medicine": "BELINOSTAT",
+     "forms": [
+      "BELINOSTAT"
+     ],
+     "target_id": "ENSG00000147099",
+     "target": "HDAC8",
+     "target_name": "histone deacetylase 8",
+     "score": 0.08248817034421053,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1213492",
+   "medicine": "GIVINOSTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1213492",
+     "medicine": "GIVINOSTAT",
+     "forms": [
+      "GIVINOSTAT",
+      "GIVINOSTAT HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000147099",
+     "target": "HDAC8",
+     "target_name": "histone deacetylase 8",
+     "score": 0.08248817034421053,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1371",
+   "medicine": "CHLORZOXAZONE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1371",
+     "medicine": "CHLORZOXAZONE",
+     "forms": [
+      "CHLORZOXAZONE"
+     ],
+     "target_id": "ENSG00000104783",
+     "target": "KCNN4",
+     "target_name": "potassium calcium-activated channel subfamily N member 4",
+     "score": 0.0823913142742032,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201828",
+   "medicine": "ECULIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201828",
+     "medicine": "ECULIZUMAB",
+     "forms": [
+      "ECULIZUMAB"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3989986",
+   "medicine": "RAVULIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3989986",
+     "medicine": "RAVULIZUMAB",
+     "forms": [
+      "RAVULIZUMAB"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4298086",
+   "medicine": "POZELIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298086",
+     "medicine": "POZELIMAB",
+     "forms": [
+      "POZELIMAB"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4298207",
+   "medicine": "ZILUCOPLAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298207",
+     "medicine": "ZILUCOPLAN",
+     "forms": [
+      "ZILUCOPLAN"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2109636",
+   "medicine": "VILOBELIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2109636",
+     "medicine": "VILOBELIMAB",
+     "forms": [
+      "VILOBELIMAB"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4594316",
+   "medicine": "CROVALIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4594316",
+     "medicine": "CROVALIMAB",
+     "forms": [
+      "CROVALIMAB"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297889",
+   "medicine": "AVACINCAPTAD PEGOL SODIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297889",
+     "medicine": "AVACINCAPTAD PEGOL SODIUM",
+     "forms": [
+      "AVACINCAPTAD PEGOL SODIUM"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL5315048",
+   "medicine": "ZILUCOPLAN SODIUM",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL5315048",
+     "medicine": "ZILUCOPLAN SODIUM",
+     "forms": [
+      "ZILUCOPLAN SODIUM"
+     ],
+     "target_id": "ENSG00000106804",
+     "target": "C5",
+     "target_name": "complement C5",
+     "score": 0.08124597138818694,
+     "action_types": [
+      "BINDING AGENT"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2051955",
+   "medicine": "LEVOSIMENDAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2051955",
+     "medicine": "LEVOSIMENDAN",
+     "forms": [
+      "LEVOSIMENDAN"
+     ],
+     "target_id": "ENSG00000129991",
+     "target": "TNNI3",
+     "target_name": "troponin I3, cardiac type",
+     "score": 0.08070084110252702,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1580",
+   "medicine": "PENTOSTATIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1580",
+     "medicine": "PENTOSTATIN",
+     "forms": [
+      "PENTOSTATIN"
+     ],
+     "target_id": "ENSG00000196839",
+     "target": "ADA",
+     "target_name": "adenosine deaminase",
+     "score": 0.07833219946447002,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL5315093",
+   "medicine": "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL5315093",
+     "medicine": "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE",
+     "forms": [
+      "AUTOLOGOUS CD34+ ENRICHED CELL FRACTION THAT CONTAINS CD34+ CELLS TRANSDUCED WITH RETROVIRAL VECTOR THAT ENCODES FOR THE HUMAN ADA CDNA SEQUENCE"
+     ],
+     "target_id": "ENSG00000196839",
+     "target": "ADA",
+     "target_name": "adenosine deaminase",
+     "score": 0.07833219946447002,
+     "action_types": [
+      "EXOGENOUS GENE"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743070",
+   "medicine": "SILTUXIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743070",
+     "medicine": "SILTUXIMAB",
+     "forms": [
+      "SILTUXIMAB"
+     ],
+     "target_id": "ENSG00000136244",
+     "target": "IL6",
+     "target_name": "interleukin 6",
+     "score": 0.07557087857651258,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743050",
+   "medicine": "OLOKIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743050",
+     "medicine": "OLOKIZUMAB",
+     "forms": [
+      "OLOKIZUMAB"
+     ],
+     "target_id": "ENSG00000136244",
+     "target": "IL6",
+     "target_name": "interleukin 6",
+     "score": 0.07557087857651258,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743071",
+   "medicine": "SIRUKUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743071",
+     "medicine": "SIRUKUMAB",
+     "forms": [
+      "SIRUKUMAB"
+     ],
+     "target_id": "ENSG00000136244",
+     "target": "IL6",
+     "target_name": "interleukin 6",
+     "score": 0.07557087857651258,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2095222",
+   "medicine": "OCRIPLASMIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2095222",
+     "medicine": "OCRIPLASMIN",
+     "forms": [
+      "OCRIPLASMIN"
+     ],
+     "target_id": "ENSG00000091128",
+     "target": "LAMB4",
+     "target_name": "laminin subunit beta 4",
+     "score": 0.07474752560998092,
+     "action_types": [
+      "HYDROLYTIC ENZYME"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL112",
+   "medicine": "ACETAMINOPHEN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL112",
+     "medicine": "ACETAMINOPHEN",
+     "forms": [
+      "ACETAMINOPHEN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.07220295562589323,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL294199",
+   "medicine": "CAPSAICIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL294199",
+     "medicine": "CAPSAICIN",
+     "forms": [
+      "CAPSAICIN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.07220295562589323,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL313971",
+   "medicine": "ZUCAPSAICIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL313971",
+     "medicine": "ZUCAPSAICIN",
+     "forms": [
+      "ZUCAPSAICIN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.07220295562589323,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743029",
+   "medicine": "IBALIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743029",
+     "medicine": "IBALIZUMAB",
+     "forms": [
+      "IBALIZUMAB"
+     ],
+     "target_id": "ENSG00000010610",
+     "target": "CD4",
+     "target_name": "CD4 molecule",
+     "score": 0.07200168672366895,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 54,
+  "unclear_link": 0
+ }
+}

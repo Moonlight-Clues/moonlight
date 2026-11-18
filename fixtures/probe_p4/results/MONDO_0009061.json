@@ -1,0 +1,1146 @@
+{
+ "id": "MONDO_0009061",
+ "name": "cystic fibrosis",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000001626",
+   "symbol": "CFTR",
+   "name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207
+  },
+  {
+   "id": "ENSG00000143947",
+   "symbol": "RPS27A",
+   "name": "ribosomal protein S27a",
+   "score": 0.5590034801739948
+  },
+  {
+   "id": "ENSG00000204308",
+   "symbol": "RNF5",
+   "name": "ring finger protein 5",
+   "score": 0.48084106753843
+  },
+  {
+   "id": "ENSG00000150991",
+   "symbol": "UBC",
+   "name": "ubiquitin C",
+   "score": 0.4664169115565105
+  },
+  {
+   "id": "ENSG00000165280",
+   "symbol": "VCP",
+   "name": "valosin containing protein",
+   "score": 0.464666605307334
+  },
+  {
+   "id": "ENSG00000138942",
+   "symbol": "RNF185",
+   "name": "ring finger protein 185",
+   "score": 0.4638227176293007
+  },
+  {
+   "id": "ENSG00000072849",
+   "symbol": "DERL2",
+   "name": "derlin 2",
+   "score": 0.4638227176293007
+  },
+  {
+   "id": "ENSG00000135506",
+   "symbol": "OS9",
+   "name": "OS9 endoplasmic reticulum lectin",
+   "score": 0.4638227176293007
+  },
+  {
+   "id": "ENSG00000136986",
+   "symbol": "DERL1",
+   "name": "derlin 1",
+   "score": 0.46262158310157553
+  },
+  {
+   "id": "ENSG00000170315",
+   "symbol": "UBB",
+   "name": "ubiquitin B",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000221983",
+   "symbol": "UBA52",
+   "name": "ubiquitin A-52 residue ribosomal protein fusion product 1",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000107566",
+   "symbol": "ERLIN1",
+   "name": "ER lipid raft associated 1",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000068912",
+   "symbol": "ERLEC1",
+   "name": "endoplasmic reticulum lectin 1",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000099958",
+   "symbol": "DERL3",
+   "name": "derlin 3",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000147475",
+   "symbol": "ERLIN2",
+   "name": "ER lipid raft associated 2",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000071537",
+   "symbol": "SEL1L",
+   "name": "SEL1L adaptor subunit of SYVN1 ubiquitin ligase",
+   "score": 0.4619748183558772
+  },
+  {
+   "id": "ENSG00000105329",
+   "symbol": "TGFB1",
+   "name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198
+  },
+  {
+   "id": "ENSG00000174502",
+   "symbol": "SLC26A9",
+   "name": "solute carrier family 26 member 9",
+   "score": 0.44227341274489157
+  },
+  {
+   "id": "ENSG00000197249",
+   "symbol": "SERPINA1",
+   "name": "serpin family A member 1",
+   "score": 0.4208099038109706
+  },
+  {
+   "id": "ENSG00000010704",
+   "symbol": "HFE",
+   "name": "homeostatic iron regulator",
+   "score": 0.41813852520496186
+  },
+  {
+   "id": "ENSG00000018280",
+   "symbol": "SLC11A1",
+   "name": "solute carrier family 11 member 1",
+   "score": 0.4007123947276325
+  },
+  {
+   "id": "ENSG00000027697",
+   "symbol": "IFNGR1",
+   "name": "interferon gamma receptor 1",
+   "score": 0.3975518139697256
+  },
+  {
+   "id": "ENSG00000172809",
+   "symbol": "RPL38",
+   "name": "ribosomal protein L38",
+   "score": 0.3960883326372927
+  },
+  {
+   "id": "ENSG00000268104",
+   "symbol": "SLC6A14",
+   "name": "solute carrier family 6 member 14",
+   "score": 0.3959799564693109
+  },
+  {
+   "id": "ENSG00000159128",
+   "symbol": "IFNGR2",
+   "name": "interferon gamma receptor 2",
+   "score": 0.3948652764093801
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0005087",
+   "name": "respiratory system disorder"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0006025",
+   "name": "autosomal recessive disease"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009062",
+   "name": "cystic fibrosis-gastritis-megaloblastic anemia syndrome"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL4101487",
+   "medicine": "GALICAFTOR",
+   "forms": [
+    "GALICAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297649",
+   "medicine": "OLACAFTOR",
+   "forms": [
+    "OLACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297849",
+   "medicine": "BAMOCAFTOR",
+   "forms": [
+    "BAMOCAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650318",
+   "medicine": "ICENTICAFTOR",
+   "forms": [
+    "ICENTICAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "ACTIVATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_1_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802150",
+   "medicine": "NAVOCAFTOR",
+   "forms": [
+    "NAVOCAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297392",
+   "medicine": "IOWH-032",
+   "forms": [
+    "IOWH-032"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297789",
+   "medicine": "MT-3724",
+   "forms": [
+    "MT-3724"
+   ],
+   "target_id": "ENSG00000143947",
+   "target": "RPS27A",
+   "target_name": "ribosomal protein S27a",
+   "score": 0.5590034801739948,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743000",
+   "medicine": "CITATUZUMAB BOGATOX",
+   "forms": [
+    "CITATUZUMAB BOGATOX"
+   ],
+   "target_id": "ENSG00000143947",
+   "target": "RPS27A",
+   "target_name": "ribosomal protein S27a",
+   "score": 0.5590034801739948,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297744",
+   "medicine": "ELX-02",
+   "forms": [
+    "ELX-02"
+   ],
+   "target_id": "ENSG00000143947",
+   "target": "RPS27A",
+   "target_name": "ribosomal protein S27a",
+   "score": 0.5590034801739948,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108785",
+   "medicine": "ZOLIMOMAB ARITOX",
+   "forms": [
+    "ZOLIMOMAB ARITOX"
+   ],
+   "target_id": "ENSG00000143947",
+   "target": "RPS27A",
+   "target_name": "ribosomal protein S27a",
+   "score": 0.5590034801739948,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298024",
+   "medicine": "BINTRAFUSP ALFA",
+   "forms": [
+    "BINTRAFUSP ALFA"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743022",
+   "medicine": "FRESOLIMUMAB",
+   "forms": [
+    "FRESOLIMUMAB"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108431",
+   "medicine": "METELIMUMAB",
+   "forms": [
+    "METELIMUMAB"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109585",
+   "medicine": "LY-2382770",
+   "forms": [
+    "LY-2382770"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743000",
+   "medicine": "CITATUZUMAB BOGATOX",
+   "forms": [
+    "CITATUZUMAB BOGATOX"
+   ],
+   "target_id": "ENSG00000172809",
+   "target": "RPL38",
+   "target_name": "ribosomal protein L38",
+   "score": 0.3960883326372927,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108785",
+   "medicine": "ZOLIMOMAB ARITOX",
+   "forms": [
+    "ZOLIMOMAB ARITOX"
+   ],
+   "target_id": "ENSG00000172809",
+   "target": "RPL38",
+   "target_name": "ribosomal protein L38",
+   "score": 0.3960883326372927,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297789",
+   "medicine": "MT-3724",
+   "forms": [
+    "MT-3724"
+   ],
+   "target_id": "ENSG00000172809",
+   "target": "RPL38",
+   "target_name": "ribosomal protein L38",
+   "score": 0.3960883326372927,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297744",
+   "medicine": "ELX-02",
+   "forms": [
+    "ELX-02"
+   ],
+   "target_id": "ENSG00000172809",
+   "target": "RPL38",
+   "target_name": "ribosomal protein L38",
+   "score": 0.3960883326372927,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108184",
+   "medicine": "CROFELEMER",
+   "forms": [
+    "CROFELEMER"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3039545",
+   "medicine": "LUSPATERCEPT",
+   "forms": [
+    "LUSPATERCEPT"
+   ],
+   "target_id": "ENSG00000105329",
+   "target": "TGFB1",
+   "target_name": "transforming growth factor beta 1",
+   "score": 0.4462835679597198,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL256997",
+   "medicine": "ATALUREN",
+   "forms": [
+    "ATALUREN"
+   ],
+   "target_id": "ENSG00000143947",
+   "target": "RPS27A",
+   "target_name": "ribosomal protein S27a",
+   "score": 0.5590034801739948,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL256997",
+   "medicine": "ATALUREN",
+   "forms": [
+    "ATALUREN"
+   ],
+   "target_id": "ENSG00000172809",
+   "target": "RPL38",
+   "target_name": "ribosomal protein L38",
+   "score": 0.3960883326372927,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL2010601",
+   "medicine": "IVACAFTOR",
+   "forms": [
+    "IVACAFTOR",
+    "DEUTIVACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "ACTIVATOR",
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3544914",
+   "medicine": "TEZACAFTOR",
+   "forms": [
+    "TEZACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298128",
+   "medicine": "ELEXACAFTOR",
+   "forms": [
+    "ELEXACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103870",
+   "medicine": "LUMACAFTOR",
+   "forms": [
+    "LUMACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314934",
+   "medicine": "VANZACAFTOR",
+   "forms": [
+    "VANZACAFTOR"
+   ],
+   "target_id": "ENSG00000001626",
+   "target": "CFTR",
+   "target_name": "CF transmembrane conductance regulator",
+   "score": 0.9211437412666207,
+   "action_types": [
+    "POSITIVE MODULATOR"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1201564",
+   "medicine": "INTERFERON GAMMA-1B",
+   "forms": [
+    "INTERFERON GAMMA-1B"
+   ],
+   "target_id": "ENSG00000027697",
+   "target": "IFNGR1",
+   "target_name": "interferon gamma receptor 1",
+   "score": 0.3975518139697256,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1201564",
+   "medicine": "INTERFERON GAMMA-1B",
+   "forms": [
+    "INTERFERON GAMMA-1B"
+   ],
+   "target_id": "ENSG00000159128",
+   "target": "IFNGR2",
+   "target_name": "interferon gamma receptor 2",
+   "score": 0.3948652764093801,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL600",
+   "medicine": "ACETYLCYSTEINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL529",
+   "medicine": "AZITHROMYCIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL158",
+   "medicine": "AZTREONAM",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL6067483",
+   "medicine": "COLISTIMETHATE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1201431",
+   "medicine": "DORNASE ALFA",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL4298128",
+   "medicine": "ELEXACAFTOR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298128",
+     "medicine": "ELEXACAFTOR",
+     "forms": [
+      "ELEXACAFTOR"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201564",
+   "medicine": "INTERFERON GAMMA-1B",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201564",
+     "medicine": "INTERFERON GAMMA-1B",
+     "forms": [
+      "INTERFERON GAMMA-1B"
+     ],
+     "target_id": "ENSG00000027697",
+     "target": "IFNGR1",
+     "target_name": "interferon gamma receptor 1",
+     "score": 0.3975518139697256,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1201564",
+     "medicine": "INTERFERON GAMMA-1B",
+     "forms": [
+      "INTERFERON GAMMA-1B"
+     ],
+     "target_id": "ENSG00000159128",
+     "target": "IFNGR2",
+     "target_name": "interferon gamma receptor 2",
+     "score": 0.3948652764093801,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2010601",
+   "medicine": "IVACAFTOR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2010601",
+     "medicine": "IVACAFTOR",
+     "forms": [
+      "IVACAFTOR",
+      "DEUTIVACAFTOR"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "ACTIVATOR",
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL33",
+   "medicine": "LEVOFLOXACIN ANHYDROUS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2103870",
+   "medicine": "LUMACAFTOR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2103870",
+     "medicine": "LUMACAFTOR",
+     "forms": [
+      "LUMACAFTOR"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "STABILISER"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL689",
+   "medicine": "MANNITOL",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1550",
+   "medicine": "PHYTONADIONE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3544914",
+   "medicine": "TEZACAFTOR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3544914",
+     "medicine": "TEZACAFTOR",
+     "forms": [
+      "TEZACAFTOR"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1747",
+   "medicine": "TOBRAMYCIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL5314934",
+   "medicine": "VANZACAFTOR",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL5314934",
+     "medicine": "VANZACAFTOR",
+     "forms": [
+      "VANZACAFTOR"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "narrower": [],
+ "wider_group": [
+  {
+   "medicine_id": "CHEMBL1214192",
+   "medicine": "BEMEGRIDE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200737",
+   "medicine": "COLFOSCERIL PALMITATE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL519364",
+   "medicine": "DIMEFLINE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1754",
+   "medicine": "DOXAPRAM",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1229908",
+   "medicine": "ETHAMIVAN",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL215303",
+   "medicine": "GARENOXACIN",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL292707",
+   "medicine": "IBUPROXAM",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL6068006",
+   "medicine": "LASCUFLOXACIN",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2104462",
+   "medicine": "MEPIXANOX",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2104607",
+   "medicine": "NIKETHAMIDE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200689",
+   "medicine": "NITRIC OXIDE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1201586",
+   "medicine": "PALIVIZUMAB",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL116943",
+   "medicine": "PENTYLENETETRAZOL",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL702",
+   "medicine": "PIPERACILLIN",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3833302",
+   "medicine": "PRETHCAMIDE",
+   "label": "Not listed as approved for this exact disease. Approved for respiratory system disorder, a wider group the database puts this disease in.",
+   "paths": []
+  }
+ ],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL256997",
+   "medicine": "ATALUREN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL256997",
+     "medicine": "ATALUREN",
+     "forms": [
+      "ATALUREN"
+     ],
+     "target_id": "ENSG00000143947",
+     "target": "RPS27A",
+     "target_name": "ribosomal protein S27a",
+     "score": 0.5590034801739948,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL256997",
+     "medicine": "ATALUREN",
+     "forms": [
+      "ATALUREN"
+     ],
+     "target_id": "ENSG00000172809",
+     "target": "RPL38",
+     "target_name": "ribosomal protein L38",
+     "score": 0.3960883326372927,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL2108184",
+   "medicine": "CROFELEMER",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108184",
+     "medicine": "CROFELEMER",
+     "forms": [
+      "CROFELEMER"
+     ],
+     "target_id": "ENSG00000001626",
+     "target": "CFTR",
+     "target_name": "CF transmembrane conductance regulator",
+     "score": 0.9211437412666207,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3039545",
+   "medicine": "LUSPATERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3039545",
+     "medicine": "LUSPATERCEPT",
+     "forms": [
+      "LUSPATERCEPT"
+     ],
+     "target_id": "ENSG00000105329",
+     "target": "TGFB1",
+     "target_name": "transforming growth factor beta 1",
+     "score": 0.4462835679597198,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 15,
+  "unclear_link": 0
+ }
+}

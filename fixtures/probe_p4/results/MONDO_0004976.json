@@ -1,0 +1,2678 @@
+{
+ "id": "MONDO_0004976",
+ "name": "amyotrophic lateral sclerosis",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000142168",
+   "symbol": "SOD1",
+   "name": "superoxide dismutase 1",
+   "score": 0.8879807865340971
+  },
+  {
+   "id": "ENSG00000120948",
+   "symbol": "TARDBP",
+   "name": "TAR DNA binding protein",
+   "score": 0.8498381158327114
+  },
+  {
+   "id": "ENSG00000089280",
+   "symbol": "FUS",
+   "name": "FUS RNA binding protein",
+   "score": 0.8434273474981544
+  },
+  {
+   "id": "ENSG00000188021",
+   "symbol": "UBQLN2",
+   "name": "ubiquilin 2",
+   "score": 0.8344433804205211
+  },
+  {
+   "id": "ENSG00000183735",
+   "symbol": "TBK1",
+   "name": "TANK binding kinase 1",
+   "score": 0.8310190521428995
+  },
+  {
+   "id": "ENSG00000161011",
+   "symbol": "SQSTM1",
+   "name": "sequestosome 1",
+   "score": 0.8184341952865708
+  },
+  {
+   "id": "ENSG00000214274",
+   "symbol": "ANG",
+   "name": "angiogenin",
+   "score": 0.8148077006888096
+  },
+  {
+   "id": "ENSG00000127824",
+   "symbol": "TUBA4A",
+   "name": "tubulin alpha 4a",
+   "score": 0.8088795270014475
+  },
+  {
+   "id": "ENSG00000204843",
+   "symbol": "DCTN1",
+   "name": "dynactin subunit 1",
+   "score": 0.8049671516079572
+  },
+  {
+   "id": "ENSG00000165280",
+   "symbol": "VCP",
+   "name": "valosin containing protein",
+   "score": 0.8009158573077135
+  },
+  {
+   "id": "ENSG00000124164",
+   "symbol": "VAPB",
+   "name": "VAMP associated protein B and C",
+   "score": 0.7964487162810643
+  },
+  {
+   "id": "ENSG00000112367",
+   "symbol": "FIG4",
+   "name": "FIG4 phosphoinositide 5-phosphatase",
+   "score": 0.7936125552557196
+  },
+  {
+   "id": "ENSG00000107290",
+   "symbol": "SETX",
+   "name": "senataxin",
+   "score": 0.793324044409646
+  },
+  {
+   "id": "ENSG00000123240",
+   "symbol": "OPTN",
+   "name": "optineurin",
+   "score": 0.78388625436517
+  },
+  {
+   "id": "ENSG00000003393",
+   "symbol": "ALS2",
+   "name": "alsin Rho guanine nucleotide exchange factor ALS2",
+   "score": 0.7812801889971122
+  },
+  {
+   "id": "ENSG00000104133",
+   "symbol": "SPG11",
+   "name": "SPG11 vesicle trafficking associated, spatacsin",
+   "score": 0.7800443060964826
+  },
+  {
+   "id": "ENSG00000083937",
+   "symbol": "CHMP2B",
+   "name": "charged multivesicular body protein 2B",
+   "score": 0.7785618446308361
+  },
+  {
+   "id": "ENSG00000122359",
+   "symbol": "ANXA11",
+   "name": "annexin A11",
+   "score": 0.7750670197162972
+  },
+  {
+   "id": "ENSG00000108518",
+   "symbol": "PFN1",
+   "name": "profilin 1",
+   "score": 0.7686138524769013
+  },
+  {
+   "id": "ENSG00000147955",
+   "symbol": "SIGMAR1",
+   "name": "sigma non-opioid intracellular receptor 1",
+   "score": 0.7524997685563407
+  },
+  {
+   "id": "ENSG00000015479",
+   "symbol": "MATR3",
+   "name": "matrin 3",
+   "score": 0.7354948000974094
+  },
+  {
+   "id": "ENSG00000155980",
+   "symbol": "KIF5A",
+   "name": "kinesin family member 5A",
+   "score": 0.7234200103187534
+  },
+  {
+   "id": "ENSG00000178568",
+   "symbol": "ERBB4",
+   "name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714
+  },
+  {
+   "id": "ENSG00000090054",
+   "symbol": "SPTLC1",
+   "name": "serine palmitoyltransferase long chain base subunit 1",
+   "score": 0.6830438899005977
+  },
+  {
+   "id": "ENSG00000204842",
+   "symbol": "ATXN2",
+   "name": "ataxin 2",
+   "score": 0.6827976708718198
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0003182",
+   "name": "anterior horn disorder"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0020128",
+   "name": "motor neuron disorder"
+  },
+  {
+   "role": "parent",
+   "id": "HP_0007373",
+   "name": "Motor neuron atrophy"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0005144",
+   "name": "familial amyotrophic lateral sclerosis"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0005145",
+   "name": "sporadic amyotrophic lateral sclerosis"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL4297987",
+   "medicine": "ENAPOTAMAB VEDOTIN",
+   "forms": [
+    "ENAPOTAMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109575",
+   "medicine": "BIIB-015",
+   "forms": [
+    "BIIB-015"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL94657",
+   "medicine": "PATUPILONE",
+   "forms": [
+    "PATUPILONE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109266",
+   "medicine": "AVE-9633",
+   "forms": [
+    "AVE-9633"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL552212",
+   "medicine": "LEXIBULIN",
+   "forms": [
+    "LEXIBULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL492399",
+   "medicine": "VERUBULIN",
+   "forms": [
+    "VERUBULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "DISRUPTING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298101",
+   "medicine": "LADIRATUZUMAB VEDOTIN",
+   "forms": [
+    "LADIRATUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3833306",
+   "medicine": "VANDORTUZUMAB VEDOTIN",
+   "forms": [
+    "VANDORTUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297892",
+   "medicine": "ANVATABART OPADOTIN",
+   "forms": [
+    "ANVATABART OPADOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL49642",
+   "medicine": "INDIBULIN",
+   "forms": [
+    "INDIBULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594515",
+   "medicine": "LOSATUXIZUMAB VEDOTIN",
+   "forms": [
+    "LOSATUXIZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108672",
+   "medicine": "VORSETUZUMAB MAFODOTIN",
+   "forms": [
+    "VORSETUZUMAB MAFODOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650293",
+   "medicine": "APRUTUMAB IXADOTIN",
+   "forms": [
+    "APRUTUMAB IXADOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109288",
+   "medicine": "BIVATUZUMAB MERTANSINE",
+   "forms": [
+    "BIVATUZUMAB MERTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "UNKNOWN",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298098",
+   "medicine": "TUSAMITAMAB RAVTANSINE",
+   "forms": [
+    "TUSAMITAMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297296",
+   "medicine": "KOS-1584",
+   "forms": [
+    "KOS-1584"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545371",
+   "medicine": "DENINTUZUMAB MAFODOTIN",
+   "forms": [
+    "DENINTUZUMAB MAFODOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109633",
+   "medicine": "IMGN-388",
+   "forms": [
+    "IMGN-388"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4279455",
+   "medicine": "LAROTAXEL",
+   "forms": [
+    "LAROTAXEL"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2304041",
+   "medicine": "SAGOPILONE",
+   "forms": [
+    "SAGOPILONE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297440",
+   "medicine": "T-900607",
+   "forms": [
+    "T-900607"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "DISRUPTING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103826",
+   "medicine": "DAVUNETIDE",
+   "forms": [
+    "DAVUNETIDE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743031",
+   "medicine": "INDATUXIMAB RAVTANSINE",
+   "forms": [
+    "INDATUXIMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109279",
+   "medicine": "RG-7598",
+   "forms": [
+    "RG-7598"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297441",
+   "medicine": "PACLITAXEL DOCOSAHEXAENOIC ACID",
+   "forms": [
+    "PACLITAXEL DOCOSAHEXAENOIC ACID"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1206232",
+   "medicine": "FOSBRETABULIN",
+   "forms": [
+    "FOSBRETABULIN",
+    "FOSBRETABULIN DISODIUM",
+    "FOSBRETABULIN TROMETHAMINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR",
+    "DISRUPTING AGENT"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297935",
+   "medicine": "RG-7841",
+   "forms": [
+    "RG-7841"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3990032",
+   "medicine": "TELISOTUZUMAB VEDOTIN",
+   "forms": [
+    "TELISOTUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1742997",
+   "medicine": "CANTUZUMAB MERTANSINE",
+   "forms": [
+    "CANTUZUMAB MERTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594455",
+   "medicine": "AGS-16C3F",
+   "forms": [
+    "AGS-16C3F"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "DISRUPTING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL39541",
+   "medicine": "DOLASTATIN-10",
+   "forms": [
+    "DOLASTATIN-10"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298209",
+   "medicine": "BELANTAMAB MAFODOTIN",
+   "forms": [
+    "BELANTAMAB MAFODOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL572284",
+   "medicine": "OMBRABULIN",
+   "forms": [
+    "OMBRABULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109574",
+   "medicine": "ASG-5ME",
+   "forms": [
+    "ASG-5ME"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109635",
+   "medicine": "SAR-566658",
+   "forms": [
+    "SAR-566658"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL96172",
+   "medicine": "EPOTHILONE D",
+   "forms": [
+    "EPOTHILONE D"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3989512",
+   "medicine": "SOBLIDOTIN",
+   "forms": [
+    "SOBLIDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109629",
+   "medicine": "ANETUMAB RAVTANSINE",
+   "forms": [
+    "ANETUMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2103852",
+   "medicine": "CROLIBULIN",
+   "forms": [
+    "CROLIBULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1089636",
+   "medicine": "ANG1005",
+   "forms": [
+    "ANG1005"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707277",
+   "medicine": "DEPATUXIZUMAB MAFODOTIN",
+   "forms": [
+    "DEPATUXIZUMAB MAFODOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314782",
+   "medicine": "TRASTUZUMAB BOTIDOTIN",
+   "forms": [
+    "TRASTUZUMAB BOTIDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297859",
+   "medicine": "AZINTUXIZUMAB VEDOTIN",
+   "forms": [
+    "AZINTUXIZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5095312",
+   "medicine": "MECBOTAMAB VEDOTIN",
+   "forms": [
+    "MECBOTAMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297636",
+   "medicine": "PLOCABULIN",
+   "forms": [
+    "PLOCABULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109286",
+   "medicine": "COLTUXIMAB RAVTANSINE",
+   "forms": [
+    "COLTUXIMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109556",
+   "medicine": "MLN-2704",
+   "forms": [
+    "MLN-2704"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297804",
+   "medicine": "PF-06263507",
+   "forms": [
+    "PF-06263507"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297938",
+   "medicine": "LIFASTUZUMAB VEDOTIN",
+   "forms": [
+    "LIFASTUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298045",
+   "medicine": "INDUSATUMAB VEDOTIN",
+   "forms": [
+    "INDUSATUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109281",
+   "medicine": "RG-7600",
+   "forms": [
+    "RG-7600"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545372",
+   "medicine": "SOFITUZUMAB VEDOTIN",
+   "forms": [
+    "SOFITUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109282",
+   "medicine": "RG-7636",
+   "forms": [
+    "RG-7636"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107759",
+   "medicine": "MILATAXEL",
+   "forms": [
+    "MILATAXEL"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743037",
+   "medicine": "LORVOTUZUMAB MERTANSINE",
+   "forms": [
+    "LORVOTUZUMAB MERTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297268",
+   "medicine": "BMS-275183",
+   "forms": [
+    "BMS-275183"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1742998",
+   "medicine": "CANTUZUMAB RAVTANSINE",
+   "forms": [
+    "CANTUZUMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1096380",
+   "medicine": "PLINABULIN",
+   "forms": [
+    "PLINABULIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297736",
+   "medicine": "PRALUZATAMAB RAVTANSINE",
+   "forms": [
+    "PRALUZATAMAB RAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3301585",
+   "medicine": "PINATUZUMAB VEDOTIN",
+   "forms": [
+    "PINATUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL87493",
+   "medicine": "FENFLURAMINE",
+   "forms": [
+    "FENFLURAMINE",
+    "FENFLURAMINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000147955",
+   "target": "SIGMAR1",
+   "target_name": "sigma non-opioid intracellular receptor 1",
+   "score": 0.7524997685563407,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL73234",
+   "medicine": "CARBETAPENTANE",
+   "forms": [
+    "CARBETAPENTANE",
+    "CARBETAPENTANE CITRATE"
+   ],
+   "target_id": "ENSG00000147955",
+   "target": "SIGMAR1",
+   "target_name": "sigma non-opioid intracellular receptor 1",
+   "score": 0.7524997685563407,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650289",
+   "medicine": "KBP5209",
+   "forms": [
+    "KBP5209"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545154",
+   "medicine": "POZIOTINIB",
+   "forms": [
+    "POZIOTINIB"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL31965",
+   "medicine": "CANERTINIB",
+   "forms": [
+    "CANERTINIB",
+    "CANERTINIB DIHYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3109738",
+   "medicine": "JNJ-26483327",
+   "forms": [
+    "JNJ-26483327"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297661",
+   "medicine": "TARLOXOTINIB",
+   "forms": [
+    "TARLOXOTINIB"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545396",
+   "medicine": "BMS-690514",
+   "forms": [
+    "BMS-690514"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1645462",
+   "medicine": "AC-480",
+   "forms": [
+    "AC-480"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL90555",
+   "medicine": "VINCRISTINE",
+   "forms": [
+    "VINCRISTINE",
+    "VINCRISTINE SULFATE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201752",
+   "medicine": "IXABEPILONE",
+   "forms": [
+    "IXABEPILONE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL5095273",
+   "medicine": "DISITAMAB VEDOTIN",
+   "forms": [
+    "DISITAMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "DISRUPTING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201748",
+   "medicine": "CABAZITAXEL",
+   "forms": [
+    "CABAZITAXEL"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108628",
+   "medicine": "PACLITAXEL POLIGLUMEX",
+   "forms": [
+    "PACLITAXEL POLIGLUMEX"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "STABILISER"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301589",
+   "medicine": "ENFORTUMAB VEDOTIN",
+   "forms": [
+    "ENFORTUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743028",
+   "medicine": "GLEMBATUMUMAB VEDOTIN",
+   "forms": [
+    "GLEMBATUMUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301582",
+   "medicine": "POLATUZUMAB VEDOTIN",
+   "forms": [
+    "POLATUZUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1683590",
+   "medicine": "ERIBULIN",
+   "forms": [
+    "ERIBULIN",
+    "ERIBULIN MESYLATE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3545132",
+   "medicine": "MIRVETUXIMAB SORAVTANSINE",
+   "forms": [
+    "MIRVETUXIMAB SORAVTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL92",
+   "medicine": "DOCETAXEL ANHYDROUS",
+   "forms": [
+    "DOCETAXEL"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL553025",
+   "medicine": "VINORELBINE",
+   "forms": [
+    "VINORELBINE",
+    "VINORELBINE TARTRATE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297841",
+   "medicine": "TISOTUMAB VEDOTIN",
+   "forms": [
+    "TISOTUMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL428647",
+   "medicine": "PACLITAXEL",
+   "forms": [
+    "PACLITAXEL"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743082",
+   "medicine": "TRASTUZUMAB EMTANSINE",
+   "forms": [
+    "TRASTUZUMAB EMTANSINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1742994",
+   "medicine": "BRENTUXIMAB VEDOTIN",
+   "forms": [
+    "BRENTUXIMAB VEDOTIN"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2110725",
+   "medicine": "VINFLUNINE",
+   "forms": [
+    "VINFLUNINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL159",
+   "medicine": "VINBLASTINE",
+   "forms": [
+    "VINBLASTINE",
+    "VINBLASTINE SULFATE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL100116",
+   "medicine": "PENTAZOCINE",
+   "forms": [
+    "PENTAZOCINE",
+    "PENTAZOCINE HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000147955",
+   "target": "SIGMAR1",
+   "target_name": "sigma non-opioid intracellular receptor 1",
+   "score": 0.7524997685563407,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1173655",
+   "medicine": "AFATINIB",
+   "forms": [
+    "AFATINIB",
+    "AFATINIB DIMALEATE"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL24828",
+   "medicine": "VANDETANIB",
+   "forms": [
+    "VANDETANIB"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL180022",
+   "medicine": "NERATINIB",
+   "forms": [
+    "NERATINIB",
+    "NERATINIB MALEATE"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2110732",
+   "medicine": "DACOMITINIB ANHYDROUS",
+   "forms": [
+    "DACOMITINIB ANHYDROUS",
+    "DACOMITINIB"
+   ],
+   "target_id": "ENSG00000178568",
+   "target": "ERBB4",
+   "target_name": "erb-b2 receptor tyrosine kinase 4",
+   "score": 0.7040009601188714,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL107",
+   "medicine": "COLCHICINE",
+   "forms": [
+    "COLCHICINE"
+   ],
+   "target_id": "ENSG00000127824",
+   "target": "TUBA4A",
+   "target_name": "tubulin alpha 4a",
+   "score": 0.8088795270014475,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL52440",
+   "medicine": "DEXTROMETHORPHAN",
+   "forms": [
+    "DEXTROMETHORPHAN",
+    "DEXTROMETHORPHAN HYDROBROMIDE",
+    "DEXTROMETHORPHAN POLISTIREX"
+   ],
+   "target_id": "ENSG00000147955",
+   "target": "SIGMAR1",
+   "target_name": "sigma non-opioid intracellular receptor 1",
+   "score": 0.7524997685563407,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL3833346",
+   "medicine": "TOFERSEN",
+   "forms": [
+    "TOFERSEN"
+   ],
+   "target_id": "ENSG00000142168",
+   "target": "SOD1",
+   "target_name": "superoxide dismutase 1",
+   "score": 0.8879807865340971,
+   "action_types": [
+    "ANTISENSE INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL290916",
+   "medicine": "EDARAVONE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL2359370",
+   "medicine": "MECOBALAMIN",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1469",
+   "medicine": "PHENYLBUTANOIC ACID",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL744",
+   "medicine": "RILUZOLE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL3833346",
+   "medicine": "TOFERSEN",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3833346",
+     "medicine": "TOFERSEN",
+     "forms": [
+      "TOFERSEN"
+     ],
+     "target_id": "ENSG00000142168",
+     "target": "SOD1",
+     "target_name": "superoxide dismutase 1",
+     "score": 0.8879807865340971,
+     "action_types": [
+      "ANTISENSE INHIBITOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "narrower": [],
+ "wider_group": [],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL107",
+   "medicine": "COLCHICINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL107",
+     "medicine": "COLCHICINE",
+     "forms": [
+      "COLCHICINE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL52440",
+   "medicine": "DEXTROMETHORPHAN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL52440",
+     "medicine": "DEXTROMETHORPHAN",
+     "forms": [
+      "DEXTROMETHORPHAN",
+      "DEXTROMETHORPHAN HYDROBROMIDE",
+      "DEXTROMETHORPHAN POLISTIREX"
+     ],
+     "target_id": "ENSG00000147955",
+     "target": "SIGMAR1",
+     "target_name": "sigma non-opioid intracellular receptor 1",
+     "score": 0.7524997685563407,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL428647",
+   "medicine": "PACLITAXEL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL428647",
+     "medicine": "PACLITAXEL",
+     "forms": [
+      "PACLITAXEL"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL92",
+   "medicine": "DOCETAXEL ANHYDROUS",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL92",
+     "medicine": "DOCETAXEL ANHYDROUS",
+     "forms": [
+      "DOCETAXEL"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL90555",
+   "medicine": "VINCRISTINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL90555",
+     "medicine": "VINCRISTINE",
+     "forms": [
+      "VINCRISTINE",
+      "VINCRISTINE SULFATE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL553025",
+   "medicine": "VINORELBINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL553025",
+     "medicine": "VINORELBINE",
+     "forms": [
+      "VINORELBINE",
+      "VINORELBINE TARTRATE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1683590",
+   "medicine": "ERIBULIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1683590",
+     "medicine": "ERIBULIN",
+     "forms": [
+      "ERIBULIN",
+      "ERIBULIN MESYLATE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL159",
+   "medicine": "VINBLASTINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL159",
+     "medicine": "VINBLASTINE",
+     "forms": [
+      "VINBLASTINE",
+      "VINBLASTINE SULFATE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1742994",
+   "medicine": "BRENTUXIMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1742994",
+     "medicine": "BRENTUXIMAB VEDOTIN",
+     "forms": [
+      "BRENTUXIMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL5095273",
+   "medicine": "DISITAMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL5095273",
+     "medicine": "DISITAMAB VEDOTIN",
+     "forms": [
+      "DISITAMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "DISRUPTING AGENT"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743082",
+   "medicine": "TRASTUZUMAB EMTANSINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743082",
+     "medicine": "TRASTUZUMAB EMTANSINE",
+     "forms": [
+      "TRASTUZUMAB EMTANSINE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201748",
+   "medicine": "CABAZITAXEL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201748",
+     "medicine": "CABAZITAXEL",
+     "forms": [
+      "CABAZITAXEL"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201752",
+   "medicine": "IXABEPILONE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201752",
+     "medicine": "IXABEPILONE",
+     "forms": [
+      "IXABEPILONE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3301582",
+   "medicine": "POLATUZUMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3301582",
+     "medicine": "POLATUZUMAB VEDOTIN",
+     "forms": [
+      "POLATUZUMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3301589",
+   "medicine": "ENFORTUMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3301589",
+     "medicine": "ENFORTUMAB VEDOTIN",
+     "forms": [
+      "ENFORTUMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2110725",
+   "medicine": "VINFLUNINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2110725",
+     "medicine": "VINFLUNINE",
+     "forms": [
+      "VINFLUNINE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3545132",
+   "medicine": "MIRVETUXIMAB SORAVTANSINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3545132",
+     "medicine": "MIRVETUXIMAB SORAVTANSINE",
+     "forms": [
+      "MIRVETUXIMAB SORAVTANSINE"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108628",
+   "medicine": "PACLITAXEL POLIGLUMEX",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108628",
+     "medicine": "PACLITAXEL POLIGLUMEX",
+     "forms": [
+      "PACLITAXEL POLIGLUMEX"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "STABILISER"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297841",
+   "medicine": "TISOTUMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297841",
+     "medicine": "TISOTUMAB VEDOTIN",
+     "forms": [
+      "TISOTUMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743028",
+   "medicine": "GLEMBATUMUMAB VEDOTIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743028",
+     "medicine": "GLEMBATUMUMAB VEDOTIN",
+     "forms": [
+      "GLEMBATUMUMAB VEDOTIN"
+     ],
+     "target_id": "ENSG00000127824",
+     "target": "TUBA4A",
+     "target_name": "tubulin alpha 4a",
+     "score": 0.8088795270014475,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL100116",
+   "medicine": "PENTAZOCINE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL100116",
+     "medicine": "PENTAZOCINE",
+     "forms": [
+      "PENTAZOCINE",
+      "PENTAZOCINE HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000147955",
+     "target": "SIGMAR1",
+     "target_name": "sigma non-opioid intracellular receptor 1",
+     "score": 0.7524997685563407,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1173655",
+   "medicine": "AFATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1173655",
+     "medicine": "AFATINIB",
+     "forms": [
+      "AFATINIB",
+      "AFATINIB DIMALEATE"
+     ],
+     "target_id": "ENSG00000178568",
+     "target": "ERBB4",
+     "target_name": "erb-b2 receptor tyrosine kinase 4",
+     "score": 0.7040009601188714,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL24828",
+   "medicine": "VANDETANIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL24828",
+     "medicine": "VANDETANIB",
+     "forms": [
+      "VANDETANIB"
+     ],
+     "target_id": "ENSG00000178568",
+     "target": "ERBB4",
+     "target_name": "erb-b2 receptor tyrosine kinase 4",
+     "score": 0.7040009601188714,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL180022",
+   "medicine": "NERATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL180022",
+     "medicine": "NERATINIB",
+     "forms": [
+      "NERATINIB",
+      "NERATINIB MALEATE"
+     ],
+     "target_id": "ENSG00000178568",
+     "target": "ERBB4",
+     "target_name": "erb-b2 receptor tyrosine kinase 4",
+     "score": 0.7040009601188714,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2110732",
+   "medicine": "DACOMITINIB ANHYDROUS",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2110732",
+     "medicine": "DACOMITINIB ANHYDROUS",
+     "forms": [
+      "DACOMITINIB ANHYDROUS",
+      "DACOMITINIB"
+     ],
+     "target_id": "ENSG00000178568",
+     "target": "ERBB4",
+     "target_name": "erb-b2 receptor tyrosine kinase 4",
+     "score": 0.7040009601188714,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 69,
+  "unclear_link": 0
+ }
+}

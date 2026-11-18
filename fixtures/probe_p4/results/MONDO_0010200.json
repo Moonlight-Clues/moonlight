@@ -1,0 +1,1766 @@
+{
+ "id": "MONDO_0010200",
+ "name": "Wilson disease",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000123191",
+   "symbol": "ATP7B",
+   "name": "ATPase copper transporting beta",
+   "score": 0.8670422728089042
+  },
+  {
+   "id": "ENSG00000253710",
+   "symbol": "ALG11",
+   "name": "ALG11 alpha-1,2-mannosyltransferase",
+   "score": 0.47916313067345045
+  },
+  {
+   "id": "ENSG00000140459",
+   "symbol": "CYP11A1",
+   "name": "cytochrome P450 family 11 subfamily A member 1",
+   "score": 0.2962182535297885
+  },
+  {
+   "id": "ENSG00000111961",
+   "symbol": "SASH1",
+   "name": "SAM and SH3 domain containing 1",
+   "score": 0.1609725589293368
+  },
+  {
+   "id": "ENSG00000047457",
+   "symbol": "CP",
+   "name": "ceruloplasmin",
+   "score": 0.10950007528613921
+  },
+  {
+   "id": "ENSG00000130203",
+   "symbol": "APOE",
+   "name": "apolipoprotein E",
+   "score": 0.10795161001596901
+  },
+  {
+   "id": "ENSG00000148120",
+   "symbol": "AOPEP",
+   "name": "aminopeptidase O (putative)",
+   "score": 0.1060624925355858
+  },
+  {
+   "id": "ENSG00000186868",
+   "symbol": "MAPT",
+   "name": "microtubule associated protein tau",
+   "score": 0.09584423435221544
+  },
+  {
+   "id": "ENSG00000177575",
+   "symbol": "CD163",
+   "name": "CD163 molecule",
+   "score": 0.09111049880274351
+  },
+  {
+   "id": "ENSG00000214456",
+   "symbol": "PLIN5",
+   "name": "perilipin 5",
+   "score": 0.09110233927330065
+  },
+  {
+   "id": "ENSG00000196689",
+   "symbol": "TRPV1",
+   "name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273
+  },
+  {
+   "id": "ENSG00000012504",
+   "symbol": "NR1H4",
+   "name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652
+  },
+  {
+   "id": "ENSG00000106546",
+   "symbol": "AHR",
+   "name": "aryl hydrocarbon receptor",
+   "score": 0.08180208640841669
+  },
+  {
+   "id": "ENSG00000125538",
+   "symbol": "IL1B",
+   "name": "interleukin 1 beta",
+   "score": 0.08079481521991247
+  },
+  {
+   "id": "ENSG00000176697",
+   "symbol": "BDNF",
+   "name": "brain derived neurotrophic factor",
+   "score": 0.07977300041353
+  },
+  {
+   "id": "ENSG00000167701",
+   "symbol": "GPT",
+   "name": "glutamic--pyruvic transaminase",
+   "score": 0.07904097499401218
+  },
+  {
+   "id": "ENSG00000172349",
+   "symbol": "IL16",
+   "name": "interleukin 16",
+   "score": 0.07739618123522131
+  },
+  {
+   "id": "ENSG00000076242",
+   "symbol": "MLH1",
+   "name": "mutL homolog 1",
+   "score": 0.0763619736085286
+  },
+  {
+   "id": "ENSG00000165240",
+   "symbol": "ATP7A",
+   "name": "ATPase copper transporting alpha",
+   "score": 0.07523244885733969
+  },
+  {
+   "id": "ENSG00000131095",
+   "symbol": "GFAP",
+   "name": "glial fibrillary acidic protein",
+   "score": 0.07496715810872026
+  },
+  {
+   "id": "ENSG00000169047",
+   "symbol": "IRS1",
+   "name": "insulin receptor substrate 1",
+   "score": 0.07397837629721042
+  },
+  {
+   "id": "ENSG00000167676",
+   "symbol": "PLIN4",
+   "name": "perilipin 4",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000187054",
+   "symbol": "TMPRSS11A",
+   "name": "transmembrane serine protease 11A",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000153246",
+   "symbol": "PLA2R1",
+   "name": "phospholipase A2 receptor 1",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000232810",
+   "symbol": "TNF",
+   "name": "tumor necrosis factor",
+   "score": 0.07328742133183551
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0017762",
+   "name": "disorder of copper metabolism"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0004689",
+   "name": "inborn metal metabolism disorder"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL2103847",
+   "medicine": "TOSEDOSTAT",
+   "forms": [
+    "TOSEDOSTAT"
+   ],
+   "target_id": "ENSG00000148120",
+   "target": "AOPEP",
+   "target_name": "aminopeptidase O (putative)",
+   "score": 0.1060624925355858,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298021",
+   "medicine": "ZAGOTENEMAB",
+   "forms": [
+    "ZAGOTENEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3990042",
+   "medicine": "GOSURANEMAB",
+   "forms": [
+    "GOSURANEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594612",
+   "medicine": "BEPRANEMAB",
+   "forms": [
+    "BEPRANEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297860",
+   "medicine": "TILAVONEMAB",
+   "forms": [
+    "TILAVONEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650402",
+   "medicine": "POSDINEMAB",
+   "forms": [
+    "POSDINEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298093",
+   "medicine": "SEMORINEMAB",
+   "forms": [
+    "SEMORINEMAB"
+   ],
+   "target_id": "ENSG00000186868",
+   "target": "MAPT",
+   "target_name": "microtubule associated protein tau",
+   "score": 0.09584423435221544,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL398338",
+   "medicine": "ABT-102",
+   "forms": [
+    "ABT-102"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2364618",
+   "medicine": "MAVATREP",
+   "forms": [
+    "MAVATREP"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL207433",
+   "medicine": "SB-705498",
+   "forms": [
+    "SB-705498"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707398",
+   "medicine": "PAC-14028",
+   "forms": [
+    "PAC-14028"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545039",
+   "medicine": "AZD1386",
+   "forms": [
+    "AZD1386"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3544953",
+   "medicine": "SAF312",
+   "forms": [
+    "SAF312"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545148",
+   "medicine": "PHE377",
+   "forms": [
+    "PHE377"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314400",
+   "medicine": "DWP05195",
+   "forms": [
+    "DWP05195"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707397",
+   "medicine": "MR-1817",
+   "forms": [
+    "MR-1817"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL17976",
+   "medicine": "RESINIFERATOXIN",
+   "forms": [
+    "RESINIFERATOXIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707356",
+   "medicine": "TIVANISIRAN",
+   "forms": [
+    "TIVANISIRAN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTISENSE INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3707293",
+   "medicine": "XEN-D0501",
+   "forms": [
+    "XEN-D0501"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL214796",
+   "medicine": "NGD-8243",
+   "forms": [
+    "NGD-8243"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314399",
+   "medicine": "JTS-653",
+   "forms": [
+    "JTS-653"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL229430",
+   "medicine": "AMG-517",
+   "forms": [
+    "AMG-517"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314398",
+   "medicine": "GRC-6211",
+   "forms": [
+    "GRC-6211"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "ANTAGONIST"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3822773",
+   "medicine": "PX-102",
+   "forms": [
+    "PX-102"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL454138",
+   "medicine": "TUROFEXORATE ISOPROPYL",
+   "forms": [
+    "TUROFEXORATE ISOPROPYL"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297613",
+   "medicine": "CILOFEXOR",
+   "forms": [
+    "CILOFEXOR"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL566315",
+   "medicine": "OBETICHOLIC ACID",
+   "forms": [
+    "OBETICHOLIC ACID"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": true,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298169",
+   "medicine": "TROPIFEXOR",
+   "forms": [
+    "TROPIFEXOR"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297626",
+   "medicine": "NIDUFEXOR",
+   "forms": [
+    "NIDUFEXOR"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3746388",
+   "medicine": "TERN-101",
+   "forms": [
+    "TERN-101"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594518",
+   "medicine": "LUTIKIZUMAB",
+   "forms": [
+    "LUTIKIZUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.08079481521991247,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743026",
+   "medicine": "GEVOKIZUMAB",
+   "forms": [
+    "GEVOKIZUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.08079481521991247,
+   "action_types": [
+    "NEGATIVE ALLOSTERIC MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109459",
+   "medicine": "CDP-484",
+   "forms": [
+    "CDP-484"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.08079481521991247,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108296",
+   "medicine": "AGANIRSEN",
+   "forms": [
+    "AGANIRSEN"
+   ],
+   "target_id": "ENSG00000169047",
+   "target": "IRS1",
+   "target_name": "insulin receptor substrate 1",
+   "score": 0.07397837629721042,
+   "action_types": [
+    "ANTISENSE INHIBITOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108739",
+   "medicine": "PLACULUMAB",
+   "forms": [
+    "PLACULUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107911",
+   "medicine": "ONERCEPT",
+   "forms": [
+    "ONERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297863",
+   "medicine": "REMTOLUMAB",
+   "forms": [
+    "REMTOLUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297572",
+   "medicine": "ABBV-3373",
+   "forms": [
+    "ABBV-3373"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108208",
+   "medicine": "LENERCEPT",
+   "forms": [
+    "LENERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108566",
+   "medicine": "NERELIMOMAB",
+   "forms": [
+    "NERELIMOMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743057",
+   "medicine": "PEGSUNERCEPT",
+   "forms": [
+    "PEGSUNERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL295698",
+   "medicine": "LEVOKETOCONAZOLE",
+   "forms": [
+    "LEVOKETOCONAZOLE"
+   ],
+   "target_id": "ENSG00000140459",
+   "target": "CYP11A1",
+   "target_name": "cytochrome P450 family 11 subfamily A member 1",
+   "score": 0.2962182535297885,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL488",
+   "medicine": "AMINOGLUTETHIMIDE",
+   "forms": [
+    "AMINOGLUTETHIMIDE"
+   ],
+   "target_id": "ENSG00000140459",
+   "target": "CYP11A1",
+   "target_name": "cytochrome P450 family 11 subfamily A member 1",
+   "score": 0.2962182535297885,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1670",
+   "medicine": "MITOTANE",
+   "forms": [
+    "MITOTANE"
+   ],
+   "target_id": "ENSG00000140459",
+   "target": "CYP11A1",
+   "target_name": "cytochrome P450 family 11 subfamily A member 1",
+   "score": 0.2962182535297885,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL313971",
+   "medicine": "ZUCAPSAICIN",
+   "forms": [
+    "ZUCAPSAICIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL112",
+   "medicine": "ACETAMINOPHEN",
+   "forms": [
+    "ACETAMINOPHEN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL294199",
+   "medicine": "CAPSAICIN",
+   "forms": [
+    "CAPSAICIN"
+   ],
+   "target_id": "ENSG00000196689",
+   "target": "TRPV1",
+   "target_name": "transient receptor potential cation channel subfamily V member 1",
+   "score": 0.08799080373618273,
+   "action_types": [
+    "OPENER"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1551",
+   "medicine": "URSODIOL",
+   "forms": [
+    "URSODIOL"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL240597",
+   "medicine": "CHENODIOL",
+   "forms": [
+    "CHENODIOL"
+   ],
+   "target_id": "ENSG00000012504",
+   "target": "NR1H4",
+   "target_name": "nuclear receptor subfamily 1 group H member 4",
+   "score": 0.0824556128718652,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL259571",
+   "medicine": "TAPINAROF",
+   "forms": [
+    "TAPINAROF"
+   ],
+   "target_id": "ENSG00000106546",
+   "target": "AHR",
+   "target_name": "aryl hydrocarbon receptor",
+   "score": 0.08180208640841669,
+   "action_types": [
+    "AGONIST"
+   ],
+   "direction": "up",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201834",
+   "medicine": "CANAKINUMAB",
+   "forms": [
+    "CANAKINUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.08079481521991247,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201830",
+   "medicine": "RILONACEPT",
+   "forms": [
+    "RILONACEPT"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.08079481521991247,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "forms": [
+    "ETANERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "forms": [
+    "INFLIXIMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "forms": [
+    "AFELIMOMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "forms": [
+    "OZORALIZUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "forms": [
+    "CERTOLIZUMAB PEGOL"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "forms": [
+    "GOLIMUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "forms": [
+    "ADALIMUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.07328742133183551,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL1430",
+   "medicine": "PENICILLAMINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL609",
+   "medicine": "TRIENTINE",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200928",
+   "medicine": "ZINC ACETATE ANHYDROUS",
+   "label": null,
+   "paths": []
+  },
+  {
+   "medicine_id": "CHEMBL1200929",
+   "medicine": "ZINC SULFATE",
+   "label": null,
+   "paths": []
+  }
+ ],
+ "narrower": [],
+ "wider_group": [
+  {
+   "medicine_id": "CHEMBL2338675",
+   "medicine": "FOSDENOPTERIN",
+   "label": "Not listed as approved for this exact disease. Approved for inborn metal metabolism disorder, a wider group the database puts this disease in.",
+   "paths": []
+  }
+ ],
+ "being_studied": [],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL1670",
+   "medicine": "MITOTANE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1670",
+     "medicine": "MITOTANE",
+     "forms": [
+      "MITOTANE"
+     ],
+     "target_id": "ENSG00000140459",
+     "target": "CYP11A1",
+     "target_name": "cytochrome P450 family 11 subfamily A member 1",
+     "score": 0.2962182535297885,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL295698",
+   "medicine": "LEVOKETOCONAZOLE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL295698",
+     "medicine": "LEVOKETOCONAZOLE",
+     "forms": [
+      "LEVOKETOCONAZOLE"
+     ],
+     "target_id": "ENSG00000140459",
+     "target": "CYP11A1",
+     "target_name": "cytochrome P450 family 11 subfamily A member 1",
+     "score": 0.2962182535297885,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL488",
+   "medicine": "AMINOGLUTETHIMIDE",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL488",
+     "medicine": "AMINOGLUTETHIMIDE",
+     "forms": [
+      "AMINOGLUTETHIMIDE"
+     ],
+     "target_id": "ENSG00000140459",
+     "target": "CYP11A1",
+     "target_name": "cytochrome P450 family 11 subfamily A member 1",
+     "score": 0.2962182535297885,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL112",
+   "medicine": "ACETAMINOPHEN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL112",
+     "medicine": "ACETAMINOPHEN",
+     "forms": [
+      "ACETAMINOPHEN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.08799080373618273,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL294199",
+   "medicine": "CAPSAICIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL294199",
+     "medicine": "CAPSAICIN",
+     "forms": [
+      "CAPSAICIN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.08799080373618273,
+     "action_types": [
+      "OPENER"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL313971",
+   "medicine": "ZUCAPSAICIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL313971",
+     "medicine": "ZUCAPSAICIN",
+     "forms": [
+      "ZUCAPSAICIN"
+     ],
+     "target_id": "ENSG00000196689",
+     "target": "TRPV1",
+     "target_name": "transient receptor potential cation channel subfamily V member 1",
+     "score": 0.08799080373618273,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1551",
+   "medicine": "URSODIOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1551",
+     "medicine": "URSODIOL",
+     "forms": [
+      "URSODIOL"
+     ],
+     "target_id": "ENSG00000012504",
+     "target": "NR1H4",
+     "target_name": "nuclear receptor subfamily 1 group H member 4",
+     "score": 0.0824556128718652,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL240597",
+   "medicine": "CHENODIOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL240597",
+     "medicine": "CHENODIOL",
+     "forms": [
+      "CHENODIOL"
+     ],
+     "target_id": "ENSG00000012504",
+     "target": "NR1H4",
+     "target_name": "nuclear receptor subfamily 1 group H member 4",
+     "score": 0.0824556128718652,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL259571",
+   "medicine": "TAPINAROF",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL259571",
+     "medicine": "TAPINAROF",
+     "forms": [
+      "TAPINAROF"
+     ],
+     "target_id": "ENSG00000106546",
+     "target": "AHR",
+     "target_name": "aryl hydrocarbon receptor",
+     "score": 0.08180208640841669,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201834",
+   "medicine": "CANAKINUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201834",
+     "medicine": "CANAKINUMAB",
+     "forms": [
+      "CANAKINUMAB"
+     ],
+     "target_id": "ENSG00000125538",
+     "target": "IL1B",
+     "target_name": "interleukin 1 beta",
+     "score": 0.08079481521991247,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201830",
+   "medicine": "RILONACEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201830",
+     "medicine": "RILONACEPT",
+     "forms": [
+      "RILONACEPT"
+     ],
+     "target_id": "ENSG00000125538",
+     "target": "IL1B",
+     "target_name": "interleukin 1 beta",
+     "score": 0.08079481521991247,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201580",
+     "medicine": "ADALIMUMAB",
+     "forms": [
+      "ADALIMUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201581",
+     "medicine": "INFLIXIMAB",
+     "forms": [
+      "INFLIXIMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201572",
+     "medicine": "ETANERCEPT",
+     "forms": [
+      "ETANERCEPT"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201833",
+     "medicine": "GOLIMUMAB",
+     "forms": [
+      "GOLIMUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201831",
+     "medicine": "CERTOLIZUMAB PEGOL",
+     "forms": [
+      "CERTOLIZUMAB PEGOL"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743054",
+     "medicine": "OZORALIZUMAB",
+     "forms": [
+      "OZORALIZUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108887",
+     "medicine": "AFELIMOMAB",
+     "forms": [
+      "AFELIMOMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.07328742133183551,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 41,
+  "unclear_link": 0
+ }
+}

@@ -1,0 +1,4071 @@
+{
+ "id": "MONDO_0006559",
+ "name": "hidradenitis suppurativa",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000080815",
+   "symbol": "PSEN1",
+   "name": "presenilin 1",
+   "score": 0.7412907403527299
+  },
+  {
+   "id": "ENSG00000162736",
+   "symbol": "NCSTN",
+   "name": "nicastrin",
+   "score": 0.7337083541364923
+  },
+  {
+   "id": "ENSG00000205155",
+   "symbol": "PSENEN",
+   "name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906
+  },
+  {
+   "id": "ENSG00000232810",
+   "symbol": "TNF",
+   "name": "tumor necrosis factor",
+   "score": 0.6123473055164786
+  },
+  {
+   "id": "ENSG00000102554",
+   "symbol": "KLF5",
+   "name": "KLF transcription factor 5",
+   "score": 0.4644747084568586
+  },
+  {
+   "id": "ENSG00000112115",
+   "symbol": "IL17A",
+   "name": "interleukin 17A",
+   "score": 0.4301827552019443
+  },
+  {
+   "id": "ENSG00000112116",
+   "symbol": "IL17F",
+   "name": "interleukin 17F",
+   "score": 0.40544493457157893
+  },
+  {
+   "id": "ENSG00000148156",
+   "symbol": "ACTL7B",
+   "name": "actin like 7B",
+   "score": 0.3995872991717888
+  },
+  {
+   "id": "ENSG00000187003",
+   "symbol": "ACTL7A",
+   "name": "actin like 7A",
+   "score": 0.3915447476789357
+  },
+  {
+   "id": "ENSG00000162434",
+   "symbol": "JAK1",
+   "name": "Janus kinase 1",
+   "score": 0.3722108953403827
+  },
+  {
+   "id": "ENSG00000105397",
+   "symbol": "TYK2",
+   "name": "tyrosine kinase 2",
+   "score": 0.3678637503696833
+  },
+  {
+   "id": "ENSG00000096968",
+   "symbol": "JAK2",
+   "name": "Janus kinase 2",
+   "score": 0.3647865516756756
+  },
+  {
+   "id": "ENSG00000105639",
+   "symbol": "JAK3",
+   "name": "Janus kinase 3",
+   "score": 0.36453543070786704
+  },
+  {
+   "id": "ENSG00000115008",
+   "symbol": "IL1A",
+   "name": "interleukin 1 alpha",
+   "score": 0.30670381652057793
+  },
+  {
+   "id": "ENSG00000125538",
+   "symbol": "IL1B",
+   "name": "interleukin 1 beta",
+   "score": 0.294945899803572
+  },
+  {
+   "id": "ENSG00000130414",
+   "symbol": "NDUFA10",
+   "name": "NADH:ubiquinone oxidoreductase subunit A10",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000147684",
+   "symbol": "NDUFB9",
+   "name": "NADH:ubiquinone oxidoreductase subunit B9",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000166136",
+   "symbol": "NDUFB8",
+   "name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000123545",
+   "symbol": "NDUFAF4",
+   "name": "NADH:ubiquinone oxidoreductase complex assembly factor 4",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000115159",
+   "symbol": "GPD2",
+   "name": "glycerol-3-phosphate dehydrogenase 2",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000164182",
+   "symbol": "NDUFAF2",
+   "name": "NADH:ubiquinone oxidoreductase complex assembly factor 2",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000139180",
+   "symbol": "NDUFA9",
+   "name": "NADH:ubiquinone oxidoreductase subunit A9",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000137806",
+   "symbol": "NDUFAF1",
+   "name": "NADH:ubiquinone oxidoreductase complex assembly factor 1",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000119421",
+   "symbol": "NDUFA8",
+   "name": "NADH:ubiquinone oxidoreductase subunit A8",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000165264",
+   "symbol": "NDUFB6",
+   "name": "NADH:ubiquinone oxidoreductase subunit B6",
+   "score": 0.25870589827929125
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0002260",
+   "name": "hidradenitis"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0024516",
+   "name": "familial acne inversa"
+  }
+ ],
+ "tray": [
+  {
+   "medicine_id": "CHEMBL520733",
+   "medicine": "SEMAGACESTAT",
+   "forms": [
+    "SEMAGACESTAT"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1090771",
+   "medicine": "AVAGACESTAT",
+   "forms": [
+    "AVAGACESTAT"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL190083",
+   "medicine": "TARENFLURBIL",
+   "forms": [
+    "TARENFLURBIL"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297422",
+   "medicine": "RG-4733",
+   "forms": [
+    "RG-4733"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL463981",
+   "medicine": "BEGACESTAT",
+   "forms": [
+    "BEGACESTAT"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL520733",
+   "medicine": "SEMAGACESTAT",
+   "forms": [
+    "SEMAGACESTAT"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1090771",
+   "medicine": "AVAGACESTAT",
+   "forms": [
+    "AVAGACESTAT"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL463981",
+   "medicine": "BEGACESTAT",
+   "forms": [
+    "BEGACESTAT"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297422",
+   "medicine": "RG-4733",
+   "forms": [
+    "RG-4733"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL190083",
+   "medicine": "TARENFLURBIL",
+   "forms": [
+    "TARENFLURBIL"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL463981",
+   "medicine": "BEGACESTAT",
+   "forms": [
+    "BEGACESTAT"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297422",
+   "medicine": "RG-4733",
+   "forms": [
+    "RG-4733"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL520733",
+   "medicine": "SEMAGACESTAT",
+   "forms": [
+    "SEMAGACESTAT"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1090771",
+   "medicine": "AVAGACESTAT",
+   "forms": [
+    "AVAGACESTAT"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL190083",
+   "medicine": "TARENFLURBIL",
+   "forms": [
+    "TARENFLURBIL"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108739",
+   "medicine": "PLACULUMAB",
+   "forms": [
+    "PLACULUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107911",
+   "medicine": "ONERCEPT",
+   "forms": [
+    "ONERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297863",
+   "medicine": "REMTOLUMAB",
+   "forms": [
+    "REMTOLUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297572",
+   "medicine": "ABBV-3373",
+   "forms": [
+    "ABBV-3373"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108208",
+   "medicine": "LENERCEPT",
+   "forms": [
+    "LENERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2108566",
+   "medicine": "NERELIMOMAB",
+   "forms": [
+    "NERELIMOMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743057",
+   "medicine": "PEGSUNERCEPT",
+   "forms": [
+    "PEGSUNERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109470",
+   "medicine": "PERAKIZUMAB",
+   "forms": [
+    "PERAKIZUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3990000",
+   "medicine": "TIBULIZUMAB",
+   "forms": [
+    "TIBULIZUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298023",
+   "medicine": "M-1095",
+   "forms": [
+    "M-1095"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297863",
+   "medicine": "REMTOLUMAB",
+   "forms": [
+    "REMTOLUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109469",
+   "medicine": "AFASEVIKUMAB",
+   "forms": [
+    "AFASEVIKUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297686",
+   "medicine": "IZOKIBEP",
+   "forms": [
+    "IZOKIBEP"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297926",
+   "medicine": "CJM-112",
+   "forms": [
+    "CJM-112"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "BINDING AGENT"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4298023",
+   "medicine": "M-1095",
+   "forms": [
+    "M-1095"
+   ],
+   "target_id": "ENSG00000112116",
+   "target": "IL17F",
+   "target_name": "interleukin 17F",
+   "score": 0.40544493457157893,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802163",
+   "medicine": "NEZULCITINIB",
+   "forms": [
+    "NEZULCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297477",
+   "medicine": "BREPOCITINIB",
+   "forms": [
+    "BREPOCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3622820",
+   "medicine": "ITACITINIB",
+   "forms": [
+    "ITACITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137308",
+   "medicine": "PEFICITINIB",
+   "forms": [
+    "PEFICITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3301606",
+   "medicine": "SOLCITINIB",
+   "forms": [
+    "SOLCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650343",
+   "medicine": "IZENCITINIB",
+   "forms": [
+    "IZENCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594275",
+   "medicine": "GUSACITINIB",
+   "forms": [
+    "GUSACITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545249",
+   "medicine": "GLPG-0555",
+   "forms": [
+    "GLPG-0555"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545225",
+   "medicine": "INCB-047986",
+   "forms": [
+    "INCB-047986"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4116008",
+   "medicine": "CERDULATINIB",
+   "forms": [
+    "CERDULATINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4577523",
+   "medicine": "GOLIDOCITINIB",
+   "forms": [
+    "GOLIDOCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4297477",
+   "medicine": "BREPOCITINIB",
+   "forms": [
+    "BREPOCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650343",
+   "medicine": "IZENCITINIB",
+   "forms": [
+    "IZENCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4116008",
+   "medicine": "CERDULATINIB",
+   "forms": [
+    "CERDULATINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137308",
+   "medicine": "PEFICITINIB",
+   "forms": [
+    "PEFICITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802163",
+   "medicine": "NEZULCITINIB",
+   "forms": [
+    "NEZULCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4459585",
+   "medicine": "ROPSACITINIB",
+   "forms": [
+    "ROPSACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594275",
+   "medicine": "GUSACITINIB",
+   "forms": [
+    "GUSACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2107823",
+   "medicine": "GANDOTINIB",
+   "forms": [
+    "GANDOTINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545328",
+   "medicine": "XL-019",
+   "forms": [
+    "XL-019"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL495727",
+   "medicine": "AT-9283",
+   "forms": [
+    "AT-9283"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545215",
+   "medicine": "BMS-911543",
+   "forms": [
+    "BMS-911543"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1944698",
+   "medicine": "ZOTIRACICLIB",
+   "forms": [
+    "ZOTIRACICLIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4303389",
+   "medicine": "NS-018",
+   "forms": [
+    "NS-018"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802163",
+   "medicine": "NEZULCITINIB",
+   "forms": [
+    "NEZULCITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545241",
+   "medicine": "AC-430",
+   "forms": [
+    "AC-430"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2035185",
+   "medicine": "CT-1578",
+   "forms": [
+    "CT-1578"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1231124",
+   "medicine": "AZD-1480",
+   "forms": [
+    "AZD-1480"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594275",
+   "medicine": "GUSACITINIB",
+   "forms": [
+    "GUSACITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137308",
+   "medicine": "PEFICITINIB",
+   "forms": [
+    "PEFICITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650343",
+   "medicine": "IZENCITINIB",
+   "forms": [
+    "IZENCITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3137308",
+   "medicine": "PEFICITINIB",
+   "forms": [
+    "PEFICITINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3545159",
+   "medicine": "R-333",
+   "forms": [
+    "R-333"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594275",
+   "medicine": "GUSACITINIB",
+   "forms": [
+    "GUSACITINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4650343",
+   "medicine": "IZENCITINIB",
+   "forms": [
+    "IZENCITINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL3039513",
+   "medicine": "DECERNOTINIB",
+   "forms": [
+    "DECERNOTINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4116008",
+   "medicine": "CERDULATINIB",
+   "forms": [
+    "CERDULATINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314384",
+   "medicine": "R-348",
+   "forms": [
+    "R-348"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL495727",
+   "medicine": "AT-9283",
+   "forms": [
+    "AT-9283"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4802163",
+   "medicine": "NEZULCITINIB",
+   "forms": [
+    "NEZULCITINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594518",
+   "medicine": "LUTIKIZUMAB",
+   "forms": [
+    "LUTIKIZUMAB"
+   ],
+   "target_id": "ENSG00000115008",
+   "target": "IL1A",
+   "target_name": "interleukin 1 alpha",
+   "score": 0.30670381652057793,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL4594518",
+   "medicine": "LUTIKIZUMAB",
+   "forms": [
+    "LUTIKIZUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.294945899803572,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1743026",
+   "medicine": "GEVOKIZUMAB",
+   "forms": [
+    "GEVOKIZUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.294945899803572,
+   "action_types": [
+    "NEGATIVE ALLOSTERIC MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL2109459",
+   "medicine": "CDP-484",
+   "forms": [
+    "CDP-484"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.294945899803572,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000130414",
+   "target": "NDUFA10",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A10",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000147684",
+   "target": "NDUFB9",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B9",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000166136",
+   "target": "NDUFB8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000123545",
+   "target": "NDUFAF4",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 4",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000164182",
+   "target": "NDUFAF2",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 2",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000139180",
+   "target": "NDUFA9",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A9",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000137806",
+   "target": "NDUFAF1",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 1",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000119421",
+   "target": "NDUFA8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A8",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL5314386",
+   "medicine": "ME-344",
+   "forms": [
+    "ME-344"
+   ],
+   "target_id": "ENSG00000165264",
+   "target": "NDUFB6",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B6",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "not_approved"
+  },
+  {
+   "medicine_id": "CHEMBL1770916",
+   "medicine": "NIROGACESTAT",
+   "forms": [
+    "NIROGACESTAT",
+    "NIROGACESTAT HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000080815",
+   "target": "PSEN1",
+   "target_name": "presenilin 1",
+   "score": 0.7412907403527299,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1770916",
+   "medicine": "NIROGACESTAT",
+   "forms": [
+    "NIROGACESTAT",
+    "NIROGACESTAT HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000162736",
+   "target": "NCSTN",
+   "target_name": "nicastrin",
+   "score": 0.7337083541364923,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1770916",
+   "medicine": "NIROGACESTAT",
+   "forms": [
+    "NIROGACESTAT",
+    "NIROGACESTAT HYDROBROMIDE"
+   ],
+   "target_id": "ENSG00000205155",
+   "target": "PSENEN",
+   "target_name": "presenilin enhancer, gamma-secretase subunit",
+   "score": 0.6523619044604906,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "forms": [
+    "AFELIMOMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "forms": [
+    "OZORALIZUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "forms": [
+    "CERTOLIZUMAB PEGOL"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "forms": [
+    "GOLIMUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1743034",
+   "medicine": "IXEKIZUMAB",
+   "forms": [
+    "IXEKIZUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4298102",
+   "medicine": "VUNAKIZUMAB",
+   "forms": [
+    "VUNAKIZUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1078178",
+   "medicine": "MOMELOTINIB",
+   "forms": [
+    "MOMELOTINIB",
+    "MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "forms": [
+    "FILGOTINIB",
+    "FILGOTINIB MALEATE"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3655081",
+   "medicine": "ABROCITINIB",
+   "forms": [
+    "ABROCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2105759",
+   "medicine": "BARICITINIB",
+   "forms": [
+    "BARICITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "forms": [
+    "DELGOCITINIB"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "forms": [
+    "DELGOCITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "forms": [
+    "FILGOTINIB",
+    "FILGOTINIB MALEATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1287853",
+   "medicine": "FEDRATINIB",
+   "forms": [
+    "FEDRATINIB",
+    "FEDRATINIB HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL603469",
+   "medicine": "LESTAURTINIB",
+   "forms": [
+    "LESTAURTINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2035187",
+   "medicine": "PACRITINIB",
+   "forms": [
+    "PACRITINIB",
+    "PACRITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "forms": [
+    "FILGOTINIB",
+    "FILGOTINIB MALEATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "forms": [
+    "DELGOCITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1078178",
+   "medicine": "MOMELOTINIB",
+   "forms": [
+    "MOMELOTINIB",
+    "MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL2105759",
+   "medicine": "BARICITINIB",
+   "forms": [
+    "BARICITINIB"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "forms": [
+    "FILGOTINIB",
+    "FILGOTINIB MALEATE"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "forms": [
+    "DELGOCITINIB"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201834",
+   "medicine": "CANAKINUMAB",
+   "forms": [
+    "CANAKINUMAB"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.294945899803572,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201830",
+   "medicine": "RILONACEPT",
+   "forms": [
+    "RILONACEPT"
+   ],
+   "target_id": "ENSG00000125538",
+   "target": "IL1B",
+   "target_name": "interleukin 1 beta",
+   "score": 0.294945899803572,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": false,
+   "tray_group": "new_clue"
+  },
+  {
+   "medicine_id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "forms": [
+    "ETANERCEPT"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "forms": [
+    "INFLIXIMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1743068",
+   "medicine": "SECUKINUMAB",
+   "forms": [
+    "SECUKINUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4297700",
+   "medicine": "BIMEKIZUMAB",
+   "forms": [
+    "BIMEKIZUMAB"
+   ],
+   "target_id": "ENSG00000112115",
+   "target": "IL17A",
+   "target_name": "interleukin 17A",
+   "score": 0.4301827552019443,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4297700",
+   "medicine": "BIMEKIZUMAB",
+   "forms": [
+    "BIMEKIZUMAB"
+   ],
+   "target_id": "ENSG00000112116",
+   "target": "IL17F",
+   "target_name": "interleukin 17F",
+   "score": 0.40544493457157893,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "forms": [
+    "RUXOLITINIB",
+    "RUXOLITINIB PHOSPHATE",
+    "DEURUXOLITINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "forms": [
+    "UPADACITINIB",
+    "UPADACITINIB HEMIHYDRATE"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4596392",
+   "medicine": "CRAVACITINIB",
+   "forms": [
+    "DEUCRAVACITINIB"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "NEGATIVE ALLOSTERIC MODULATOR"
+   ],
+   "direction": "unknown",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "forms": [
+    "UPADACITINIB",
+    "UPADACITINIB HEMIHYDRATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "forms": [
+    "RUXOLITINIB",
+    "DEURUXOLITINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "forms": [
+    "UPADACITINIB",
+    "UPADACITINIB HEMIHYDRATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "forms": [
+    "RUXOLITINIB",
+    "DEURUXOLITINIB PHOSPHATE",
+    "RUXOLITINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL4085457",
+   "medicine": "RITLECITINIB",
+   "forms": [
+    "RITLECITINIB",
+    "RITLECITINIB TOSYLATE"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "forms": [
+    "UPADACITINIB",
+    "UPADACITINIB HEMIHYDRATE"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "forms": [
+    "RUXOLITINIB",
+    "DEURUXOLITINIB PHOSPHATE"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL2109653",
+   "medicine": "BERMEKIMAB",
+   "forms": [
+    "BERMEKIMAB"
+   ],
+   "target_id": "ENSG00000115008",
+   "target": "IL1A",
+   "target_name": "interleukin 1 alpha",
+   "score": 0.30670381652057793,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000130414",
+   "target": "NDUFA10",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A10",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000147684",
+   "target": "NDUFB9",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B9",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000166136",
+   "target": "NDUFB8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000123545",
+   "target": "NDUFAF4",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 4",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000115159",
+   "target": "GPD2",
+   "target_name": "glycerol-3-phosphate dehydrogenase 2",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000164182",
+   "target": "NDUFAF2",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 2",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000139180",
+   "target": "NDUFA9",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A9",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000137806",
+   "target": "NDUFAF1",
+   "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 1",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000119421",
+   "target": "NDUFA8",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit A8",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "forms": [
+    "METFORMIN",
+    "METFORMIN HYDROCHLORIDE"
+   ],
+   "target_id": "ENSG00000165264",
+   "target": "NDUFB6",
+   "target_name": "NADH:ubiquinone oxidoreductase subunit B6",
+   "score": 0.25870589827929125,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": false,
+   "tray_group": "being_studied"
+  },
+  {
+   "medicine_id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "forms": [
+    "ADALIMUMAB"
+   ],
+   "target_id": "ENSG00000232810",
+   "target": "TNF",
+   "target_name": "tumor necrosis factor",
+   "score": 0.6123473055164786,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": false,
+   "tray_group": "already_approved"
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "forms": [
+    "TOFACITINIB",
+    "TOFACITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000162434",
+   "target": "JAK1",
+   "target_name": "Janus kinase 1",
+   "score": 0.3722108953403827,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "forms": [
+    "TOFACITINIB",
+    "TOFACITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000105397",
+   "target": "TYK2",
+   "target_name": "tyrosine kinase 2",
+   "score": 0.3678637503696833,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "forms": [
+    "TOFACITINIB",
+    "TOFACITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000096968",
+   "target": "JAK2",
+   "target_name": "Janus kinase 2",
+   "score": 0.3647865516756756,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  },
+  {
+   "medicine_id": "CHEMBL221959",
+   "medicine": "TOFACITINIB",
+   "forms": [
+    "TOFACITINIB",
+    "TOFACITINIB CITRATE"
+   ],
+   "target_id": "ENSG00000105639",
+   "target": "JAK3",
+   "target_name": "Janus kinase 3",
+   "score": 0.36453543070786704,
+   "action_types": [
+    "INHIBITOR"
+   ],
+   "direction": "down",
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": false,
+   "tray_group": "unclear_link"
+  }
+ ],
+ "approved": [
+  {
+   "medicine_id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "label": null,
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201580",
+     "medicine": "ADALIMUMAB",
+     "forms": [
+      "ADALIMUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "APPROVAL",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "narrower": [],
+ "wider_group": [],
+ "being_studied": [
+  {
+   "medicine_id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1789941",
+     "medicine": "RUXOLITINIB",
+     "forms": [
+      "RUXOLITINIB",
+      "RUXOLITINIB PHOSPHATE",
+      "DEURUXOLITINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1789941",
+     "medicine": "RUXOLITINIB",
+     "forms": [
+      "RUXOLITINIB",
+      "DEURUXOLITINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1789941",
+     "medicine": "RUXOLITINIB",
+     "forms": [
+      "RUXOLITINIB",
+      "DEURUXOLITINIB PHOSPHATE",
+      "RUXOLITINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1789941",
+     "medicine": "RUXOLITINIB",
+     "forms": [
+      "RUXOLITINIB",
+      "DEURUXOLITINIB PHOSPHATE"
+     ],
+     "target_id": "ENSG00000105639",
+     "target": "JAK3",
+     "target_name": "Janus kinase 3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3622821",
+     "medicine": "UPADACITINIB",
+     "forms": [
+      "UPADACITINIB",
+      "UPADACITINIB HEMIHYDRATE"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3622821",
+     "medicine": "UPADACITINIB",
+     "forms": [
+      "UPADACITINIB",
+      "UPADACITINIB HEMIHYDRATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3622821",
+     "medicine": "UPADACITINIB",
+     "forms": [
+      "UPADACITINIB",
+      "UPADACITINIB HEMIHYDRATE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3622821",
+     "medicine": "UPADACITINIB",
+     "forms": [
+      "UPADACITINIB",
+      "UPADACITINIB HEMIHYDRATE"
+     ],
+     "target_id": "ENSG00000105639",
+     "target": "JAK3",
+     "target_name": "Janus kinase 3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297700",
+   "medicine": "BIMEKIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297700",
+     "medicine": "BIMEKIZUMAB",
+     "forms": [
+      "BIMEKIZUMAB"
+     ],
+     "target_id": "ENSG00000112115",
+     "target": "IL17A",
+     "target_name": "interleukin 17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4297700",
+     "medicine": "BIMEKIZUMAB",
+     "forms": [
+      "BIMEKIZUMAB"
+     ],
+     "target_id": "ENSG00000112116",
+     "target": "IL17F",
+     "target_name": "interleukin 17F",
+     "score": 0.40544493457157893,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201581",
+     "medicine": "INFLIXIMAB",
+     "forms": [
+      "INFLIXIMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201572",
+     "medicine": "ETANERCEPT",
+     "forms": [
+      "ETANERCEPT"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000115159",
+     "target": "GPD2",
+     "target_name": "glycerol-3-phosphate dehydrogenase 2",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000130414",
+     "target": "NDUFA10",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit A10",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000119421",
+     "target": "NDUFA8",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit A8",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000139180",
+     "target": "NDUFA9",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit A9",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000137806",
+     "target": "NDUFAF1",
+     "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 1",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000164182",
+     "target": "NDUFAF2",
+     "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 2",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000123545",
+     "target": "NDUFAF4",
+     "target_name": "NADH:ubiquinone oxidoreductase complex assembly factor 4",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000165264",
+     "target": "NDUFB6",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit B6",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000166136",
+     "target": "NDUFB8",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit B8",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1431",
+     "medicine": "METFORMIN",
+     "forms": [
+      "METFORMIN",
+      "METFORMIN HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000147684",
+     "target": "NDUFB9",
+     "target_name": "NADH:ubiquinone oxidoreductase subunit B9",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743068",
+   "medicine": "SECUKINUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743068",
+     "medicine": "SECUKINUMAB",
+     "forms": [
+      "SECUKINUMAB"
+     ],
+     "target_id": "ENSG00000112115",
+     "target": "IL17A",
+     "target_name": "interleukin 17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_3",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4596392",
+   "medicine": "CRAVACITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4596392",
+     "medicine": "CRAVACITINIB",
+     "forms": [
+      "DEUCRAVACITINIB"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "NEGATIVE ALLOSTERIC MODULATOR"
+     ],
+     "direction": "unknown",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4085457",
+   "medicine": "RITLECITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4085457",
+     "medicine": "RITLECITINIB",
+     "forms": [
+      "RITLECITINIB",
+      "RITLECITINIB TOSYLATE"
+     ],
+     "target_id": "ENSG00000105639",
+     "target": "JAK3",
+     "target_name": "Janus kinase 3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2109653",
+   "medicine": "BERMEKIMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2109653",
+     "medicine": "BERMEKIMAB",
+     "forms": [
+      "BERMEKIMAB"
+     ],
+     "target_id": "ENSG00000115008",
+     "target": "IL1A",
+     "target_name": "interleukin 1 alpha",
+     "score": 0.30670381652057793,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": "PHASE_2",
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "new_clues": [
+  {
+   "medicine_id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3301607",
+     "medicine": "FILGOTINIB",
+     "forms": [
+      "FILGOTINIB",
+      "FILGOTINIB MALEATE"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3301607",
+     "medicine": "FILGOTINIB",
+     "forms": [
+      "FILGOTINIB",
+      "FILGOTINIB MALEATE"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3301607",
+     "medicine": "FILGOTINIB",
+     "forms": [
+      "FILGOTINIB",
+      "FILGOTINIB MALEATE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL3301607",
+     "medicine": "FILGOTINIB",
+     "forms": [
+      "FILGOTINIB",
+      "FILGOTINIB MALEATE"
+     ],
+     "target_id": "ENSG00000105639",
+     "target": "JAK3",
+     "target_name": "Janus kinase 3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1770916",
+   "medicine": "NIROGACESTAT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1770916",
+     "medicine": "NIROGACESTAT",
+     "forms": [
+      "NIROGACESTAT",
+      "NIROGACESTAT HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000080815",
+     "target": "PSEN1",
+     "target_name": "presenilin 1",
+     "score": 0.7412907403527299,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1770916",
+     "medicine": "NIROGACESTAT",
+     "forms": [
+      "NIROGACESTAT",
+      "NIROGACESTAT HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000162736",
+     "target": "NCSTN",
+     "target_name": "nicastrin",
+     "score": 0.7337083541364923,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1770916",
+     "medicine": "NIROGACESTAT",
+     "forms": [
+      "NIROGACESTAT",
+      "NIROGACESTAT HYDROBROMIDE"
+     ],
+     "target_id": "ENSG00000205155",
+     "target": "PSENEN",
+     "target_name": "presenilin enhancer, gamma-secretase subunit",
+     "score": 0.6523619044604906,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2105759",
+   "medicine": "BARICITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2105759",
+     "medicine": "BARICITINIB",
+     "forms": [
+      "BARICITINIB"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL2105759",
+     "medicine": "BARICITINIB",
+     "forms": [
+      "BARICITINIB"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1078178",
+   "medicine": "MOMELOTINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1078178",
+     "medicine": "MOMELOTINIB",
+     "forms": [
+      "MOMELOTINIB",
+      "MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL1078178",
+     "medicine": "MOMELOTINIB",
+     "forms": [
+      "MOMELOTINIB",
+      "MOMELOTINIB DIHYDROCHLORIDE MONOHYDRATE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201833",
+     "medicine": "GOLIMUMAB",
+     "forms": [
+      "GOLIMUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201831",
+     "medicine": "CERTOLIZUMAB PEGOL",
+     "forms": [
+      "CERTOLIZUMAB PEGOL"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743054",
+     "medicine": "OZORALIZUMAB",
+     "forms": [
+      "OZORALIZUMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2108887",
+     "medicine": "AFELIMOMAB",
+     "forms": [
+      "AFELIMOMAB"
+     ],
+     "target_id": "ENSG00000232810",
+     "target": "TNF",
+     "target_name": "tumor necrosis factor",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1743034",
+   "medicine": "IXEKIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1743034",
+     "medicine": "IXEKIZUMAB",
+     "forms": [
+      "IXEKIZUMAB"
+     ],
+     "target_id": "ENSG00000112115",
+     "target": "IL17A",
+     "target_name": "interleukin 17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4298102",
+   "medicine": "VUNAKIZUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4298102",
+     "medicine": "VUNAKIZUMAB",
+     "forms": [
+      "VUNAKIZUMAB"
+     ],
+     "target_id": "ENSG00000112115",
+     "target": "IL17A",
+     "target_name": "interleukin 17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL4297507",
+     "medicine": "DELGOCITINIB",
+     "forms": [
+      "DELGOCITINIB"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4297507",
+     "medicine": "DELGOCITINIB",
+     "forms": [
+      "DELGOCITINIB"
+     ],
+     "target_id": "ENSG00000105397",
+     "target": "TYK2",
+     "target_name": "tyrosine kinase 2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4297507",
+     "medicine": "DELGOCITINIB",
+     "forms": [
+      "DELGOCITINIB"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    },
+    {
+     "medicine_id": "CHEMBL4297507",
+     "medicine": "DELGOCITINIB",
+     "forms": [
+      "DELGOCITINIB"
+     ],
+     "target_id": "ENSG00000105639",
+     "target": "JAK3",
+     "target_name": "Janus kinase 3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL3655081",
+   "medicine": "ABROCITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL3655081",
+     "medicine": "ABROCITINIB",
+     "forms": [
+      "ABROCITINIB"
+     ],
+     "target_id": "ENSG00000162434",
+     "target": "JAK1",
+     "target_name": "Janus kinase 1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL2035187",
+   "medicine": "PACRITINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL2035187",
+     "medicine": "PACRITINIB",
+     "forms": [
+      "PACRITINIB",
+      "PACRITINIB CITRATE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1287853",
+   "medicine": "FEDRATINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1287853",
+     "medicine": "FEDRATINIB",
+     "forms": [
+      "FEDRATINIB",
+      "FEDRATINIB HYDROCHLORIDE"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL603469",
+   "medicine": "LESTAURTINIB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL603469",
+     "medicine": "LESTAURTINIB",
+     "forms": [
+      "LESTAURTINIB"
+     ],
+     "target_id": "ENSG00000096968",
+     "target": "JAK2",
+     "target_name": "Janus kinase 2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201834",
+   "medicine": "CANAKINUMAB",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201834",
+     "medicine": "CANAKINUMAB",
+     "forms": [
+      "CANAKINUMAB"
+     ],
+     "target_id": "ENSG00000125538",
+     "target": "IL1B",
+     "target_name": "interleukin 1 beta",
+     "score": 0.294945899803572,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  },
+  {
+   "medicine_id": "CHEMBL1201830",
+   "medicine": "RILONACEPT",
+   "paths": [
+    {
+     "medicine_id": "CHEMBL1201830",
+     "medicine": "RILONACEPT",
+     "forms": [
+      "RILONACEPT"
+     ],
+     "target_id": "ENSG00000125538",
+     "target": "IL1B",
+     "target_name": "interleukin 1 beta",
+     "score": 0.294945899803572,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "best_stage": "APPROVAL",
+     "disease_stage": null,
+     "withdrawn": false
+    }
+   ]
+  }
+ ],
+ "left_out": {
+  "not_approved": 46,
+  "unclear_link": 1
+ }
+}
