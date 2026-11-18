@@ -296,8 +296,8 @@ def check_explanation(text: str, facts: dict,
             "Rule 5: it must not talk about getting medicines: " + ", ".join(getting) + "."
         )
 
-    # Rule 6: no promises. The ENDING is the code's own words and says
-    # "treatment", so it is taken off before this rule looks.
+    # Rule 6: no promises. The ENDING is the code's own words, not
+    # Gemini's, so it is taken off before this rule looks.
     body = text.rstrip()
     for ending in (ENDING, ENDING_MANY):
         if body.endswith(ending):

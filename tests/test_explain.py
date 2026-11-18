@@ -40,7 +40,7 @@ KASHISH_EXAMPLE = (
 ENDING = (
     "But there is a catch. Nobody knows from our information if the "
     "disease needs this protein turned up or down. So this is a clue to "
-    "read about. It is not a treatment. Do not try it."
+    "read about. Never start, stop or change any medicine without a doctor."
 )
 ENDING_MANY = ENDING.replace("this protein", "these proteins")
 
@@ -326,7 +326,8 @@ def test_capital_word_from_the_facts_is_allowed_inside_a_sentence(facts):
 
 
 def test_the_ending_is_not_checked_against_rule_6(facts):
-    # "treatment" is only allowed inside the ENDING itself.
+    # The ENDING is taken off before Rule 6 looks. "treatment" anywhere
+    # else still breaks the rule.
     text = "A protein is a tiny machine. " + ENDING
     assert explain.check_explanation(text, facts) == []
     sneaky = "A protein is a tiny machine. It is a treatment. " + ENDING
