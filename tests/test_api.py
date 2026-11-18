@@ -1009,7 +1009,9 @@ APPROVED_EMPTY = (
 )
 TRIALS_WORDS = (
     "Approved for another disease and now being tested for this one. A "
-    "separate research category, not a prediction of effectiveness."
+    "separate research category, not a prediction of effectiveness. Not "
+    "every trial is listed. Only medicines that act on one of the proteins "
+    "most linked to this disease."
 )
 CLUES_WORDS = (
     "Approved for another disease, with no recorded link to this one. "
