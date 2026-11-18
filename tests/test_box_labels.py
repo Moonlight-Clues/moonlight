@@ -219,3 +219,33 @@ def test_the_box_titles_and_their_order_are_unchanged():
     panel = PAGE[PAGE.index('id="panel-approved"'):PAGE.index('id="panel-trials"')]
     assert panel.index("Approved for a narrower disease (") < panel.index(
         "Approved for a wider group (")
+
+
+# ---- PART 2, EXAMPLE 4: the In trials tab's line ----
+# Kashish's words, 18 Nov. She chose a sentence with no number: Moonlight
+# asks for 25 proteins, but some diseases have fewer.
+
+TRIALS_LINE = (
+    "Approved for another disease and now being tested for this one. A "
+    "separate research category, not a prediction of effectiveness. Not "
+    "every trial is listed. Only medicines that act on one of the proteins "
+    "most linked to this disease."
+)
+
+
+def test_example_4_the_page_holds_the_new_in_trials_line_exactly_once():
+    assert PAGE.count(TRIALS_LINE) == 1
+    assert PAGE.count(f'<p class="section-desc">{TRIALS_LINE}</p>') == 1
+
+
+def test_example_4_the_line_is_under_the_real_in_trials_tab():
+    panel = PAGE[PAGE.index('id="panel-trials"'):PAGE.index('id="panel-clues"')]
+    assert panel.count(TRIALS_LINE) == 1
+    assert panel.index("Already being studied for this disease") < panel.index(TRIALS_LINE)
+    assert panel.index(TRIALS_LINE) < panel.index('id="studied-cards"')
+
+
+def test_example_4_the_old_words_are_all_still_there_and_said_once():
+    for words in ("now being tested for this one.", "not a prediction of effectiveness.",
+                  "Not every trial is listed."):
+        assert PAGE.count(words) == 1
