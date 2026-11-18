@@ -229,15 +229,26 @@ def _joined(names: List[str]) -> str:
     return ", ".join(names[:-1]) + " and " + names[-1]
 
 
+# Ticket 2.16, Kashish's words, 18 Nov. Both box labels start with this, so
+# nobody takes a boxed card as approved for their own disease.
+NOT_THIS_EXACT_DISEASE = "Not listed as approved for this exact disease."
+
+
 def child_label(names: List[str]) -> str:
-    """Kashish's words, 16 Nov. They say only what the database does."""
-    return f"Approved for {_joined(names)}, which the database lists under this disease."
+    """Kashish's words, 16 and 18 Nov. They say only what the database does."""
+    return (
+        f"{NOT_THIS_EXACT_DISEASE} Approved for {_joined(names)}, "
+        "which the database lists under this disease."
+    )
 
 
 def parent_label(names: List[str]) -> str:
-    """Kashish's words, 16 Nov. With two or more names the grammar is for many."""
+    """Kashish's words, 16 and 18 Nov. With two or more names the grammar is for many."""
     group = "a wider group" if len(names) == 1 else "wider groups"
-    return f"Approved for {_joined(names)}, {group} the database puts this disease in."
+    return (
+        f"{NOT_THIS_EXACT_DISEASE} Approved for {_joined(names)}, "
+        f"{group} the database puts this disease in."
+    )
 
 
 def find_clues(disease: Disease, targets: Iterable[Target]) -> Dict[str, List[Path]]:
