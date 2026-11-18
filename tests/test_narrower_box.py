@@ -37,7 +37,7 @@ from moonlight.records import Disease
 
 import test_family
 import test_fetch
-from test_family import AMYLOIDOSIS, ECZEMA, PRE_B_ALL, CHILD_WORDS, PARENT_WORDS
+from test_family import AMYLOIDOSIS, ECZEMA, PRE_B_ALL, CHILD_WORDS, FIRST, PARENT_WORDS
 from test_family import child, made_up_path, parent
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -48,7 +48,7 @@ ALL = Disease(id="MONDO_0004967", name="acute lymphoblastic leukemia")
 PAH = Disease(id="MONDO_0015924", name="pulmonary arterial hypertension")
 
 NARROWER_TITLE = "Approved for a narrower disease"
-CLL_LABEL = "Approved for B-cell chronic lymphocytic leukemia" + CHILD_WORDS
+CLL_LABEL = FIRST + "Approved for B-cell chronic lymphocytic leukemia" + CHILD_WORDS
 
 ALL_MAIN_15 = test_family.ALL_15  # the same 15 that Pre-B ALL shows as its wider group
 ALL_NARROWER_13 = [
@@ -194,10 +194,10 @@ def test_all_the_main_list_is_exactly_the_own_entrys_list_with_no_label(saved_ta
 def test_all_every_narrower_card_keeps_its_child_label(saved_tabs):
     _, tabs = saved_tabs(ALL)
     for medicine in tabs.narrower:
-        assert medicine.label.startswith("Approved for ")
+        assert medicine.label.startswith(FIRST + "Approved for ")
         assert medicine.label.endswith(CHILD_WORDS)
     assert test_family.named(tabs.narrower, "NELARABINE").label == (
-        "Approved for T-cell acute lymphoblastic leukemia and precursor T-cell acute "
+        FIRST + "Approved for T-cell acute lymphoblastic leukemia and precursor T-cell acute "
         "lymphoblastic leukemia" + CHILD_WORDS)
 
 
@@ -264,7 +264,7 @@ def test_only_on_a_child_is_in_the_narrower_box_and_not_in_the_main_list():
                           [child(approved=[listed("ZEDMIL"), listed("alphamil")])])
     assert names(tabs.approved) == ["OWNMIL"] and tabs.approved[0].label is None
     assert names(tabs.narrower) == ["alphamil", "ZEDMIL"]  # A to Z, capitals ignored
-    assert tabs.narrower[0].label == "Approved for narrow disease" + CHILD_WORDS
+    assert tabs.narrower[0].label == FIRST + "Approved for narrow disease" + CHILD_WORDS
     assert tabs.wider_group == []
 
 
@@ -274,8 +274,8 @@ def test_on_a_child_and_on_a_parent_goes_in_the_narrower_box():
         child(approved=[listed("BOTHMIL")])])
     assert tabs.approved == []
     assert names(tabs.narrower) == ["BOTHMIL"] and names(tabs.wider_group) == ["WIDEMIL"]
-    assert tabs.narrower[0].label == "Approved for narrow disease" + CHILD_WORDS
-    assert tabs.wider_group[0].label == "Approved for wide disease" + PARENT_WORDS
+    assert tabs.narrower[0].label == FIRST + "Approved for narrow disease" + CHILD_WORDS
+    assert tabs.wider_group[0].label == FIRST + "Approved for wide disease" + PARENT_WORDS
 
 
 def test_on_the_own_entry_and_on_a_child_stays_in_the_main_list_with_no_label():
