@@ -1,0 +1,56 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0008523",
+      "drugAndClinicalCandidates": {
+        "count": 1,
+        "rows": [
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL221959",
+              "name": "TOFACITINIB",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL2103743",
+                  "name": "TOFACITINIB CITRATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06688838",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

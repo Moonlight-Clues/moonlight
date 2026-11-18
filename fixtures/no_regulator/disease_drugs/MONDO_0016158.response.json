@@ -1,0 +1,543 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0016158",
+      "drugAndClinicalCandidates": {
+        "count": 16,
+        "rows": [
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5095201",
+              "name": "VALILOXYBATE",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/VALILOXYBATE/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3544971",
+              "name": "DEXTROAMPHETAMINE SULFATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL612",
+                "name": "DEXTROAMPHETAMINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffd56d70-d884-43be-a994-6e70a10e823e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1200682",
+              "name": "SODIUM OXYBATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL1342",
+                "name": "OXYBATE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=926eb076-a4a8-45e4-91ef-411f0aa4f3ca",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06809803",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL4650337",
+              "name": "ULOTARONT",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL5314561",
+                  "name": "ULOTARONT HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05015673",
+                "clinicalStage": "PHASE_1",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ULOTARONT/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL781",
+              "name": "MAZINDOL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05914194",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL3989844",
+              "name": "DEXTROAMPHETAMINE SACCHARATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL612",
+                "name": "DEXTROAMPHETAMINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffd56d70-d884-43be-a994-6e70a10e823e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4164059",
+              "name": "PITOLISANT HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL462605",
+                "name": "PITOLISANT",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8daa5562-824e-476c-9652-26ceef3d4b0e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211150s000lbl.pdf",
+                "clinicalStage": "APPROVAL",
+                "source": "FDA"
+              },
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/PITOLISANT%20HYDROCHLORIDE/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL5314561",
+              "name": "ULOTARONT HYDROCHLORIDE",
+              "maximumClinicalStage": "UNKNOWN",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL4650337",
+                "name": "ULOTARONT",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/ULOTARONT%20HYDROCHLORIDE/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL796",
+              "name": "METHYLPHENIDATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1722",
+                  "name": "METHYLPHENIDATE HYDROCHLORIDE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e3c22d9-71d9-46a7-b315-8021c94c4bec",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0bf0835-6a2f-4067-a158-8b86c4b0668a",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd83fc91-47a3-4be4-9727-caf9ec0371e8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ec8a8896-077d-4dee-9e10-97172512c5ed",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297212",
+              "name": "SOLRIAMFETOL HYDROCHLORIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": {
+                "id": "CHEMBL4297620",
+                "name": "SOLRIAMFETOL",
+                "drugWarnings": []
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2f30ab12-20e1-4391-9359-24b23a21578d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211230s000lbl.pdf",
+                "clinicalStage": "APPROVAL",
+                "source": "FDA"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL612",
+              "name": "DEXTROAMPHETAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200782",
+                  "name": "DEXTROAMPHETAMINE ADIPATE",
+                  "drugWarnings": []
+                },
+                {
+                  "id": "CHEMBL3544971",
+                  "name": "DEXTROAMPHETAMINE SULFATE",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                },
+                {
+                  "id": "CHEMBL3989844",
+                  "name": "DEXTROAMPHETAMINE SACCHARATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d6394df5-f2c9-47eb-b57e-f3e9cfd94f84",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1373",
+              "name": "MODAFINIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01f6690c-1410-42ad-8eb3-e7df32eab3ba",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201192",
+              "name": "ARMODAFINIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0310a062-51fd-4e74-8a5f-7f21a16f52c9",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10f918f7-4782-470e-a50e-35c7c66bfd79",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2c824d4c-2309-4e2a-bc74-aa8d80a5c454",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=795a7ba3-c60b-4637-aa99-06c1e10af8a7",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a2b3b762-7984-409c-82e4-8d216055df72",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d878aed0-ddbf-8fa1-abf7-d3e480260845",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e7bfb636-4b0a-440c-a4d3-d26393a14ac5",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL462605",
+              "name": "PITOLISANT",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL4164059",
+                  "name": "PITOLISANT HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/PITOLISANT/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL501",
+              "name": "AMPHETAMINE SULFATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL405",
+                "name": "AMPHETAMINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  },
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb12811f-4cce-4010-aa48-d17c46ca1d3a",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f469fb38-0380-4621-9db3-a4f429126156",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffd56d70-d884-43be-a994-6e70a10e823e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL6068065",
+              "name": "OVEPOREXTON",
+              "maximumClinicalStage": "PHASE_2",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05687903",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
