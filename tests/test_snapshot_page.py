@@ -176,7 +176,7 @@ function readRegister() {
       shown: el.getClientRects().length > 0,
       columns: [...el.querySelectorAll("thead th")].map(th => th.innerText.trim()),
       // one entry for every row, top to bottom, of either kind
-      rows: [...el.querySelectorAll("tbody tr")].map(tr => ({
+      rows: [...el.querySelectorAll(":scope > tbody > tr")].map(tr => ({
         kind: tr.dataset.row,
         cells: [...tr.children].map(td => td.innerText.trim()),
       })),
