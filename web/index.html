@@ -1173,8 +1173,12 @@ body.registering>:not(.register){display:none!important}
   // Words the page already has, read from their own place so they cannot drift apart.
   const pageWords = (selector, root) => (root || document).querySelector(selector).textContent.trim();
 
-  /* One row for each item: an Approved medicine or a new clue. */
-  function registerRows(table, items, linesUnder) {
+  /* One row for each item: an Approved medicine or a new clue.
+     In the new clues table only (oppositeToo), a protein that carries the
+     opposite-way line gets it straight under its "Turns it" value (ticket
+     5.2). The words are the ones the API sent with that protein, the same
+     ones its card shows. Nothing is worked out here. */
+  function registerRows(table, items, linesUnder, oppositeToo) {
     const noSource = pageWords('[data-part="no-source"]', byId("card-template").content);
     table.querySelectorAll("tbody").forEach(body => body.remove());
     for (const item of items) {
@@ -1182,7 +1186,10 @@ body.registering>:not(.register){display:none!important}
       row.dataset.row = "medicine";
       const proteins = item.proteins;
       const facts = proteins.length
-        ? [proteins.map(protein => protein.symbol), proteins.map(protein => protein.direction), proteins.map(protein => protein.points)]
+        ? [proteins.map(protein => protein.symbol),
+           proteins.flatMap(protein => oppositeToo && protein.opposite_way
+             ? [protein.direction, protein.opposite_way] : [protein.direction]),
+           proteins.map(protein => protein.points)]
         : [[DASH], [DASH], [DASH]];
       for (const lines of [[item.medicine], ...facts, [item.source || noSource]]) {
         const cell = row.insertCell();
@@ -1239,7 +1246,7 @@ body.registering>:not(.register){display:none!important}
     const first = data.new_clues.slice(0, REGISTER_CLUES);  // the page's own order
     reg("clues-count").textContent = "Showing the first " + first.length + " of " + data.new_clues.length
       + " new clues. Being first on the list does not mean best.";
-    registerRows(byId("register-clues"), first);
+    registerRows(byId("register-clues"), first, null, true);
     reg("clues-empty").textContent = pageWords("#empty h3");
     reg("clues-empty").hidden = !!first.length;
     reg("direction").textContent = pageWords(".direction-note", byId("card-template").content);
