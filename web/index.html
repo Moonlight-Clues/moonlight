@@ -42,6 +42,8 @@ h2{font-size:clamp(23px,4vw,29px);line-height:1.2;margin:0 0 11px}
 h3{font-size:22px;line-height:1.2;margin:0}
 small,.fine{font-size:12px}.muted{color:var(--muted)}
 .intro{max-width:760px;margin-bottom:24px}.intro h1{max-width:650px}.intro p{color:var(--muted);margin:0}
+#home h1{font-size:20px;line-height:1.3;letter-spacing:-.02em}
+@media(min-width:760px){#home h1{font-size:24px}}
 
 /* the disease in Open Targets' own words, under its name (ticket 5.5).
    A long description shows its first --about-lines lines, and the names their
@@ -100,6 +102,12 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
 .wider-box[open]{padding-bottom:14px}
 .wider-box summary [data-part="tap"]{font-weight:500;color:var(--muted);white-space:nowrap}
+/* The dot before "Tap to open" (ticket 4.1). It is drawn in a small space in
+   front of the words. On a line of their own, that space is cut off. */
+.wider-box summary [data-part="tap"]{display:inline-block;position:relative;padding-left:.55em;text-indent:0}
+.wider-box summary [data-part="tap"]::before{content:"·";position:absolute;left:0}
+#narrower-box summary,#wider-box summary{margin-left:-.55em;text-indent:.55em;clip-path:inset(-8px -8px -8px .55em)}
+#narrower-box summary:focus-visible,#wider-box summary:focus-visible{clip-path:none}
 .more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
@@ -307,7 +315,7 @@ body.registering>:not(.register){display:none!important}
   <section id="home" class="search-area">
     <div class="intro">
       <div class="eyebrow">Explore open research</div>
-      <h1>Disease → protein → medicine. One search.</h1>
+      <h1>Research a disease: approved medicines, trials and new clues.</h1>
       <p>Moonlight follows Open Targets research data from a disease to its proteins, then to medicines that act on them. Research clues, not treatment recommendations.</p>
     </div>
     <form id="search-form" data-slot="search" autocomplete="off">
@@ -376,13 +384,13 @@ body.registering>:not(.register){display:none!important}
         </div>
         <!-- Approved only for a narrower disease. Folded, above the wider-group box. -->
         <details class="wider-box" id="narrower-box" hidden>
-          <summary>Approved for a narrower disease (<span id="narrower-count"></span>) <span data-part="tap">· Tap to open</span></summary>
+          <summary>Approved for a narrower disease (<span id="narrower-count"></span>) <span data-part="tap">Tap to open</span></summary>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="narrower-cards"></div>
         </details>
         <!-- Approved only for a wider group. Folded, at the bottom of the tab. -->
         <details class="wider-box" id="wider-box" hidden>
-          <summary>Approved for a wider group (<span id="wider-count"></span>) <span data-part="tap">· Tap to open</span></summary>
+          <summary>Approved for a wider group (<span id="wider-count"></span>) <span data-part="tap">Tap to open</span></summary>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="wider-cards"></div>
         </details>
@@ -613,7 +621,6 @@ body.registering>:not(.register){display:none!important}
     <p class="direction-note">The data does not say which direction this disease needs.</p>
     <div class="explanation" data-slot="explanation">
       <div class="slot-label">Plain-language explanation</div>
-      <p class="placeholder">A short explanation of this clue in plain words.</p>
       <button class="ghost-btn" type="button" data-part="read">Read explanation</button>
     </div>
     <p class="ending" data-slot="ending"></p>
@@ -973,7 +980,7 @@ body.registering>:not(.register){display:none!important}
 
   /* A folded box says how to work it: "Tap to open" while closed, "Tap to close" while open. */
   function tapWords(box) {
-    part(box, "tap").textContent = box.open ? "· Tap to close" : "· Tap to open";
+    part(box, "tap").textContent = box.open ? "Tap to close" : "Tap to open";
   }
   for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
 

@@ -578,7 +578,7 @@ def test_decisions_and_the_rule_line_are_written_down():
 ASTHMA = Disease(id="MONDO_0004979", name="asthma")
 MORE_MANY = " more approved medicines are in the folded boxes below."
 MORE_ONE = "1 more approved medicine is in the folded box below."
-TAP_OPEN, TAP_CLOSE = "· Tap to open", "· Tap to close"
+TAP_OPEN, TAP_CLOSE = "Tap to open", "Tap to close"
 
 
 def more_line(tabs):
@@ -636,7 +636,7 @@ def test_add_on_each_box_title_says_tap_to_open_after_its_count():
 def test_add_on_the_words_follow_the_box_open_or_closed():
     script = PAGE[PAGE.index("function tapWords(box)"):]
     script = script[:script.index("\n  }\n")]
-    assert ('part(box, "tap").textContent = box.open ? "· Tap to close" : "· Tap to open";'
+    assert ('part(box, "tap").textContent = box.open ? "Tap to close" : "Tap to open";'
             in script)
     # When a person opens or closes a box, and when a search sets it open.
     assert ('for (const id of ["narrower-box", "wider-box"]) '

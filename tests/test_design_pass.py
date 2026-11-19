@@ -23,7 +23,7 @@ from test_api import FOOTER_NOTE, NEW_ORDER, SAFETY_LINE, guide_of, plain
 
 MOTTO = "Old medicines. New questions."
 MADE = "Made with care by a family in Kochi"
-HEADING = "Disease → protein → medicine. One search."
+HEADING = "Research a disease: approved medicines, trials and new clues."
 LINE_UNDER = (
     "Moonlight follows Open Targets research data from a disease to its "
     "proteins, then to medicines that act on them. Research clues, not "
