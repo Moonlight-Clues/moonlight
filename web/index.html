@@ -144,6 +144,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .direction-note{font-size:12px;color:var(--muted);margin:12px 0 16px}
 /* Ticket 3.7. Plain words under the protein they are true for. No red, no icon. */
 .opposite-way{flex-basis:100%;font-size:12px;line-height:1.45;color:var(--muted);margin:0}
+/* Ticket 2.18. One plain line under the New clues cards. */
+.wrong-way-line{font-size:13px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 
 /* explanation slot */
 .explanation{margin:16px 0;border:1px solid var(--line);background:#F8FAFA;border-radius:10px;min-height:115px}
@@ -416,6 +418,8 @@ body.registering>:not(.register){display:none!important}
           <h3>No new clues found for this disease.</h3>
           <p>There may not be enough information in the available research records yet. You can try another disease or check back when new data is available. This does not mean a treatment exists or does not exist.</p>
         </div>
+        <!-- Ticket 2.18. How many clues were left out by hand. The words come from the API. -->
+        <p class="wrong-way-line" id="wrong-way-line" role="note" hidden></p>
       </section>
 
       <section aria-labelledby="left-out-title" class="section" data-slot="left-out">
@@ -958,6 +962,8 @@ body.registering>:not(.register){display:none!important}
     byId("more-line").hidden = !approvedCards.length || !boxedCards;
     byId("new-list").hidden = !newCards.length;
     byId("empty").hidden = !!newCards.length;
+    byId("wrong-way-line").textContent = data.wrong_way_line || "";
+    byId("wrong-way-line").hidden = !data.wrong_way_line;
     byId("studied-note").textContent = studiedCards.length ? ""
       : "No medicine in this data is being studied for this disease.";
 

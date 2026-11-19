@@ -37,6 +37,12 @@ def real_entries():
     return json.loads(FILE.read_text(encoding="utf-8"))
 
 
+def mondays_entries():
+    """Ticket 2.18. The file has later entries now. These are the ones
+    dated THE_DAY, the day the doctor answered: Monday's twelve."""
+    return [entry for entry in real_entries() if entry["date"] == THE_DAY]
+
+
 def saved_pairs():
     """(medicine id, disease id) for each of the four that the saved answer
     shows as approved for one of the three diseases. A tablet form counts
@@ -77,16 +83,16 @@ def test_the_saved_answers_show_all_four_medicines_approved_for_all_three_diseas
 
 
 def test_the_file_holds_exactly_the_pairs_the_saved_answers_show_and_no_other():
-    entries = real_entries()
+    entries = mondays_entries()
     in_file = [(entry["medicine_id"], entry["disease_id"]) for entry in entries]
     assert len(in_file) == len(set(in_file))  # no pair twice
     assert set(in_file) == set(saved_pairs())
-    assert engine.corrections() == set(saved_pairs())
+    assert set(saved_pairs()) <= engine.corrections()
 
 
 def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
-    entries = real_entries()
-    assert entries
+    entries = mondays_entries()
+    assert len(entries) == 12
     medicine_ids = {medicine_id for medicine_id, _ in saved_pairs()}
     disease_ids = {disease.id for disease in THE_THREE}
     for entry in entries:
@@ -97,9 +103,11 @@ def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
         assert entry["disease_id"] in disease_ids
         assert entry["date"] == THE_DAY
         assert entry["note"] == NOTE == engine.CORRECTION_NOTE
-    # The whole file, read as plain text: nothing is left once the keys, the
-    # ids, the day and the note are taken away.
-    text = FILE.read_text(encoding="utf-8")
+    # Monday's lines of the file, read as plain text: nothing is left once
+    # the keys, the ids, the day and the note are taken away.
+    text = "".join(line for line in FILE.read_text(encoding="utf-8").splitlines(keepends=True)
+                   if THE_DAY in line)
+    assert text.count(THE_DAY) == 12
     for known in ["medicine_id", "disease_id", "date", "note", NOTE, THE_DAY,
                   *sorted(medicine_ids, key=len, reverse=True), *disease_ids]:
         text = text.replace(f'"{known}"', "")
@@ -132,7 +140,7 @@ def test_example_1_each_added_card_has_the_warning_and_keeps_its_place(client, d
 
 def test_example_2_the_real_file_warns_under_the_three_diseases_only():
     three = {disease.id for disease in THE_THREE}
-    assert {listed_for for _, listed_for in engine.corrections()} == three
+    assert {entry["disease_id"] for entry in mondays_entries()} == three
     # Every other disease in the saved files: the one step up and one step
     # down entries of the three, and pulmonary arterial hypertension.
     others = {load(file)["data"]["disease"]["id"]
