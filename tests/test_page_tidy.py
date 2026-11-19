@@ -7,6 +7,11 @@ d. The "Read explanation" button is still in the clue card.
 
 The heading is also calm and smaller: 20px on a phone, 24px on a wide screen.
 
+The stray dot (Kashish's decision, option A): the dot is no longer part of the
+words "Tap to open" and "Tap to close". The style draws it in a small space in
+front of the words. When the words drop onto a line of their own, that space
+falls outside the title's edge, where it is cut off.
+
 The page is read from GET /. No network.
 """
 
@@ -95,3 +100,30 @@ def test_c_the_safety_line_is_still_there_word_for_word(page):
 
 def test_d_the_read_explanation_button_is_still_in_the_clue_card(page):
     assert READ_BUTTON in explanation_box_of(template_of(page, "card-template"))
+
+
+# ---- the stray dot ----
+
+def test_the_dot_is_not_part_of_the_tap_words(page):
+    assert "· Tap to" not in page
+    assert page.count('<span data-part="tap">Tap to open</span>') == 2
+    assert 'box.open ? "Tap to close" : "Tap to open";' in page
+
+
+def test_the_style_draws_the_dot_in_front_of_the_words(page):
+    styles = styles_of(page)
+    assert '.wider-box summary [data-part="tap"]::before{content:"·";' in styles
+
+
+def test_the_dot_is_cut_off_when_the_words_sit_on_their_own_line(page):
+    styles = styles_of(page)
+    # The title's box starts a dot's width to the left, and its first line is
+    # pushed back by the same width, so only a dropped line starts with the dot.
+    assert ("#narrower-box summary,#wider-box summary"
+            "{margin-left:-.55em;text-indent:.55em;clip-path:inset(-8px -8px -8px .55em)}") in styles
+
+
+def test_the_folded_boxes_are_still_details_with_a_summary(page):
+    for box in ("narrower-box", "wider-box"):
+        start = page.index('<details class="wider-box" id="%s"' % box)
+        assert "<summary>" in page[start:page.index("</details>", start)]
