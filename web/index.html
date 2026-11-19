@@ -261,6 +261,37 @@ div.explanation{padding:12px 13px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
 .contact{color:var(--muted)}.contact a{user-select:text;-webkit-user-select:text}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
+/* the register: the plain view behind the print button (ticket 5.1).
+   Black on white. Nothing in it needs a colour to be understood. While it
+   shows, the rest of the page is put away, on screen and on paper. */
+.print-line{margin:14px 0 0}
+body.registering{background:#fff}
+body.registering>:not(.register){display:none!important}
+.register{background:#fff;padding:16px;font:400 13px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.register,.register *{color:#000}
+.register-bar{max-width:800px;margin:0 auto 16px}
+.register-bar button{border:1px solid #000;border-radius:6px;background:#fff;padding:9px 12px;font-size:13px;font-weight:700;min-height:42px}
+.register-sheet{width:100%;max-width:800px;margin:0 auto;border-collapse:collapse}
+.register-sheet>tbody>tr>td,.register-sheet>tfoot>tr>td{padding:0}
+/* A table's foot is printed again at the bottom of every page the table runs over. */
+.register-sheet>tfoot{display:table-footer-group}
+.register-foot{border-top:1px solid #000;margin:14px 0 0;padding:6px 0 0;font-size:11px;line-height:1.4}
+.register h1{font:700 24px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0;margin:0 0 4px}
+.register h2{font:700 15px/1.3 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.06em;margin:22px 0 6px;border-bottom:2px solid #000;padding-bottom:3px;break-after:avoid}
+.register p{margin:0 0 8px}
+.register-safety{font-weight:700;border:2px solid #000;padding:8px 10px;margin-top:8px}
+.register-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px;line-height:1.4;margin:0 0 8px}
+.register-table thead{display:table-header-group}
+.register-table th,.register-table td{border:1px solid #000;padding:4px 6px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.register-table th{font-weight:700;overflow-wrap:normal}
+.register-table th:nth-child(1){width:22%}.register-table th:nth-child(2){width:13%}.register-table th:nth-child(3){width:11%}.register-table th:nth-child(4){width:11%}
+.register-table td:first-child{font-weight:700}
+/* a medicine and the lines under it stay together on one printed page */
+.register-table tbody,.register-table tr{break-inside:avoid;page-break-inside:avoid}
+.register-table tr[data-row="note"] td{font-weight:400}
+.register-table tr[data-row="note"] td.loud{font-weight:700}
+@media(max-width:540px){.register-table{font-size:11px}.register-table th,.register-table td{padding:3px 4px}.register-table th:nth-child(2){width:16%}.register-table th:nth-child(3){width:15%}.register-table th:nth-child(4){width:14%}}
+@media print{.register{padding:0;font-size:10.5pt}.register-bar{display:none}.register-table{font-size:9.5pt}.register-foot{font-size:8.5pt}}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
 @media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.tabs{gap:6px;padding:5px}.tab{font-size:14px;padding:10px 8px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}.guide{gap:68px}.idea{padding:34px}.tab-notes{grid-template-columns:repeat(3,1fr)}.pair{grid-template-columns:1fr 1fr}.key{grid-template-columns:repeat(4,minmax(0,1fr))}.chain .shape{width:66px;height:66px}}
@@ -328,6 +359,8 @@ div.explanation{padding:12px 13px}
         </div>
       </div>
       <p class="muted">What open research data says about medicines and this disease. Nothing here is medical advice.</p>
+      <!-- Shows the register and opens the print box (ticket 5.1). Hidden until results are shown. -->
+      <p class="print-line"><button class="ghost-btn" type="button" id="print-page" hidden>Print this page</button></p>
 
       <div class="tabs" data-slot="tabs" role="tablist" aria-label="Kinds of medicine for this disease">
         <button class="tab" type="button" role="tab" id="tab-approved" data-tab="approved" aria-controls="panel-approved" aria-selected="true">Approved <span class="tab-count" data-part="count"></span></button>
@@ -529,6 +562,42 @@ div.explanation{padding:12px 13px}
   <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</div>
 </div></footer>
 
+<!-- The register: a plain view of the same results, for paper (ticket 5.1).
+     The script fills it from the answer the page already has, when
+     the print button is pressed. The safety line, the tab lines and the
+     other old words are copied from their places above, never typed again. -->
+<section id="register" class="register" data-slot="register" hidden>
+  <p class="register-bar"><button type="button" id="register-back">Back to results</button></p>
+  <table class="register-sheet">
+    <tfoot><tr><td><p class="register-foot" data-reg="footer">moonlightclues.com<br><span data-reg="footer-safety"></span></p></td></tr></tfoot>
+    <tbody><tr><td>
+      <h1 data-reg="disease"></h1>
+      <p data-reg="date"></p>
+      <p class="register-safety" data-reg="safety"></p>
+
+      <h2 data-reg="approved-head">APPROVED</h2>
+      <p data-reg="approved-top"></p>
+      <table class="register-table" id="register-approved">
+        <thead><tr><th scope="col">Medicine</th><th scope="col">Protein</th><th scope="col">Turns it</th><th scope="col">Points / 100</th><th scope="col">Source</th></tr></thead>
+      </table>
+      <p data-reg="approved-empty" hidden></p>
+      <p data-reg="boxes"></p>
+
+      <h2 data-reg="trials-head">IN TRIALS</h2>
+      <p data-reg="trials"></p>
+
+      <h2 data-reg="clues-head">NEW CLUES</h2>
+      <p data-reg="clues-count"></p>
+      <table class="register-table" id="register-clues">
+        <thead><tr><th scope="col">Medicine</th><th scope="col">Protein</th><th scope="col">Turns it</th><th scope="col">Points / 100</th><th scope="col">Source</th></tr></thead>
+      </table>
+      <p data-reg="clues-empty" hidden></p>
+      <p data-reg="direction"></p>
+      <p data-reg="never-treatments">These are connections worth reading about, never treatments.</p>
+    </td></tr></tbody>
+  </table>
+</section>
+
 <!-- One medicine card. The script copies this and fills the slots. -->
 <template id="card-template">
   <article class="card" data-slot="card">
@@ -626,6 +695,7 @@ div.explanation{padding:12px 13px}
   let latest = 0;       // the number of the newest request; older answers are dropped
   let chosen = null;    // the protein whose filter button is pressed, or null
   let waiting = [];     // new-clue cards that fetch their explanation when their tab first opens
+  let shown = null;     // the answer the results on the page were drawn from, kept for the register
 
   // What the page says when the API answers 429. Kashish's exact words.
   const TOO_MANY = "Too many requests. Please wait a minute.";
@@ -665,6 +735,8 @@ div.explanation{padding:12px 13px}
     byId("studied-cards").replaceChildren();
     byId("filters").replaceChildren();
     waiting = [];
+    shown = null;
+    byId("print-page").hidden = true;
   }
 
   function clearChoices() {
@@ -897,6 +969,9 @@ div.explanation{padding:12px 13px}
     applyFilter(null);
 
     waiting = newCards.slice(0, FIRST_EXPLAINED);
+
+    shown = data;  // The print button reads this. It never asks the API again.
+    byId("print-page").hidden = false;
   }
 
   /* A folded box says how to work it: "Tap to open" while closed, "Tap to close" while open. */
@@ -1073,6 +1148,108 @@ div.explanation{padding:12px 13px}
     ready.open = open;
     slot(el, "explanation").replaceWith(ready);
   }
+
+  /* ---- the register, behind the print button (ticket 5.1) ----
+     A plain view of the results already on the page, for paper. It is
+     written from the answer kept in "shown", so nothing new is asked of
+     the API, Open Targets or Gemini. Every medicine of the main Approved
+     list is in it, A to Z as the page has them, however many pages that
+     takes. Only the first REGISTER_CLUES new clues are in it. */
+
+  const REGISTER_CLUES = 10;
+  const DASH = "—";  // for a medicine with no path
+  const register = byId("register");
+  const reg = name => register.querySelector('[data-reg="' + name + '"]');
+  // Words the page already has, read from their own place so they cannot drift apart.
+  const pageWords = (selector, root) => (root || document).querySelector(selector).textContent.trim();
+
+  /* One row for each item: an Approved medicine or a new clue. */
+  function registerRows(table, items, linesUnder) {
+    const noSource = pageWords('[data-part="no-source"]', byId("card-template").content);
+    table.querySelectorAll("tbody").forEach(body => body.remove());
+    for (const item of items) {
+      const body = document.createElement("tbody"), row = body.insertRow();
+      row.dataset.row = "medicine";
+      const proteins = item.proteins;
+      const facts = proteins.length
+        ? [proteins.map(protein => protein.symbol), proteins.map(protein => protein.direction), proteins.map(protein => protein.points)]
+        : [[DASH], [DASH], [DASH]];
+      for (const lines of [[item.medicine], ...facts, [item.source || noSource]]) {
+        const cell = row.insertCell();
+        for (const words of lines) {
+          const line = document.createElement("div");
+          line.textContent = words;
+          cell.append(line);
+        }
+      }
+      for (const [words, kind] of linesUnder ? linesUnder(item) : []) {
+        const noteRow = body.insertRow(), cell = noteRow.insertCell();
+        noteRow.dataset.row = "note";
+        cell.colSpan = 5;
+        cell.className = kind;
+        cell.textContent = words;
+      }
+      table.append(body);
+    }
+    table.hidden = !items.length;
+  }
+
+  /* The grey line and the red warning of an Approved card, in the card's
+     order and the card's words, for the row straight under that medicine.
+     Only Approved rows get them, as only Approved cards do. On the card the
+     red line starts with a warning sign, which reads "Warning". On paper
+     that is the word itself. */
+  function cardLines(approved) {
+    const under = [];
+    if (approved.proof_note) under.push([approved.proof_note, ""]);
+    if (approved.warning) under.push(["Warning: " + approved.warning, "loud"]);
+    return under;
+  }
+
+  function drawRegister(data) {
+    const safety = pageWords('[data-slot="safety-line"] span');
+    reg("disease").textContent = byId("disease-title").textContent;
+    reg("date").textContent = new Date().toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+    reg("safety").textContent = safety;
+    reg("footer-safety").textContent = safety;
+
+    reg("approved-top").textContent = pageWords("#approved-list .tab-words");
+    registerRows(byId("register-approved"), data.approved, cardLines);
+    const narrower = (data.narrower || []).length, wider = (data.wider_group || []).length;
+    reg("approved-empty").textContent = pageWords("#approved-empty h3");
+    reg("approved-empty").hidden = !!(data.approved.length || narrower || wider);  // as on the page
+    reg("boxes").textContent = narrower + (narrower === 1 ? " more medicine is" : " more medicines are")
+      + " in the narrower box and " + wider + (wider === 1 ? " more is" : " more are")
+      + " in the wider box. See the site for these.";
+
+    const studied = data.being_studied.length;
+    reg("trials").textContent = studied + (studied === 1 ? " medicine. " : " medicines. ")
+      + pageWords("#panel-trials .section-desc");
+
+    const first = data.new_clues.slice(0, REGISTER_CLUES);  // the page's own order
+    reg("clues-count").textContent = "Showing the first " + first.length + " of " + data.new_clues.length
+      + " new clues. Being first on the list does not mean best.";
+    registerRows(byId("register-clues"), first);
+    reg("clues-empty").textContent = pageWords("#empty h3");
+    reg("clues-empty").hidden = !!first.length;
+    reg("direction").textContent = pageWords(".direction-note", byId("card-template").content);
+  }
+
+  byId("print-page").addEventListener("click", () => {
+    if (!shown) return;
+    drawRegister(shown);
+    register.hidden = false;
+    document.body.classList.add("registering");
+    window.scrollTo(0, 0);
+    window.print();
+  });
+
+  /* Back to results: the page comes back just as it was. Nothing was changed in it. */
+  byId("register-back").addEventListener("click", () => {
+    document.body.classList.remove("registering");
+    register.hidden = true;
+    byId("results").scrollIntoView();
+  });
 
   /* ---- a link can open a disease, and one of its tabs ----
      Like ?disease=MONDO_0015924&tab=clues. With no tab, Approved opens. */
