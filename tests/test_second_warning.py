@@ -351,11 +351,12 @@ def test_d_four_listed_clues_among_sixty_leave_56_cards_and_the_line():
                                          for medicine_id in LISTED_FOUR])
     assert len(answer["new_clues"]) == 56
     assert answer["wrong_way_line"] == MANY_LINE
-    gone = {"Clue03", "Clue10", "Clue11", "Clue60"}
-    assert not gone & set(names(answer))
+    gone = {"CLUE03", "CLUE10", "CLUE11", "CLUE60"}
+    assert gone <= {name.upper() for name in names(plain)}
+    assert not gone & {name.upper() for name in names(answer)}
     # The other 56 are the same cards, in the same order.
     assert answer["new_clues"] == [item for item in plain["new_clues"]
-                                   if item["medicine"] not in gone]
+                                   if item["medicine"].upper() not in gone]
 
 
 def test_d_with_one_medicine_the_line_is_for_one():
@@ -409,7 +410,7 @@ def test_e_the_same_four_medicines_on_another_diseases_page_are_still_shown():
              for number in range(1, 61)]
     answer = cards(paths, left=entries, disease=OTHER)
     assert len(answer["new_clues"]) == 60
-    assert {"Clue03", "Clue10", "Clue11", "Clue60"} <= set(names(answer))
+    assert {"CLUE03", "CLUE10", "CLUE11", "CLUE60"} <= {name.upper() for name in names(answer)}
     assert "wrong_way_line" not in answer
     with patch("moonlight.engine._read_left_out", return_value=entries):
         assert engine.pushes_wrong_way(DISEASE.id) == set(LISTED_FOUR)
