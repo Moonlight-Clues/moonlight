@@ -134,6 +134,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .direction{display:inline-flex;align-items:center;gap:5px;border:1px solid #C8CFD6;background:var(--neutral-bg);color:var(--neutral);border-radius:6px;padding:4px 8px;font-size:12px;font-weight:650;white-space:nowrap}
 .direction svg{width:13px;height:13px}
 .direction-note{font-size:12px;color:var(--muted);margin:12px 0 16px}
+/* Ticket 3.7. Plain words under the protein they are true for. No red, no icon. */
+.opposite-way{flex-basis:100%;font-size:12px;line-height:1.45;color:var(--muted);margin:0}
 
 /* explanation slot */
 .explanation{margin:16px 0;border:1px solid var(--line);background:#F8FAFA;border-radius:10px;min-height:115px}
@@ -630,6 +632,8 @@ body.registering>:not(.register){display:none!important}
   </div>
 </template>
 
+<template id="opposite-way-template"><p class="opposite-way" data-slot="opposite-way"></p></template>
+
 <!-- What the medicine does to the protein. All four badges share one neutral style. -->
 <template id="direction-up"><span class="direction" data-slot="direction" title="The medicine turns this protein up"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 13V3m-4 4 4-4 4 4"/></svg>Up</span></template>
 <template id="direction-down"><span class="direction" data-slot="direction" title="The medicine turns this protein down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 3v10m-4-4 4 4 4-4"/></svg>Down</span></template>
@@ -1056,6 +1060,12 @@ body.registering>:not(.register){display:none!important}
       row.querySelector(".protein-id").textContent = protein.symbol;
       part(row, "direction").replaceWith(copyOf("direction-" + protein.direction));
       slot(row, "score").textContent = protein.points + " / 100 points";
+      if (protein.opposite_way) {  // only on a clue or In trials card, only by this protein
+        const line = copyOf("opposite-way-template");
+        line.textContent = protein.opposite_way;
+        row.style.flexWrap = "wrap";
+        row.append(line);
+      }
       part(el, "proteins").append(row);
       if (protein.piece_of_machine) {
         if (!machines.has(protein.machine)) machines.set(protein.machine, []);

@@ -166,7 +166,7 @@ def test_example_3_the_approved_lists_hold_the_same_medicines_as_before(client, 
     assert len(data["approved"]) == len(plain["approved"]) > 0
     # In trials and New clues are not touched at all.
     assert data["being_studied"] == plain["being_studied"]
-    assert data["new_clues"] == plain["new_clues"]
+    assert [{**card, "proteins": [{key: value for key, value in protein.items() if key != "opposite_way"} for protein in card["proteins"]]} for card in data["new_clues"]] == [{**card, "proteins": [{key: value for key, value in protein.items() if key != "opposite_way"} for protein in card["proteins"]]} for card in plain["new_clues"]]
 
 
 # ---- Part 2, example 4: the top line of the Approved tab ----

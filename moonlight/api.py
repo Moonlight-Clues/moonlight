@@ -59,7 +59,8 @@ from fastapi.responses import HTMLResponse
 
 from moonlight import explain, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
-from moonlight.engine import WRONG_WARNING, looks_wrong, sort_into_tabs
+from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
+from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -247,8 +248,16 @@ def _one_source(clue: Clue) -> Optional[str]:
     return _first_link(source for path in clue.paths for source in path.sources)
 
 
-def _proteins_json(clue: Clue) -> List[dict]:
-    """The proteins of one medicine, strongest first, with points and direction."""
+def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None) -> List[dict]:
+    """The proteins of one medicine, strongest first, with points and direction.
+
+    Ticket 3.7. one_way is only given for a new clue or a medicine being
+    studied: the proteins the main Approved list turns one way
+    (engine.one_way_proteins). A protein the clue turns the other way
+    carries "opposite_way": the engine's line, word for word. Any other
+    protein has no such key. An Approved card is never given one_way.
+    """
+    opposite = opposite_way(clue, one_way) if one_way else set()
     machine_of: Dict[str, Tuple[int, bool]] = {}
     for number, machine in enumerate(clue.machines, start=1):
         for path in machine:
@@ -267,11 +276,16 @@ def _proteins_json(clue: Clue) -> List[dict]:
                 "piece_of_machine": shared,
             }
         )
+        if path.target.id in opposite:
+            proteins[-1]["opposite_way"] = OPPOSITE_LINE  # the engine's words
     return proteins
 
 
-def _clue_json(clue: Clue, disease: Disease) -> dict:
-    """One clue's facts. No explanation, so this is quick."""
+def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] = None) -> dict:
+    """One clue's facts. No explanation, so this is quick.
+
+    one_way (ticket 3.7) is handed on to _proteins_json.
+    """
     # The names, the points and the ending come from explain.py, so a card
     # and its explanation always say the same thing.
     facts = explain.facts_for(clue, disease)
@@ -279,7 +293,7 @@ def _clue_json(clue: Clue, disease: Disease) -> dict:
         "id": _clue_id(clue),
         "medicine": facts["medicine"]["name"],
         "forms": facts["medicine"]["forms"],
-        "proteins": _proteins_json(clue),
+        "proteins": _proteins_json(clue, one_way),
         "reports": clue.reports,
         "source": _one_source(clue),
         "trial_phase": facts.get("trial_phase"),  # only for being studied
@@ -407,14 +421,16 @@ def clues(disease_id: str) -> dict:
     found = _find(disease_id)
     disease = found.disease
     wrong = looks_wrong(disease.id)  # the corrections list, for this disease only
+    # Ticket 3.7. The main Approved list only, without the red-warning cards.
+    one_way = one_way_proteins(found.approved, wrong)
     answer = {
         "disease": {"id": disease.id, "name": disease.name},
         "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
         "approved": [_approved_json(medicine, wrong) for medicine in found.approved],
-        "being_studied": [_clue_json(clue, disease) for clue in found.being_studied],
-        "new_clues": [_clue_json(clue, disease) for clue in found.new_clues],
+        "being_studied": [_clue_json(clue, disease, one_way) for clue in found.being_studied],
+        "new_clues": [_clue_json(clue, disease, one_way) for clue in found.new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
     if found.narrower:
