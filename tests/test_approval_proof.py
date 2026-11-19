@@ -48,6 +48,9 @@ JAPAN_LINE = ("Approved in Japan, according to the database. Moonlight could not
               "find the exact record for this disease.")
 WARNING = "A doctor has told us this looks like a mistake in the database."
 NOTE = "A doctor confirmed this looks wrong."
+# Ticket 2.18: the second note an entry may carry.
+SECOND_NOTE = ("This looks like a mistake in the database. The official label is "
+               "for a different disease.")
 JAPAN_LINK = ("https://www.pmda.go.jp/english/review-services/reviews/"
               "approved-information/drugs/0001.html")
 
@@ -352,7 +355,7 @@ def test_every_entry_in_the_real_file_has_the_four_things_and_names_no_doctor():
     # True today because the file is empty. It guards every later pull request.
     for entry in REAL_READ_CORRECTIONS():
         assert set(entry) == {"medicine_id", "disease_id", "date", "note"}
-        assert entry["note"] == NOTE
+        assert entry["note"] in (NOTE, SECOND_NOTE)  # one of the two (ticket 2.18)
     assert len(engine.corrections()) == len(REAL_READ_CORRECTIONS())
 
 
