@@ -293,8 +293,21 @@ body.registering>:not(.register){display:none!important}
 /* a medicine and the lines under it stay together on one printed page */
 .register-table tbody,.register-table tr{break-inside:avoid;page-break-inside:avoid}
 .register-table tr[data-row="note"] td{font-weight:400}
-.register-table tr[data-row="note"] td.loud{font-weight:700}
-@media(max-width:540px){.register-table{font-size:11px}.register-table th,.register-table td{padding:3px 4px}.register-table th:nth-child(2){width:16%}.register-table th:nth-child(3){width:15%}.register-table th:nth-child(4){width:14%}}
+/* Ticket 5.2. An empty line in the Protein and Points columns, beside the
+   opposite-way words in "Turns it", so the next protein stays level across
+   the row. The empty line holds the same words, unseen, at the same width,
+   so it wraps the same way and is exactly as tall as the words beside it.
+   On paper and wide screens all three are 5em wide. Where "Turns it" is
+   narrower than that, the empty lines work out its width from their own
+   column: --reg-edge is a cell's padding and border, --reg-protein and
+   --reg-points are the "Turns it" width over theirs. */
+.register-table{--reg-edge:13px;--reg-protein:calc(11 / 13);--reg-points:1}
+.register-opposite{width:min(100%,5em)}
+.register-level{visibility:hidden}
+.register-level::before{content:attr(data-level)}
+.register-table td:nth-child(2) .register-level{width:min(calc((100% + var(--reg-edge)) * var(--reg-protein) - var(--reg-edge)),5em)}
+.register-table td:nth-child(4) .register-level{width:min(calc((100% + var(--reg-edge)) * var(--reg-points) - var(--reg-edge)),5em)}
+@media(max-width:540px){.register-table{font-size:11px}.register-table th,.register-table td{padding:3px 4px}.register-table th:nth-child(2){width:16%}.register-table th:nth-child(3){width:15%}.register-table th:nth-child(4){width:14%}.register-table{--reg-edge:9px;--reg-protein:calc(15 / 16);--reg-points:calc(15 / 14)}}
 @media print{.register{padding:0;font-size:10.5pt}.register-bar{display:none}.register-table{font-size:9.5pt}.register-foot{font-size:8.5pt}}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
@@ -597,6 +610,7 @@ body.registering>:not(.register){display:none!important}
       <table class="register-table" id="register-clues">
         <thead><tr><th scope="col">Medicine</th><th scope="col">Protein</th><th scope="col">Turns it</th><th scope="col">Points / 100</th><th scope="col">Source</th></tr></thead>
       </table>
+      <p data-reg="wrong-way" hidden></p>
       <p data-reg="clues-empty" hidden></p>
       <p data-reg="direction"></p>
       <p data-reg="never-treatments">These are connections worth reading about, never treatments.</p>
@@ -1179,22 +1193,40 @@ body.registering>:not(.register){display:none!important}
   // Words the page already has, read from their own place so they cannot drift apart.
   const pageWords = (selector, root) => (root || document).querySelector(selector).textContent.trim();
 
-  /* One row for each item: an Approved medicine or a new clue. */
-  function registerRows(table, items, linesUnder) {
+  /* One row for each item: an Approved medicine or a new clue.
+     In the new clues table only (oppositeToo), a protein that carries the
+     opposite-way line gets it straight under its "Turns it" value (ticket
+     5.2). The words are the ones the API sent with that protein, the same
+     ones its card shows. Nothing is worked out here. Beside the words, the
+     Protein and Points columns get an empty line of the same height, so
+     the next protein's name, direction and points stay level. */
+  function registerRows(table, items, linesUnder, oppositeToo) {
     const noSource = pageWords('[data-part="no-source"]', byId("card-template").content);
     table.querySelectorAll("tbody").forEach(body => body.remove());
     for (const item of items) {
       const body = document.createElement("tbody"), row = body.insertRow();
       row.dataset.row = "medicine";
       const proteins = item.proteins;
-      const facts = proteins.length
-        ? [proteins.map(protein => protein.symbol), proteins.map(protein => protein.direction), proteins.map(protein => protein.points)]
-        : [[DASH], [DASH], [DASH]];
+      const facts = proteins.length ? [[], [], []] : [[DASH], [DASH], [DASH]];
+      for (const protein of proteins) {
+        [protein.symbol, protein.direction, protein.points].forEach((words, place) => facts[place].push(words));
+        if (oppositeToo && protein.opposite_way) {
+          const empty = {level: protein.opposite_way};  // an empty line as tall as the words
+          [empty, {opposite: protein.opposite_way}, empty].forEach((words, place) => facts[place].push(words));
+        }
+      }
       for (const lines of [[item.medicine], ...facts, [item.source || noSource]]) {
         const cell = row.insertCell();
         for (const words of lines) {
           const line = document.createElement("div");
-          line.textContent = words;
+          if (words !== null && words.level) {
+            line.className = "register-level";
+            line.dataset.level = words.level;
+            line.setAttribute("aria-hidden", "true");
+          } else if (words !== null && words.opposite) {
+            line.className = "register-opposite";
+            line.textContent = words.opposite;
+          } else line.textContent = words;
           cell.append(line);
         }
       }
@@ -1245,7 +1277,9 @@ body.registering>:not(.register){display:none!important}
     const first = data.new_clues.slice(0, REGISTER_CLUES);  // the page's own order
     reg("clues-count").textContent = "Showing the first " + first.length + " of " + data.new_clues.length
       + " new clues. Being first on the list does not mean best.";
-    registerRows(byId("register-clues"), first);
+    registerRows(byId("register-clues"), first, null, true);
+    reg("wrong-way").textContent = data.wrong_way_line || "";  // the API's words (ticket 2.18), as the page shows them
+    reg("wrong-way").hidden = !data.wrong_way_line;
     reg("clues-empty").textContent = pageWords("#empty h3");
     reg("clues-empty").hidden = !!first.length;
     reg("direction").textContent = pageWords(".direction-note", byId("card-template").content);
