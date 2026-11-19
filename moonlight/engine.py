@@ -19,8 +19,8 @@ database lists it.
 Ticket 2.13, honest proof on Approved cards. An Approved card whose only
 approval receipt is the link to Japan's general list gets the line
 JAPAN_LINE (ApprovedMedicine.proof_note). looks_wrong(disease_id) reads the
-corrections list in moonlight/corrections.json: the medicines a doctor
-confirmed look wrong for that disease. Their cards get WRONG_WARNING.
+corrections list in moonlight/corrections.json: the medicines confirmed
+to look wrong for that disease. Their cards get a red warning.
 
 Ticket 2.14, a box for narrower diseases. The main Approved list holds
 only medicines approved on the disease's own entry. One approved only on a
@@ -40,6 +40,14 @@ Ticket 3.7, the opposite-way line. one_way_proteins(approved, wrong) reads
 the main Approved list and says which proteins its medicines all turn the
 same way. opposite_way(clue, one_way) then says on which of a clue's
 proteins the card carries OPPOSITE_LINE. Nothing is moved or hidden.
+
+Ticket 2.18, a second red warning, and clues left out by hand. A
+corrections entry's note is one of two sentences (CORRECTION_NOTES).
+warning_words(disease_id) says which red words each listed card shows: its
+own entry's. pushes_wrong_way(disease_id) reads moonlight/left_out.json, a
+list written by hand: for that disease those medicines are not shown in
+New clues (leave_out), and wrong_way_line says how many. No code ever
+writes to that file: only a hand check may remove a card.
 
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
@@ -99,9 +107,21 @@ NO_REGULATOR_LINE = (
 # Ticket 3.7, Kashish's words, exactly. Changing them needs her approval.
 OPPOSITE_LINE = "Opposite way to the approved medicines for this disease."
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
-CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the note in every entry
+CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the first note
+# Ticket 2.18, Kashish's words of 19 Nov, exactly. The second note an entry
+# may carry. A card with this note shows these same words in red.
+SECOND_NOTE = (
+    "This looks like a mistake in the database. The official label is for "
+    "a different disease."
+)
+# An entry's note is exactly one of these. Note -> the red words on the card.
+RED_WORDS = {CORRECTION_NOTE: WRONG_WARNING, SECOND_NOTE: SECOND_NOTE}
+CORRECTION_NOTES = tuple(RED_WORDS)
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
+# Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
+LEFT_OUT_FILE = pathlib.Path(__file__).resolve().parent / "left_out.json"
+LEFT_OUT_KEYS = {"medicine_id", "disease_id", "date"}
 
 
 @dataclass(frozen=True)
@@ -575,39 +595,130 @@ def _read_corrections() -> list:
     return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
 
 
-def corrections() -> Set[Tuple[str, str]]:
-    """The corrections list as (medicine id, disease id) pairs.
+def _checked_pair(entry: object, keys: Set[str], kind: str) -> Tuple[str, str]:
+    """One hand-written entry -> (medicine id, disease id), or ValueError.
+
+    The entry must hold exactly the things in keys, with a medicine id, a
+    disease id and a real date (like "2026-11-16"). Nothing else: no name,
+    no reason.
+    """
+    if not isinstance(entry, dict) or set(entry) != keys:
+        raise ValueError(f"{kind} must hold exactly {sorted(keys)}: {entry!r}")
+    medicine_id, disease_id, date = entry["medicine_id"], entry["disease_id"], entry["date"]
+    if not all(isinstance(value, str) and value for value in (medicine_id, disease_id, date)):
+        raise ValueError(f"{kind} needs a medicine id, a disease id and a date: {entry!r}")
+    datetime.date.fromisoformat(date)  # ValueError if it is not a real date
+    return medicine_id, disease_id
+
+
+def _corrections_with_notes() -> Dict[Tuple[str, str], str]:
+    """The corrections list as (medicine id, disease id) -> the entry's note.
 
     Each entry holds exactly four things: the medicine's id, the disease's
-    id, the date (like "2026-11-16") and the note CORRECTION_NOTE. No doctor
-    is ever named, so an entry holding anything else is refused. An entry
-    that is not written this way raises ValueError: a warning is never
-    dropped quietly.
+    id, the date (like "2026-11-16") and a note that is exactly one of
+    CORRECTION_NOTES. No doctor is ever named, so an entry holding anything
+    else is refused. An entry that is not written this way raises
+    ValueError: a warning is never dropped quietly. One card cannot carry
+    both notes.
     """
     entries = _read_corrections()
     if not isinstance(entries, list):
         raise ValueError("corrections.json must hold a list.")
-    pairs = set()
+    notes: Dict[Tuple[str, str], str] = {}
     for entry in entries:
-        if not isinstance(entry, dict) or set(entry) != CORRECTION_KEYS:
-            raise ValueError(f"A correction must hold exactly {sorted(CORRECTION_KEYS)}: {entry!r}")
-        medicine_id, disease_id, date = entry["medicine_id"], entry["disease_id"], entry["date"]
-        if not all(isinstance(value, str) and value for value in (medicine_id, disease_id, date)):
-            raise ValueError(f"A correction needs a medicine id, a disease id and a date: {entry!r}")
-        datetime.date.fromisoformat(date)  # ValueError if it is not a real date
-        if entry["note"] != CORRECTION_NOTE:
-            raise ValueError(f"A correction's note must be exactly {CORRECTION_NOTE!r}: {entry!r}")
-        pairs.add((medicine_id, disease_id))
-    return pairs
+        pair = _checked_pair(entry, CORRECTION_KEYS, "A correction")
+        note = entry["note"]
+        if not isinstance(note, str) or note not in CORRECTION_NOTES:
+            raise ValueError(
+                f"A correction's note must be exactly one of {CORRECTION_NOTES!r}: {entry!r}")
+        if notes.setdefault(pair, note) != note:
+            raise ValueError(f"A correction is listed with two different notes: {entry!r}")
+    return notes
+
+
+def corrections() -> Set[Tuple[str, str]]:
+    """The corrections list as (medicine id, disease id) pairs, whichever
+    of the two notes an entry carries. Checked as _corrections_with_notes
+    says."""
+    return set(_corrections_with_notes())
 
 
 def looks_wrong(disease_id: str) -> Set[str]:
     """The ids of the medicines on the corrections list for this disease.
 
-    Their Approved cards show WRONG_WARNING. The same medicine under
+    Their Approved cards show a red warning. The same medicine under
     another disease is not in the answer.
     """
     return {medicine_id for medicine_id, listed_for in corrections() if listed_for == disease_id}
+
+
+def warning_words(disease_id: str) -> Dict[str, str]:
+    """Medicine id -> the red words its Approved card shows for this disease.
+
+    Ticket 2.18. A card shows what its own entry carries: WRONG_WARNING
+    for the first note, as before, and SECOND_NOTE itself for the second.
+    The ids are the same ones looks_wrong gives.
+    """
+    return {
+        medicine_id: RED_WORDS[note]
+        for (medicine_id, listed_for), note in _corrections_with_notes().items()
+        if listed_for == disease_id
+    }
+
+
+def _read_left_out() -> list:
+    """The one place the left-out file is read. Tests replace this."""
+    return json.loads(LEFT_OUT_FILE.read_text(encoding="utf-8"))
+
+
+def left_out_by_hand() -> Set[Tuple[str, str]]:
+    """The left-out list as (medicine id, disease id) pairs (ticket 2.18).
+
+    Each entry holds exactly three things: the medicine's id, the disease's
+    id and the date. An entry that is not written this way raises
+    ValueError, as for corrections: the list is never half read.
+
+    Kashish's rule of 19 Nov: only a hand check may remove a card. This
+    list is written by hand. No code adds to it.
+    """
+    entries = _read_left_out()
+    if not isinstance(entries, list):
+        raise ValueError("left_out.json must hold a list.")
+    return {_checked_pair(entry, LEFT_OUT_KEYS, "A left-out entry") for entry in entries}
+
+
+def pushes_wrong_way(disease_id: str) -> Set[str]:
+    """The ids of the medicines left out by hand for this disease.
+
+    The same medicine under another disease is not in the answer.
+    """
+    return {medicine_id for medicine_id, listed_for in left_out_by_hand()
+            if listed_for == disease_id}
+
+
+def leave_out(new_clues: Iterable[Clue], listed: Iterable[str]) -> Tuple[List[Clue], int]:
+    """New clues without the listed medicines, and how many were taken out.
+
+    Like taking some cards out of a ranked pile: the rest keep their
+    order. new_clues is the New clues tab only. Approved and In trials
+    are never handed in, so the list cannot change them. The number
+    counts only clues that were in the pile: a listed medicine that was
+    not a new clue is not counted. listed holds family ids (pushes_wrong_way).
+    """
+    listed = set(listed)
+    new_clues = list(new_clues)
+    kept = [clue for clue in new_clues if _family_id(clue.medicine) not in listed]
+    return kept, len(new_clues) - len(kept)
+
+
+def wrong_way_line(count: int) -> Optional[str]:
+    """Kashish's words of 19 Nov, exactly, for the bottom of the New clues
+    list. None if no medicine was left out: then there is no line."""
+    if count < 1:
+        return None
+    if count == 1:
+        return "1 medicine left out because it pushes the wrong way for this disease."
+    return f"{count} medicines left out because they push the wrong way for this disease."
 
 
 def one_way_proteins(

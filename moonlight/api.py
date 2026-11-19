@@ -61,6 +61,7 @@ from moonlight import explain, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_way
+from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -301,7 +302,8 @@ def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] =
     }
 
 
-def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dict:
+def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
+                   words: Optional[Dict[str, str]] = None) -> dict:
     """One medicine already approved for the disease. It is not a clue, so
     it has no rank, no explanation and no ending.
 
@@ -312,6 +314,10 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dic
     card's only approval receipt. warning is only there when the medicine's
     id is in wrong: the corrections list for this disease. Neither moves
     the card or takes anything off it.
+
+    Ticket 2.18. words says which red words each listed card shows
+    (engine.warning_words): its own entry's. A card in wrong that words
+    does not name shows WRONG_WARNING, as before.
 
     Ticket 2.17. proof_note also carries the engine's other grey line: the
     card's medicine has no approval report from a regulator. One card has
@@ -336,7 +342,7 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = ()) -> dic
     if medicine.proof_note:
         item["proof_note"] = medicine.proof_note  # the engine's words too
     if medicine.id in wrong:
-        item["warning"] = WRONG_WARNING
+        item["warning"] = (words or {}).get(medicine.id, WRONG_WARNING)
     return item
 
 
@@ -358,6 +364,13 @@ def _about_json(disease: Disease) -> dict:
             if " ".join(name.lower().split()) != own_name
         ],
     }
+
+
+def _shown_new_clues(found: _Found) -> Tuple[List[Clue], int]:
+    """The New clues tab without the medicines left out by hand for this
+    disease, and how many of them there were (ticket 2.18). The engine
+    reads the hand-written list. Only New clues is handed to it."""
+    return leave_out(found.new_clues, pushes_wrong_way(found.disease.id))
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -421,6 +434,8 @@ def clues(disease_id: str) -> dict:
     found = _find(disease_id)
     disease = found.disease
     wrong = looks_wrong(disease.id)  # the corrections list, for this disease only
+    words = warning_words(disease.id)  # each listed card's own red words (ticket 2.18)
+    new_clues, wrong_way = _shown_new_clues(found)  # ticket 2.18: left out by hand
     # Ticket 3.7. The main Approved list only, without the red-warning cards.
     one_way = one_way_proteins(found.approved, wrong)
     answer = {
@@ -428,18 +443,24 @@ def clues(disease_id: str) -> dict:
         "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
-        "approved": [_approved_json(medicine, wrong) for medicine in found.approved],
+        "approved": [_approved_json(medicine, wrong, words) for medicine in found.approved],
         "being_studied": [_clue_json(clue, disease, one_way) for clue in found.being_studied],
-        "new_clues": [_clue_json(clue, disease, one_way) for clue in found.new_clues],
+        "new_clues": [_clue_json(clue, disease, one_way) for clue in new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
     if found.narrower:
         # The folded box "Approved for a narrower disease". Only there when
         # it holds something. The page shows it above the wider-group box.
-        answer["narrower"] = [_approved_json(medicine, wrong) for medicine in found.narrower]
+        answer["narrower"] = [
+            _approved_json(medicine, wrong, words) for medicine in found.narrower]
     if found.wider_group:
         # The folded box in the Approved tab. Only there when it holds something.
-        answer["wider_group"] = [_approved_json(medicine, wrong) for medicine in found.wider_group]
+        answer["wider_group"] = [
+            _approved_json(medicine, wrong, words) for medicine in found.wider_group]
+    if wrong_way:
+        # One line for the bottom of the New clues list: the engine's
+        # words. Only there when a clue was left out by hand.
+        answer["wrong_way_line"] = wrong_way_line(wrong_way)
     return answer
 
 
@@ -450,8 +471,9 @@ def explain_clue(request: Request, disease_id: str, clue_id: str) -> dict:
     found = _find(disease_id)
     # Only a new clue or a medicine being studied can be explained. A
     # medicine already approved for the disease is not a clue: it is
-    # "not found" here, like anything else.
-    for clue in found.new_clues + found.being_studied:
+    # "not found" here, like anything else. So is a clue left out by hand
+    # (ticket 2.18): its card is not shown, so nothing asks for it.
+    for clue in _shown_new_clues(found)[0] + found.being_studied:
         if _clue_id(clue) == clue_id:
             break
     else:
