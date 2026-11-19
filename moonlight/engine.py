@@ -36,6 +36,11 @@ where it is. A medicine with no reports at all gets the line too. If it
 has reports and none says where it comes from (answers saved before this
 ticket), the card gets no line: not said is not the same as no.
 
+Ticket 3.7, the opposite-way line. one_way_proteins(approved, wrong) reads
+the main Approved list and says which proteins its medicines all turn the
+same way. opposite_way(clue, one_way) then says on which of a clue's
+proteins the card carries OPPOSITE_LINE. Nothing is moved or hidden.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -91,6 +96,8 @@ JAPAN_LINE = (
 NO_REGULATOR_LINE = (
     "The database lists this as approved, but gives no regulator record for it."
 )
+# Ticket 3.7, Kashish's words, exactly. Changing them needs her approval.
+OPPOSITE_LINE = "Opposite way to the approved medicines for this disease."
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
 CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the note in every entry
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
@@ -601,6 +608,51 @@ def looks_wrong(disease_id: str) -> Set[str]:
     another disease is not in the answer.
     """
     return {medicine_id for medicine_id, listed_for in corrections() if listed_for == disease_id}
+
+
+def one_way_proteins(
+    approved: Iterable[ApprovedMedicine], wrong: Iterable[str] = ()
+) -> Dict[str, str]:
+    """Protein id -> "up" or "down", for the proteins that are one-way.
+
+    Like a one-way street: every approved medicine on it drives the same
+    way. approved is the MAIN Approved list only (Tabs.approved), never
+    the narrower box or the wider box. wrong holds the ids of the
+    medicines with the red warning for this disease (looks_wrong): they
+    are left out. A medicine that turns the protein "mixed" or "unknown"
+    is ignored. A protein with some medicines up and some down is
+    both-ways, and a protein with none left is not known: neither is in
+    the answer.
+    """
+    wrong = set(wrong)
+    seen: Dict[str, Set[str]] = {}  # protein id -> the directions met
+    for medicine in approved:
+        if medicine.id in wrong or medicine.clue is None:
+            continue
+        for path in medicine.clue.paths:
+            if path.direction in ("up", "down"):
+                seen.setdefault(path.target.id, set()).add(path.direction)
+    return {
+        target_id: next(iter(directions))
+        for target_id, directions in seen.items()
+        if len(directions) == 1
+    }
+
+
+def opposite_way(clue: Clue, one_way: Dict[str, str]) -> Set[str]:
+    """The ids of the clue's proteins that carry OPPOSITE_LINE.
+
+    clue is a New clues or In trials card, never an Approved one. one_way
+    comes from one_way_proteins. Only up against down, or down against
+    up, counts. A clue that turns the protein "mixed" or "unknown" never
+    gets the line.
+    """
+    against = {"up": "down", "down": "up"}
+    return {
+        path.target.id
+        for path in clue.paths
+        if path.direction in against and one_way.get(path.target.id) == against[path.direction]
+    }
 
 
 def _parent_first(family_id: str, forms: Dict[str, str]) -> Tuple[str, ...]:
