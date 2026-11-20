@@ -1730,10 +1730,10 @@ def one_explain(client, visitor, clue_id):
 
 # ---- Example 1: 10 a minute, the 11th is 429, then the minute passes ----
 
-def test_82_example_1_ten_searches_are_answered_the_11th_is_429_then_the_minute_passes(
+def test_82_example_1_sixty_searches_are_answered_the_61st_is_429_then_the_minute_passes(
         client, clock):
-    for _ in range(10):
-        clock.now += 5  # ten searches inside 50 seconds
+    for _ in range(60):
+        clock.now += 0.5  # sixty searches inside 30 seconds
         assert one_search(client, VISITOR_A).status_code == 200
     clock.now += 5
     refused = one_search(client, VISITOR_A)
@@ -1744,7 +1744,7 @@ def test_82_example_1_ten_searches_are_answered_the_11th_is_429_then_the_minute_
 
 
 def test_82_a_refused_search_asks_open_targets_and_gemini_nothing(client, clock):
-    for _ in range(10):
+    for _ in range(60):
         one_search(client, VISITOR_A)
     with patch("moonlight.fetch._post_json") as open_targets, \
             patch("moonlight.translate._gemini_request") as gemini:
@@ -1753,10 +1753,10 @@ def test_82_a_refused_search_asks_open_targets_and_gemini_nothing(client, clock)
     gemini.assert_not_called()
 
 
-def test_82_the_limit_is_10_in_any_60_seconds(client, clock):
-    assert api.MAX_A_MINUTE == {"search": 10, "explain": 30}
+def test_82_the_limit_is_60_in_any_60_seconds(client, clock):
+    assert api.MAX_A_MINUTE == {"search": 60, "explain": 30}
     assert api.MINUTE_SECONDS == 60
-    for _ in range(10):
+    for _ in range(60):
         assert one_search(client, VISITOR_A).status_code == 200
     clock.now += 59.9
     assert one_search(client, VISITOR_A).status_code == 429
@@ -1765,19 +1765,19 @@ def test_82_the_limit_is_10_in_any_60_seconds(client, clock):
 
 
 def test_82_a_refused_request_does_not_make_the_wait_longer(client, clock):
-    for _ in range(10):
+    for _ in range(60):
         one_search(client, VISITOR_A)
     for _ in range(20):
         clock.now += 2
         assert one_search(client, VISITOR_A).status_code == 429
-    clock.now += 20  # 60 seconds after the ten that were answered
+    clock.now += 20  # 60 seconds after the sixty that were answered
     assert one_search(client, VISITOR_A).status_code == 200
 
 
 # ---- Example 2: visitor A is over the limit, visitor B is still answered ----
 
 def test_82_example_2_visitor_b_is_answered_while_visitor_a_is_over_the_limit(client, clock):
-    for _ in range(10):
+    for _ in range(60):
         one_search(client, VISITOR_A)
     assert one_search(client, VISITOR_A).status_code == 429
     assert one_search(client, VISITOR_B).status_code == 200
@@ -1786,7 +1786,7 @@ def test_82_example_2_visitor_b_is_answered_while_visitor_a_is_over_the_limit(cl
 def test_82_the_visitor_is_the_last_address_in_the_forwarding_header(client, clock):
     # The entries before the last one are whatever the visitor sent, so a
     # visitor who makes up a new one each time is still the same visitor.
-    for number in range(10):
+    for number in range(60):
         made_up = {"X-Forwarded-For": f"192.0.2.{number}, 203.0.113.7"}
         assert one_search(client, made_up).status_code == 200
     assert one_search(client, {"X-Forwarded-For": "192.0.2.99, 203.0.113.7"}).status_code == 429
@@ -1796,7 +1796,7 @@ def test_82_the_visitor_is_the_last_address_in_the_forwarding_header(client, clo
 
 def test_82_with_no_forwarding_header_the_visitor_is_the_direct_caller(client, clock):
     # Running on a laptop: nothing sits in front, so there is no header.
-    for _ in range(10):
+    for _ in range(60):
         assert one_search(client, {}).status_code == 200
     assert one_search(client, {}).status_code == 429
     assert one_search(client, VISITOR_B).status_code == 200
@@ -1805,9 +1805,9 @@ def test_82_with_no_forwarding_header_the_visitor_is_the_direct_caller(client, c
 # ---- Example 3: 10 searches do not use up the 30 explanations ----
 # Kashish, 2026-11-16: explanations are 30 a minute, searches stay at 10.
 
-def test_82_example_3_ten_searches_do_not_use_up_the_thirty_explanations(client, clock):
+def test_82_example_3_sixty_searches_do_not_use_up_the_thirty_explanations(client, clock):
     clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
-    for _ in range(10):
+    for _ in range(60):
         assert one_search(client, VISITOR_A).status_code == 200
     assert one_search(client, VISITOR_A).status_code == 429
     for _ in range(30):
@@ -1820,12 +1820,12 @@ def test_82_example_3_ten_searches_do_not_use_up_the_thirty_explanations(client,
     assert one_explain(client, VISITOR_A, clue_id).status_code == 200
 
 
-def test_82_thirty_explanations_do_not_use_up_the_ten_searches(client, clock):
+def test_82_thirty_explanations_do_not_use_up_the_sixty_searches(client, clock):
     clue_id = clue_named(clues_json(client, "KCNK3")["new_clues"], "Sevoflurane")["id"]
     for _ in range(30):
         assert one_explain(client, VISITOR_A, clue_id).status_code == 200
     assert one_explain(client, VISITOR_A, clue_id).status_code == 429
-    for _ in range(10):
+    for _ in range(60):
         assert one_search(client, VISITOR_A).status_code == 200
     assert one_search(client, VISITOR_A).status_code == 429
 
