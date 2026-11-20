@@ -432,10 +432,43 @@ _models: List[str] = []  # the model list, asked for once
 _made: Dict[str, Explanation] = {}  # explanations already made
 
 
+# Ticket 6.1. Gemini explanations already handed out by the API, found by
+# (disease id, clue id) alone, so a visitor over the limit can be given one
+# without asking Open Targets or Gemini anything. Only for the newest data
+# version seen: when it changes, the old ones are dropped.
+_by_clue: Dict[Tuple[str, str], Explanation] = {}
+_by_clue_version: List[Optional[str]] = [None]
+
+
 def forget_everything() -> None:
     """Forget the model list and the explanations already made."""
     _models.clear()
     _made.clear()
+    _by_clue.clear()
+    _by_clue_version[0] = None
+
+
+def remember(disease_id: str, clue_id: str, data_version: Optional[str],
+             explanation: Explanation) -> None:
+    """Note a Gemini explanation the API has handed out (ticket 6.1).
+
+    Template answers are never noted: they are not saved, so asking again
+    asks Gemini again. A new data version drops every older note.
+    """
+    if explanation.source != "gemini" or data_version is None:
+        return
+    if data_version != _by_clue_version[0]:
+        _by_clue.clear()
+        _by_clue_version[0] = data_version
+    _by_clue[(disease_id, clue_id)] = explanation
+
+
+def remembered(disease_id: str, clue_id: str) -> Optional[Explanation]:
+    """A Gemini explanation already handed out for this clue, or None.
+
+    Asks nobody anything: no Open Targets, no Gemini.
+    """
+    return _by_clue.get((disease_id, clue_id))
 
 
 def _model_order(listing: dict) -> List[str]:
@@ -596,6 +629,47 @@ def _saved(data_version: Optional[str], key: str, facts: dict, known: List[str],
                        tries=entry.get("tries", 1))
 
 
+def _key_for(clue: Clue, disease, known_names: Optional[Iterable[str]],
+             data_version: Optional[str]) -> Tuple[dict, List[str], str, str]:
+    """The facts, the known names, the ending, and the key a finished
+    explanation is saved under."""
+    facts = facts_for(clue, disease)
+    known = sorted({name.lower() for name in known_names or () if name})
+    ending = ending_for(facts)
+    # Everything the text depends on. Change the ENDING or the prompt text
+    # and the key changes, so old text is never handed back.
+    key = json.dumps(
+        {"facts": facts, "known": known, "ending": ending,
+         "prompt": _prompt(facts, []), "data_version": data_version},
+        sort_keys=True,
+    )
+    return facts, known, ending, key
+
+
+def _already_made(data_version: Optional[str], key: str, facts: dict, known: List[str],
+                  ending: str) -> Optional[Explanation]:
+    """From memory, or from the disk (checked again). Never asks Gemini."""
+    if key in _made:
+        return _made[key]
+    saved = _saved(data_version, key, facts, known, ending)
+    if saved is not None:
+        _made[key] = saved
+    return saved
+
+
+def saved_explanation(clue: Clue, disease,
+                      known_names: Optional[Iterable[str]] = None,
+                      data_version: Optional[str] = None) -> Optional[Explanation]:
+    """The explanation explain() would hand back without asking Gemini, or
+    None if explain() would need a new Gemini call (ticket 6.1).
+
+    The same key and the same check as explain(), so the words are exactly
+    the words explain() would give.
+    """
+    facts, known, ending, key = _key_for(clue, disease, known_names, data_version)
+    return _already_made(data_version, key, facts, known, ending)
+
+
 def explain(clue: Clue, disease,
             known_names: Optional[Iterable[str]] = None,
             data_version: Optional[str] = None) -> Explanation:
@@ -608,22 +682,10 @@ def explain(clue: Clue, disease,
     (fetch.data_version()). With it, a finished explanation is saved on
     disk under that version. Without it, it is only remembered in memory.
     """
-    facts = facts_for(clue, disease)
-    known = sorted({name.lower() for name in known_names or () if name})
-    ending = ending_for(facts)
-    # Everything the text depends on. Change the ENDING or the prompt text
-    # and the key changes, so old text is never handed back.
-    key = json.dumps(
-        {"facts": facts, "known": known, "ending": ending,
-         "prompt": _prompt(facts, []), "data_version": data_version},
-        sort_keys=True,
-    )
-    if key in _made:
-        return _made[key]  # the same clue is not asked twice
-    saved = _saved(data_version, key, facts, known, ending)
+    facts, known, ending, key = _key_for(clue, disease, known_names, data_version)
+    saved = _already_made(data_version, key, facts, known, ending)
     if saved is not None:
-        _made[key] = saved
-        return saved
+        return saved  # the same clue is not asked twice
 
     deadline = time.monotonic() + TOTAL_SECONDS
     tries = 0

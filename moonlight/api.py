@@ -22,15 +22,25 @@ as two counts and nothing else.
 explain.py the Open Targets data version, so a finished explanation is
 saved, and asking for the same clue again makes no Gemini call.
 
-The cost guard (ticket 8.2, Kashish's decisions of 2026-11-16). Like a
-ticket counter with one small notepad per visitor: each visitor may make
-10 requests to /api/search in any MINUTE_SECONDS, and, counted on a
-separate notepad, 30 to /api/explain (the numbers are in MAX_A_MINUTE;
-30 because opening the New clues tab asks for 5 explanations by itself).
-One more than
-that gets HTTP 429 and the words in TOO_MANY, and nothing is asked of
-Open Targets or Gemini. A search longer than MAX_SEARCH_LETTERS is
-refused the same way, before anything is sent anywhere.
+The cost guard (ticket 8.2, Kashish's decisions of 2026-11-16, and
+ticket 6.1, "the hall problem"). Like a ticket counter with one small
+notepad per visitor: each visitor may make 60 requests to /api/search in
+any MINUTE_SECONDS, and, counted on a separate notepad, 30 NEW
+explanations (the numbers are in MAX_A_MINUTE). At an event a whole hall
+shares one Wi-Fi, so Moonlight sees the hall as one visitor.
+
+Only an explanation that needs a new Gemini call goes on the notepad. A
+request answered from a saved explanation is never written down and is
+never refused, even when the visitor is over the limit. The request takes
+a place on the notepad first, and gives it back once it is answered
+without a new Gemini call (or not answered at all: a 404 or a 502).
+
+One more than the limit gets HTTP 429 and the words in TOO_MANY, and
+nothing is asked of Open Targets or Gemini. An explanation request over
+the limit is only answered if the explanation was already handed out by
+this program (explain.remembered): that lookup asks nobody anything.
+A search longer than MAX_SEARCH_LETTERS is refused the same way, before
+anything is sent anywhere.
 
 Who is "one visitor"? Their address. On Cloud Run the direct caller is
 always Google's front door, never the visitor, and the visitor's address
@@ -93,9 +103,10 @@ DID_YOU_MEAN_SECONDS = translate.GEMINI_SECONDS + 2
 # Where "did you mean" runs while the normal search runs.
 _side_lane = ThreadPoolExecutor(max_workers=8, thread_name_prefix="did-you-mean")
 
-# ---- the cost guard (ticket 8.2) ----
+# ---- the cost guard (ticket 8.2, ticket 6.1) ----
 # Requests one visitor may make in a minute. Each lane has its own notepad.
-MAX_A_MINUTE = {"search": 10, "explain": 30}
+# "explain" counts only explanations that need a new Gemini call.
+MAX_A_MINUTE = {"search": 60, "explain": 30}
 MINUTE_SECONDS = 60
 MAX_SEARCH_LETTERS = 100  # the search box on the page stops here too
 # Word for word from the ticket. The page shows exactly this.
@@ -155,11 +166,15 @@ def _visitor(request: Request) -> str:
     return request.client.host if request.client else "unknown"
 
 
-def _count_visit(lane: str, request: Request) -> None:
-    """Write this request on the visitor's notepad, or refuse it with 429.
+# One place on a notepad: whose notepad, and the time written on it.
+_Place = Tuple[Tuple[str, str], float]
 
-    A refused request is not written down, so asking again while over the
-    limit does not make the wait any longer.
+
+def _take_place(lane: str, request: Request) -> Optional[_Place]:
+    """Write this request on the visitor's notepad and say where, or say
+    None if the notepad is full.
+
+    A request that is not written down does not make the wait any longer.
     """
     global _swept_at
     now = _now()
@@ -179,7 +194,28 @@ def _count_visit(lane: str, request: Request) -> None:
             times.append(now)
         elif not times:  # never left empty: the sweep reads the last entry
             del _visits[key]
-    if not allowed:
+    return (key, now) if allowed else None
+
+
+def _give_back(place: _Place) -> None:
+    """Rub one place off a notepad (ticket 6.1): the request did not need a
+    new Gemini call after all."""
+    key, written = place
+    with _visits_lock:
+        times = _visits.get(key)
+        if times is None:
+            return
+        try:
+            times.remove(written)
+        except ValueError:
+            return  # already gone with its minute
+        if not times:  # never left empty: the sweep reads the last entry
+            del _visits[key]
+
+
+def _count_visit(lane: str, request: Request) -> None:
+    """Write this request on the visitor's notepad, or refuse it with 429."""
+    if _take_place(lane, request) is None:
         raise HTTPException(status_code=429, detail=TOO_MANY)
 
 
@@ -464,32 +500,57 @@ def clues(disease_id: str) -> dict:
     return answer
 
 
-@app.get("/api/explain")
-def explain_clue(request: Request, disease_id: str, clue_id: str) -> dict:
-    # Over the limit is a 429 and nothing else: no template explanation.
-    _count_visit("explain", request)
-    found = _find(disease_id)
-    # Only a new clue or a medicine being studied can be explained. A
-    # medicine already approved for the disease is not a clue: it is
-    # "not found" here, like anything else. So is a clue left out by hand
-    # (ticket 2.18): its card is not shown, so nothing asks for it.
-    for clue in _shown_new_clues(found)[0] + found.being_studied:
-        if _clue_id(clue) == clue_id:
-            break
-    else:
-        raise HTTPException(status_code=404, detail="No clue with this id for this disease.")
-    # A finished explanation is saved under the data version the clue came
-    # from. _find has just read that version, so this asks nothing new.
-    try:
-        version = data_version()
-    except (FetchError, requests.RequestException):
-        raise HTTPException(
-            status_code=502, detail="Could not get the data from Open Targets."
-        ) from None
-    answer = explain.explain(clue, found.disease, found.known_names, data_version=version)
+def _explanation_json(clue_id: str, answer: explain.Explanation) -> dict:
     return {
         "clue_id": clue_id,
         "text": answer.text,
         "source": answer.source,  # "gemini" or "template"
         "model": answer.model,  # None for the template
     }
+
+
+@app.get("/api/explain")
+def explain_clue(request: Request, disease_id: str, clue_id: str) -> dict:
+    place = _take_place("explain", request)
+    if place is None:
+        # Over the limit. Only an explanation this program has already
+        # handed out is given, and finding it asks nobody anything.
+        # Anything else is a 429 and nothing else: no template explanation.
+        kept = explain.remembered(disease_id, clue_id)
+        if kept is None:
+            raise HTTPException(status_code=429, detail=TOO_MANY)
+        return _explanation_json(clue_id, kept)
+
+    # The place is given back unless a new Gemini call is needed (ticket
+    # 6.1): a saved explanation, a 404 and a 502 are not counted.
+    keep_place = False
+    try:
+        found = _find(disease_id)
+        # Only a new clue or a medicine being studied can be explained. A
+        # medicine already approved for the disease is not a clue: it is
+        # "not found" here, like anything else. So is a clue left out by hand
+        # (ticket 2.18): its card is not shown, so nothing asks for it.
+        for clue in _shown_new_clues(found)[0] + found.being_studied:
+            if _clue_id(clue) == clue_id:
+                break
+        else:
+            raise HTTPException(status_code=404, detail="No clue with this id for this disease.")
+        # A finished explanation is saved under the data version the clue came
+        # from. _find has just read that version, so this asks nothing new.
+        try:
+            version = data_version()
+        except (FetchError, requests.RequestException):
+            raise HTTPException(
+                status_code=502, detail="Could not get the data from Open Targets."
+            ) from None
+        answer = explain.saved_explanation(
+            clue, found.disease, found.known_names, data_version=version)
+        if answer is None:
+            keep_place = True  # a new Gemini call: this one is counted
+            answer = explain.explain(clue, found.disease, found.known_names,
+                                     data_version=version)
+    finally:
+        if not keep_place:
+            _give_back(place)
+    explain.remember(disease_id, clue_id, version, answer)
+    return _explanation_json(clue_id, answer)
