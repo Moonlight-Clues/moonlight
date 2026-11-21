@@ -1,0 +1,4333 @@
+{
+ "id": "MONDO_0021107",
+ "name": "narcolepsy",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000142319",
+   "symbol": "SLC6A3",
+   "score": 0.5985643769080522
+  },
+  {
+   "id": "ENSG00000103546",
+   "symbol": "SLC6A2",
+   "score": 0.5819843918051079
+  },
+  {
+   "id": "ENSG00000101180",
+   "symbol": "HRH3",
+   "score": 0.5580050444608047
+  },
+  {
+   "id": "ENSG00000204681",
+   "symbol": "GABBR1",
+   "score": 0.5534297440642867
+  },
+  {
+   "id": "ENSG00000136928",
+   "symbol": "GABBR2",
+   "score": 0.5526257538887414
+  },
+  {
+   "id": "ENSG00000165646",
+   "symbol": "SLC18A2",
+   "score": 0.5279858868453948
+  },
+  {
+   "id": "ENSG00000204655",
+   "symbol": "MOG",
+   "score": 0.5139354663459459
+  },
+  {
+   "id": "ENSG00000161610",
+   "symbol": "HCRT",
+   "score": 0.5077516611376056
+  },
+  {
+   "id": "ENSG00000244165",
+   "symbol": "P2RY11",
+   "score": 0.4543343405075904
+  },
+  {
+   "id": "ENSG00000130811",
+   "symbol": "EIF3G",
+   "score": 0.4481847740114828
+  },
+  {
+   "id": "ENSG00000103811",
+   "symbol": "CTSH",
+   "score": 0.4378791104705286
+  },
+  {
+   "id": "ENSG00000130810",
+   "symbol": "PPAN",
+   "score": 0.4357087682098892
+  },
+  {
+   "id": "ENSG00000132849",
+   "symbol": "PATJ",
+   "score": 0.38212673315534484
+  },
+  {
+   "id": "ENSG00000180644",
+   "symbol": "PRF1",
+   "score": 0.36493429805685335
+  },
+  {
+   "id": "ENSG00000116031",
+   "symbol": "CD207",
+   "score": 0.347205350546268
+  },
+  {
+   "id": "ENSG00000181449",
+   "symbol": "SOX2",
+   "score": 0.34147558178709103
+  },
+  {
+   "id": "ENSG00000109861",
+   "symbol": "CTSC",
+   "score": 0.33559630440421
+  },
+  {
+   "id": "ENSG00000147573",
+   "symbol": "TRIM55",
+   "score": 0.3188028534335836
+  },
+  {
+   "id": "ENSG00000181915",
+   "symbol": "ADO",
+   "score": 0.3111055081204002
+  },
+  {
+   "id": "ENSG00000134046",
+   "symbol": "MBD2",
+   "score": 0.2942634811657094
+  },
+  {
+   "id": "ENSG00000132793",
+   "symbol": "LPIN3",
+   "score": 0.29412963493060906
+  },
+  {
+   "id": "ENSG00000142166",
+   "symbol": "IFNAR1",
+   "score": 0.29362445500575934
+  },
+  {
+   "id": "ENSG00000143995",
+   "symbol": "MEIS1",
+   "score": 0.2919930184899657
+  },
+  {
+   "id": "ENSG00000080166",
+   "symbol": "DCT",
+   "score": 0.2874545496001914
+  },
+  {
+   "id": "ENSG00000108576",
+   "symbol": "SLC6A4",
+   "score": 0.28687609609192516
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0003406",
+   "name": "sleep-wake disorder"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0016158",
+   "name": "narcolepsy-cataplexy syndrome"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0019371",
+   "name": "narcolepsy without cataplexy"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0100554",
+   "name": "hereditary narcolepsy"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL612",
+   "medicine": "DEXTROAMPHETAMINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0T3LF",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0T3LF"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1373",
+   "medicine": "MODAFINIL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07HQC",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D07HQC",
+    "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1342",
+   "medicine": "OXYBATE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D40IXR",
+   "proteins": [
+    {
+     "target_id": "ENSG00000204681",
+     "symbol": "GABBR1",
+     "score": 0.5534297440642867,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000136928",
+     "symbol": "GABBR2",
+     "score": 0.5526257538887414,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D40IXR",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/xyrem"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL462605",
+   "medicine": "PITOLISANT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/wakix",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101180",
+     "symbol": "HRH3",
+     "score": 0.5580050444608047,
+     "action_types": [
+      "INVERSE AGONIST"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/wakix"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4297620",
+   "medicine": "SOLRIAMFETOL",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/sunosi",
+   "proteins": [],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/sunosi"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "narrower",
+   "id": "CHEMBL405",
+   "medicine": "AMPHETAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb12811f-4cce-4010-aa48-d17c46ca1d3a",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for narcolepsy-cataplexy syndrome, which the database lists under this disease.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb12811f-4cce-4010-aa48-d17c46ca1d3a",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f469fb38-0380-4621-9db3-a4f429126156",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffd56d70-d884-43be-a994-6e70a10e823e"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "narrower",
+   "id": "CHEMBL1201192",
+   "medicine": "ARMODAFINIL",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0310a062-51fd-4e74-8a5f-7f21a16f52c9",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for narcolepsy-cataplexy syndrome, which the database lists under this disease.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0310a062-51fd-4e74-8a5f-7f21a16f52c9",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10f918f7-4782-470e-a50e-35c7c66bfd79",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2c824d4c-2309-4e2a-bc74-aa8d80a5c454",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=795a7ba3-c60b-4637-aa99-06c1e10af8a7",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a2b3b762-7984-409c-82e4-8d216055df72",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d878aed0-ddbf-8fa1-abf7-d3e480260845",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e7bfb636-4b0a-440c-a4d3-d26393a14ac5"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "narrower",
+   "id": "CHEMBL796",
+   "medicine": "METHYLPHENIDATE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e3c22d9-71d9-46a7-b315-8021c94c4bec",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for narcolepsy-cataplexy syndrome, which the database lists under this disease.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e3c22d9-71d9-46a7-b315-8021c94c4bec",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0bf0835-6a2f-4067-a158-8b86c4b0668a",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd83fc91-47a3-4be4-9727-caf9ec0371e8",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ec8a8896-077d-4dee-9e10-97172512c5ed"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2104054",
+   "medicine": "ACEPROMETAZINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D06EQP",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for sleep-wake disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D06EQP"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2103822",
+   "medicine": "TASIMELTEON",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca4a9b63-708e-49e9-8f9b-010625443b90",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for sleep-wake disorder, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca4a9b63-708e-49e9-8f9b-010625443b90"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1201192",
+   "medicine": "ARMODAFINIL",
+   "source": "https://clinicaltrials.gov/study/NCT01080807",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL781",
+   "medicine": "MAZINDOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=A08AA05",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL14370",
+   "medicine": "REBOXETINE",
+   "source": "https://clinicaltrials.gov/study/NCT00209807",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201222",
+   "medicine": "LISDEXAMFETAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT00500071",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL894",
+   "medicine": "BUPROPION",
+   "source": "https://clinicaltrials.gov/study/NCT00006170",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL827",
+   "medicine": "DEXMETHYLPHENIDATE",
+   "source": "https://clinicaltrials.gov/study/NCT00564954",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4301162",
+   "medicine": "SERDEXMETHYLPHENIDATE",
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/212994s000lbl.pdf",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201208",
+   "medicine": "PHENMETRAZINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0M2MC",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3545985",
+   "medicine": "BENZPHETAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4f4a726a-8ac1-4a37-89ec-da1406784195",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1175",
+   "medicine": "DULOXETINE",
+   "source": "https://clinicaltrials.gov/study/NCT00067912",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL637",
+   "medicine": "VENLAFAXINE",
+   "source": "https://clinicaltrials.gov/study/NCT00150839",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL629",
+   "medicine": "AMITRIPTYLINE",
+   "source": "https://clinicaltrials.gov/study/NCT00564525",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1118",
+   "medicine": "DESVENLAFAXINE",
+   "source": "https://clinicaltrials.gov/study/NCT02330679",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL11",
+   "medicine": "IMIPRAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT00227955",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL259209",
+   "medicine": "MILNACIPRAN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=08214b30-3dab-4621-a6c0-6bb68529dee3",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL445",
+   "medicine": "NORTRIPTYLINE",
+   "source": "https://clinicaltrials.gov/study/NCT00000378",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL99946",
+   "medicine": "LEVOMILNACIPRAN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcbc5d92-e022-4a0d-ab4d-2b0d7aa68c58",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL668",
+   "medicine": "PROTRIPTYLINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00MYQ",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1113",
+   "medicine": "AMOXAPINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=261006c8-3fd0-491b-b322-42beff6f9880",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1492500",
+   "medicine": "DOTHIEPIN",
+   "source": "https://clinicaltrials.gov/study/NCT06803485",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3301595",
+   "medicine": "DASOTRALINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0W6KM",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201201",
+   "medicine": "METHAMPHETAMINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P6UB",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142319",
+     "symbol": "SLC6A3",
+     "score": 0.5985643769080522,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL641",
+   "medicine": "ATOMOXETINE",
+   "source": "https://clinicaltrials.gov/study/NCT00190736",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1590",
+   "medicine": "PSEUDOEPHEDRINE",
+   "source": "https://clinicaltrials.gov/study/NCT02175485",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "RELEASING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201776",
+   "medicine": "TAPENTADOL",
+   "source": "https://clinicaltrials.gov/study/NCT01500317",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL818",
+   "medicine": "IOBENGUANE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3423ac0f-9585-4abf-a8ba-a5123a8277ee",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "SUBSTRATE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL72",
+   "medicine": "DESIPRAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT00166114",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1628227",
+   "medicine": "DOXEPIN",
+   "source": "https://clinicaltrials.gov/study/NCT03758079",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL306700",
+   "medicine": "VILOXAZINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V9JR",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL900",
+   "medicine": "ORPHENADRINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8e41b33e-f71f-4a5e-b88f-cdfefb2bee20",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=326ef804-8d3a-425e-8513-8c9811856aa0",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL21731",
+   "medicine": "MAPROTILINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03KQF",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1199080",
+   "medicine": "BRETYLIUM",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b5b9b1de-d819-4e49-ac0b-05b29033df1c",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "SUBSTRATE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL765",
+   "medicine": "GUANETHIDINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C02CC02",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "SUBSTRATE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201260",
+   "medicine": "BETHANIDINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0JP4H",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "SUBSTRATE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL169901",
+   "medicine": "DEBRISOQUIN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C02CC04",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1037",
+   "medicine": "GUANADREL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0U3CR",
+   "proteins": [
+    {
+     "target_id": "ENSG00000103546",
+     "symbol": "SLC6A2",
+     "score": 0.5819843918051079,
+     "action_types": [
+      "SUBSTRATE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL24441",
+   "medicine": "BETAHISTINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N07CA01",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101180",
+     "symbol": "HRH3",
+     "score": 0.5580050444608047,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL701",
+   "medicine": "BACLOFEN",
+   "source": "https://clinicaltrials.gov/study/NCT01032239",
+   "proteins": [
+    {
+     "target_id": "ENSG00000204681",
+     "symbol": "GABBR1",
+     "score": 0.5534297440642867,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000136928",
+     "symbol": "GABBR2",
+     "score": 0.5526257538887414,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL117785",
+   "medicine": "TETRABENAZINE",
+   "source": "https://clinicaltrials.gov/study/NCT07601516",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2364639",
+   "medicine": "VALBENAZINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D63WMQ",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1200515",
+   "medicine": "DESERPIDINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C02AA05",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1668",
+   "medicine": "RESCINNAMINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C02AA01",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165646",
+     "symbol": "SLC18A2",
+     "score": 0.5279858868453948,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3900409",
+   "medicine": "BRENSOCATIB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/brinsupri",
+   "proteins": [
+    {
+     "target_id": "ENSG00000109861",
+     "symbol": "CTSC",
+     "score": 0.33559630440421,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201560",
+   "medicine": "PEGINTERFERON ALFA-2A",
+   "source": "https://clinicaltrials.gov/study/NCT00077636",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201558",
+   "medicine": "INTERFERON ALFA-2B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/introna",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201561",
+   "medicine": "PEGINTERFERON ALFA-2B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/pegintron",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108508",
+   "medicine": "INTERFERON ALFA-2A",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09PMV",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201562",
+   "medicine": "INTERFERON BETA-1A",
+   "source": "https://clinicaltrials.gov/study/NCT00037115",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4297819",
+   "medicine": "ROPEGINTERFERON ALFA-2B",
+   "source": "https://clinicaltrials.gov/study/NCT06290765",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201563",
+   "medicine": "INTERFERON BETA-1B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/extavia",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2364653",
+   "medicine": "ANIFROLUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT06594068",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108677",
+   "medicine": "PEGINTERFERON BETA-1A",
+   "source": "https://clinicaltrials.gov/study/NCT02234869",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201557",
+   "medicine": "INTERFERON ALFACON-1",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/infergen",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2107842",
+   "medicine": "ALBINTERFERON ALFA-2B",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L03AB12",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2109047",
+   "medicine": "INTERFERON ALFA-N3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07CMM",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.29362445500575934,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1508",
+   "medicine": "ESCITALOPRAM",
+   "source": "https://clinicaltrials.gov/study/NCT00073697",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL41",
+   "medicine": "FLUOXETINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0272727f-5c9d-4551-b1c6-28e367e5cdb9",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL809",
+   "medicine": "SERTRALINE",
+   "source": "https://clinicaltrials.gov/study/NCT00000378",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL549",
+   "medicine": "CITALOPRAM",
+   "source": "https://clinicaltrials.gov/study/NCT00047671",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL490",
+   "medicine": "PAROXETINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=069b27c7-20a9-4d91-903e-33df5b49655e",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2104993",
+   "medicine": "VORTIOXETINE",
+   "source": "https://clinicaltrials.gov/study/NCT02234362",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL621",
+   "medicine": "TRAZODONE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=66c4ccc0-36af-6b09-e053-2991aa0ac1c9",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL814",
+   "medicine": "FLUVOXAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT00352768",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL439849",
+   "medicine": "VILAZODONE",
+   "source": "https://clinicaltrials.gov/study/NCT01473381",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3306803",
+   "medicine": "LUMATEPERONE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=db730b06-6351-47fd-8183-e61e61bbead5",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2110900",
+   "medicine": "DAPOXETINE",
+   "source": "https://clinicaltrials.gov/study/NCT00210613",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL415",
+   "medicine": "CLOMIPRAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ff9ed80e-d692-494f-9741-a9af30fa5000",
+   "proteins": [
+    {
+     "target_id": "ENSG00000108576",
+     "symbol": "SLC6A4",
+     "score": 0.28687609609192516,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 42,
+  "unclear_link": 0
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {
+  "ENSG00000165646": "down",
+  "ENSG00000142319": "down",
+  "ENSG00000204681": "up",
+  "ENSG00000136928": "up"
+ },
+ "one_way_without_leaving_out_red_warnings": {
+  "ENSG00000165646": "down",
+  "ENSG00000142319": "down",
+  "ENSG00000204681": "up",
+  "ENSG00000136928": "up"
+ },
+ "withdrawn_on_own_list": [],
+ "withdrawn_on_a_neighbour_list": [],
+ "own_list": {
+  "CHEMBL4297328": {
+   "id": "CHEMBL4297328",
+   "name": "SUVN-G3031",
+   "forms": [
+    [
+     "CHEMBL4297328",
+     "SUVN-G3031"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07540364"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04072380"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05530447"
+    }
+   ]
+  },
+  "CHEMBL652": {
+   "id": "CHEMBL652",
+   "name": "FLECAINIDE",
+   "forms": [
+    [
+     "CHEMBL652",
+     "FLECAINIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02821715"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03182413"
+    }
+   ]
+  },
+  "CHEMBL129542": {
+   "id": "CHEMBL129542",
+   "name": "JNJ-5207852",
+   "forms": [
+    [
+     "CHEMBL129542",
+     "JNJ-5207852"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "IND",
+   "best_stage_of_listed_forms": "IND",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "IND",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D03QGB"
+    }
+   ]
+  },
+  "CHEMBL14370": {
+   "id": "CHEMBL14370",
+   "name": "REBOXETINE",
+   "forms": [
+    [
+     "CHEMBL14370",
+     "REBOXETINE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05059223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05113745"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03881852"
+    }
+   ]
+  },
+  "CHEMBL113": {
+   "id": "CHEMBL113",
+   "name": "CAFFEINE",
+   "forms": [
+    [
+     "CHEMBL113",
+     "CAFFEINE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT02832336"
+    }
+   ]
+  },
+  "CHEMBL3545030": {
+   "id": "CHEMBL3545030",
+   "name": "JNJ-17216498",
+   "forms": [
+    [
+     "CHEMBL3545030",
+     "JNJ-17216498"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D02REJ"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00424931"
+    }
+   ]
+  },
+  "CHEMBL1342": {
+   "id": "CHEMBL1342",
+   "name": "OXYBATE",
+   "forms": [
+    [
+     "CHEMBL1342",
+     "OXYBATE"
+    ],
+    [
+     "CHEMBL1200682",
+     "SODIUM OXYBATE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04803786"
+    },
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D40IXR"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/xyrem"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00049803"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00066170"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00132873"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02221869"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02720744"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03030599"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04451668"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03626727"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06792708"
+    }
+   ]
+  },
+  "CHEMBL4297620": {
+   "id": "CHEMBL4297620",
+   "name": "SOLRIAMFETOL",
+   "forms": [
+    [
+     "CHEMBL4297620",
+     "SOLRIAMFETOL"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/sunosi"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0M3CV"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02348593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02348632"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01485770"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01681121"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02806908"
+    }
+   ]
+  },
+  "CHEMBL1201192": {
+   "id": "CHEMBL1201192",
+   "name": "ARMODAFINIL",
+   "forms": [
+    [
+     "CHEMBL1201192",
+     "ARMODAFINIL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00078312"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00078377"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00228553"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00228566"
+    }
+   ]
+  },
+  "CHEMBL517140": {
+   "id": "CHEMBL517140",
+   "name": "GSK189254",
+   "forms": [
+    [
+     "CHEMBL517140",
+     "GSK189254"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00366080"
+    }
+   ]
+  },
+  "CHEMBL781": {
+   "id": "CHEMBL781",
+   "name": "MAZINDOL",
+   "forms": [
+    [
+     "CHEMBL781",
+     "MAZINDOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04923594"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05055024"
+    }
+   ]
+  },
+  "CHEMBL462605": {
+   "id": "CHEMBL462605",
+   "name": "PITOLISANT",
+   "forms": [
+    [
+     "CHEMBL462605",
+     "PITOLISANT"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/wakix"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01067222"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01067235"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01399606"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01638403"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01800045"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02611687"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT07051252"
+    }
+   ]
+  },
+  "CHEMBL4650341": {
+   "id": "CHEMBL4650341",
+   "name": "DANAVOREXTON",
+   "forms": [
+    [
+     "CHEMBL4650341",
+     "DANAVOREXTON"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_1",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DZ2PC5"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03332784"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03748979"
+    }
+   ]
+  },
+  "CHEMBL612": {
+   "id": "CHEMBL612",
+   "name": "DEXTROAMPHETAMINE",
+   "forms": [
+    [
+     "CHEMBL612",
+     "DEXTROAMPHETAMINE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0T3LF"
+    }
+   ]
+  },
+  "CHEMBL1373": {
+   "id": "CHEMBL1373",
+   "name": "MODAFINIL",
+   "forms": [
+    [
+     "CHEMBL1373",
+     "MODAFINIL"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D07HQC"
+    },
+    {
+     "source": "PMDA",
+     "stage": "APPROVAL",
+     "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00066170"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00107796"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00107848"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00214968"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01067222"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01067235"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00424931"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02821715"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03182413"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00174174"
+    }
+   ]
+  },
+  "CHEMBL1741": {
+   "id": "CHEMBL1741",
+   "name": "CLARITHROMYCIN",
+   "forms": [
+    [
+     "CHEMBL1741",
+     "CLARITHROMYCIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04026958"
+    }
+   ]
+  }
+ },
+ "box_lists": {
+  "CHEMBL2104054": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0003406",
+    "disease": "sleep-wake disorder",
+    "id": "CHEMBL2104054",
+    "name": "ACEPROMETAZINE",
+    "forms": [
+     [
+      "CHEMBL2104054",
+      "ACEPROMETAZINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D06EQP"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2103822": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0003406",
+    "disease": "sleep-wake disorder",
+    "id": "CHEMBL2103822",
+    "name": "TASIMELTEON",
+    "forms": [
+     [
+      "CHEMBL2103822",
+      "TASIMELTEON"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca4a9b63-708e-49e9-8f9b-010625443b90"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_3",
+      "url": "https://clinicaltrials.gov/study/NCT01163032"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_3",
+      "url": "https://clinicaltrials.gov/study/NCT01429116"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_3",
+      "url": "https://clinicaltrials.gov/study/NCT01430754"
+     }
+    ]
+   }
+  ],
+  "CHEMBL405": [
+   {
+    "role": "child",
+    "disease_id": "MONDO_0016158",
+    "disease": "narcolepsy-cataplexy syndrome",
+    "id": "CHEMBL405",
+    "name": "AMPHETAMINE",
+    "forms": [
+     [
+      "CHEMBL501",
+      "AMPHETAMINE SULFATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bb12811f-4cce-4010-aa48-d17c46ca1d3a"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f469fb38-0380-4621-9db3-a4f429126156"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ffd56d70-d884-43be-a994-6e70a10e823e"
+     }
+    ]
+   }
+  ],
+  "CHEMBL796": [
+   {
+    "role": "child",
+    "disease_id": "MONDO_0016158",
+    "disease": "narcolepsy-cataplexy syndrome",
+    "id": "CHEMBL796",
+    "name": "METHYLPHENIDATE",
+    "forms": [
+     [
+      "CHEMBL796",
+      "METHYLPHENIDATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e3c22d9-71d9-46a7-b315-8021c94c4bec"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0bf0835-6a2f-4067-a158-8b86c4b0668a"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cd83fc91-47a3-4be4-9727-caf9ec0371e8"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ec8a8896-077d-4dee-9e10-97172512c5ed"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1201192": [
+   {
+    "role": "child",
+    "disease_id": "MONDO_0016158",
+    "disease": "narcolepsy-cataplexy syndrome",
+    "id": "CHEMBL1201192",
+    "name": "ARMODAFINIL",
+    "forms": [
+     [
+      "CHEMBL1201192",
+      "ARMODAFINIL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0310a062-51fd-4e74-8a5f-7f21a16f52c9"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=10f918f7-4782-470e-a50e-35c7c66bfd79"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2c824d4c-2309-4e2a-bc74-aa8d80a5c454"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=795a7ba3-c60b-4637-aa99-06c1e10af8a7"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a2b3b762-7984-409c-82e4-8d216055df72"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d878aed0-ddbf-8fa1-abf7-d3e480260845"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e7bfb636-4b0a-440c-a4d3-d26393a14ac5"
+     }
+    ]
+   }
+  ]
+ },
+ "in_tray": {
+  "CHEMBL273575": {
+   "name": "NOMIFENSINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL2364614": {
+   "name": "LIAFENSINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3989690": {
+   "name": "TESOFENSINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1615439": {
+   "name": "PHENDIMETRAZINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL3301621": {
+   "name": "CENTANAFADINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL592374": {
+   "name": "AMITIFADINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1194666": {
+   "name": "DIETHYLPROPION",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL4297385": {
+   "name": "NS-2359",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL511099": {
+   "name": "BICIFADINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL43048": {
+   "name": "MIDOMAFETAMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1419": {
+   "name": "SIBUTRAMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL2104986": {
+   "name": "TEDATIOXETINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL201960": {
+   "name": "PYROVALERONE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL2103829": {
+   "name": "FAXELADOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL623": {
+   "name": "NEFAZODONE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL180101": {
+   "name": "ESREBOXETINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1574": {
+   "name": "PHENTERMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL61006": {
+   "name": "PHENYLPROPANOLAMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL4297646": {
+   "name": "AMPRELOXETINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1442422": {
+   "name": "DIBENZEPIN",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL2103857": {
+   "name": "EDIVOXETINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL517140": {
+   "name": "GSK189254",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2103862": {
+   "name": "BAVISANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297328": {
+   "name": "SUVN-G3031",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL278462": {
+   "name": "CIPRALISANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3092650": {
+   "name": "GSK239512",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1767164": {
+   "name": "GSK-1004723",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL476323": {
+   "name": "MK-0249",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545029": {
+   "name": "ABT-288",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1829335": {
+   "name": "IRDABISANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545030": {
+   "name": "JNJ-17216498",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2206292": {
+   "name": "PF-03654764",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1171754": {
+   "name": "JNJ-39220675",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2151197": {
+   "name": "PF-03654746",
+   "tray_group": "not_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL448343": {
+   "name": "LESOGABERAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL112797": {
+   "name": "SGS-742",
+   "tray_group": "not_approved",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL301742": {
+   "name": "ARBACLOFEN",
+   "tray_group": "not_approved",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2107312": {
+   "name": "ARBACLOFEN PLACARBIL",
+   "tray_group": "not_approved",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL772": {
+   "name": "RESERPINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL1631540": {
+   "name": "GSK163090",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL276520": {
+   "name": "INDALPINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL1201269": {
+   "name": "CHLORPHENTERMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL1201222": {
+   "name": "LISDEXAMFETAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL894": {
+   "name": "BUPROPION",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201208": {
+   "name": "PHENMETRAZINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201201": {
+   "name": "METHAMPHETAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL796": {
+   "name": "METHYLPHENIDATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL3301595": {
+   "name": "DASOTRALINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4301162": {
+   "name": "SERDEXMETHYLPHENIDATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL827": {
+   "name": "DEXMETHYLPHENIDATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL405": {
+   "name": "AMPHETAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201776": {
+   "name": "TAPENTADOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL629": {
+   "name": "AMITRIPTYLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL3545985": {
+   "name": "BENZPHETAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL445": {
+   "name": "NORTRIPTYLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL99946": {
+   "name": "LEVOMILNACIPRAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1113": {
+   "name": "AMOXAPINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL637": {
+   "name": "VENLAFAXINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL21731": {
+   "name": "MAPROTILINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL72": {
+   "name": "DESIPRAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1590": {
+   "name": "PSEUDOEPHEDRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1037": {
+   "name": "GUANADREL",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL900": {
+   "name": "ORPHENADRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL641": {
+   "name": "ATOMOXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1628227": {
+   "name": "DOXEPIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201260": {
+   "name": "BETHANIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1118": {
+   "name": "DESVENLAFAXINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL818": {
+   "name": "IOBENGUANE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL306700": {
+   "name": "VILOXAZINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL259209": {
+   "name": "MILNACIPRAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL644": {
+   "name": "TRIMIPRAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1175": {
+   "name": "DULOXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL11": {
+   "name": "IMIPRAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1199080": {
+   "name": "BRETYLIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL668": {
+   "name": "PROTRIPTYLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL765": {
+   "name": "GUANETHIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1492500": {
+   "name": "DOTHIEPIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL169901": {
+   "name": "DEBRISOQUIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL24441": {
+   "name": "BETAHISTINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL701": {
+   "name": "BACLOFEN",
+   "tray_group": "new_clue",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2364639": {
+   "name": "VALBENAZINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL117785": {
+   "name": "TETRABENAZINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1668": {
+   "name": "RESCINNAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1200515": {
+   "name": "DESERPIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3900409": {
+   "name": "BRENSOCATIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "CTSC"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201563": {
+   "name": "INTERFERON BETA-1B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201558": {
+   "name": "INTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109047": {
+   "name": "INTERFERON ALFA-N3",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201557": {
+   "name": "INTERFERON ALFACON-1",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108677": {
+   "name": "PEGINTERFERON BETA-1A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2364653": {
+   "name": "ANIFROLUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201560": {
+   "name": "PEGINTERFERON ALFA-2A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201561": {
+   "name": "PEGINTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107842": {
+   "name": "ALBINTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297819": {
+   "name": "ROPEGINTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108508": {
+   "name": "INTERFERON ALFA-2A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201562": {
+   "name": "INTERFERON BETA-1A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL439849": {
+   "name": "VILAZODONE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL814": {
+   "name": "FLUVOXAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1508": {
+   "name": "ESCITALOPRAM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL549": {
+   "name": "CITALOPRAM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL41": {
+   "name": "FLUOXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2110900": {
+   "name": "DAPOXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2104993": {
+   "name": "VORTIOXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL621": {
+   "name": "TRAZODONE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL490": {
+   "name": "PAROXETINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3306803": {
+   "name": "LUMATEPERONE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL809": {
+   "name": "SERTRALINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL415": {
+   "name": "CLOMIPRAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL781": {
+   "name": "MAZINDOL",
+   "tray_group": "being_studied",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC6A4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201192": {
+   "name": "ARMODAFINIL",
+   "tray_group": "being_studied",
+   "targets": [
+    "SLC6A3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL14370": {
+   "name": "REBOXETINE",
+   "tray_group": "being_studied",
+   "targets": [
+    "SLC6A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL612": {
+   "name": "DEXTROAMPHETAMINE",
+   "tray_group": "already_approved",
+   "targets": [
+    "SLC6A3",
+    "SLC6A2",
+    "SLC18A2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1373": {
+   "name": "MODAFINIL",
+   "tray_group": "already_approved",
+   "targets": [
+    "SLC6A3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL462605": {
+   "name": "PITOLISANT",
+   "tray_group": "already_approved",
+   "targets": [
+    "HRH3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1342": {
+   "name": "OXYBATE",
+   "tray_group": "already_approved",
+   "targets": [
+    "GABBR1",
+    "GABBR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false,
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}

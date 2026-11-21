@@ -1,0 +1,4215 @@
+{
+ "id": "MONDO_0006559",
+ "name": "hidradenitis suppurativa",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000080815",
+   "symbol": "PSEN1",
+   "score": 0.7412907403527299
+  },
+  {
+   "id": "ENSG00000162736",
+   "symbol": "NCSTN",
+   "score": 0.7337083541364923
+  },
+  {
+   "id": "ENSG00000205155",
+   "symbol": "PSENEN",
+   "score": 0.6523619044604906
+  },
+  {
+   "id": "ENSG00000232810",
+   "symbol": "TNF",
+   "score": 0.6123473055164786
+  },
+  {
+   "id": "ENSG00000102554",
+   "symbol": "KLF5",
+   "score": 0.4644747084568586
+  },
+  {
+   "id": "ENSG00000112115",
+   "symbol": "IL17A",
+   "score": 0.4301827552019443
+  },
+  {
+   "id": "ENSG00000112116",
+   "symbol": "IL17F",
+   "score": 0.40544493457157893
+  },
+  {
+   "id": "ENSG00000148156",
+   "symbol": "ACTL7B",
+   "score": 0.3995872991717888
+  },
+  {
+   "id": "ENSG00000187003",
+   "symbol": "ACTL7A",
+   "score": 0.3915447476789357
+  },
+  {
+   "id": "ENSG00000162434",
+   "symbol": "JAK1",
+   "score": 0.3722108953403827
+  },
+  {
+   "id": "ENSG00000105397",
+   "symbol": "TYK2",
+   "score": 0.3678637503696833
+  },
+  {
+   "id": "ENSG00000096968",
+   "symbol": "JAK2",
+   "score": 0.3647865516756756
+  },
+  {
+   "id": "ENSG00000105639",
+   "symbol": "JAK3",
+   "score": 0.36453543070786704
+  },
+  {
+   "id": "ENSG00000115008",
+   "symbol": "IL1A",
+   "score": 0.30670381652057793
+  },
+  {
+   "id": "ENSG00000125538",
+   "symbol": "IL1B",
+   "score": 0.294945899803572
+  },
+  {
+   "id": "ENSG00000130414",
+   "symbol": "NDUFA10",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000147684",
+   "symbol": "NDUFB9",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000166136",
+   "symbol": "NDUFB8",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000123545",
+   "symbol": "NDUFAF4",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000115159",
+   "symbol": "GPD2",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000164182",
+   "symbol": "NDUFAF2",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000139180",
+   "symbol": "NDUFA9",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000137806",
+   "symbol": "NDUFAF1",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000119421",
+   "symbol": "NDUFA8",
+   "score": 0.25870589827929125
+  },
+  {
+   "id": "ENSG00000165264",
+   "symbol": "NDUFB6",
+   "score": 0.25870589827929125
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0002260",
+   "name": "hidradenitis"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0024516",
+   "name": "familial acne inversa"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/imraldi",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/imraldi",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hyrimoz",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hulio",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/idacio",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hefiya",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/amsparity",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/yuflyma",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hukyndra",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/libmyris"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1789941",
+   "medicine": "RUXOLITINIB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL3622821",
+   "medicine": "UPADACITINIB",
+   "source": "https://clinicaltrials.gov/study/NCT05153200",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4297700",
+   "medicine": "BIMEKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT04340076",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000112116",
+     "symbol": "IL17F",
+     "score": 0.40544493457157893,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "source": "https://clinicaltrials.gov/study/NCT00216177",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lifmior",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1431",
+   "medicine": "METFORMIN",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/qtrilmet",
+   "proteins": [
+    {
+     "target_id": "ENSG00000115159",
+     "symbol": "GPD2",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000130414",
+     "symbol": "NDUFA10",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000119421",
+     "symbol": "NDUFA8",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000139180",
+     "symbol": "NDUFA9",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000137806",
+     "symbol": "NDUFAF1",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000164182",
+     "symbol": "NDUFAF2",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000123545",
+     "symbol": "NDUFAF4",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000165264",
+     "symbol": "NDUFB6",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000166136",
+     "symbol": "NDUFB8",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000147684",
+     "symbol": "NDUFB9",
+     "score": 0.25870589827929125,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1743068",
+   "medicine": "SECUKINUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT02547714",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4596392",
+   "medicine": "CRAVACITINIB",
+   "source": "https://clinicaltrials.gov/study/NCT05478499",
+   "proteins": [
+    {
+     "target_id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "NEGATIVE ALLOSTERIC MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4085457",
+   "medicine": "RITLECITINIB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL2109653",
+   "medicine": "BERMEKIMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L01FX11",
+   "proteins": [
+    {
+     "target_id": "ENSG00000115008",
+     "symbol": "IL1A",
+     "score": 0.30670381652057793,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3301607",
+   "medicine": "FILGOTINIB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1770916",
+   "medicine": "NIROGACESTAT",
+   "source": "https://clinicaltrials.gov/study/NCT07176689",
+   "proteins": [
+    {
+     "target_id": "ENSG00000080815",
+     "symbol": "PSEN1",
+     "score": 0.7412907403527299,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000162736",
+     "symbol": "NCSTN",
+     "score": 0.7337083541364923,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000205155",
+     "symbol": "PSENEN",
+     "score": 0.6523619044604906,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2105759",
+   "medicine": "BARICITINIB",
+   "source": "https://clinicaltrials.gov/study/NCT03915964",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1078178",
+   "medicine": "MOMELOTINIB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT01212653",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "source": "https://clinicaltrials.gov/study/NCT00580840",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AB03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.6123473055164786,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743034",
+   "medicine": "IXEKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT03151551",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4298102",
+   "medicine": "VUNAKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT04839016",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.4301827552019443,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4297507",
+   "medicine": "DELGOCITINIB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.3678637503696833,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.36453543070786704,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3655081",
+   "medicine": "ABROCITINIB",
+   "source": "https://clinicaltrials.gov/study/NCT05602207",
+   "proteins": [
+    {
+     "target_id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.3722108953403827,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2035187",
+   "medicine": "PACRITINIB",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0PN8H",
+   "proteins": [
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1287853",
+   "medicine": "FEDRATINIB",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f0f55a2a-4e0c-4cba-8571-03e1424486d7",
+   "proteins": [
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL603469",
+   "medicine": "LESTAURTINIB",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V9WF",
+   "proteins": [
+    {
+     "target_id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.3647865516756756,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201834",
+   "medicine": "CANAKINUMAB",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7d271f3b-e4f9-4d80-8dcf-28d49123f80e",
+   "proteins": [
+    {
+     "target_id": "ENSG00000125538",
+     "symbol": "IL1B",
+     "score": 0.294945899803572,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201830",
+   "medicine": "RILONACEPT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/rilonacept-regeneron",
+   "proteins": [
+    {
+     "target_id": "ENSG00000125538",
+     "symbol": "IL1B",
+     "score": 0.294945899803572,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 46,
+  "unclear_link": 1
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {
+  "ENSG00000232810": "down"
+ },
+ "one_way_without_leaving_out_red_warnings": {
+  "ENSG00000232810": "down"
+ },
+ "withdrawn_on_own_list": [
+  "CHEMBL1201575",
+  "CHEMBL459265"
+ ],
+ "withdrawn_on_a_neighbour_list": [],
+ "own_list": {
+  "CHEMBL193240": {
+   "id": "CHEMBL193240",
+   "name": "ROFLUMILAST",
+   "forms": [
+    [
+     "CHEMBL193240",
+     "ROFLUMILAST"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07077902"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07263230"
+    }
+   ]
+  },
+  "CHEMBL1201580": {
+   "id": "CHEMBL1201580",
+   "name": "ADALIMUMAB",
+   "forms": [
+    [
+     "CHEMBL1201580",
+     "ADALIMUMAB"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/imraldi"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/cyltezo"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hyrimoz"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/solymbic"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hulio"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/idacio"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hefiya"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/halimatoz"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/amsparity"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/yuflyma"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hukyndra"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/libmyris"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02808975"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04132388"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01468207"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01468233"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01635764"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02904902"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00827996"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00918255"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03248531"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05322473"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07151937"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02739828"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05913817"
+    }
+   ]
+  },
+  "CHEMBL4594357": {
+   "id": "CHEMBL4594357",
+   "name": "IANALUMAB",
+   "forms": [
+    [
+     "CHEMBL4594357",
+     "IANALUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03827798"
+    }
+   ]
+  },
+  "CHEMBL4297686": {
+   "id": "CHEMBL4297686",
+   "name": "IZOKIBEP",
+   "forms": [
+    [
+     "CHEMBL4297686",
+     "IZOKIBEP"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05905783"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05355805"
+    }
+   ]
+  },
+  "CHEMBL4594569": {
+   "id": "CHEMBL4594569",
+   "name": "AMLITELIMAB",
+   "forms": [
+    [
+     "CHEMBL4594569",
+     "AMLITELIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06118099"
+    }
+   ]
+  },
+  "CHEMBL4298210": {
+   "id": "CHEMBL4298210",
+   "name": "ISCALIMAB",
+   "forms": [
+    [
+     "CHEMBL4298210",
+     "ISCALIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03827798"
+    }
+   ]
+  },
+  "CHEMBL4297477": {
+   "id": "CHEMBL4297477",
+   "name": "BREPOCITINIB",
+   "forms": [
+    [
+     "CHEMBL4297477",
+     "BREPOCITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04092452"
+    }
+   ]
+  },
+  "CHEMBL190461": {
+   "id": "CHEMBL190461",
+   "name": "CANNABIDIOL",
+   "forms": [
+    [
+     "CHEMBL190461",
+     "CANNABIDIOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03929835"
+    }
+   ]
+  },
+  "CHEMBL191083": {
+   "id": "CHEMBL191083",
+   "name": "METHYLENE BLUE CATION",
+   "forms": [
+    [
+     "CHEMBL550495",
+     "METHYLENE BLUE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04354012"
+    }
+   ]
+  },
+  "CHEMBL3654384": {
+   "id": "CHEMBL3654384",
+   "name": "ORISMILAST",
+   "forms": [
+    [
+     "CHEMBL3654384",
+     "ORISMILAST"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04982432"
+    }
+   ]
+  },
+  "CHEMBL5569030": {
+   "id": "CHEMBL5569030",
+   "name": "KT-474",
+   "forms": [
+    [
+     "CHEMBL5569030",
+     "KT-474"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06028230"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04772885"
+    }
+   ]
+  },
+  "CHEMBL161": {
+   "id": "CHEMBL161",
+   "name": "CEFTRIAXONE",
+   "forms": [
+    [
+     "CHEMBL161",
+     "CEFTRIAXONE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05821478"
+    }
+   ]
+  },
+  "CHEMBL2364653": {
+   "id": "CHEMBL2364653",
+   "name": "ANIFROLUMAB",
+   "forms": [
+    [
+     "CHEMBL2364653",
+     "ANIFROLUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06374212"
+    }
+   ]
+  },
+  "CHEMBL5314628": {
+   "id": "CHEMBL5314628",
+   "name": "ELTREKIBART",
+   "forms": [
+    [
+     "CHEMBL5314628",
+     "ELTREKIBART"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DI1TY4"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04493502"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06046729"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/ELTREKIBART/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL1431": {
+   "id": "CHEMBL1431",
+   "name": "METFORMIN",
+   "forms": [
+    [
+     "CHEMBL1431",
+     "METFORMIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04649502"
+    }
+   ]
+  },
+  "CHEMBL137": {
+   "id": "CHEMBL137",
+   "name": "METRONIDAZOLE",
+   "forms": [
+    [
+     "CHEMBL137",
+     "METRONIDAZOLE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05821478"
+    }
+   ]
+  },
+  "CHEMBL4297700": {
+   "id": "CHEMBL4297700",
+   "name": "BIMEKIZUMAB",
+   "forms": [
+    [
+     "CHEMBL4297700",
+     "BIMEKIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04242446"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04242498"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04901195"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06921850"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03248531"
+    }
+   ]
+  },
+  "CHEMBL5095217": {
+   "id": "CHEMBL5095217",
+   "name": "VIMNERIXIN",
+   "forms": [
+    [
+     "CHEMBL5095217",
+     "VIMNERIXIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DW8Z1M"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05348681"
+    }
+   ]
+  },
+  "CHEMBL1742996": {
+   "id": "CHEMBL1742996",
+   "name": "BRODALUMAB",
+   "forms": [
+    [
+     "CHEMBL1742996",
+     "BRODALUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03910803"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03960268"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04249713"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04979520"
+    }
+   ]
+  },
+  "CHEMBL3990000": {
+   "id": "CHEMBL3990000",
+   "name": "TIBULIZUMAB",
+   "forms": [
+    [
+     "CHEMBL3990000",
+     "TIBULIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06993610"
+    }
+   ]
+  },
+  "CHEMBL1509": {
+   "id": "CHEMBL1509",
+   "name": "DROSPIRENONE",
+   "forms": [
+    [
+     "CHEMBL1509",
+     "DROSPIRENONE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00722800"
+    }
+   ]
+  },
+  "CHEMBL4650461": {
+   "id": "CHEMBL4650461",
+   "name": "ANUMIGILIMAB",
+   "forms": [
+    [
+     "CHEMBL4650461",
+     "ANUMIGILIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/ANUMIGILIMAB/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL5315029": {
+   "id": "CHEMBL5315029",
+   "name": "MAS-825",
+   "forms": [
+    [
+     "CHEMBL5315029",
+     "MAS-825"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03827798"
+    }
+   ]
+  },
+  "CHEMBL1504": {
+   "id": "CHEMBL1504",
+   "name": "TRIAMCINOLONE ACETONIDE",
+   "forms": [
+    [
+     "CHEMBL1504",
+     "TRIAMCINOLONE ACETONIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "EARLY_PHASE_1",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05580029"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02781818"
+    }
+   ]
+  },
+  "CHEMBL2103830": {
+   "id": "CHEMBL2103830",
+   "name": "FOSTAMATINIB",
+   "forms": [
+    [
+     "CHEMBL2103830",
+     "FOSTAMATINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05040698"
+    }
+   ]
+  },
+  "CHEMBL1201575": {
+   "id": "CHEMBL1201575",
+   "name": "EFALIZUMAB",
+   "forms": [
+    [
+     "CHEMBL1201575",
+     "EFALIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    true
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00134134"
+    }
+   ]
+  },
+  "CHEMBL5095079": {
+   "id": "CHEMBL5095079",
+   "name": "POVORCITINIB",
+   "forms": [
+    [
+     "CHEMBL5095079",
+     "POVORCITINIB"
+    ],
+    [
+     "CHEMBL5314592",
+     "POVORCITINIB PHOSPHATE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05620823"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05620836"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06212999"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03569371"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03607487"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04476043"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07213973"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/POVORCITINIB/relevant/1/"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/POVORCITINIB%20PHOSPHATE/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL4297581": {
+   "id": "CHEMBL4297581",
+   "name": "TOMINERSEN",
+   "forms": [
+    [
+     "CHEMBL4297581",
+     "TOMINERSEN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/TOMINERSEN/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL1201572": {
+   "id": "CHEMBL1201572",
+   "name": "ETANERCEPT",
+   "forms": [
+    [
+     "CHEMBL1201572",
+     "ETANERCEPT"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00107991"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00329823"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00949546"
+    }
+   ]
+  },
+  "CHEMBL3833333": {
+   "id": "CHEMBL3833333",
+   "name": "NABIXIMOLS",
+   "forms": [
+    [
+     "CHEMBL3833333",
+     "NABIXIMOLS"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03929835"
+    }
+   ]
+  },
+  "CHEMBL691": {
+   "id": "CHEMBL691",
+   "name": "ETHINYL ESTRADIOL",
+   "forms": [
+    [
+     "CHEMBL691",
+     "ETHINYL ESTRADIOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00722800"
+    }
+   ]
+  },
+  "CHEMBL4852381": {
+   "id": "CHEMBL4852381",
+   "name": "CPD (S)-22",
+   "forms": [
+    [
+     "CHEMBL4852381",
+     "CPD (S)-22"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03827798"
+    }
+   ]
+  },
+  "CHEMBL4081711": {
+   "id": "CHEMBL4081711",
+   "name": "ZIMLOVISERTIB",
+   "forms": [
+    [
+     "CHEMBL4081711",
+     "ZIMLOVISERTIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04092452"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/ZIMLOVISERTIB/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL1200370": {
+   "id": "CHEMBL1200370",
+   "name": "BENZOYL PEROXIDE",
+   "forms": [
+    [
+     "CHEMBL1200370",
+     "BENZOYL PEROXIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01818167"
+    }
+   ]
+  },
+  "CHEMBL1753": {
+   "id": "CHEMBL1753",
+   "name": "CLINDAMYCIN",
+   "forms": [
+    [
+     "CHEMBL1753",
+     "CLINDAMYCIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01063270"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05762484"
+    }
+   ]
+  },
+  "CHEMBL3990029": {
+   "id": "CHEMBL3990029",
+   "name": "RISANKIZUMAB",
+   "forms": [
+    [
+     "CHEMBL3990029",
+     "RISANKIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03926169"
+    }
+   ]
+  },
+  "CHEMBL1817968": {
+   "id": "CHEMBL1817968",
+   "name": "LTX-109",
+   "forms": [
+    [
+     "CHEMBL1817968",
+     "LTX-109"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT04756336"
+    }
+   ]
+  },
+  "CHEMBL4650441": {
+   "id": "CHEMBL4650441",
+   "name": "IMSIDOLIMAB",
+   "forms": [
+    [
+     "CHEMBL4650441",
+     "IMSIDOLIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04856930"
+    }
+   ]
+  },
+  "CHEMBL374478": {
+   "id": "CHEMBL374478",
+   "name": "RIFAMPIN",
+   "forms": [
+    [
+     "CHEMBL374478",
+     "RIFAMPIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05821478"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01063270"
+    }
+   ]
+  },
+  "CHEMBL1535": {
+   "id": "CHEMBL1535",
+   "name": "HYDROXYCHLOROQUINE",
+   "forms": [
+    [
+     "CHEMBL1535",
+     "HYDROXYCHLOROQUINE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03275870"
+    }
+   ]
+  },
+  "CHEMBL3622821": {
+   "id": "CHEMBL3622821",
+   "name": "UPADACITINIB",
+   "forms": [
+    [
+     "CHEMBL3622821",
+     "UPADACITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05889182"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04430855"
+    }
+   ]
+  },
+  "CHEMBL3900409": {
+   "id": "CHEMBL3900409",
+   "name": "BRENSOCATIB",
+   "forms": [
+    [
+     "CHEMBL3900409",
+     "BRENSOCATIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06685835"
+    }
+   ]
+  },
+  "CHEMBL4297839": {
+   "id": "CHEMBL4297839",
+   "name": "TIRZEPATIDE",
+   "forms": [
+    [
+     "CHEMBL4297839",
+     "TIRZEPATIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06301256"
+    }
+   ]
+  },
+  "CHEMBL5095370": {
+   "id": "CHEMBL5095370",
+   "name": "TULISOKIBART",
+   "forms": [
+    [
+     "CHEMBL5095370",
+     "TULISOKIBART"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06956235"
+    }
+   ]
+  },
+  "CHEMBL4297926": {
+   "id": "CHEMBL4297926",
+   "name": "CJM-112",
+   "forms": [
+    [
+     "CHEMBL4297926",
+     "CJM-112"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02421172"
+    }
+   ]
+  },
+  "CHEMBL3989871": {
+   "id": "CHEMBL3989871",
+   "name": "AVACOPAN",
+   "forms": [
+    [
+     "CHEMBL3989871",
+     "AVACOPAN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03852472"
+    }
+   ]
+  },
+  "CHEMBL704": {
+   "id": "CHEMBL704",
+   "name": "MESALAMINE",
+   "forms": [
+    [
+     "CHEMBL704",
+     "MESALAMINE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06568224"
+    }
+   ]
+  },
+  "CHEMBL4594518": {
+   "id": "CHEMBL4594518",
+   "name": "LUTIKIZUMAB",
+   "forms": [
+    [
+     "CHEMBL4594518",
+     "LUTIKIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06468228"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05139602"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06524635"
+    }
+   ]
+  },
+  "CHEMBL465": {
+   "id": "CHEMBL465",
+   "name": "DRONABINOL",
+   "forms": [
+    [
+     "CHEMBL465",
+     "DRONABINOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03929835"
+    }
+   ]
+  },
+  "CHEMBL1359": {
+   "id": "CHEMBL1359",
+   "name": "ERTAPENEM",
+   "forms": [
+    [
+     "CHEMBL1359",
+     "ERTAPENEM"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05255575"
+    }
+   ]
+  },
+  "CHEMBL1789941": {
+   "id": "CHEMBL1789941",
+   "name": "RUXOLITINIB",
+   "forms": [
+    [
+     "CHEMBL1789941",
+     "RUXOLITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06958211"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06959225"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04414514"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05635838"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT07049575"
+    }
+   ]
+  },
+  "CHEMBL32": {
+   "id": "CHEMBL32",
+   "name": "MOXIFLOXACIN",
+   "forms": [
+    [
+     "CHEMBL32",
+     "MOXIFLOXACIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05821478"
+    }
+   ]
+  },
+  "CHEMBL2108742": {
+   "id": "CHEMBL2108742",
+   "name": "SIPLIZUMAB",
+   "forms": [
+    [
+     "CHEMBL2108742",
+     "SIPLIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "EARLY_PHASE_1",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT06326476"
+    }
+   ]
+  },
+  "CHEMBL459265": {
+   "id": "CHEMBL459265",
+   "name": "HEXAMETHYL PARAROSANILINE",
+   "forms": [
+    [
+     "CHEMBL64894",
+     "GENTIAN VIOLET"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    true
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04354012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04388163"
+    }
+   ]
+  },
+  "CHEMBL1201570": {
+   "id": "CHEMBL1201570",
+   "name": "ANAKINRA",
+   "forms": [
+    [
+     "CHEMBL1201570",
+     "ANAKINRA"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01516749"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01558375"
+    }
+   ]
+  },
+  "CHEMBL3704901": {
+   "id": "CHEMBL3704901",
+   "name": "ZUNSEMETINIB",
+   "forms": [
+    [
+     "CHEMBL3704901",
+     "ZUNSEMETINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DQ15ZM"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05216224"
+    }
+   ]
+  },
+  "CHEMBL1201581": {
+   "id": "CHEMBL1201581",
+   "name": "INFLIXIMAB",
+   "forms": [
+    [
+     "CHEMBL1201581",
+     "INFLIXIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00795574"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05663268"
+    }
+   ]
+  },
+  "CHEMBL4483575": {
+   "id": "CHEMBL4483575",
+   "name": "REMIBRUTINIB",
+   "forms": [
+    [
+     "CHEMBL4483575",
+     "REMIBRUTINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06799000"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06840392"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03827798"
+    }
+   ]
+  },
+  "CHEMBL4459585": {
+   "id": "CHEMBL4459585",
+   "name": "ROPSACITINIB",
+   "forms": [
+    [
+     "CHEMBL4459585",
+     "ROPSACITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04092452"
+    }
+   ]
+  },
+  "CHEMBL1201569": {
+   "id": "CHEMBL1201569",
+   "name": "RIMABOTULINUMTOXINB",
+   "forms": [
+    [
+     "CHEMBL1201569",
+     "RIMABOTULINUMTOXINB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03103074"
+    }
+   ]
+  },
+  "CHEMBL5314423": {
+   "id": "CHEMBL5314423",
+   "name": "ZASOCITINIB",
+   "forms": [
+    [
+     "CHEMBL5314423",
+     "ZASOCITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07244263"
+    }
+   ]
+  },
+  "CHEMBL1201574": {
+   "id": "CHEMBL1201574",
+   "name": "ONABOTULINUMTOXINA",
+   "forms": [
+    [
+     "CHEMBL1201574",
+     "ONABOTULINUMTOXINA"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05403710"
+    }
+   ]
+  },
+  "CHEMBL1743068": {
+   "id": "CHEMBL1743068",
+   "name": "SECUKINUMAB",
+   "forms": [
+    [
+     "CHEMBL1743068",
+     "SECUKINUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03713619"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03713632"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04179175"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03099980"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05583604"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06707246"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06926192"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT07109765"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT07243782"
+    }
+   ]
+  },
+  "CHEMBL1201835": {
+   "id": "CHEMBL1201835",
+   "name": "USTEKINUMAB",
+   "forms": [
+    [
+     "CHEMBL1201835",
+     "USTEKINUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01704534"
+    }
+   ]
+  },
+  "CHEMBL2109653": {
+   "id": "CHEMBL2109653",
+   "name": "BERMEKIMAB",
+   "forms": [
+    [
+     "CHEMBL2109653",
+     "BERMEKIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D09AYM"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DCL35B"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02643654"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03512275"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04019041"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04988308"
+    }
+   ]
+  },
+  "CHEMBL2364648": {
+   "id": "CHEMBL2364648",
+   "name": "GUSELKUMAB",
+   "forms": [
+    [
+     "CHEMBL2364648",
+     "GUSELKUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03628924"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04061395"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04084665"
+    }
+   ]
+  },
+  "CHEMBL2109607": {
+   "id": "CHEMBL2109607",
+   "name": "MEDI-8968",
+   "forms": [
+    [
+     "CHEMBL2109607",
+     "MEDI-8968"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01838499"
+    }
+   ]
+  },
+  "CHEMBL6068097": {
+   "id": "CHEMBL6068097",
+   "name": "BRIVEKIMIG",
+   "forms": [
+    [
+     "CHEMBL6068097",
+     "BRIVEKIMIG"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07170917"
+    }
+   ]
+  },
+  "CHEMBL4297911": {
+   "id": "CHEMBL4297911",
+   "name": "SPESOLIMAB",
+   "forms": [
+    [
+     "CHEMBL4297911",
+     "SPESOLIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT05819398"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06241573"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04762277"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04876391"
+    }
+   ]
+  },
+  "CHEMBL2109636": {
+   "id": "CHEMBL2109636",
+   "name": "VILOBELIMAB",
+   "forms": [
+    [
+     "CHEMBL2109636",
+     "VILOBELIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D05YWJ"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03001622"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03487276"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/VILOBELIMAB/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL514800": {
+   "id": "CHEMBL514800",
+   "name": "APREMILAST",
+   "forms": [
+    [
+     "CHEMBL514800",
+     "APREMILAST"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02695212"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03049267"
+    }
+   ]
+  },
+  "CHEMBL221959": {
+   "id": "CHEMBL221959",
+   "name": "TOFACITINIB",
+   "forms": [
+    [
+     "CHEMBL221959",
+     "TOFACITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06707246"
+    }
+   ]
+  },
+  "CHEMBL4596392": {
+   "id": "CHEMBL4596392",
+   "name": "CRAVACITINIB",
+   "forms": [
+    [
+     "CHEMBL4435170",
+     "DEUCRAVACITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05997277"
+    }
+   ]
+  },
+  "CHEMBL4298023": {
+   "id": "CHEMBL4298023",
+   "name": "M-1095",
+   "forms": [
+    [
+     "CHEMBL4298023",
+     "M-1095"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06411379"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06411899"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06768671"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07007637"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05322473"
+    }
+   ]
+  },
+  "CHEMBL4085457": {
+   "id": "CHEMBL4085457",
+   "name": "RITLECITINIB",
+   "forms": [
+    [
+     "CHEMBL4085457",
+     "RITLECITINIB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT07228390"
+    }
+   ]
+  },
+  "CHEMBL1200574": {
+   "id": "CHEMBL1200574",
+   "name": "SODIUM CHLORIDE",
+   "forms": [
+    [
+     "CHEMBL1200574",
+     "SODIUM CHLORIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02805595"
+    }
+   ]
+  }
+ },
+ "box_lists": {},
+ "in_tray": {
+  "CHEMBL520733": {
+   "name": "SEMAGACESTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1090771": {
+   "name": "AVAGACESTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL190083": {
+   "name": "TARENFLURBIL",
+   "tray_group": "not_approved",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297422": {
+   "name": "RG-4733",
+   "tray_group": "not_approved",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL463981": {
+   "name": "BEGACESTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108739": {
+   "name": "PLACULUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107911": {
+   "name": "ONERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297863": {
+   "name": "REMTOLUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF",
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297572": {
+   "name": "ABBV-3373",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108208": {
+   "name": "LENERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108566": {
+   "name": "NERELIMOMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743057": {
+   "name": "PEGSUNERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109470": {
+   "name": "PERAKIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3990000": {
+   "name": "TIBULIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298023": {
+   "name": "M-1095",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A",
+    "IL17F"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2109469": {
+   "name": "AFASEVIKUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297686": {
+   "name": "IZOKIBEP",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297926": {
+   "name": "CJM-112",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4802163": {
+   "name": "NEZULCITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297477": {
+   "name": "BREPOCITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL3622820": {
+   "name": "ITACITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3137308": {
+   "name": "PEFICITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3301606": {
+   "name": "SOLCITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4650343": {
+   "name": "IZENCITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4594275": {
+   "name": "GUSACITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3545249": {
+   "name": "GLPG-0555",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545225": {
+   "name": "INCB-047986",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4116008": {
+   "name": "CERDULATINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4577523": {
+   "name": "GOLIDOCITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4459585": {
+   "name": "ROPSACITINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TYK2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107823": {
+   "name": "GANDOTINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545328": {
+   "name": "XL-019",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL495727": {
+   "name": "AT-9283",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL3545215": {
+   "name": "BMS-911543",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1944698": {
+   "name": "ZOTIRACICLIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4303389": {
+   "name": "NS-018",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545241": {
+   "name": "AC-430",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2035185": {
+   "name": "CT-1578",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1231124": {
+   "name": "AZD-1480",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545159": {
+   "name": "R-333",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3039513": {
+   "name": "DECERNOTINIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK3"
+   ],
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5314384": {
+   "name": "R-348",
+   "tray_group": "not_approved",
+   "targets": [
+    "JAK3"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594518": {
+   "name": "LUTIKIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL1A",
+    "IL1B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1743026": {
+   "name": "GEVOKIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL1B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109459": {
+   "name": "CDP-484",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL1B"
+   ],
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5314386": {
+   "name": "ME-344",
+   "tray_group": "not_approved",
+   "targets": [
+    "NDUFA10",
+    "NDUFB9",
+    "NDUFB8",
+    "NDUFAF4",
+    "NDUFAF2",
+    "NDUFA9",
+    "NDUFAF1",
+    "NDUFA8",
+    "NDUFB6"
+   ],
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1770916": {
+   "name": "NIROGACESTAT",
+   "tray_group": "new_clue",
+   "targets": [
+    "PSEN1",
+    "NCSTN",
+    "PSENEN"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108887": {
+   "name": "AFELIMOMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743054": {
+   "name": "OZORALIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201831": {
+   "name": "CERTOLIZUMAB PEGOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201833": {
+   "name": "GOLIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743034": {
+   "name": "IXEKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298102": {
+   "name": "VUNAKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1078178": {
+   "name": "MOMELOTINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK1",
+    "JAK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL3301607": {
+   "name": "FILGOTINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3655081": {
+   "name": "ABROCITINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2105759": {
+   "name": "BARICITINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK1",
+    "JAK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297507": {
+   "name": "DELGOCITINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1287853": {
+   "name": "FEDRATINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL603469": {
+   "name": "LESTAURTINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2035187": {
+   "name": "PACRITINIB",
+   "tray_group": "new_clue",
+   "targets": [
+    "JAK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201834": {
+   "name": "CANAKINUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL1B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201830": {
+   "name": "RILONACEPT",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL1B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201572": {
+   "name": "ETANERCEPT",
+   "tray_group": "being_studied",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201581": {
+   "name": "INFLIXIMAB",
+   "tray_group": "being_studied",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743068": {
+   "name": "SECUKINUMAB",
+   "tray_group": "being_studied",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297700": {
+   "name": "BIMEKIZUMAB",
+   "tray_group": "being_studied",
+   "targets": [
+    "IL17A",
+    "IL17F"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1789941": {
+   "name": "RUXOLITINIB",
+   "tray_group": "being_studied",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3622821": {
+   "name": "UPADACITINIB",
+   "tray_group": "being_studied",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4596392": {
+   "name": "CRAVACITINIB",
+   "tray_group": "being_studied",
+   "targets": [
+    "TYK2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4085457": {
+   "name": "RITLECITINIB",
+   "tray_group": "being_studied",
+   "targets": [
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109653": {
+   "name": "BERMEKIMAB",
+   "tray_group": "being_studied",
+   "targets": [
+    "IL1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1431": {
+   "name": "METFORMIN",
+   "tray_group": "being_studied",
+   "targets": [
+    "NDUFA10",
+    "NDUFB9",
+    "NDUFB8",
+    "NDUFAF4",
+    "GPD2",
+    "NDUFAF2",
+    "NDUFA9",
+    "NDUFAF1",
+    "NDUFA8",
+    "NDUFB6"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201580": {
+   "name": "ADALIMUMAB",
+   "tray_group": "already_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL221959": {
+   "name": "TOFACITINIB",
+   "tray_group": "unclear_link",
+   "targets": [
+    "JAK1",
+    "TYK2",
+    "JAK2",
+    "JAK3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}

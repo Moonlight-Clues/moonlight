@@ -1,0 +1,3233 @@
+{
+ "id": "MONDO_0018150",
+ "name": "Gaucher disease",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000177628",
+   "symbol": "GBA1",
+   "score": 0.8750320296746611
+  },
+  {
+   "id": "ENSG00000148154",
+   "symbol": "UGCG",
+   "score": 0.5891757350230993
+  },
+  {
+   "id": "ENSG00000197746",
+   "symbol": "PSAP",
+   "score": 0.5085315760152016
+  },
+  {
+   "id": "ENSG00000138760",
+   "symbol": "SCARB2",
+   "score": 0.38477255282844935
+  },
+  {
+   "id": "ENSG00000105227",
+   "symbol": "PRX",
+   "score": 0.3496479511467374
+  },
+  {
+   "id": "ENSG00000138081",
+   "symbol": "FBXO11",
+   "score": 0.27184433173377254
+  },
+  {
+   "id": "ENSG00000116062",
+   "symbol": "MSH6",
+   "score": 0.2591678730976471
+  },
+  {
+   "id": "ENSG00000166311",
+   "symbol": "SMPD1",
+   "score": 0.13069730806649407
+  },
+  {
+   "id": "ENSG00000070061",
+   "symbol": "ELP1",
+   "score": 0.12419235278677625
+  },
+  {
+   "id": "ENSG00000232810",
+   "symbol": "TNF",
+   "score": 0.12134500628656007
+  },
+  {
+   "id": "ENSG00000165409",
+   "symbol": "TSHR",
+   "score": 0.12042706320949843
+  },
+  {
+   "id": "ENSG00000169231",
+   "symbol": "THBS3",
+   "score": 0.12025204521803486
+  },
+  {
+   "id": "ENSG00000173171",
+   "symbol": "MTX1",
+   "score": 0.12020584773619926
+  },
+  {
+   "id": "ENSG00000136244",
+   "symbol": "IL6",
+   "score": 0.11814307077072352
+  },
+  {
+   "id": "ENSG00000049768",
+   "symbol": "FOXP3",
+   "score": 0.11183785049609409
+  },
+  {
+   "id": "ENSG00000010610",
+   "symbol": "CD4",
+   "score": 0.11165958266329216
+  },
+  {
+   "id": "ENSG00000163599",
+   "symbol": "CTLA4",
+   "score": 0.1085949376865246
+  },
+  {
+   "id": "ENSG00000136634",
+   "symbol": "IL10",
+   "score": 0.1085771327915774
+  },
+  {
+   "id": "ENSG00000030582",
+   "symbol": "GRN",
+   "score": 0.10744990901216198
+  },
+  {
+   "id": "ENSG00000115705",
+   "symbol": "TPO",
+   "score": 0.1068560062505518
+  },
+  {
+   "id": "ENSG00000102524",
+   "symbol": "TNFSF13B",
+   "score": 0.10613625792125354
+  },
+  {
+   "id": "ENSG00000112115",
+   "symbol": "IL17A",
+   "score": 0.10558349569547748
+  },
+  {
+   "id": "ENSG00000096717",
+   "symbol": "SIRT1",
+   "score": 0.10538513285922842
+  },
+  {
+   "id": "ENSG00000136869",
+   "symbol": "TLR4",
+   "score": 0.10505107351626951
+  },
+  {
+   "id": "ENSG00000196126",
+   "symbol": "HLA-DRB1",
+   "score": 0.10314395963886361
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0005328",
+   "name": "eye disorder"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0019255",
+   "name": "sphingolipidosis"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009265",
+   "name": "Gaucher disease type I"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009266",
+   "name": "Gaucher disease type II"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009267",
+   "name": "Gaucher disease type III"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0009268",
+   "name": "Gaucher disease-ophthalmoplegia-cardiovascular calcification syndrome"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0011945",
+   "name": "Gaucher disease perinatal lethal"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL2110588",
+   "medicine": "ELIGLUSTAT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/cerdelga",
+   "proteins": [
+    {
+     "target_id": "ENSG00000148154",
+     "symbol": "UGCG",
+     "score": 0.5891757350230993,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/cerdelga",
+    "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=819f828a-b888-4e46-83fc-94d774a28a83"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1201632",
+   "medicine": "IMIGLUCERASE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0QW9H",
+   "proteins": [],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0QW9H",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=df60f030-866b-4374-a31f-8ae3f6b45c38",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/cerezyme"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1029",
+   "medicine": "MIGLUSTAT",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=33631825-305d-44f6-837a-c94c8c1c0f57",
+   "proteins": [
+    {
+     "target_id": "ENSG00000148154",
+     "symbol": "UGCG",
+     "score": 0.5891757350230993,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=33631825-305d-44f6-837a-c94c8c1c0f57",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/zavesca",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/yargesa",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/miglustat-genorph",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/miglustat-dipharma"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL3707358",
+   "medicine": "OLIPUDASE ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0YX3D",
+   "proteins": [],
+   "label": null,
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0YX3D"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1964120",
+   "medicine": "TALIGLUCERASE ALFA",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa3cbd5d-677c-4b19-9032-d9182cb69a83",
+   "proteins": [],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa3cbd5d-677c-4b19-9032-d9182cb69a83"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL1201865",
+   "medicine": "VELAGLUCERASE ALFA",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca02f7a4-ae4f-43c1-a06a-259fe4fcf9cf",
+   "proteins": [],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca02f7a4-ae4f-43c1-a06a-259fe4fcf9cf",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/vpriv",
+    "https://clinicaltrials.gov/study/NCT00954460"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL600",
+   "medicine": "ACETYLCYSTEINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA08",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA08"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1201593",
+   "medicine": "ALTEPLASE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA13",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA13"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL196",
+   "medicine": "ASCORBIC ACID",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA15",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA15"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL6068573",
+   "medicine": "AVACINCAPTAD PEGOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA32",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA32"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4297852",
+   "medicine": "CENEGERMIN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA24",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA24"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL160",
+   "medicine": "CYCLOSPORINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA18",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA18"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL602",
+   "medicine": "CYSTEAMINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA21",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA21"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1200979",
+   "medicine": "DEXPANTHENOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA12",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA12"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL221326",
+   "medicine": "DIQUAFOSOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA33",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA33"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1749",
+   "medicine": "EDETATE DISODIUM ANHYDROUS",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA05",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA05"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1712170",
+   "medicine": "ETHYLMORPHINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA06",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA06"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1408759",
+   "medicine": "GUAIAZULEN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA01",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA01"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4650299",
+   "medicine": "HEPARIN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA14",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA14"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1556",
+   "medicine": "INOSINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA10",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA10"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2048028",
+   "medicine": "LIFITEGRAST",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA25",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA25"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2104906",
+   "medicine": "NANDROLONE CYCLOTATE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA11",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA11"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2095222",
+   "medicine": "OCRIPLASMIN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA22",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA22"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4298211",
+   "medicine": "PEGCETACOPLAN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA31",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA31"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1141",
+   "medicine": "POTASSIUM IODIDE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA04",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA04"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL986",
+   "medicine": "RETINOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA02",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA02"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1534",
+   "medicine": "RIBOFLAVIN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA26",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA26"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4594497",
+   "medicine": "SEPOFARSEN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA29",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA29"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL413",
+   "medicine": "SIROLIMUS",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA23",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA23"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1200574",
+   "medicine": "SODIUM CHLORIDE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA03",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA03"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1076903",
+   "medicine": "VARENICLINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA28",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA28"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL3707275",
+   "medicine": "VORETIGENE NEPARVOVEC",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01XA27",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for eye disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://www.whocc.no/atc_ddd_index/?code=S01XA27"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/trudexa",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "source": "https://clinicaltrials.gov/study/NCT00216177",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lifmior",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT01212653",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "source": "https://clinicaltrials.gov/study/NCT00580840",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AB03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.12134500628656007,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201533",
+   "medicine": "THYROTROPIN ALFA",
+   "source": "https://clinicaltrials.gov/study/NCT00001730",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165409",
+     "symbol": "TSHR",
+     "score": 0.12042706320949843,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201532",
+   "medicine": "THYROTROPIN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03EER",
+   "proteins": [
+    {
+     "target_id": "ENSG00000165409",
+     "symbol": "TSHR",
+     "score": 0.12042706320949843,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743070",
+   "medicine": "SILTUXIMAB",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=451f535b-8b6b-4ecf-9f19-d921b72eea39",
+   "proteins": [
+    {
+     "target_id": "ENSG00000136244",
+     "symbol": "IL6",
+     "score": 0.11814307077072352,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743050",
+   "medicine": "OLOKIZUMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AC23",
+   "proteins": [
+    {
+     "target_id": "ENSG00000136244",
+     "symbol": "IL6",
+     "score": 0.11814307077072352,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743071",
+   "medicine": "SIRUKUMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AC15",
+   "proteins": [
+    {
+     "target_id": "ENSG00000136244",
+     "symbol": "IL6",
+     "score": 0.11814307077072352,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743029",
+   "medicine": "IBALIZUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/trogarzo",
+   "proteins": [
+    {
+     "target_id": "ENSG00000010610",
+     "symbol": "CD4",
+     "score": 0.11165958266329216,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1789844",
+   "medicine": "IPILIMUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT02068196",
+   "proteins": [
+    {
+     "target_id": "ENSG00000163599",
+     "symbol": "CTLA4",
+     "score": 0.1085949376865246,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108658",
+   "medicine": "TREMELIMUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/tremelimumab-astrazeneca",
+   "proteins": [
+    {
+     "target_id": "ENSG00000163599",
+     "symbol": "CTLA4",
+     "score": 0.1085949376865246,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1515",
+   "medicine": "METHIMAZOLE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06833532-64c2-439a-a4ee-ed30989b61e4",
+   "proteins": [
+    {
+     "target_id": "ENSG00000115705",
+     "symbol": "TPO",
+     "score": 0.1068560062505518,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1518",
+   "medicine": "PROPYLTHIOURACIL",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b0c23a2c-b250-4c0d-9b2a-c1483faa2ca0",
+   "proteins": [
+    {
+     "target_id": "ENSG00000115705",
+     "symbol": "TPO",
+     "score": 0.1068560062505518,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL508102",
+   "medicine": "CARBIMAZOLE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02CKX",
+   "proteins": [
+    {
+     "target_id": "ENSG00000115705",
+     "symbol": "TPO",
+     "score": 0.1068560062505518,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1789843",
+   "medicine": "BELIMUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT01632241",
+   "proteins": [
+    {
+     "target_id": "ENSG00000102524",
+     "symbol": "TNFSF13B",
+     "score": 0.10613625792125354,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743068",
+   "medicine": "SECUKINUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT02547714",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.10558349569547748,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743034",
+   "medicine": "IXEKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT03151551",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.10558349569547748,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4297700",
+   "medicine": "BIMEKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT04340076",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.10558349569547748,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4298102",
+   "medicine": "VUNAKIZUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT04839016",
+   "proteins": [
+    {
+     "target_id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.10558349569547748,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 42,
+  "unclear_link": 0
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {
+  "ENSG00000148154": "down"
+ },
+ "one_way_without_leaving_out_red_warnings": {
+  "ENSG00000148154": "down"
+ },
+ "withdrawn_on_own_list": [],
+ "withdrawn_on_a_neighbour_list": [],
+ "own_list": {
+  "CHEMBL3989727": {
+   "id": "CHEMBL3989727",
+   "name": "VITAMIN E",
+   "forms": [
+    [
+     "CHEMBL3989727",
+     "VITAMIN E"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06211478"
+    }
+   ]
+  },
+  "CHEMBL4297611": {
+   "id": "CHEMBL4297611",
+   "name": "VENGLUSTAT",
+   "forms": [
+    [
+     "CHEMBL4594270",
+     "VENGLUSTAT MALATE"
+    ],
+    [
+     "CHEMBL4297611",
+     "VENGLUSTAT"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/VENGLUSTAT%20MALATE/relevant/1/"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_1",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D07WEN"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/VENGLUSTAT/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL2110588": {
+   "id": "CHEMBL2110588",
+   "name": "ELIGLUSTAT",
+   "forms": [
+    [
+     "CHEMBL2110588",
+     "ELIGLUSTAT"
+    ],
+    [
+     "CHEMBL5723563",
+     "ELIGLUSTAT TARTRATE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/cerdelga"
+    },
+    {
+     "source": "PMDA",
+     "stage": "APPROVAL",
+     "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=819f828a-b888-4e46-83fc-94d774a28a83"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00943111"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00358150"
+    }
+   ]
+  },
+  "CHEMBL206468": {
+   "id": "CHEMBL206468",
+   "name": "AFEGOSTAT",
+   "forms": [
+    [
+     "CHEMBL206468",
+     "AFEGOSTAT"
+    ],
+    [
+     "CHEMBL2105671",
+     "AFEGOSTAT TARTRATE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D1SWN3"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00433147"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00446550"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00813865"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00875160"
+    }
+   ]
+  },
+  "CHEMBL1201632": {
+   "id": "CHEMBL1201632",
+   "name": "IMIGLUCERASE",
+   "forms": [
+    [
+     "CHEMBL1201632",
+     "IMIGLUCERASE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0QW9H"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=df60f030-866b-4374-a31f-8ae3f6b45c38"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/cerezyme"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00364858"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00553631"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00943111"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02770625"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01951989"
+    }
+   ]
+  },
+  "CHEMBL153479": {
+   "id": "CHEMBL153479",
+   "name": "AMBROXOL",
+   "forms": [
+    [
+     "CHEMBL153479",
+     "AMBROXOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT01463215"
+    }
+   ]
+  },
+  "CHEMBL846": {
+   "id": "CHEMBL846",
+   "name": "CALCITRIOL",
+   "forms": [
+    [
+     "CHEMBL846",
+     "CALCITRIOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00001416"
+    }
+   ]
+  },
+  "CHEMBL1201865": {
+   "id": "CHEMBL1201865",
+   "name": "VELAGLUCERASE ALFA",
+   "forms": [
+    [
+     "CHEMBL1201865",
+     "VELAGLUCERASE ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "PMDA",
+     "stage": "APPROVAL",
+     "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca02f7a4-ae4f-43c1-a06a-259fe4fcf9cf"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/vpriv"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "APPROVAL",
+     "url": "https://clinicaltrials.gov/study/NCT00954460"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02528617"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00430625"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00553631"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00635427"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01614574"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01842841"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05529992"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT00478647"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT00391625"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT01685216"
+    }
+   ]
+  },
+  "CHEMBL2107726": {
+   "id": "CHEMBL2107726",
+   "name": "ARIMOCLOMOL",
+   "forms": [
+    [
+     "CHEMBL2107726",
+     "ARIMOCLOMOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03746587"
+    }
+   ]
+  },
+  "CHEMBL1964120": {
+   "id": "CHEMBL1964120",
+   "name": "TALIGLUCERASE ALFA",
+   "forms": [
+    [
+     "CHEMBL1964120",
+     "TALIGLUCERASE ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa3cbd5d-677c-4b19-9032-d9182cb69a83"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01132690"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00376168"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00705939"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00712348"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01411228"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01422187"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00001416"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00004293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02107846"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00001410"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00258778"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01747980"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "UNKNOWN",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/elelyso"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00962260"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04353466"
+    }
+   ]
+  },
+  "CHEMBL3707358": {
+   "id": "CHEMBL3707358",
+   "name": "OLIPUDASE ALFA",
+   "forms": [
+    [
+     "CHEMBL3707358",
+     "OLIPUDASE ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0YX3D"
+    }
+   ]
+  },
+  "CHEMBL1029": {
+   "id": "CHEMBL1029",
+   "name": "MIGLUSTAT",
+   "forms": [
+    [
+     "CHEMBL1029",
+     "MIGLUSTAT"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=33631825-305d-44f6-837a-c94c8c1c0f57"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/zavesca"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/yargesa"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/miglustat-genorph"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/miglustat-dipharma"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00041535"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02520934"
+    }
+   ]
+  }
+ },
+ "box_lists": {
+  "CHEMBL3707275": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL3707275",
+    "name": "VORETIGENE NEPARVOVEC",
+    "forms": [
+     [
+      "CHEMBL3707275",
+      "VORETIGENE NEPARVOVEC"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA27"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1201593": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1201593",
+    "name": "ALTEPLASE",
+    "forms": [
+     [
+      "CHEMBL1201593",
+      "ALTEPLASE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA13"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4298211": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL4298211",
+    "name": "PEGCETACOPLAN",
+    "forms": [
+     [
+      "CHEMBL4298211",
+      "PEGCETACOPLAN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA31"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1712170": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1712170",
+    "name": "ETHYLMORPHINE",
+    "forms": [
+     [
+      "CHEMBL1712170",
+      "ETHYLMORPHINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA06"
+     }
+    ]
+   }
+  ],
+  "CHEMBL600": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL600",
+    "name": "ACETYLCYSTEINE",
+    "forms": [
+     [
+      "CHEMBL600",
+      "ACETYLCYSTEINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA08"
+     }
+    ]
+   },
+   {
+    "role": "child",
+    "disease_id": "MONDO_0009265",
+    "disease": "Gaucher disease type I",
+    "id": "CHEMBL600",
+    "name": "ACETYLCYSTEINE",
+    "forms": [
+     [
+      "CHEMBL600",
+      "ACETYLCYSTEINE"
+     ]
+    ],
+    "approved_for_disease": false,
+    "stage_for_disease": "PHASE_2",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_2",
+      "url": "https://clinicaltrials.gov/study/NCT02583672"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1534": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1534",
+    "name": "RIBOFLAVIN",
+    "forms": [
+     [
+      "CHEMBL1534",
+      "RIBOFLAVIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA26"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4650299": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL4650299",
+    "name": "HEPARIN",
+    "forms": [
+     [
+      "CHEMBL4650299",
+      "HEPARIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA14"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1200574": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1200574",
+    "name": "SODIUM CHLORIDE",
+    "forms": [
+     [
+      "CHEMBL1200574",
+      "SODIUM CHLORIDE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA03"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2048028": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL2048028",
+    "name": "LIFITEGRAST",
+    "forms": [
+     [
+      "CHEMBL2048028",
+      "LIFITEGRAST"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA25"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2104906": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL2104906",
+    "name": "NANDROLONE CYCLOTATE",
+    "forms": [
+     [
+      "CHEMBL2104906",
+      "NANDROLONE CYCLOTATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA11"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1408759": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1408759",
+    "name": "GUAIAZULEN",
+    "forms": [
+     [
+      "CHEMBL1408759",
+      "GUAIAZULEN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA01"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2095222": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL2095222",
+    "name": "OCRIPLASMIN",
+    "forms": [
+     [
+      "CHEMBL2095222",
+      "OCRIPLASMIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA22"
+     },
+     {
+      "source": "TTD",
+      "stage": "PHASE_3",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D04IJZ"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4297852": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL4297852",
+    "name": "CENEGERMIN",
+    "forms": [
+     [
+      "CHEMBL4297852",
+      "CENEGERMIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA24"
+     }
+    ]
+   }
+  ],
+  "CHEMBL413": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL413",
+    "name": "SIROLIMUS",
+    "forms": [
+     [
+      "CHEMBL413",
+      "SIROLIMUS"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA23"
+     }
+    ]
+   }
+  ],
+  "CHEMBL6068573": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL6068573",
+    "name": "AVACINCAPTAD PEGOL",
+    "forms": [
+     [
+      "CHEMBL6068573",
+      "AVACINCAPTAD PEGOL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA32"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1749": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1749",
+    "name": "EDETATE DISODIUM ANHYDROUS",
+    "forms": [
+     [
+      "CHEMBL3989507",
+      "EDETATE DISODIUM"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA05"
+     }
+    ]
+   }
+  ],
+  "CHEMBL221326": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL221326",
+    "name": "DIQUAFOSOL",
+    "forms": [
+     [
+      "CHEMBL221326",
+      "DIQUAFOSOL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA33"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1200979": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1200979",
+    "name": "DEXPANTHENOL",
+    "forms": [
+     [
+      "CHEMBL1200979",
+      "DEXPANTHENOL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA12"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1076903": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1076903",
+    "name": "VARENICLINE",
+    "forms": [
+     [
+      "CHEMBL1076903",
+      "VARENICLINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA28"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1556": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1556",
+    "name": "INOSINE",
+    "forms": [
+     [
+      "CHEMBL1556",
+      "INOSINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA10"
+     }
+    ]
+   }
+  ],
+  "CHEMBL986": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL986",
+    "name": "RETINOL",
+    "forms": [
+     [
+      "CHEMBL986",
+      "RETINOL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA02"
+     }
+    ]
+   }
+  ],
+  "CHEMBL196": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL196",
+    "name": "ASCORBIC ACID",
+    "forms": [
+     [
+      "CHEMBL196",
+      "ASCORBIC ACID"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA15"
+     }
+    ]
+   }
+  ],
+  "CHEMBL602": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL602",
+    "name": "CYSTEAMINE",
+    "forms": [
+     [
+      "CHEMBL602",
+      "CYSTEAMINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA21"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1141": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL1141",
+    "name": "POTASSIUM IODIDE",
+    "forms": [
+     [
+      "CHEMBL1141",
+      "POTASSIUM IODIDE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA04"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4594497": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL4594497",
+    "name": "SEPOFARSEN",
+    "forms": [
+     [
+      "CHEMBL4594497",
+      "SEPOFARSEN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA29"
+     }
+    ]
+   }
+  ],
+  "CHEMBL160": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005328",
+    "disease": "eye disorder",
+    "id": "CHEMBL160",
+    "name": "CYCLOSPORINE",
+    "forms": [
+     [
+      "CHEMBL160",
+      "CYCLOSPORINE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ATC",
+      "stage": "APPROVAL",
+      "url": "https://www.whocc.no/atc_ddd_index/?code=S01XA18"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_3",
+      "url": "https://clinicaltrials.gov/study/NCT04735510"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_1_2",
+      "url": "https://clinicaltrials.gov/study/NCT04918823"
+     }
+    ]
+   }
+  ]
+ },
+ "in_tray": {
+  "CHEMBL206468": {
+   "name": "AFEGOSTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "GBA1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297611": {
+   "name": "VENGLUSTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "UGCG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_1",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1086997": {
+   "name": "LUCERASTAT",
+   "tray_group": "not_approved",
+   "targets": [
+    "UGCG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108739": {
+   "name": "PLACULUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107911": {
+   "name": "ONERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297863": {
+   "name": "REMTOLUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF",
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297572": {
+   "name": "ABBV-3373",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108208": {
+   "name": "LENERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108566": {
+   "name": "NERELIMOMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743057": {
+   "name": "PEGSUNERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297732": {
+   "name": "ZILTIVEKIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108589": {
+   "name": "CLAZAKIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL6068160": {
+   "name": "PACIBEKITUG",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109474": {
+   "name": "TRX-1",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108187": {
+   "name": "CLENOLIXIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297846": {
+   "name": "SEMZUVOLIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108063": {
+   "name": "ZANOLIMUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108475": {
+   "name": "PRILIXIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298127": {
+   "name": "VRC-01LS",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743083": {
+   "name": "TREGALIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4650419": {
+   "name": "QUAVONLIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297876": {
+   "name": "ZALIFRELIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594456": {
+   "name": "CADONILIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4650483": {
+   "name": "ERFONRILIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109460": {
+   "name": "SCH-708980",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL10"
+   ],
+   "best_stage": "PHASE_1_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3990000": {
+   "name": "TIBULIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B",
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2107877": {
+   "name": "BLISIBIMOD",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1742986": {
+   "name": "ATACICEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4650245": {
+   "name": "ROZIBAFUSP ALFA",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743075": {
+   "name": "TABALUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107844": {
+   "name": "BRIOBACEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109470": {
+   "name": "PERAKIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298023": {
+   "name": "M-1095",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109469": {
+   "name": "AFASEVIKUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297686": {
+   "name": "IZOKIBEP",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297926": {
+   "name": "CJM-112",
+   "tray_group": "not_approved",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297436": {
+   "name": "SRT-2104",
+   "tray_group": "not_approved",
+   "targets": [
+    "SIRT1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL225157": {
+   "name": "RESATORVID",
+   "tray_group": "not_approved",
+   "targets": [
+    "TLR4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL501259": {
+   "name": "ERITORAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "TLR4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109447": {
+   "name": "LYM-1",
+   "tray_group": "not_approved",
+   "targets": [
+    "HLA-DRB1"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108712": {
+   "name": "PLOVAMER ACETATE",
+   "tray_group": "not_approved",
+   "targets": [
+    "HLA-DRB1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108252": {
+   "name": "APOLIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "HLA-DRB1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201572": {
+   "name": "ETANERCEPT",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201581": {
+   "name": "INFLIXIMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108887": {
+   "name": "AFELIMOMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743054": {
+   "name": "OZORALIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201831": {
+   "name": "CERTOLIZUMAB PEGOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201833": {
+   "name": "GOLIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201580": {
+   "name": "ADALIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201533": {
+   "name": "THYROTROPIN ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "TSHR"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201532": {
+   "name": "THYROTROPIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "TSHR"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743070": {
+   "name": "SILTUXIMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743050": {
+   "name": "OLOKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743071": {
+   "name": "SIRUKUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL6"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743029": {
+   "name": "IBALIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "CD4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1789844": {
+   "name": "IPILIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108658": {
+   "name": "TREMELIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "CTLA4"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1515": {
+   "name": "METHIMAZOLE",
+   "tray_group": "new_clue",
+   "targets": [
+    "TPO"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1518": {
+   "name": "PROPYLTHIOURACIL",
+   "tray_group": "new_clue",
+   "targets": [
+    "TPO"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL508102": {
+   "name": "CARBIMAZOLE",
+   "tray_group": "new_clue",
+   "targets": [
+    "TPO"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1789843": {
+   "name": "BELIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNFSF13B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743034": {
+   "name": "IXEKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743068": {
+   "name": "SECUKINUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297700": {
+   "name": "BIMEKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298102": {
+   "name": "VUNAKIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IL17A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2110588": {
+   "name": "ELIGLUSTAT",
+   "tray_group": "already_approved",
+   "targets": [
+    "UGCG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1029": {
+   "name": "MIGLUSTAT",
+   "tray_group": "already_approved",
+   "targets": [
+    "UGCG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}

@@ -24,6 +24,9 @@ started again: a link that already has a line is not asked again.
         # first go on from the hop where a link stopped because the next
         # host was not allowed for the session (after that host is allowed).
         # The hops already asked are not asked again.
+    python3 fixtures/probe_p5/check_links.py --retry-unreached
+        # ask again the links where no request ever reached the host,
+        # because this session's own proxy or connection failed.
 """
 
 import json
@@ -193,15 +196,23 @@ def main() -> int:
         for line in OUT.read_text(encoding="utf-8").splitlines():
             done.add(json.loads(line)["url"])
     asked = 0
-    if "--finish-blocked" in sys.argv and OUT.exists():
+    if ("--finish-blocked" in sys.argv or "--retry-unreached" in sys.argv) and OUT.exists():
         kept = [json.loads(line) for line in OUT.read_text(encoding="utf-8").splitlines()]
         for number, line in enumerate(kept):
+            never_reached = line["steps"] and line["outcome"].startswith("could_not_ask_") \
+                and not any("status" in s for s in line["steps"])
+            if never_reached and "--retry-unreached" in sys.argv:
+                # No request ever reached the host (the session's own proxy or
+                # connection failed). Asked again; the failed tries are kept.
+                kept[number] = check(line["url"], line["url"], line["steps"])
+                asked += 1
+                OUT.write_text("".join(json.dumps(k) + "\n" for k in kept), encoding="utf-8")
             if line["outcome"] == "redirects_to_a_host_blocked_here":
                 earlier = [s for s in line["steps"] if s.get("error") != "proxy"]
                 kept[number] = check(line["url"], line["final_url"], earlier)
                 asked += 1
                 OUT.write_text("".join(json.dumps(k) + "\n" for k in kept), encoding="utf-8")
-        print(f"{now()} went on with {asked} links that had stopped at a blocked host", flush=True)
+        print(f"{now()} went on with, or asked again, {asked} links", flush=True)
     while True:
         links = card_links()
         waiting = [url for url in links if url not in done]

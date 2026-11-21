@@ -1,0 +1,7419 @@
+{
+ "id": "MONDO_0010602",
+ "name": "hemophilia A",
+ "set": "RARE",
+ "targets": [
+  {
+   "id": "ENSG00000185010",
+   "symbol": "F8",
+   "score": 0.919884283453289
+  },
+  {
+   "id": "ENSG00000101981",
+   "symbol": "F9",
+   "score": 0.7629888063295994
+  },
+  {
+   "id": "ENSG00000126218",
+   "symbol": "F10",
+   "score": 0.5854772563450251
+  },
+  {
+   "id": "ENSG00000057593",
+   "symbol": "F7",
+   "score": 0.5620888800587721
+  },
+  {
+   "id": "ENSG00000003436",
+   "symbol": "TFPI",
+   "score": 0.5486801833821071
+  },
+  {
+   "id": "ENSG00000139567",
+   "symbol": "ACVRL1",
+   "score": 0.48121288704720644
+  },
+  {
+   "id": "ENSG00000110799",
+   "symbol": "VWF",
+   "score": 0.468693402624275
+  },
+  {
+   "id": "ENSG00000122194",
+   "symbol": "PLG",
+   "score": 0.4665610886129513
+  },
+  {
+   "id": "ENSG00000117601",
+   "symbol": "SERPINC1",
+   "score": 0.3866026829259797
+  },
+  {
+   "id": "ENSG00000165775",
+   "symbol": "FUNDC2",
+   "score": 0.3344646354361178
+  },
+  {
+   "id": "ENSG00000274183",
+   "symbol": "H2AB1",
+   "score": 0.13674454623333965
+  },
+  {
+   "id": "ENSG00000074695",
+   "symbol": "LMAN1",
+   "score": 0.11826555349910459
+  },
+  {
+   "id": "ENSG00000142166",
+   "symbol": "IFNAR1",
+   "score": 0.10060784933083547
+  },
+  {
+   "id": "ENSG00000159110",
+   "symbol": "IFNAR2",
+   "score": 0.10060784933083547
+  },
+  {
+   "id": "ENSG00000105640",
+   "symbol": "RPL18A",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000008988",
+   "symbol": "RPS20",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000129824",
+   "symbol": "RPS4Y1",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000265681",
+   "symbol": "RPL17",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000137154",
+   "symbol": "RPS6",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000171858",
+   "symbol": "RPS21",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000071082",
+   "symbol": "RPL31",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000124614",
+   "symbol": "RPS10",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000122406",
+   "symbol": "RPL5",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000182774",
+   "symbol": "RPS17",
+   "score": 0.07391597093694036
+  },
+  {
+   "id": "ENSG00000130255",
+   "symbol": "RPL36",
+   "score": 0.07391597093694036
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0000425",
+   "name": "X-linked disease"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0021181",
+   "name": "inherited blood coagulation disorder"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0002243",
+   "name": "hemorrhagic disease"
+  },
+  {
+   "role": "parent",
+   "id": "MONDO_0018660",
+   "name": "hemophilia"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0015719",
+   "name": "severe hemophilia A"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0015720",
+   "name": "moderately severe hemophilia A"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0015721",
+   "name": "mild hemophilia A"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0015787",
+   "name": "symptomatic form of hemophilia A in female carriers"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL4594584",
+   "medicine": "ANTIHEMOPHILIC FACTOR, PEGYLATED (MW 20000) HUMAN SEQUENCE RECOMBINANT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/adynovi",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/adynovi"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4297730",
+   "medicine": "CONCIZUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/alhemo",
+   "proteins": [
+    {
+     "target_id": "ENSG00000003436",
+     "symbol": "TFPI",
+     "score": 0.5486801833821071,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/alhemo"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL5315069",
+   "medicine": "DAMOCTOCOG ALFA PEGOL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D8B9KJ",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D8B9KJ",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/jivi"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL5095275",
+   "medicine": "EFANESOCTOCOG ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DMU9P2",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/DMU9P2",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/altuvoct",
+    "https://www.fda.gov/media/165594/download"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4297945",
+   "medicine": "EFMOROCTOCOG ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0UQ1R",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0UQ1R",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/elocta"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL3833393",
+   "medicine": "EMICIZUMAB",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09XTN",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "OTHER"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "OTHER"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D09XTN",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hemlibra",
+    "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/761083s000lbl.pdf",
+    "https://clinicaltrials.gov/study/NCT03154437"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL2108334",
+   "medicine": "EPTACOG ALFA (ACTIVATED)",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoseven",
+   "proteins": [
+    {
+     "target_id": "ENSG00000057593",
+     "symbol": "F7",
+     "score": 0.5620888800587721,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/novoseven"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL5315078",
+   "medicine": "EPTACOG BETA (ACTIVATED)",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/cevenfacta",
+   "proteins": [
+    {
+     "target_id": "ENSG00000057593",
+     "symbol": "F7",
+     "score": 0.5620888800587721,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/cevenfacta"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4594603",
+   "medicine": "LONOCTOCOG ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/afstyla",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/afstyla"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL3990039",
+   "medicine": "MARSTACIMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/hympavzi",
+   "proteins": [
+    {
+     "target_id": "ENSG00000003436",
+     "symbol": "TFPI",
+     "score": 0.5486801833821071,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/hympavzi",
+    "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761369s000lbl.pdf"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL2109137",
+   "medicine": "MOROCTOCOG ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/refacto-af",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/refacto-af"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4297873",
+   "medicine": "OCTOCOG ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/advate",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/advate",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/kovaltry"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL2108319",
+   "medicine": "SIMOCTOCOG ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuwiq",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/nuwiq",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/vihuma"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL5315075",
+   "medicine": "SUSOCTOCOG ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G0AI",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0G0AI",
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/obizur",
+    "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL877",
+   "medicine": "TRANEXAMIC ACID",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=19f3483e-da9f-4a11-b2eb-b3c6d5d92fc8",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=19f3483e-da9f-4a11-b2eb-b3c6d5d92fc8",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6e89a7d9-4da4-42aa-b7f8-c602c24eefe5"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL2108286",
+   "medicine": "TUROCTOCOG ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoeight",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/novoeight"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL5315071",
+   "medicine": "TUROCTOCOG ALFA PEGOL",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/esperoct",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/esperoct"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "approved",
+   "id": "CHEMBL4297579",
+   "medicine": "VALOCTOCOGENE ROXAPARVOVEC",
+   "source": "https://www.fda.gov/media/169937/download?attachment",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.fda.gov/media/169937/download?attachment"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1046",
+   "medicine": "AMINOCAPROIC ACID",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0FD0H",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0FD0H"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2108282",
+   "medicine": "CATRIDECACOG",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novothirteen",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for inherited blood coagulation disorder, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/novothirteen"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4297986",
+   "medicine": "COAGULATION FACTOR IX HUMAN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V0RY",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for hemophilia, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0V0RY"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2109205",
+   "medicine": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P8QN",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0P8QN"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1466",
+   "medicine": "DICUMAROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02TJS",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D02TJS"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL3989529",
+   "medicine": "ETHANOLAMINE OLEATE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0O1PH",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0O1PH"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2108122",
+   "medicine": "PENTASTARCH",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0J6BR",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0J6BR"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1550",
+   "medicine": "PHYTONADIONE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00FSV",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D00FSV"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1201651",
+   "medicine": "PROTAMINE SULFATE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03FXM",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D03FXM"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2108110",
+   "medicine": "THROMBIN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P2BV",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0P2BV"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL4298126",
+   "medicine": "VON WILLEBRAND FACTOR HUMAN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0XE8H",
+   "proteins": [
+    {
+     "target_id": "ENSG00000110799",
+     "symbol": "VWF",
+     "score": 0.468693402624275,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "label": "Not listed as approved for this exact disease. Approved for hemophilia, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0XE8H"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4594605",
+   "medicine": "OMFILOCTOCOG ALFA",
+   "source": "https://clinicaltrials.gov/study/NCT02246868",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL2108175",
+   "medicine": "HUMAN COAGULATION FACTOR VIII",
+   "source": "https://clinicaltrials.gov/study/NCT02932618",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL2109205",
+   "medicine": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+   "source": "https://clinicaltrials.gov/study/NCT00581126",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4594598",
+   "medicine": "EFTRENONACOG ALFA",
+   "source": "https://clinicaltrials.gov/study/NCT00749476",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4298126",
+   "medicine": "VON WILLEBRAND FACTOR HUMAN",
+   "source": "https://clinicaltrials.gov/study/NCT04555785",
+   "proteins": [
+    {
+     "target_id": "ENSG00000110799",
+     "symbol": "VWF",
+     "score": 0.468693402624275,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL4297754",
+   "medicine": "FITUSIRAN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D46RKC",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "RNAI INHIBITOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_3"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1201560",
+   "medicine": "PEGINTERFERON ALFA-2A",
+   "source": "https://clinicaltrials.gov/study/NCT00077636",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL1201561",
+   "medicine": "PEGINTERFERON ALFA-2B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/pegintron",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL2108508",
+   "medicine": "INTERFERON ALFA-2A",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09PMV",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "being_studied",
+   "id": "CHEMBL256997",
+   "medicine": "ATALUREN",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/translarna",
+   "proteins": [
+    {
+     "target_id": "ENSG00000265681",
+     "symbol": "RPL17",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000105640",
+     "symbol": "RPL18A",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000071082",
+     "symbol": "RPL31",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000130255",
+     "symbol": "RPL36",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000122406",
+     "symbol": "RPL5",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000124614",
+     "symbol": "RPS10",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000182774",
+     "symbol": "RPS17",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000008988",
+     "symbol": "RPS20",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171858",
+     "symbol": "RPS21",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000129824",
+     "symbol": "RPS4Y1",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000137154",
+     "symbol": "RPS6",
+     "score": 0.07391597093694036,
+     "action_types": [
+      "MODULATOR"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": "PHASE_2"
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL6068614",
+   "medicine": "PROTHROMBIN COMPLEX CONCENTRATE",
+   "source": "https://clinicaltrials.gov/study/NCT00928915",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000057593",
+     "symbol": "F7",
+     "score": 0.5620888800587721,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2109065",
+   "medicine": "DROTRECOGIN ALFA (ACTIVATED)",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/xigris",
+   "proteins": [
+    {
+     "target_id": "ENSG00000185010",
+     "symbol": "F8",
+     "score": 0.919884283453289,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108348",
+   "medicine": "NONACOG BETA PEGOL",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3990034",
+   "medicine": "FIDANACOGENE ELAPARVOVEC",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/beqvez",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS GENE"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL5095451",
+   "medicine": "ETRANACOGENE DEZAPARVOVEC",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B02BD16",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL5315076",
+   "medicine": "ALBUTREPENONACOG ALFA",
+   "source": "https://clinicaltrials.gov/study/NCT04108260",
+   "proteins": [
+    {
+     "target_id": "ENSG00000101981",
+     "symbol": "F9",
+     "score": 0.7629888063295994,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL198362",
+   "medicine": "RIVAROXABAN",
+   "source": "https://clinicaltrials.gov/study/NCT01708850",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL231779",
+   "medicine": "APIXABAN",
+   "source": "https://clinicaltrials.gov/study/NCT01884350",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1269025",
+   "medicine": "EDOXABAN",
+   "source": "https://clinicaltrials.gov/study/NCT02561897",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3707365",
+   "medicine": "BEMIPARIN",
+   "source": "https://clinicaltrials.gov/study/NCT02607319",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201554",
+   "medicine": "ANTITHROMBIN ALFA",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/atryn",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4297951",
+   "medicine": "COAGULATION FACTOR X HUMAN",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B02BD13",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL512351",
+   "medicine": "BETRIXABAN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ebaa2dd9-257e-4a68-ab6a-fb2791bb62ce",
+   "proteins": [
+    {
+     "target_id": "ENSG00000126218",
+     "symbol": "F10",
+     "score": 0.5854772563450251,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3301583",
+   "medicine": "ANDEXANET ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DY49OT",
+   "proteins": [
+    {
+     "target_id": "ENSG00000003436",
+     "symbol": "TFPI",
+     "score": 0.5486801833821071,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2109624",
+   "medicine": "CAPLACIZUMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AX07",
+   "proteins": [
+    {
+     "target_id": "ENSG00000110799",
+     "symbol": "VWF",
+     "score": 0.468693402624275,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2107873",
+   "medicine": "VONICOG ALFA",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000110799",
+     "symbol": "VWF",
+     "score": 0.468693402624275,
+     "action_types": [
+      "EXOGENOUS PROTEIN"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108147",
+   "medicine": "STREPTOKINASE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD01",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108396",
+   "medicine": "DEFIBROTIDE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AX01",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3707226",
+   "medicine": "DEFIBROTIDE SODIUM",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108250",
+   "medicine": "ANISTREPLASE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000122194",
+     "symbol": "PLG",
+     "score": 0.4665610886129513,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4650299",
+   "medicine": "HEPARIN",
+   "source": "https://clinicaltrials.gov/study/NCT00373451",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201657",
+   "medicine": "HEPARIN SODIUM",
+   "source": "https://clinicaltrials.gov/study/NCT00373451",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201476",
+   "medicine": "ENOXAPARIN SODIUM",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/thorinane",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201460",
+   "medicine": "DALTEPARIN SODIUM",
+   "source": "https://clinicaltrials.gov/study/NCT00264381",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201202",
+   "medicine": "FONDAPARINUX",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/quixidar",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2109204",
+   "medicine": "NADROPARIN CALCIUM",
+   "source": "https://clinicaltrials.gov/study/NCT02295150",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201414",
+   "medicine": "TINZAPARIN SODIUM",
+   "source": "https://clinicaltrials.gov/study/NCT00203580",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201513",
+   "medicine": "HEPARIN CALCIUM",
+   "source": "https://clinicaltrials.gov/study/NCT00373451",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201534",
+   "medicine": "DANAPAROID SODIUM",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AB09",
+   "proteins": [
+    {
+     "target_id": "ENSG00000117601",
+     "symbol": "SERPINC1",
+     "score": 0.3866026829259797,
+     "action_types": [
+      "ACTIVATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201558",
+   "medicine": "INTERFERON ALFA-2B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/introna",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201562",
+   "medicine": "INTERFERON BETA-1A",
+   "source": "https://clinicaltrials.gov/study/NCT00037115",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4297819",
+   "medicine": "ROPEGINTERFERON ALFA-2B",
+   "source": "https://clinicaltrials.gov/study/NCT06290765",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "POSITIVE MODULATOR"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201563",
+   "medicine": "INTERFERON BETA-1B",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/extavia",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2364653",
+   "medicine": "ANIFROLUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT06594068",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108677",
+   "medicine": "PEGINTERFERON BETA-1A",
+   "source": "https://clinicaltrials.gov/study/NCT02234869",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201557",
+   "medicine": "INTERFERON ALFACON-1",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/infergen",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2107842",
+   "medicine": "ALBINTERFERON ALFA-2B",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L03AB12",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2109047",
+   "medicine": "INTERFERON ALFA-N3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07CMM",
+   "proteins": [
+    {
+     "target_id": "ENSG00000142166",
+     "symbol": "IFNAR1",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000159110",
+     "symbol": "IFNAR2",
+     "score": 0.10060784933083547,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 23,
+  "unclear_link": 0
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {
+  "ENSG00000003436": "down",
+  "ENSG00000122194": "down"
+ },
+ "one_way_without_leaving_out_red_warnings": {
+  "ENSG00000003436": "down",
+  "ENSG00000122194": "down"
+ },
+ "withdrawn_on_own_list": [],
+ "withdrawn_on_a_neighbour_list": [
+  "CHEMBL1201619"
+ ],
+ "own_list": {
+  "CHEMBL2108508": {
+   "id": "CHEMBL2108508",
+   "name": "INTERFERON ALFA-2A",
+   "forms": [
+    [
+     "CHEMBL2108508",
+     "INTERFERON ALFA-2A"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL5314670": {
+   "id": "CHEMBL5314670",
+   "name": "DENECIMIG",
+   "forms": [
+    [
+     "CHEMBL5314670",
+     "DENECIMIG"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D2AK6X"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05878938"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05681845"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/DENECIMIG/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL5315069": {
+   "id": "CHEMBL5315069",
+   "name": "DAMOCTOCOG ALFA PEGOL",
+   "forms": [
+    [
+     "CHEMBL5315069",
+     "DAMOCTOCOG ALFA PEGOL"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D8B9KJ"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/jivi"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04085458"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT05036278"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01775618"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT03364998"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04015492"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03603275"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03932201"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04091386"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04461639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05643560"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06222697"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT07088458"
+    }
+   ]
+  },
+  "CHEMBL5315075": {
+   "id": "CHEMBL5315075",
+   "name": "SUSOCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL5315075",
+     "SUSOCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0G0AI"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/obizur"
+    },
+    {
+     "source": "PMDA",
+     "stage": "APPROVAL",
+     "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01434511"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06461533"
+    }
+   ]
+  },
+  "CHEMBL4298194": {
+   "id": "CHEMBL4298194",
+   "name": "GIROCTOCOGENE FITELPARVOVEC",
+   "forms": [
+    [
+     "CHEMBL4298194",
+     "GIROCTOCOGENE FITELPARVOVEC"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DZ9AJ3"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04370054"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03061201"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/GIROCTOCOGENE%20FITELPARVOVEC/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL3990039": {
+   "id": "CHEMBL3990039",
+   "name": "MARSTACIMAB",
+   "forms": [
+    [
+     "CHEMBL3990039",
+     "MARSTACIMAB"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hympavzi"
+    },
+    {
+     "source": "FDA",
+     "stage": "APPROVAL",
+     "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/761369s000lbl.pdf"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03938792"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02974855"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT06703606"
+    }
+   ]
+  },
+  "CHEMBL5315071": {
+   "id": "CHEMBL5315071",
+   "name": "TUROCTOCOG ALFA PEGOL",
+   "forms": [
+    [
+     "CHEMBL5315071",
+     "TUROCTOCOG ALFA PEGOL"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/esperoct"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D00UUL"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01480180"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01489111"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01731600"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02137850"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03528551"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05082116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01205724"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02920398"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02994407"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04334057"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04574076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05621746"
+    }
+   ]
+  },
+  "CHEMBL4594598": {
+   "id": "CHEMBL4594598",
+   "name": "EFTRENONACOG ALFA",
+   "forms": [
+    [
+     "CHEMBL4594598",
+     "EFTRENONACOG ALFA"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03055611"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06158334"
+    }
+   ]
+  },
+  "CHEMBL4297945": {
+   "id": "CHEMBL4297945",
+   "name": "EFMOROCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL4297945",
+     "EFMOROCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0UQ1R"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/elocta"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01085344"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01810666"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01811875"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02697370"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03093480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03103542"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03622476"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04565236"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04728217"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04985682"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT06864975"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00037544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00243659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00623480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01125813"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01181128"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01458106"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01619046"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01863758"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02234323"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02306694"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02502149"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02921945"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06137092"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738485"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738901"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01736475"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00245297"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00629837"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01027377"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01184820"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01653639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02083965"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02716194"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00874926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00932555"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01159587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02263066"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02718677"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02971930"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02976753"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02996942"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03055611"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03405337"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04293523"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04941898"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06158334"
+    }
+   ]
+  },
+  "CHEMBL4297579": {
+   "id": "CHEMBL4297579",
+   "name": "VALOCTOCOGENE ROXAPARVOVEC",
+   "forms": [
+    [
+     "CHEMBL4297579",
+     "VALOCTOCOGENE ROXAPARVOVEC"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "FDA",
+     "stage": "APPROVAL",
+     "url": "https://www.fda.gov/media/169937/download?attachment"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D7HLI1"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03370913"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03392974"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04323098"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06224907"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT02576795"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03520712"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT04684940"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "UNKNOWN",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/roctavian-0"
+    }
+   ]
+  },
+  "CHEMBL256997": {
+   "id": "CHEMBL256997",
+   "name": "ATALUREN",
+   "forms": [
+    [
+     "CHEMBL256997",
+     "ATALUREN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00947193"
+    }
+   ]
+  },
+  "CHEMBL4297904": {
+   "id": "CHEMBL4297904",
+   "name": "BAY-1093884",
+   "forms": [
+    [
+     "CHEMBL4297904",
+     "BAY-1093884"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT03597022"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02571569"
+    }
+   ]
+  },
+  "CHEMBL4297730": {
+   "id": "CHEMBL4297730",
+   "name": "CONCIZUMAB",
+   "forms": [
+    [
+     "CHEMBL4297730",
+     "CONCIZUMAB"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/alhemo"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D2FE7T"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01228669"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02490787"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/CONCIZUMAB/relevant/1/"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06831734"
+    }
+   ]
+  },
+  "CHEMBL1201561": {
+   "id": "CHEMBL1201561",
+   "name": "PEGINTERFERON ALFA-2B",
+   "forms": [
+    [
+     "CHEMBL1201561",
+     "PEGINTERFERON ALFA-2B"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL3833393": {
+   "id": "CHEMBL3833393",
+   "name": "EMICIZUMAB",
+   "forms": [
+    [
+     "CHEMBL3833393",
+     "EMICIZUMAB"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D09XTN"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hemlibra"
+    },
+    {
+     "source": "FDA",
+     "stage": "APPROVAL",
+     "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2017/761083s000lbl.pdf"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "APPROVAL",
+     "url": "https://clinicaltrials.gov/study/NCT03154437"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04567511"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04621916"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT05181618"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02795767"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03020160"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04158648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04431726"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04563520"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT05878938"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07416604"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT07439055"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05500807"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04805801"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05248594"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05279924"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06104826"
+    }
+   ]
+  },
+  "CHEMBL4650253": {
+   "id": "CHEMBL4650253",
+   "name": "DIRLOCTOCOGENE SAMOPARVOVEC",
+   "forms": [
+    [
+     "CHEMBL4650253",
+     "DIRLOCTOCOGENE SAMOPARVOVEC"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1_2",
+   "best_stage_of_listed_forms": "PHASE_1_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_1_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DW7PT6"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/DIRLOCTOCOGENE%20SAMOPARVOVEC/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL2109205": {
+   "id": "CHEMBL2109205",
+   "name": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+   "forms": [
+    [
+     "CHEMBL2109205",
+     "COAGULATION FACTOR IX RECOMBINANT HUMAN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02392156"
+    }
+   ]
+  },
+  "CHEMBL2109137": {
+   "id": "CHEMBL2109137",
+   "name": "MOROCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL2109137",
+     "MOROCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/refacto-af"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00092976"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00168051"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00621673"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00884390"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00914459"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01085344"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01810666"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01811875"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02492984"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02697370"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03622476"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04396639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04565236"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04985682"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT06864975"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00037544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00038935"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00243659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00543439"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00606060"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00623480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00759655"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00868530"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01029340"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01125813"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01181128"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01311648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01458106"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01568580"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01619046"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01863758"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01913405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01945593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01992549"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246868"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246894"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02250482"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02306694"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02921945"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02930317"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03815318"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03947320"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06137092"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06297655"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738485"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738901"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07437404"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01486927"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01580293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01736475"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00245297"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00989196"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02586012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00629837"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01184820"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01579903"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01653639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02461992"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02716194"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02888223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04060836"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04864743"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00874926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00932555"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00969319"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01159587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01790828"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02263066"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02280265"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02718677"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02976753"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02996942"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03405337"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03747653"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04675541"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04941898"
+    }
+   ]
+  },
+  "CHEMBL2108780": {
+   "id": "CHEMBL2108780",
+   "name": "POLYETHYLENE GLYCOL 4000",
+   "forms": [
+    [
+     "CHEMBL2108780",
+     "POLYETHYLENE GLYCOL 4000"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL2108175": {
+   "id": "CHEMBL2108175",
+   "name": "HUMAN COAGULATION FACTOR VIII",
+   "forms": [
+    [
+     "CHEMBL2108175",
+     "HUMAN COAGULATION FACTOR VIII"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02954575"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03376516"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT00189982"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03344003"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    }
+   ]
+  },
+  "CHEMBL1201478": {
+   "id": "CHEMBL1201478",
+   "name": "POLYETHYLENE GLYCOL",
+   "forms": [
+    [
+     "CHEMBL1201478",
+     "POLYETHYLENE GLYCOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL1429": {
+   "id": "CHEMBL1429",
+   "name": "DESMOPRESSIN",
+   "forms": [
+    [
+     "CHEMBL1429",
+     "DESMOPRESSIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05628558"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06020456"
+    }
+   ]
+  },
+  "CHEMBL4297754": {
+   "id": "CHEMBL4297754",
+   "name": "FITUSIRAN",
+   "forms": [
+    [
+     "CHEMBL4297754",
+     "FITUSIRAN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03417102"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03417245"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03754790"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT02554773"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_1",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D08ZCI"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02035605"
+    }
+   ]
+  },
+  "CHEMBL4298072": {
+   "id": "CHEMBL4298072",
+   "name": "MARZEPTACOG ALFA (ACTIVATED)",
+   "forms": [
+    [
+     "CHEMBL4298072",
+     "MARZEPTACOG ALFA (ACTIVATED)"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04489537"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01439971"
+    }
+   ]
+  },
+  "CHEMBL5315078": {
+   "id": "CHEMBL5315078",
+   "name": "EPTACOG BETA (ACTIVATED)",
+   "forms": [
+    [
+     "CHEMBL5315078",
+     "EPTACOG BETA (ACTIVATED)"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/cevenfacta"
+    }
+   ]
+  },
+  "CHEMBL4298126": {
+   "id": "CHEMBL4298126",
+   "name": "VON WILLEBRAND FACTOR HUMAN",
+   "forms": [
+    [
+     "CHEMBL4298126",
+     "VON WILLEBRAND FACTOR HUMAN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02954575"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03376516"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03344003"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    }
+   ]
+  },
+  "CHEMBL2108319": {
+   "id": "CHEMBL2108319",
+   "name": "SIMOCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL2108319",
+     "SIMOCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuwiq"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/vihuma"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT05935358"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03344003"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    }
+   ]
+  },
+  "CHEMBL1201560": {
+   "id": "CHEMBL1201560",
+   "name": "PEGINTERFERON ALFA-2A",
+   "forms": [
+    [
+     "CHEMBL1201560",
+     "PEGINTERFERON ALFA-2A"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL5314642": {
+   "id": "CHEMBL5314642",
+   "name": "RONDAPTIVON PEGOL",
+   "forms": [
+    [
+     "CHEMBL5314642",
+     "RONDAPTIVON PEGOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_2",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT04677803"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/RONDAPTIVON%20PEGOL/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL2108286": {
+   "id": "CHEMBL2108286",
+   "name": "TUROCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL2108286",
+     "TUROCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoeight"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00168051"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00621673"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03449342"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0ML8G"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00606060"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00840086"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00984126"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01029340"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01138501"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01311648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01568580"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01913405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01945593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01992549"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02930317"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02938585"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03588741"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01486927"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01580293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00989196"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02586012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01238367"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01365520"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02888223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00969319"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02035384"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02207218"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03179748"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04584892"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04675541"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06574984"
+    }
+   ]
+  },
+  "CHEMBL4297953": {
+   "id": "CHEMBL4297953",
+   "name": "ANTI-INHIBITOR COAGULANT COMPLEX",
+   "forms": [
+    [
+     "CHEMBL4297953",
+     "ANTI-INHIBITOR COAGULANT COMPLEX"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04563520"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    }
+   ]
+  },
+  "CHEMBL1201576": {
+   "id": "CHEMBL1201576",
+   "name": "RITUXIMAB",
+   "forms": [
+    [
+     "CHEMBL1201576",
+     "RITUXIMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00331006"
+    }
+   ]
+  },
+  "CHEMBL4594584": {
+   "id": "CHEMBL4594584",
+   "name": "ANTIHEMOPHILIC FACTOR, PEGYLATED (MW 20000) HUMAN SEQUENCE RECOMBINANT",
+   "forms": [
+    [
+     "CHEMBL4594584",
+     "ANTIHEMOPHILIC FACTOR, PEGYLATED (MW 20000) HUMAN SEQUENCE RECOMBINANT"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/adynovi"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00168051"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00621673"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01085344"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01810666"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01811875"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02697370"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03622476"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04565236"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04985682"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT06864975"
+    },
+    {
+     "source": "TTD",
+     "stage": "PHASE_3",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D0C4FA"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00037544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00243659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00606060"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00623480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01029340"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01125813"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01181128"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01311648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01458106"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01568580"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01619046"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01863758"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01913405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01945593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01992549"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02210091"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02306694"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02585960"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02615691"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02921945"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02930317"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06137092"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738485"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738901"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01486927"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01580293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01736475"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00245297"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00989196"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02586012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00629837"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01184820"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01653639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02716194"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02888223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04015492"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05042440"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00874926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00932555"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00969319"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01159587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02263066"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02718677"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02976753"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02996942"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03169972"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03405337"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03824522"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04158934"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04675541"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04941898"
+    }
+   ]
+  },
+  "CHEMBL877": {
+   "id": "CHEMBL877",
+   "name": "TRANEXAMIC ACID",
+   "forms": [
+    [
+     "CHEMBL877",
+     "TRANEXAMIC ACID"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=19f3483e-da9f-4a11-b2eb-b3c6d5d92fc8"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6e89a7d9-4da4-42aa-b7f8-c602c24eefe5"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    }
+   ]
+  },
+  "CHEMBL5095275": {
+   "id": "CHEMBL5095275",
+   "name": "EFANESOCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL5095275",
+     "EFANESOCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "APPROVAL",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DMU9P2"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/altuvoct"
+    },
+    {
+     "source": "FDA",
+     "stage": "APPROVAL",
+     "url": "https://www.fda.gov/media/165594/download"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04161495"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04644575"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04759131"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06716814"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05042440"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT06579144"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT05911763"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06530030"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT06684314"
+    }
+   ]
+  },
+  "CHEMBL2108334": {
+   "id": "CHEMBL2108334",
+   "name": "EPTACOG ALFA (ACTIVATED)",
+   "forms": [
+    [
+     "CHEMBL2108334",
+     "EPTACOG ALFA (ACTIVATED)"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoseven"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04647227"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00375323"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01757405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03935334"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04563520"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT02484638"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00922792"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01562587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01949792"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02418793"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "EARLY_PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04789954"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "UNKNOWN",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/hemaryo"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00166309"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00703911"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01220141"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01579955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01579968"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04023019"
+    }
+   ]
+  },
+  "CHEMBL1201479": {
+   "id": "CHEMBL1201479",
+   "name": "POLYETHYLENE GLYCOL 3350",
+   "forms": [
+    [
+     "CHEMBL1201479",
+     "POLYETHYLENE GLYCOL 3350"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05265286"
+    }
+   ]
+  },
+  "CHEMBL4297873": {
+   "id": "CHEMBL4297873",
+   "name": "OCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL4297873",
+     "OCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kogenate-bayer"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/helixate-nexgen"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/advate"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kovaltry"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "WITHDRAWAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/iblias"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00168051"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00289536"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00621673"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00916032"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01085344"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01810666"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01811875"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02170402"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02697370"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03622476"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04565236"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04621916"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04985682"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT06864975"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00037544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00157157"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00243659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00606060"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00623480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01029340"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01125813"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01181128"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01311648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01341912"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01458106"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01568580"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01619046"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01863758"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01913405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01945593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01992549"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02210091"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246868"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246894"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02250482"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02306694"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02921945"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02930317"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03815318"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03947320"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06137092"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06297655"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738485"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738901"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07437404"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT00157040"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT00157053"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT00157105"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01486927"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01580293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01736475"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00245297"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00989196"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02586012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00629837"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00952822"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01184820"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01599819"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01653639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02483208"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02716194"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02888223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04060836"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04864743"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT05042440"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00214734"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00864552"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00874926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00932555"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00969319"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01159587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01652027"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01790828"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02078427"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02093741"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02263066"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02280265"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02392156"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02634723"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02718677"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02830477"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02941783"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02976753"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02996942"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03405337"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03603275"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03747653"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04675541"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04941898"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT07446010"
+    }
+   ]
+  },
+  "CHEMBL5314810": {
+   "id": "CHEMBL5314810",
+   "name": "BEMILTENASE ALFA",
+   "forms": [
+    [
+     "CHEMBL5314810",
+     "BEMILTENASE ALFA"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06922045"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT05619926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT06289166"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT05027230"
+    }
+   ]
+  },
+  "CHEMBL4594605": {
+   "id": "CHEMBL4594605",
+   "name": "OMFILOCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL4594605",
+     "OMFILOCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_3",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246868"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02246894"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02250482"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03815318"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03947320"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06297655"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT07437404"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04060836"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT04864743"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01790828"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02280265"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03747653"
+    }
+   ]
+  },
+  "CHEMBL1201573": {
+   "id": "CHEMBL1201573",
+   "name": "OPRELVEKIN",
+   "forms": [
+    [
+     "CHEMBL1201573",
+     "OPRELVEKIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00994929"
+    }
+   ]
+  },
+  "CHEMBL4594603": {
+   "id": "CHEMBL4594603",
+   "name": "LONOCTOCOG ALFA",
+   "forms": [
+    [
+     "CHEMBL4594603",
+     "LONOCTOCOG ALFA"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/afstyla"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00168051"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT00621673"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01085344"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01561391"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01810666"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01811875"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT02697370"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03622476"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04565236"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT04985682"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT06864975"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00037544"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00243659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00606060"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT00623480"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01029340"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01125813"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01181128"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01311648"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01458106"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01568580"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01619046"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01863758"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01913405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01945593"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT01992549"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02093897"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02306694"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02921945"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT02930317"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03549871"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT03587116"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04030052"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT04303572"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06137092"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738485"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_3",
+     "url": "https://clinicaltrials.gov/study/NCT06738901"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01486927"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01580293"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT01736475"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06155955"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT06938659"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00245297"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00989196"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT02586012"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1_2",
+     "url": "https://clinicaltrials.gov/study/NCT03205163"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00629837"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT00837356"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01184820"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT01653639"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02716194"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_1",
+     "url": "https://clinicaltrials.gov/study/NCT02888223"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00279578"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00874926"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00932555"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00969319"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01051076"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01159587"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02263066"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02718677"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02976753"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT02996942"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03405337"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04675541"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04941898"
+    }
+   ]
+  }
+ },
+ "box_lists": {
+  "CHEMBL2108282": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0021181",
+    "disease": "inherited blood coagulation disorder",
+    "id": "CHEMBL2108282",
+    "name": "CATRIDECACOG",
+    "forms": [
+     [
+      "CHEMBL2108282",
+      "CATRIDECACOG"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "EMA Human Drugs",
+      "stage": "APPROVAL",
+      "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/novothirteen"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2108110": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL2108110",
+    "name": "THROMBIN",
+    "forms": [
+     [
+      "CHEMBL2108110",
+      "THROMBIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0P2BV"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2108122": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL2108122",
+    "name": "PENTASTARCH",
+    "forms": [
+     [
+      "CHEMBL2108122",
+      "PENTASTARCH"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0J6BR"
+     }
+    ]
+   }
+  ],
+  "CHEMBL3989529": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL3989529",
+    "name": "ETHANOLAMINE OLEATE",
+    "forms": [
+     [
+      "CHEMBL3989529",
+      "ETHANOLAMINE OLEATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0O1PH"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1046": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL1046",
+    "name": "AMINOCAPROIC ACID",
+    "forms": [
+     [
+      "CHEMBL1046",
+      "AMINOCAPROIC ACID"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0FD0H"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1550": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL1550",
+    "name": "PHYTONADIONE",
+    "forms": [
+     [
+      "CHEMBL1550",
+      "PHYTONADIONE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D00FSV"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2109205": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL2109205",
+    "name": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+    "forms": [
+     [
+      "CHEMBL2109205",
+      "COAGULATION FACTOR IX RECOMBINANT HUMAN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0P8QN"
+     }
+    ]
+   },
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0018660",
+    "disease": "hemophilia",
+    "id": "CHEMBL2109205",
+    "name": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+    "forms": [
+     [
+      "CHEMBL2109205",
+      "COAGULATION FACTOR IX RECOMBINANT HUMAN"
+     ]
+    ],
+    "approved_for_disease": false,
+    "stage_for_disease": "PHASE_3",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "PHASE_3",
+      "url": "https://clinicaltrials.gov/study/NCT00000582"
+     },
+     {
+      "source": "ClinicalTrials.gov",
+      "stage": "UNKNOWN",
+      "url": "https://clinicaltrials.gov/study/NCT02190149"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1201651": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL1201651",
+    "name": "PROTAMINE SULFATE",
+    "forms": [
+     [
+      "CHEMBL1201651",
+      "PROTAMINE SULFATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D03FXM"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1466": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0002243",
+    "disease": "hemorrhagic disease",
+    "id": "CHEMBL1466",
+    "name": "DICUMAROL",
+    "forms": [
+     [
+      "CHEMBL1466",
+      "DICUMAROL"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D02TJS"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4297986": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0018660",
+    "disease": "hemophilia",
+    "id": "CHEMBL4297986",
+    "name": "COAGULATION FACTOR IX HUMAN",
+    "forms": [
+     [
+      "CHEMBL4297986",
+      "COAGULATION FACTOR IX HUMAN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0V0RY"
+     }
+    ]
+   }
+  ],
+  "CHEMBL4298126": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0018660",
+    "disease": "hemophilia",
+    "id": "CHEMBL4298126",
+    "name": "VON WILLEBRAND FACTOR HUMAN",
+    "forms": [
+     [
+      "CHEMBL4298126",
+      "VON WILLEBRAND FACTOR HUMAN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0XE8H"
+     }
+    ]
+   }
+  ]
+ },
+ "in_tray": {
+  "CHEMBL4298194": {
+   "name": "GIROCTOCOGENE FITELPARVOVEC",
+   "tray_group": "not_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109410": {
+   "name": "TB-402",
+   "tray_group": "not_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3039538": {
+   "name": "TRENONACOG ALFA",
+   "tray_group": "not_approved",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107870": {
+   "name": "PEGNIVACOGIN",
+   "tray_group": "not_approved",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297768": {
+   "name": "IDRABIOTAPARINUX SODIUM",
+   "tray_group": "not_approved",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL46618": {
+   "name": "OTAMIXABAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5314801": {
+   "name": "IDRAPARINUX",
+   "tray_group": "not_approved",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1095032": {
+   "name": "LETAXABAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1922235": {
+   "name": "DAREXABAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297315": {
+   "name": "PCI-27483",
+   "tray_group": "not_approved",
+   "targets": [
+    "F7"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL6068490": {
+   "name": "COAGULATION FACTOR VII HUMAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "F7"
+   ],
+   "best_stage": "UNKNOWN",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297904": {
+   "name": "BAY-1093884",
+   "tray_group": "not_approved",
+   "targets": [
+    "TFPI"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109295": {
+   "name": "ASCRINVACUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "ACVRL1"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5095025": {
+   "name": "PANULISIB",
+   "tray_group": "not_approved",
+   "targets": [
+    "ACVRL1"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108339": {
+   "name": "EGAPTIVON PEGOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "VWF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108361": {
+   "name": "AMEDIPLASE",
+   "tray_group": "not_approved",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109084": {
+   "name": "DESMOTEPLASE",
+   "tray_group": "not_approved",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201619": {
+   "name": "APROTININ",
+   "tray_group": "not_approved",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL2108806": {
+   "name": "BEMIPARIN SODIUM",
+   "tray_group": "not_approved",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743000": {
+   "name": "CITATUZUMAB BOGATOX",
+   "tray_group": "not_approved",
+   "targets": [
+    "RPL18A",
+    "RPS20",
+    "RPS4Y1",
+    "RPL17",
+    "RPS6",
+    "RPS21",
+    "RPL31",
+    "RPS10",
+    "RPL5",
+    "RPS17",
+    "RPL36"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297744": {
+   "name": "ELX-02",
+   "tray_group": "not_approved",
+   "targets": [
+    "RPL18A",
+    "RPS20",
+    "RPS4Y1",
+    "RPL17",
+    "RPS6",
+    "RPS21",
+    "RPL31",
+    "RPS10",
+    "RPL5",
+    "RPS17",
+    "RPL36"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297789": {
+   "name": "MT-3724",
+   "tray_group": "not_approved",
+   "targets": [
+    "RPL18A",
+    "RPS20",
+    "RPS4Y1",
+    "RPL17",
+    "RPS6",
+    "RPS21",
+    "RPL31",
+    "RPS10",
+    "RPL5",
+    "RPS17",
+    "RPL36"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108785": {
+   "name": "ZOLIMOMAB ARITOX",
+   "tray_group": "not_approved",
+   "targets": [
+    "RPL18A",
+    "RPS20",
+    "RPS4Y1",
+    "RPL17",
+    "RPS6",
+    "RPS21",
+    "RPL31",
+    "RPS10",
+    "RPL5",
+    "RPS17",
+    "RPL36"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2109065": {
+   "name": "DROTRECOGIN ALFA (ACTIVATED)",
+   "tray_group": "new_clue",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3990034": {
+   "name": "FIDANACOGENE ELAPARVOVEC",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5315076": {
+   "name": "ALBUTREPENONACOG ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5095451": {
+   "name": "ETRANACOGENE DEZAPARVOVEC",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108348": {
+   "name": "NONACOG BETA PEGOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297986": {
+   "name": "COAGULATION FACTOR IX HUMAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL6068614": {
+   "name": "PROTHROMBIN COMPLEX CONCENTRATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "F9",
+    "F10",
+    "F7"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1269025": {
+   "name": "EDOXABAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL198362": {
+   "name": "RIVAROXABAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL512351": {
+   "name": "BETRIXABAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201554": {
+   "name": "ANTITHROMBIN ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL231779": {
+   "name": "APIXABAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297951": {
+   "name": "COAGULATION FACTOR X HUMAN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3707365": {
+   "name": "BEMIPARIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3301583": {
+   "name": "ANDEXANET ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "TFPI"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109624": {
+   "name": "CAPLACIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "VWF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107873": {
+   "name": "VONICOG ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "VWF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1046": {
+   "name": "AMINOCAPROIC ACID",
+   "tray_group": "new_clue",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108396": {
+   "name": "DEFIBROTIDE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108147": {
+   "name": "STREPTOKINASE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108250": {
+   "name": "ANISTREPLASE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3707226": {
+   "name": "DEFIBROTIDE SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201657": {
+   "name": "HEPARIN SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201414": {
+   "name": "TINZAPARIN SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201460": {
+   "name": "DALTEPARIN SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201202": {
+   "name": "FONDAPARINUX",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109204": {
+   "name": "NADROPARIN CALCIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201513": {
+   "name": "HEPARIN CALCIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201534": {
+   "name": "DANAPAROID SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201476": {
+   "name": "ENOXAPARIN SODIUM",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4650299": {
+   "name": "HEPARIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201563": {
+   "name": "INTERFERON BETA-1B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201558": {
+   "name": "INTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2109047": {
+   "name": "INTERFERON ALFA-N3",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201557": {
+   "name": "INTERFERON ALFACON-1",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108677": {
+   "name": "PEGINTERFERON BETA-1A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2364653": {
+   "name": "ANIFROLUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107842": {
+   "name": "ALBINTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297819": {
+   "name": "ROPEGINTERFERON ALFA-2B",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201562": {
+   "name": "INTERFERON BETA-1A",
+   "tray_group": "new_clue",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4594605": {
+   "name": "OMFILOCTOCOG ALFA",
+   "tray_group": "being_studied",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108175": {
+   "name": "HUMAN COAGULATION FACTOR VIII",
+   "tray_group": "being_studied",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109205": {
+   "name": "COAGULATION FACTOR IX RECOMBINANT HUMAN",
+   "tray_group": "being_studied",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594598": {
+   "name": "EFTRENONACOG ALFA",
+   "tray_group": "being_studied",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298126": {
+   "name": "VON WILLEBRAND FACTOR HUMAN",
+   "tray_group": "being_studied",
+   "targets": [
+    "VWF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297754": {
+   "name": "FITUSIRAN",
+   "tray_group": "being_studied",
+   "targets": [
+    "SERPINC1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_3",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201560": {
+   "name": "PEGINTERFERON ALFA-2A",
+   "tray_group": "being_studied",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201561": {
+   "name": "PEGINTERFERON ALFA-2B",
+   "tray_group": "being_studied",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108508": {
+   "name": "INTERFERON ALFA-2A",
+   "tray_group": "being_studied",
+   "targets": [
+    "IFNAR1",
+    "IFNAR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL256997": {
+   "name": "ATALUREN",
+   "tray_group": "being_studied",
+   "targets": [
+    "RPL18A",
+    "RPS20",
+    "RPS4Y1",
+    "RPL17",
+    "RPS6",
+    "RPS21",
+    "RPL31",
+    "RPS10",
+    "RPL5",
+    "RPS17",
+    "RPL36"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "PHASE_2",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL5315069": {
+   "name": "DAMOCTOCOG ALFA PEGOL",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108319": {
+   "name": "SIMOCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5095275": {
+   "name": "EFANESOCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108286": {
+   "name": "TUROCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5315075": {
+   "name": "SUSOCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5315071": {
+   "name": "TUROCTOCOG ALFA PEGOL",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594584": {
+   "name": "ANTIHEMOPHILIC FACTOR, PEGYLATED (MW 20000) HUMAN SEQUENCE RECOMBINANT",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594603": {
+   "name": "LONOCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109137": {
+   "name": "MOROCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297873": {
+   "name": "OCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297945": {
+   "name": "EFMOROCTOCOG ALFA",
+   "tray_group": "already_approved",
+   "targets": [
+    "F8"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297579": {
+   "name": "VALOCTOCOGENE ROXAPARVOVEC",
+   "tray_group": "already_approved",
+   "targets": [
+    "F9"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3833393": {
+   "name": "EMICIZUMAB",
+   "tray_group": "already_approved",
+   "targets": [
+    "F9",
+    "F10"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL2108334": {
+   "name": "EPTACOG ALFA (ACTIVATED)",
+   "tray_group": "already_approved",
+   "targets": [
+    "F7"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL5315078": {
+   "name": "EPTACOG BETA (ACTIVATED)",
+   "tray_group": "already_approved",
+   "targets": [
+    "F7"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297730": {
+   "name": "CONCIZUMAB",
+   "tray_group": "already_approved",
+   "targets": [
+    "TFPI"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3990039": {
+   "name": "MARSTACIMAB",
+   "tray_group": "already_approved",
+   "targets": [
+    "TFPI"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL877": {
+   "name": "TRANEXAMIC ACID",
+   "tray_group": "already_approved",
+   "targets": [
+    "PLG"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}
