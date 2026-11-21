@@ -1,0 +1,6156 @@
+{
+ "id": "MONDO_0100053",
+ "name": "anaphylaxis",
+ "set": "KEY",
+ "targets": [
+  {
+   "id": "ENSG00000169252",
+   "symbol": "ADRB2",
+   "score": 0.516912575675223
+  },
+  {
+   "id": "ENSG00000043591",
+   "symbol": "ADRB1",
+   "score": 0.5150548665661503
+  },
+  {
+   "id": "ENSG00000188778",
+   "symbol": "ADRB3",
+   "score": 0.5149145345858337
+  },
+  {
+   "id": "ENSG00000170214",
+   "symbol": "ADRA1B",
+   "score": 0.5149145345858337
+  },
+  {
+   "id": "ENSG00000171873",
+   "symbol": "ADRA1D",
+   "score": 0.5149145345858337
+  },
+  {
+   "id": "ENSG00000120907",
+   "symbol": "ADRA1A",
+   "score": 0.5149145345858337
+  },
+  {
+   "id": "ENSG00000184160",
+   "symbol": "ADRA2C",
+   "score": 0.5148391101256939
+  },
+  {
+   "id": "ENSG00000150594",
+   "symbol": "ADRA2A",
+   "score": 0.5148391101256939
+  },
+  {
+   "id": "ENSG00000274286",
+   "symbol": "ADRA2B",
+   "score": 0.5148391101256939
+  },
+  {
+   "id": "ENSG00000144824",
+   "symbol": "PHLDB2",
+   "score": 0.32966761670116285
+  },
+  {
+   "id": "ENSG00000139163",
+   "symbol": "ETNK1",
+   "score": 0.3195160318176145
+  },
+  {
+   "id": "ENSG00000172020",
+   "symbol": "GAP43",
+   "score": 0.302640590115085
+  },
+  {
+   "id": "ENSG00000168398",
+   "symbol": "BDKRB2",
+   "score": 0.2859460885203733
+  },
+  {
+   "id": "ENSG00000006576",
+   "symbol": "PHTF2",
+   "score": 0.28097144418071823
+  },
+  {
+   "id": "ENSG00000184108",
+   "symbol": "TRIML1",
+   "score": 0.2700355943758335
+  },
+  {
+   "id": "ENSG00000127084",
+   "symbol": "FGD3",
+   "score": 0.266078451142049
+  },
+  {
+   "id": "ENSG00000123612",
+   "symbol": "ACVR1C",
+   "score": 0.2624412964551813
+  },
+  {
+   "id": "ENSG00000125166",
+   "symbol": "GOT2",
+   "score": 0.25800956918892454
+  },
+  {
+   "id": "ENSG00000145569",
+   "symbol": "OTULINL",
+   "score": 0.25568681977662316
+  },
+  {
+   "id": "ENSG00000163630",
+   "symbol": "SYNPR",
+   "score": 0.24921937674575376
+  },
+  {
+   "id": "ENSG00000169836",
+   "symbol": "TACR3",
+   "score": 0.2435800797587224
+  },
+  {
+   "id": "ENSG00000113231",
+   "symbol": "PDE8B",
+   "score": 0.2384912573551211
+  },
+  {
+   "id": "ENSG00000168702",
+   "symbol": "LRP1B",
+   "score": 0.23584975476405046
+  },
+  {
+   "id": "ENSG00000115415",
+   "symbol": "STAT1",
+   "score": 0.2327281394715311
+  },
+  {
+   "id": "ENSG00000103494",
+   "symbol": "RPGRIP1L",
+   "score": 0.22984484784220022
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0000605",
+   "name": "hypersensitivity reaction disease"
+  },
+  {
+   "role": "child",
+   "id": "MONDO_0100054",
+   "name": "idiopathic anaphylaxis"
+  },
+  {
+   "role": "child",
+   "id": "EFO_0020918",
+   "name": "non-allergic anaphylaxis"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL679",
+   "medicine": "EPINEPHRINE",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/eurneffy",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/eurneffy"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1528",
+   "medicine": "SODIUM FLUORIDE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3411924d-1002-460c-83e8-c0c7fbff9ad1",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for hypersensitivity reaction disease, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3411924d-1002-460c-83e8-c0c7fbff9ad1",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a06e2549-3c4e-4818-b53e-1dea6828219f",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a47a410f-3a68-2024-e053-2995a90acdaf"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL321582",
+   "medicine": "BUCINDOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00000560",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL27810",
+   "medicine": "CELIPROLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AB08",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "PARTIAL AGONIST"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL499",
+   "medicine": "TIMOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00273442",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL434394",
+   "medicine": "NEBIVOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00673075",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL926",
+   "medicine": "DOBUTAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c0dd68b3-20af-464d-b3ba-34eb886df6ae",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL471",
+   "medicine": "SOTALOL",
+   "source": "https://clinicaltrials.gov/study/NCT01780311",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL631",
+   "medicine": "PROPAFENONE",
+   "source": "https://clinicaltrials.gov/study/NCT01780311",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL521606",
+   "medicine": "NADOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00567216",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL500",
+   "medicine": "PINDOLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AA03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "PARTIAL AGONIST"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "PARTIAL AGONIST"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201237",
+   "medicine": "LEVOBUNOLOL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00IUG",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL546",
+   "medicine": "OXPRENOLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AA02",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1290",
+   "medicine": "PENBUTOLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AA23",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1197051",
+   "medicine": "ISOXSUPRINE",
+   "source": "https://clinicaltrials.gov/study/NCT03752307",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1437",
+   "medicine": "NOREPINEPHRINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0b8896b6-b8ac-4d04-9d5f-60c21404e159",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL429",
+   "medicine": "LABETALOL",
+   "source": "https://clinicaltrials.gov/study/NCT05368376",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1256786",
+   "medicine": "FORMOTEROL",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/budesonide-formoterol-teva-pharma-bv",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL714",
+   "medicine": "ALBUTEROL",
+   "source": "https://clinicaltrials.gov/study/NCT00124176",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2103827",
+   "medicine": "DROXIDOPA",
+   "source": "https://clinicaltrials.gov/study/NCT04510922",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1263",
+   "medicine": "SALMETEROL",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/airexar-spiromax",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1095777",
+   "medicine": "INDACATEROL",
+   "source": "https://clinicaltrials.gov/study/NCT01377051",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1198857",
+   "medicine": "VILANTEROL",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/temybric-ellipta",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL605846",
+   "medicine": "OLODATEROL",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01e15aee-40e0-23f3-537f-c96dd63e2cb1",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL434",
+   "medicine": "ISOPROTERENOL",
+   "source": "https://clinicaltrials.gov/study/NCT06473116",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1002",
+   "medicine": "LEVOSALBUTAMOL",
+   "source": "https://clinicaltrials.gov/study/NCT02150499",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1760",
+   "medicine": "TERBUTALINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0M8RC",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL839",
+   "medicine": "CARTEOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00972426",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201234",
+   "medicine": "MEPHENTERMINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01CA11",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1363",
+   "medicine": "ARFORMOTEROL",
+   "source": "https://clinicaltrials.gov/study/NCT00571428",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201262",
+   "medicine": "DIPIVEFRIN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D01JFT",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL49080",
+   "medicine": "CLENBUTEROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0X5NX",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1546",
+   "medicine": "HYDROXYAMPHETAMINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0W1RY",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL160519",
+   "medicine": "PROCATEROL",
+   "source": "https://clinicaltrials.gov/study/NCT01091337",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1094966",
+   "medicine": "PIRBUTEROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0SS4P",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL83063",
+   "medicine": "RITODRINE",
+   "source": "https://clinicaltrials.gov/study/NCT03040752",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201213",
+   "medicine": "ISOETHARINE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08HUC",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL521589",
+   "medicine": "BAMBUTEROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07XYV",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201295",
+   "medicine": "BITOLTEROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D06RUL",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1095607",
+   "medicine": "REPROTEROL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=R03AC15",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL88055",
+   "medicine": "RIMITEROL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03NOS",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1159717",
+   "medicine": "TULOBUTEROL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=R03AC11",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201273",
+   "medicine": "PROTOKYLOL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02FCQ",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.516912575675223,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL24",
+   "medicine": "ATENOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT00171132",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL59",
+   "medicine": "DOPAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT00115115",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1742466",
+   "medicine": "LANDIOLOL",
+   "source": "https://clinicaltrials.gov/study/NCT06793670",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL423",
+   "medicine": "BETAXOLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AB05",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL642",
+   "medicine": "ACEBUTOLOL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C07AB04",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4594379",
+   "medicine": "FOSLEVODOPA",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201274",
+   "medicine": "LEVOBETAXOLOL",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0A6CQ",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL75753",
+   "medicine": "XAMOTEROL",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01CX07",
+   "proteins": [
+    {
+     "target_id": "ENSG00000043591",
+     "symbol": "ADRB1",
+     "score": 0.5150548665661503,
+     "action_types": [
+      "PARTIAL AGONIST"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1215",
+   "medicine": "PHENYLEPHRINE",
+   "source": "https://clinicaltrials.gov/study/NCT02323399",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL836",
+   "medicine": "TAMSULOSIN",
+   "source": "https://clinicaltrials.gov/study/NCT00333112",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL762",
+   "medicine": "OXYMETAZOLINE",
+   "source": "https://clinicaltrials.gov/study/NCT03380390",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL597",
+   "medicine": "PHENTOLAMINE",
+   "source": "https://clinicaltrials.gov/study/NCT01474382",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201212",
+   "medicine": "MIDODRINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01CA17",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL707",
+   "medicine": "DOXAZOSIN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05e29a60-ebf9-470a-b565-40a6f1f6e102",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL709",
+   "medicine": "ALFUZOSIN",
+   "source": "https://clinicaltrials.gov/study/NCT03144596",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2",
+   "medicine": "PRAZOSIN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1a92a503-cf5e-48ef-a6fd-79fe98fdd8a0",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2095212",
+   "medicine": "MIRABEGRON",
+   "source": "https://clinicaltrials.gov/study/NCT01745094",
+   "proteins": [
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL761",
+   "medicine": "NAPHAZOLINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac1410ce-ae7f-498d-b84c-a6d32e1c87a6",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL611",
+   "medicine": "TERAZOSIN",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=775763d0-4d9d-4f37-80e7-33289fff73aa",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL312448",
+   "medicine": "XYLOMETAZOLINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=R01AA07",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL753",
+   "medicine": "PHENOXYBENZAMINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C04AX02",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1266",
+   "medicine": "TETRAHYDROZOLINE",
+   "source": "https://clinicaltrials.gov/study/NCT05028907",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL24778",
+   "medicine": "SILODOSIN",
+   "source": "https://clinicaltrials.gov/study/NCT01228370",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3559672",
+   "medicine": "RAUWOLFIA SERPENTINA",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C02AA03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2364968",
+   "medicine": "ERGOLOID",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C04AE01",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL644",
+   "medicine": "TRIMIPRAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=326ef804-8d3a-425e-8513-8c9811856aa0",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL770",
+   "medicine": "TOLAZOLINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C04AB02",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2107826",
+   "medicine": "VIBEGRON",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000188778",
+     "symbol": "ADRB3",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201319",
+   "medicine": "METARAMINOL",
+   "source": "https://clinicaltrials.gov/study/NCT05084599",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL524",
+   "medicine": "METHOXAMINE",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01CA10",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201454",
+   "medicine": "ALSEROXYLON",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0I3IG",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL142635",
+   "medicine": "NAFTOPIDIL",
+   "source": "https://clinicaltrials.gov/study/NCT02034604",
+   "proteins": [
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL188185",
+   "medicine": "BUNAZOSIN",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0S0AF",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000170214",
+     "symbol": "ADRA1B",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000171873",
+     "symbol": "ADRA1D",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201216",
+   "medicine": "DAPIPRAZOLE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0T2IA",
+   "proteins": [
+    {
+     "target_id": "ENSG00000120907",
+     "symbol": "ADRA1A",
+     "score": 0.5149145345858337,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL778",
+   "medicine": "DEXMEDETOMIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT00318955",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL654",
+   "medicine": "MIRTAZAPINE",
+   "source": "https://clinicaltrials.gov/study/NCT00150839",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": true
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL134",
+   "medicine": "CLONIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT01439126",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL844",
+   "medicine": "BRIMONIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT00347035",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL862",
+   "medicine": "GUANFACINE",
+   "source": "https://clinicaltrials.gov/study/NCT00429273",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL17860",
+   "medicine": "LOFEXIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT01675648",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1079",
+   "medicine": "TIZANIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT02725359",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL459",
+   "medicine": "METHYLDOPA",
+   "source": "https://clinicaltrials.gov/study/NCT01912677",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL647",
+   "medicine": "APRACLONIDINE",
+   "source": "https://clinicaltrials.gov/study/NCT06444529",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL420",
+   "medicine": "GUANABENZ",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0L4HY",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201233",
+   "medicine": "METHYLDOPATE",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0Y6KO",
+   "proteins": [
+    {
+     "target_id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000274286",
+     "symbol": "ADRA2B",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000184160",
+     "symbol": "ADRA2C",
+     "score": 0.5148391101256939,
+     "action_types": [
+      "AGONIST"
+     ],
+     "direction": "up",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2028850",
+   "medicine": "ICATIBANT",
+   "source": "https://clinicaltrials.gov/study/NCT01457430",
+   "proteins": [
+    {
+     "target_id": "ENSG00000168398",
+     "symbol": "BDKRB2",
+     "score": 0.2859460885203733,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL3608680",
+   "medicine": "FEZOLINETANT",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DUS06I",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169836",
+     "symbol": "TACR3",
+     "score": 0.2435800797587224,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4802157",
+   "medicine": "ELINZANETANT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lynkuet",
+   "proteins": [
+    {
+     "target_id": "ENSG00000169836",
+     "symbol": "TACR3",
+     "score": 0.2435800797587224,
+     "action_types": [
+      "ANTAGONIST"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL628",
+   "medicine": "PENTOXIFYLLINE",
+   "source": "https://clinicaltrials.gov/study/NCT03060434",
+   "proteins": [
+    {
+     "target_id": "ENSG00000113231",
+     "symbol": "PDE8B",
+     "score": 0.2384912573551211,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL932",
+   "medicine": "DIPYRIDAMOLE",
+   "source": "https://clinicaltrials.gov/study/NCT00129038",
+   "proteins": [
+    {
+     "target_id": "ENSG00000113231",
+     "symbol": "PDE8B",
+     "score": 0.2384912573551211,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1493",
+   "medicine": "FLAVOXATE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4c4470d2-4e62-4cce-af3c-113b6be7d986",
+   "proteins": [
+    {
+     "target_id": "ENSG00000113231",
+     "symbol": "PDE8B",
+     "score": 0.2384912573551211,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 43,
+  "unclear_link": 4
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {
+  "ENSG00000169252": "up",
+  "ENSG00000043591": "up",
+  "ENSG00000120907": "up",
+  "ENSG00000170214": "up",
+  "ENSG00000171873": "up",
+  "ENSG00000188778": "up",
+  "ENSG00000150594": "up",
+  "ENSG00000274286": "up",
+  "ENSG00000184160": "up"
+ },
+ "one_way_without_leaving_out_red_warnings": {
+  "ENSG00000169252": "up",
+  "ENSG00000043591": "up",
+  "ENSG00000120907": "up",
+  "ENSG00000170214": "up",
+  "ENSG00000171873": "up",
+  "ENSG00000188778": "up",
+  "ENSG00000150594": "up",
+  "ENSG00000274286": "up",
+  "ENSG00000184160": "up"
+ },
+ "withdrawn_on_own_list": [],
+ "withdrawn_on_a_neighbour_list": [],
+ "own_list": {
+  "CHEMBL679": {
+   "id": "CHEMBL679",
+   "name": "EPINEPHRINE",
+   "forms": [
+    [
+     "CHEMBL679",
+     "EPINEPHRINE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "EMA Human Drugs",
+     "stage": "APPROVAL",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/eurneffy"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT01887405"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_4",
+     "url": "https://clinicaltrials.gov/study/NCT03366298"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2_3",
+     "url": "https://clinicaltrials.gov/study/NCT07045701"
+    },
+    {
+     "source": "EMA Human Drugs",
+     "stage": "UNKNOWN",
+     "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/neffy"
+    },
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT01432522"
+    }
+   ]
+  },
+  "CHEMBL723": {
+   "id": "CHEMBL723",
+   "name": "CARVEDILOL",
+   "forms": [
+    [
+     "CHEMBL723",
+     "CARVEDILOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04269629"
+    }
+   ]
+  },
+  "CHEMBL4650299": {
+   "id": "CHEMBL4650299",
+   "name": "HEPARIN",
+   "forms": [
+    [
+     "CHEMBL4650299",
+     "HEPARIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT00657228"
+    }
+   ]
+  },
+  "CHEMBL5314457": {
+   "id": "CHEMBL5314457",
+   "name": "DIBUTEPINEPHRINE",
+   "forms": [
+    [
+     "CHEMBL5314457",
+     "DIBUTEPINEPHRINE"
+    ],
+    [
+     "CHEMBL6068432",
+     "DIBUTEPINEPHRINE HYDROCHLORIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "UNKNOWN",
+   "withdrawn_notes": [
+    false,
+    false
+   ],
+   "reports": [
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/DIBUTEPINEPHRINE/relevant/1/"
+    },
+    {
+     "source": "USAN",
+     "stage": "UNKNOWN",
+     "url": "https://searchusan.ama-assn.org/finder/usan/search/DIBUTEPINEPHRINE%20HYDROCHLORIDE/relevant/1/"
+    }
+   ]
+  },
+  "CHEMBL645": {
+   "id": "CHEMBL645",
+   "name": "BISOPROLOL",
+   "forms": [
+    [
+     "CHEMBL645",
+     "BISOPROLOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04269629"
+    }
+   ]
+  },
+  "CHEMBL13": {
+   "id": "CHEMBL13",
+   "name": "METOPROLOL",
+   "forms": [
+    [
+     "CHEMBL13",
+     "METOPROLOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04269629"
+    }
+   ]
+  },
+  "CHEMBL1626": {
+   "id": "CHEMBL1626",
+   "name": "CLEMASTINE",
+   "forms": [
+    [
+     "CHEMBL1626",
+     "CLEMASTINE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT03826004"
+    }
+   ]
+  },
+  "CHEMBL1201589": {
+   "id": "CHEMBL1201589",
+   "name": "OMALIZUMAB",
+   "forms": [
+    [
+     "CHEMBL1201589",
+     "OMALIZUMAB"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT00890162"
+    }
+   ]
+  },
+  "CHEMBL1201758": {
+   "id": "CHEMBL1201758",
+   "name": "BEPOTASTINE",
+   "forms": [
+    [
+     "CHEMBL1201759",
+     "BEPOTASTINE BESYLATE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04269629"
+    }
+   ]
+  },
+  "CHEMBL27": {
+   "id": "CHEMBL27",
+   "name": "PROPRANOLOL",
+   "forms": [
+    [
+     "CHEMBL27",
+     "PROPRANOLOL"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "UNKNOWN",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "UNKNOWN",
+     "url": "https://clinicaltrials.gov/study/NCT04269629"
+    }
+   ]
+  }
+ },
+ "box_lists": {
+  "CHEMBL1528": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0000605",
+    "disease": "hypersensitivity reaction disease",
+    "id": "CHEMBL1528",
+    "name": "SODIUM FLUORIDE",
+    "forms": [
+     [
+      "CHEMBL1528",
+      "SODIUM FLUORIDE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3411924d-1002-460c-83e8-c0c7fbff9ad1"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a06e2549-3c4e-4818-b53e-1dea6828219f"
+     },
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a47a410f-3a68-2024-e053-2995a90acdaf"
+     }
+    ]
+   }
+  ]
+ },
+ "in_tray": {
+  "CHEMBL1291": {
+   "name": "METIPRANOLOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL211456": {
+   "name": "EPHEDRINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL2111083": {
+   "name": "BEDORADRINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1940832": {
+   "name": "MILVETEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1240967": {
+   "name": "PF-00610355",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3039518": {
+   "name": "BATEFENTEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL16476": {
+   "name": "PRONETALOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL768": {
+   "name": "ESMOLOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true
+   ]
+  },
+  "CHEMBL27193": {
+   "name": "DILEVALOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL3545103": {
+   "name": "AZD3199",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1094785": {
+   "name": "CARMOTEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3039530": {
+   "name": "ABEDITEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3916700": {
+   "name": "LAS190792",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2012520": {
+   "name": "LY377604",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3545087": {
+   "name": "GSK159802",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1084173": {
+   "name": "VILANTEROL .ALPHA.-PHENYL CINNAMATE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297483": {
+   "name": "NAVAFENTEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298113": {
+   "name": "BAMOSIRAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL776": {
+   "name": "METAPROTERENOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL32800": {
+   "name": "FENOTEROL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL6995": {
+   "name": "PRACTOLOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL208427": {
+   "name": "SOLABEGRON",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL279260": {
+   "name": "RAFABEGRON",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107773": {
+   "name": "RITOBEGRON",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1193948": {
+   "name": "AMIBEGRON",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL442": {
+   "name": "ERGOTAMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL159226": {
+   "name": "MOXISYLYTE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL12713": {
+   "name": "SERTINDOLE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true,
+    true,
+    true
+   ]
+  },
+  "CHEMBL1981592": {
+   "name": "AVIPTADIL",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL257978": {
+   "name": "DABUZALGRON",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL61006": {
+   "name": "PHENYLPROPANOLAMINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    true
+   ]
+  },
+  "CHEMBL2104986": {
+   "name": "TEDATIOXETINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA1A"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL677": {
+   "name": "LEVONORDEFRIN",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "UNKNOWN",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1255582": {
+   "name": "FIPAMEZOLE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2104262": {
+   "name": "FADOLMIDINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1366933": {
+   "name": "ESMIRTAZAPINE",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL10316": {
+   "name": "IDAZOXAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL4297312": {
+   "name": "ORM-12741",
+   "tray_group": "not_approved",
+   "targets": [
+    "ADRA2C"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL218427": {
+   "name": "FASITIBANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "BDKRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2105864": {
+   "name": "LABRADIMIL",
+   "tray_group": "not_approved",
+   "targets": [
+    "BDKRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107725": {
+   "name": "ANATIBANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "BDKRB2"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL10188": {
+   "name": "TALNETANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TACR3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3545233": {
+   "name": "PAVINETANT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TACR3"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL521606": {
+   "name": "NADOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1760": {
+   "name": "TERBUTALINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1002": {
+   "name": "LEVOSALBUTAMOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1363": {
+   "name": "ARFORMOTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201237": {
+   "name": "LEVOBUNOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL429": {
+   "name": "LABETALOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201295": {
+   "name": "BITOLTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1290": {
+   "name": "PENBUTOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL500": {
+   "name": "PINDOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL471": {
+   "name": "SOTALOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1094966": {
+   "name": "PIRBUTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL926": {
+   "name": "DOBUTAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1197051": {
+   "name": "ISOXSUPRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1095607": {
+   "name": "REPROTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL499": {
+   "name": "TIMOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201234": {
+   "name": "MEPHENTERMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL839": {
+   "name": "CARTEOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL631": {
+   "name": "PROPAFENONE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL160519": {
+   "name": "PROCATEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1256786": {
+   "name": "FORMOTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1198857": {
+   "name": "VILANTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL83063": {
+   "name": "RITODRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1159717": {
+   "name": "TULOBUTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1546": {
+   "name": "HYDROXYAMPHETAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201213": {
+   "name": "ISOETHARINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1095777": {
+   "name": "INDACATEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201262": {
+   "name": "DIPIVEFRIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1437": {
+   "name": "NOREPINEPHRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL605846": {
+   "name": "OLODATEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL321582": {
+   "name": "BUCINDOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL714": {
+   "name": "ALBUTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL88055": {
+   "name": "RIMITEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL434": {
+   "name": "ISOPROTERENOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1263": {
+   "name": "SALMETEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL546": {
+   "name": "OXPRENOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL27810": {
+   "name": "CELIPROLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL434394": {
+   "name": "NEBIVOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL521589": {
+   "name": "BAMBUTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2103827": {
+   "name": "DROXIDOPA",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL49080": {
+   "name": "CLENBUTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201273": {
+   "name": "PROTOKYLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL423": {
+   "name": "BETAXOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594379": {
+   "name": "FOSLEVODOPA",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1742466": {
+   "name": "LANDIOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL642": {
+   "name": "ACEBUTOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL24": {
+   "name": "ATENOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL75753": {
+   "name": "XAMOTEROL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL59": {
+   "name": "DOPAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201274": {
+   "name": "LEVOBETAXOLOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107826": {
+   "name": "VIBEGRON",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2095212": {
+   "name": "MIRABEGRON",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRB3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1266": {
+   "name": "TETRAHYDROZOLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL709": {
+   "name": "ALFUZOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2364968": {
+   "name": "ERGOLOID",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL188185": {
+   "name": "BUNAZOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL761": {
+   "name": "NAPHAZOLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL836": {
+   "name": "TAMSULOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL644": {
+   "name": "TRIMIPRAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL312448": {
+   "name": "XYLOMETAZOLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2": {
+   "name": "PRAZOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201454": {
+   "name": "ALSEROXYLON",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL611": {
+   "name": "TERAZOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL597": {
+   "name": "PHENTOLAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL753": {
+   "name": "PHENOXYBENZAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL524": {
+   "name": "METHOXAMINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201212": {
+   "name": "MIDODRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL707": {
+   "name": "DOXAZOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL3559672": {
+   "name": "RAUWOLFIA SERPENTINA",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL762": {
+   "name": "OXYMETAZOLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1215": {
+   "name": "PHENYLEPHRINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201319": {
+   "name": "METARAMINOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL770": {
+   "name": "TOLAZOLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL142635": {
+   "name": "NAFTOPIDIL",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1D"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL24778": {
+   "name": "SILODOSIN",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201216": {
+   "name": "DAPIPRAZOLE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL647": {
+   "name": "APRACLONIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL17860": {
+   "name": "LOFEXIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201233": {
+   "name": "METHYLDOPATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL844": {
+   "name": "BRIMONIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL778": {
+   "name": "DEXMEDETOMIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL862": {
+   "name": "GUANFACINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL134": {
+   "name": "CLONIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL420": {
+   "name": "GUANABENZ",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL459": {
+   "name": "METHYLDOPA",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL1079": {
+   "name": "TIZANIDINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL654": {
+   "name": "MIRTAZAPINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL2028850": {
+   "name": "ICATIBANT",
+   "tray_group": "new_clue",
+   "targets": [
+    "BDKRB2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4802157": {
+   "name": "ELINZANETANT",
+   "tray_group": "new_clue",
+   "targets": [
+    "TACR3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL3608680": {
+   "name": "FEZOLINETANT",
+   "tray_group": "new_clue",
+   "targets": [
+    "TACR3"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1493": {
+   "name": "FLAVOXATE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PDE8B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL932": {
+   "name": "DIPYRIDAMOLE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PDE8B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL628": {
+   "name": "PENTOXIFYLLINE",
+   "tray_group": "new_clue",
+   "targets": [
+    "PDE8B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL679": {
+   "name": "EPINEPHRINE",
+   "tray_group": "already_approved",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A",
+    "ADRA2C",
+    "ADRA2A",
+    "ADRA2B"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "APPROVAL",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL27": {
+   "name": "PROPRANOLOL",
+   "tray_group": "unclear_link",
+   "targets": [
+    "ADRB2",
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL723": {
+   "name": "CARVEDILOL",
+   "tray_group": "unclear_link",
+   "targets": [
+    "ADRB2",
+    "ADRB1",
+    "ADRB3",
+    "ADRA1B",
+    "ADRA1D",
+    "ADRA1A"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  },
+  "CHEMBL13": {
+   "name": "METOPROLOL",
+   "tray_group": "unclear_link",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL645": {
+   "name": "BISOPROLOL",
+   "tray_group": "unclear_link",
+   "targets": [
+    "ADRB1"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": "UNKNOWN",
+   "withdrawn": [
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}

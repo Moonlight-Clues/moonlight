@@ -1,0 +1,3103 @@
+{
+ "meta": {
+  "study": "Night order 2: eight key diseases (probe P6)",
+  "open_targets_data_version": "26.09",
+  "moonlight_code_commit": "06b8eb6019158b750676504cabf5245c93a2247f",
+  "open_targets_run": {
+   "started": "2026-11-21T16:23:30Z",
+   "finished": "2026-11-21T16:31:57Z",
+   "runs_that_finished": 1
+  },
+  "open_targets_requests": 362,
+  "open_targets_requests_by_kind": {
+   "data_version": 1,
+   "search": 9,
+   "disease": 6,
+   "targets": 6,
+   "target_drugs": 276,
+   "disease_drugs": 58,
+   "family": 6
+  },
+  "open_targets_different_answers_saved": 195,
+  "open_targets_answers_with_errors": 0,
+  "open_targets_refusals_or_network_failures": 0,
+  "names_asked": 8,
+  "names_not_studied": [
+   "Addison's disease",
+   "hemochromatosis"
+  ],
+  "diseases_with_no_result": [],
+  "top_proteins_looked_at": 25,
+  "link_check": {
+   "first_request": "2026-11-21T16:25:23Z",
+   "last_request": "2026-11-21T16:35:49Z",
+   "requests_sent": 580
+  }
+ },
+ "totals": {
+  "diseases": 6,
+  "cards_by_tab": {
+   "approved": 10,
+   "narrower": 1,
+   "wider_group": 88,
+   "being_studied": 41,
+   "new_clues": 402
+  },
+  "counted_not_named": {
+   "not_approved": 352,
+   "unclear_link": 4,
+   "new_clues_left_out_by_hand": 0
+  },
+  "links": {
+   "cards": 542,
+   "cards_with_a_link": 542,
+   "cards_with_no_link": 0,
+   "cards_with_no_link_by_tab": {
+    "wider_group": 0,
+    "being_studied": 0,
+    "new_clues": 0,
+    "approved": 0,
+    "narrower": 0
+   },
+   "different_links": 474,
+   "links_asked": 474,
+   "links_where_get_was_needed": 0,
+   "links_by_outcome": {
+    "ok": 474
+   },
+   "dead_links": 0,
+   "dead_links_by_host": {},
+   "cards_showing_a_dead_link": 0,
+   "links_by_host_and_outcome": {
+    "clinicaltrials.gov": {
+     "ok": 184
+    },
+    "dailymed.nlm.nih.gov": {
+     "ok": 77
+    },
+    "ttd.idrblab.cn": {
+     "ok": 70
+    },
+    "www.accessdata.fda.gov": {
+     "ok": 7
+    },
+    "www.ema.europa.eu": {
+     "ok": 31
+    },
+    "www.pmda.go.jp": {
+     "ok": 1
+    },
+    "www.whocc.no": {
+     "ok": 104
+    }
+   }
+  },
+  "withdrawn": {
+   "main_list": {
+    "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+    "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+    "cards_not_on_the_list_so_reports_not_known": 0
+   },
+   "boxes": {
+    "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+    "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+    "cards_not_on_the_list_so_reports_not_known": 0
+   }
+  },
+  "trials": {
+   "listed_in_trials": 207,
+   "shown_in_in_trials": 41,
+   "listed_in_trials_and_shown": 41,
+   "listed_in_trials_and_not_shown": 166,
+   "not_shown_by_rule": {
+    "not approved elsewhere": 52,
+    "not on a top-25 protein": 114,
+    "other": 0
+   },
+   "not_shown_by_rule_in_detail": {
+    "not approved elsewhere: and not on a top-25 protein either": 47,
+    "not approved elsewhere: on a top-25 protein": 5,
+    "not on a top-25 protein": 111,
+    "not on a top-25 protein: also withdrawn in some country": 3
+   },
+   "shown_in_in_trials_but_not_listed_in_trials": {},
+   "list_by_stage_word": {
+    "APPROVAL": 11,
+    "EARLY_PHASE_1": 6,
+    "PHASE_1": 22,
+    "PHASE_1_2": 7,
+    "PHASE_2": 112,
+    "PHASE_2_3": 20,
+    "PHASE_3": 40,
+    "UNKNOWN": 22
+   }
+  },
+  "proof": {
+   "main_list": {
+    "A": 7,
+    "B": 2,
+    "C": 1,
+    "D": 0,
+    "E": 0,
+    "F": 0,
+    "N": 0
+   },
+   "boxes": {
+    "A": 17,
+    "B": 1,
+    "C": 6,
+    "D": 64,
+    "E": 0,
+    "F": 1,
+    "N": 0
+   },
+   "moonlight_own_lines": {
+    "japan_line": 7,
+    "no_regulator_line": 68,
+    "red_warning": 0
+   },
+   "probe_p3_base_own_list_only": {
+    "A": 7,
+    "B": 2,
+    "C": 1,
+    "D": 0,
+    "E": 0,
+    "F": 0
+   }
+  },
+  "direction": {
+   "one_way_proteins": 13,
+   "both_ways_proteins": 0,
+   "New clues": {
+    "cards": 402,
+    "cards_opposite_on_a_one_way_protein": 36,
+    "cards_same_on_a_one_way_protein": 101,
+    "cards_mixed_or_unknown_on_a_one_way_protein": 3,
+    "cards_on_a_both_ways_protein": 0,
+    "cards_carrying_the_opposite_way_line_on_the_live_site": 36
+   },
+   "In trials": {
+    "cards": 41,
+    "cards_opposite_on_a_one_way_protein": 0,
+    "cards_same_on_a_one_way_protein": 1,
+    "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+    "cards_on_a_both_ways_protein": 0,
+    "cards_carrying_the_opposite_way_line_on_the_live_site": 0
+   },
+   "diseases_with_an_opposite_card": 2,
+   "unknown_directions": {
+    "approved": {
+     "cards": 10,
+     "cards_with_no_protein_shown": 3,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 17,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "narrower": {
+     "cards": 1,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 2,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "wider_group": {
+     "cards": 88,
+     "cards_with_no_protein_shown": 80,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 11,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "being_studied": {
+     "cards": 41,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 3,
+     "cards_where_every_direction_is_unknown": 3,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 84,
+     "card_protein_pairs_unknown": 19,
+     "card_protein_pairs_mixed": 0
+    },
+    "new_clues": {
+     "cards": 402,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 32,
+     "cards_where_every_direction_is_unknown": 31,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 1076,
+     "card_protein_pairs_unknown": 75,
+     "card_protein_pairs_mixed": 0
+    }
+   },
+   "action_words_behind_unknown_and_mixed": [
+    {
+     "direction": "unknown",
+     "action_words": "MODULATOR",
+     "card_protein_pairs": 72
+    },
+    {
+     "direction": "unknown",
+     "action_words": "BINDING AGENT",
+     "card_protein_pairs": 5
+    },
+    {
+     "direction": "unknown",
+     "action_words": "RELEASING AGENT",
+     "card_protein_pairs": 5
+    },
+    {
+     "direction": "unknown",
+     "action_words": "SUBSTRATE",
+     "card_protein_pairs": 5
+    },
+    {
+     "direction": "unknown",
+     "action_words": "PARTIAL AGONIST",
+     "card_protein_pairs": 4
+    },
+    {
+     "direction": "unknown",
+     "action_words": "NEGATIVE ALLOSTERIC MODULATOR",
+     "card_protein_pairs": 2
+    },
+    {
+     "direction": "unknown",
+     "action_words": "DEGRADER",
+     "card_protein_pairs": 1
+    }
+   ]
+  }
+ },
+ "diseases": [
+  {
+   "id": "MONDO_0018646",
+   "name": "sclerosing cholangitis",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 0,
+    "narrower": 0,
+    "wider_group": 1,
+    "being_studied": 5,
+    "new_clues": 17
+   },
+   "counted_not_named": {
+    "not_approved": 58,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 23,
+    "cards_with_a_link": 23,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "wider_group": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 23,
+    "links_by_outcome": {
+     "ok": 23
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 47,
+    "list_by_stage_word": {
+     "EARLY_PHASE_1": 2,
+     "PHASE_1": 9,
+     "PHASE_1_2": 2,
+     "PHASE_2": 22,
+     "PHASE_2_3": 3,
+     "PHASE_3": 8,
+     "UNKNOWN": 1
+    },
+    "listed_in_trials": 46,
+    "shown_in_in_trials": 5,
+    "listed_in_trials_and_shown": 5,
+    "listed_in_trials_and_not_shown": 41,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 16,
+     "not on a top-25 protein": 25,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 16,
+     "not on a top-25 protein": 23,
+     "not on a top-25 protein: also withdrawn in some country": 2
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL105",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1064",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1082",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL12208",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1254990",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL137",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1370",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL140",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1434",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1496",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1551",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1617",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1619",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL169",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1743087",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL197194",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2103737",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108742",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2109667",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2110727",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL262777",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL272427",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL363392",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL367149",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL38",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL413",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL421",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297262",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297613",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297912",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297920",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4298055",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL468",
+      "reason": "not on a top-25 protein",
+      "detail": "also withdrawn in some country",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4802158",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5095257",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314422",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314482",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL553",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL566315",
+      "reason": "not on a top-25 protein",
+      "detail": "also withdrawn in some country",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068331",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068577",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 0,
+     "by_group": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 1,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 0,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 0,
+    "approved_cards_with_a_path": 0,
+    "one_way_proteins": 0,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 0,
+    "New clues": {
+     "cards": 17,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 5,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 2,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 5,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 7,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 17,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 1,
+      "cards_where_every_direction_is_unknown": 1,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 17,
+      "card_protein_pairs_unknown": 1,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "EFO_1000869",
+   "name": "chronic interstitial cystitis",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 2,
+    "narrower": 0,
+    "wider_group": 1,
+    "being_studied": 7,
+    "new_clues": 127
+   },
+   "counted_not_named": {
+    "not_approved": 74,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 137,
+    "cards_with_a_link": 137,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "wider_group": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 132,
+    "links_by_outcome": {
+     "ok": 132
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 47,
+    "list_by_stage_word": {
+     "APPROVAL": 2,
+     "EARLY_PHASE_1": 2,
+     "PHASE_1": 3,
+     "PHASE_1_2": 2,
+     "PHASE_2": 18,
+     "PHASE_2_3": 2,
+     "PHASE_3": 11,
+     "UNKNOWN": 7
+    },
+    "listed_in_trials": 38,
+    "shown_in_in_trials": 7,
+    "listed_in_trials_and_shown": 7,
+    "listed_in_trials_and_not_shown": 31,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 6,
+     "not on a top-25 protein": 25,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 5,
+     "not approved elsewhere: on a top-25 protein": 1,
+     "not on a top-25 protein": 24,
+     "not on a top-25 protein: also withdrawn in some country": 1
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL1200574",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201270",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201574",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201657",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1234886",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1349",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1456",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1504",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL160",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1743023",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL19019",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL190461",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2104988",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2107366",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108221",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108494",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108567",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108758",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2447938",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL294199",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3707322",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3716057",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3989954",
+      "reason": "not approved elsewhere",
+      "detail": "on a top-25 protein",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297316",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297756",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297862",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4650299",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5095040",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314376",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL656",
+      "reason": "not on a top-25 protein",
+      "detail": "also withdrawn in some country",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL79",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 2,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 1,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {
+      "C": [
+       "CHEMBL504"
+      ]
+     }
+    },
+    "boxes": {
+     "cards": 1,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 1,
+     "no_regulator_line": 0,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 1,
+     "B": 0,
+     "C": 1,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 2,
+    "approved_cards_with_a_path": 0,
+    "one_way_proteins": 0,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 0,
+    "New clues": {
+     "cards": 127,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 7,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 2,
+      "cards_with_no_protein_shown": 2,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 1,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 7,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 1,
+      "cards_where_every_direction_is_unknown": 1,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 25,
+      "card_protein_pairs_unknown": 17,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 127,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 25,
+      "cards_where_every_direction_is_unknown": 25,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 245,
+      "card_protein_pairs_unknown": 65,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "MONDO_0005388",
+   "name": "primary biliary cholangitis",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 2,
+    "narrower": 0,
+    "wider_group": 0,
+    "being_studied": 7,
+    "new_clues": 16
+   },
+   "counted_not_named": {
+    "not_approved": 57,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 25,
+    "cards_with_a_link": 25,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 23,
+    "links_by_outcome": {
+     "ok": 23
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 50,
+    "list_by_stage_word": {
+     "APPROVAL": 3,
+     "PHASE_1": 3,
+     "PHASE_2": 25,
+     "PHASE_2_3": 4,
+     "PHASE_3": 11,
+     "UNKNOWN": 4
+    },
+    "listed_in_trials": 43,
+    "shown_in_in_trials": 7,
+    "listed_in_trials_and_shown": 7,
+    "listed_in_trials_and_not_shown": 36,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 10,
+     "not on a top-25 protein": 26,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 8,
+     "not approved elsewhere: on a top-25 protein": 2,
+     "not on a top-25 protein": 26
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL107",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1165",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201576",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201587",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL129",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1370",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL141",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1487",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1538",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1568",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL161381",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2105759",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2109379",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2387408",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL254316",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3358920",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL34259",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3545019",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL363392",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3775741",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3989915",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297588",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297613",
+      "reason": "not approved elsewhere",
+      "detail": "on a top-25 protein",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297912",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297942",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4298055",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4298169",
+      "reason": "not approved elsewhere",
+      "detail": "on a top-25 protein",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4303187",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314422",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068083",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068331",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL628",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL635",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL88",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL885",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL982",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 2,
+     "by_group": {
+      "A": 0,
+      "B": 2,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {
+      "B": [
+       "CHEMBL1551",
+       "CHEMBL272427"
+      ]
+     }
+    },
+    "boxes": {
+     "cards": 0,
+     "by_group": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 2,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 0,
+     "B": 2,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 2,
+    "approved_cards_with_a_path": 1,
+    "one_way_proteins": 1,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 1,
+    "New clues": {
+     "cards": 16,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 1,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "same": 1
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 7,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 2,
+      "cards_with_no_protein_shown": 1,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 1,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 7,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 11,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 16,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 1,
+      "cards_where_every_direction_is_unknown": 1,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 16,
+      "card_protein_pairs_unknown": 1,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "MONDO_0018975",
+   "name": "neurofibromatosis type 1",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 2,
+    "narrower": 0,
+    "wider_group": 0,
+    "being_studied": 4,
+    "new_clues": 55
+   },
+   "counted_not_named": {
+    "not_approved": 36,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 61,
+    "cards_with_a_link": 61,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 60,
+    "links_by_outcome": {
+     "ok": 60
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 38,
+    "list_by_stage_word": {
+     "APPROVAL": 2,
+     "EARLY_PHASE_1": 1,
+     "PHASE_1": 4,
+     "PHASE_1_2": 3,
+     "PHASE_2": 26,
+     "PHASE_2_3": 1,
+     "PHASE_3": 1
+    },
+    "listed_in_trials": 36,
+    "shown_in_in_trials": 4,
+    "listed_in_trials_and_shown": 4,
+    "listed_in_trials_and_not_shown": 32,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 7,
+     "not on a top-25 protein": 25,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 7,
+     "not on a top-25 protein": 25
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL1201561",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201583",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1256391",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1289926",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1336",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1373467",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL159",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2087361",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2105717",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108727",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2111186",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL255863",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL289228",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3301610",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL34259",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL3813873",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4091801",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297559",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297747",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297796",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4650336",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL491473",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL503",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5095241",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL535",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL554",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL600",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL601",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL601719",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6067967",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068059",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL941",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 2,
+     "by_group": {
+      "A": 2,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 0,
+     "by_group": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 0,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 2,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 2,
+    "approved_cards_with_a_path": 2,
+    "one_way_proteins": 2,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 2,
+    "New clues": {
+     "cards": 55,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 2,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "same": 4
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 4,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 1,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "same": 2
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 2,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 4,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 4,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 14,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 55,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 428,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "MONDO_0016367",
+   "name": "dermatomyositis",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 3,
+    "narrower": 1,
+    "wider_group": 85,
+    "being_studied": 18,
+    "new_clues": 95
+   },
+   "counted_not_named": {
+    "not_approved": 84,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 202,
+    "cards_with_a_link": 202,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "narrower": 0,
+     "wider_group": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 188,
+    "links_by_outcome": {
+     "ok": 188
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 48,
+    "list_by_stage_word": {
+     "APPROVAL": 3,
+     "EARLY_PHASE_1": 1,
+     "PHASE_1": 3,
+     "PHASE_2": 20,
+     "PHASE_2_3": 10,
+     "PHASE_3": 9,
+     "UNKNOWN": 2
+    },
+    "listed_in_trials": 43,
+    "shown_in_in_trials": 18,
+    "listed_in_trials_and_shown": 18,
+    "listed_in_trials_and_not_shown": 25,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 13,
+     "not on a top-25 protein": 12,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 11,
+     "not approved elsewhere: on a top-25 protein": 2,
+     "not on a top-25 protein": 12
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL1201576",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201599",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201610",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1201823",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1208642",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1237022",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1515",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1568",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL1743033",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2108738",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL2336071",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297468",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297477",
+      "reason": "not approved elsewhere",
+      "detail": "on a top-25 protein",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297808",
+      "reason": "not approved elsewhere",
+      "detail": "on a top-25 protein",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4297995",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL456341",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4594330",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4650474",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4802159",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL514800",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314673",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL5314746",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "EARLY_PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068289",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL6068459",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL88",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2_3",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 3,
+     "by_group": {
+      "A": 3,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 86,
+     "by_group": {
+      "A": 14,
+      "B": 1,
+      "C": 6,
+      "D": 64,
+      "E": 0,
+      "F": 1,
+      "N": 0
+     },
+     "ids_outside_group_A": {
+      "B": [
+       "CHEMBL1276010"
+      ],
+      "C": [
+       "CHEMBL1106",
+       "CHEMBL1172",
+       "CHEMBL1189432",
+       "CHEMBL1201191",
+       "CHEMBL1742423",
+       "CHEMBL914"
+      ],
+      "D": [
+       "CHEMBL1020",
+       "CHEMBL1070",
+       "CHEMBL1071",
+       "CHEMBL118",
+       "CHEMBL1206690",
+       "CHEMBL1213420",
+       "CHEMBL121626",
+       "CHEMBL12610",
+       "CHEMBL1297",
+       "CHEMBL1334692",
+       "CHEMBL1366",
+       "CHEMBL139",
+       "CHEMBL1407356",
+       "CHEMBL1430",
+       "CHEMBL1489662",
+       "CHEMBL154",
+       "CHEMBL1565476",
+       "CHEMBL1569487",
+       "CHEMBL15770",
+       "CHEMBL1614641",
+       "CHEMBL166863",
+       "CHEMBL1697725",
+       "CHEMBL175",
+       "CHEMBL1765293",
+       "CHEMBL189171",
+       "CHEMBL1892201",
+       "CHEMBL1908355",
+       "CHEMBL19299",
+       "CHEMBL2103831",
+       "CHEMBL2105059",
+       "CHEMBL2105456",
+       "CHEMBL2105825",
+       "CHEMBL2107720",
+       "CHEMBL2108922",
+       "CHEMBL219376",
+       "CHEMBL23588",
+       "CHEMBL268501",
+       "CHEMBL277522",
+       "CHEMBL292707",
+       "CHEMBL295829",
+       "CHEMBL302795",
+       "CHEMBL306043",
+       "CHEMBL365795",
+       "CHEMBL3707213",
+       "CHEMBL3833379",
+       "CHEMBL41286",
+       "CHEMBL416146",
+       "CHEMBL493287",
+       "CHEMBL509",
+       "CHEMBL521",
+       "CHEMBL527",
+       "CHEMBL563",
+       "CHEMBL571",
+       "CHEMBL589092",
+       "CHEMBL599",
+       "CHEMBL6",
+       "CHEMBL6067984",
+       "CHEMBL622",
+       "CHEMBL63323",
+       "CHEMBL686",
+       "CHEMBL69308",
+       "CHEMBL75435",
+       "CHEMBL80830",
+       "CHEMBL93645"
+      ],
+      "F": [
+       "CHEMBL2105759"
+      ]
+     }
+    },
+    "moonlight_own_lines": {
+     "japan_line": 6,
+     "no_regulator_line": 66,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 3,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 3,
+    "approved_cards_with_a_path": 3,
+    "one_way_proteins": 1,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 1,
+    "New clues": {
+     "cards": 95,
+     "cards_opposite_on_a_one_way_protein": 2,
+     "cards_same_on_a_one_way_protein": 47,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "same": 47,
+      "opposite": 2
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 2,
+     "opposite_card_and_protein": [
+      [
+       "CHEMBL1276308",
+       "NR3C1"
+      ],
+      [
+       "CHEMBL139835",
+       "NR3C1"
+      ]
+     ]
+    },
+    "In trials": {
+     "cards": 18,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 3,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 3,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "narrower": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 2,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 85,
+      "cards_with_no_protein_shown": 78,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 9,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 18,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 2,
+      "cards_where_every_direction_is_unknown": 2,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 27,
+      "card_protein_pairs_unknown": 2,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 95,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 2,
+      "cards_where_every_direction_is_unknown": 2,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 111,
+      "card_protein_pairs_unknown": 4,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "MONDO_0100053",
+   "name": "anaphylaxis",
+   "set": "KEY",
+   "cards_by_tab": {
+    "approved": 1,
+    "narrower": 0,
+    "wider_group": 1,
+    "being_studied": 0,
+    "new_clues": 92
+   },
+   "counted_not_named": {
+    "not_approved": 43,
+    "unclear_link": 4,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 94,
+    "cards_with_a_link": 94,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "wider_group": 0,
+     "new_clues": 0
+    },
+    "different_links": 92,
+    "links_by_outcome": {
+     "ok": 92
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 10,
+    "list_by_stage_word": {
+     "APPROVAL": 1,
+     "PHASE_2": 1,
+     "UNKNOWN": 8
+    },
+    "listed_in_trials": 1,
+    "shown_in_in_trials": 0,
+    "listed_in_trials_and_shown": 0,
+    "listed_in_trials_and_not_shown": 1,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 0,
+     "not on a top-25 protein": 1,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not on a top-25 protein": 1
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL1201589",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 1,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 1,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 0,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 1,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 1,
+    "approved_cards_with_a_path": 1,
+    "one_way_proteins": 9,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 9,
+    "New clues": {
+     "cards": 92,
+     "cards_opposite_on_a_one_way_protein": 34,
+     "cards_same_on_a_one_way_protein": 51,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 3,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "opposite": 105,
+      "mixed_or_unknown": 4,
+      "same": 144
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 34,
+     "opposite_card_and_protein": [
+      [
+       "CHEMBL1197051",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL1197051",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL1197051",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL1201216",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL1201237",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL1201237",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL1201274",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL1201454",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL1290",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL1290",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL142635",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL1742466",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL188185",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL188185",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL188185",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL2",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL2",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL2",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL2364968",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL24",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL24778",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL27810",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL27810",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL27810",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL27810",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL321582",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL321582",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL321582",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL321582",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL321582",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL3559672",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL423",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL429",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL429",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL429",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL429",
+       "ADRB3"
+      ],
+      [
+       "CHEMBL434394",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL434394",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL471",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL471",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL499",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL499",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL521606",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL521606",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL546",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL546",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL597",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL611",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL611",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL611",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL631",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL631",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL642",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL644",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL644",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL644",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL654",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL654",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL654",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL707",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL707",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL707",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL753",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA2A"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA2B"
+      ],
+      [
+       "CHEMBL770",
+       "ADRA2C"
+      ],
+      [
+       "CHEMBL836",
+       "ADRA1A"
+      ],
+      [
+       "CHEMBL836",
+       "ADRA1B"
+      ],
+      [
+       "CHEMBL836",
+       "ADRA1D"
+      ],
+      [
+       "CHEMBL839",
+       "ADRB1"
+      ],
+      [
+       "CHEMBL839",
+       "ADRB2"
+      ],
+      [
+       "CHEMBL839",
+       "ADRB3"
+      ]
+     ]
+    },
+    "In trials": {
+     "cards": 0,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 9,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 1,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 92,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 3,
+      "cards_where_every_direction_is_unknown": 2,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 259,
+      "card_protein_pairs_unknown": 4,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  }
+ ]
+}
