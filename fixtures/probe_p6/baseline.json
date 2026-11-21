@@ -5,20 +5,20 @@
   "moonlight_code_commit": "06b8eb6019158b750676504cabf5245c93a2247f",
   "open_targets_run": {
    "started": "2026-11-21T16:23:30Z",
-   "finished": "2026-11-21T16:31:57Z",
-   "runs_that_finished": 1
+   "finished": "2026-11-21T17:42:50Z",
+   "runs_that_finished": 2
   },
-  "open_targets_requests": 362,
+  "open_targets_requests": 492,
   "open_targets_requests_by_kind": {
-   "data_version": 1,
+   "data_version": 2,
    "search": 9,
-   "disease": 6,
-   "targets": 6,
-   "target_drugs": 276,
-   "disease_drugs": 58,
-   "family": 6
+   "disease": 9,
+   "targets": 9,
+   "target_drugs": 372,
+   "disease_drugs": 82,
+   "family": 9
   },
-  "open_targets_different_answers_saved": 195,
+  "open_targets_different_answers_saved": 264,
   "open_targets_answers_with_errors": 0,
   "open_targets_refusals_or_network_failures": 0,
   "names_asked": 8,
@@ -30,27 +30,27 @@
   "top_proteins_looked_at": 25,
   "link_check": {
    "first_request": "2026-11-21T16:25:23Z",
-   "last_request": "2026-11-21T16:35:49Z",
-   "requests_sent": 580
+   "last_request": "2026-11-21T17:43:27Z",
+   "requests_sent": 614
   }
  },
  "totals": {
-  "diseases": 6,
+  "diseases": 9,
   "cards_by_tab": {
-   "approved": 10,
-   "narrower": 1,
-   "wider_group": 88,
-   "being_studied": 41,
-   "new_clues": 402
+   "approved": 13,
+   "narrower": 3,
+   "wider_group": 99,
+   "being_studied": 42,
+   "new_clues": 485
   },
   "counted_not_named": {
-   "not_approved": 352,
+   "not_approved": 396,
    "unclear_link": 4,
-   "new_clues_left_out_by_hand": 0
+   "new_clues_left_out_by_hand": 4
   },
   "links": {
-   "cards": 542,
-   "cards_with_a_link": 542,
+   "cards": 642,
+   "cards_with_a_link": 642,
    "cards_with_no_link": 0,
    "cards_with_no_link_by_tab": {
     "wider_group": 0,
@@ -59,36 +59,36 @@
     "approved": 0,
     "narrower": 0
    },
-   "different_links": 474,
-   "links_asked": 474,
+   "different_links": 506,
+   "links_asked": 506,
    "links_where_get_was_needed": 0,
    "links_by_outcome": {
-    "ok": 474
+    "ok": 506
    },
    "dead_links": 0,
    "dead_links_by_host": {},
    "cards_showing_a_dead_link": 0,
    "links_by_host_and_outcome": {
     "clinicaltrials.gov": {
-     "ok": 184
+     "ok": 194
     },
     "dailymed.nlm.nih.gov": {
-     "ok": 77
+     "ok": 84
     },
     "ttd.idrblab.cn": {
-     "ok": 70
+     "ok": 79
     },
     "www.accessdata.fda.gov": {
-     "ok": 7
+     "ok": 8
     },
     "www.ema.europa.eu": {
-     "ok": 31
+     "ok": 34
     },
     "www.pmda.go.jp": {
      "ok": 1
     },
     "www.whocc.no": {
-     "ok": 104
+     "ok": 106
     }
    }
   },
@@ -105,37 +105,37 @@
    }
   },
   "trials": {
-   "listed_in_trials": 207,
-   "shown_in_in_trials": 41,
-   "listed_in_trials_and_shown": 41,
-   "listed_in_trials_and_not_shown": 166,
+   "listed_in_trials": 211,
+   "shown_in_in_trials": 42,
+   "listed_in_trials_and_shown": 42,
+   "listed_in_trials_and_not_shown": 169,
    "not_shown_by_rule": {
-    "not approved elsewhere": 52,
-    "not on a top-25 protein": 114,
+    "not approved elsewhere": 54,
+    "not on a top-25 protein": 115,
     "other": 0
    },
    "not_shown_by_rule_in_detail": {
-    "not approved elsewhere: and not on a top-25 protein either": 47,
+    "not approved elsewhere: and not on a top-25 protein either": 49,
     "not approved elsewhere: on a top-25 protein": 5,
-    "not on a top-25 protein": 111,
+    "not on a top-25 protein": 112,
     "not on a top-25 protein: also withdrawn in some country": 3
    },
    "shown_in_in_trials_but_not_listed_in_trials": {},
    "list_by_stage_word": {
-    "APPROVAL": 11,
+    "APPROVAL": 14,
     "EARLY_PHASE_1": 6,
-    "PHASE_1": 22,
+    "PHASE_1": 23,
     "PHASE_1_2": 7,
-    "PHASE_2": 112,
-    "PHASE_2_3": 20,
+    "PHASE_2": 114,
+    "PHASE_2_3": 21,
     "PHASE_3": 40,
     "UNKNOWN": 22
    }
   },
   "proof": {
    "main_list": {
-    "A": 7,
-    "B": 2,
+    "A": 9,
+    "B": 3,
     "C": 1,
     "D": 0,
     "E": 0,
@@ -143,8 +143,8 @@
     "N": 0
    },
    "boxes": {
-    "A": 17,
-    "B": 1,
+    "A": 27,
+    "B": 4,
     "C": 6,
     "D": 64,
     "E": 0,
@@ -153,12 +153,12 @@
    },
    "moonlight_own_lines": {
     "japan_line": 7,
-    "no_regulator_line": 68,
+    "no_regulator_line": 72,
     "red_warning": 0
    },
    "probe_p3_base_own_list_only": {
-    "A": 7,
-    "B": 2,
+    "A": 9,
+    "B": 3,
     "C": 1,
     "D": 0,
     "E": 0,
@@ -166,74 +166,74 @@
    }
   },
   "direction": {
-   "one_way_proteins": 13,
+   "one_way_proteins": 14,
    "both_ways_proteins": 0,
    "New clues": {
-    "cards": 402,
-    "cards_opposite_on_a_one_way_protein": 36,
-    "cards_same_on_a_one_way_protein": 101,
+    "cards": 485,
+    "cards_opposite_on_a_one_way_protein": 45,
+    "cards_same_on_a_one_way_protein": 102,
     "cards_mixed_or_unknown_on_a_one_way_protein": 3,
     "cards_on_a_both_ways_protein": 0,
-    "cards_carrying_the_opposite_way_line_on_the_live_site": 36
+    "cards_carrying_the_opposite_way_line_on_the_live_site": 45
    },
    "In trials": {
-    "cards": 41,
+    "cards": 42,
     "cards_opposite_on_a_one_way_protein": 0,
     "cards_same_on_a_one_way_protein": 1,
     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
     "cards_on_a_both_ways_protein": 0,
     "cards_carrying_the_opposite_way_line_on_the_live_site": 0
    },
-   "diseases_with_an_opposite_card": 2,
+   "diseases_with_an_opposite_card": 3,
    "unknown_directions": {
     "approved": {
-     "cards": 10,
-     "cards_with_no_protein_shown": 3,
+     "cards": 13,
+     "cards_with_no_protein_shown": 4,
      "cards_with_an_unknown_direction": 0,
      "cards_where_every_direction_is_unknown": 0,
      "cards_with_a_mixed_direction": 0,
-     "card_protein_pairs": 17,
+     "card_protein_pairs": 19,
      "card_protein_pairs_unknown": 0,
      "card_protein_pairs_mixed": 0
     },
     "narrower": {
-     "cards": 1,
+     "cards": 3,
      "cards_with_no_protein_shown": 0,
      "cards_with_an_unknown_direction": 0,
      "cards_where_every_direction_is_unknown": 0,
      "cards_with_a_mixed_direction": 0,
-     "card_protein_pairs": 2,
+     "card_protein_pairs": 4,
      "card_protein_pairs_unknown": 0,
      "card_protein_pairs_mixed": 0
     },
     "wider_group": {
-     "cards": 88,
-     "cards_with_no_protein_shown": 80,
+     "cards": 99,
+     "cards_with_no_protein_shown": 86,
      "cards_with_an_unknown_direction": 0,
      "cards_where_every_direction_is_unknown": 0,
      "cards_with_a_mixed_direction": 0,
-     "card_protein_pairs": 11,
+     "card_protein_pairs": 16,
      "card_protein_pairs_unknown": 0,
      "card_protein_pairs_mixed": 0
     },
     "being_studied": {
-     "cards": 41,
+     "cards": 42,
      "cards_with_no_protein_shown": 0,
      "cards_with_an_unknown_direction": 3,
      "cards_where_every_direction_is_unknown": 3,
      "cards_with_a_mixed_direction": 0,
-     "card_protein_pairs": 84,
+     "card_protein_pairs": 85,
      "card_protein_pairs_unknown": 19,
      "card_protein_pairs_mixed": 0
     },
     "new_clues": {
-     "cards": 402,
+     "cards": 485,
      "cards_with_no_protein_shown": 0,
-     "cards_with_an_unknown_direction": 32,
-     "cards_where_every_direction_is_unknown": 31,
+     "cards_with_an_unknown_direction": 34,
+     "cards_where_every_direction_is_unknown": 33,
      "cards_with_a_mixed_direction": 0,
-     "card_protein_pairs": 1076,
-     "card_protein_pairs_unknown": 75,
+     "card_protein_pairs": 1161,
+     "card_protein_pairs_unknown": 78,
      "card_protein_pairs_mixed": 0
     }
    },
@@ -246,7 +246,7 @@
     {
      "direction": "unknown",
      "action_words": "BINDING AGENT",
-     "card_protein_pairs": 5
+     "card_protein_pairs": 7
     },
     {
      "direction": "unknown",
@@ -272,8 +272,201 @@
      "direction": "unknown",
      "action_words": "DEGRADER",
      "card_protein_pairs": 1
+    },
+    {
+     "direction": "unknown",
+     "action_words": "EXOGENOUS GENE",
+     "card_protein_pairs": 1
     }
    ]
+  }
+ },
+ "totals_by_table": {
+  "KEY": {
+   "diseases": 6,
+   "cards_by_tab": {
+    "approved": 10,
+    "narrower": 1,
+    "wider_group": 88,
+    "being_studied": 41,
+    "new_clues": 402
+   },
+   "links": {
+    "different_links": 474,
+    "dead_links": 0,
+    "cards_with_no_link": 0
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 240,
+    "listed_in_trials": 207,
+    "shown_in_in_trials": 41,
+    "listed_in_trials_and_shown": 41,
+    "listed_in_trials_and_not_shown": 166,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 52,
+     "not on a top-25 protein": 114,
+     "other": 0
+    }
+   },
+   "proof_main_list": {
+    "A": 7,
+    "B": 2,
+    "C": 1,
+    "D": 0,
+    "E": 0,
+    "F": 0,
+    "N": 0
+   },
+   "direction": {
+    "New clues": {
+     "cards": 402,
+     "cards_opposite_on_a_one_way_protein": 36,
+     "cards_same_on_a_one_way_protein": 101,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 3,
+     "cards_on_a_both_ways_protein": 0,
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 36
+    },
+    "In trials": {
+     "cards": 41,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 1,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0
+    }
+   },
+   "unknown_directions": {
+    "approved": {
+     "cards": 10,
+     "cards_with_no_protein_shown": 3,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 17,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "being_studied": {
+     "cards": 41,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 3,
+     "cards_where_every_direction_is_unknown": 3,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 84,
+     "card_protein_pairs_unknown": 19,
+     "card_protein_pairs_mixed": 0
+    },
+    "new_clues": {
+     "cards": 402,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 32,
+     "cards_where_every_direction_is_unknown": 31,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 1076,
+     "card_protein_pairs_unknown": 75,
+     "card_protein_pairs_mixed": 0
+    }
+   }
+  },
+  "BY_ID": {
+   "diseases": 3,
+   "cards_by_tab": {
+    "approved": 3,
+    "narrower": 2,
+    "wider_group": 11,
+    "being_studied": 1,
+    "new_clues": 83
+   },
+   "links": {
+    "different_links": 91,
+    "dead_links": 0,
+    "cards_with_no_link": 0
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 7,
+    "listed_in_trials": 4,
+    "shown_in_in_trials": 1,
+    "listed_in_trials_and_shown": 1,
+    "listed_in_trials_and_not_shown": 3,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 2,
+     "not on a top-25 protein": 1,
+     "other": 0
+    }
+   },
+   "proof_main_list": {
+    "A": 2,
+    "B": 1,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 0,
+    "N": 0
+   },
+   "direction": {
+    "New clues": {
+     "cards": 83,
+     "cards_opposite_on_a_one_way_protein": 9,
+     "cards_same_on_a_one_way_protein": 1,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 9
+    },
+    "In trials": {
+     "cards": 1,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0
+    }
+   },
+   "unknown_directions": {
+    "approved": {
+     "cards": 3,
+     "cards_with_no_protein_shown": 1,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 2,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "being_studied": {
+     "cards": 1,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 0,
+     "cards_where_every_direction_is_unknown": 0,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 1,
+     "card_protein_pairs_unknown": 0,
+     "card_protein_pairs_mixed": 0
+    },
+    "new_clues": {
+     "cards": 83,
+     "cards_with_no_protein_shown": 0,
+     "cards_with_an_unknown_direction": 2,
+     "cards_where_every_direction_is_unknown": 2,
+     "cards_with_a_mixed_direction": 0,
+     "card_protein_pairs": 85,
+     "card_protein_pairs_unknown": 3,
+     "card_protein_pairs_mixed": 0
+    }
+   }
   }
  },
  "diseases": [
@@ -3094,6 +3287,615 @@
       "cards_with_a_mixed_direction": 0,
       "card_protein_pairs": 259,
       "card_protein_pairs_unknown": 4,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "EFO_1000642",
+   "name": "hemochromatosis",
+   "set": "BY_ID",
+   "cards_by_tab": {
+    "approved": 1,
+    "narrower": 0,
+    "wider_group": 6,
+    "being_studied": 0,
+    "new_clues": 8
+   },
+   "counted_not_named": {
+    "not_approved": 18,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 15,
+    "cards_with_a_link": 15,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "wider_group": 0,
+     "new_clues": 0
+    },
+    "different_links": 13,
+    "links_by_outcome": {
+     "ok": 13
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 4,
+    "list_by_stage_word": {
+     "APPROVAL": 1,
+     "PHASE_1": 1,
+     "PHASE_2": 2
+    },
+    "listed_in_trials": 3,
+    "shown_in_in_trials": 0,
+    "listed_in_trials_and_shown": 0,
+    "listed_in_trials_and_not_shown": 3,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 2,
+     "not on a top-25 protein": 1,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {
+     "not approved elsewhere: and not on a top-25 protein either": 2,
+     "not on a top-25 protein": 1
+    },
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": [
+     {
+      "id": "CHEMBL4594323",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_1",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL4650507",
+      "reason": "not approved elsewhere",
+      "detail": "and not on a top-25 protein either",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     },
+     {
+      "id": "CHEMBL550348",
+      "reason": "not on a top-25 protein",
+      "detail": "",
+      "stage_on_the_list": "PHASE_2",
+      "shown_in": []
+     }
+    ]
+   },
+   "proof": {
+    "main_list": {
+     "cards": 1,
+     "by_group": {
+      "A": 1,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 6,
+     "by_group": {
+      "A": 3,
+      "B": 3,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {
+      "B": [
+       "CHEMBL1201865",
+       "CHEMBL1964120",
+       "CHEMBL2110588"
+      ]
+     }
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 3,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 1,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 1,
+    "approved_cards_with_a_path": 0,
+    "one_way_proteins": 0,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 0,
+    "New clues": {
+     "cards": 8,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 0,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 1,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 6,
+      "cards_with_no_protein_shown": 6,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 8,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 1,
+      "cards_where_every_direction_is_unknown": 1,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 9,
+      "card_protein_pairs_unknown": 2,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "MONDO_0015129",
+   "name": "chronic primary adrenal insufficiency",
+   "set": "BY_ID",
+   "cards_by_tab": {
+    "approved": 2,
+    "narrower": 2,
+    "wider_group": 5,
+    "being_studied": 1,
+    "new_clues": 75
+   },
+   "counted_not_named": {
+    "not_approved": 26,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 4
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 85,
+    "cards_with_a_link": 85,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {
+     "approved": 0,
+     "narrower": 0,
+     "wider_group": 0,
+     "being_studied": 0,
+     "new_clues": 0
+    },
+    "different_links": 79,
+    "links_by_outcome": {
+     "ok": 79
+    },
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 3,
+    "list_by_stage_word": {
+     "APPROVAL": 2,
+     "PHASE_2_3": 1
+    },
+    "listed_in_trials": 1,
+    "shown_in_in_trials": 1,
+    "listed_in_trials_and_shown": 1,
+    "listed_in_trials_and_not_shown": 0,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 0,
+     "not on a top-25 protein": 0,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {},
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": []
+   },
+   "proof": {
+    "main_list": {
+     "cards": 2,
+     "by_group": {
+      "A": 1,
+      "B": 1,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {
+      "B": [
+       "CHEMBL1200592"
+      ]
+     }
+    },
+    "boxes": {
+     "cards": 7,
+     "by_group": {
+      "A": 7,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 1,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 1,
+     "B": 1,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 2,
+    "approved_cards_with_a_path": 2,
+    "one_way_proteins": 1,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 1,
+    "New clues": {
+     "cards": 75,
+     "cards_opposite_on_a_one_way_protein": 9,
+     "cards_same_on_a_one_way_protein": 1,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {
+      "opposite": 9,
+      "same": 1
+     },
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 9,
+     "opposite_card_and_protein": [
+      [
+       "CHEMBL1095097",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL1393",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL1428",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL1480",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL1509",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL1616951",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL2181927",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL2348780",
+       "NR3C2"
+      ],
+      [
+       "CHEMBL3545393",
+       "NR3C2"
+      ]
+     ]
+    },
+    "In trials": {
+     "cards": 1,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 2,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 2,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "narrower": {
+      "cards": 2,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 2,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "wider_group": {
+      "cards": 5,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 5,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 1,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 1,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 75,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 1,
+      "cards_where_every_direction_is_unknown": 1,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 76,
+      "card_protein_pairs_unknown": 1,
+      "card_protein_pairs_mixed": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "HP_0410149",
+   "name": "Drug-induced anaphylaxis",
+   "set": "BY_ID",
+   "cards_by_tab": {
+    "approved": 0,
+    "narrower": 0,
+    "wider_group": 0,
+    "being_studied": 0,
+    "new_clues": 0
+   },
+   "counted_not_named": {
+    "not_approved": 0,
+    "unclear_link": 0,
+    "new_clues_left_out_by_hand": 0
+   },
+   "differences_from_api_clues": [],
+   "links": {
+    "cards": 0,
+    "cards_with_a_link": 0,
+    "cards_with_no_link": 0,
+    "cards_with_no_link_by_tab": {},
+    "different_links": 0,
+    "links_by_outcome": {},
+    "dead_links": 0,
+    "cards_showing_a_dead_link": 0,
+    "dead_link_list": []
+   },
+   "withdrawn": {
+    "main_list": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    },
+    "boxes": {
+     "cards_with_a_withdrawal_report_and_an_approval_report": 0,
+     "cards_with_a_withdrawal_report_and_no_approval_report": 0,
+     "with_approval_report_ids": [],
+     "without_approval_report_ids": [],
+     "cards_not_on_the_list_so_reports_not_known": 0
+    }
+   },
+   "trials": {
+    "medicines_on_the_disease_list": 0,
+    "list_by_stage_word": {},
+    "listed_in_trials": 0,
+    "shown_in_in_trials": 0,
+    "listed_in_trials_and_shown": 0,
+    "listed_in_trials_and_not_shown": 0,
+    "not_shown_by_rule": {
+     "not approved elsewhere": 0,
+     "not on a top-25 protein": 0,
+     "other": 0
+    },
+    "not_shown_by_rule_in_detail": {},
+    "shown_in_in_trials_but_not_listed_in_trials": {},
+    "not_shown": []
+   },
+   "proof": {
+    "main_list": {
+     "cards": 0,
+     "by_group": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "boxes": {
+     "cards": 0,
+     "by_group": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "N": 0
+     },
+     "ids_outside_group_A": {}
+    },
+    "moonlight_own_lines": {
+     "japan_line": 0,
+     "no_regulator_line": 0,
+     "red_warning": 0
+    },
+    "probe_p3_base_own_list_only": {
+     "A": 0,
+     "B": 0,
+     "C": 0,
+     "D": 0,
+     "E": 0,
+     "F": 0
+    }
+   },
+   "direction": {
+    "approved_cards": 0,
+    "approved_cards_with_a_path": 0,
+    "one_way_proteins": 0,
+    "both_ways_proteins": 0,
+    "one_way_proteins_on_the_live_site": 0,
+    "New clues": {
+     "cards": 0,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "In trials": {
+     "cards": 0,
+     "cards_opposite_on_a_one_way_protein": 0,
+     "cards_same_on_a_one_way_protein": 0,
+     "cards_mixed_or_unknown_on_a_one_way_protein": 0,
+     "cards_on_a_both_ways_protein": 0,
+     "card_protein_pairs": {},
+     "cards_carrying_the_opposite_way_line_on_the_live_site": 0,
+     "opposite_card_and_protein": []
+    },
+    "unknown_directions": {
+     "approved": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "being_studied": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
+      "card_protein_pairs_mixed": 0
+     },
+     "new_clues": {
+      "cards": 0,
+      "cards_with_no_protein_shown": 0,
+      "cards_with_an_unknown_direction": 0,
+      "cards_where_every_direction_is_unknown": 0,
+      "cards_with_a_mixed_direction": 0,
+      "card_protein_pairs": 0,
+      "card_protein_pairs_unknown": 0,
       "card_protein_pairs_mixed": 0
      }
     }

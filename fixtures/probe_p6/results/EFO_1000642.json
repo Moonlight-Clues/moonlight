@@ -1,0 +1,1012 @@
+{
+ "id": "EFO_1000642",
+ "name": "hemochromatosis",
+ "set": "BY_ID",
+ "targets": [
+  {
+   "id": "ENSG00000010704",
+   "symbol": "HFE",
+   "score": 0.5667128290319283
+  },
+  {
+   "id": "ENSG00000169359",
+   "symbol": "SLC33A1",
+   "score": 0.3695798546847018
+  },
+  {
+   "id": "ENSG00000091137",
+   "symbol": "SLC26A4",
+   "score": 0.3695798546847018
+  },
+  {
+   "id": "ENSG00000091513",
+   "symbol": "TF",
+   "score": 0.06456944688103601
+  },
+  {
+   "id": "ENSG00000138449",
+   "symbol": "SLC40A1",
+   "score": 0.051608523365635615
+  },
+  {
+   "id": "ENSG00000105697",
+   "symbol": "HAMP",
+   "score": 0.05124854916799351
+  },
+  {
+   "id": "ENSG00000206503",
+   "symbol": "HLA-A",
+   "score": 0.046962156786547644
+  },
+  {
+   "id": "ENSG00000072274",
+   "symbol": "TFRC",
+   "score": 0.043047835340919556
+  },
+  {
+   "id": "ENSG00000125378",
+   "symbol": "BMP4",
+   "score": 0.03215344735756906
+  },
+  {
+   "id": "ENSG00000153563",
+   "symbol": "CD8A",
+   "score": 0.031519650776198345
+  },
+  {
+   "id": "ENSG00000254647",
+   "symbol": "INS",
+   "score": 0.030975588345786897
+  },
+  {
+   "id": "ENSG00000106327",
+   "symbol": "TFR2",
+   "score": 0.030843832972887963
+  },
+  {
+   "id": "ENSG00000102245",
+   "symbol": "CD40LG",
+   "score": 0.029751178302118497
+  },
+  {
+   "id": "ENSG00000168509",
+   "symbol": "HJV",
+   "score": 0.02562031258230481
+  },
+  {
+   "id": "ENSG00000105369",
+   "symbol": "CD79A",
+   "score": 0.024926107977068224
+  },
+  {
+   "id": "ENSG00000232810",
+   "symbol": "TNF",
+   "score": 0.02325770528380671
+  },
+  {
+   "id": "ENSG00000310469",
+   "symbol": "HLA-H",
+   "score": 0.021313209284026018
+  },
+  {
+   "id": "ENSG00000206341",
+   "symbol": "HLA-H",
+   "score": 0.021313209284026018
+  },
+  {
+   "id": "ENSG00000153162",
+   "symbol": "BMP6",
+   "score": 0.02087755219068343
+  },
+  {
+   "id": "ENSG00000076351",
+   "symbol": "SLC46A1",
+   "score": 0.019218152443604492
+  },
+  {
+   "id": "ENSG00000184502",
+   "symbol": "GAST",
+   "score": 0.018663782661577442
+  },
+  {
+   "id": "ENSG00000136869",
+   "symbol": "TLR4",
+   "score": 0.017739833024865686
+  },
+  {
+   "id": "ENSG00000116906",
+   "symbol": "GNPAT",
+   "score": 0.017016072476108143
+  },
+  {
+   "id": "ENSG00000110911",
+   "symbol": "SLC11A2",
+   "score": 0.016953259646573317
+  },
+  {
+   "id": "ENSG00000118564",
+   "symbol": "FBXL5",
+   "score": 0.016631093460811583
+  }
+ ],
+ "neighbours": [
+  {
+   "role": "parent",
+   "id": "MONDO_0005066",
+   "name": "metabolic disease"
+  }
+ ],
+ "cards": [
+  {
+   "tab": "approved",
+   "id": "CHEMBL556",
+   "medicine": "DEFEROXAMINE",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2e87cc7e-8856-4ec6-8c74-0356a352f522",
+   "proteins": [],
+   "label": null,
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2e87cc7e-8856-4ec6-8c74-0356a352f522",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a7174843-5965-49fc-b842-f7eff7b48bbc",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d91e16df-8daa-4cd2-86a2-273eaa2446e0",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f9ab6b1c-98d0-4373-0e9b-b10cb4a67543"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL870",
+   "medicine": "ALENDRONIC ACID",
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6ffadda-2ace-4e99-8bb4-75631c54f39b",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6ffadda-2ace-4e99-8bb4-75631c54f39b"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL429910",
+   "medicine": "DAPAGLIFLOZIN",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL2110588",
+   "medicine": "ELIGLUSTAT",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0J8IJ",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0J8IJ"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL385517",
+   "medicine": "SAXAGLIPTIN ANHYDROUS",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": null,
+   "warning": null,
+   "approval_sources": [
+    "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern"
+   ],
+   "regulator_record": true
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1964120",
+   "medicine": "TALIGLUCERASE ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G6HA",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0G6HA"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "wider_group",
+   "id": "CHEMBL1201865",
+   "medicine": "VELAGLUCERASE ALFA",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G5ET",
+   "proteins": [],
+   "label": "Not listed as approved for this exact disease. Approved for metabolic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "warning": null,
+   "approval_sources": [
+    "https://ttd.idrblab.cn/data/drug/details/D0G5ET"
+   ],
+   "regulator_record": false
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL4594565",
+   "medicine": "PABINAFUSP ALFA",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000072274",
+     "symbol": "TFRC",
+     "score": 0.043047835340919556,
+     "action_types": [
+      "BINDING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    },
+    {
+     "target_id": "ENSG00000106327",
+     "symbol": "TFR2",
+     "score": 0.030843832972887963,
+     "action_types": [
+      "BINDING AGENT"
+     ],
+     "direction": "unknown",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201580",
+   "medicine": "ADALIMUMAB",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/trudexa",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201581",
+   "medicine": "INFLIXIMAB",
+   "source": "https://clinicaltrials.gov/study/NCT00216177",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201572",
+   "medicine": "ETANERCEPT",
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lifmior",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201833",
+   "medicine": "GOLIMUMAB",
+   "source": "https://clinicaltrials.gov/study/NCT01212653",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1201831",
+   "medicine": "CERTOLIZUMAB PEGOL",
+   "source": "https://clinicaltrials.gov/study/NCT00580840",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL1743054",
+   "medicine": "OZORALIZUMAB",
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  },
+  {
+   "tab": "new_clues",
+   "id": "CHEMBL2108887",
+   "medicine": "AFELIMOMAB",
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AB03",
+   "proteins": [
+    {
+     "target_id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.02325770528380671,
+     "action_types": [
+      "INHIBITOR"
+     ],
+     "direction": "down",
+     "opposite_way": false
+    }
+   ],
+   "disease_stage": null
+  }
+ ],
+ "left_out": {
+  "not_approved": 18,
+  "unclear_link": 0
+ },
+ "new_clues_left_out_by_hand": 0,
+ "red_warning_ids": [],
+ "one_way": {},
+ "one_way_without_leaving_out_red_warnings": {},
+ "withdrawn_on_own_list": [],
+ "withdrawn_on_a_neighbour_list": [],
+ "own_list": {
+  "CHEMBL550348": {
+   "id": "CHEMBL550348",
+   "name": "DEFERASIROX",
+   "forms": [
+    [
+     "CHEMBL550348",
+     "DEFERASIROX"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "ClinicalTrials.gov",
+     "stage": "PHASE_2",
+     "url": "https://clinicaltrials.gov/study/NCT01892644"
+    }
+   ]
+  },
+  "CHEMBL4594323": {
+   "id": "CHEMBL4594323",
+   "name": "HEPCIDIN",
+   "forms": [
+    [
+     "CHEMBL4594323",
+     "HEPCIDIN"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_1",
+   "best_stage_of_listed_forms": "PHASE_1",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_1",
+     "url": "https://ttd.idrblab.cn/data/drug/details/D03WWW"
+    }
+   ]
+  },
+  "CHEMBL556": {
+   "id": "CHEMBL556",
+   "name": "DEFEROXAMINE",
+   "forms": [
+    [
+     "CHEMBL1234",
+     "DEFEROXAMINE MESYLATE"
+    ]
+   ],
+   "approved_for_disease": true,
+   "stage_for_disease": "APPROVAL",
+   "best_stage_of_listed_forms": "APPROVAL",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2e87cc7e-8856-4ec6-8c74-0356a352f522"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a7174843-5965-49fc-b842-f7eff7b48bbc"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d91e16df-8daa-4cd2-86a2-273eaa2446e0"
+    },
+    {
+     "source": "DailyMed",
+     "stage": "APPROVAL",
+     "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f9ab6b1c-98d0-4373-0e9b-b10cb4a67543"
+    }
+   ]
+  },
+  "CHEMBL4650507": {
+   "id": "CHEMBL4650507",
+   "name": "RUSFERTIDE",
+   "forms": [
+    [
+     "CHEMBL4650507",
+     "RUSFERTIDE"
+    ]
+   ],
+   "approved_for_disease": false,
+   "stage_for_disease": "PHASE_2",
+   "best_stage_of_listed_forms": "PHASE_3",
+   "withdrawn_notes": [
+    false
+   ],
+   "reports": [
+    {
+     "source": "TTD",
+     "stage": "PHASE_2",
+     "url": "https://ttd.idrblab.cn/data/drug/details/DQ3AM0"
+    }
+   ]
+  }
+ },
+ "box_lists": {
+  "CHEMBL1201865": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL1201865",
+    "name": "VELAGLUCERASE ALFA",
+    "forms": [
+     [
+      "CHEMBL1201865",
+      "VELAGLUCERASE ALFA"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0G5ET"
+     }
+    ]
+   }
+  ],
+  "CHEMBL1964120": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL1964120",
+    "name": "TALIGLUCERASE ALFA",
+    "forms": [
+     [
+      "CHEMBL1964120",
+      "TALIGLUCERASE ALFA"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0G6HA"
+     }
+    ]
+   }
+  ],
+  "CHEMBL429910": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL429910",
+    "name": "DAPAGLIFLOZIN",
+    "forms": [
+     [
+      "CHEMBL429910",
+      "DAPAGLIFLOZIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "EMA Human Drugs",
+      "stage": "APPROVAL",
+      "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern"
+     }
+    ]
+   }
+  ],
+  "CHEMBL870": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL870",
+    "name": "ALENDRONIC ACID",
+    "forms": [
+     [
+      "CHEMBL675",
+      "ALENDRONATE SODIUM"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "DailyMed",
+      "stage": "APPROVAL",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6ffadda-2ace-4e99-8bb4-75631c54f39b"
+     }
+    ]
+   }
+  ],
+  "CHEMBL385517": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL385517",
+    "name": "SAXAGLIPTIN ANHYDROUS",
+    "forms": [
+     [
+      "CHEMBL2103745",
+      "SAXAGLIPTIN"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "EMA Human Drugs",
+      "stage": "APPROVAL",
+      "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/qtern"
+     }
+    ]
+   }
+  ],
+  "CHEMBL2110588": [
+   {
+    "role": "parent",
+    "disease_id": "MONDO_0005066",
+    "disease": "metabolic disease",
+    "id": "CHEMBL2110588",
+    "name": "ELIGLUSTAT",
+    "forms": [
+     [
+      "CHEMBL5723563",
+      "ELIGLUSTAT TARTRATE"
+     ]
+    ],
+    "approved_for_disease": true,
+    "stage_for_disease": "APPROVAL",
+    "best_stage_of_listed_forms": "APPROVAL",
+    "withdrawn_notes": [
+     false
+    ],
+    "reports": [
+     {
+      "source": "TTD",
+      "stage": "APPROVAL",
+      "url": "https://ttd.idrblab.cn/data/drug/details/D0J8IJ"
+     }
+    ]
+   }
+  ]
+ },
+ "in_tray": {
+  "CHEMBL2109440": {
+   "name": "LY-2787106",
+   "tray_group": "not_approved",
+   "targets": [
+    "HAMP"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109494": {
+   "name": "A27.15",
+   "tray_group": "not_approved",
+   "targets": [
+    "TFRC"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109495": {
+   "name": "E2.3",
+   "tray_group": "not_approved",
+   "targets": [
+    "TFRC",
+    "TFR2"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL4594331": {
+   "name": "DAZODALIBEP",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2109478": {
+   "name": "DAPIROLIZUMAB PEGOL",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4298212": {
+   "name": "RAVAGALIMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594460": {
+   "name": "TEGOPRUBART",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108747": {
+   "name": "TORALIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_1",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108767": {
+   "name": "RUPLIZUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "CD40LG"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108739": {
+   "name": "PLACULUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2107911": {
+   "name": "ONERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297863": {
+   "name": "REMTOLUMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4297572": {
+   "name": "ABBV-3373",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108208": {
+   "name": "LENERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108566": {
+   "name": "NERELIMOMAB",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743057": {
+   "name": "PEGSUNERCEPT",
+   "tray_group": "not_approved",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "PHASE_2",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL225157": {
+   "name": "RESATORVID",
+   "tray_group": "not_approved",
+   "targets": [
+    "TLR4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL501259": {
+   "name": "ERITORAN",
+   "tray_group": "not_approved",
+   "targets": [
+    "TLR4"
+   ],
+   "best_stage": "PHASE_3",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL4594565": {
+   "name": "PABINAFUSP ALFA",
+   "tray_group": "new_clue",
+   "targets": [
+    "TFRC",
+    "TFR2"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false,
+    false
+   ]
+  },
+  "CHEMBL1201572": {
+   "name": "ETANERCEPT",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201581": {
+   "name": "INFLIXIMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL2108887": {
+   "name": "AFELIMOMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1743054": {
+   "name": "OZORALIZUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201831": {
+   "name": "CERTOLIZUMAB PEGOL",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201833": {
+   "name": "GOLIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  },
+  "CHEMBL1201580": {
+   "name": "ADALIMUMAB",
+   "tray_group": "new_clue",
+   "targets": [
+    "TNF"
+   ],
+   "best_stage": "APPROVAL",
+   "disease_stage": null,
+   "withdrawn": [
+    false
+   ]
+  }
+ },
+ "differences_from_api_clues": []
+}

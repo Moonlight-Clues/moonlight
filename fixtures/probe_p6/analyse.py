@@ -535,10 +535,6 @@ meta = {
         "requests_sent": sum(len(line["steps"]) for line in link_of.values()),
     },
 }
-(HERE / "baseline.json").write_text(json.dumps(
-    {"meta": meta, "totals": totals, "diseases": per_disease}, indent=1, ensure_ascii=False) + "\n",
-    encoding="utf-8")
-
 write_csv("dead_links.csv", ["host", "outcome", "link", "cards showing it", "diseases"], dead_rows)
 write_csv("links_by_status.csv",
           ["link", "host", "outcome", "final status", "final address", "redirect hops",
@@ -570,8 +566,11 @@ add("Read-only study, run 21 Nov 2026. Nothing in `moonlight/`, `web/` or `tests
 add("## What was done\n")
 add(f"- Open Targets data version: **{meta['open_targets_data_version']}**. "
     f"Asked {meta['open_targets_run']['started']} to {meta['open_targets_run']['finished']} (UTC).")
-add(f"- Diseases studied: **{len(per_disease)}** of the {len(searches['names'])} names asked. "
-    "Each id was found with Moonlight's own search (section 0). No id was typed in."
+by_id = [d for d in study["diseases"] if d.get("set") == "BY_ID"]
+add(f"- Diseases studied: **{len(per_disease)}**. {len(per_disease) - len(by_id)} of the "
+    f"{len(searches['names'])} names asked in night order 2, each id found with Moonlight's own "
+    "search (section 0). Then, in night order 2b, three ids Kashish gave: "
+    + "; ".join(f"`{d['id']}`, which Open Targets calls \"{d['name']}\"" for d in by_id) + "."
     + (f" No result for: {', '.join(meta['diseases_with_no_result'])}." if missing_results else ""))
 add(f"- Moonlight's code: commit `{meta['moonlight_code_commit'][:7]}` (the last change to "
     "`moonlight/` or `web/` on `main`). For each disease the probe ran the same functions, in "
@@ -597,7 +596,8 @@ add(f"- Source links: **{T['links']['different_links']}** different links on "
 
 add("## Summary table\n")
 add("One row per disease. Column names:\n")
-add("- **Cards**: Approved main list / narrower-disease box / wider-group box / In trials / New clues.\n"
+add("- **Disease**: the name Open Targets gives the entry, and its id.\n"
+    "- **Cards**: Approved main list / narrower-disease box / wider-group box / In trials / New clues.\n"
     "- **Links**: different source links on the disease's cards / of them dead (404, 410 or DNS "
     "failure) / cards with no link at all.\n"
     "- **Withdrawn**: main-list Approved cards with a WITHDRAWAL report: that also have an "
@@ -631,18 +631,63 @@ def summary_row(name, cards, links, w, t, proof, direction, unknown):
     ]
 
 
-rows = [summary_row(f"**ALL {len(per_disease)} TOGETHER**",
-                    T["cards_by_tab"], T["links"], T["withdrawn"], T["trials"],
-                    T["proof"]["main_list"], T["direction"],
-                    T["direction"]["unknown_directions"])]
-rows += [summary_row(d["name"], d["cards_by_tab"], d["links"], d["withdrawn"], d["trials"],
-                     d["proof"]["main_list"]["by_group"], d["direction"],
-                     d["direction"]["unknown_directions"]) for d in per_disease]
-add(table(["Disease", "Cards (A / narrower / wider / T / N)", "Links (different / dead / cards with none)",
-           "Withdrawn (with / without approval report)",
-           "Trials (listed / shown (on list) / not approved elsewhere / not top-25 / other)",
-           "Proof (A / B / C / D / E / F / N)", "Opposite (N / T)", "Unknown (A / T / N)"], rows))
-add("In the ALL row, \"different links\" counts a link once even when two diseases show it, "
+def subset_totals(group):
+    """The summary numbers for some of the diseases only (one table)."""
+    ids = {d["id"] for d in group}
+    urls = {c["source"] for r in results if r["id"] in ids for c in r["cards"] if c["source"]}
+
+    def add_up(*keys):
+        out = collections.Counter()
+        for d in group:
+            inner = d
+            for key in keys:
+                inner = inner[key]
+            out.update({k: v for k, v in inner.items() if isinstance(v, int)})
+        return out
+
+    return {
+        "diseases": len(group),
+        "cards_by_tab": dict(add_up("cards_by_tab")),
+        "links": {"different_links": len(urls),
+                  "dead_links": sum(1 for url in urls if outcome_of(url) in DEAD),
+                  "cards_with_no_link": sum(d["links"]["cards_with_no_link"] for d in group)},
+        "withdrawn": {"main_list": dict(add_up("withdrawn", "main_list"))},
+        "trials": {**dict(add_up("trials")),
+                   "not_shown_by_rule": dict(add_up("trials", "not_shown_by_rule"))},
+        "proof_main_list": dict(add_up("proof", "main_list", "by_group")),
+        "direction": {label: dict(add_up("direction", label))
+                      for label in ("New clues", "In trials")},
+        "unknown_directions": {tab: dict(add_up("direction", "unknown_directions", tab))
+                               for tab in TABS
+                               if all(tab in d["direction"]["unknown_directions"] for d in group)},
+    }
+
+
+HEAD = ["Disease", "Cards (A / narrower / wider / T / N)", "Links (different / dead / cards with none)",
+        "Withdrawn (with / without approval report)",
+        "Trials (listed / shown (on list) / not approved elsewhere / not top-25 / other)",
+        "Proof (A / B / C / D / E / F / N)", "Opposite (N / T)", "Unknown (A / T / N)"]
+set_of = {d["id"]: d.get("set") for d in study["diseases"]}
+TABLES = (("KEY", "Table 1. The six diseases found by search (night order 2)"),
+          ("BY_ID", "Table 2. The three diseases given by id (night order 2b)"))
+totals_by_table = {}
+for set_name, title in TABLES:
+    group = [d for d in per_disease if set_of.get(d["id"]) == set_name]
+    if not group:
+        continue
+    g = subset_totals(group)
+    totals_by_table[set_name] = g
+    add(f"### {title}\n")
+    rows = [summary_row(f"**THESE {len(group)} TOGETHER**", g["cards_by_tab"], g["links"],
+                        g["withdrawn"], g["trials"], g["proof_main_list"], g["direction"],
+                        g["unknown_directions"])]
+    rows += [summary_row(f"{d['name']} ({d['id']})", d["cards_by_tab"], d["links"], d["withdrawn"],
+                         d["trials"], d["proof"]["main_list"]["by_group"], d["direction"],
+                         d["direction"]["unknown_directions"]) for d in group]
+    add(table(HEAD, rows))
+add("Sections 1 to 5 below count **all the diseases of both tables together**, and their "
+    "per-disease tables have a row for each.\n")
+add("In a TOGETHER row, \"different links\" counts a link once even when two diseases show it, "
     "so it is smaller than the sum of the column. Counted, never named, as on the live site: "
     f"{T['counted_not_named'].get('not_approved', 0)} medicines not approved anywhere (or "
     f"withdrawn), {T['counted_not_named'].get('unclear_link', 0)} with an unclear link, and "
@@ -852,6 +897,9 @@ add(table(["Disease", "Approved cards (with a path)", "One-way proteins", "Both-
 add("NC = New clues, IT = In trials, opp = opposite on a one-way protein, both = on a both-ways "
     "protein, line = carries the live site's opposite-way line.\n")
 
+(HERE / "baseline.json").write_text(json.dumps(
+    {"meta": meta, "totals": totals, "totals_by_table": totals_by_table, "diseases": per_disease},
+    indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 notes = HERE / "NOT_VERIFIED.md"
 add(notes.read_text(encoding="utf-8") if notes.exists() else "## Things I did not verify\n\n(to be written)\n")
 (HERE / "REPORT.md").write_text("\n".join(out), encoding="utf-8")

@@ -2,11 +2,22 @@
 
 Facts about how the night went. None is a judgement.
 
-- **Two of the eight names were not studied, as the order says.** "Addison's disease": the
+- **Night order 2b added three diseases by id** (table 2). Kashish gave the ids; the names
+  are Open Targets' own. `EFO_1000642` is "hemochromatosis", `MONDO_0015129` is "chronic
+  primary adrenal insufficiency" (the one disease id in `moonlight/left_out.json`), and
+  `HP_0410149` is "Drug-induced anaphylaxis". No search was asked again for them.
+- **Drug-induced anaphylaxis has no cards at all.** Open Targets returned 1 linked protein
+  for it (not 25), no medicine acting on that protein was shown, and its own medicine list
+  is empty. So every count in its row is 0.
+- **Chronic primary adrenal insufficiency: 4 new clues are left out by hand**, as on the
+  live site (`moonlight/left_out.json`). Its 75 New clues cards are what is left. The 4 are
+  counted, not named.
+- **Two of the eight names were not studied in night order 2, as that order says.** "Addison's disease": the
   search put no entry on top as exactly what was typed (its two matches are listed in
   section 0). "hemochromatosis": two entries are exactly what was typed, `hemochromatosis`
   (EFO_1000642) and `hemochromatosis type 1` (MONDO_0021001, which Open Targets also calls
-  "hemochromatosis"). I did not choose between them.
+  "hemochromatosis"). I did not choose between them; in night order 2b Kashish chose the first
+  (table 2).
 - **Two names were found under another database name.** "primary sclerosing cholangitis" is
   an exact "also called" name of the entry `sclerosing cholangitis` (MONDO_0018646), and
   "interstitial cystitis" of `chronic interstitial cystitis` (EFO_1000869). Each was the
@@ -47,7 +58,7 @@ Facts about how the night went. None is a judgement.
 - **Whether a medicine "not approved elsewhere" is truly approved nowhere.** For a medicine on
   none of the top 25 proteins, only the forms on the disease's own list could be looked at.
 - **The live site.** Moonlight's site was not called. The cards were built by the repo's code
-  at the commit named above, and matched what `api.clues()` returns when run here.
-- **Open Targets' completeness**, and any disease outside these six.
+  at the commit named above, and matched what `api.clues()` returns when run here, for all nine.
+- **Open Targets' completeness**, and any disease outside these nine.
 - **The tests.** No code under `moonlight/`, `web/` or `tests/` was touched. The test suite
   was run once at the end only to see that the new folder breaks nothing.

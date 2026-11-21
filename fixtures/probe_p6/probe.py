@@ -34,6 +34,14 @@ and saves the raw answer under responses/. responses/index.jsonl has one
 line per request. An answer that is letter for letter the same as one
 already saved is not saved twice: the index line names the file.
 
+Night order 2b: diseases can also be given by id, with no search:
+
+    MOONLIGHT_CACHE_DIR=<a scratch folder> python3 fixtures/probe_p6/probe.py --ids EFO_1000642 ...
+
+Then the searches are not asked again and searches.json is left as it is.
+Each id's name is the one Open Targets gives for it (fetch.fetch_disease).
+The new diseases are added to diseases.json after the ones already there.
+
 It can be stopped and started again: a disease whose results file exists
 is skipped, and the notebook remembers good answers for a day.
 """
@@ -150,6 +158,10 @@ def send(body: dict) -> dict:
 
 def _now() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def load_json(path: pathlib.Path):
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def save(path: pathlib.Path, thing) -> None:
@@ -355,7 +367,19 @@ def main() -> int:
     started = _now()
     start_count = _count[0]
     version = fetch.data_version()
-    diseases = choose_diseases()
+    by_id = sys.argv[sys.argv.index("--ids") + 1:] if "--ids" in sys.argv else []
+    if by_id:
+        diseases = []
+        for disease_id in by_id:
+            record = fetch.fetch_disease(disease_id)  # the name is Open Targets' own
+            if record is None:
+                print(f"{disease_id}: Open Targets does not know this id", flush=True)
+                continue
+            print(f"{disease_id}: Open Targets calls it {record.name!r}", flush=True)
+            diseases.append({"set": "BY_ID", "id": record.id, "name": record.name,
+                             "asked_as": disease_id})
+    else:
+        diseases = choose_diseases()
     problems = []
     for number, entry in enumerate(diseases, start=1):
         out = RESULTS / f"{entry['id']}.json"
@@ -390,7 +414,11 @@ def main() -> int:
     runs = HERE / "runs.json"
     earlier = json.loads(runs.read_text(encoding="utf-8")) if runs.exists() else []
     save(runs, earlier + [run])
-    save(HERE / "diseases.json", {"data_version": version, "diseases": diseases})
+    listed = HERE / "diseases.json"
+    already = load_json(listed)["diseases"] if listed.exists() else []
+    known = {d["id"] for d in already}
+    save(listed, {"data_version": version,
+                  "diseases": already + [d for d in diseases if d["id"] not in known]})
     print("requests sent this run:", run["requests_sent_this_run"], "problems:", len(problems))
     return 1 if problems else 0
 
