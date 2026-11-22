@@ -510,18 +510,31 @@ ADDISON_FOUR = {
 
 
 def test_the_real_left_out_file_holds_the_four_for_addisons_and_nothing_else():
-    entries = json.loads(LEFT_OUT_FILE.read_text(encoding="utf-8"))
+    # Ticket 2.20 (22 Nov): the file now also holds entries for another
+    # disease (anaphylaxis, tests/test_anaphylaxis_left_out.py). "Nothing
+    # else" now means: nothing else for Addison's. Every entry in the file
+    # still has only the three keys, and the file is still ids and days only.
+    every_entry = json.loads(LEFT_OUT_FILE.read_text(encoding="utf-8"))
+    for entry in every_entry:
+        assert set(entry) == {"medicine_id", "disease_id", "date"}
+    entries = [entry for entry in every_entry if entry["disease_id"] == ADDISON]
     assert len(entries) == 4
     for entry in entries:
-        assert set(entry) == {"medicine_id", "disease_id", "date"}
-        assert entry["disease_id"] == ADDISON and entry["date"] == TODAY
+        assert entry["date"] == TODAY
     assert {entry["medicine_id"] for entry in entries} == ADDISON_FOUR
-    assert engine.left_out_by_hand() == {(medicine_id, ADDISON) for medicine_id in ADDISON_FOUR}
+    assert {pair for pair in engine.left_out_by_hand() if pair[1] == ADDISON} == {
+        (medicine_id, ADDISON) for medicine_id in ADDISON_FOUR}
     assert engine.pushes_wrong_way(ADDISON) == ADDISON_FOUR
     # Read as plain text: only the keys, the ids and the day. No names, no reasons.
     text = LEFT_OUT_FILE.read_text(encoding="utf-8")
+    other_diseases = [entry for entry in every_entry if entry["disease_id"] != ADDISON]
+    for entry in other_diseases:  # ticket 2.20: their ids and days, checked in their own test
+        assert re.fullmatch(r"CHEMBL\d+", entry["medicine_id"])
+        assert re.fullmatch(r"[A-Za-z]+_\d+", entry["disease_id"])
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry["date"])
+    others = {value for entry in other_diseases for value in entry.values()}
     for known in ["medicine_id", "disease_id", "date", ADDISON, TODAY,
-                  *sorted(ADDISON_FOUR, key=len, reverse=True)]:
+                  *sorted(ADDISON_FOUR | others, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
