@@ -34,8 +34,9 @@ MedicineForm, Medicine, Path.
   shown inside it. The item takes the strongest stage of its forms.
 - "Approved" means approved for at least one disease. A medicine that
   is not approved anywhere is left out.
-- A medicine withdrawn in any country does not count as approved. It
-  is left out.
+- A medicine withdrawn in any country does not count as approved. A
+  medicine with a WITHDRAWAL report is not shown, and the page says
+  how many (the count is ticket 2.22, not built yet).
 - New clue: approved, with no link to the disease. Main list.
 - Being studied: approved, and in trials for the disease. Separate box
   labelled "Already being studied for this disease", with the trial
@@ -71,7 +72,12 @@ Changing safety text or the grounding rule needs Kashish's explicit approval.
   - Never ask for the key, print it, log request headers, or write any key
     to a file.
   - Check the model name against the API's model list. Never assume it.
-- These are the only two outside data sources. Do not use any other.
+- Moonlight reads facts from three sources and no more: Open Targets,
+  ClinicalTrials.gov and UniProt. The last two are approved but not yet
+  built. Gemini is not a source of facts. It only explains. Do not use
+  any other.
+- If a fact has no source link, the card says so (ticket 2.23, not
+  built yet).
 - Check field names against live responses or files in fixtures/. Never
   assume a field name from memory.
 

@@ -66,3 +66,13 @@ Format: date, the decision, why.
 - 2026-11-16: When medicines sit in a folded box, the top of the Approved tab says how many, and each box says "Tap to open".
 - 2026-11-16: A disease is hidden from search only if "measurement" is its only group. The exact name a person typed is never hidden and always comes first.
 - 2026-11-16: If the typed words are one of the database's "also called" names, the list shows those words first and the database's own name under them.
+- 2026-11-17: A correction works only for the disease written on it.
+- 2026-11-17: One doctor's word is enough for a red warning. A missing warning on a wrong card is worse than a warning on a good one.
+- 2026-11-18: When the proof is weak, the card says so. We do not hide it.
+- 2026-11-19: A machine may add a note. Only a hand check may remove a card.
+- 2026-11-22: Moonlight reads three sources and no more. If a fact has no source link, the card says so. The three: Open Targets, ClinicalTrials.gov, UniProt. The last two are approved but not yet built.
+- 2026-11-22: Deferoxamine for hemochromatosis keeps its card with the second red warning (PR 48). 33 anaphylaxis clues left out by hand; isoxsuprine stays (PR 48).
+- 2026-11-22: A folded box for more medicines in trials (ticket 2.21, PR 49, open).
+- 2026-11-22: A medicine with a WITHDRAWAL report is not shown, and the page says how many (ticket 2.22, not built).
+- 2026-11-22: A card with no source link stays and says "The database gives no source link for this medicine." (ticket 2.23, not built).
+- 2026-11-22: The four opposite-way clues on the ADPKD page stay, with their line.
