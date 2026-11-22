@@ -1,0 +1,200 @@
+{
+ "diseases": 10,
+ "slots": 250,
+ "proteins": 231,
+ "reviewed_entries_found": {
+  "0": 0,
+  "1": 231,
+  "more": 0
+ },
+ "all_reviewed_human": true,
+ "gene_symbol_same_as_open_targets": 230,
+ "found_only_by_gene_name": 0,
+ "function": {
+  "proteins_with_function_text": 230,
+  "slots_with_function_text": 249,
+  "whole_text_chars": {
+   "n": 230,
+   "min": 39,
+   "median": 901.0,
+   "max": 7088,
+   "mean": 1118.0
+  },
+  "first_sentence_chars": {
+   "n": 230,
+   "min": 17,
+   "median": 130.0,
+   "max": 691,
+   "mean": 137.8
+  },
+  "first_sentence_words": {
+   "n": 230,
+   "min": 2,
+   "median": 18.0,
+   "max": 95,
+   "mean": 18.4
+  },
+  "first_sentence_150_chars_or_less": 138,
+  "first_sentence_300_chars_or_less": 227
+ },
+ "disease_notes": {
+  "proteins_with_any_disease_note": 168,
+  "proteins_with_a_named_disease": 165,
+  "proteins_with_only_free_text_notes": 3,
+  "named_diseases_per_protein_that_has_one": {
+   "n": 165,
+   "min": 1,
+   "median": 2,
+   "max": 15,
+   "mean": 2.6
+  }
+ },
+ "per_disease": [
+  {
+   "disease": "asthma",
+   "slots": 25,
+   "has_note": 8,
+   "names_ours": 0,
+   "mentions_ours_in_text_only": 1,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "type 2 diabetes mellitus",
+   "slots": 25,
+   "has_note": 20,
+   "names_ours": 12,
+   "mentions_ours_in_text_only": 1,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "epilepsy",
+   "slots": 25,
+   "has_note": 25,
+   "names_ours": 20,
+   "mentions_ours_in_text_only": 2,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 7
+  },
+  {
+   "disease": "rheumatoid arthritis",
+   "slots": 25,
+   "has_note": 17,
+   "names_ours": 5,
+   "mentions_ours_in_text_only": 0,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "breast cancer",
+   "slots": 25,
+   "has_note": 24,
+   "names_ours": 8,
+   "mentions_ours_in_text_only": 2,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "prostate cancer",
+   "slots": 25,
+   "has_note": 20,
+   "names_ours": 5,
+   "mentions_ours_in_text_only": 0,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "colorectal cancer",
+   "slots": 25,
+   "has_note": 25,
+   "names_ours": 8,
+   "mentions_ours_in_text_only": 4,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "cystic fibrosis",
+   "slots": 25,
+   "has_note": 11,
+   "names_ours": 1,
+   "mentions_ours_in_text_only": 0,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "Duchenne muscular dystrophy",
+   "slots": 25,
+   "has_note": 10,
+   "names_ours": 1,
+   "mentions_ours_in_text_only": 0,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 0
+  },
+  {
+   "disease": "spinal muscular atrophy",
+   "slots": 25,
+   "has_note": 25,
+   "names_ours": 9,
+   "mentions_ours_in_text_only": 2,
+   "direction_word_in_matching_note": 0,
+   "gain_or_loss_on_variant_line_of_matching_disease": 1
+  }
+ ],
+ "slots_total": {
+  "slots": 250,
+  "has_note": 185,
+  "names_ours": 69,
+  "mentions_ours_in_text_only": 12,
+  "direction_word_in_matching_note": 0,
+  "gain_or_loss_on_variant_line_of_matching_disease": 8
+ },
+ "direction_words": {
+  "gain of function": {
+   "proteins": 13,
+   "function text": 0,
+   "disease note": 1,
+   "other comment": 0,
+   "variant or mutagenesis line": 13
+  },
+  "loss of function": {
+   "proteins": 15,
+   "function text": 0,
+   "disease note": 1,
+   "other comment": 0,
+   "variant or mutagenesis line": 15
+  },
+  "dominant negative": {
+   "proteins": 8,
+   "function text": 3,
+   "disease note": 0,
+   "other comment": 2,
+   "variant or mutagenesis line": 4
+  },
+  "haploinsufficiency": {
+   "proteins": 1,
+   "function text": 0,
+   "disease note": 1,
+   "other comment": 0,
+   "variant or mutagenesis line": 0
+  },
+  "constitutive activation": {
+   "proteins": 12,
+   "function text": 3,
+   "disease note": 2,
+   "other comment": 1,
+   "variant or mutagenesis line": 8
+  },
+  "activating / inactivating": {
+   "proteins": 32,
+   "function text": 21,
+   "disease note": 1,
+   "other comment": 6,
+   "variant or mutagenesis line": 9
+  },
+  "gain or loss, anywhere": 24,
+  "both gain and loss in the same entry": 4,
+  "gain or loss, in function text or disease note": 1,
+  "gain or loss, only in variant or mutagenesis lines": 23
+ }
+}

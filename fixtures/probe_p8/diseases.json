@@ -1,0 +1,1580 @@
+{
+ "from": "origin/probe-baseline:fixtures/probe_p5/",
+ "rule": {
+  "COMMON": 4,
+  "CANCER": 3,
+  "RARE": 3
+ },
+ "diseases": [
+  {
+   "set": "COMMON",
+   "id": "MONDO_0004979",
+   "name": "asthma",
+   "targets": [
+    {
+     "id": "ENSG00000143631",
+     "symbol": "FLG",
+     "score": 0.7491090795778099
+    },
+    {
+     "id": "ENSG00000077238",
+     "symbol": "IL4R",
+     "score": 0.746773466615787
+    },
+    {
+     "id": "ENSG00000145777",
+     "symbol": "TSLP",
+     "score": 0.736503889146964
+    },
+    {
+     "id": "ENSG00000163485",
+     "symbol": "ADORA1",
+     "score": 0.7334358116097813
+    },
+    {
+     "id": "ENSG00000113525",
+     "symbol": "IL5",
+     "score": 0.7295739445353943
+    },
+    {
+     "id": "ENSG00000137033",
+     "symbol": "IL33",
+     "score": 0.7291041342871766
+    },
+    {
+     "id": "ENSG00000169194",
+     "symbol": "IL13",
+     "score": 0.7009923410497906
+    },
+    {
+     "id": "ENSG00000113448",
+     "symbol": "PDE4D",
+     "score": 0.6835189751515444
+    },
+    {
+     "id": "ENSG00000113580",
+     "symbol": "NR3C1",
+     "score": 0.6342010294225594
+    },
+    {
+     "id": "ENSG00000169252",
+     "symbol": "ADRB2",
+     "score": 0.6340823380638957
+    },
+    {
+     "id": "ENSG00000181072",
+     "symbol": "CHRM2",
+     "score": 0.6329094545116098
+    },
+    {
+     "id": "ENSG00000211891",
+     "symbol": "IGHE",
+     "score": 0.6291184652112587
+    },
+    {
+     "id": "ENSG00000173198",
+     "symbol": "CYSLTR1",
+     "score": 0.6233740718220604
+    },
+    {
+     "id": "ENSG00000065989",
+     "symbol": "PDE4A",
+     "score": 0.6231089670796988
+    },
+    {
+     "id": "ENSG00000150594",
+     "symbol": "ADRA2A",
+     "score": 0.6152878439982719
+    },
+    {
+     "id": "ENSG00000091181",
+     "symbol": "IL5RA",
+     "score": 0.6102527035795351
+    },
+    {
+     "id": "ENSG00000128271",
+     "symbol": "ADORA2A",
+     "score": 0.6099595341025874
+    },
+    {
+     "id": "ENSG00000115602",
+     "symbol": "IL33R",
+     "score": 0.6097999222795758
+    },
+    {
+     "id": "ENSG00000170425",
+     "symbol": "ADORA2B",
+     "score": 0.6089760268556055
+    },
+    {
+     "id": "ENSG00000133019",
+     "symbol": "CHRM3",
+     "score": 0.6088701377456067
+    },
+    {
+     "id": "ENSG00000184588",
+     "symbol": "PDE4B",
+     "score": 0.6083009566330552
+    },
+    {
+     "id": "ENSG00000282608",
+     "symbol": "ADORA3",
+     "score": 0.6055544622204362
+    },
+    {
+     "id": "ENSG00000152270",
+     "symbol": "PDE3B",
+     "score": 0.6048489944901652
+    },
+    {
+     "id": "ENSG00000172572",
+     "symbol": "PDE3A",
+     "score": 0.603358341508018
+    },
+    {
+     "id": "ENSG00000105650",
+     "symbol": "PDE4C",
+     "score": 0.6023882305823721
+    }
+   ],
+   "exact_synonyms": [
+    "ASTHMA NOS W (AC) EXAC",
+    "Airway hyperreactivity",
+    "Asthma (disorder)",
+    "Asthma NOS",
+    "Asthma NOS (disorder)",
+    "Asthma unspecified",
+    "Asthma unspecified (disorder)",
+    "Asthma, Bronchial",
+    "Asthma, unspecified",
+    "Asthma, unspecified type, with acute exacerbation",
+    "Asthma, unspecified type, without mention of status asthmaticus",
+    "Asthmas",
+    "Asthmatic",
+    "BA",
+    "BHR - Bronchial hyperreactivity",
+    "Bronchial Hyperreactivities",
+    "Bronchial asthma",
+    "Bronchial hyperreactivity",
+    "Bronchial hyperresponsiveness",
+    "Bronchial hypersensitivity",
+    "DUST PNEUMONOPATHY NEC",
+    "Exercise induced asthma",
+    "Exercise-induced asthma",
+    "Exercise-induced asthma (disorder)",
+    "Hyperreactive airway disease",
+    "Hyperreactive airways disease",
+    "Hyperreactivities, Bronchial",
+    "Hyperreactivity, Bronchial",
+    "Other forms of asthma",
+    "Pneumonopathy due to inhalation of other dust",
+    "Pneumopathy due to inhalation of other dust",
+    "Pneumopathy due to inhalation of other dust (disorder)",
+    "Pneumopathy due to inhalation of other dust NOS",
+    "Pneumopathy due to inhalation of other dust NOS (disorder)",
+    "chronic obstructive asthma",
+    "chronic obstructive asthma with acute exacerbation",
+    "chronic obstructive asthma with status asthmaticus"
+   ]
+  },
+  {
+   "set": "COMMON",
+   "id": "MONDO_0005148",
+   "name": "type 2 diabetes mellitus",
+   "targets": [
+    {
+     "id": "ENSG00000187486",
+     "symbol": "KCNJ11",
+     "score": 0.8772147341544883
+    },
+    {
+     "id": "ENSG00000006071",
+     "symbol": "ABCC8",
+     "score": 0.8764122840406745
+    },
+    {
+     "id": "ENSG00000106633",
+     "symbol": "GCK",
+     "score": 0.8679864643690597
+    },
+    {
+     "id": "ENSG00000132170",
+     "symbol": "PPARG",
+     "score": 0.8609754807916995
+    },
+    {
+     "id": "ENSG00000135100",
+     "symbol": "HNF1A",
+     "score": 0.8498006482361665
+    },
+    {
+     "id": "ENSG00000101076",
+     "symbol": "HNF4A",
+     "score": 0.7992035751395097
+    },
+    {
+     "id": "ENSG00000275410",
+     "symbol": "HNF1B",
+     "score": 0.7768015094007761
+    },
+    {
+     "id": "ENSG00000171105",
+     "symbol": "INSR",
+     "score": 0.7702043607097213
+    },
+    {
+     "id": "ENSG00000112164",
+     "symbol": "GLP1R",
+     "score": 0.7686888126020472
+    },
+    {
+     "id": "ENSG00000109501",
+     "symbol": "WFS1",
+     "score": 0.7639156818834071
+    },
+    {
+     "id": "ENSG00000163581",
+     "symbol": "SLC2A2",
+     "score": 0.745443006103505
+    },
+    {
+     "id": "ENSG00000106331",
+     "symbol": "PAX4",
+     "score": 0.7343882913133891
+    },
+    {
+     "id": "ENSG00000164756",
+     "symbol": "SLC30A8",
+     "score": 0.7236769788709322
+    },
+    {
+     "id": "ENSG00000105221",
+     "symbol": "AKT2",
+     "score": 0.7207451387369469
+    },
+    {
+     "id": "ENSG00000115159",
+     "symbol": "GPD2",
+     "score": 0.7093948664405427
+    },
+    {
+     "id": "ENSG00000010310",
+     "symbol": "GIPR",
+     "score": 0.6960778874224164
+    },
+    {
+     "id": "ENSG00000164258",
+     "symbol": "NDUFS4",
+     "score": 0.6890528215922364
+    },
+    {
+     "id": "ENSG00000145996",
+     "symbol": "CDKAL1",
+     "score": 0.6880306713750315
+    },
+    {
+     "id": "ENSG00000162992",
+     "symbol": "NEUROD1",
+     "score": 0.6865027257533113
+    },
+    {
+     "id": "ENSG00000148737",
+     "symbol": "TCF7L2",
+     "score": 0.6841589275293578
+    },
+    {
+     "id": "ENSG00000169047",
+     "symbol": "IRS1",
+     "score": 0.6585175744317724
+    },
+    {
+     "id": "ENSG00000146830",
+     "symbol": "GIGYF1",
+     "score": 0.6574462951508908
+    },
+    {
+     "id": "ENSG00000198888",
+     "symbol": "MT-ND1",
+     "score": 0.6555397375776173
+    },
+    {
+     "id": "ENSG00000197594",
+     "symbol": "ENPP1",
+     "score": 0.6548632202858855
+    },
+    {
+     "id": "ENSG00000166136",
+     "symbol": "NDUFB8",
+     "score": 0.654862573073902
+    }
+   ],
+   "exact_synonyms": [
+    "Adult-Onset Diabetes Mellitus",
+    "DIABETES MELLITUS TYPE 02",
+    "Diabetes Mellitus, Adult Onset",
+    "Diabetes Mellitus, Adult-Onset",
+    "Diabetes Mellitus, Ketosis Resistant",
+    "Diabetes Mellitus, Ketosis-Resistant",
+    "Diabetes Mellitus, Maturity Onset",
+    "Diabetes Mellitus, Maturity-Onset",
+    "Diabetes Mellitus, Non Insulin Dependent",
+    "Diabetes Mellitus, Non-Insulin-Dependent",
+    "Diabetes Mellitus, Noninsulin Dependent",
+    "Diabetes Mellitus, Slow Onset",
+    "Diabetes Mellitus, Slow-Onset",
+    "Diabetes Mellitus, Stable",
+    "Ketosis-Resistant Diabetes Mellitus",
+    "MODY",
+    "Maturity Onset Diabetes Mellitus",
+    "Maturity-Onset Diabetes Mellitus",
+    "NIDDM",
+    "Slow-Onset Diabetes Mellitus",
+    "Stable Diabetes Mellitus",
+    "T2D",
+    "T2DM",
+    "T2DM - type 2 diabetes mellitus",
+    "adult onset diabetes",
+    "adult-onset diabetes",
+    "diabetes mellitis type 2",
+    "diabetes mellitis type II",
+    "diabetes mellitus type 2",
+    "diabetes mellitus, noninsulin-dependent",
+    "diabetes mellitus, noninsulin-dependent, association with",
+    "diabetes mellitus, noninsulin-dependent, late onset",
+    "diabetes mellitus, type 2",
+    "diabetes mellitus, type II",
+    "diabetes, type 2",
+    "insulin resistance, severe, digenic",
+    "non-insulin dependent diabetes",
+    "non-insulin dependent diabetes mellitus",
+    "non-insulin-dependent diabetes mellitus",
+    "noninsulin dependent diabetes",
+    "noninsulin-dependent diabetes mellitus",
+    "type 2 diabetes",
+    "type 2 diabetes mellitus",
+    "type 2 diabetes mellitus non-insulin dependent",
+    "type II diabetes",
+    "type II diabetes mellitus"
+   ]
+  },
+  {
+   "set": "COMMON",
+   "id": "MONDO_0005027",
+   "name": "epilepsy",
+   "targets": [
+    {
+     "id": "ENSG00000144285",
+     "symbol": "SCN1A",
+     "score": 0.9270757468740322
+    },
+    {
+     "id": "ENSG00000136531",
+     "symbol": "SCN2A",
+     "score": 0.9062003141860748
+    },
+    {
+     "id": "ENSG00000196876",
+     "symbol": "SCN8A",
+     "score": 0.904973416740029
+    },
+    {
+     "id": "ENSG00000113327",
+     "symbol": "GABRG2",
+     "score": 0.9030684327547185
+    },
+    {
+     "id": "ENSG00000153253",
+     "symbol": "SCN3A",
+     "score": 0.8946067070527205
+    },
+    {
+     "id": "ENSG00000075043",
+     "symbol": "KCNQ2",
+     "score": 0.8881503754018533
+    },
+    {
+     "id": "ENSG00000117394",
+     "symbol": "SLC2A1",
+     "score": 0.8871143948434926
+    },
+    {
+     "id": "ENSG00000022355",
+     "symbol": "GABRA1",
+     "score": 0.8838310967688117
+    },
+    {
+     "id": "ENSG00000183454",
+     "symbol": "GRIN2A",
+     "score": 0.883645675315195
+    },
+    {
+     "id": "ENSG00000141837",
+     "symbol": "CACNA1A",
+     "score": 0.8829841507643547
+    },
+    {
+     "id": "ENSG00000166206",
+     "symbol": "GABRB3",
+     "score": 0.8791732281823474
+    },
+    {
+     "id": "ENSG00000166340",
+     "symbol": "TPP1",
+     "score": 0.8730293754353204
+    },
+    {
+     "id": "ENSG00000128973",
+     "symbol": "CLN6",
+     "score": 0.8698054903579127
+    },
+    {
+     "id": "ENSG00000136854",
+     "symbol": "STXBP1",
+     "score": 0.8669233728105021
+    },
+    {
+     "id": "ENSG00000107147",
+     "symbol": "KCNT1",
+     "score": 0.8663919144451317
+    },
+    {
+     "id": "ENSG00000008086",
+     "symbol": "CDKL5",
+     "score": 0.8654430480346577
+    },
+    {
+     "id": "ENSG00000145864",
+     "symbol": "GABRB2",
+     "score": 0.8640505817914721
+    },
+    {
+     "id": "ENSG00000165194",
+     "symbol": "PCDH19",
+     "score": 0.8635603938859729
+    },
+    {
+     "id": "ENSG00000100150",
+     "symbol": "DEPDC5",
+     "score": 0.8620060118320503
+    },
+    {
+     "id": "ENSG00000131238",
+     "symbol": "PPT1",
+     "score": 0.8607338751370803
+    },
+    {
+     "id": "ENSG00000182372",
+     "symbol": "CLN8",
+     "score": 0.8589710179839387
+    },
+    {
+     "id": "ENSG00000186153",
+     "symbol": "WWOX",
+     "score": 0.8547296019496016
+    },
+    {
+     "id": "ENSG00000102805",
+     "symbol": "CLN5",
+     "score": 0.8529772651263706
+    },
+    {
+     "id": "ENSG00000187566",
+     "symbol": "NHLRC1",
+     "score": 0.8492576957276886
+    },
+    {
+     "id": "ENSG00000167371",
+     "symbol": "PRRT2",
+     "score": 0.8454434160495345
+    }
+   ],
+   "exact_synonyms": [
+    "EF - Epileptic fit",
+    "EP - Epilepsy",
+    "EPILEP NEC W/O INTR EPIL",
+    "EPILEP NOS W/O INTR EPIL",
+    "EPILEPSY NEC W INTR EPIL",
+    "EPILEPSY NOS W INTR EPIL",
+    "Epilectic attack, NOS",
+    "Epilepsy (disorder)",
+    "Epilepsy NOS",
+    "Epilepsy NOS (disorder)",
+    "Epilepsy and recurrent seizures",
+    "Epilepsy, NOS",
+    "Epilepsy, unspecified",
+    "Epilepsy, unspecified, with intractable epilepsy",
+    "Epilepsy, unspecified, without mention of intractable epilepsy",
+    "Epileptic",
+    "Epileptic Seizure",
+    "Epileptic attack",
+    "Epileptic attack, NOS",
+    "Epileptic convulsions",
+    "Epileptic convulsions, NOS",
+    "Epileptic disorder",
+    "Epileptic disorder, NOS",
+    "Epileptic fit",
+    "Epileptic fits",
+    "Epileptic fits, NOS",
+    "Epileptic seizure (finding)",
+    "Epileptic seizures",
+    "Epileptic seizures, NOS",
+    "Generalised convulsion",
+    "Generalised fit",
+    "Generalised seizure",
+    "Generalized convulsion",
+    "Generalized fit",
+    "Generalized seizure",
+    "Generalized seizure (finding)",
+    "Other forms of epilepsy",
+    "Other forms of epilepsy (disorder)",
+    "Other forms of epilepsy NOS",
+    "Other forms of epilepsy NOS (disorder)",
+    "Other forms of epilepsy and recurrent seizures",
+    "Other forms of epilepsy, with intractable epilepsy",
+    "Other forms of epilepsy, without mention of intractable epilepsy",
+    "Seizure disorder (disorder)",
+    "[X]Other epilepsy",
+    "[X]Other epilepsy (disorder)",
+    "epilepsy",
+    "seizure disorder"
+   ]
+  },
+  {
+   "set": "COMMON",
+   "id": "MONDO_0008383",
+   "name": "rheumatoid arthritis",
+   "targets": [
+    {
+     "id": "ENSG00000105397",
+     "symbol": "TYK2",
+     "score": 0.763825465200706
+    },
+    {
+     "id": "ENSG00000160712",
+     "symbol": "IL6R",
+     "score": 0.751690492375485
+    },
+    {
+     "id": "ENSG00000113302",
+     "symbol": "IL12B",
+     "score": 0.7452752344606981
+    },
+    {
+     "id": "ENSG00000162434",
+     "symbol": "JAK1",
+     "score": 0.718689448504761
+    },
+    {
+     "id": "ENSG00000056972",
+     "symbol": "TRAF3IP2",
+     "score": 0.7183131839800645
+    },
+    {
+     "id": "ENSG00000232810",
+     "symbol": "TNF",
+     "score": 0.7164118889890062
+    },
+    {
+     "id": "ENSG00000159339",
+     "symbol": "PADI4",
+     "score": 0.6923380096806654
+    },
+    {
+     "id": "ENSG00000096968",
+     "symbol": "JAK2",
+     "score": 0.6885846799619112
+    },
+    {
+     "id": "ENSG00000134242",
+     "symbol": "PTPN22",
+     "score": 0.6878443398922724
+    },
+    {
+     "id": "ENSG00000240972",
+     "symbol": "MIF",
+     "score": 0.680249427109468
+    },
+    {
+     "id": "ENSG00000113580",
+     "symbol": "NR3C1",
+     "score": 0.6393100479077852
+    },
+    {
+     "id": "ENSG00000128604",
+     "symbol": "IRF5",
+     "score": 0.6375596757742555
+    },
+    {
+     "id": "ENSG00000073756",
+     "symbol": "PTGS2",
+     "score": 0.634733199239636
+    },
+    {
+     "id": "ENSG00000112115",
+     "symbol": "IL17A",
+     "score": 0.6327318325072068
+    },
+    {
+     "id": "ENSG00000110944",
+     "symbol": "IL23A",
+     "score": 0.6311620870976691
+    },
+    {
+     "id": "ENSG00000196664",
+     "symbol": "TLR7",
+     "score": 0.6296002664441251
+    },
+    {
+     "id": "ENSG00000065989",
+     "symbol": "PDE4A",
+     "score": 0.6264746276559336
+    },
+    {
+     "id": "ENSG00000105639",
+     "symbol": "JAK3",
+     "score": 0.6238803666292523
+    },
+    {
+     "id": "ENSG00000121594",
+     "symbol": "CD80",
+     "score": 0.6236395960257063
+    },
+    {
+     "id": "ENSG00000160856",
+     "symbol": "FCRL3",
+     "score": 0.6232057707598775
+    },
+    {
+     "id": "ENSG00000114013",
+     "symbol": "CD86",
+     "score": 0.6229648502038245
+    },
+    {
+     "id": "ENSG00000239732",
+     "symbol": "TLR9",
+     "score": 0.6222788689553616
+    },
+    {
+     "id": "ENSG00000228716",
+     "symbol": "DHFR",
+     "score": 0.6183074059089784
+    },
+    {
+     "id": "ENSG00000163599",
+     "symbol": "CTLA4",
+     "score": 0.6180253274548425
+    },
+    {
+     "id": "ENSG00000095303",
+     "symbol": "PTGS1",
+     "score": 0.6172032042225579
+    }
+   ],
+   "exact_synonyms": [
+    "Arthritis or polyarthritis, rheumatic",
+    "Arthritis, Rheumatoid",
+    "Chronic rheumatic arthritis",
+    "Proliferative arthritis",
+    "RA",
+    "RA - Rheumatoid arthritis",
+    "RhA - Rheumatoid arthritis",
+    "Rheumatic gout",
+    "Rheumatoid arthritis (disorder)",
+    "Rheumatoid arthritis NOS",
+    "Rheumatoid arthritis NOS (disorder)",
+    "Rheumatoid disease",
+    "atrophic Arthritis",
+    "rheumatoid arthritis"
+   ]
+  },
+  {
+   "set": "CANCER",
+   "id": "MONDO_0007254",
+   "name": "breast cancer",
+   "targets": [
+    {
+     "id": "ENSG00000139618",
+     "symbol": "BRCA2",
+     "score": 0.9251085451993997
+    },
+    {
+     "id": "ENSG00000012048",
+     "symbol": "BRCA1",
+     "score": 0.9194443258299257
+    },
+    {
+     "id": "ENSG00000183765",
+     "symbol": "CHEK2",
+     "score": 0.883711182935059
+    },
+    {
+     "id": "ENSG00000083093",
+     "symbol": "PALB2",
+     "score": 0.8830551393973749
+    },
+    {
+     "id": "ENSG00000121879",
+     "symbol": "PIK3CA",
+     "score": 0.8776045843448664
+    },
+    {
+     "id": "ENSG00000149311",
+     "symbol": "ATM",
+     "score": 0.8670173650584002
+    },
+    {
+     "id": "ENSG00000141510",
+     "symbol": "TP53",
+     "score": 0.865037302344107
+    },
+    {
+     "id": "ENSG00000091831",
+     "symbol": "ESR1",
+     "score": 0.8586552367077667
+    },
+    {
+     "id": "ENSG00000142208",
+     "symbol": "AKT1",
+     "score": 0.8327584282582509
+    },
+    {
+     "id": "ENSG00000141736",
+     "symbol": "ERBB2",
+     "score": 0.8322372160178141
+    },
+    {
+     "id": "ENSG00000108384",
+     "symbol": "RAD51C",
+     "score": 0.8224462200644425
+    },
+    {
+     "id": "ENSG00000136492",
+     "symbol": "BRIP1",
+     "score": 0.8189733575024325
+    },
+    {
+     "id": "ENSG00000039068",
+     "symbol": "CDH1",
+     "score": 0.8156613168776804
+    },
+    {
+     "id": "ENSG00000138376",
+     "symbol": "BARD1",
+     "score": 0.8051908612638072
+    },
+    {
+     "id": "ENSG00000171862",
+     "symbol": "PTEN",
+     "score": 0.7967728878861421
+    },
+    {
+     "id": "ENSG00000185379",
+     "symbol": "RAD51D",
+     "score": 0.7861824472077518
+    },
+    {
+     "id": "ENSG00000066468",
+     "symbol": "FGFR2",
+     "score": 0.7772716975289415
+    },
+    {
+     "id": "ENSG00000095015",
+     "symbol": "MAP3K1",
+     "score": 0.7719271300208279
+    },
+    {
+     "id": "ENSG00000146648",
+     "symbol": "EGFR",
+     "score": 0.7572950508341676
+    },
+    {
+     "id": "ENSG00000135111",
+     "symbol": "TBX3",
+     "score": 0.7563773870325938
+    },
+    {
+     "id": "ENSG00000105810",
+     "symbol": "CDK6",
+     "score": 0.7441216083016393
+    },
+    {
+     "id": "ENSG00000107485",
+     "symbol": "GATA3",
+     "score": 0.7388269085008862
+    },
+    {
+     "id": "ENSG00000178568",
+     "symbol": "ERBB4",
+     "score": 0.738504206923606
+    },
+    {
+     "id": "ENSG00000110092",
+     "symbol": "CCND1",
+     "score": 0.7383769102353269
+    },
+    {
+     "id": "ENSG00000135446",
+     "symbol": "CDK4",
+     "score": 0.7325238864752485
+    }
+   ],
+   "exact_synonyms": [
+    "BC",
+    "breast cancer",
+    "cancer of breast",
+    "malignant breast neoplasm",
+    "malignant breast tumor",
+    "malignant breast tumour",
+    "malignant neoplasm of breast",
+    "malignant neoplasm of the breast",
+    "malignant tumor of breast",
+    "malignant tumor of the breast",
+    "malignant tumour of breast",
+    "malignant tumour of the breast"
+   ]
+  },
+  {
+   "set": "CANCER",
+   "id": "MONDO_0008315",
+   "name": "prostate cancer",
+   "targets": [
+    {
+     "id": "ENSG00000169083",
+     "symbol": "AR",
+     "score": 0.867717963403866
+    },
+    {
+     "id": "ENSG00000139618",
+     "symbol": "BRCA2",
+     "score": 0.8534854537929437
+    },
+    {
+     "id": "ENSG00000171862",
+     "symbol": "PTEN",
+     "score": 0.8418270368739333
+    },
+    {
+     "id": "ENSG00000183765",
+     "symbol": "CHEK2",
+     "score": 0.8034401675698001
+    },
+    {
+     "id": "ENSG00000141510",
+     "symbol": "TP53",
+     "score": 0.7719701495988552
+    },
+    {
+     "id": "ENSG00000149311",
+     "symbol": "ATM",
+     "score": 0.7655904671803027
+    },
+    {
+     "id": "ENSG00000184012",
+     "symbol": "TMPRSS2",
+     "score": 0.7421508595906642
+    },
+    {
+     "id": "ENSG00000006744",
+     "symbol": "ELAC2",
+     "score": 0.7413093391729192
+    },
+    {
+     "id": "ENSG00000159184",
+     "symbol": "HOXB13",
+     "score": 0.7409909172248237
+    },
+    {
+     "id": "ENSG00000129514",
+     "symbol": "FOXA1",
+     "score": 0.7277914821694456
+    },
+    {
+     "id": "ENSG00000121067",
+     "symbol": "SPOP",
+     "score": 0.720780118826266
+    },
+    {
+     "id": "ENSG00000142515",
+     "symbol": "KLK3",
+     "score": 0.6822561494613334
+    },
+    {
+     "id": "ENSG00000039068",
+     "symbol": "CDH1",
+     "score": 0.6737818635548405
+    },
+    {
+     "id": "ENSG00000167258",
+     "symbol": "CDK12",
+     "score": 0.6727136214678869
+    },
+    {
+     "id": "ENSG00000140836",
+     "symbol": "ZFHX3",
+     "score": 0.6681062829731295
+    },
+    {
+     "id": "ENSG00000168769",
+     "symbol": "TET2",
+     "score": 0.667721120308255
+    },
+    {
+     "id": "ENSG00000164362",
+     "symbol": "TERT",
+     "score": 0.6634275975776452
+    },
+    {
+     "id": "ENSG00000148795",
+     "symbol": "CYP17A1",
+     "score": 0.6597533843480461
+    },
+    {
+     "id": "ENSG00000167553",
+     "symbol": "TUBA1C",
+     "score": 0.657481838378902
+    },
+    {
+     "id": "ENSG00000111276",
+     "symbol": "CDKN1B",
+     "score": 0.6552049059483429
+    },
+    {
+     "id": "ENSG00000055609",
+     "symbol": "KMT2C",
+     "score": 0.653199964907921
+    },
+    {
+     "id": "ENSG00000134982",
+     "symbol": "APC",
+     "score": 0.652851418034912
+    },
+    {
+     "id": "ENSG00000212993",
+     "symbol": "POU5F1B",
+     "score": 0.6522452150037326
+    },
+    {
+     "id": "ENSG00000014257",
+     "symbol": "ACP3",
+     "score": 0.6494365273957238
+    },
+    {
+     "id": "ENSG00000167548",
+     "symbol": "KMT2D",
+     "score": 0.6462211036666955
+    }
+   ],
+   "exact_synonyms": [
+    "cancer of prostate gland",
+    "malignant neoplasm of prostate",
+    "malignant neoplasm of prostate gland",
+    "malignant neoplasm of the prostate",
+    "malignant prostate gland neoplasm",
+    "malignant prostate neoplasm",
+    "malignant prostate tumor",
+    "malignant prostate tumour",
+    "malignant tumor of prostate",
+    "malignant tumor of the prostate",
+    "malignant tumour of prostate",
+    "malignant tumour of the prostate",
+    "prostate gland cancer"
+   ]
+  },
+  {
+   "set": "CANCER",
+   "id": "MONDO_0005575",
+   "name": "colorectal cancer",
+   "targets": [
+    {
+     "id": "ENSG00000095002",
+     "symbol": "MSH2",
+     "score": 0.9245589506857864
+    },
+    {
+     "id": "ENSG00000076242",
+     "symbol": "MLH1",
+     "score": 0.9207725823983338
+    },
+    {
+     "id": "ENSG00000116062",
+     "symbol": "MSH6",
+     "score": 0.9182686903104107
+    },
+    {
+     "id": "ENSG00000122512",
+     "symbol": "PMS2",
+     "score": 0.8825167622587384
+    },
+    {
+     "id": "ENSG00000134982",
+     "symbol": "APC",
+     "score": 0.8792887684601447
+    },
+    {
+     "id": "ENSG00000157764",
+     "symbol": "BRAF",
+     "score": 0.8393935913988426
+    },
+    {
+     "id": "ENSG00000141510",
+     "symbol": "TP53",
+     "score": 0.8346959402362145
+    },
+    {
+     "id": "ENSG00000121879",
+     "symbol": "PIK3CA",
+     "score": 0.8177834256640503
+    },
+    {
+     "id": "ENSG00000133703",
+     "symbol": "KRAS",
+     "score": 0.8092921910031315
+    },
+    {
+     "id": "ENSG00000119888",
+     "symbol": "EPCAM",
+     "score": 0.7954510031280793
+    },
+    {
+     "id": "ENSG00000141646",
+     "symbol": "SMAD4",
+     "score": 0.7883428417087656
+    },
+    {
+     "id": "ENSG00000138081",
+     "symbol": "FBXO11",
+     "score": 0.7870127321282913
+    },
+    {
+     "id": "ENSG00000149311",
+     "symbol": "ATM",
+     "score": 0.7830789999382839
+    },
+    {
+     "id": "ENSG00000132781",
+     "symbol": "MUTYH",
+     "score": 0.7825655144169142
+    },
+    {
+     "id": "ENSG00000146648",
+     "symbol": "EGFR",
+     "score": 0.7733275908084274
+    },
+    {
+     "id": "ENSG00000066468",
+     "symbol": "FGFR2",
+     "score": 0.7732776112554807
+    },
+    {
+     "id": "ENSG00000177084",
+     "symbol": "POLE",
+     "score": 0.7730707053993298
+    },
+    {
+     "id": "ENSG00000148737",
+     "symbol": "TCF7L2",
+     "score": 0.7615096616976208
+    },
+    {
+     "id": "ENSG00000109670",
+     "symbol": "FBXW7",
+     "score": 0.7585147552399107
+    },
+    {
+     "id": "ENSG00000062822",
+     "symbol": "POLD1",
+     "score": 0.7570257319795212
+    },
+    {
+     "id": "ENSG00000037280",
+     "symbol": "FLT4",
+     "score": 0.7524749402690046
+    },
+    {
+     "id": "ENSG00000141736",
+     "symbol": "ERBB2",
+     "score": 0.7516768500032581
+    },
+    {
+     "id": "ENSG00000128052",
+     "symbol": "KDR",
+     "score": 0.7495727083928627
+    },
+    {
+     "id": "ENSG00000068078",
+     "symbol": "FGFR3",
+     "score": 0.7483324788898603
+    },
+    {
+     "id": "ENSG00000139618",
+     "symbol": "BRCA2",
+     "score": 0.7465488283354084
+    }
+   ],
+   "exact_synonyms": [
+    "cancer of colorectum",
+    "cancer of large bowel",
+    "cancer of large intestine",
+    "cancer of the large bowel",
+    "colon cancer, advanced, somatic",
+    "colon cancer, somatic",
+    "colorectal cancer",
+    "colorectal cancer with chromosomal instability, somatic",
+    "colorectal cancer, autosomal dominant, somatic mutation",
+    "colorectal cancer, somatic",
+    "colorectal cancer, susceptibility to, autosomal dominant, somatic mutation",
+    "colorectum cancer",
+    "malignant colorectal neoplasm",
+    "malignant colorectal tumor",
+    "malignant colorectal tumour",
+    "malignant colorectum neoplasm",
+    "malignant large bowel neoplasm",
+    "malignant large bowel tumor",
+    "malignant large bowel tumour",
+    "malignant large intestine neoplasm",
+    "malignant large intestine tumor",
+    "malignant large intestine tumour",
+    "malignant neoplasm of colorectum",
+    "malignant neoplasm of large bowel",
+    "malignant neoplasm of large intestine",
+    "malignant neoplasm of the large bowel",
+    "malignant neoplasm of the large intestine",
+    "malignant tumor of large bowel",
+    "malignant tumor of large intestine",
+    "malignant tumor of the large bowel",
+    "malignant tumor of the large intestine",
+    "malignant tumour of large bowel",
+    "malignant tumour of large intestine",
+    "malignant tumour of the large bowel",
+    "malignant tumour of the large intestine"
+   ]
+  },
+  {
+   "set": "RARE",
+   "id": "MONDO_0009061",
+   "name": "cystic fibrosis",
+   "targets": [
+    {
+     "id": "ENSG00000001626",
+     "symbol": "CFTR",
+     "score": 0.9211437412666207
+    },
+    {
+     "id": "ENSG00000143947",
+     "symbol": "RPS27A",
+     "score": 0.5590034801739948
+    },
+    {
+     "id": "ENSG00000204308",
+     "symbol": "RNF5",
+     "score": 0.48084106753843
+    },
+    {
+     "id": "ENSG00000150991",
+     "symbol": "UBC",
+     "score": 0.4664169115565105
+    },
+    {
+     "id": "ENSG00000165280",
+     "symbol": "VCP",
+     "score": 0.464666605307334
+    },
+    {
+     "id": "ENSG00000138942",
+     "symbol": "RNF185",
+     "score": 0.4638227176293007
+    },
+    {
+     "id": "ENSG00000135506",
+     "symbol": "OS9",
+     "score": 0.4638227176293007
+    },
+    {
+     "id": "ENSG00000072849",
+     "symbol": "DERL2",
+     "score": 0.4638227176293007
+    },
+    {
+     "id": "ENSG00000136986",
+     "symbol": "DERL1",
+     "score": 0.46262158310157553
+    },
+    {
+     "id": "ENSG00000107566",
+     "symbol": "ERLIN1",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000147475",
+     "symbol": "ERLIN2",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000170315",
+     "symbol": "UBB",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000071537",
+     "symbol": "SEL1L",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000099958",
+     "symbol": "DERL3",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000068912",
+     "symbol": "ERLEC1",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000221983",
+     "symbol": "UBA52",
+     "score": 0.4619748183558772
+    },
+    {
+     "id": "ENSG00000105329",
+     "symbol": "TGFB1",
+     "score": 0.4462835679597198
+    },
+    {
+     "id": "ENSG00000174502",
+     "symbol": "SLC26A9",
+     "score": 0.44227341274489157
+    },
+    {
+     "id": "ENSG00000197249",
+     "symbol": "SERPINA1",
+     "score": 0.4208099038109706
+    },
+    {
+     "id": "ENSG00000010704",
+     "symbol": "HFE",
+     "score": 0.41813852520496186
+    },
+    {
+     "id": "ENSG00000018280",
+     "symbol": "SLC11A1",
+     "score": 0.4007123947276325
+    },
+    {
+     "id": "ENSG00000027697",
+     "symbol": "IFNGR1",
+     "score": 0.3975518139697256
+    },
+    {
+     "id": "ENSG00000172809",
+     "symbol": "RPL38",
+     "score": 0.3960883326372927
+    },
+    {
+     "id": "ENSG00000268104",
+     "symbol": "SLC6A14",
+     "score": 0.3959799564693109
+    },
+    {
+     "id": "ENSG00000159128",
+     "symbol": "IFNGR2",
+     "score": 0.3948652764093801
+    }
+   ],
+   "exact_synonyms": [
+    "CF",
+    "CF - Cystic fibrosis",
+    "CYSTIC FIBROS W/O ILEUS",
+    "Cystic fibrosis (disorder)",
+    "Cystic fibrosis NOS",
+    "Cystic fibrosis NOS (disorder)",
+    "Cystic fibrosis without mention of meconium ileus",
+    "Fibrocystic disease",
+    "Meconium ileus in cystic fibrosis (disorder)",
+    "Meconium obstruction of intestine in mucoviscidosis",
+    "cystic fibrosis",
+    "cystic fibrosis lung disease, modifier of",
+    "cystic fibrosis with combined manifestations",
+    "cystic fibrosis with gastrointestinal manifestations",
+    "cystic fibrosis with meconium ileus",
+    "cystic fibrosis with meconium ileus (disorder)",
+    "cystic fibrosis with other manifestations",
+    "cystic fibrosis with other manifestations (disorder)",
+    "cystic fibrosis with pulmonary manifestations",
+    "cystic fibrosis with pulmonary manifestations (disorder)",
+    "mucoviscidosis",
+    "pseudomonas aeruginosa, susceptibility to chronic infection by, in cystic fibrosis"
+   ]
+  },
+  {
+   "set": "RARE",
+   "id": "MONDO_0010679",
+   "name": "Duchenne muscular dystrophy",
+   "targets": [
+    {
+     "id": "ENSG00000198947",
+     "symbol": "DMD",
+     "score": 0.8683877887777448
+    },
+    {
+     "id": "ENSG00000113580",
+     "symbol": "NR3C1",
+     "score": 0.5868338886074015
+    },
+    {
+     "id": "ENSG00000151623",
+     "symbol": "NR3C2",
+     "score": 0.5581630533410797
+    },
+    {
+     "id": "ENSG00000068024",
+     "symbol": "HDAC4",
+     "score": 0.5332019780574652
+    },
+    {
+     "id": "ENSG00000048052",
+     "symbol": "HDAC9",
+     "score": 0.5259158986905159
+    },
+    {
+     "id": "ENSG00000196591",
+     "symbol": "HDAC2",
+     "score": 0.5244640924102969
+    },
+    {
+     "id": "ENSG00000163517",
+     "symbol": "HDAC11",
+     "score": 0.5212643947595432
+    },
+    {
+     "id": "ENSG00000147099",
+     "symbol": "HDAC8",
+     "score": 0.5209054403256808
+    },
+    {
+     "id": "ENSG00000094631",
+     "symbol": "HDAC6",
+     "score": 0.5207633060732332
+    },
+    {
+     "id": "ENSG00000108840",
+     "symbol": "HDAC5",
+     "score": 0.5183077559220656
+    },
+    {
+     "id": "ENSG00000171720",
+     "symbol": "HDAC3",
+     "score": 0.5181229659947232
+    },
+    {
+     "id": "ENSG00000116478",
+     "symbol": "HDAC1",
+     "score": 0.5175685962126962
+    },
+    {
+     "id": "ENSG00000061273",
+     "symbol": "HDAC7",
+     "score": 0.5175685962126962
+    },
+    {
+     "id": "ENSG00000100429",
+     "symbol": "HDAC10",
+     "score": 0.5175685962126962
+    },
+    {
+     "id": "ENSG00000137154",
+     "symbol": "RPS6",
+     "score": 0.505957928550987
+    },
+    {
+     "id": "ENSG00000100316",
+     "symbol": "RPL3",
+     "score": 0.5056973747534342
+    },
+    {
+     "id": "ENSG00000168028",
+     "symbol": "RPSA",
+     "score": 0.5036942519410432
+    },
+    {
+     "id": "ENSG00000156482",
+     "symbol": "RPL30",
+     "score": 0.5036942519410432
+    },
+    {
+     "id": "ENSG00000137818",
+     "symbol": "RPLP1",
+     "score": 0.5036942519410432
+    },
+    {
+     "id": "ENSG00000083845",
+     "symbol": "RPS5",
+     "score": 0.5036942519410432
+    },
+    {
+     "id": "ENSG00000143947",
+     "symbol": "RPS27A",
+     "score": 0.5035094620137008
+    },
+    {
+     "id": "ENSG00000142541",
+     "symbol": "RPL13A",
+     "score": 0.5031398821590161
+    },
+    {
+     "id": "ENSG00000105372",
+     "symbol": "RPS19",
+     "score": 0.5031398821590161
+    },
+    {
+     "id": "ENSG00000241343",
+     "symbol": "RPL36A",
+     "score": 0.5027703023043314
+    },
+    {
+     "id": "ENSG00000110700",
+     "symbol": "RPS13",
+     "score": 0.5027703023043314
+    }
+   ],
+   "exact_synonyms": [
+    "DMD",
+    "Duchenne muscular dystrophy",
+    "Duchenne muscular dystrophy, X-linked recessive",
+    "severe dystrophinopathy, Duchenne type"
+   ]
+  },
+  {
+   "set": "RARE",
+   "id": "MONDO_0001516",
+   "name": "spinal muscular atrophy",
+   "targets": [
+    {
+     "id": "ENSG00000172062",
+     "symbol": "SMN1",
+     "score": 0.8790387463614877
+    },
+    {
+     "id": "ENSG00000132740",
+     "symbol": "IGHMBP2",
+     "score": 0.8490257759409426
+    },
+    {
+     "id": "ENSG00000205571",
+     "symbol": "SMN2",
+     "score": 0.8469495389149166
+    },
+    {
+     "id": "ENSG00000185963",
+     "symbol": "BICD2",
+     "score": 0.8350837555470177
+    },
+    {
+     "id": "ENSG00000197102",
+     "symbol": "DYNC1H1",
+     "score": 0.8231194432599377
+    },
+    {
+     "id": "ENSG00000106211",
+     "symbol": "HSPB1",
+     "score": 0.8228865108343667
+    },
+    {
+     "id": "ENSG00000182173",
+     "symbol": "TSEN54",
+     "score": 0.8136882620340621
+    },
+    {
+     "id": "ENSG00000168000",
+     "symbol": "BSCL2",
+     "score": 0.8109180411491503
+    },
+    {
+     "id": "ENSG00000104763",
+     "symbol": "ASAH1",
+     "score": 0.8072160408797898
+    },
+    {
+     "id": "ENSG00000100749",
+     "symbol": "VRK1",
+     "score": 0.8009121646968878
+    },
+    {
+     "id": "ENSG00000165240",
+     "symbol": "ATP7A",
+     "score": 0.7965961461347442
+    },
+    {
+     "id": "ENSG00000109618",
+     "symbol": "SEPSECS",
+     "score": 0.796346352212151
+    },
+    {
+     "id": "ENSG00000135924",
+     "symbol": "DNAJB2",
+     "score": 0.7945100171098164
+    },
+    {
+     "id": "ENSG00000152137",
+     "symbol": "HSPB8",
+     "score": 0.793488942747141
+    },
+    {
+     "id": "ENSG00000106105",
+     "symbol": "GARS1",
+     "score": 0.7917597596101953
+    },
+    {
+     "id": "ENSG00000154743",
+     "symbol": "TSEN2",
+     "score": 0.7828143529475001
+    },
+    {
+     "id": "ENSG00000171680",
+     "symbol": "PLEKHG5",
+     "score": 0.7669793937234509
+    },
+    {
+     "id": "ENSG00000250479",
+     "symbol": "CHCHD10",
+     "score": 0.7657215374834591
+    },
+    {
+     "id": "ENSG00000111199",
+     "symbol": "TRPV4",
+     "score": 0.7655183840368128
+    },
+    {
+     "id": "ENSG00000107371",
+     "symbol": "EXOSC3",
+     "score": 0.7649676026433998
+    },
+    {
+     "id": "ENSG00000204843",
+     "symbol": "DCTN1",
+     "score": 0.7578371144090026
+    },
+    {
+     "id": "ENSG00000130985",
+     "symbol": "UBA1",
+     "score": 0.7510637751579958
+    },
+    {
+     "id": "ENSG00000120699",
+     "symbol": "EXOSC8",
+     "score": 0.7473135690057042
+    },
+    {
+     "id": "ENSG00000198860",
+     "symbol": "TSEN15",
+     "score": 0.7213436966105118
+    },
+    {
+     "id": "ENSG00000170892",
+     "symbol": "TSEN34",
+     "score": 0.7192937802535375
+    }
+   ],
+   "exact_synonyms": []
+  }
+ ]
+}
