@@ -304,7 +304,7 @@ def main():
                     "registered_and_on_the_list", "registered_and_absent_from_the_list",
                     "on_the_list_and_not_in_this_search")}}
 
-    (HERE / "counts.json").write_text(json.dumps(out, indent=1) + "\n")
+    (HERE / "counts.json").write_text(json.dumps(out, indent=1, sort_keys=True) + "\n")
 
     # ---- tables --------------------------------------------------------
     t = []
