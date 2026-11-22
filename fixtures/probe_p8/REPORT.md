@@ -169,13 +169,106 @@ memory of CC BY 4.0, not from a page I fetched (see below).
 
 - CLAUDE.md says Open Targets and Gemini are the only two outside data
   sources. Using UniProt on a card means changing that rule.
-- Something to check first, which could avoid a third source: I believe
-  Open Targets has its own protein-function field that is copied from
-  UniProt. **I did not check this.** It is from memory, and the project
-  rule is never to trust a field name from memory. A small Open Targets
-  probe would settle it.
+- Open Targets already carries UniProt's function text, so a third source
+  is not needed for it. This was checked in the follow-up (section 6).
 - If a function sentence is shown, it needs its own source label, and it
   must not sit where a reader could take it as a reason the medicine works.
+
+## 6. Follow-up: does Open Targets already carry the function text?
+
+**Yes.** Everything for this follow-up is in `open_targets_function/`.
+
+**The field.** I asked the live Open Targets schema for every field on a
+target (`schema/target_type.json`). It has `functionDescriptions`, a list
+of texts, with Open Targets' own description: "Functional descriptions of
+the target gene sourced from UniProt". The name was read from the schema,
+not typed from memory.
+
+**The asking.** The same 231 proteins, one request per second, every raw
+answer saved in `responses/`. No errors, every protein found. For 231 of
+231, the UniProt entry id Open Targets lists (source `uniprot_swissprot`)
+is the same entry study P8 fetched.
+
+**The comparison.** Each protein is in exactly one row.
+
+| Group | Proteins |
+|---|---|
+| Identical exactly as sent, letter for letter | 0 |
+| Identical word for word once the packaging is taken off | 212 |
+| Same letters; only hyphens and spaces differ | 15 |
+| Same first sentence only | 0 |
+| Different | 3 |
+| Missing in Open Targets (UniProt has text) | 0 |
+| Missing in both (CLN6) | 1 |
+| **Total** | **231** |
+
+So Open Targets has function text for **230 of 231**, the same 230 as
+UniProt, and for **227** it is the same writing.
+
+Why "0 exactly as sent": Open Targets' copy still wears leftovers from
+UniProt's text-file format. Think of the same letter in a different
+envelope. Counted in Open Targets' 231 answers:
+
+- 189 have evidence tags in curly brackets, like `{ECO:0000269|PubMed:11418668}`
+- 62 have an extra " ." at the very end
+- 25 have a label in front, like `[Isoform 1]: `
+- some have a space where a line was wrapped ("T-cell- attracting"), and
+  the 15 "hyphens only" proteins have a hyphen lost or a space added in the
+  same way ("proinflammatory" against UniProt's "pro-inflammatory")
+
+A card that shows this text would have to take that packaging off first.
+The exact cleaning rules are in `open_targets_function/recount.py`.
+
+**The three real differences** (all three are in `counts.json` with more text):
+
+1. **CDKL5.** Open Targets: "Mediates phosphorylation of MECP2
+   (PubMed:15917271, PubMed:16935860). May regulate ciliogenesis
+   (PubMed:29420175)" (113 characters). UniProt: "Serine/threonine-protein
+   kinase involved in neuronal development and function that phosphorylates
+   its substrates exclusively on serine..." (1,236 characters). A full rewrite.
+2. **TNF.** Open Targets has 2 texts, UniProt has 4. Open Targets: "Cytokine
+   that binds to TNFRSF1A/TNFR1 and TNFRSF1B/TNFBR. It is mainly secreted
+   by macrophages..." UniProt: "Cytokine that binds to TNFRSF1A/TNFR1 and
+   TNFRSF1B/TNFBR, activating the tumor necrosis factor-mediated (TNF)
+   signaling pathway..."
+3. **FBXO11.** Same words for the first 395 characters, then UniProt's first
+   sentence cites two more papers (PubMed:36179686, PubMed:37279268) and
+   the text is 51 characters longer.
+
+In all three UniProt's text is the longer one. My guess is that UniProt
+(release 2026_04, 4 November 2026) is newer than the copy inside Open
+Targets 26.09. That is a guess; see below.
+
+**Where the text comes from, according to Open Targets.** The schema's
+description of the field says "sourced from UniProt". The answer itself is
+only a list of plain texts: no source label, no licence, no UniProt release
+and no link on each text. The only trail inside the text is the evidence
+tags (PubMed numbers).
+
+**Data version asked.** Open Targets data version 26.09 (API 26.9.0), the
+same before and after the run, and the same version as probe_p5. Asked on
+22 November 2026.
+
+### What this means for the one question
+
+The function sentence can come from Open Targets, which Moonlight already
+uses, so the "only two outside data sources" rule would not need to change
+for it. The text would still be UniProt's writing, so the CC BY 4.0 credit
+in section 4 still applies. Kashish decides whether a card shows it.
+
+### What I did not verify in the follow-up
+
+- Why the three differ. "Open Targets holds an older UniProt copy" is a
+  guess. Open Targets does not say which UniProt release it used, and I did
+  not look at UniProt's entry history.
+- Whether "identical words" is right for every one of the 212. It is a
+  computer comparison after cleaning; I read about ten by eye.
+- Whether my cleaning rules fit proteins outside these 231. Other
+  packaging may exist that these 231 did not show.
+- What Open Targets' documentation or licence page says about this field.
+  I read only the schema's one-line description.
+- Whether the text stays the same in the next Open Targets release.
+- Nothing was tried on a real card, with Gemini, or with the grounding check.
 
 ## What I did not verify
 
@@ -196,8 +289,8 @@ memory of CC BY 4.0, not from a page I fetched (see below).
 - Proteins outside the top 25, and the other 40 diseases in probe_p5.
 - The full CC BY 4.0 legal text and https://www.uniprot.org/terms were not
   fetched. Only rest.uniprot.org was contacted.
-- Whether Open Targets already carries the UniProt function text (see
-  section 5).
+- (Checked later: whether Open Targets already carries the UniProt
+  function text. See section 6, which has its own "not verified" list.)
 - Nothing was tried on a real card, with Gemini, or with the grounding check.
 
 ## Files and how to recount
@@ -213,15 +306,31 @@ memory of CC BY 4.0, not from a page I fetched (see below).
 | `pairs.csv` | 250 rows, one per slot |
 | `proteins.csv` | 231 rows, one per protein, with its first function sentence |
 | `licence/` | UniProt's licence page, cite page, and one entry in text form |
+| `open_targets_function/fetch.py` | Follow-up: asks Open Targets. Skips proteins already saved. |
+| `open_targets_function/recount.py` | Follow-up: recounts section 6 from saved files. No network. |
+| `open_targets_function/schema/target_type.json` | The live schema's list of fields on a target |
+| `open_targets_function/responses/*.json` | 231 raw Open Targets answers |
+| `open_targets_function/index.jsonl` | One line per request |
+| `open_targets_function/data_version_*.json` | Data version, before and after |
+| `open_targets_function/counts.json`, `compare.csv` | Section 6's numbers; one row per protein |
 
 ```bash
 python3 fixtures/probe_p8/recount.py
 ```
 
-Run it twice: `counts.json`, `pairs.csv` and `proteins.csv` must not
-change. `fetch.py` reads the disease list with `git show` from
+```bash
+python3 fixtures/probe_p8/open_targets_function/recount.py
+```
+
+Run each twice: `counts.json`, `pairs.csv`, `proteins.csv`, and the
+follow-up's `counts.json` and `compare.csv`, must not change. `fetch.py` reads the disease list with `git show` from
 `origin/probe-baseline`, so that branch must be fetched to run it again.
 
-Three extra requests were made that are not in `index.jsonl`: two reach
-tests before the run (entry P04637 and one search, not kept) and the three
-files in `licence/`.
+Five extra UniProt requests were made that are not in `index.jsonl`: two
+reach tests before the run (entry P04637 and one search, not kept) and the
+three files in `licence/`. (The first version of this report said "three";
+five is the right count.)
+
+Four extra Open Targets requests are not in the follow-up's `index.jsonl`:
+the schema question (saved), one test question about FLG (not kept; FLG was
+asked again in the run), and the two data-version questions (saved).

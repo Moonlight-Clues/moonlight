@@ -1,0 +1,135 @@
+{
+ "proteins": 231,
+ "open_targets": {
+  "data_version": {
+   "year": "26",
+   "month": "09",
+   "iteration": null
+  },
+  "api_version": {
+   "x": "26",
+   "y": "9",
+   "z": "0"
+  },
+  "same_version_after_the_run": true
+ },
+ "uniprot_release": [
+  "2026_04"
+ ],
+ "schema_field": {
+  "name": "functionDescriptions",
+  "description": "Functional descriptions of the target gene sourced from UniProt"
+ },
+ "groups": {
+  "missing in both": 1,
+  "missing in OT": 0,
+  "identical as sent": 0,
+  "identical words": 212,
+  "hyphens only": 15,
+  "same first sentence": 0,
+  "different": 3
+ },
+ "open_targets_has_text": 230,
+ "packaging_seen_in_open_targets_text": {
+  "evidence tag in curly brackets": 189,
+  "isoform or form label in front": 25,
+  "extra full stop at the end": 62
+ },
+ "other": {
+  "errors_in_answer": 0,
+  "target_not_found": 0,
+  "swissprot_id_same_as_uniprot_entry": 231,
+  "number_of_texts_differs": 1,
+  "first_sentence_same_after_cleaning": 225
+ },
+ "examples": {
+  "identical words": [
+   {
+    "symbol": "FLG",
+    "uniprot": "P20930",
+    "open_targets_texts": 1,
+    "uniprot_texts": 1,
+    "same_for_the_first_n_characters": 167,
+    "open_targets_from_there": "ments during terminal differentiation of mammalian epidermis",
+    "uniprot_from_there": "ments during terminal differentiation of mammalian epidermis"
+   },
+   {
+    "symbol": "IL4R",
+    "uniprot": "P24394",
+    "open_targets_texts": 2,
+    "uniprot_texts": 2,
+    "same_for_the_first_n_characters": 497,
+    "open_targets_from_there": "mediated cell proliferation and IL5 up-regulation by T-cells",
+    "uniprot_from_there": "mediated cell proliferation and IL5 up-regulation by T-cells"
+   },
+   {
+    "symbol": "TSLP",
+    "uniprot": "Q969D9",
+    "open_targets_texts": 2,
+    "uniprot_texts": 2,
+    "same_for_the_first_n_characters": 291,
+    "open_targets_from_there": " an antimicrobial peptide in the oral cavity and on the skin",
+    "uniprot_from_there": " an antimicrobial peptide in the oral cavity and on the skin"
+   }
+  ],
+  "hyphens only": [
+   {
+    "symbol": "IL13",
+    "uniprot": "P35225",
+    "open_targets_texts": 1,
+    "uniprot_texts": 1,
+    "same_for_the_first_n_characters": 564,
+    "open_targets_from_there": "ilarity). Displays the capacity to antagonize Th1-driven proinflammatory immune response and down-regulates synthesis of many proinflammatory cytokines including IL1, IL6, IL10, IL12 and TNF through a mechanism that part",
+    "uniprot_from_there": "ilarity). Displays the capacity to antagonize Th1-driven pro-inflammatory immune response and down-regulates synthesis of many pro-inflammatory cytokines including IL1, IL6, IL10, IL12 and TNF through a mechanism that pa"
+   },
+   {
+    "symbol": "ADRB2",
+    "uniprot": "P07550",
+    "open_targets_texts": 1,
+    "uniprot_texts": 1,
+    "same_for_the_first_n_characters": 791,
+    "open_targets_from_there": "g pathway (By similarity). ADRB2-G(s) signaling delivers proapoptotic signals in cardiomyocytes although G(i)-mediated survival effect appears to predominate (By similarity). ADRB2 also transduces signals independently o",
+    "uniprot_from_there": "g pathway (By similarity). ADRB2-G(s) signaling delivers pro-apoptotic signals in cardiomyocytes although G(i)-mediated survival effect appears to predominate (By similarity). ADRB2 also transduces signals independently "
+   },
+   {
+    "symbol": "IGHE",
+    "uniprot": "P01854",
+    "open_targets_texts": 4,
+    "uniprot_texts": 4,
+    "same_for_the_first_n_characters": 2632,
+    "open_targets_from_there": "s toward M1 state and reprograms M2 macrophages toward a proinflammatory state with antitumor functions (PubMed:30956175). Stimulates FCER2 on B cells and initiates IgE-dependent antigen uptake and presentation to T cell",
+    "uniprot_from_there": "s toward M1 state and reprograms M2 macrophages toward a pro-inflammatory state with antitumor functions (PubMed:30956175). Stimulates FCER2 on B cells and initiates IgE-dependent antigen uptake and presentation to T cel"
+   }
+  ],
+  "same first sentence": [],
+  "different": [
+   {
+    "symbol": "CDKL5",
+    "uniprot": "O76039",
+    "open_targets_texts": 1,
+    "uniprot_texts": 1,
+    "same_for_the_first_n_characters": 0,
+    "open_targets_from_there": "Mediates phosphorylation of MECP2 (PubMed:15917271, PubMed:16935860). May regulate ciliogenesis (PubMed:29420175)",
+    "uniprot_from_there": "Serine/threonine-protein kinase involved in neuronal development and function that phosphorylates its substrates exclusively on serine, within an R-P-x-S-A cons"
+   },
+   {
+    "symbol": "TNF",
+    "uniprot": "P01375",
+    "open_targets_texts": 2,
+    "uniprot_texts": 4,
+    "same_for_the_first_n_characters": 56,
+    "open_targets_from_there": "Cytokine that binds to TNFRSF1A/TNFR1 and TNFRSF1B/TNFBR. It is mainly secreted by macrophages and can induce cell death of certain tumor cell lines. It is potent pyrogen causing fever by direct action or by stimulat",
+    "uniprot_from_there": "Cytokine that binds to TNFRSF1A/TNFR1 and TNFRSF1B/TNFBR, activating the tumor necrosis factor-mediated (TNF) signaling pathway (PubMed:16284179, PubMed:33495445, PubMed:3883195, PubMed:6392892, PubMed:9435233). The "
+   },
+   {
+    "symbol": "FBXO11",
+    "uniprot": "Q86XK2",
+    "open_targets_texts": 1,
+    "uniprot_texts": 1,
+    "same_for_the_first_n_characters": 395,
+    "open_targets_from_there": ":24613396, PubMed:24968003, PubMed:25827072, PubMed:29059170). The SCF(FBXO11) complex mediates ubiquitination and degradation of BCL6, thereby playing a role in the germinal center B-cells terminal differentiation towar",
+    "uniprot_from_there": ":24613396, PubMed:24968003, PubMed:25827072, PubMed:29059170, PubMed:36179686, PubMed:37279268). The SCF(FBXO11) complex mediates ubiquitination and degradation of BCL6, thereby playing a role in the germinal center B-ce"
+   }
+  ]
+ }
+}
