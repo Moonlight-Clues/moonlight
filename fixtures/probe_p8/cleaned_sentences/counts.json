@@ -1,0 +1,89 @@
+{
+ "diseases": 59,
+ "diseases_with_fewer_than_25_proteins": {
+  "Drug-induced anaphylaxis": 1
+ },
+ "slots": 1451,
+ "proteins": 1011,
+ "problems": {
+  "answer_missing": 0,
+  "errors_in_answer": 0,
+  "target_not_found": 0
+ },
+ "open_targets": {
+  "data_version": {
+   "year": "26",
+   "month": "09",
+   "iteration": null
+  },
+  "api_version": {
+   "x": "26",
+   "y": "9",
+   "z": "0"
+  },
+  "same_version_after_the_run": true
+ },
+ "proteins_with_a_sentence": 994,
+ "proteins_with_none": 17,
+ "proteins_with_none_by_biotype": {
+  "lncRNA": 1,
+  "protein_coding": 16
+ },
+ "slots_with_a_sentence": 1432,
+ "slots_with_none": 19,
+ "proteins_with_more_than_one_text": 155,
+ "what_the_cleaning_did": {
+  "curly_tags_removed_from_first_text": 703,
+  "trailing_stop_removed": 200,
+  "label_removed": 14,
+  "line_wrap_joined_in_kept_sentence": 76,
+  "line_wrap_joins_in_kept_sentences_total": 82,
+  "whole_first_text_is_one_sentence": 99
+ },
+ "cleaned_sentence_chars": {
+  "n": 994,
+  "shortest": 17,
+  "middle": 156.0,
+  "longest": 1219,
+  "average": 166.2
+ },
+ "over_150": 514,
+ "over_200": 297,
+ "over_300": 98,
+ "what_if_round_bracket_citations_were_also_removed": {
+  "chars": {
+   "n": 994,
+   "shortest": 15,
+   "middle": 128.0,
+   "longest": 398,
+   "average": 133.1
+  },
+  "over_150": 392,
+  "over_200": 163,
+  "over_300": 19,
+  "still_has_PubMed_after": 0
+ },
+ "flags": {
+  "leftover_curly": 0,
+  "leftover_eco": 0,
+  "leftover_square_label": 0,
+  "no_final_stop": 0,
+  "unbalanced_brackets": 0,
+  "ends_like_abbreviation": 5,
+  "inner_full_stop": 5,
+  "cut_before_non_capital": 0,
+  "abbreviation_stop_skipped": 1,
+  "starts_oddly": 2,
+  "hyphen_space_left": 23,
+  "slash_space_left": 0,
+  "space_before_hyphen": 4,
+  "double_punctuation": 0,
+  "wrap_joined": 76,
+  "label_removed": 14,
+  "under_25_chars": 8,
+  "pubmed_citation": 456,
+  "similarity_note": 34
+ },
+ "proteins_with_any_odd_flag": 132,
+ "proteins_with_no_flag_at_all": 429
+}

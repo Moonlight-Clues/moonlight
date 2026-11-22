@@ -72,6 +72,7 @@ def clean(texts: list) -> tuple:
         end = m.end()
         break
     notes["rest_dropped_chars"] = len(text) - end
+    notes["rest_begins"] = text[end:end + 40].strip()
     notes["wraps_joined"] = [shown for at, shown in joins if at < end]
     notes["wraps_joined_in_dropped_rest"] = len(joins) - len(notes["wraps_joined"])
     return text[:end], notes

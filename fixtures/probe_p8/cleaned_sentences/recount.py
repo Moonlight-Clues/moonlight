@@ -38,6 +38,7 @@ FLAGS = {
     "unbalanced_brackets": "round or square brackets do not pair up (possible cut inside a bracket)",
     "ends_like_abbreviation": "the last word before the full stop is very short or a known abbreviation (the cut may be at an abbreviation, not a sentence end)",
     "inner_full_stop": "a full stop followed by a space is inside the sentence (a sentence end the rule did not take, or an abbreviation)",
+    "cut_before_non_capital": "the sentence was cut at a full stop whose next character is a digit or a bracket, not a capital letter (the riskiest kind of cut)",
     "abbreviation_stop_skipped": "the rule saw a full stop, judged it an abbreviation, and carried on",
     "starts_oddly": "the sentence does not start with a capital letter or a digit",
     "hyphen_space_left": "a hyphen followed by a space is still there (a real hanging hyphen, or a line-wrap mark the rule left)",
@@ -70,6 +71,7 @@ def flags_for(sentence: str, notes: dict) -> list:
     add("ends_like_abbreviation", sentence.endswith(".") and (
         last.lower() in ABBREVIATIONS or (len(last) <= 2 and last.isalpha())))
     add("inner_full_stop", bool(re.search(r"\.\s", sentence)))
+    add("cut_before_non_capital", bool(notes["rest_begins"]) and not notes["rest_begins"][0].isupper())
     add("abbreviation_stop_skipped", bool(notes["abbreviation_stops_skipped"]))
     add("starts_oddly", not re.match(r"[A-Z0-9]", sentence))
     add("hyphen_space_left", bool(re.search(r"\S- ", sentence)))
@@ -88,6 +90,17 @@ def spread(numbers: list) -> dict:
     numbers = sorted(numbers)
     return {"n": len(numbers), "shortest": numbers[0], "middle": statistics.median(numbers),
             "longest": numbers[-1], "average": round(statistics.mean(numbers), 1)}
+
+
+def what_if(have: list) -> dict:
+    """NOT part of the cleaning. Only measures how long the sentences would
+    be if (PubMed:...) citations were taken out too. Nothing is saved cleaned
+    this way."""
+    cite = re.compile(r"\s*\((?:PubMed:\d+)(?:,\s*PubMed:\d+)*\)")
+    lengths = [len(cite.sub("", r["sentence"])) for r in have]
+    return {"chars": spread(lengths), "over_150": sum(n > 150 for n in lengths),
+            "over_200": sum(n > 200 for n in lengths), "over_300": sum(n > 300 for n in lengths),
+            "still_has_PubMed_after": sum("PubMed:" in cite.sub("", r["sentence"]) for r in have)}
 
 
 def main() -> None:
@@ -154,6 +167,7 @@ def main() -> None:
         "over_150": sum(n > 150 for n in lengths),
         "over_200": sum(n > 200 for n in lengths),
         "over_300": sum(n > 300 for n in lengths),
+        "what_if_round_bracket_citations_were_also_removed": what_if(have),
         "flags": {f: sum(f in r["flags"] for r in have) for f in FLAGS},
         "proteins_with_any_odd_flag": sum(any(f not in NOT_ODD for f in r["flags"]) for r in have),
         "proteins_with_no_flag_at_all": sum(not r["flags"] for r in have),
@@ -182,6 +196,8 @@ def main() -> None:
             if flag == "wrap_joined":
                 extra = " (joined at: " + " | ".join(
                     "\"" + w.strip() + "\"" for w in r["notes"]["wraps_joined"]) + ")"
+            if flag == "cut_before_non_capital":
+                extra = f" (the dropped rest begins: \"{r['notes']['rest_begins']}\")"
             if flag in ("abbreviation_stop_skipped",):
                 extra = " (skipped at: " + " | ".join(
                     "\"" + s.strip() + "\"" for s in r["notes"]["abbreviation_stops_skipped"]) + ")"
