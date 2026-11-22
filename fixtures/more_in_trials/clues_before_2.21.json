@@ -1,0 +1,556 @@
+{
+ "disease": {
+  "id": "MONDO_0005388",
+  "name": "primary biliary cholangitis"
+ },
+ "about_disease": {
+  "description": "Primary biliary cholangitis (PBC) is a chronic and slowly progressive cholestatic liver disease of autoimmune etiology characterized by injury of the intrahepatic bile ducts that may eventually lead to liver failure.",
+  "source": "Open Targets",
+  "also_called": [
+   "Hanot syndrome",
+   "PBC",
+   "chronic non-suppurative destructive cholangitis",
+   "chronic nonsuppurative destructive cholangitis",
+   "primary Bilary cirrhosis (PBC)",
+   "primary biliary cirrhosis"
+  ]
+ },
+ "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+ "approved": [
+  {
+   "id": "CHEMBL272427",
+   "medicine": "Taurursodiol",
+   "forms": [
+    "Taurursodiol"
+   ],
+   "proteins": [],
+   "reports": 31,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G3SH",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1551",
+   "medicine": "Ursodiol",
+   "forms": [
+    "Ursodiol"
+   ],
+   "proteins": [
+    {
+     "symbol": "NR1H4",
+     "points": 61,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 104,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G3SH",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  }
+ ],
+ "being_studied": [
+  {
+   "id": "CHEMBL3707395",
+   "medicine": "Elafibranor",
+   "forms": [
+    "Elafibranor"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PPARD",
+     "points": 42,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 38,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/iqirvo",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297530",
+   "medicine": "Saroglitazar",
+   "forms": [
+    "Saroglitazar"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 36,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0E8LA",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201835",
+   "medicine": "Ustekinumab",
+   "forms": [
+    "Ustekinumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "IL12A",
+     "points": 55,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 182,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/eksunbi",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL672",
+   "medicine": "Fenofibrate",
+   "forms": [
+    "Fenofibrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 135,
+   "source": "https://clinicaltrials.gov/study/NCT00745407",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL264374",
+   "medicine": "Bezafibrate",
+   "forms": [
+    "Bezafibrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PPARD",
+     "points": 42,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 57,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C10AB02",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL247951",
+   "medicine": "Pemafibrate",
+   "forms": [
+    "Pemafibrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 13,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C10AB12",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL230158",
+   "medicine": "Seladelpar",
+   "forms": [
+    "Seladelpar",
+    "Seladelpar Lysine"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARD",
+     "points": 42,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 14,
+   "source": "https://clinicaltrials.gov/study/NCT03301506",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_clues": [
+  {
+   "id": "CHEMBL240597",
+   "medicine": "Chenodiol",
+   "forms": [
+    "Chenodiol"
+   ],
+   "proteins": [
+    {
+     "symbol": "NR1H4",
+     "points": 61,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 15,
+   "source": "https://clinicaltrials.gov/study/NCT02876484",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1742995",
+   "medicine": "Briakinumab",
+   "forms": [
+    "Briakinumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "IL12A",
+     "points": 55,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 11,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L04AC09",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1789941",
+   "medicine": "Ruxolitinib",
+   "forms": [
+    "Ruxolitinib",
+    "Deuruxolitinib Phosphate"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 354,
+   "source": "https://clinicaltrials.gov/study/NCT02386800",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL221959",
+   "medicine": "Tofacitinib",
+   "forms": [
+    "Tofacitinib",
+    "Tofacitinib Citrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 203,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68e3d6b2-7838-4d2d-a417-09d919b43e13",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3622821",
+   "medicine": "Upadacitinib",
+   "forms": [
+    "Upadacitinib",
+    "Upadacitinib Hemihydrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 111,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2966aec7-2ef0-923c-d8ff-fe1a957bf095",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4596392",
+   "medicine": "Cravacitinib",
+   "forms": [
+    "Deucravacitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 66,
+   "source": "https://clinicaltrials.gov/study/NCT05478499",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3301607",
+   "medicine": "Filgotinib",
+   "forms": [
+    "Filgotinib",
+    "Filgotinib Maleate"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 50,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297507",
+   "medicine": "Delgocitinib",
+   "forms": [
+    "Delgocitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "TYK2",
+     "points": 48,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 23,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL981",
+   "medicine": "Fenofibric Acid",
+   "forms": [
+    "Fenofibric Acid",
+    "Choline Fenofibrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 22,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C10AB11",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL457",
+   "medicine": "Gemfibrozil",
+   "forms": [
+    "Gemfibrozil"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 12,
+   "source": "https://clinicaltrials.gov/study/NCT00243672",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL557555",
+   "medicine": "Ciprofibrate",
+   "forms": [
+    "Ciprofibrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARA",
+     "points": 44,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 3,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C10AB08",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL38943",
+   "medicine": "GW501516",
+   "forms": [
+    "GW501516"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARD",
+     "points": 42,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 2,
+   "source": "https://clinicaltrials.gov/study/NCT00158899",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL595",
+   "medicine": "Pioglitazone",
+   "forms": [
+    "Pioglitazone",
+    "Pioglitazone Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 403,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/glustin",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL704",
+   "medicine": "Mesalamine",
+   "forms": [
+    "Mesalamine"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 158,
+   "source": "https://clinicaltrials.gov/study/NCT00446849",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201346",
+   "medicine": "Balsalazide",
+   "forms": [
+    "Balsalazide",
+    "Balsalazide Disodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 15,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=22f41e83-b9fb-4c9e-8cc3-f457034191a8",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL425",
+   "medicine": "Olsalazine",
+   "forms": [
+    "Olsalazine",
+    "Olsalazine Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "PPARG",
+     "points": 41,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 7,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00KRE",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "left_out": {
+  "not_approved": 57,
+  "unclear_link": 0
+ }
+}
