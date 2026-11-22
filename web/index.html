@@ -108,6 +108,9 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .wider-box summary [data-part="tap"]::before{content:"·";position:absolute;left:0}
 #narrower-box summary,#wider-box summary{margin-left:-.55em;text-indent:.55em;clip-path:inset(-8px -8px -8px .55em)}
 #narrower-box summary:focus-visible,#wider-box summary:focus-visible{clip-path:none}
+/* The box under the In trials list (ticket 2.21) has a long label that runs
+   over several lines, so the cut above is not used: it would cut the first
+   letter off each new line. */
 .more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
@@ -416,6 +419,11 @@ body.registering>:not(.register){display:none!important}
         <p class="section-desc">Approved for another disease and now being tested for this one. A separate research category, not a prediction of effectiveness. Not every trial is listed. Only medicines that act on one of the proteins most linked to this disease.</p>
         <p class="filter-note" id="studied-note"></p>
         <div class="cards" id="studied-cards"></div>
+        <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
+        <details class="wider-box" id="more-trials-box" hidden>
+          <summary>More medicines in trials for this disease. They do not act on one of the 25 proteins. (<span id="more-trials-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <div class="cards" id="more-trials-cards"></div>
+        </details>
       </section>
 
       <section class="panel" data-slot="new-clues" id="panel-clues" role="tabpanel" aria-labelledby="tab-clues" hidden>
@@ -755,6 +763,7 @@ body.registering>:not(.register){display:none!important}
     byId("wider-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
+    byId("more-trials-cards").replaceChildren();
     byId("filters").replaceChildren();
     waiting = [];
     shown = null;
@@ -953,6 +962,8 @@ body.registering>:not(.register){display:none!important}
     const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
     const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
     const studiedCards = data.being_studied.map(clue => card(clue, disease, diseaseName, null));
+    // In a trial for this disease, on none of the 25 proteins: the folded box under the list.
+    const moreTrialsCards = (data.more_in_trials || []).map(medicine => trialBoxCard(medicine));
     byId("approved-cards").replaceChildren(...approvedCards);
     byId("new-cards").replaceChildren(...newCards);
     byId("studied-cards").replaceChildren(...studiedCards);
@@ -978,12 +989,19 @@ body.registering>:not(.register){display:none!important}
     byId("empty").hidden = !!newCards.length;
     byId("wrong-way-line").textContent = data.wrong_way_line || "";
     byId("wrong-way-line").hidden = !data.wrong_way_line;
-    byId("studied-note").textContent = studiedCards.length ? ""
+    // The sentence is only for an In trials tab with nothing in it at all.
+    byId("studied-note").textContent = studiedCards.length || moreTrialsCards.length ? ""
       : "No medicine in this data is being studied for this disease.";
+    byId("more-trials-cards").replaceChildren(...moreTrialsCards);
+    byId("more-trials-count").textContent = moreTrialsCards.length;
+    byId("more-trials-box").hidden = !moreTrialsCards.length;
+    byId("more-trials-box").open = !studiedCards.length;  // open only when it is all there is
+    tapWords(byId("more-trials-box"));
 
     const counts = {
       approved: approvedCards.length + narrowerCards.length + widerCards.length,  // the main list and both boxes
-      trials: studiedCards.length, clues: newCards.length};
+      trials: studiedCards.length + moreTrialsCards.length,  // the list and its box
+      clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
     byId("count-not-approved").textContent = data.left_out.not_approved;
@@ -1003,6 +1021,7 @@ body.registering>:not(.register){display:none!important}
     part(box, "tap").textContent = box.open ? "Tap to close" : "Tap to open";
   }
   for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
+  byId("more-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the In trials list
 
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {
@@ -1028,6 +1047,30 @@ body.registering>:not(.register){display:none!important}
       slot(el, "path").remove();
       el.querySelector(".direction-note").remove();
       part(el, "no-path").hidden = false;
+    }
+    return el;
+  }
+
+  /* A card of the box under the In trials list (ticket 2.21): the medicine,
+     its trial stage and its source link. It acts on none of the 25
+     proteins, so it has no path, no points and no explanation. */
+  function trialBoxCard(medicine) {
+    const el = copyOf("card-template");
+    slot(el, "medicine-name").textContent = medicine.medicine;
+    slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
+    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation", "ending"])
+      slot(el, name).remove();
+    for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
+    el.querySelector(".direction-note").remove();
+    const phase = slot(el, "phase");
+    phase.textContent = medicine.trial_phase;
+    phase.hidden = false;
+    if (medicine.source) {
+      const source = slot(el, "source");
+      source.href = medicine.source;
+      source.hidden = false;
+    } else {
+      part(el, "no-source").hidden = false;
     }
     return el;
   }

@@ -77,10 +77,10 @@ PBC_BOX_26 = [
     ("CHEMBL635", "Prednisone", "Phase 2/3"),
     ("CHEMBL129", "Zidovudine", "Phase 2/3"),
     ("CHEMBL2105759", "Baricitinib", "Phase 2"),
-    ("CHEMBL4297912", "Bifidobacterium Spp.", "Phase 2"),
+    ("CHEMBL4297912", "Bifidobacterium SPP.", "Phase 2"),
     ("CHEMBL3989915", "Difelikefalin", "Phase 2"),
     ("CHEMBL885", "Emtricitabine", "Phase 2"),
-    ("CHEMBL161381", "Emtricitabine, (+/-)-", "Phase 2"),
+    ("CHEMBL161381", "EMTRICITABINE, (+/-)-", "Phase 2"),
     ("CHEMBL3358920", "Etrasimod", "Phase 2"),
     ("CHEMBL363392", "Maralixibat", "Phase 2"),
     ("CHEMBL1165", "Moexipril", "Phase 2"),
@@ -92,7 +92,7 @@ PBC_BOX_26 = [
     ("CHEMBL1201576", "Rituximab", "Phase 2"),
     ("CHEMBL1538", "Tenofovir Disoproxil", "Phase 2"),
     ("CHEMBL1201587", "Alemtuzumab", "Phase 1"),
-    ("CHEMBL88", "Cyclophosphamide", "Phase 1"),
+    ("CHEMBL88", "Cyclophosphamide Anhydrous", "Phase 1"),
     ("CHEMBL1568", "Fludarabine", "Phase 1"),
 ]
 # In a trial for the disease, approved for nothing: her rule stands, hidden.
@@ -588,7 +588,7 @@ function readTrials() {
       & Node.DOCUMENT_POSITION_FOLLOWING),
     box: [...document.querySelectorAll("#more-trials-cards > .card")].map(readCard),
     boxCardsOnScreen: [...document.querySelectorAll("#more-trials-cards > .card")]
-      .filter(shownOnPage).length,
+      .filter(card => card.checkVisibility()).length,  // false inside a folded box
   };
 }
 
@@ -617,6 +617,7 @@ async function oneSearch(browser, answer) {
   out.closed = await page.evaluate(readTrials);
   if (out.closed.boxShown) {
     await page.click("#more-trials-box summary");
+    await page.waitForTimeout(300);  // the box tells the page it was opened a moment later
     out.tapped = await page.evaluate(readTrials);
   }
   out.explainAskedFor = explainCalls.map(url => new URL(url).searchParams.get("clue_id"));

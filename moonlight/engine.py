@@ -49,6 +49,15 @@ list written by hand: for that disease those medicines are not shown in
 New clues (leave_out), and wrong_way_line says how many. No code ever
 writes to that file: only a hand check may remove a card.
 
+Ticket 2.21, a box for more medicines in trials. sort_into_tabs is also
+handed the disease's own list as records (fetch.fetch_listed_medicines).
+A medicine on it that is in a trial for the disease and approved for
+something else, by the same rule as In trials (filter.group_of), and is
+nowhere else on the page, goes in Tabs.more_in_trials: the folded box
+under the In trials list. keep_out(more, ids) takes out the medicines a
+hand-written list names for this disease. Today's In trials list is not
+touched.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -67,7 +76,7 @@ from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 from moonlight import fetch
 from moonlight.fetch import fetch_approved, fetch_disease, fetch_family, fetch_paths
 from moonlight.fetch import fetch_targets, fetch_withdrawn
-from moonlight.fetch import Listed
+from moonlight.fetch import Listed, OnList
 from moonlight.filter import (
     ALREADY_APPROVED,
     BEING_STUDIED,
@@ -76,10 +85,11 @@ from moonlight.filter import (
     NOT_APPROVED,
     SHOWN_GROUPS,
     UNCLEAR_LINK,
+    group_of,
     sort_paths,
 )
 from moonlight.rank import Clue, rank_clues
-from moonlight.records import Disease, Medicine, Path, Target
+from moonlight.records import STAGE_ORDER, Disease, Medicine, Path, Target
 
 AT_ONCE = 5  # the most proteins, or extra disease entries, fetched at the same time
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
@@ -117,6 +127,12 @@ SECOND_NOTE = (
 # An entry's note is exactly one of these. Note -> the red words on the card.
 RED_WORDS = {CORRECTION_NOTE: WRONG_WARNING, SECOND_NOTE: SECOND_NOTE}
 CORRECTION_NOTES = tuple(RED_WORDS)
+# Ticket 2.21, Kashish's words of 22 Nov, exactly. The label of the folded
+# box under the In trials list. Changing them needs her approval.
+MORE_IN_TRIALS_LABEL = (
+    "More medicines in trials for this disease. They do not act on one of "
+    "the 25 proteins."
+)
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
@@ -219,6 +235,32 @@ class ApprovedMedicine:
 
 
 @dataclass(frozen=True)
+class TrialMedicine:
+    """One card of the box "More medicines in trials" (ticket 2.21).
+
+    In a trial for the disease, approved for something else, and it acts
+    on none of the proteins looked at. So it has no path, no score and no
+    rank, and it is never explained.
+    """
+
+    id: str  # the id shared by the medicine and its tablet forms
+    name: str
+    forms: Tuple[str, ...]  # the names of its forms on the list, the parent first
+    stage: str  # how far it got for this disease: the strongest of its forms
+    # Its report links from the disease's own list: the reports for the
+    # stage on the card first, then the others.
+    sources: Tuple[str, ...] = ()
+
+    @property
+    def source_record(self) -> Optional[str]:
+        """The one link the card shows: the first https link. None if none."""
+        for link in self.sources:
+            if link.startswith("https://"):
+                return link
+        return None
+
+
+@dataclass(frozen=True)
 class Tabs:
     """The three tabs of the page, and how many medicines were left out."""
 
@@ -233,6 +275,10 @@ class Tabs:
     # Ticket 2.14. Approved only on a child entry, or on a child and a
     # parent: the folded box "Approved for a narrower disease". A to Z. No rank.
     narrower: List[ApprovedMedicine] = field(default_factory=list)
+    # Ticket 2.21. In a trial for the disease, approved for something else,
+    # on none of the proteins looked at: the folded box under the In trials
+    # list. Furthest trial stage first, then A to Z. No rank.
+    more_in_trials: List[TrialMedicine] = field(default_factory=list)
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -409,6 +455,7 @@ def sort_into_tabs(
     listed: Iterable[Listed],
     withdrawn_listed: Iterable[Listed] = (),
     neighbours: Iterable[Neighbour] = (),
+    on_list: Iterable[OnList] = (),
 ) -> Tabs:
     """The tray from find_clues and the disease's own list -> the three tabs.
 
@@ -451,6 +498,20 @@ def sort_into_tabs(
         an unclear link to the disease stays counted in unclear_link too.
       - Withdrawn on a parent's or child's list is withdrawn in every
         source, and counted in not_approved if it was approved there.
+
+    on_list (ticket 2.21, Kashish's decisions of 22 Nov) is the disease's
+    own list as records (fetch.fetch_listed_medicines). It only fills
+    more_in_trials, the folded box under the In trials list. Like a second
+    guest list checked at the door, after everyone else is seated:
+      - the same rule as In trials decides (filter.group_of): approved for
+        at least one disease, not withdrawn, and a trial stage for this one;
+      - withdrawn in any source is left out, as everywhere;
+      - a medicine that acts on one of the proteins looked at is never in
+        the box, whatever group the tray put it in: the box's label says
+        "They do not act on one of the 25 proteins";
+      - a medicine on the Approved tab or in one of its boxes is already
+        on the page, so it is not in this box.
+    Nothing else in the answer changes: the box is worked out last.
     """
     withdrawn_listed = list(withdrawn_listed)
     neighbours = list(neighbours)
@@ -530,6 +591,23 @@ def sort_into_tabs(
     narrower.sort(key=a_to_z)
     wider_group.sort(key=a_to_z)
 
+    acts_on_a_protein = {
+        _family_id(path.medicine) for paths in tray.values() for path in paths
+    }
+    more_in_trials = [
+        _trial_medicine(entry)
+        for entry in on_list
+        if group_of(entry.medicine) == BEING_STUDIED  # the same rule as In trials
+        and _family_id(entry.medicine) not in withdrawn_ids
+        and _family_id(entry.medicine) not in acts_on_a_protein
+        and _family_id(entry.medicine) not in own_ids
+        and _family_id(entry.medicine) not in nearby
+    ]
+    # Furthest trial stage first, then A to Z, ignoring capitals. The last
+    # two only make the order the same every time.
+    more_in_trials.sort(key=lambda medicine: (
+        STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id))
+
     return Tabs(
         approved=approved,
         being_studied=rank_clues(others[BEING_STUDIED]),
@@ -545,7 +623,36 @@ def sort_into_tabs(
         },
         wider_group=wider_group,
         narrower=narrower,
+        more_in_trials=more_in_trials,
     )
+
+
+def _trial_medicine(entry: OnList) -> TrialMedicine:
+    """One card of the box, from the family's records on the disease's list."""
+    medicine = entry.medicine
+    stage = medicine.disease_stage  # the strongest of its forms
+    # The receipt for the stage on the card first, then the other links.
+    links = [link for link, said in entry.reports if said == stage]
+    links += [link for link, _ in entry.reports if link not in links]
+    return TrialMedicine(
+        id=_family_id(medicine),
+        name=medicine.name,
+        forms=tuple(form.name for form in medicine.forms),
+        stage=stage,
+        sources=tuple(links),
+    )
+
+
+def keep_out(more: Iterable[TrialMedicine], listed: Iterable[str]) -> List[TrialMedicine]:
+    """The box without the listed medicines. The rest keep their order.
+
+    Ticket 2.21: no existing rule may be undone by the box. listed holds
+    the family ids a hand-written list names for this disease
+    (pushes_wrong_way and looks_wrong). Nothing is counted or said about
+    the ones taken out.
+    """
+    listed = set(listed)
+    return [medicine for medicine in more if medicine.id not in listed]
 
 
 def _approved_medicine(
