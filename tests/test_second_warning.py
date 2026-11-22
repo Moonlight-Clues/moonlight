@@ -48,6 +48,7 @@ ONE_LINE = "1 medicine left out because it pushes the wrong way for this disease
 
 TODAY = "2026-11-19"
 MONDAY = "2026-11-16"
+TICKET_2_19_DAY = "2026-11-22"  # the one entry ticket 2.19 added
 
 DISEASE = Disease("TEST_0000001", "test disease")
 OTHER = Disease("TEST_0000009", "another test disease")
@@ -300,18 +301,18 @@ def test_the_real_file_holds_todays_ten_with_the_new_note_and_no_other():
 
 def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     entries = real_corrections()
-    assert len(entries) == 22
-    assert len(engine.corrections()) == 22
+    assert len(entries) == 23  # ticket 2.19 added one: deferoxamine, hemochromatosis
+    assert len(engine.corrections()) == 23
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)
-    assert {entry["date"] for entry in entries} == {MONDAY, TODAY}
+    assert {entry["date"] for entry in entries} == {MONDAY, TODAY, TICKET_2_19_DAY}
     # Read as plain text: nothing is left once the keys, the ids, the two
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
     for known in ["medicine_id", "disease_id", "date", "note", FIRST_NOTE, SECOND_NOTE,
-                  MONDAY, TODAY, *sorted(ids, key=len, reverse=True)]:
+                  MONDAY, TODAY, TICKET_2_19_DAY, *sorted(ids, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
@@ -510,18 +511,31 @@ ADDISON_FOUR = {
 
 
 def test_the_real_left_out_file_holds_the_four_for_addisons_and_nothing_else():
-    entries = json.loads(LEFT_OUT_FILE.read_text(encoding="utf-8"))
+    # Ticket 2.20 (22 Nov): the file now also holds entries for another
+    # disease (anaphylaxis, tests/test_anaphylaxis_left_out.py). "Nothing
+    # else" now means: nothing else for Addison's. Every entry in the file
+    # still has only the three keys, and the file is still ids and days only.
+    every_entry = json.loads(LEFT_OUT_FILE.read_text(encoding="utf-8"))
+    for entry in every_entry:
+        assert set(entry) == {"medicine_id", "disease_id", "date"}
+    entries = [entry for entry in every_entry if entry["disease_id"] == ADDISON]
     assert len(entries) == 4
     for entry in entries:
-        assert set(entry) == {"medicine_id", "disease_id", "date"}
-        assert entry["disease_id"] == ADDISON and entry["date"] == TODAY
+        assert entry["date"] == TODAY
     assert {entry["medicine_id"] for entry in entries} == ADDISON_FOUR
-    assert engine.left_out_by_hand() == {(medicine_id, ADDISON) for medicine_id in ADDISON_FOUR}
+    assert {pair for pair in engine.left_out_by_hand() if pair[1] == ADDISON} == {
+        (medicine_id, ADDISON) for medicine_id in ADDISON_FOUR}
     assert engine.pushes_wrong_way(ADDISON) == ADDISON_FOUR
     # Read as plain text: only the keys, the ids and the day. No names, no reasons.
     text = LEFT_OUT_FILE.read_text(encoding="utf-8")
+    other_diseases = [entry for entry in every_entry if entry["disease_id"] != ADDISON]
+    for entry in other_diseases:  # ticket 2.20: their ids and days, checked in their own test
+        assert re.fullmatch(r"CHEMBL\d+", entry["medicine_id"])
+        assert re.fullmatch(r"[A-Za-z]+_\d+", entry["disease_id"])
+        assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry["date"])
+    others = {value for entry in other_diseases for value in entry.values()}
     for known in ["medicine_id", "disease_id", "date", ADDISON, TODAY,
-                  *sorted(ADDISON_FOUR, key=len, reverse=True)]:
+                  *sorted(ADDISON_FOUR | others, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
