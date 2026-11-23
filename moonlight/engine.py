@@ -58,6 +58,13 @@ under the In trials list. keep_out(more, ids) takes out the medicines a
 hand-written list names for this disease. Today's In trials list is not
 touched.
 
+Ticket 2.24, a box for new medicines in trials. A medicine on the disease's
+own list that is in a trial for the disease and that no form we can see
+says is approved for anything goes in Tabs.new_in_trials: a second folded
+box, under the one from ticket 2.21. If the list cannot tell whether it is
+approved for something (fetch.OnList.all_seen is False), it stays out of
+both boxes. keep_out works for this box too.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -137,6 +144,13 @@ MORE_IN_TRIALS_LABEL = (
 # box. Only this sentence: a box card has no protein, so it says nothing
 # about one. Changing them needs her approval.
 MORE_IN_TRIALS_ENDING = "Never start, stop or change any medicine without a doctor."
+# Ticket 2.24, Kashish's words of 23 Nov, exactly. The label of the second
+# folded box under the In trials list. Changing them needs her approval.
+# Its cards end with MORE_IN_TRIALS_ENDING, the same sentence.
+NEW_IN_TRIALS_LABEL = (
+    "New medicines being tested for this disease. The database records no "
+    "approval for them for any disease."
+)
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
@@ -240,11 +254,13 @@ class ApprovedMedicine:
 
 @dataclass(frozen=True)
 class TrialMedicine:
-    """One card of the box "More medicines in trials" (ticket 2.21).
+    """One card of a folded box under the In trials list.
 
-    In a trial for the disease, approved for something else, and it acts
-    on none of the proteins looked at. So it has no path, no score and no
-    rank, and it is never explained.
+    Ticket 2.21, "More medicines in trials": in a trial for the disease,
+    approved for something else, and it acts on none of the proteins
+    looked at. Ticket 2.24, "New medicines being tested": in a trial for
+    the disease and approved for nothing. Either way the card has no path,
+    no score and no rank, and it is never explained.
     """
 
     id: str  # the id shared by the medicine and its tablet forms
@@ -283,6 +299,10 @@ class Tabs:
     # on none of the proteins looked at: the folded box under the In trials
     # list. Furthest trial stage first, then A to Z. No rank.
     more_in_trials: List[TrialMedicine] = field(default_factory=list)
+    # Ticket 2.24. In a trial for the disease, and no form we can see is
+    # approved for anything: the second folded box, under that one.
+    # Furthest trial stage first, then A to Z. No rank.
+    new_in_trials: List[TrialMedicine] = field(default_factory=list)
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -516,6 +536,21 @@ def sort_into_tabs(
       - a medicine on the Approved tab or in one of its boxes is already
         on the page, so it is not in this box.
     Nothing else in the answer changes: the box is worked out last.
+
+    on_list also fills new_in_trials (ticket 2.24, Kashish's decisions of
+    23 Nov), the second folded box. The same guest list, read once more
+    for the guests the first reading turned away:
+      - the list gives it a trial stage for this disease, the same stage
+        words as In trials;
+      - no form of it that we can see is approved for anything: not on
+        the list, and not on a path through one of the proteins;
+      - the list must be able to tell (OnList.all_seen). If it names a
+        parent or a tablet form it has no row for, the medicine stays out
+        of both boxes;
+      - withdrawn in any source is left out, as everywhere;
+      - a medicine on any tab or in any other box is not in this one.
+    A medicine in this box that acts on one of the proteins looked at is
+    still counted in left_out as before: the counts keep their meaning.
     """
     withdrawn_listed = list(withdrawn_listed)
     neighbours = list(neighbours)
@@ -612,6 +647,28 @@ def sort_into_tabs(
     more_in_trials.sort(key=lambda medicine: (
         STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id))
 
+    # Ticket 2.24. Approved for something, as far as a path can see.
+    approved_on_a_path = {
+        _family_id(path.medicine)
+        for paths in tray.values()
+        for path in paths
+        if path.medicine.best_stage == fetch.APPROVAL
+    }
+    new_in_trials = [
+        _trial_medicine(entry)
+        for entry in on_list
+        if entry.all_seen  # the list can tell: nobody in the family is missing
+        and entry.medicine.best_stage != fetch.APPROVAL  # approved for nothing
+        and _is_a_trial(entry.medicine.disease_stage)
+        and entry.medicine.withdrawn is not True
+        and _family_id(entry.medicine) not in withdrawn_ids
+        and _family_id(entry.medicine) not in approved_on_a_path
+        and _family_id(entry.medicine) not in own_ids
+        and _family_id(entry.medicine) not in nearby
+    ]
+    new_in_trials.sort(key=lambda medicine: (
+        STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id))
+
     return Tabs(
         approved=approved,
         being_studied=rank_clues(others[BEING_STUDIED]),
@@ -628,11 +685,18 @@ def sort_into_tabs(
         wider_group=wider_group,
         narrower=narrower,
         more_in_trials=more_in_trials,
+        new_in_trials=new_in_trials,
     )
 
 
+def _is_a_trial(stage: Optional[str]) -> bool:
+    """Is this stage word a trial in people? The same words filter.group_of
+    takes as "being studied": a phase, early or not. Nothing else."""
+    return stage is not None and (stage.startswith("PHASE_") or stage.startswith("EARLY_PHASE_"))
+
+
 def _trial_medicine(entry: OnList) -> TrialMedicine:
-    """One card of the box, from the family's records on the disease's list."""
+    """One card of either box, from the family's records on the disease's list."""
     medicine = entry.medicine
     stage = medicine.disease_stage  # the strongest of its forms
     # The receipt for the stage on the card first, then the other links.
@@ -650,7 +714,8 @@ def _trial_medicine(entry: OnList) -> TrialMedicine:
 def keep_out(more: Iterable[TrialMedicine], listed: Iterable[str]) -> List[TrialMedicine]:
     """The box without the listed medicines. The rest keep their order.
 
-    Ticket 2.21: no existing rule may be undone by the box. listed holds
+    Tickets 2.21 and 2.24: no existing rule may be undone by a box under
+    the In trials list. more is either box's cards. listed holds
     the family ids a hand-written list names for this disease
     (pushes_wrong_way and looks_wrong). Nothing is counted or said about
     the ones taken out.

@@ -17,6 +17,8 @@ Five questions, five functions:
     fetch_listed_medicines(disease) -> list of OnList: every medicine family on
                                       the disease's own list, as records
                                       (ticket 2.21). The same question again.
+                                      Each says whether its whole family was
+                                      seen on the list (ticket 2.24).
 
 and one about the data itself:
 
@@ -734,8 +736,18 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             family_id,
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
              "approval_sources": [], "reports": 0, "source_said": False,
-             "regulator_report": False, "records": [], "stage_reports": []},
+             "regulator_report": False, "records": [], "stage_reports": [],
+             "named": set(), "told": True},
         )
+        # Ticket 2.24. Every relative this row names: the medicine it is a
+        # form of, and its own tablet forms. If the answer does not say
+        # the tablet forms at all, the family was not wholly told.
+        if parent:
+            family["named"].add(parent["id"])
+        if drug.get("childMolecules") is None:
+            family["told"] = False
+        for child in drug.get("childMolecules") or []:
+            family["named"].add(child["id"])
         # Ticket 2.21. The same form as a record: how far it got for any
         # disease, and how far for THIS disease (the row's own stage).
         record = MedicineForm(
@@ -825,10 +837,19 @@ class OnList:
 
     reports holds (link, stage) for each report link, once: the stage is
     that report's own, or None if the answer did not say.
+
+    all_seen (ticket 2.24) answers: does every member of the family the
+    answer names have a row of its own on the list? Like a family photo
+    with the names written under it: True only if nobody named is missing
+    from the picture. False if a row names a parent, or a tablet form,
+    that has no row, or if a row does not say its tablet forms at all.
+    Then nobody said how far the missing one got for any disease, so
+    "approved for nothing" cannot be told from the list. Nothing is guessed.
     """
 
     medicine: Medicine
     reports: Tuple[Tuple[str, Optional[str]], ...]
+    all_seen: bool = False  # not said is never taken as "wholly seen"
 
 
 def fetch_listed_medicines(disease: Disease) -> List[OnList]:
@@ -844,6 +865,8 @@ def fetch_listed_medicines(disease: Disease) -> List[OnList]:
         OnList(
             medicine=Medicine(name=family["name"], forms=family["records"]),
             reports=tuple(family["stage_reports"]),
+            all_seen=family["told"]
+            and family["named"] <= {record.id for record in family["records"]},
         )
         for family in _list_families(disease).values()
     ]

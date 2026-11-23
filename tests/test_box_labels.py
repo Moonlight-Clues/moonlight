@@ -226,7 +226,7 @@ def test_the_box_titles_and_their_order_are_unchanged():
 # asks for 25 proteins, but some diseases have fewer.
 
 TRIALS_LINE = (
-    "Approved for another disease and now being tested for this one. A "
+    "Medicines being tested for this disease. A "
     "separate research category, not a prediction of effectiveness. Not "
     "every trial is listed."
 )
