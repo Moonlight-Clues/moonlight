@@ -597,14 +597,19 @@ def test_example_6_the_same_cards_in_the_same_order_as_before(disease, saved_jso
     before = load(SAVED / "approved_tab_before_2.17.json")[disease.id]
     data = saved_json(disease)
     assert before["name"] == disease.name == data["disease"]["name"]
+    # Ticket 2.32. A card added by hand (valbenazine for Huntington disease) moved
+    # from the wider-group box to the main list. It is set aside here.
+    # tests/test_approvals_third_batch.py holds that move.
+    by_hand = {entry.medicine_id for entry in engine.added_by_hand(disease.id)}
     for box in ("approved", "narrower", "wider_group"):
-        now = data.get(box, [])
+        now = [one for one in data.get(box, []) if one["id"] not in by_hand]
+        as_before = [one for one in before[box] if one["id"] not in by_hand]
         assert [(one["id"], one["medicine"]) for one in now] == [
-            (one["id"], one["medicine"]) for one in before[box]]
+            (one["id"], one["medicine"]) for one in as_before]
         # The Source record link and the number of reports are as before.
         assert [(one["source"], one["reports"]) for one in now] == [
-            (one["source"], one["reports"]) for one in before[box]]
-        for one, was in zip(now, before[box]):
+            (one["source"], one["reports"]) for one in as_before]
+        for one, was in zip(now, as_before):
             if was["proof_note"]:  # a Japan line stays a Japan line
                 assert one["proof_note"] == was["proof_note"] == JAPAN_LINE
             else:  # the only new thing a card can gain is the new line

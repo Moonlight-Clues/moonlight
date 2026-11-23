@@ -65,3 +65,39 @@ answer of 2026-11-23. CHEMBL1743007 DARATUMUMAB is on it with the stage
 PHASE_3 and 13 reports. No tablet form, no warning.
 
 So this folder now holds 49 answers.
+
+## Ticket 2.32 (third batch): nothing saved again
+
+Asked live on 2026-11-23 (Open Targets data 26.09) with DISEASE_DRUGS_QUERY,
+the way fetch.py asks it. No new file in this folder.
+
+- MONDO_0007739 Huntington disease (62 medicines) and MONDO_0005395 movement
+  disorder, its wider group. `fixtures/no_regulator/` already holds both
+  lists, letter for letter the live answers of 2026-11-23, and a whole
+  search for Huntington disease. The tests read them from there.
+  - CHEMBL2364639 VALBENAZINE has no row on Huntington disease's own list.
+    It is on movement disorder's list: the medicine itself with the stage
+    PHASE_3, and its one tablet form, CHEMBL3707248 VALBENAZINE TOSYLATE,
+    with the stage APPROVAL. Its only warnings are "Black Box Warning",
+    which is not a withdrawal.
+  - CHEMBL3137326 DEUTETRABENAZINE is on Huntington disease's own list with
+    the stage APPROVAL (a DailyMed approval report among its 6). The
+    database files it as a form of CHEMBL117785 TETRABENAZINE. So it got no
+    entry in approvals.json.
+
+Looked at live the same day, not saved, waiting for Kashish to pick the
+disease entry:
+
+- Ravulizumab, CHEMBL3989986. "neuromyelitis optica spectrum disorder" finds
+  one entry, MONDO_0019100 neuromyelitis optica (50 medicines): ravulizumab
+  is on it with the stage PHASE_3 and 4 reports. Its two children,
+  EFO_0009584 AQP4-IgG-positive neuromyelitis optica and EFO_0009585
+  AQP4-IgG-negative neuromyelitis optica, have empty lists.
+- Avapritinib, CHEMBL4204794. MONDO_0016586 systemic mastocytosis (24
+  medicines): on it with the stage PHASE_2 and 5 reports. MONDO_0020334 mast
+  cell leukemia (4 medicines): on it with the stage PHASE_1 and 1 report.
+  Not on MONDO_0020333 aggressive systemic mastocytosis (1 medicine),
+  MONDO_0020332 systemic mastocytosis with an associated clonal hematologic
+  non-mast cell lineage disease (1 medicine) or the parent MONDO_0007950
+  mastocytosis (10 medicines). MONDO_0019025 extracutaneous mastocytoma, the
+  fourth child, was not asked.
