@@ -1,0 +1,245 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0005623",
+      "drugAndClinicalCandidates": {
+        "count": 8,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL521",
+              "name": "IBUPROFEN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1201141",
+                  "name": "IBUPROFEN LYSINE",
+                  "drugWarnings": []
+                },
+                {
+                  "id": "CHEMBL3989408",
+                  "name": "IBUPROFEN SODIUM",
+                  "drugWarnings": []
+                },
+                {
+                  "id": "CHEMBL4594450",
+                  "name": "IBUPROFEN ARGININE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07571681",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL131",
+              "name": "PREDNISOLONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07571681",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL6068503",
+              "name": "SELENIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00271427",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04942769",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL154",
+              "name": "NAPROXEN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200806",
+                  "name": "NAPROXEN SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    },
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07571681",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL635",
+              "name": "PREDNISONE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04943146",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL25",
+              "name": "ASPIRIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1697753",
+                  "name": "ASPIRIN DL-LYSINE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04943146",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1624",
+              "name": "LEVOTHYROXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL2103741",
+                  "name": "LEVOTHYROXINE SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00403390",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL107",
+              "name": "COLCHICINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07571681",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
