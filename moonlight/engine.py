@@ -65,6 +65,14 @@ box, under the one from ticket 2.21. If the list cannot tell whether it is
 approved for something (fetch.OnList.all_seen is False), it stays out of
 both boxes. keep_out works for this box too.
 
+Ticket 2.26, a hand-written list of missing approvals. approvals_by_hand()
+reads moonlight/approvals.json: medicines whose official label names a
+disease, but which the database does not record as approved for it.
+added_by_hand(disease_id) gives the entries for one disease, without the
+ones on the corrections list for it. sort_into_tabs puts each of them on
+the main Approved list, and nowhere else on the page. Its card carries
+ADDED_LINE and links to the label. Nothing new is asked of Open Targets.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -151,11 +159,30 @@ NEW_IN_TRIALS_LABEL = (
     "New medicines being tested for this disease. The database records no "
     "approval for them for any disease."
 )
+# Ticket 2.26, Kashish's words of 23 Nov, exactly. The grey line on a card
+# added from the hand-written list. Changing them needs her approval.
+ADDED_LINE = (
+    "This approval is missing from the database. We added it from the "
+    "official label."
+)
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
 LEFT_OUT_FILE = pathlib.Path(__file__).resolve().parent / "left_out.json"
 LEFT_OUT_KEYS = {"medicine_id", "disease_id", "date"}
+# Ticket 2.26. The approvals added by hand. Nothing in Moonlight writes here.
+APPROVALS_FILE = pathlib.Path(__file__).resolve().parent / "approvals.json"
+APPROVAL_KEYS = {"medicine_id", "name", "disease_id", "date", "label"}
+
+
+@dataclass(frozen=True)
+class HandApproval:
+    """One entry of the hand-written list of missing approvals (ticket 2.26)."""
+
+    medicine_id: str  # the id shared by the medicine and its tablet forms
+    name: str  # the name the card shows. It comes from the file, not from Open Targets.
+    disease_id: str  # the one disease the entry works for
+    label: str  # the regulator's own page: the card's source link
 
 
 @dataclass(frozen=True)
@@ -196,12 +223,20 @@ class ApprovedMedicine:
     # lists holds such a report. None: not said. It is on no list, or on
     # one of them its reports carry no source value.
     regulator_record: Optional[bool] = None
+    # Ticket 2.26. None for a medicine the database records as approved.
+    # For one added from the hand-written list: the link to its label.
+    added_from_label: Optional[str] = None
 
     @property
     def proof_note(self) -> Optional[str]:
         """The one quiet grey line the card carries, or None.
 
-        Like a receipt check with two questions, asked in this order:
+        A card added from the hand-written list of missing approvals
+        (ticket 2.26) carries ADDED_LINE, and nothing else: the database
+        has no approval receipt for it to check.
+
+        For every other card, like a receipt check with two questions,
+        asked in this order:
           1. Is Japan's general list its only approval receipt? Then
              JAPAN_LINE (ticket 2.13), and nothing else.
           2. Is it known to have no approval report from a regulator
@@ -210,6 +245,8 @@ class ApprovedMedicine:
         None if it has a regulator's approval report, or if nobody said
         where its reports come from. The line never moves or hides a card.
         """
+        if self.added_from_label:
+            return ADDED_LINE
         if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
             return JAPAN_LINE
         if self.regulator_record is False:
@@ -226,7 +263,12 @@ class ApprovedMedicine:
           2. Japan's general list, if that is its only kind of receipt;
           3. the link shown before this ticket: the first of sources.
         Only an https link is ever chosen. None if it has no such link.
+
+        A card added from the hand-written list (ticket 2.26) shows the
+        label written in the file, and never anything else.
         """
+        if self.added_from_label:
+            return self.added_from_label
         receipts = [link for link in self.approval_sources if link.startswith("https://")]
         for link in receipts:
             if link != JAPAN_LIST:
@@ -480,6 +522,7 @@ def sort_into_tabs(
     withdrawn_listed: Iterable[Listed] = (),
     neighbours: Iterable[Neighbour] = (),
     on_list: Iterable[OnList] = (),
+    by_hand: Iterable[HandApproval] = (),
 ) -> Tabs:
     """The tray from find_clues and the disease's own list -> the three tabs.
 
@@ -551,9 +594,27 @@ def sort_into_tabs(
       - a medicine on any tab or in any other box is not in this one.
     A medicine in this box that acts on one of the proteins looked at is
     still counted in left_out as before: the counts keep their meaning.
+
+    by_hand (ticket 2.26, Kashish's decisions of 23 Nov) holds the entries
+    of the hand-written list of missing approvals for THIS disease
+    (added_by_hand). Like a name written by hand at the bottom of a class
+    list: the child sits with the class, and the list says who wrote it in.
+      - The medicine is on the main Approved list, A to Z with the others,
+        named as the file names it. Its card carries ADDED_LINE and links
+        to the label in the file.
+      - It is nowhere else on the page: not in In trials, not in New clues,
+        not in any folded box, and not counted as left out.
+      - Nothing new is asked. If the page already fetched a path for it
+        through one of the proteins, the card shows that path. Its forms
+        and its report count come from what was already fetched too.
+      - Withdrawn comes first, as everywhere: a medicine withdrawn in any
+        source is not added, and the page is as if the entry was not there.
+      - If the database already records it as approved for this exact
+        disease, nothing is missing: its card stays as the database has it.
     """
     withdrawn_listed = list(withdrawn_listed)
     neighbours = list(neighbours)
+    on_list = list(on_list)
     withdrawn_nearby = [entry for neighbour in neighbours for entry in neighbour.withdrawn]
     withdrawn_ids = {
         _family_id(path.medicine)
@@ -567,6 +628,14 @@ def sort_into_tabs(
     own_ids = set(listed_by_id) | {
         _family_id(path.medicine) for path in tray.get(ALREADY_APPROVED, [])
     }
+    # Ticket 2.26. Added by hand: not withdrawn in any source, and not
+    # already recorded as approved for this exact disease.
+    hand = {
+        entry.medicine_id: entry
+        for entry in by_hand
+        if entry.medicine_id not in withdrawn_ids and entry.medicine_id not in own_ids
+    }
+    own_ids |= set(hand)  # so it is in no folded box, like any other medicine of this list
     # family id -> where else it is approved: [child names, parent names, entries]
     nearby: Dict[str, Tuple[List[str], List[str], List[Listed]]] = {}
     for neighbour in neighbours:
@@ -587,7 +656,7 @@ def sort_into_tabs(
             family_id = _family_id(path.medicine)
             if family_id in withdrawn_ids:
                 others[NOT_APPROVED].append(path)  # counted, never named
-            elif group == ALREADY_APPROVED or family_id in listed_by_id:
+            elif group == ALREADY_APPROVED or family_id in listed_by_id or family_id in hand:
                 approved_paths.append(path)
             elif family_id in nearby:
                 nearby_paths.setdefault(family_id, []).append(path)
@@ -605,10 +674,16 @@ def sort_into_tabs(
         family_id = _family_id(clue.medicine)
         seen.add(family_id)
         entry = listed_by_id.get(family_id)
-        approved.append(_approved_medicine(family_id, clue, [entry] if entry else []))
+        if family_id in hand:
+            approved.append(_added_medicine(hand[family_id], clue, on_list))
+        else:
+            approved.append(_approved_medicine(family_id, clue, [entry] if entry else []))
     for entry in listed_by_id.values():
         if entry.id not in seen:
             approved.append(_approved_medicine(entry.id, None, [entry]))
+    for family_id, entry in hand.items():
+        if family_id not in seen:
+            approved.append(_added_medicine(entry, None, on_list))
 
     narrower: List[ApprovedMedicine] = []
     wider_group: List[ApprovedMedicine] = []
@@ -766,6 +841,92 @@ def _approved_medicine(
     )
 
 
+def _added_medicine(
+    entry: HandApproval, clue: Optional[Clue], on_list: Iterable[OnList]
+) -> ApprovedMedicine:
+    """One Approved card for a medicine added by hand (ticket 2.26).
+
+    The name is the file's. Everything else is what the page already
+    fetched: its paths, if it acts on one of the proteins looked at, and
+    its forms and report links on the disease's own list, if it is there.
+    A medicine that is in neither has one form, the name in the file.
+    """
+    forms: Dict[str, str] = {}  # form id -> name, each form once
+    for path in clue.paths if clue else ():
+        for form in path.medicine.forms:
+            forms.setdefault(form.id, form.name)
+    links: List[str] = []
+    for listed in on_list:
+        if _family_id(listed.medicine) != entry.medicine_id:
+            continue
+        for form in listed.medicine.forms:
+            forms.setdefault(form.id, form.name)
+        links.extend(link for link, _ in listed.reports if link not in links)
+    if not forms:
+        forms[entry.medicine_id] = entry.name
+    return ApprovedMedicine(
+        id=entry.medicine_id,
+        name=entry.name,
+        forms=_parent_first(entry.medicine_id, forms),
+        clue=clue,
+        listed_sources=tuple(links),
+        added_from_label=entry.label,
+    )
+
+
+def _read_approvals() -> list:
+    """The one place the approvals file is read. Tests replace this."""
+    return json.loads(APPROVALS_FILE.read_text(encoding="utf-8"))
+
+
+def approvals_by_hand() -> List[HandApproval]:
+    """The hand-written list of missing approvals, in the file's order
+    (ticket 2.26).
+
+    Each entry holds exactly five things: the medicine's id, the name the
+    card shows, the disease's id, the date and the label, an https link to
+    the regulator's own page. An entry that is not written this way raises
+    ValueError, as for corrections: the list is never half read. The same
+    medicine and disease written twice with a different name or label is
+    refused too.
+
+    This list is written by hand. No code adds to it, and Moonlight never
+    creates an approval by itself.
+    """
+    entries = _read_approvals()
+    if not isinstance(entries, list):
+        raise ValueError("approvals.json must hold a list.")
+    found: Dict[Tuple[str, str], HandApproval] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, APPROVAL_KEYS, "An approval added by hand")
+        name, label = entry["name"], entry["label"]
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(f"An approval added by hand needs a name: {entry!r}")
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(
+                f"An approval added by hand needs an https link to its label: {entry!r}")
+        approval = HandApproval(pair[0], name, pair[1], label)
+        if found.setdefault(pair, approval) != approval:
+            raise ValueError(f"An approval is written twice in two different ways: {entry!r}")
+    return list(found.values())
+
+
+def added_by_hand(disease_id: str) -> List[HandApproval]:
+    """The approvals added by hand for this disease, for sort_into_tabs.
+
+    An entry works only for the disease written on it. Existing rules
+    still win (Kashish, 23 Nov): a medicine on the corrections list for
+    this disease is not handed over, so its entry does nothing. A
+    withdrawn medicine is turned away by sort_into_tabs, which is where
+    the withdrawn notes are known.
+    """
+    wrong = looks_wrong(disease_id)
+    return [
+        entry for entry in approvals_by_hand()
+        if entry.disease_id == disease_id and entry.medicine_id not in wrong
+    ]
+
+
 def _read_corrections() -> list:
     """The one place the corrections file is read. Tests replace this."""
     return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
@@ -775,8 +936,8 @@ def _checked_pair(entry: object, keys: Set[str], kind: str) -> Tuple[str, str]:
     """One hand-written entry -> (medicine id, disease id), or ValueError.
 
     The entry must hold exactly the things in keys, with a medicine id, a
-    disease id and a real date (like "2026-11-16"). Nothing else: no name,
-    no reason.
+    disease id and a real date (like "2026-11-16"). Nothing that is not
+    in keys: no doctor's name, no reason.
     """
     if not isinstance(entry, dict) or set(entry) != keys:
         raise ValueError(f"{kind} must hold exactly {sorted(keys)}: {entry!r}")

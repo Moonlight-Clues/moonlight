@@ -9,7 +9,10 @@
                                             "new_in_trials": the second folded box,
                                             under that one (ticket 2.24). Also
                                             "about_disease": Open Targets' own
-                                            description and "also called" names
+                                            description and "also called" names.
+                                            A medicine on the hand-written list of
+                                            missing approvals (ticket 2.26) is in
+                                            "approved", and nowhere else
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -77,6 +80,7 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
+from moonlight.engine import HandApproval, added_by_hand
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -233,9 +237,11 @@ class _Found:
 
     def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed],
                  withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = (),
-                 on_list: List[OnList] = ()):
+                 on_list: List[OnList] = (), by_hand: List[HandApproval] = ()):
         self.disease = disease
-        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list)
+        # by_hand (ticket 2.26): the hand-written list's entries for this
+        # disease. Each is on the main Approved list and nowhere else.
+        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list, by_hand)
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
@@ -260,6 +266,11 @@ class _Found:
                 names.update(form.name for form in path.medicine.forms)
         # Also the ones only on the disease's own list, or on a parent's or child's.
         for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
+            if medicine.added_from_label:
+                # Added by hand (ticket 2.26). Its name comes from a file,
+                # not from Open Targets, so it is not added: the
+                # explainer's check is as it was.
+                continue
             names.add(medicine.name)
             names.update(medicine.forms)
         self.known_names = names
@@ -275,7 +286,8 @@ def _find(disease_id: str) -> _Found:
         return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
                       fetch_withdrawn(disease),  # the same saved answer, not a new question
                       fetch_neighbours(disease),  # one step up and one step down
-                      fetch_listed_medicines(disease))  # the same saved answer again
+                      fetch_listed_medicines(disease),  # the same saved answer again
+                      added_by_hand(disease.id))  # a file, not a question (ticket 2.26)
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -376,6 +388,10 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
 
     Ticket 2.14. source is the engine's choice (source_record): an exact
     approval receipt, else Japan's general list, else the link shown before.
+
+    Ticket 2.26. For a medicine added from the hand-written list of missing
+    approvals, proof_note is the engine's line for it and source is the
+    label written in the file. Both are the engine's choice, as above.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
