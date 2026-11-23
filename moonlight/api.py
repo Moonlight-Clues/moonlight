@@ -403,6 +403,10 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     approvals, proof_note is the engine's line for it and source is the
     label written in the file. Both are the engine's choice, as above.
 
+    Ticket 2.33. A card added from the hand-written list whose entry is
+    limited gains the key limit_note: the engine's words, a second grey
+    line. Its proof_note is unchanged. No other card ever has the key.
+
     Ticket 2.31. notes says which cards carry the withdrawal line
     (engine.withdrawal_notes): card id -> the engine's words. Such a card
     gains the key withdrawal_note. Every other card has no such key. It is
@@ -424,6 +428,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
         item["label"] = medicine.label  # the engine's words, never changed here
     if medicine.proof_note:
         item["proof_note"] = medicine.proof_note  # the engine's words too
+    if medicine.limit_note:
+        item["limit_note"] = medicine.limit_note  # the engine's words, never typed here
     if medicine.id in wrong:
         item["warning"] = (words or {}).get(medicine.id, WRONG_WARNING)
     if medicine.id in (notes or {}):

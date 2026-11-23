@@ -79,7 +79,7 @@ PROPYLTHIOURACIL_CARD = {
     "medicine": "Propylthiouracil",
     "forms": ["Propylthiouracil"],
     "proteins": [],  # the page fetched no protein path for it
-    "reports": 2,  # its report links on the disease's own list
+    "reports": 4,  # its four report links on the disease's own saved list
     "source": PROPYLTHIOURACIL_LABEL,
     "proof_note": ADDED_LINE,
     "limit_note": LINE,

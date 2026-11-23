@@ -88,6 +88,12 @@ WITHDRAWAL. It is worked out after sort_into_tabs, which is not changed.
 No card is hidden, moved or reordered. The older "Withdrawn" warning flag
 is a different thing and still hides a medicine.
 
+Ticket 2.33, "only some people". An entry of approvals.json may also say
+"limited": true: its official label covers only some people with the
+disease. Its card then carries a second grey line, LIMITED_LINE
+(ApprovedMedicine.limit_note), under the hand-added line, which is
+unchanged. Moonlight never writes which people.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -189,6 +195,11 @@ ADDED_LINE = (
 WITHDRAWAL_LINE = (
     "The database records a withdrawal for this medicine in some country or region."
 )
+# Ticket 2.33, Kashish's words of 23 Nov, exactly. One more grey line on a
+# card added from the hand-written list, when its entry says "limited": the
+# official label covers only some people with the disease. Moonlight never
+# writes which people. Changing these words needs her approval.
+LIMITED_LINE = "The label covers only some people with this disease."
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
@@ -197,6 +208,8 @@ LEFT_OUT_KEYS = {"medicine_id", "disease_id", "date"}
 # Ticket 2.26. The approvals added by hand. Nothing in Moonlight writes here.
 APPROVALS_FILE = pathlib.Path(__file__).resolve().parent / "approvals.json"
 APPROVAL_KEYS = {"medicine_id", "name", "disease_id", "date", "label"}
+# Ticket 2.33. The one extra key an entry may carry, and only as true.
+APPROVAL_EXTRA_KEY = "limited"
 
 
 @dataclass(frozen=True)
@@ -207,6 +220,9 @@ class HandApproval:
     name: str  # the name the card shows. It comes from the file, not from Open Targets.
     disease_id: str  # the one disease the entry works for
     label: str  # the regulator's own page: the card's source link
+    # Ticket 2.33. True if the entry says the label covers only some people
+    # with the disease. The card then carries LIMITED_LINE too.
+    limited: bool = False
 
 
 @dataclass(frozen=True)
@@ -250,6 +266,18 @@ class ApprovedMedicine:
     # Ticket 2.26. None for a medicine the database records as approved.
     # For one added from the hand-written list: the link to its label.
     added_from_label: Optional[str] = None
+    # Ticket 2.33. True only for a card added from the hand-written list
+    # whose entry says its label covers only some people with the disease.
+    limited: bool = False
+
+    @property
+    def limit_note(self) -> Optional[str]:
+        """LIMITED_LINE for a hand-added card whose entry is limited, else
+        None (ticket 2.33). A second grey line, under proof_note, which
+        stays as it is. No card the database records ever has it."""
+        if self.added_from_label and self.limited:
+            return LIMITED_LINE
+        return None
 
     @property
     def proof_note(self) -> Optional[str]:
@@ -933,6 +961,7 @@ def _added_medicine(
         clue=clue,
         listed_sources=tuple(links),
         added_from_label=entry.label,
+        limited=entry.limited,
     )
 
 
@@ -947,7 +976,10 @@ def approvals_by_hand() -> List[HandApproval]:
 
     Each entry holds exactly five things: the medicine's id, the name the
     card shows, the disease's id, the date and the label, an https link to
-    the regulator's own page. An entry that is not written this way raises
+    the regulator's own page. It may hold one thing more (ticket 2.33):
+    "limited": true, for a label that covers only some people with the
+    disease. Any other value there, false too, is refused, and so is any
+    other extra key. An entry that is not written this way raises
     ValueError, as for corrections: the list is never half read. The same
     medicine and disease written twice with a different name or label is
     refused too.
@@ -960,14 +992,21 @@ def approvals_by_hand() -> List[HandApproval]:
         raise ValueError("approvals.json must hold a list.")
     found: Dict[Tuple[str, str], HandApproval] = {}
     for entry in entries:
-        pair = _checked_pair(entry, APPROVAL_KEYS, "An approval added by hand")
+        keys, limited = APPROVAL_KEYS, False
+        if isinstance(entry, dict) and APPROVAL_EXTRA_KEY in entry:
+            if entry[APPROVAL_EXTRA_KEY] is not True:
+                raise ValueError(
+                    f'An approval added by hand may say "limited": true and nothing '
+                    f"else there: {entry!r}")
+            keys, limited = APPROVAL_KEYS | {APPROVAL_EXTRA_KEY}, True
+        pair = _checked_pair(entry, keys, "An approval added by hand")
         name, label = entry["name"], entry["label"]
         if not isinstance(name, str) or not name.strip():
             raise ValueError(f"An approval added by hand needs a name: {entry!r}")
         if not isinstance(label, str) or not label.startswith("https://"):
             raise ValueError(
                 f"An approval added by hand needs an https link to its label: {entry!r}")
-        approval = HandApproval(pair[0], name, pair[1], label)
+        approval = HandApproval(pair[0], name, pair[1], label, limited)
         if found.setdefault(pair, approval) != approval:
             raise ValueError(f"An approval is written twice in two different ways: {entry!r}")
     return list(found.values())
