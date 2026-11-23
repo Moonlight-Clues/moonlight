@@ -226,7 +226,7 @@ def test_the_box_titles_and_their_order_are_unchanged():
 # asks for 25 proteins, but some diseases have fewer.
 
 TRIALS_LINE = (
-    "Approved for another disease and now being tested for this one. A "
+    "Medicines being tested for this disease. A "
     "separate research category, not a prediction of effectiveness. Not "
     "every trial is listed."
 )
@@ -245,6 +245,6 @@ def test_example_4_the_line_is_under_the_real_in_trials_tab():
 
 
 def test_example_4_the_old_words_are_all_still_there_and_said_once():
-    for words in ("now being tested for this one.", "not a prediction of effectiveness.",
+    for words in ("Medicines being tested for this disease.", "not a prediction of effectiveness.",
                   "Not every trial is listed."):
         assert PAGE.count(words) == 1

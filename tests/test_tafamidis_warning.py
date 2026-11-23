@@ -180,7 +180,12 @@ def test_the_card_keeps_its_place_and_nothing_else_on_the_page_changes():
     before = json.loads((SAVED / "clues_before_2.25.json").read_text(encoding="utf-8"))
     expected = copy.deepcopy(before)
     expected["approved"][0]["warning"] = SECOND_NOTE
-    assert real_page() == expected
+    # Ticket 2.24 added the box of new medicines in trials after that copy
+    # was saved. It is set aside here, and it is the only extra key.
+    page = real_page()
+    assert set(page) - set(before) == {"new_in_trials"}
+    del page["new_in_trials"]
+    assert page == expected
 
 
 def test_beside_another_card_tafamidis_alone_is_warned_and_stays_a_to_z():

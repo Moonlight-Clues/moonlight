@@ -50,7 +50,7 @@ APPROVED_TOP_LINE = (
     "the database. Nothing here says how well any of them works. Listed A to Z."
 )
 TRIALS_TOP_LINE = (
-    "Approved for another disease and now being tested for this one. A "
+    "Medicines being tested for this disease. A "
     "separate research category, not a prediction of effectiveness. Not every "
     "trial is listed."
 )

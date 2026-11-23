@@ -1008,7 +1008,7 @@ APPROVED_EMPTY = (
     "does not mean there is none. Ask a doctor."
 )
 TRIALS_WORDS = (
-    "Approved for another disease and now being tested for this one. A "
+    "Medicines being tested for this disease. A "
     "separate research category, not a prediction of effectiveness. Not "
     "every trial is listed."
 )
