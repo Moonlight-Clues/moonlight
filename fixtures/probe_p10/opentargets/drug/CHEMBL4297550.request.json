@@ -1,0 +1,6 @@
+{
+ "query": "\nquery Drug($drugId: String!) {\n  drug(chemblId: $drugId) {\n    id name drugType maximumClinicalStage\n    drugWarnings { warningType }\n    parentMolecule { id name maximumClinicalStage }\n    childMolecules { id name maximumClinicalStage }\n    mechanismsOfAction { rows { actionType mechanismOfAction targets { id approvedSymbol } } }\n    indications { rows { maxClinicalStage disease { id name } } }\n  }\n}\n",
+ "variables": {
+  "drugId": "CHEMBL4297550"
+ }
+}

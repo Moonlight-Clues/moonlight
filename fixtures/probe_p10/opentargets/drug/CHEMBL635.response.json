@@ -1,0 +1,2621 @@
+{
+ "data": {
+  "drug": {
+   "id": "CHEMBL635",
+   "name": "PREDNISONE",
+   "drugType": "Small molecule",
+   "maximumClinicalStage": "APPROVAL",
+   "drugWarnings": [],
+   "parentMolecule": null,
+   "childMolecules": [],
+   "mechanismsOfAction": {
+    "rows": [
+     {
+      "actionType": "AGONIST",
+      "mechanismOfAction": "Glucocorticoid receptor agonist",
+      "targets": [
+       {
+        "id": "ENSG00000113580",
+        "approvedSymbol": "NR3C1"
+       }
+      ]
+     }
+    ]
+   },
+   "indications": {
+    "rows": [
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005151",
+       "name": "endocrine system disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004948",
+       "name": "B-cell chronic lymphocytic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0004956",
+       "name": "metastatic prostate carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0018229",
+       "name": "Stevens-Johnson syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004979",
+       "name": "asthma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0010311",
+       "name": "Becker muscular dystrophy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0001387",
+       "name": "Joint stiffness"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0020511",
+       "name": "precursor B-cell acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0012817",
+       "name": "Ewing sarcoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0030746",
+       "name": "Intraventricular hemorrhage"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0100096",
+       "name": "COVID-19"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "HP_0012378",
+       "name": "Fatigue"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0100313",
+       "name": "focal segmental glomerulosclerosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_1002030",
+       "name": "chronic rhinosinusitis without nasal polyps"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018896",
+       "name": "thrombotic thrombocytopenic purpura"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005377",
+       "name": "nephrotic syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0001708",
+       "name": "pulmonary sarcoidosis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004855",
+       "name": "tenosynovitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0017594",
+       "name": "indolent B-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0017287",
+       "name": "immunoglobulin G4-related sclerosing disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004967",
+       "name": "acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0020311",
+       "name": "chronic myelomonocytic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0010822",
+       "name": "stenosing tenosynovitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0000768",
+       "name": "idiopathic pulmonary fibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0021167",
+       "name": "myositis disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0010518",
+       "name": "Wiskott-Aldrich syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0001023",
+       "name": "prolymphocytic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0007915",
+       "name": "systemic lupus erythematosus"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0019369",
+       "name": "complex regional pain syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0019471",
+       "name": "adult T-cell leukemia/lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002447",
+       "name": "endometrial carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0000872",
+       "name": "B-cell childhood acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0015925",
+       "name": "interstitial lung disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0000607",
+       "name": "primary cutaneous T-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0100010",
+       "name": "disease of the tendon"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0008219",
+       "name": "pemphigus vulgaris"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0015974",
+       "name": "severe combined immunodeficiency"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0007243",
+       "name": "Burkitt lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_1001466",
+       "name": "Graves ophthalmopathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0019460",
+       "name": "acute leukemia of ambiguous lineage"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005749",
+       "name": "eosinophilic pneumonia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004247",
+       "name": "peptic ulcer disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005494",
+       "name": "triple-negative breast carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005532",
+       "name": "Crohn's colitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0002280",
+       "name": "anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0001106",
+       "name": "kidney failure"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0012105",
+       "name": "granulomatosis with polyangiitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0008728",
+       "name": "classic congenital adrenal hyperplasia due to 21-hydroxylase deficiency"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0009348",
+       "name": "classic Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0008538",
+       "name": "temporal arteritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005416",
+       "name": "osteoarthritis, knee"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005311",
+       "name": "atherosclerosis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0010627",
+       "name": "X-linked lymphoproliferative syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0017595",
+       "name": "aggressive B-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005097",
+       "name": "squamous cell lung carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "HP_0001882",
+       "name": "Decreased total leukocyte count"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005090",
+       "name": "schizophrenia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0032072",
+       "name": "Popliteal synovial cyst"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018906",
+       "name": "follicular lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0005282",
+       "name": "cutaneous lupus erythematosus"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006763",
+       "name": "frozen shoulder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005313",
+       "name": "necrotizing enterocolitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0003907",
+       "name": "deep vein thrombosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0020108",
+       "name": "autoimmune hemolytic anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0008963",
+       "name": "Chediak-Higashi syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005359",
+       "name": "drug-induced liver injury"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0011868",
+       "name": "Sciatica"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006042",
+       "name": "meningeal tuberculosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0020678",
+       "name": "sensorineural hearing loss disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004994",
+       "name": "cardiomyopathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "EFO_0004251",
+       "name": "myeloproliferative disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0006835",
+       "name": "pyoderma gangrenosum"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005629",
+       "name": "Acanthamoeba keratitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0004784",
+       "name": "allergic asthma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0015128",
+       "name": "primary adrenal insufficiency"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0004947",
+       "name": "B-cell acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0005607",
+       "name": "chronic bronchitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0043919",
+       "name": "radiation pneumonitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0007028",
+       "name": "rotator cuff syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0017844",
+       "name": "Sezary syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0019338",
+       "name": "sarcoidosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0001707",
+       "name": "cardiac sarcoidosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0018842",
+       "name": "primary effusion lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0043233",
+       "name": "exfoliative dermatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0800501",
+       "name": "developmental and/or epileptic encephalopathy with spike-wave activation in sleep"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006982",
+       "name": "subacute thyroiditis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0020546",
+       "name": "acute graft versus host disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005292",
+       "name": "colitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0015759",
+       "name": "B-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005306",
+       "name": "ankylosing spondylitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018908",
+       "name": "non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005081",
+       "name": "preeclampsia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005062",
+       "name": "lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0005191",
+       "name": "metastatic melanoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0017604",
+       "name": "marginal zone lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "EFO_0010582",
+       "name": "Morton Neuroma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004992",
+       "name": "cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "HP_0001873",
+       "name": "Thrombocytopenia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0100233",
+       "name": "long COVID-19"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0008315",
+       "name": "prostate cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0018912",
+       "name": "Cushing syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005030",
+       "name": "fetal growth restriction"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0001566",
+       "name": "hypercalcemia disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019735",
+       "name": "polymyalgia rheumatica"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0100291",
+       "name": "early T cell progenitor acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0021211",
+       "name": "brain neoplasm"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005462",
+       "name": "primitive neuroectodermal tumor"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006814",
+       "name": "iritis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005178",
+       "name": "osteoarthritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0019088",
+       "name": "post-transplant lymphoproliferative disease"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0016367",
+       "name": "dermatomyositis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0000430",
+       "name": "mature T-cell and NK-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "HP_0012276",
+       "name": "Digital flexor tenosynovitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "EFO_0004599",
+       "name": "acute graft vs. host disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0018170",
+       "name": "idiopathic nephrotic syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0008054",
+       "name": "juvenile dermatomyositis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "EFO_0007520",
+       "name": "trichinosis"
+      }
+     },
+     {
+      "maxClinicalStage": "EARLY_PHASE_1",
+      "disease": {
+       "id": "MONDO_0005148",
+       "name": "type 2 diabetes mellitus"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0009691",
+       "name": "mycosis fungoides"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0044903",
+       "name": "myelofibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0015492",
+       "name": "anti-neutrophil cytoplasmic antibody-associated vasculitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MP_0001845",
+       "name": "inflammation"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "EFO_0009104",
+       "name": "hyperuricemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0810000",
+       "name": "choroidal neovascularization"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006594",
+       "name": "pemphigus"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002407",
+       "name": "capillary hemangioma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0007256",
+       "name": "hepatocellular carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005240",
+       "name": "kidney disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0043373",
+       "name": "sudden sensorineural hearing loss"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019124",
+       "name": "microscopic polyangiitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0008383",
+       "name": "rheumatoid arthritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019100",
+       "name": "neuromyelitis optica"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "EFO_1001332",
+       "name": "Giant Lymph Node Hyperplasia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002771",
+       "name": "pulmonary fibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "HP_0001945",
+       "name": "Fever"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0024331",
+       "name": "colorectal carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005082",
+       "name": "prostate adenocarcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0016264",
+       "name": "autoimmune hepatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005083",
+       "name": "psoriasis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0000814",
+       "name": "B-cell adult acute lymphocytic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004952",
+       "name": "Hodgkins lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0100342",
+       "name": "malignant glioma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006314",
+       "name": "nasal cavity polyp"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005961",
+       "name": "sinusitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005665",
+       "name": "Bell's palsy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0001056",
+       "name": "gastric cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "HP_0002647",
+       "name": "Aortic dissection"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0003085",
+       "name": "keratitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0035838",
+       "name": "idiopathic multicentric Castleman disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0020743",
+       "name": "mixed phenotype acute leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0015274",
+       "name": "chronic beryllium disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0006008",
+       "name": "vestibular neuronitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005402",
+       "name": "lymphoid leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0002602",
+       "name": "central nervous system disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0016971",
+       "name": "limb-girdle muscular dystrophy"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005495",
+       "name": "adrenal gland disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005140",
+       "name": "ovarian carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004980",
+       "name": "atopic eczema"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0007411",
+       "name": "Orthomyxoviridae infectious disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_8000010",
+       "name": "antiphospholipid syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0015540",
+       "name": "hemophagocytic syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_1001365",
+       "name": "Lymphoma, AIDS-Related"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005575",
+       "name": "colorectal cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005072",
+       "name": "neuroblastoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0000873",
+       "name": "lymphoblastic lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0011849",
+       "name": "psoriatic arthritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005002",
+       "name": "chronic obstructive pulmonary disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0009692",
+       "name": "primary myelofibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006502",
+       "name": "acute respiratory distress syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0007179",
+       "name": "autoimmune disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0009303",
+       "name": "anti-glomerular basement membrane disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0019469",
+       "name": "T-cell large granular lymphocyte leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018882",
+       "name": "vasculitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0004352",
+       "name": "mortality"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0019391",
+       "name": "Fanconi anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0002471",
+       "name": "bursitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005109",
+       "name": "HIV infectious disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0012268",
+       "name": "AIDS"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0013860",
+       "name": "idiopathic membranous glomerulonephritis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0001280",
+       "name": "choroiditis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0100806",
+       "name": "Sepsis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0013730",
+       "name": "graft versus host disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0016236",
+       "name": "kaposiform hemangioendothelioma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0008757",
+       "name": "alopecia universalis congenita"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004496",
+       "name": "myocarditis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0019198",
+       "name": "sympathetic ophthalmia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005149",
+       "name": "pulmonary hypertension"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0003963",
+       "name": "freckles"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005230",
+       "name": "cellulitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0044881",
+       "name": "hematopoietic and lymphoid cell neoplasm"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006702",
+       "name": "chronic inflammatory demyelinating polyradiculoneuropathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0004949",
+       "name": "neoplasm of mature B-cells"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005265",
+       "name": "inflammatory bowel disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005076",
+       "name": "periodontitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0002083",
+       "name": "Richter transformation"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0018874",
+       "name": "acute myeloid leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006608",
+       "name": "seborrheic dermatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0008661",
+       "name": "vitiligo"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006733",
+       "name": "dry eye syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006651",
+       "name": "anterior uveitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0021085",
+       "name": "gastric neoplasm"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0021559",
+       "name": "non-autoimmune hemolytic anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0003539",
+       "name": "T-cell adult acute lymphocytic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0003937",
+       "name": "spondylitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0005391",
+       "name": "restless legs syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005361",
+       "name": "eosinophilic esophagitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0012511",
+       "name": "preterm premature rupture of the membranes"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_1001350",
+       "name": "Immunoblastic Lymphadenopathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002571",
+       "name": "primary central nervous system lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0008903",
+       "name": "lung cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0001569",
+       "name": "acoustic neuroma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0008558",
+       "name": "autoimmune thrombocytopenic purpura"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005011",
+       "name": "Crohn disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006778",
+       "name": "halo nevus"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004773",
+       "name": "iridocyclitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005372",
+       "name": "male infertility"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0017991",
+       "name": "Takayasu arteritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0009688",
+       "name": "myasthenia gravis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0008497",
+       "name": "chronic lung allograft dysfunction"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "EFO_1001927",
+       "name": "cutaneous squamous cell carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "EFO_1001909",
+       "name": "Plantar Fasciitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0019127",
+       "name": "polymyositis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005696",
+       "name": "central nervous system tuberculosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0044917",
+       "name": "T-lymphoblastic lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0006456",
+       "name": "thymoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0024332",
+       "name": "perennial allergic rhinitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018076",
+       "name": "tuberculosis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0015175",
+       "name": "autoimmune pancreatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005059",
+       "name": "leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006572",
+       "name": "lichen planus"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005623",
+       "name": "autoimmune thyroid disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018876",
+       "name": "mantle cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "EFO_0000556",
+       "name": "ischemia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0044753",
+       "name": "lumbar spinal stenosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0019454",
+       "name": "myelodysplastic syndrome with excess blasts"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006031",
+       "name": "chronic rhinosinusitis"
+      }
+     },
+     {
+      "maxClinicalStage": "EARLY_PHASE_1",
+      "disease": {
+       "id": "MONDO_0005258",
+       "name": "autism spectrum disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0004471",
+       "name": "bacterial arthritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0002815",
+       "name": "acute myocarditis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0019473",
+       "name": "enteropathy-associated T-cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "HP_0001998",
+       "name": "Neonatal hypoglycemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0009909",
+       "name": "stage 5 chronic kidney disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005867",
+       "name": "Mycoplasma pneumoniae pneumonia"
+      }
+     },
+     {
+      "maxClinicalStage": "EARLY_PHASE_1",
+      "disease": {
+       "id": "MONDO_0004995",
+       "name": "cardiovascular disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0009891",
+       "name": "acquired polycythemia vera"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006806",
+       "name": "intermediate uveitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0008487",
+       "name": "polycystic ovary syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "EFO_0003917",
+       "name": "premature birth"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005348",
+       "name": "keloid"
+      }
+     },
+     {
+      "maxClinicalStage": "EARLY_PHASE_1",
+      "disease": {
+       "id": "HP_0000360",
+       "name": "Tinnitus"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0004674",
+       "name": "chorioretinitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005300",
+       "name": "chronic kidney disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002367",
+       "name": "kidney cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0001673",
+       "name": "diarrheal disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0007147",
+       "name": "obstructive sleep apnea syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004963",
+       "name": "T-cell acute lymphoblastic leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0010134",
+       "name": "kidney transplant"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "OBA_VT0000217",
+       "name": "leukocyte quantity"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0005388",
+       "name": "primary biliary cholangitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0011962",
+       "name": "endometrial cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0012531",
+       "name": "Pain"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0007699",
+       "name": "Hashimoto thyroiditis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "EFO_0008517",
+       "name": "oral lichen planus"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0019082",
+       "name": "bullous pemphigoid"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005252",
+       "name": "heart failure"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0009061",
+       "name": "cystic fibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006033",
+       "name": "diffuse intrinsic pontine glioma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "EFO_1001896",
+       "name": "lateral epicondylitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0018092",
+       "name": "Vogt-Koyanagi-Harada disease"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005885",
+       "name": "optic neuritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0005150",
+       "name": "age-related macular degeneration"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018310",
+       "name": "Langerhans cell histiocytosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0010679",
+       "name": "Duchenne muscular dystrophy"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005883",
+       "name": "ophthalmic herpes zoster"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005101",
+       "name": "ulcerative colitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0020325",
+       "name": "anaplastic large cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0011786",
+       "name": "allergic rhinitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005159",
+       "name": "prostate carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0021113",
+       "name": "respiratory failure"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0001343",
+       "name": "impaired renal function disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019121",
+       "name": "pneumocystosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019091",
+       "name": "bronchopulmonary dysplasia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0011429",
+       "name": "juvenile idiopathic arthritis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005324",
+       "name": "seasonal allergic rhinitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0010721",
+       "name": "lung transplantation"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0015243",
+       "name": "allergic bronchopulmonary aspergillosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0100163",
+       "name": "COVID-19\u2013associated multisystem inflammatory syndrome in children"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005556",
+       "name": "lupus nephritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005009",
+       "name": "congestive heart failure"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0006003",
+       "name": "uterine corpus cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005393",
+       "name": "gout"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0018479",
+       "name": "congenital adrenal hyperplasia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005326",
+       "name": "sunburn"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0015909",
+       "name": "aplastic anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0020283",
+       "name": "uveitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004975",
+       "name": "Alzheimer disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0015265",
+       "name": "bronchiolitis obliterans syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0020547",
+       "name": "chronic graft versus host disease"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "EFO_1001478",
+       "name": "systemic inflammatory response syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0007691",
+       "name": "Guillain-Barre syndrome, familial"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005642",
+       "name": "atopic conjunctivitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006570",
+       "name": "lichen disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0021553",
+       "name": "transverse myelitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018848",
+       "name": "IgG4-related retroperitoneal fibrosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002959",
+       "name": "radiculopathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005342",
+       "name": "IgA glomerulonephritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0004766",
+       "name": "status asthmaticus"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "HP_0002043",
+       "name": "Esophageal stricture"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0100280",
+       "name": "Waldenstrom macroglobulinemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1",
+      "disease": {
+       "id": "MONDO_0007972",
+       "name": "Meniere disease"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005249",
+       "name": "pneumonia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0007191",
+       "name": "Behcet disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006835",
+       "name": "minimal change disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0007254",
+       "name": "breast cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0005435",
+       "name": "anti-neutrophil antibody associated vasculitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005480",
+       "name": "contact dermatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0000004",
+       "name": "adrenocortical insufficiency"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0009287",
+       "name": "glycogen storage disease due to glucose-6-phosphatase deficiency type IA"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0019474",
+       "name": "hepatosplenic T-cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0008170",
+       "name": "ovarian cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0002400",
+       "name": "synovitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0044889",
+       "name": "high grade B-cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005798",
+       "name": "HIV-associated nephropathy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0017255",
+       "name": "panuveitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0003060",
+       "name": "biliary tract cancer"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005485",
+       "name": "psychotic disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0001705",
+       "name": "pure red-cell aplasia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "EFO_0803536",
+       "name": "multiple sclerosis symptom measurement"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0005376",
+       "name": "membranous glomerulonephritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0015247",
+       "name": "opsoclonus-myoclonus syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0015943",
+       "name": "eosinophilic granulomatosis with polyangiitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0018905",
+       "name": "diffuse large B-cell lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0019373",
+       "name": "desmoplastic small round cell tumor"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0003419",
+       "name": "Low back pain"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0018149",
+       "name": "GM1 gangliosidosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0003863",
+       "name": "urogenital neoplasm"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0018881",
+       "name": "myelodysplastic syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0008867",
+       "name": "biliary atresia"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0007004",
+       "name": "type III hypersensitivity disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005086",
+       "name": "renal cell carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0019170",
+       "name": "polyarteritis nodosa"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0009693",
+       "name": "plasma cell myeloma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0005578",
+       "name": "arthritic joint disease"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0001505",
+       "name": "alcoholic hepatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "EFO_0003046",
+       "name": "heart transplant rejection"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0004964",
+       "name": "peripheral T-cell lymphoma, not otherwise specified"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_1_2",
+      "disease": {
+       "id": "MONDO_0015253",
+       "name": "Diamond-Blackfan anemia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0005492",
+       "name": "urticaria"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005233",
+       "name": "non-small cell lung carcinoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0002462",
+       "name": "glomerulonephritis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0009994",
+       "name": "alveolar rhabdomyosarcoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006918",
+       "name": "posterior uveitis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "HP_0040223",
+       "name": "Pulmonary hemorrhage"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "HP_0000093",
+       "name": "Proteinuria"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0015614",
+       "name": "dermatitis herpetiformis"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006874",
+       "name": "obstructive jaundice"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0005044",
+       "name": "hypertensive disorder"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0005105",
+       "name": "melanoma"
+      }
+     },
+     {
+      "maxClinicalStage": "EARLY_PHASE_1",
+      "disease": {
+       "id": "MONDO_0005340",
+       "name": "alopecia areata"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0007275",
+       "name": "carpal tunnel syndrome"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0011996",
+       "name": "chronic myeloid leukemia"
+      }
+     },
+     {
+      "maxClinicalStage": "UNKNOWN",
+      "disease": {
+       "id": "MONDO_0006500",
+       "name": "hemangioma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0009975",
+       "name": "reticulum cell sarcoma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0004976",
+       "name": "amyotrophic lateral sclerosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0015760",
+       "name": "T-cell non-Hodgkin lymphoma"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006545",
+       "name": "erythema multiforme"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_3",
+      "disease": {
+       "id": "MONDO_0006585",
+       "name": "neurodermatitis"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0006052",
+       "name": "pulmonary tuberculosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "MONDO_0001475",
+       "name": "neutropenia"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2",
+      "disease": {
+       "id": "HP_0002829",
+       "name": "Arthralgia"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

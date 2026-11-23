@@ -1,0 +1,73 @@
+{
+ "data": {
+  "drug": {
+   "id": "CHEMBL1201891",
+   "name": "DEFLAZACORT",
+   "drugType": "Small molecule",
+   "maximumClinicalStage": "APPROVAL",
+   "drugWarnings": [],
+   "parentMolecule": null,
+   "childMolecules": [],
+   "mechanismsOfAction": {
+    "rows": [
+     {
+      "actionType": "AGONIST",
+      "mechanismOfAction": "Glucocorticoid receptor agonist",
+      "targets": [
+       {
+        "id": "ENSG00000113580",
+        "approvedSymbol": "NR3C1"
+       }
+      ]
+     }
+    ]
+   },
+   "indications": {
+    "rows": [
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0004979",
+       "name": "asthma"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0009676",
+       "name": "autosomal recessive limb-girdle muscular dystrophy type 2B"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0020121",
+       "name": "muscular dystrophy"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0015243",
+       "name": "allergic bronchopulmonary aspergillosis"
+      }
+     },
+     {
+      "maxClinicalStage": "PHASE_2_3",
+      "disease": {
+       "id": "MONDO_0016145",
+       "name": "neuromuscular disease caused by qualitative or quantitative defects of dysferlin"
+      }
+     },
+     {
+      "maxClinicalStage": "APPROVAL",
+      "disease": {
+       "id": "MONDO_0010679",
+       "name": "Duchenne muscular dystrophy"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

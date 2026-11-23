@@ -1,0 +1,11 @@
+{
+ "url": "https://clinicaltrials.gov/api/v2/studies",
+ "params": {
+  "query.cond": "\"limb-girdle muscular dystrophy\"",
+  "filter.advanced": "AREA[StudyType]INTERVENTIONAL",
+  "fields": "NCTId,BriefTitle,OfficialTitle,OverallStatus,Phase,StudyType,Condition,Keyword,InterventionType,InterventionName,InterventionOtherName,ConditionMeshId,ConditionMeshTerm",
+  "pageSize": 100,
+  "countTotal": "true",
+  "format": "json"
+ }
+}

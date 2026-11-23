@@ -1,0 +1,64 @@
+{
+ "data": {
+  "disease": {
+   "id": "MONDO_0011787",
+   "name": "autosomal recessive limb-girdle muscular dystrophy type 2I",
+   "parents": [
+    {
+     "id": "MONDO_0015152",
+     "name": "autosomal recessive limb-girdle muscular dystrophy"
+    },
+    {
+     "id": "MONDO_0016156",
+     "name": "qualitative or quantitative defects of FKRP"
+    },
+    {
+     "id": "MONDO_0700066",
+     "name": "myopathy caused by variation in FKRP"
+    }
+   ],
+   "children": [],
+   "drugAndClinicalCandidates": {
+    "count": 1,
+    "rows": [
+     {
+      "id": "c422a2b0ab3cf41afe6d0308d27fc4b43beb5e2dbabc6be1c6b4cc107ccf84b7",
+      "maxClinicalStage": "PHASE_2",
+      "drug": {
+       "id": "CHEMBL3137744",
+       "name": "RIBITOL",
+       "drugType": "Small molecule",
+       "maximumClinicalStage": "PHASE_3",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "nct04800874",
+        "source": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT04800874",
+        "clinicalStage": "PHASE_2",
+        "type": "INDICATION",
+        "trialPhase": "PHASE2",
+        "phaseFromSource": "PHASE2",
+        "trialOverallStatus": "ACTIVE_NOT_RECRUITING",
+        "trialStudyType": "INTERVENTIONAL",
+        "title": "An Open Label Phase 2 Study of BBP-418 in Patients With Limb Girdle Muscular Dystrophy Type 2I (MLB-01-003)",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb girdle muscular dystrophy type 2I",
+          "disease": {
+           "id": "MONDO_0011787",
+           "name": "autosomal recessive limb-girdle muscular dystrophy type 2I"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

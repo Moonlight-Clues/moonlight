@@ -1,0 +1,6 @@
+{
+ "query": "\nquery Family($diseaseId: String!) {\n  meta { dataVersion { year month iteration } }\n  disease(efoId: $diseaseId) {\n    id name\n    parents { id name }\n    children { id name }\n    descendants\n  }\n}\n",
+ "variables": {
+  "diseaseId": "MONDO_0016971"
+ }
+}

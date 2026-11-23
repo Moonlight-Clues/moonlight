@@ -1,0 +1,6 @@
+{
+ "query": "\nquery DiseaseDrugs($diseaseId: String!) {\n  disease(efoId: $diseaseId) {\n    id name\n    parents { id name }\n    children { id name }\n    drugAndClinicalCandidates {\n      count\n      rows {\n        id\n        maxClinicalStage\n        drug {\n          id name drugType maximumClinicalStage\n          drugWarnings { warningType }\n          parentMolecule { id name maximumClinicalStage drugWarnings { warningType } }\n          childMolecules { id name maximumClinicalStage drugWarnings { warningType } }\n        }\n        clinicalReports {\n          id source url clinicalStage type trialPhase phaseFromSource\n          trialOverallStatus trialStudyType title\n          diseases { diseaseFromSource disease { id name } }\n        }\n      }\n    }\n  }\n}\n",
+ "variables": {
+  "diseaseId": "MONDO_0013162"
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "data": {
+  "disease": {
+   "id": "MONDO_0009676",
+   "name": "autosomal recessive limb-girdle muscular dystrophy type 2B",
+   "parents": [
+    {
+     "id": "MONDO_0016145",
+     "name": "neuromuscular disease caused by qualitative or quantitative defects of dysferlin"
+    },
+    {
+     "id": "MONDO_0015152",
+     "name": "autosomal recessive limb-girdle muscular dystrophy"
+    }
+   ],
+   "children": [],
+   "drugAndClinicalCandidates": {
+    "count": 1,
+    "rows": [
+     {
+      "id": "8bb668112722f3ef35521525261e074fa2e23834ebc561ac2751643e74173b4a",
+      "maxClinicalStage": "PHASE_2_3",
+      "drug": {
+       "id": "CHEMBL1201891",
+       "name": "DEFLAZACORT",
+       "drugType": "Small molecule",
+       "maximumClinicalStage": "APPROVAL",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "nct00527228",
+        "source": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT00527228",
+        "clinicalStage": "PHASE_2_3",
+        "type": "INDICATION",
+        "trialPhase": "PHASE2/PHASE3",
+        "phaseFromSource": "PHASE2/PHASE3",
+        "trialOverallStatus": "COMPLETED",
+        "trialStudyType": "INTERVENTIONAL",
+        "title": "Deflazacort in Dysferlinopathies (LGMD2B/MM) - a Double Blind, Placebo-controlled Clinical Study",
+        "diseases": [
+         {
+          "diseaseFromSource": "Myoshi myopathy",
+          "disease": null
+         },
+         {
+          "diseaseFromSource": "dysferlinopathy",
+          "disease": {
+           "id": "MONDO_0016145",
+           "name": "neuromuscular disease caused by qualitative or quantitative defects of dysferlin"
+          }
+         },
+         {
+          "diseaseFromSource": "limb girdle muscular dystrophy type 2B",
+          "disease": {
+           "id": "MONDO_0009676",
+           "name": "autosomal recessive limb-girdle muscular dystrophy type 2B"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
+ }
+}
