@@ -1010,8 +1010,7 @@ APPROVED_EMPTY = (
 TRIALS_WORDS = (
     "Approved for another disease and now being tested for this one. A "
     "separate research category, not a prediction of effectiveness. Not "
-    "every trial is listed. Only medicines that act on one of the proteins "
-    "most linked to this disease."
+    "every trial is listed."
 )
 CLUES_WORDS = (
     "Approved for another disease, with no recorded link to this one. "
@@ -1136,7 +1135,7 @@ def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
     data = clues_json(client, *FIVE)
     assert list(data) == [
         "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
-        "left_out",
+        "left_out", "more_in_trials",
     ]
     assert data["rule_text"] == RULE_TEXT
 

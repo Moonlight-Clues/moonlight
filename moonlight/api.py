@@ -74,7 +74,7 @@ from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
-from moonlight.engine import TrialMedicine, keep_out
+from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -396,9 +396,10 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
     """One card of the box under the In trials list (ticket 2.21).
 
     The medicine, its trial stage and its source link. It acts on none of
-    the proteins looked at, so it has no proteins, no points, no reports
-    count and no ending, and it is never explained. The stage is written
-    the way an In trials card writes it.
+    the proteins looked at, so it has no proteins, no points and no reports
+    count, and it is never explained. The stage is written the way an In
+    trials card writes it. ending is the engine's one sentence, word for
+    word (Kashish, 23 Nov): not a clue's ending, which speaks of a protein.
     """
     display = explain._display
     return {
@@ -407,6 +408,7 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
         "forms": [display(name) for name in medicine.forms],
         "trial_phase": explain._phase_words(medicine.stage),
         "source": medicine.source_record,
+        "ending": MORE_IN_TRIALS_ENDING,  # the engine's words, never changed here
     }
 
 

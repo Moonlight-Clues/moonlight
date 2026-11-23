@@ -416,7 +416,7 @@ body.registering>:not(.register){display:none!important}
 
       <section class="panel studied" data-slot="studied" id="panel-trials" role="tabpanel" aria-labelledby="tab-trials" hidden>
         <h2>Already being studied for this disease</h2>
-        <p class="section-desc">Approved for another disease and now being tested for this one. A separate research category, not a prediction of effectiveness. Not every trial is listed. Only medicines that act on one of the proteins most linked to this disease.</p>
+        <p class="section-desc">Approved for another disease and now being tested for this one. A separate research category, not a prediction of effectiveness. Not every trial is listed.</p>
         <p class="filter-note" id="studied-note"></p>
         <div class="cards" id="studied-cards"></div>
         <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
@@ -1052,14 +1052,16 @@ body.registering>:not(.register){display:none!important}
   }
 
   /* A card of the box under the In trials list (ticket 2.21): the medicine,
-     its trial stage and its source link. It acts on none of the 25
-     proteins, so it has no path, no points and no explanation. */
+     its trial stage and its source link, and the API's one closing
+     sentence. It acts on none of the 25 proteins, so it has no path, no
+     points and no explanation. */
   function trialBoxCard(medicine) {
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation", "ending"])
+    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation"])
       slot(el, name).remove();
+    slot(el, "ending").textContent = medicine.ending;
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
     const phase = slot(el, "phase");

@@ -133,6 +133,10 @@ MORE_IN_TRIALS_LABEL = (
     "More medicines in trials for this disease. They do not act on one of "
     "the 25 proteins."
 )
+# Kashish's words of 23 Nov, exactly. The last words on every card of that
+# box. Only this sentence: a box card has no protein, so it says nothing
+# about one. Changing them needs her approval.
+MORE_IN_TRIALS_ENDING = "Never start, stop or change any medicine without a doctor."
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
