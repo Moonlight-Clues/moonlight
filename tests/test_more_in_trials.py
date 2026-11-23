@@ -23,6 +23,17 @@ Kashish's decisions, 22 Nov:
     shown, and the box starts open.
 11. No new kind of request to Open Targets.
 
+Kashish's decisions, 23 Nov:
+
+12. Every card in the box ends with her sentence, exactly: "Never start,
+    stop or change any medicine without a doctor." Only that sentence, not
+    the part about the protein.
+13. The line above the In trials list no longer says "Only medicines that
+    act on one of the proteins most linked to this disease.", on the page
+    and on the print page. The rest stays word for word.
+14. The question to Open Targets stays exactly as it is on main. A medicine
+    whose "approved for something else" the list cannot tell stays hidden.
+
 Her example: primary biliary cholangitis (MONDO_0005388). 7 cards today,
 26 in the box, Phase 3 first.
 
@@ -60,6 +71,12 @@ BREAST_CANCER = "MONDO_0007254"
 LABEL = ("More medicines in trials for this disease. They do not act on one of "
          "the 25 proteins.")
 EMPTY_SENTENCE = "No medicine in this data is being studied for this disease."
+# Kashish's words of 23 Nov, exactly. The last words on every box card.
+CARD_ENDING = "Never start, stop or change any medicine without a doctor."
+# The line above the In trials list, without its old last sentence.
+TRIALS_LINE = ("Approved for another disease and now being tested for this one. A separate "
+               "research category, not a prediction of effectiveness. Not every trial is listed.")
+GONE_SENTENCE = "Only medicines that act on one of the proteins most linked to this disease."
 
 # Today's In trials list for the example, in today's order.
 PBC_LIST_7 = ["Elafibranor", "Saroglitazar", "Ustekinumab", "Fenofibrate", "Bezafibrate",
@@ -438,12 +455,27 @@ def test_one_box_card_in_full(pbc):
         "forms": ["Colchicine"],
         "trial_phase": "Phase 3",
         "source": "https://clinicaltrials.gov/study/NCT00004748",
+        "ending": "Never start, stop or change any medicine without a doctor.",
     }
 
 
-def test_a_box_card_has_no_score_no_proteins_and_no_ending(pbc):
+def test_the_card_ending_is_kashishs_sentence_exactly():
+    assert engine.MORE_IN_TRIALS_ENDING == CARD_ENDING
+
+
+def test_every_box_card_ends_with_that_sentence_and_only_that_sentence(pbc):
+    assert len(pbc["more_in_trials"]) == 26
     for card in pbc["more_in_trials"]:
-        assert set(card) == {"id", "medicine", "forms", "trial_phase", "source"}
+        assert card["ending"] == CARD_ENDING
+        assert "protein" not in card["ending"] and "catch" not in card["ending"]
+    # Today's cards keep their own, longer ending.
+    for card in pbc["being_studied"]:
+        assert card["ending"] != CARD_ENDING and card["ending"].endswith(CARD_ENDING)
+
+
+def test_a_box_card_has_no_score_and_no_proteins(pbc):
+    for card in pbc["more_in_trials"]:
+        assert set(card) == {"id", "medicine", "forms", "trial_phase", "source", "ending"}
         assert card["source"].startswith("https://")
 
 
@@ -501,6 +533,33 @@ def test_a_box_card_cannot_be_explained(offline, client):
     explained.assert_not_called()
 
 
+def test_the_question_to_open_targets_is_not_given_the_extra_field():
+    """Kashish, 23 Nov: the question stays exactly as it is on main."""
+    question = fetch.DISEASE_DRUGS_QUERY
+    assert "parentMolecule { id name drugWarnings { warningType } }" in question
+    assert "childMolecules { id name drugWarnings { warningType } }" in question
+    assert question.count("maximumClinicalStage") == 1  # the listed form's own, as before
+
+
+def test_a_form_the_list_does_not_name_cannot_make_a_medicine_approved():
+    """The eight stay hidden. The listed form is in a trial and not approved
+    anywhere; the answer names a parent, but says nothing of its stage."""
+    answer = {"data": {"disease": {"id": OURS.id, "drugAndClinicalCandidates": {"count": 1, "rows": [{
+        "maxClinicalStage": "PHASE_2",
+        "drug": {"id": "CHEMBL_SALT", "name": "ALPHA MALEATE", "maximumClinicalStage": "PHASE_2_3",
+                 "drugWarnings": [],
+                 "parentMolecule": {"id": "CHEMBL_A", "name": "ALPHA", "drugWarnings": [],
+                                    "maximumClinicalStage": "APPROVAL"},  # even if it were sent
+                 "childMolecules": []},
+        "clinicalReports": [{"url": "https://example.org/t", "clinicalStage": "PHASE_2",
+                             "source": "ClinicalTrials.gov"}],
+    }]}}}}
+    with patch("moonlight.fetch._post_json", return_value=answer):
+        entries = fetch.fetch_listed_medicines(OURS)
+    assert [entry.medicine.best_stage for entry in entries] == ["PHASE_2_3"]
+    assert box_of(entries) == []
+
+
 def test_the_explainer_is_handed_the_same_names_as_before(offline):
     """The grounding check is not changed by this ticket."""
     found = api._find(PBC.id)
@@ -535,11 +594,14 @@ def test_the_page_holds_the_box_under_the_list_with_the_exact_label():
     assert 'id="more-trials-cards"' in panel
 
 
-def test_the_words_of_the_in_trials_tab_are_not_changed():
+def test_the_line_above_the_list_ends_at_not_every_trial_is_listed():
+    assert PAGE.count(f'<p class="section-desc">{TRIALS_LINE}</p>') == 1
+    assert GONE_SENTENCE not in PAGE
+    assert "Only medicines that act on" not in PAGE
+
+
+def test_the_other_words_of_the_in_trials_tab_are_not_changed():
     assert "<h2>Already being studied for this disease</h2>" in PAGE
-    assert ("Approved for another disease and now being tested for this one. A separate "
-            "research category, not a prediction of effectiveness. Not every trial is listed. "
-            "Only medicines that act on one of the proteins most linked to this disease.") in PAGE
     assert EMPTY_SENTENCE in PAGE
     assert ("For learning and research exploration, not medical advice. Never start, stop or "
             "change any medicine without a doctor.") in PAGE
@@ -569,7 +631,9 @@ function readTrials() {
     noSourceShown: shownOnPage(card.querySelector('[data-part="no-source"]')),
     buttons: card.querySelectorAll("button").length,
     explanation: card.querySelectorAll('[data-slot="explanation"]').length,
-    ending: card.querySelectorAll('[data-slot="ending"]').length,
+    ending: [...card.querySelectorAll('[data-slot="ending"]')].map(el => el.textContent),
+    endingShown: shownOnPage(card.querySelector('[data-slot="ending"]')),
+    endingIsLastBeforeTheFoot: !!card.querySelector('[data-slot="ending"] + .card-foot'),
     rank: card.querySelectorAll('[data-slot="rank"]').length,
     proteins: card.querySelectorAll('[data-slot="protein"]').length,
     path: card.querySelectorAll('[data-slot="path"]').length,
@@ -578,6 +642,7 @@ function readTrials() {
   return {
     tab: document.getElementById("tab-trials").innerText.replace(/\s+/g, " ").trim(),
     heading: document.querySelector("#panel-trials h2").innerText.trim(),
+    line: document.querySelector("#panel-trials .section-desc").innerText.trim(),
     noteShown: shownOnPage(note) && note.textContent.trim() !== "",
     noteWords: note.textContent.trim(),
     list: [...document.querySelectorAll("#studied-cards > .card")].map(readCard),
@@ -707,15 +772,30 @@ def test_browser_a_box_card_shows_the_medicine_its_stage_and_its_source(seen):
     assert colchicine["source"] == "https://clinicaltrials.gov/study/NCT00004748"
     assert colchicine["sourceShown"] and not colchicine["noSourceShown"]
     # Nothing else is written on the card.
-    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3"
+    assert colchicine["words"] == (
+        "Colchicine Forms: Colchicine " + CARD_ENDING + " Source record Phase 3")
 
 
 def test_browser_a_box_card_has_no_score_and_no_explain_button(seen):
     for card in seen["example"]["tapped"]["box"]:
-        assert card["buttons"] == 0 and card["explanation"] == 0 and card["ending"] == 0
+        assert card["buttons"] == 0 and card["explanation"] == 0
         assert card["rank"] == 0 and card["proteins"] == 0 and card["path"] == 0
         assert "points" not in card["words"] and "report" not in card["words"]
     assert seen["example"]["explainAskedFor"] == []  # In trials cards are explained on a tap only
+
+
+def test_browser_every_box_card_ends_with_kashishs_sentence(seen):
+    cards = seen["example"]["tapped"]["box"]
+    assert len(cards) == 26
+    for card in cards:
+        assert card["ending"] == [CARD_ENDING] and card["endingShown"]
+        assert card["endingIsLastBeforeTheFoot"]  # under it only the source link and the stage
+        assert "protein" not in card["words"] and "catch" not in card["words"]
+
+
+def test_browser_the_line_above_the_list_is_the_shorter_one(seen):
+    for name in ("example", "empty_list", "nothing"):
+        assert seen[name]["closed"]["line"] == TRIALS_LINE
 
 
 def test_browser_an_empty_list_with_a_box_opens_the_box_and_drops_the_sentence(seen):
