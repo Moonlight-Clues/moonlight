@@ -1,0 +1,761 @@
+{
+ "data_version": "26.09",
+ "saved_answers_read_from": "origin/probe-baseline",
+ "saved_answers_commit": "3bc6dacc56841e5a6b7f35dfd76c3006ce24bf98",
+ "code_commit": "a868539e4d72547f0773eccbc8b95781ae567f5c",
+ "diseases_studied": 50,
+ "diseases_stopped": [],
+ "saved_answers_handed_over": 1439,
+ "rows": 88,
+ "different_medicines": 76,
+ "diseases_with_a_hidden_medicine": 26,
+ "by_place": {
+  "main list": 35,
+  "narrower box": 11,
+  "wider-group box": 42
+ },
+ "main_list_by_approval_report_then_withdrawal_report": {
+  "approval report no, withdrawal report yes": 8,
+  "approval report yes, withdrawal report no": 26,
+  "approval report yes, withdrawal report yes": 1
+ },
+ "main_list_with_a_regulator_approval_report": 8,
+ "main_list_by_approval_sources": {
+  "(no APPROVAL report)": 8,
+  "ATC": 3,
+  "ATC; DailyMed; EMA Human Drugs; TTD": 1,
+  "ATC; PMDA": 1,
+  "ATC; TTD": 3,
+  "ClinicalTrials.gov; EMA Human Drugs": 1,
+  "DailyMed": 1,
+  "DailyMed; FDA; TTD": 1,
+  "DailyMed; TTD": 2,
+  "EMA Human Drugs": 1,
+  "TTD": 13
+ },
+ "box_rows_on_own_list": 7,
+ "box_rows_by_withdrawal_report_on_the_box_list": {
+  "no": 50,
+  "yes": 3
+ },
+ "added_by_hand": {
+  "no": 88
+ },
+ "acts_on_one_of_the_25_proteins": {
+  "no": 43,
+  "yes": 45
+ },
+ "flag_seen_in": {
+  "a protein's list; the list of child major depressive disorder": 4,
+  "a protein's list; the list of parent allergic disease": 5,
+  "a protein's list; the list of parent arthritic joint disease": 1,
+  "a protein's list; the list of parent cardiac arrhythmia": 1,
+  "a protein's list; the list of parent diabetes mellitus": 1,
+  "a protein's list; the list of parent hemorrhagic disease": 1,
+  "a protein's list; the list of parent psychotic disorder": 1,
+  "a protein's list; the list of parent rheumatic disorder": 6,
+  "a protein's list; the list of parent rheumatic disorder; the list of parent arthritic joint disease": 1,
+  "the disease's own list": 9,
+  "the disease's own list; a protein's list": 10,
+  "the disease's own list; a protein's list; the list of child major depressive disorder": 4,
+  "the disease's own list; a protein's list; the list of child open-angle glaucoma": 1,
+  "the disease's own list; a protein's list; the list of child psoriasis vulgaris": 1,
+  "the disease's own list; a protein's list; the list of parent diabetes mellitus": 1,
+  "the disease's own list; a protein's list; the list of parent psychotic disorder": 4,
+  "the disease's own list; a protein's list; the list of parent rheumatic disorder": 3,
+  "the disease's own list; the list of child major depressive disorder": 2,
+  "the disease's own list; the list of child rectal cancer; the list of child malignant colon neoplasm": 1,
+  "the disease's own list; the list of child status epilepticus": 1,
+  "the disease's own list; the list of parent acute leukemia; the list of parent myeloid leukemia; the list of child acute myeloid leukemia by FAB classification": 1,
+  "the disease's own list; the list of parent dementia": 1,
+  "the disease's own list; the list of parent diabetes mellitus": 1,
+  "the disease's own list; the list of parent immune system disorder": 1,
+  "the disease's own list; the list of parent myeloid leukemia": 1,
+  "the list of child chronic bronchitis": 1,
+  "the list of child congestive heart failure": 2,
+  "the list of child major depressive disorder": 1,
+  "the list of child psoriasis vulgaris": 1,
+  "the list of child seborrheic dermatitis": 1,
+  "the list of parent allergic disease": 1,
+  "the list of parent angioedema": 1,
+  "the list of parent cardiac arrhythmia": 2,
+  "the list of parent dermatitis": 2,
+  "the list of parent diabetes mellitus": 3,
+  "the list of parent hemorrhagic disease": 1,
+  "the list of parent immune system disorder": 1,
+  "the list of parent immune system disorder; the list of child psoriasis vulgaris": 1,
+  "the list of parent respiratory system disorder": 1,
+  "the list of parent rheumatic disorder": 6
+ },
+ "rows_with_country_year_description": 2,
+ "hidden_medicine_has_some_card_today": {
+  "no": 88
+ },
+ "warning_field_names_in_all_saved_answers": {
+  "warningType": 22118
+ },
+ "cards_that_changed_place": 0,
+ "cards_only_there_with_the_flag": 0,
+ "approved_tab_cards_today": {
+  "main list": 1132,
+  "narrower box": 143,
+  "wider-group box": 524
+ },
+ "approved_tab_cards_without_the_flag": {
+  "main list": 1167,
+  "narrower box": 154,
+  "wider-group box": 566
+ },
+ "per_disease": [
+  {
+   "id": "MONDO_0004979",
+   "name": "asthma",
+   "hidden": 4,
+   "main list": 4,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 70,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0005148",
+   "name": "type 2 diabetes mellitus",
+   "hidden": 6,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 5,
+   "cards_today": {
+    "main list": 59,
+    "narrower box": 0,
+    "wider-group box": 44
+   }
+  },
+  {
+   "id": "MONDO_0005027",
+   "name": "epilepsy",
+   "hidden": 2,
+   "main list": 2,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 54,
+    "narrower box": 1,
+    "wider-group box": 4
+   }
+  },
+  {
+   "id": "MONDO_0008383",
+   "name": "rheumatoid arthritis",
+   "hidden": 17,
+   "main list": 3,
+   "narrower box": 0,
+   "wider-group box": 14,
+   "cards_today": {
+    "main list": 69,
+    "narrower box": 8,
+    "wider-group box": 61
+   }
+  },
+  {
+   "id": "MONDO_0005083",
+   "name": "psoriasis",
+   "hidden": 7,
+   "main list": 2,
+   "narrower box": 1,
+   "wider-group box": 4,
+   "cards_today": {
+    "main list": 43,
+    "narrower box": 5,
+    "wider-group box": 61
+   }
+  },
+  {
+   "id": "MONDO_0004980",
+   "name": "atopic eczema",
+   "hidden": 8,
+   "main list": 0,
+   "narrower box": 1,
+   "wider-group box": 7,
+   "cards_today": {
+    "main list": 41,
+    "narrower box": 4,
+    "wider-group box": 68
+   }
+  },
+  {
+   "id": "MONDO_0005101",
+   "name": "ulcerative colitis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 28,
+    "narrower box": 0,
+    "wider-group box": 1
+   }
+  },
+  {
+   "id": "MONDO_0005298",
+   "name": "osteoporosis",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 33,
+    "narrower box": 2,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0005393",
+   "name": "gout",
+   "hidden": 4,
+   "main list": 3,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 21,
+    "narrower box": 0,
+    "wider-group box": 37
+   }
+  },
+  {
+   "id": "MONDO_0005252",
+   "name": "heart failure",
+   "hidden": 2,
+   "main list": 0,
+   "narrower box": 2,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 43,
+    "narrower box": 28,
+    "wider-group box": 3
+   }
+  },
+  {
+   "id": "MONDO_0004981",
+   "name": "atrial fibrillation",
+   "hidden": 4,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 3,
+   "cards_today": {
+    "main list": 17,
+    "narrower box": 0,
+    "wider-group box": 28
+   }
+  },
+  {
+   "id": "MONDO_0005002",
+   "name": "chronic obstructive pulmonary disease",
+   "hidden": 3,
+   "main list": 2,
+   "narrower box": 1,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 29,
+    "narrower box": 16,
+    "wider-group box": 10
+   }
+  },
+  {
+   "id": "MONDO_0005300",
+   "name": "chronic kidney disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 51,
+    "narrower box": 2,
+    "wider-group box": 4
+   }
+  },
+  {
+   "id": "MONDO_0005420",
+   "name": "hypothyroidism",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 8,
+    "narrower box": 0,
+    "wider-group box": 1
+   }
+  },
+  {
+   "id": "MONDO_0002050",
+   "name": "depressive disorder",
+   "hidden": 11,
+   "main list": 6,
+   "narrower box": 5,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 33,
+    "narrower box": 46,
+    "wider-group box": 1
+   }
+  },
+  {
+   "id": "MONDO_0005090",
+   "name": "schizophrenia",
+   "hidden": 5,
+   "main list": 3,
+   "narrower box": 0,
+   "wider-group box": 2,
+   "cards_today": {
+    "main list": 45,
+    "narrower box": 0,
+    "wider-group box": 31
+   }
+  },
+  {
+   "id": "MONDO_0004985",
+   "name": "bipolar disorder",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 19,
+    "narrower box": 1,
+    "wider-group box": 2
+   }
+  },
+  {
+   "id": "MONDO_0005180",
+   "name": "Parkinson disease",
+   "hidden": 2,
+   "main list": 2,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 43,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0004975",
+   "name": "Alzheimer disease",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 21,
+    "narrower box": 0,
+    "wider-group box": 5
+   }
+  },
+  {
+   "id": "MONDO_0005041",
+   "name": "glaucoma",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 39,
+    "narrower box": 0,
+    "wider-group box": 26
+   }
+  },
+  {
+   "id": "MONDO_0005133",
+   "name": "endometriosis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 10,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0018076",
+   "name": "tuberculosis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 22,
+    "narrower box": 7,
+    "wider-group box": 2
+   }
+  },
+  {
+   "id": "MONDO_0005136",
+   "name": "malaria",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 29,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0007254",
+   "name": "breast cancer",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 73,
+    "narrower box": 2,
+    "wider-group box": 5
+   }
+  },
+  {
+   "id": "MONDO_0008315",
+   "name": "prostate cancer",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 30,
+    "narrower box": 6,
+    "wider-group box": 3
+   }
+  },
+  {
+   "id": "MONDO_0005575",
+   "name": "colorectal cancer",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 1,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 19,
+    "narrower box": 3,
+    "wider-group box": 6
+   }
+  },
+  {
+   "id": "MONDO_0008903",
+   "name": "lung cancer",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 8,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0005105",
+   "name": "melanoma",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 20,
+    "narrower box": 2,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0011996",
+   "name": "chronic myeloid leukemia",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 9,
+    "narrower box": 0,
+    "wider-group box": 4
+   }
+  },
+  {
+   "id": "MONDO_0018874",
+   "name": "acute myeloid leukemia",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 15,
+    "narrower box": 7,
+    "wider-group box": 5
+   }
+  },
+  {
+   "id": "MONDO_0009061",
+   "name": "cystic fibrosis",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 15,
+    "narrower box": 0,
+    "wider-group box": 15
+   }
+  },
+  {
+   "id": "MONDO_0010679",
+   "name": "Duchenne muscular dystrophy",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 8,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0001516",
+   "name": "spinal muscular atrophy",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 4,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0007739",
+   "name": "Huntington disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 6,
+    "narrower box": 0,
+    "wider-group box": 4
+   }
+  },
+  {
+   "id": "MONDO_0004976",
+   "name": "amyotrophic lateral sclerosis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 5,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0018150",
+   "name": "Gaucher disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 6,
+    "narrower box": 0,
+    "wider-group box": 26
+   }
+  },
+  {
+   "id": "MONDO_0010526",
+   "name": "Fabry disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 4,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0009861",
+   "name": "phenylketonuria",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 3,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0010602",
+   "name": "hemophilia A",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 18,
+    "narrower box": 0,
+    "wider-group box": 11
+   }
+  },
+  {
+   "id": "MONDO_0010604",
+   "name": "hemophilia B",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 11,
+    "narrower box": 0,
+    "wider-group box": 15
+   }
+  },
+  {
+   "id": "MONDO_0009688",
+   "name": "myasthenia gravis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 12,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0021107",
+   "name": "narcolepsy",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 5,
+    "narrower box": 3,
+    "wider-group box": 2
+   }
+  },
+  {
+   "id": "MONDO_0010200",
+   "name": "Wilson disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 4,
+    "narrower box": 0,
+    "wider-group box": 1
+   }
+  },
+  {
+   "id": "MONDO_0019623",
+   "name": "hereditary angioedema",
+   "hidden": 1,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 1,
+   "cards_today": {
+    "main list": 9,
+    "narrower box": 0,
+    "wider-group box": 2
+   }
+  },
+  {
+   "id": "MONDO_0019933",
+   "name": "acromegaly",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 6,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0018912",
+   "name": "Cushing syndrome",
+   "hidden": 1,
+   "main list": 1,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 3,
+    "narrower box": 0,
+    "wider-group box": 4
+   }
+  },
+  {
+   "id": "MONDO_0019338",
+   "name": "sarcoidosis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 5,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0005100",
+   "name": "systemic sclerosis",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 4,
+    "narrower box": 0,
+    "wider-group box": 32
+   }
+  },
+  {
+   "id": "MONDO_0007191",
+   "name": "Behcet disease",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 2,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  },
+  {
+   "id": "MONDO_0006559",
+   "name": "hidradenitis suppurativa",
+   "hidden": 0,
+   "main list": 0,
+   "narrower box": 0,
+   "wider-group box": 0,
+   "cards_today": {
+    "main list": 1,
+    "narrower box": 0,
+    "wider-group box": 0
+   }
+  }
+ ]
+}
