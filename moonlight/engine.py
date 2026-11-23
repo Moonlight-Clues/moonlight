@@ -73,6 +73,9 @@ ones on the corrections list for it. sort_into_tabs puts each of them on
 the main Approved list, and nowhere else on the page. Its card carries
 ADDED_LINE and links to the label. Nothing new is asked of Open Targets.
 
+Ticket 2.30. An entry whose medicine is on left_out.json for that disease is
+not added either. approvals_left_out() lists such clashes.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -916,15 +919,28 @@ def added_by_hand(disease_id: str) -> List[HandApproval]:
 
     An entry works only for the disease written on it. Existing rules
     still win (Kashish, 23 Nov): a medicine on the corrections list for
-    this disease is not handed over, so its entry does nothing. A
+    this disease, or on the left-out list for it (ticket 2.30), is not
+    handed over, so its entry does nothing. A
     withdrawn medicine is turned away by sort_into_tabs, which is where
     the withdrawn notes are known.
     """
     wrong = looks_wrong(disease_id)
+    # Ticket 2.30. A medicine left out by hand for this disease is not added.
+    left_out = pushes_wrong_way(disease_id)
     return [
         entry for entry in approvals_by_hand()
         if entry.disease_id == disease_id and entry.medicine_id not in wrong
+        and entry.medicine_id not in left_out
     ]
+
+
+def approvals_left_out() -> List[HandApproval]:
+    """The clashes (ticket 2.30): entries of the hand-written approvals whose
+    medicine is on the left-out list for the same disease. They are not
+    added. [] when the two lists agree. A person reads this to fix a file."""
+    left_out = left_out_by_hand()
+    return [entry for entry in approvals_by_hand()
+            if (entry.medicine_id, entry.disease_id) in left_out]
 
 
 def _read_corrections() -> list:

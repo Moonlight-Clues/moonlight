@@ -10,10 +10,12 @@ Kashish and Shreshth, 23 Nov:
 2. An entry whose medicine is on left_out.json for that disease is not
    added.
 
-Saved files only. The two diseases' own medicine lists are in
-fixtures/approvals_by_hand/disease_drugs/, asked live on 2026-11-23 with
-fetch.py's own question. The pages of ticket 2.26 are read from the answers
-that ticket saved. No network.
+Saved files only. AL amyloidosis: the whole search ticket 2.25 saved in
+fixtures/tafamidis_warning/ (its list is letter for letter the live answer of
+2026-11-23). IgA glomerulonephritis: its own medicine list, the one new file,
+fixtures/approvals_by_hand/disease_drugs/MONDO_0005342.response.json, asked
+live on 2026-11-23 with fetch.py's own question. The pages of ticket 2.26 are
+read from the answers that ticket saved. No network.
 """
 
 import json
@@ -30,12 +32,16 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease
 
 import test_approvals_by_hand as first_batch
+import test_tafamidis_warning as al_page
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
 CORRECTIONS_FILE = ROOT / "moonlight" / "corrections.json"
 LEFT_OUT_FILE = ROOT / "moonlight" / "left_out.json"
-SAVED_LISTS = ROOT / "fixtures" / "approvals_by_hand" / "disease_drugs"
+SAVED_LISTS = {
+    "MONDO_0019438": ROOT / "fixtures" / "tafamidis_warning" / "disease_drugs",  # ticket 2.25's
+    "MONDO_0005342": ROOT / "fixtures" / "approvals_by_hand" / "disease_drugs",
+}
 
 LINE = "This approval is missing from the database. We added it from the official label."
 THE_DAY = "2026-11-23"
@@ -67,7 +73,7 @@ def load(file):
 
 
 def saved_rows(disease_id):
-    answer = load(SAVED_LISTS / f"{disease_id}.response.json")
+    answer = load(SAVED_LISTS[disease_id] / f"{disease_id}.response.json")
     assert answer["data"]["disease"]["id"] == disease_id
     return answer["data"]["disease"]["drugAndClinicalCandidates"]["rows"]
 
@@ -85,9 +91,18 @@ def offline():
             patch("requests.get", side_effect=AssertionError("network used")), \
             patch("requests.sessions.Session.request",
                   side_effect=AssertionError("network used")), \
-            patch("moonlight.fetch._post_json", side_effect=first_batch.saved_post_json):
+            patch("moonlight.fetch._post_json", side_effect=saved_post_json):
         yield
     api.forget_visitors()
+
+
+def saved_post_json(body):
+    """Stands in for fetch._post_json: the saved answers of tickets 2.25 and 2.26,
+    and the one new list."""
+    try:
+        return al_page._from_the_saved_files(body)
+    except AssertionError:
+        return first_batch.saved_post_json(body)
 
 
 # ---- the hand-written file ----
@@ -191,6 +206,42 @@ def test_each_medicine_is_now_only_under_approved_with_the_line_and_its_label(
     for place, ids in first_batch.everywhere(before).items():
         if place != "approved":
             assert first_batch.everywhere(tabs)[place] == [i for i in ids if i not in moved]
+
+
+# ---- the EXAMPLE on a whole saved page: daratumumab for AL amyloidosis ----
+
+DARATUMUMAB_CARD = {
+    "id": DARATUMUMAB,
+    "medicine": "Daratumumab",
+    "forms": ["Daratumumab"],
+    "proteins": [],  # the page fetched no protein path for it
+    "reports": 13,  # its report links on the disease's own list
+    "source": DARATUMUMAB_LABEL,
+    "proof_note": LINE,
+}
+
+
+def test_before_daratumumab_was_only_in_the_more_in_trials_box_of_al_amyloidosis():
+    with patch.object(engine, "_read_approvals", return_value=first_batch.FIRST_ENTRIES):
+        old = al_page.real_page()
+    assert [card["medicine"] for card in old["approved"]] == ["Tafamidis"]
+    assert [key for key, _ in first_batch.cards_naming(old, "daratumumab")] == ["more_in_trials"]
+
+
+def test_daratumumab_is_on_the_approved_list_of_al_amyloidosis_a_to_z_and_nowhere_else():
+    with patch.object(engine, "_read_approvals", return_value=first_batch.FIRST_ENTRIES):
+        old = al_page.real_page()
+    new = al_page.real_page()
+    assert new["disease"] == {"id": AL_AMYLOIDOSIS, "name": "AL amyloidosis"}
+    assert [card["medicine"] for card in new["approved"]] == ["Daratumumab", "Tafamidis"]
+    assert new["approved"][0] == DARATUMUMAB_CARD
+    assert [key for key, _ in first_batch.cards_naming(new, "daratumumab")] == ["approved"]
+    # Nothing else on the page changes. Tafamidis keeps its red warning.
+    expected = dict(old, approved=[DARATUMUMAB_CARD] + old["approved"],
+                    more_in_trials=[card for card in old["more_in_trials"]
+                                    if card["id"] != DARATUMUMAB])
+    assert new == expected
+    assert new["approved"][1]["warning"] == old["approved"][0]["warning"]
 
 
 # ---- "An entry whose medicine is on left_out.json for that disease is not added." ----

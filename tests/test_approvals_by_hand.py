@@ -220,12 +220,14 @@ def test_the_line_is_kashishs_words_exactly():
     assert engine.ADDED_LINE == LINE
 
 
-def test_the_real_file_holds_the_first_two_entries_and_nothing_else():
-    assert load(APPROVALS_FILE) == FIRST_ENTRIES
+def test_the_real_file_holds_the_first_two_entries_first():
+    # Ticket 2.30 added three entries after these. tests/test_approvals_batch.py
+    # holds the whole file, entry for entry.
+    assert load(APPROVALS_FILE)[:2] == FIRST_ENTRIES
 
 
 def test_the_engine_reads_the_real_file():
-    assert engine.approvals_by_hand() == [
+    assert engine.approvals_by_hand()[:2] == [  # ticket 2.30 added three after these
         engine.HandApproval(PROPRANOLOL, "Propranolol", ESSENTIAL_TREMOR, PROPRANOLOL_LABEL),
         engine.HandApproval(METHIMAZOLE, "Methimazole", GRAVES, METHIMAZOLE_LABEL),
     ]
