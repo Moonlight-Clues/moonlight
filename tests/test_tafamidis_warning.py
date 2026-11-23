@@ -4,7 +4,7 @@ Kashish's decision, 23 Nov: tafamidis sits under Approved for AL amyloidosis
 (MONDO_0019438). She chose: keep the card in its place, add the second red
 warning.
 
-One new entry at the end of moonlight/corrections.json does it. No code
+One new entry in moonlight/corrections.json does it. No code
 changes. No other card on any page changes.
 
 No network. The real corrections file is read as it is. The page is built
@@ -122,8 +122,14 @@ def test_the_note_is_the_engines_second_note_exactly():
     assert engine.SECOND_NOTE == SECOND_NOTE
 
 
-def test_the_new_entry_is_the_last_one_in_the_real_file():
-    assert real_corrections()[-1] == THE_ENTRY
+def test_the_new_entry_is_in_the_real_file_once():
+    # Not "it is last": the next warning goes after it (Kashish, 23 Nov).
+    assert real_corrections().count(THE_ENTRY) == 1
+
+
+def test_the_real_file_is_in_date_order():
+    dates = [entry["date"] for entry in real_corrections()]
+    assert dates == sorted(dates)
 
 
 def test_the_file_holds_24_entries():
