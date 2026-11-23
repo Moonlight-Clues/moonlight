@@ -8,24 +8,33 @@ Kashish's decision:
 - On every tab and in every box.
 - A card with a source link never shows that sentence.
 
-THE SEVEN PLACES A CARD CAN BE
+THE EIGHT PLACES A CARD CAN BE
   Approved tab:   the main list, the narrower-disease box, the wider-group box
   In trials tab:  the list, the "More medicines in trials" box (ticket 2.21),
                   the "new medicines in trials" box (ticket 2.24)
-  New clues tab:  the list
+  New clues tab:  the list, and the opposite-way box under it (ticket 2.28)
+
+The eighth place came with ticket 2.28, after these tests were first
+written. The API still sends every new clue in "new_clues", and names the
+ones that sit in the opposite-way box in "opposite_way_box" (their ids).
+The page puts those in the box and the rest in the list. So here
+"new_clues" means the list above the box, and "opposite_way_box" means the
+cards inside it. Together they are every new clue.
 
 THE EXAMPLES
 1. Asthma (MONDO_0004979), from the saved answers in fixtures/narrower_box/.
    Nothing is changed in it. Five of its 126 new clues have no source link
    in the data: Dyphylline, Amlexanox, Crisaborole, Drotaverine, Flavoxate.
+   All five are in the list (100 cards). None is in the box (26 cards).
 2. Acute lymphoblastic leukemia (MONDO_0004967), from the same folder. It
-   has cards in all seven places, and every one has a source link. No saved
-   answer on main has a card with no link outside New clues, so for this
+   has cards in all eight places, and every one has a source link. No saved
+   answer on main has a card with no link outside the New clues list, so for this
    test only, the FIRST card of each place is handed to the page with its
    link taken away. The test says so wherever it does this.
 
-NOT DECIDED HERE, so not tested here: the print page and cli.py. Both use
-the old words today. Kashish has not said what they should say.
+NOT TESTED HERE: the print page reads its words from the card, so it says
+the sentence too; tests/test_snapshot_page.py checks that. cli.py keeps its
+old words for now.
 
 Tests never touch the network: Open Targets is replaced by saved files, and
 the browser is only given the page and the answer.
@@ -60,13 +69,29 @@ LEUKEMIA = "MONDO_0004967"  # acute lymphoblastic leukemia
 
 ASTHMA_NO_LINK = ["Dyphylline", "Amlexanox", "Crisaborole", "Drotaverine", "Flavoxate"]
 
-# The seven places, by the name each has in the answer of /api/clues.
+# The eight places, by the name each has in the answer of /api/clues.
 PLACES = ["approved", "narrower", "wider_group",
-          "being_studied", "more_in_trials", "new_in_trials", "new_clues"]
+          "being_studied", "more_in_trials", "new_in_trials", "new_clues",
+          "opposite_way_box"]
 # How many cards acute lymphoblastic leukemia has in each place.
+# Its 21 new clues are 20 in the list and 1 in the opposite-way box.
 LEUKEMIA_CARDS = {"approved": 15, "narrower": 13, "wider_group": 12,
                   "being_studied": 16, "more_in_trials": 150, "new_in_trials": 80,
-                  "new_clues": 21}
+                  "new_clues": 20, "opposite_way_box": 1}
+
+
+def cards_in(answer, place):
+    """The cards the page puts in one place, in the page's order.
+
+    The answer names the clues of the opposite-way box by id. Those go in
+    the box. The other new clues stay in the list above it.
+    """
+    boxed = set(answer.get("opposite_way_box") or [])
+    if place == "new_clues":
+        return [clue for clue in answer["new_clues"] if clue["id"] not in boxed]
+    if place == "opposite_way_box":
+        return [clue for clue in answer["new_clues"] if clue["id"] in boxed]
+    return answer.get(place, [])
 
 
 @pytest.fixture(autouse=True)
@@ -95,7 +120,7 @@ def answers():
 
     "asthma" is the saved answer, untouched.
     "every_place" is acute lymphoblastic leukemia with the link of the
-    first card in each of the seven places taken away, for this test only.
+    first card in each of the eight places taken away, for this test only.
     """
     with patch("requests.request", side_effect=AssertionError("network used")), \
             patch("requests.sessions.Session.request",
@@ -104,8 +129,8 @@ def answers():
         leukemia = clues_of(LEUKEMIA)
     every_place = copy.deepcopy(leukemia)
     for place in PLACES:
-        assert leukemia[place][0]["source"], place  # it had a link in the data
-        every_place[place][0]["source"] = None
+        assert cards_in(leukemia, place)[0]["source"], place  # it had a link in the data
+        cards_in(every_place, place)[0]["source"] = None
     return {"asthma": asthma, "every_place": every_place}
 
 
@@ -122,16 +147,18 @@ def test_no_other_asthma_card_is_without_a_link(answers):
     asthma = answers["asthma"]
     for place in PLACES:
         if place != "new_clues":
-            assert all(card["source"] for card in asthma.get(place, [])), place
+            assert all(card["source"] for card in cards_in(asthma, place)), place
 
 
-def test_leukemia_has_cards_in_all_seven_places(answers):
+def test_leukemia_has_cards_in_all_eight_places(answers):
     """EXAMPLE 2 is the right size before any link is taken away."""
     every_place = answers["every_place"]
-    assert {place: len(every_place[place]) for place in PLACES} == LEUKEMIA_CARDS
+    assert len(every_place["new_clues"]) == 21  # the list and the box together
+    assert {place: len(cards_in(every_place, place)) for place in PLACES} == LEUKEMIA_CARDS
     for place in PLACES:
-        without = [card for card in every_place[place] if not card["source"]]
-        assert without == [every_place[place][0]], place  # only the one this test changed
+        cards = cards_in(every_place, place)
+        without = [card for card in cards if not card["source"]]
+        assert without == [cards[0]], place  # only the one this test changed
 
 
 # ---- the page, read as text ----
@@ -171,6 +198,7 @@ const PLACES = [
   ["more_in_trials", "tab-trials", "more-trials-cards", "more-trials-box"],
   ["new_in_trials", "tab-trials", "new-trials-cards", "new-trials-box"],
   ["new_clues", "tab-clues", "new-cards", null],
+  ["opposite_way_box", "tab-clues", "opposite-cards", "opposite-box"],
 ];
 
 // What a reader sees on each card of one place. Read while the place is open.
@@ -259,14 +287,17 @@ def test_browser_every_card_of_the_answer_is_on_the_page(seen, answers):
         for place in PLACES:
             cards = seen[name]["places"][place]
             assert [card["name"] for card in cards] == [
-                card["medicine"] for card in answers[name].get(place, [])], (name, place)
+                card["medicine"] for card in cards_in(answers[name], place)], (name, place)
             assert all(card["onScreen"] for card in cards), (name, place)
 
 
 def test_browser_the_five_asthma_clues_say_kashishs_sentence(seen):
-    """EXAMPLE 1, untouched data."""
-    cards = {card["name"]: card for card in seen["asthma"]["places"]["new_clues"]}
-    assert len(cards) == 126
+    """EXAMPLE 1, untouched data. All five are in the list above the box."""
+    places = seen["asthma"]["places"]
+    assert len(places["new_clues"]) == 100 and len(places["opposite_way_box"]) == 26
+    cards = {card["name"]: card
+             for place in ("new_clues", "opposite_way_box") for card in places[place]}
+    assert len(cards) == 126  # every new clue, list and box together
     for name in ASTHMA_NO_LINK:
         assert cards[name]["sentences"] == 1, name
         assert cards[name]["linksShown"] == 0, name
@@ -286,7 +317,7 @@ def test_browser_a_card_with_no_link_says_the_sentence_in_every_place(seen, plac
 def test_browser_a_card_with_a_link_never_says_the_sentence(seen, answers, place):
     """Every other card of the place has a link: it shows the link, never the sentence."""
     cards = seen["every_place"]["places"][place][1:]
-    handed = answers["every_place"][place][1:]
+    handed = cards_in(answers["every_place"], place)[1:]
     assert len(cards) == LEUKEMIA_CARDS[place] - 1
     for card, medicine in zip(cards, handed):
         assert card["sentences"] == 0, (place, card["name"])
