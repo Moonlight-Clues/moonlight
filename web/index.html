@@ -651,6 +651,7 @@ body.registering>:not(.register){display:none!important}
     </div>
     <p class="where-label" data-slot="label" hidden></p>
     <p class="proof-note" data-slot="proof-note" hidden></p>
+    <p class="proof-note" data-slot="withdrawal-note" hidden></p>
     <p class="wrong-warning" data-slot="warning" hidden><svg role="img" aria-label="Warning" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v5"/><path d="M12 17.6v.4"/></svg><span data-part="warning-words"></span></p>
     <p class="card-subhead" data-part="path-head">Research pathway</p>
     <div class="path" data-slot="path"></div>
@@ -1079,6 +1080,10 @@ body.registering>:not(.register){display:none!important}
       slot(el, "proof-note").textContent = medicine.proof_note;
       slot(el, "proof-note").hidden = false;
     }
+    if (medicine.withdrawal_note) {  // a second grey line, under that one: the API's words
+      slot(el, "withdrawal-note").textContent = medicine.withdrawal_note;
+      slot(el, "withdrawal-note").hidden = false;
+    }
     if (medicine.warning) {  // on the corrections list for this disease
       part(slot(el, "warning"), "warning-words").textContent = medicine.warning;
       slot(el, "warning").hidden = false;
@@ -1100,7 +1105,7 @@ body.registering>:not(.register){display:none!important}
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation", "ending"])
+    for (const name of ["rank", "reports", "label", "proof-note", "withdrawal-note", "warning", "path", "explanation", "ending"])
       slot(el, name).remove();
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();

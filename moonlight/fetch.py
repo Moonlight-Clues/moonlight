@@ -233,6 +233,9 @@ query DiseaseDrugs($diseaseId: String!) {
 }
 """
 APPROVAL = "APPROVAL"  # the stage word for "approved", in both stage fields
+# Ticket 2.31. The stage word of a withdrawal report, letter for letter. It
+# is a different field from the old flag above (a "Withdrawn" warning).
+WITHDRAWAL = "WITHDRAWAL"
 
 # Ticket 2.17, Kashish's decisions of 18 Nov. The Open Targets team told us
 # which values of "source" are regulators: the offices that approve
@@ -704,6 +707,10 @@ class Listed:
     approved: bool = True
     approval_sources: Tuple[str, ...] = ()
     regulator_record: Optional[bool] = None
+    # Ticket 2.31. True if a report on this list, for any form of the
+    # family, has the stage WITHDRAWAL. False if none has, or if the answer
+    # did not say each report's stage: nothing is guessed.
+    withdrawal_report: bool = False
 
 
 def _list_families(disease: Disease) -> Dict[str, dict]:
@@ -737,7 +744,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
              "approval_sources": [], "reports": 0, "source_said": False,
              "regulator_report": False, "records": [], "stage_reports": [],
-             "named": set(), "told": True},
+             "named": set(), "told": True, "withdrawal_report": False},
         )
         # Ticket 2.24. Every relative this row names: the medicine it is a
         # form of, and its own tablet forms. If the answer does not say
@@ -786,6 +793,9 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
                 family["stage_reports"].append((url, report.get("clinicalStage")))
             # .get: an answer to the old question has no stage on its reports.
             is_approval = report.get("clinicalStage") == APPROVAL
+            # Ticket 2.31. Only this exact word counts. A link is not needed.
+            if report.get("clinicalStage") == WITHDRAWAL:
+                family["withdrawal_report"] = True
             if url and is_approval and url not in family["approval_sources"]:
                 family["approval_sources"].append(url)
             # Ticket 2.17. The source is matched exactly. No source, or one
@@ -822,6 +832,7 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         approved=family["approved"],
         approval_sources=tuple(family["approval_sources"]),
         regulator_record=_regulator_record(family),
+        withdrawal_report=family["withdrawal_report"],
     )
 
 
@@ -850,6 +861,10 @@ class OnList:
     medicine: Medicine
     reports: Tuple[Tuple[str, Optional[str]], ...]
     all_seen: bool = False  # not said is never taken as "wholly seen"
+    # Ticket 2.31. True if a report on this list, for any form of the
+    # family, has the stage WITHDRAWAL. False if none has, or if the answer
+    # did not say each report's stage: nothing is guessed.
+    withdrawal_report: bool = False
 
 
 def fetch_listed_medicines(disease: Disease) -> List[OnList]:
@@ -867,6 +882,7 @@ def fetch_listed_medicines(disease: Disease) -> List[OnList]:
             reports=tuple(family["stage_reports"]),
             all_seen=family["told"]
             and family["named"] <= {record.id for record in family["records"]},
+            withdrawal_report=family["withdrawal_report"],
         )
         for family in _list_families(disease).values()
     ]

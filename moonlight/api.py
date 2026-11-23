@@ -85,7 +85,7 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
-from moonlight.engine import HandApproval, added_by_hand
+from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -262,6 +262,10 @@ class _Found:
         # In a trial for the disease, approved for nothing (ticket 2.24):
         # the second folded box. Their names are not added either.
         self.new_in_trials = tabs.new_in_trials
+        # Ticket 2.31. Which Approved-tab cards carry the withdrawal line:
+        # card id -> the engine's words. Worked out from the same lists.
+        # No card is hidden or moved by it.
+        self.withdrawal_notes = withdrawal_notes(tabs, on_list, neighbours)
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -371,7 +375,8 @@ def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] =
 
 
 def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
-                   words: Optional[Dict[str, str]] = None) -> dict:
+                   words: Optional[Dict[str, str]] = None,
+                   notes: Optional[Dict[str, str]] = None) -> dict:
     """One medicine already approved for the disease. It is not a clue, so
     it has no rank, no explanation and no ending.
 
@@ -397,6 +402,12 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     Ticket 2.26. For a medicine added from the hand-written list of missing
     approvals, proof_note is the engine's line for it and source is the
     label written in the file. Both are the engine's choice, as above.
+
+    Ticket 2.31. notes says which cards carry the withdrawal line
+    (engine.withdrawal_notes): card id -> the engine's words. Such a card
+    gains the key withdrawal_note. Every other card has no such key. It is
+    a second grey line, in its own key: proof_note and warning are as they
+    were, and a card may carry all three.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
@@ -415,6 +426,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
         item["proof_note"] = medicine.proof_note  # the engine's words too
     if medicine.id in wrong:
         item["warning"] = (words or {}).get(medicine.id, WRONG_WARNING)
+    if medicine.id in (notes or {}):
+        item["withdrawal_note"] = notes[medicine.id]  # the engine's words, never typed here
     return item
 
 
@@ -530,12 +543,13 @@ def clues(disease_id: str) -> dict:
     new_clues, wrong_way = _shown_new_clues(found)  # ticket 2.18: left out by hand
     # Ticket 3.7. The main Approved list only, without the red-warning cards.
     one_way = one_way_proteins(found.approved, wrong)
+    notes = found.withdrawal_notes  # ticket 2.31: the cards with the withdrawal line
     answer = {
         "disease": {"id": disease.id, "name": disease.name},
         "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
-        "approved": [_approved_json(medicine, wrong, words) for medicine in found.approved],
+        "approved": [_approved_json(medicine, wrong, words, notes) for medicine in found.approved],
         "being_studied": [_clue_json(clue, disease, one_way) for clue in found.being_studied],
         "new_clues": [_clue_json(clue, disease, one_way) for clue in new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
@@ -544,11 +558,11 @@ def clues(disease_id: str) -> dict:
         # The folded box "Approved for a narrower disease". Only there when
         # it holds something. The page shows it above the wider-group box.
         answer["narrower"] = [
-            _approved_json(medicine, wrong, words) for medicine in found.narrower]
+            _approved_json(medicine, wrong, words, notes) for medicine in found.narrower]
     if found.wider_group:
         # The folded box in the Approved tab. Only there when it holds something.
         answer["wider_group"] = [
-            _approved_json(medicine, wrong, words) for medicine in found.wider_group]
+            _approved_json(medicine, wrong, words, notes) for medicine in found.wider_group]
     # Ticket 2.21. The folded box under the In trials list. No existing rule
     # is undone by it: a medicine left out by hand for this disease, or on
     # the corrections list for it, is not shown here either.

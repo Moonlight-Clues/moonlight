@@ -396,8 +396,9 @@ def test_api_a_narrower_item_has_the_facts_of_an_approved_item_and_its_label(cli
     data = clues_json(client, ALL)
     for item in data["narrower"]:
         assert {"id", "medicine", "forms", "proteins", "reports", "source", "label"} <= set(item)
+        # Ticket 2.31: a card with a WITHDRAWAL report on its list has one more key.
         assert set(item) <= {"id", "medicine", "forms", "proteins", "reports", "source", "label",
-                             "proof_note"}
+                             "proof_note", "withdrawal_note"}
     said = json.dumps(data["narrower"]).upper()
     assert "DO NOT TRY IT" not in said and "ENDING" not in said and "RANK" not in said
 

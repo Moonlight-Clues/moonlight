@@ -694,7 +694,8 @@ def test_api_no_approved_card_gains_an_ending_or_an_explanation(saved_json):
         for one in data["approved"] + data.get("narrower", []) + data.get("wider_group", []):
             assert "ending" not in one and "explanation" not in one
             assert set(one) <= {"id", "medicine", "forms", "proteins", "reports", "source",
-                                "label", "proof_note", "warning"}
+                                "label", "proof_note", "warning",
+                                "withdrawal_note"}  # ticket 2.31: one more key
 
 
 # ---- the page: the same slot, the same grey, the engine's words ----
