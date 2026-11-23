@@ -108,11 +108,12 @@ def saved_post_json(body):
 # ---- the hand-written file ----
 
 def test_the_real_file_holds_the_first_two_entries_then_the_three_new_ones():
-    assert load(APPROVALS_FILE) == first_batch.FIRST_ENTRIES + SECOND_BATCH
+    # Ticket 2.32 added to the file. Its own test holds the whole file.
+    assert load(APPROVALS_FILE)[:5] == first_batch.FIRST_ENTRIES + SECOND_BATCH
 
 
 def test_the_engine_reads_the_three_new_entries():
-    assert engine.approvals_by_hand()[2:] == [
+    assert engine.approvals_by_hand()[2:5] == [
         engine.HandApproval(DARATUMUMAB, "Daratumumab", AL_AMYLOIDOSIS, DARATUMUMAB_LABEL),
         engine.HandApproval(ATRASENTAN, "Atrasentan", IGA, ATRASENTAN_LABEL),
         engine.HandApproval(SIBEPRENLIMAB, "Sibeprenlimab", IGA, SIBEPRENLIMAB_LABEL),
