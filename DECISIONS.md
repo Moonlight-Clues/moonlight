@@ -66,3 +66,16 @@ Format: date, the decision, why.
 - 2026-11-16: When medicines sit in a folded box, the top of the Approved tab says how many, and each box says "Tap to open".
 - 2026-11-16: A disease is hidden from search only if "measurement" is its only group. The exact name a person typed is never hidden and always comes first.
 - 2026-11-16: If the typed words are one of the database's "also called" names, the list shows those words first and the database's own name under them.
+- 2026-11-17: A correction works only for the disease written on it.
+- 2026-11-17: One doctor's word is enough for a red warning. A missing warning on a wrong card is worse than a warning on a good one.
+- 2026-11-18: When the proof is weak, the card says so. We do not hide it.
+- 2026-11-19: A machine may add a note. Only a hand check may remove a card.
+- 2026-11-23: A machine may also MOVE an opposite-way clue into a folded box. Nothing is removed.
+- 2026-11-23: A medicine with a red warning sits in its own folded box on the Approved tab, not on the main list. (Ticket 2.27, not built.)
+- 2026-11-23: Two machine sources, Open Targets and the trials register. Official labels are read by hand, for warnings and missing approvals.
+- 2026-11-23: A hand-written list of missing approvals. Card line: "This approval is missing from the database. We added it from the official label."
+- 2026-11-23: In trials shows medicines approved for nothing, in their own box.
+- 2026-11-23: The eight medicines whose approval cannot be told stay hidden.
+- 2026-11-23: The caution sentence is said once at the top of each trial box.
+- 2026-11-23: Yes to a protein sentence (200 letters or less, one credit line), to trial status and end date, and to grouping look-alike clues. Not built.
+- 2026-11-23: How we work: Claude clears test changes that only follow an approved decision and reports them. Label entries Claude has opened go in as a batch. Agents proceed on the safest choice; Kashish decides once a day on paper. Only Kashish merges. Claude runs every test before "you may merge".

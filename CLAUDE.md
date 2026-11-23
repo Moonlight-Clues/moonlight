@@ -35,7 +35,8 @@ MedicineForm, Medicine, Path.
 - "Approved" means approved for at least one disease. A medicine that
   is not approved anywhere is left out.
 - A medicine withdrawn in any country does not count as approved. It
-  is left out.
+  is not shown anywhere on the page: no tab, no folded box, and it is
+  never added from the hand-written list of missing approvals.
 - New clue: approved, with no link to the disease. Main list.
 - Being studied: approved, and in trials for the disease. Separate box
   labelled "Already being studied for this disease", with the trial
@@ -71,7 +72,11 @@ Changing safety text or the grounding rule needs Kashish's explicit approval.
   - Never ask for the key, print it, log request headers, or write any key
     to a file.
   - Check the model name against the API's model list. Never assume it.
-- These are the only two outside data sources. Do not use any other.
+- Moonlight's code reads facts from two machine sources and no more:
+  Open Targets and the trials register (approved, not built yet).
+  Gemini only explains. It is not a source of facts. Do not use any other.
+- Official labels are read by hand, never by code, and only for
+  warnings and missing approvals.
 - Check field names against live responses or files in fixtures/. Never
   assume a field name from memory.
 
@@ -84,7 +89,8 @@ Changing safety text or the grounding rule needs Kashish's explicit approval.
   network. Each module makes its HTTP calls through one small function, and
   tests replace that function using unittest.mock.patch.
 - Never edit, skip or delete a test to make it pass. If a test looks wrong,
-  stop and say so.
+  stop and say so. One exception: a test change that only follows a
+  decision Kashish has approved. Claude clears it and reports it.
 - If something in the ticket does not match the repo or the data, stop and ask.
 - Stack: Python 3, requests, pytest. FastAPI and uvicorn
   for the API, one static HTML page. Open Targets
