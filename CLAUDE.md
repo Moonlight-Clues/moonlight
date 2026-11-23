@@ -37,6 +37,10 @@ MedicineForm, Medicine, Path.
 - A medicine withdrawn in any country does not count as approved. It
   is not shown anywhere on the page: no tab, no folded box, and it is
   never added from the hand-written list of missing approvals.
+  A WITHDRAWAL report on a disease's list is a different thing. It does
+  not hide a card. On the Approved tab the card stays and says: The
+  database records a withdrawal for this medicine in some country or
+  region. (Kashish, 23 Nov 2026.)
 - New clue: approved, with no link to the disease. Main list.
 - Being studied: approved, and in trials for the disease. Separate box
   labelled "Already being studied for this disease", with the trial

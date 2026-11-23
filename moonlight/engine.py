@@ -81,6 +81,13 @@ ADDED_LINE and links to the label. Nothing new is asked of Open Targets.
 Ticket 2.30. An entry whose medicine is on left_out.json for that disease is
 not added either. approvals_left_out() lists such clashes.
 
+Ticket 2.31, a quiet line for withdrawal reports. withdrawal_notes(tabs,
+on_list, neighbours) says which cards of the Approved tab carry
+WITHDRAWAL_LINE: the ones whose list holds a report with the stage
+WITHDRAWAL. It is worked out after sort_into_tabs, which is not changed.
+No card is hidden, moved or reordered. The older "Withdrawn" warning flag
+is a different thing and still hides a medicine.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -175,6 +182,12 @@ NEW_IN_TRIALS_LABEL = (
 ADDED_LINE = (
     "This approval is missing from the database. We added it from the "
     "official label."
+)
+# Ticket 2.31, Kashish's words of 23 Nov, exactly. The grey line on an
+# Approved-tab card whose list holds a WITHDRAWAL report. Changing them
+# needs her approval.
+WITHDRAWAL_LINE = (
+    "The database records a withdrawal for this medicine in some country or region."
 )
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
@@ -773,6 +786,44 @@ def sort_into_tabs(
         more_in_trials=more_in_trials,
         new_in_trials=new_in_trials,
     )
+
+
+def withdrawal_notes(
+    tabs: Tabs, on_list: Iterable[OnList], neighbours: Iterable[Neighbour] = ()
+) -> Dict[str, str]:
+    """Card id -> WITHDRAWAL_LINE, for the Approved-tab cards that carry it
+    (ticket 2.31, Kashish's decision of 23 Nov).
+
+    Like a sticky note put on a card after the cards are laid out. Nothing
+    is hidden, moved or reordered: tabs is only read.
+
+    tabs is what sort_into_tabs made. on_list is the searched disease's own
+    list as records (fetch.fetch_listed_medicines), and neighbours are its
+    direct parents and children with their lists: the same ones
+    sort_into_tabs was handed.
+      - A card on the main Approved list carries the line when the searched
+        disease's own list has a WITHDRAWAL report for that medicine, for
+        any of its forms. A card added by hand is on that list too.
+      - A card in the narrower box or the wider-group box carries it when
+        the searched disease's own list has one, or a list the card came
+        from has one: a parent's or child's list that says the medicine is
+        approved there.
+    Only these cards are ever named. In trials and New clues are not read.
+    A list whose reports do not say their stage gives no line: nothing is
+    guessed (fetch.OnList.withdrawal_report).
+    """
+    own = {_family_id(entry.medicine) for entry in on_list if entry.withdrawal_report}
+    nearby = {
+        entry.id
+        for neighbour in neighbours
+        for entry in neighbour.approved
+        if entry.withdrawal_report
+    }
+    notes = {medicine.id: WITHDRAWAL_LINE for medicine in tabs.approved if medicine.id in own}
+    for medicine in tabs.narrower + tabs.wider_group:
+        if medicine.id in own or medicine.id in nearby:
+            notes[medicine.id] = WITHDRAWAL_LINE
+    return notes
 
 
 def _is_a_trial(stage: Optional[str]) -> bool:

@@ -79,3 +79,4 @@ Format: date, the decision, why.
 - 2026-11-23: The caution sentence is said once at the top of each trial box.
 - 2026-11-23: Yes to a protein sentence (200 letters or less, one credit line), to trial status and end date, and to grouping look-alike clues. Not built.
 - 2026-11-23: How we work: Claude clears test changes that only follow an approved decision and reports them. Label entries Claude has opened go in as a batch. Agents proceed on the safest choice; Kashish decides once a day on paper. Only Kashish merges. Claude runs every test before "you may merge".
+- 2026-11-23: A medicine with a WITHDRAWAL report keeps its card on the Approved tab, with the line "The database records a withdrawal for this medicine in some country or region." This replaces the 22 Nov decision to hide it. The older Withdrawn warning flag still hides.
