@@ -795,7 +795,8 @@ def test_browser_one_new_box_card_in_full(seen):
     assert card["phase"] == "Phase 1/2"
     assert card["source"] == "https://clinicaltrials.gov/study/NCT02579239" and card["sourceShown"]
     # Nothing else is written on the card.
-    assert card["words"] == "ATYR-1940 Forms: ATYR-1940 " + CARD_ENDING + " Source record Phase 1/2"
+    # Ticket 2.29: the sentence is once at the top of the box, not on the card.
+    assert card["words"] == "ATYR-1940 Forms: ATYR-1940 Source record Phase 1/2"
 
 
 def test_browser_a_new_box_card_has_no_score_and_no_explain_button(seen):
@@ -804,7 +805,8 @@ def test_browser_a_new_box_card_has_no_score_and_no_explain_button(seen):
             assert card["buttons"] == 0 and card["explanation"] == 0
             assert card["rank"] == 0 and card["proteins"] == 0 and card["path"] == 0
             assert "points" not in card["words"] and "report" not in card["words"]
-            assert card["ending"] == [CARD_ENDING] and card["endingIsLastBeforeTheFoot"]
+            # Ticket 2.29: the sentence is once at the top of the box, not on the card.
+            assert card["ending"] == [] and not card["endingIsLastBeforeTheFoot"]
         assert seen[name]["explainAskedFor"] == []
 
 

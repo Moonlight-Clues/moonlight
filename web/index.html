@@ -422,11 +422,13 @@ body.registering>:not(.register){display:none!important}
         <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
         <details class="wider-box" id="more-trials-box" hidden>
           <summary>More medicines in trials for this disease. They do not act on one of the 25 proteins. (<span id="more-trials-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <p class="doctor-line" data-part="caution">Never start, stop or change any medicine without a doctor.</p>
           <div class="cards" id="more-trials-cards"></div>
         </details>
         <!-- New medicines in trials, approved for nothing (ticket 2.24). Folded, under that box. -->
         <details class="wider-box" id="new-trials-box" hidden>
           <summary>New medicines being tested for this disease. The database records no approval for them for any disease. (<span id="new-trials-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <p class="doctor-line" data-part="caution">Never start, stop or change any medicine without a doctor.</p>
           <div class="cards" id="new-trials-cards"></div>
         </details>
       </section>
@@ -1065,17 +1067,16 @@ body.registering>:not(.register){display:none!important}
     return el;
   }
 
-  /* A card of the box under the In trials list (ticket 2.21): the medicine,
-     its trial stage and its source link, and the API's one closing
-     sentence. It acts on none of the 25 proteins, so it has no path, no
-     points and no explanation. */
+  /* A card of a folded box on the In trials tab (tickets 2.21 and 2.24):
+     the medicine, its trial stage and its source link. The caution
+     sentence is written once at the top of the box, not on each card
+     (ticket 2.29). No path, no points and no explanation. */
   function trialBoxCard(medicine) {
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation"])
+    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation", "ending"])
       slot(el, name).remove();
-    slot(el, "ending").textContent = medicine.ending;
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
     const phase = slot(el, "phase");

@@ -107,7 +107,7 @@ function readTrials() {
       open: box.open,
       children: [...box.children].map(el => el.getAttribute("data-part") || el.id || el.tagName),
       cautions: cautions.map(el => el.textContent),
-      cautionShown: cautions.length === 1 && shownOnPage(cautions[0]),
+      cautionShown: cautions.length === 1 && cautions[0].checkVisibility(),  // false inside a folded box
       cautionIsUnderTheLabel: cautions.length === 1 && shownOnPage(cautions[0])
         && cautions[0].getBoundingClientRect().top >= summary.getBoundingClientRect().bottom - 1,
       cautionIsAboveTheCards: cautions.length === 1 && shownOnPage(cautions[0])

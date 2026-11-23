@@ -773,8 +773,8 @@ def test_browser_a_box_card_shows_the_medicine_its_stage_and_its_source(seen):
     assert colchicine["source"] == "https://clinicaltrials.gov/study/NCT00004748"
     assert colchicine["sourceShown"] and not colchicine["noSourceShown"]
     # Nothing else is written on the card.
-    assert colchicine["words"] == (
-        "Colchicine Forms: Colchicine " + CARD_ENDING + " Source record Phase 3")
+    # Ticket 2.29: the sentence is once at the top of the box, not on the card.
+    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3"
 
 
 def test_browser_a_box_card_has_no_score_and_no_explain_button(seen):
@@ -785,12 +785,15 @@ def test_browser_a_box_card_has_no_score_and_no_explain_button(seen):
     assert seen["example"]["explainAskedFor"] == []  # In trials cards are explained on a tap only
 
 
-def test_browser_every_box_card_ends_with_kashishs_sentence(seen):
+def test_browser_no_box_card_carries_kashishs_sentence_since_ticket_2_29(seen):
+    """Ticket 2.29, approved 23 Nov: the sentence is shown once at the top of
+    the box (tests/test_caution_once.py) and is off the cards inside."""
     cards = seen["example"]["tapped"]["box"]
     assert len(cards) == 26
     for card in cards:
-        assert card["ending"] == [CARD_ENDING] and card["endingShown"]
-        assert card["endingIsLastBeforeTheFoot"]  # under it only the source link and the stage
+        assert card["ending"] == [] and not card["endingShown"]
+        assert not card["endingIsLastBeforeTheFoot"]
+        assert CARD_ENDING not in card["words"]
         assert "protein" not in card["words"] and "catch" not in card["words"]
 
 
