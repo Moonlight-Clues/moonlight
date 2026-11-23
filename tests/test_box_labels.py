@@ -114,7 +114,7 @@ def test_example_1_a_wider_group_card_carries_the_new_label_exactly():
 
 
 def test_example_1_the_api_sends_the_new_wider_group_label(all_json):
-    assert len(all_json["wider_group"]) == 12
+    assert len(all_json["wider_group"]) == 11  # 12 before ticket 2.22 took pixantrone off
     for item in all_json["wider_group"]:
         assert item["label"].startswith(FIRST + "Approved for ")
         assert item["label"].endswith(" the database puts this disease in.")
@@ -144,7 +144,7 @@ def test_example_2_two_names_are_joined_with_and_as_today():
 
 
 def test_example_2_every_narrower_card_has_the_new_first_sentence_once(all_json):
-    assert len(all_json["narrower"]) == 13
+    assert len(all_json["narrower"]) == 10  # 13 before ticket 2.22 took three off
     for item in all_json["narrower"]:
         assert item["label"].startswith(FIRST + "Approved for ")
         assert item["label"].endswith(", which the database lists under this disease.")

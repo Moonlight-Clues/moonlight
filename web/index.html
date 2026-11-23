@@ -412,6 +412,8 @@ body.registering>:not(.register){display:none!important}
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="wider-cards"></div>
         </details>
+        <!-- How many medicines a withdrawal keeps off this tab. The API's words. Only when there are some. -->
+        <p class="wrong-way-line" id="not-shown-line" role="note" hidden></p>
       </section>
 
       <section class="panel studied" data-slot="studied" id="panel-trials" role="tabpanel" aria-labelledby="tab-trials" hidden>
@@ -995,6 +997,8 @@ body.registering>:not(.register){display:none!important}
     byId("more-line").hidden = !approvedCards.length || !boxedCards;
     byId("new-list").hidden = !newCards.length;
     byId("empty").hidden = !!newCards.length;
+    byId("not-shown-line").textContent = data.not_shown_line || "";
+    byId("not-shown-line").hidden = !data.not_shown_line;
     byId("wrong-way-line").textContent = data.wrong_way_line || "";
     byId("wrong-way-line").hidden = !data.wrong_way_line;
     // The sentence is only for an In trials tab with nothing in it at all.

@@ -993,10 +993,12 @@ def test_the_page_never_picks_a_disease_by_itself(client):
 # New tests only. Saved files, no network. The disease's own medicine list
 # comes from fixtures/MONDO_0015924/disease_drugs.response.json.
 
-APPROVED_14 = [
+# Ticket 2.22: 13, not 14. Sitaxentan has a WITHDRAWAL report on this list,
+# so it is not shown on the Approved tab any more.
+APPROVED_13 = [
     "Ambrisentan", "Beraprost", "Bosentan", "Epoprostenol", "Iloprost",
     "Macitentan", "Nitric Oxide", "Riociguat", "Selexipag", "Sildenafil",
-    "Sitaxentan", "Sotatercept", "Tadalafil", "Treprostinil",
+    "Sotatercept", "Tadalafil", "Treprostinil",
 ]
 DOCTOR_LINE = "Talk to your doctor before changing any medicine."
 APPROVED_WORDS = (
@@ -1067,8 +1069,8 @@ def test_53_example_1_approved_holds_sildenafil_and_tadalafil_a_to_z_each_once(
     approved = [item["medicine"] for item in data["approved"]]
     assert approved.count("Sildenafil") == 1 and approved.count("Tadalafil") == 1
     assert approved == sorted(approved, key=str.casefold)
-    assert approved == APPROVED_14
-    assert len({item["id"] for item in data["approved"]}) == 14
+    assert approved == APPROVED_13
+    assert len({item["id"] for item in data["approved"]}) == 13
 
 
 def test_53_an_approved_item_has_its_facts_and_no_rank_explanation_or_ending(
@@ -1113,7 +1115,7 @@ def test_53_an_approved_medicine_is_in_no_other_list(client, disease_list):
         data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
     approved = {item["id"] for item in data["approved"]}
     others = {clue["id"] for clue in data["new_clues"] + data["being_studied"]}
-    assert len(approved) == 14 and others
+    assert len(approved) == 13 and others
     assert approved & others == set()
 
 
@@ -1136,6 +1138,7 @@ def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
     assert list(data) == [
         "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
         "left_out", "more_in_trials",
+        "not_shown_line",  # ticket 2.22: one medicine is not shown on the Approved tab
     ]
     assert data["rule_text"] == RULE_TEXT
 
@@ -1163,7 +1166,7 @@ def test_53_approved_names_are_only_ever_in_the_clues_answer(client, disease_lis
     said = everything_the_api_says(client)
     assert sum(1 for what, text in said if what == "explain") >= 18
     for what, text in said:
-        for name in APPROVED_14:
+        for name in APPROVED_13:
             assert (name.upper() in text) == (what == "clues"), (what, name)
 
 
@@ -1233,7 +1236,7 @@ def test_53_with_no_proteins_at_all_approved_is_still_the_diseases_own_list(
         client, disease_list):
     with patch("moonlight.api.fetch_targets", return_value=[]):
         data = client.get("/api/clues", params={"disease_id": PAH_ID}).json()
-    assert [item["medicine"] for item in data["approved"]] == APPROVED_14
+    assert [item["medicine"] for item in data["approved"]] == APPROVED_13
     assert all(item["proteins"] == [] for item in data["approved"])
     assert data["new_clues"] == [] and data["being_studied"] == []
 
@@ -1346,7 +1349,7 @@ def test_53_the_page_still_names_no_medicine_before_a_search(client):
     guide = guide_of(page)
     assert page.count(guide) == 1
     outside = page.replace(guide, "").upper()
-    for name in APPROVED_14 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
+    for name in APPROVED_13 + NEW_ORDER + ["Udenafil", "Vardenafil"]:
         assert name.upper() not in outside, name
         if name != "Doxapram":
             assert name.upper() not in guide.upper(), name

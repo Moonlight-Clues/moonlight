@@ -566,7 +566,8 @@ def test_pbc_every_old_key_answers_what_it_answered_before(pbc):
     before = load(ROOT / "fixtures" / "more_in_trials" / "clues_before_2.21.json")
     for key in before:
         assert pbc[key] == before[key], key
-    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials"}
+    # "not_shown_line" is ticket 2.22's key.
+    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials", "not_shown_line"}
 
 
 def test_pbc_the_new_box_holds_these_ten(pbc):

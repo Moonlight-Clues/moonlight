@@ -595,6 +595,9 @@ def test_a_card_found_only_through_a_protein_is_on_no_list_and_gets_no_line():
 @pytest.mark.parametrize("disease", THE_FIVE, ids=lambda disease: disease.name)
 def test_example_6_the_same_cards_in_the_same_order_as_before(disease, saved_json):
     before = load(SAVED / "approved_tab_before_2.17.json")[disease.id]
+    # Ticket 2.22. Ataluren has a WITHDRAWAL report on Duchenne's list, so
+    # it is not shown on the Approved tab any more: 7 cards, not 8.
+    before["approved"] = [one for one in before["approved"] if one["id"] != ATALUREN_ID]
     data = saved_json(disease)
     assert before["name"] == disease.name == data["disease"]["name"]
     for box in ("approved", "narrower", "wider_group"):

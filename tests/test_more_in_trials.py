@@ -436,7 +436,8 @@ def test_nobody_in_the_example_box_is_anywhere_else_on_the_page(pbc_found):
 def test_every_old_key_answers_what_it_answered_before(pbc):
     before = load(SAVED / "clues_before_2.21.json")  # made on main, commit 7734f6f
     assert {key: pbc[key] for key in before} == before
-    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials"}  # this ticket's key, and ticket 2.24's
+    # this ticket's key, ticket 2.24's, and ticket 2.22's line
+    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials", "not_shown_line"}
     assert [card["medicine"] for card in pbc["being_studied"]] == PBC_LIST_7
 
 

@@ -73,6 +73,14 @@ ones on the corrections list for it. sort_into_tabs puts each of them on
 the main Approved list, and nowhere else on the page. Its card carries
 ADDED_LINE and links to the label. Nothing new is asked of Open Targets.
 
+Ticket 2.22, withdrawal reports on the Approved tab. take_off_withdrawals
+takes a card off the Approved tab (the main list and both folded boxes)
+when a report on the disease's own list has the stage WITHDRAWAL, or, for
+a box card, a report on the list it came from. Tabs.not_shown_count says how many medicines a
+withdrawal keeps off the tab, by the old flag or the new report, and
+not_shown_line(count) is the line for it. In trials and New clues do not
+change.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -85,7 +93,7 @@ import pathlib
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 
 from moonlight import fetch
@@ -345,6 +353,13 @@ class Tabs:
     # approved for anything: the second folded box, under that one.
     # Furthest trial stage first, then A to Z. No rank.
     new_in_trials: List[TrialMedicine] = field(default_factory=list)
+    # Ticket 2.22. Cards taken off the Approved tab because a report on a
+    # list carries the stage WITHDRAWAL. Never shown and never named. Kept
+    # only so the explainer's check still knows every name it knew before.
+    not_shown: List[ApprovedMedicine] = field(default_factory=list)
+    # Ticket 2.22. How many medicines are not on the Approved tab because
+    # of a withdrawal: by the old flag or by the new report. Each one once.
+    not_shown_count: int = 0
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -1056,6 +1071,103 @@ def wrong_way_line(count: int) -> Optional[str]:
     if count == 1:
         return "1 medicine left out because it pushes the wrong way for this disease."
     return f"{count} medicines left out because they push the wrong way for this disease."
+
+
+def take_off_withdrawals(
+    tabs: Tabs,
+    tray: Dict[str, List[Path]],
+    listed: Iterable[Listed],
+    withdrawn_listed: Iterable[Listed] = (),
+    neighbours: Iterable[Neighbour] = (),
+    on_list: Iterable[OnList] = (),
+    by_hand: Iterable[HandApproval] = (),
+) -> Tabs:
+    """The tabs from sort_into_tabs, without the Approved cards that have a
+    withdrawal report (ticket 2.22, Kashish's decisions of 22 Nov). It is
+    handed the same things sort_into_tabs was handed.
+
+    Like a recall notice pinned to a shelf: the box is taken off that
+    shelf, and a small sign says how many boxes are gone.
+      - A card on the main Approved list is not shown if the disease's own
+        list has a report for it whose stage is WITHDRAWAL
+        (OnList.withdrawal_report). Only its own list is looked at.
+      - A card in a folded box is not shown if the disease's own list has
+        such a report for it, or the list of a narrower or wider disease
+        it came from has one (Listed.withdrawal_report). Either list is
+        enough.
+      - A medicine added by hand follows the main list's rule.
+      - Only the Approved tab changes. In trials, New clues, their folded
+        boxes and the counts in left_out are handed back exactly as they
+        came. A card taken off does not move to any other place.
+      - not_shown holds the cards taken off. They are never shown.
+      - not_shown_count is the number for the line: the medicines the old
+        withdrawn flag keeps off the Approved tab, and the ones taken off
+        here, each medicine once.
+    """
+    listed = list(listed)
+    withdrawn_listed = list(withdrawn_listed)
+    neighbours = list(neighbours)
+    by_hand = list(by_hand)
+    reported_ids = {
+        _family_id(entry.medicine) for entry in on_list if entry.withdrawal_report}
+    # A box card is also judged by the lists it came from.
+    reported_nearby = {
+        entry.id
+        for neighbour in neighbours
+        for entry in neighbour.approved
+        if entry.withdrawal_report
+    }
+    not_shown = [medicine for medicine in tabs.approved if medicine.id in reported_ids]
+    not_shown += [
+        medicine for medicine in tabs.narrower + tabs.wider_group
+        if medicine.id in reported_ids or medicine.id in reported_nearby
+    ]
+    gone = {medicine.id for medicine in not_shown}
+
+    # The old flag, exactly as sort_into_tabs reads it.
+    withdrawn_nearby = [entry for neighbour in neighbours for entry in neighbour.withdrawn]
+    withdrawn_ids = {
+        _family_id(path.medicine)
+        for paths in tray.values()
+        for path in paths
+        if path.medicine.withdrawn is True
+    } | {entry.id for entry in withdrawn_listed} | {entry.id for entry in withdrawn_nearby}
+    # A withdrawn medicine that would have had a card on the Approved tab:
+    # it is approved on one of the lists, or added by hand, or a path says
+    # it is approved for this disease.
+    would_have_a_card = (
+        {entry.id for entry in listed}
+        | {entry.id for entry in withdrawn_listed + withdrawn_nearby if entry.approved}
+        | {entry.id for neighbour in neighbours for entry in neighbour.approved}
+        | {entry.medicine_id for entry in by_hand}
+        | {
+            _family_id(path.medicine)
+            for paths in tray.values()
+            for path in paths
+            if path.medicine.best_stage == fetch.APPROVAL
+            and path.medicine.disease_stage == fetch.APPROVAL
+        }
+    )
+    return replace(
+        tabs,
+        approved=[medicine for medicine in tabs.approved if medicine.id not in gone],
+        narrower=[medicine for medicine in tabs.narrower if medicine.id not in gone],
+        wider_group=[medicine for medicine in tabs.wider_group if medicine.id not in gone],
+        not_shown=not_shown,
+        not_shown_count=len(gone | (withdrawn_ids & would_have_a_card)),
+    )
+
+
+def not_shown_line(count: int) -> Optional[str]:
+    """Kashish's words of 22 Nov, exactly, for the Approved tab. None if no
+    medicine is kept off the tab by a withdrawal: then there is no line."""
+    if count < 1:
+        return None
+    if count == 1:
+        return ("1 medicine is not shown here. The database records a withdrawal "
+                "for it somewhere.")
+    return (f"{count} medicines are not shown here. The database records a withdrawal "
+            "for them somewhere.")
 
 
 def one_way_proteins(

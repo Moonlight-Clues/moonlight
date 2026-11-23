@@ -56,6 +56,10 @@ ALL_NARROWER_13 = [
     "IBRUTINIB", "IDELALISIB", "NELARABINE", "OBECABTAGENE AUTOLEUCEL", "OBINUTUZUMAB",
     "OFATUMUMAB", "VENETOCLAX", "ZANUBRUTINIB",
 ]
+# Ticket 2.22. The page shows 10 of the 13: alemtuzumab, duvelisib and
+# ofatumumab have a WITHDRAWAL report on the narrower disease's list.
+ALL_NARROWER_10_ON_THE_PAGE = [
+    name for name in ALL_NARROWER_13 if name not in ("ALEMTUZUMAB", "DUVELISIB", "OFATUMUMAB")]
 THE_FOUR = ["ACALABRUTINIB", "IBRUTINIB", "VENETOCLAX", "ZANUBRUTINIB"]
 AMYLOIDOSIS_NARROWER_6 = [
     "ACORAMIDIS", "DIFLUNISAL", "EPLONTERSEN", "EPLONTERSEN SODIUM", "VUTRISIRAN",
@@ -385,8 +389,8 @@ def clues_json(client, disease):
 def test_api_all_sends_the_three_parts_of_the_approved_tab(client):
     data = clues_json(client, ALL)
     assert [item["medicine"].upper() for item in data["approved"]] == ALL_MAIN_15
-    assert [item["medicine"].upper() for item in data["narrower"]] == ALL_NARROWER_13
-    assert len(data["wider_group"]) == 12
+    assert [item["medicine"].upper() for item in data["narrower"]] == ALL_NARROWER_10_ON_THE_PAGE
+    assert len(data["wider_group"]) == 11  # 12 before ticket 2.22 took pixantrone off
     assert all("label" not in item for item in data["approved"])
     assert all(item["label"].endswith(CHILD_WORDS) for item in data["narrower"])
     assert len(data["being_studied"]) == 16 and len(data["new_clues"]) == 21
@@ -410,7 +414,7 @@ def test_api_a_narrower_medicine_that_is_not_in_trials_cannot_be_explained(clien
     data = clues_json(client, ALL)
     in_trials = {item["id"] for item in data["being_studied"]}
     only_boxed = [item for item in data["narrower"] if item["id"] not in in_trials]
-    assert len(only_boxed) == 10
+    assert len(only_boxed) == 7  # 10 before ticket 2.22 took three off the page
     for item in only_boxed:
         answer = client.get("/api/explain", params={"disease_id": ALL.id, "clue_id": item["id"]})
         assert answer.status_code == 404
@@ -438,7 +442,8 @@ def test_api_cards_in_trials_and_new_clues_keep_the_source_they_had(client):
 
 
 def test_api_amyloidosis_and_eczema_through_the_api(client):
-    for disease, main, narrower, wider in ((AMYLOIDOSIS, 5, 6, 0), (ECZEMA, 41, 4, 68)):
+    for disease, main, narrower, wider in ((AMYLOIDOSIS, 5, 6, 0), (ECZEMA, 39, 4, 68)):
+        # Eczema: 41 before ticket 2.22 took crisaborole and tacrolimus off.
         with test_family.searching(disease):
             data = clues_json(client, disease)
         assert len(data["approved"]) == main

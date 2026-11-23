@@ -109,7 +109,8 @@ def answers():
     real = real_answer()
     # The real answer holds what these tests lean on.
     assert len(real["approved"]) == 15 and len(real["new_clues"]) == 21
-    assert len(real["narrower"]) == 13 and len(real["wider_group"]) == 12
+    # 13 and 12 before ticket 2.22 took four cards off the Approved tab.
+    assert len(real["narrower"]) == 10 and len(real["wider_group"]) == 11
     assert len(real["being_studied"]) == 16
     assert any(not medicine["proteins"] for medicine in real["approved"])
     assert any(len(medicine["proteins"]) > 1 for medicine in real["approved"])
@@ -455,7 +456,7 @@ def test_the_japan_line_and_the_no_regulator_line_sit_under_their_rows(seen, ans
 
 def test_under_the_table_one_line_counts_both_boxes(seen):
     assert seen["big"]["register"]["boxes"] == (
-        "13 more medicines are in the narrower box and 12 more are in the "
+        "10 more medicines are in the narrower box and 11 more are in the "
         "wider box. " + SEE_THE_SITE)
 
 
@@ -535,7 +536,7 @@ def test_with_no_approved_medicine_and_no_clue_the_page_says_so_in_its_own_words
         "Showing the first 0 of 0 new clues. Being first on the list does not mean best.")
     assert register["cluesEmpty"] == "No new clues found for this disease."
     assert register["approvedTop"] == APPROVED_TOP_LINE
-    assert register["boxes"].startswith("13 more medicines are in the narrower box")
+    assert register["boxes"].startswith("10 more medicines are in the narrower box")
 
 
 # ---- 5. the footer, and black on white ----

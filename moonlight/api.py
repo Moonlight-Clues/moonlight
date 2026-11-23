@@ -81,6 +81,7 @@ from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand
+from moonlight.engine import not_shown_line, take_off_withdrawals
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -242,6 +243,17 @@ class _Found:
         # by_hand (ticket 2.26): the hand-written list's entries for this
         # disease. Each is on the main Approved list and nowhere else.
         tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list, by_hand)
+        # Ticket 2.22. Cards with a WITHDRAWAL report are taken off the
+        # Approved tab. Nothing else on the page changes.
+        tabs = take_off_withdrawals(
+            tabs, tray, listed, withdrawn_listed, neighbours, on_list, by_hand)
+        # In trials and New clues are out of scope for ticket 2.22. Their
+        # opposite-way notes are worked out from the main Approved list as
+        # it was before a card was taken off it (no label: the main list).
+        self.approved_before = tabs.approved + [
+            medicine for medicine in tabs.not_shown if medicine.label is None]
+        # How many medicines a withdrawal keeps off the Approved tab.
+        self.not_shown_count = tabs.not_shown_count
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
@@ -265,7 +277,9 @@ class _Found:
                 names.add(path.medicine.name)
                 names.update(form.name for form in path.medicine.forms)
         # Also the ones only on the disease's own list, or on a parent's or child's.
-        for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
+        # The cards taken off the Approved tab (ticket 2.22) are still met:
+        # the explainer's check knows the same names as before.
+        for medicine in tabs.approved + tabs.narrower + tabs.wider_group + tabs.not_shown:
             if medicine.added_from_label:
                 # Added by hand (ticket 2.26). Its name comes from a file,
                 # not from Open Targets, so it is not added: the
@@ -524,7 +538,7 @@ def clues(disease_id: str) -> dict:
     words = warning_words(disease.id)  # each listed card's own red words (ticket 2.18)
     new_clues, wrong_way = _shown_new_clues(found)  # ticket 2.18: left out by hand
     # Ticket 3.7. The main Approved list only, without the red-warning cards.
-    one_way = one_way_proteins(found.approved, wrong)
+    one_way = one_way_proteins(found.approved_before, wrong)
     answer = {
         "disease": {"id": disease.id, "name": disease.name},
         "about_disease": _about_json(disease),
@@ -556,6 +570,11 @@ def clues(disease_id: str) -> dict:
     new = keep_out(found.new_in_trials, pushes_wrong_way(disease.id) | wrong)
     if new:
         answer["new_in_trials"] = [_more_in_trials_json(medicine) for medicine in new]
+    hidden_line = not_shown_line(found.not_shown_count)
+    if hidden_line:
+        # Ticket 2.22. One line for the Approved tab: the engine's words.
+        # Only there when a withdrawal keeps a medicine off the tab.
+        answer["not_shown_line"] = hidden_line
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.
