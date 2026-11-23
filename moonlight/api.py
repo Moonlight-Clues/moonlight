@@ -12,7 +12,12 @@
                                             description and "also called" names.
                                             A medicine on the hand-written list of
                                             missing approvals (ticket 2.26) is in
-                                            "approved", and nowhere else
+                                            "approved", and nowhere else. Also
+                                            "opposite_way_box": the ids of the
+                                            new clues the page shows in the
+                                            folded box at the bottom of the New
+                                            clues tab (ticket 2.28). They are
+                                            still in "new_clues"
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -77,7 +82,7 @@ from fastapi.responses import HTMLResponse
 from moonlight import explain, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
-from moonlight.engine import one_way_proteins, opposite_way
+from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand
@@ -556,6 +561,14 @@ def clues(disease_id: str) -> dict:
     new = keep_out(found.new_in_trials, pushes_wrong_way(disease.id) | wrong)
     if new:
         answer["new_in_trials"] = [_more_in_trials_json(medicine) for medicine in new]
+    # Ticket 2.28. The folded box at the bottom of the New clues tab: the
+    # ids of the new clues that carry the opposite-way line, in the list's
+    # own order. The clues themselves stay in "new_clues", so nothing is
+    # removed. A clue left out by hand is not in new_clues, so not here.
+    boxed = opposite_box(new_clues, one_way)
+    if boxed:
+        # Only there when it holds something, like the other boxes.
+        answer["opposite_way_box"] = [_clue_id(clue) for clue in boxed]
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.

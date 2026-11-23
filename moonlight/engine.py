@@ -41,6 +41,11 @@ the main Approved list and says which proteins its medicines all turn the
 same way. opposite_way(clue, one_way) then says on which of a clue's
 proteins the card carries OPPOSITE_LINE. Nothing is moved or hidden.
 
+Ticket 2.28, the opposite-way box. opposite_box(new_clues, one_way) names
+the new clues that carry OPPOSITE_LINE on at least one protein, in the
+list's own order. The page shows them in one folded box at the bottom of
+the New clues tab, labelled OPPOSITE_BOX_LABEL. Nothing is removed.
+
 Ticket 2.18, a second red warning, and clues left out by hand. A
 corrections entry's note is one of two sentences (CORRECTION_NOTES).
 warning_words(disease_id) says which red words each listed card shows: its
@@ -134,6 +139,9 @@ NO_REGULATOR_LINE = (
 )
 # Ticket 3.7, Kashish's words, exactly. Changing them needs her approval.
 OPPOSITE_LINE = "Opposite way to the approved medicines for this disease."
+# Ticket 2.28. The label of the folded box at the bottom of the New clues
+# tab. Proposed in the ticket of 23 Nov. Changing it needs Kashish's approval.
+OPPOSITE_BOX_LABEL = "These push the opposite way to the approved medicines for this disease."
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
 CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the first note
 # Ticket 2.18, Kashish's words of 19 Nov, exactly. The second note an entry
@@ -1117,6 +1125,19 @@ def opposite_way(clue: Clue, one_way: Dict[str, str]) -> Set[str]:
         for path in clue.paths
         if path.direction in against and one_way.get(path.target.id) == against[path.direction]
     }
+
+
+def opposite_box(new_clues: Iterable[Clue], one_way: Dict[str, str]) -> List[Clue]:
+    """The new clues that go in the folded opposite-way box (ticket 2.28).
+
+    A clue is in the box when at least one of its proteins carries
+    OPPOSITE_LINE (opposite_way). The clues come back in the order they
+    were handed in: the list's own order. new_clues is the New clues tab
+    after the hand-written left-out list (leave_out), so a clue left out
+    by hand is never here. Nothing is taken off the tab by this: the
+    answer only says which of its cards sit in the box.
+    """
+    return [clue for clue in new_clues if opposite_way(clue, one_way)]
 
 
 def _parent_first(family_id: str, forms: Dict[str, str]) -> Tuple[str, ...]:
