@@ -1,0 +1,170 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0020642",
+      "drugAndClinicalCandidates": {
+        "count": 7,
+        "rows": [
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL3544983",
+              "name": "TESEVATINIB",
+              "maximumClinicalStage": "PHASE_3",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D06WRF",
+                "clinicalStage": "PHASE_2",
+                "source": "TTD"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL317094",
+              "name": "IMIDAPRIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00890279",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "EARLY_PHASE_1",
+            "drug": {
+              "id": "CHEMBL276832",
+              "name": "HYDRALAZINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL542541",
+                  "name": "HYDRALAZINE HYDROCHLORIDE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03423810",
+                "clinicalStage": "EARLY_PHASE_1",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL1680",
+              "name": "OCTREOTIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1200480",
+                  "name": "OCTREOTIDE ACETATE",
+                  "drugWarnings": []
+                },
+                {
+                  "id": "CHEMBL2105834",
+                  "name": "OCTREOTIDE PAMOATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00426153",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL344159",
+              "name": "TOLVAPTAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "clinicalStage": "APPROVAL",
+                "source": "PMDA"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3febc0a1-9e5a-4ce0-843d-210f21d862c4",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1201185",
+              "name": "LANREOTIDE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1201184",
+                  "name": "LANREOTIDE ACETATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01354405",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL452076",
+              "name": "CILNIDIPINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00890279",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
