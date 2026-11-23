@@ -106,7 +106,8 @@ def test_d_the_read_explanation_button_is_still_in_the_clue_card(page):
 
 def test_the_dot_is_not_part_of_the_tap_words(page):
     assert "· Tap to" not in page
-    assert page.count('<span data-part="tap">Tap to open</span>') == 4
+    # 5 since ticket 2.28: the opposite-way box on the New clues tab is the fifth.
+    assert page.count('<span data-part="tap">Tap to open</span>') == 5
     assert 'box.open ? "Tap to close" : "Tap to open";' in page
 
 

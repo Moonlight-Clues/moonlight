@@ -181,7 +181,8 @@ def test_a_clue_with_the_line_is_in_the_box_and_one_without_is_not():
     answer = cards([APPROVED_DOWN, path("CLUEUP", "CHEMBL9001", NR3C1, UP),
                     path("CLUEDOWN", "CHEMBL9002", NR3C1, DOWN)])
     assert answer[KEY] == ["CHEMBL9001"]
-    assert [clue["id"] for clue in answer["new_clues"]] == ["CHEMBL9001", "CHEMBL9002"]
+    # Both are still new clues. (Equal scores: the list is then A to Z.)
+    assert [clue["id"] for clue in answer["new_clues"]] == ["CHEMBL9002", "CHEMBL9001"]
 
 
 def test_unknown_and_mixed_directions_are_not_in_the_box():
@@ -358,14 +359,22 @@ const SITE = "http://moonlight.test";
 function readClues() {
   const shownOnPage = el => !!el && el.getClientRects().length > 0;
   const words = el => el.innerText.replace(/\s+/g, " ").trim();
+  // A card's words without its explanation part: that part changes when
+  // an explanation is asked for, and this test's API answers none.
+  const steady = card => {
+    const copy = card.cloneNode(true);
+    copy.querySelectorAll('[data-slot="explanation"]').forEach(el => el.remove());
+    return copy.textContent.replace(/\s+/g, " ").trim();
+  };
   const readCard = card => ({
     name: card.querySelector('[data-slot="medicine-name"]').textContent,
     rank: card.querySelector('[data-slot="rank"]').textContent,
     onScreen: card.checkVisibility(),  // false inside a folded box, or when filtered away
     line: [...card.querySelectorAll('[data-slot="opposite-way"]')].map(el => el.textContent),
     buttons: card.querySelectorAll("button").length,
-    // Everything a reader can read on the card, shown or folded.
-    words: card.textContent.replace(/\s+/g, " ").trim(),
+    // Everything else a reader can read on the card, shown or folded.
+    words: steady(card),
+    explanations: card.querySelectorAll('[data-slot="explanation"]').length,
   });
   const box = document.getElementById("opposite-box");
   const list = document.getElementById("new-cards");
@@ -568,8 +577,9 @@ def test_browser_example_every_card_is_unchanged_word_for_word(seen):
     closed = seen["example"]["closed"]
     for card in closed["list"] + closed["box"]["cards"]:
         old = before_cards[card["name"]]
-        assert {key: card[key] for key in ("rank", "line", "buttons", "words")} == {
-            key: old[key] for key in ("rank", "line", "buttons", "words")}, card["name"]
+        same = ("rank", "line", "buttons", "words", "explanations")
+        assert {key: card[key] for key in same} == {key: old[key] for key in same}, card["name"]
+        assert card["explanations"] == 1  # it can still be explained
 
 
 def test_browser_example_the_numbers_are_the_places_on_the_whole_list(seen):

@@ -366,6 +366,9 @@ def test_nothing_else_on_the_graves_page_changes():
     expected["approved"] = [old["approved"][0], METHIMAZOLE_CARD, old["approved"][1]]
     expected["more_in_trials"] = [card for card in old["more_in_trials"]
                                   if card["id"] != METHIMAZOLE]
+    # Ticket 2.28 added one key: the new clue that carries the opposite-way
+    # line is named for the folded box. It is still in "new_clues", as before.
+    expected["opposite_way_box"] = ["CHEMBL1201716"]
     assert page(GRAVES) == expected
 
 
