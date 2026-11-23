@@ -45,3 +45,23 @@ What the answers say about the two medicines
 - CHEMBL1515 METHIMAZOLE is on Graves disease's own list with the stage
   PHASE_3 and 13 reports. It acts on none of the 25 proteins and has no
   warning.
+
+## Added for ticket 2.30 (second batch)
+
+One more answer, `disease_drugs/MONDO_0005342.response.json`, asked live on
+2026-11-23 (Open Targets data 26.09) with DISEASE_DRUGS_QUERY, the way
+fetch.py asks it. Saved as sent. Only the disease's own list: no whole
+search this time.
+
+- MONDO_0005342 IgA glomerulonephritis (73 medicines). CHEMBL9194 ATRASENTAN
+  is on it with the stage PHASE_3 and 5 reports. It has one tablet form,
+  CHEMBL2106068, with no row on the list. CHEMBL4594614 SIBEPRENLIMAB is on
+  it with the stage PHASE_3 and 5 reports, and the database records it as
+  approved for nothing yet. Neither has a warning.
+
+Not saved again: AL amyloidosis (MONDO_0019438). `fixtures/tafamidis_warning/`
+already holds its whole search, and its list is letter for letter the live
+answer of 2026-11-23. CHEMBL1743007 DARATUMUMAB is on it with the stage
+PHASE_3 and 13 reports. No tablet form, no warning.
+
+So this folder now holds 49 answers.
