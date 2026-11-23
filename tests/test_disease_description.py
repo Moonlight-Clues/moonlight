@@ -225,7 +225,8 @@ def clues_for(client, disease_id):
     proteins and the disease's own medicine list are left empty."""
     with patch("moonlight.api.fetch_targets", return_value=[]), \
             patch("moonlight.api.fetch_approved", return_value=[]), \
-            patch("moonlight.api.fetch_withdrawn", return_value=[]):
+            patch("moonlight.api.fetch_withdrawn", return_value=[]), \
+            patch("moonlight.api.fetch_listed_medicines", return_value=[]):
         response = client.get("/api/clues", params={"disease_id": disease_id})
     assert response.status_code == 200
     return response.json()

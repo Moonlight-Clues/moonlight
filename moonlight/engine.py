@@ -49,6 +49,30 @@ list written by hand: for that disease those medicines are not shown in
 New clues (leave_out), and wrong_way_line says how many. No code ever
 writes to that file: only a hand check may remove a card.
 
+Ticket 2.21, a box for more medicines in trials. sort_into_tabs is also
+handed the disease's own list as records (fetch.fetch_listed_medicines).
+A medicine on it that is in a trial for the disease and approved for
+something else, by the same rule as In trials (filter.group_of), and is
+nowhere else on the page, goes in Tabs.more_in_trials: the folded box
+under the In trials list. keep_out(more, ids) takes out the medicines a
+hand-written list names for this disease. Today's In trials list is not
+touched.
+
+Ticket 2.24, a box for new medicines in trials. A medicine on the disease's
+own list that is in a trial for the disease and that no form we can see
+says is approved for anything goes in Tabs.new_in_trials: a second folded
+box, under the one from ticket 2.21. If the list cannot tell whether it is
+approved for something (fetch.OnList.all_seen is False), it stays out of
+both boxes. keep_out works for this box too.
+
+Ticket 2.26, a hand-written list of missing approvals. approvals_by_hand()
+reads moonlight/approvals.json: medicines whose official label names a
+disease, but which the database does not record as approved for it.
+added_by_hand(disease_id) gives the entries for one disease, without the
+ones on the corrections list for it. sort_into_tabs puts each of them on
+the main Approved list, and nowhere else on the page. Its card carries
+ADDED_LINE and links to the label. Nothing new is asked of Open Targets.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -67,7 +91,7 @@ from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 from moonlight import fetch
 from moonlight.fetch import fetch_approved, fetch_disease, fetch_family, fetch_paths
 from moonlight.fetch import fetch_targets, fetch_withdrawn
-from moonlight.fetch import Listed
+from moonlight.fetch import Listed, OnList
 from moonlight.filter import (
     ALREADY_APPROVED,
     BEING_STUDIED,
@@ -76,10 +100,11 @@ from moonlight.filter import (
     NOT_APPROVED,
     SHOWN_GROUPS,
     UNCLEAR_LINK,
+    group_of,
     sort_paths,
 )
 from moonlight.rank import Clue, rank_clues
-from moonlight.records import Disease, Medicine, Path, Target
+from moonlight.records import STAGE_ORDER, Disease, Medicine, Path, Target
 
 AT_ONCE = 5  # the most proteins, or extra disease entries, fetched at the same time
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
@@ -117,11 +142,47 @@ SECOND_NOTE = (
 # An entry's note is exactly one of these. Note -> the red words on the card.
 RED_WORDS = {CORRECTION_NOTE: WRONG_WARNING, SECOND_NOTE: SECOND_NOTE}
 CORRECTION_NOTES = tuple(RED_WORDS)
+# Ticket 2.21, Kashish's words of 22 Nov, exactly. The label of the folded
+# box under the In trials list. Changing them needs her approval.
+MORE_IN_TRIALS_LABEL = (
+    "More medicines in trials for this disease. They do not act on one of "
+    "the 25 proteins."
+)
+# Kashish's words of 23 Nov, exactly. The last words on every card of that
+# box. Only this sentence: a box card has no protein, so it says nothing
+# about one. Changing them needs her approval.
+MORE_IN_TRIALS_ENDING = "Never start, stop or change any medicine without a doctor."
+# Ticket 2.24, Kashish's words of 23 Nov, exactly. The label of the second
+# folded box under the In trials list. Changing them needs her approval.
+# Its cards end with MORE_IN_TRIALS_ENDING, the same sentence.
+NEW_IN_TRIALS_LABEL = (
+    "New medicines being tested for this disease. The database records no "
+    "approval for them for any disease."
+)
+# Ticket 2.26, Kashish's words of 23 Nov, exactly. The grey line on a card
+# added from the hand-written list. Changing them needs her approval.
+ADDED_LINE = (
+    "This approval is missing from the database. We added it from the "
+    "official label."
+)
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
 LEFT_OUT_FILE = pathlib.Path(__file__).resolve().parent / "left_out.json"
 LEFT_OUT_KEYS = {"medicine_id", "disease_id", "date"}
+# Ticket 2.26. The approvals added by hand. Nothing in Moonlight writes here.
+APPROVALS_FILE = pathlib.Path(__file__).resolve().parent / "approvals.json"
+APPROVAL_KEYS = {"medicine_id", "name", "disease_id", "date", "label"}
+
+
+@dataclass(frozen=True)
+class HandApproval:
+    """One entry of the hand-written list of missing approvals (ticket 2.26)."""
+
+    medicine_id: str  # the id shared by the medicine and its tablet forms
+    name: str  # the name the card shows. It comes from the file, not from Open Targets.
+    disease_id: str  # the one disease the entry works for
+    label: str  # the regulator's own page: the card's source link
 
 
 @dataclass(frozen=True)
@@ -162,12 +223,20 @@ class ApprovedMedicine:
     # lists holds such a report. None: not said. It is on no list, or on
     # one of them its reports carry no source value.
     regulator_record: Optional[bool] = None
+    # Ticket 2.26. None for a medicine the database records as approved.
+    # For one added from the hand-written list: the link to its label.
+    added_from_label: Optional[str] = None
 
     @property
     def proof_note(self) -> Optional[str]:
         """The one quiet grey line the card carries, or None.
 
-        Like a receipt check with two questions, asked in this order:
+        A card added from the hand-written list of missing approvals
+        (ticket 2.26) carries ADDED_LINE, and nothing else: the database
+        has no approval receipt for it to check.
+
+        For every other card, like a receipt check with two questions,
+        asked in this order:
           1. Is Japan's general list its only approval receipt? Then
              JAPAN_LINE (ticket 2.13), and nothing else.
           2. Is it known to have no approval report from a regulator
@@ -176,6 +245,8 @@ class ApprovedMedicine:
         None if it has a regulator's approval report, or if nobody said
         where its reports come from. The line never moves or hides a card.
         """
+        if self.added_from_label:
+            return ADDED_LINE
         if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
             return JAPAN_LINE
         if self.regulator_record is False:
@@ -192,7 +263,12 @@ class ApprovedMedicine:
           2. Japan's general list, if that is its only kind of receipt;
           3. the link shown before this ticket: the first of sources.
         Only an https link is ever chosen. None if it has no such link.
+
+        A card added from the hand-written list (ticket 2.26) shows the
+        label written in the file, and never anything else.
         """
+        if self.added_from_label:
+            return self.added_from_label
         receipts = [link for link in self.approval_sources if link.startswith("https://")]
         for link in receipts:
             if link != JAPAN_LIST:
@@ -219,6 +295,34 @@ class ApprovedMedicine:
 
 
 @dataclass(frozen=True)
+class TrialMedicine:
+    """One card of a folded box under the In trials list.
+
+    Ticket 2.21, "More medicines in trials": in a trial for the disease,
+    approved for something else, and it acts on none of the proteins
+    looked at. Ticket 2.24, "New medicines being tested": in a trial for
+    the disease and approved for nothing. Either way the card has no path,
+    no score and no rank, and it is never explained.
+    """
+
+    id: str  # the id shared by the medicine and its tablet forms
+    name: str
+    forms: Tuple[str, ...]  # the names of its forms on the list, the parent first
+    stage: str  # how far it got for this disease: the strongest of its forms
+    # Its report links from the disease's own list: the reports for the
+    # stage on the card first, then the others.
+    sources: Tuple[str, ...] = ()
+
+    @property
+    def source_record(self) -> Optional[str]:
+        """The one link the card shows: the first https link. None if none."""
+        for link in self.sources:
+            if link.startswith("https://"):
+                return link
+        return None
+
+
+@dataclass(frozen=True)
 class Tabs:
     """The three tabs of the page, and how many medicines were left out."""
 
@@ -233,6 +337,14 @@ class Tabs:
     # Ticket 2.14. Approved only on a child entry, or on a child and a
     # parent: the folded box "Approved for a narrower disease". A to Z. No rank.
     narrower: List[ApprovedMedicine] = field(default_factory=list)
+    # Ticket 2.21. In a trial for the disease, approved for something else,
+    # on none of the proteins looked at: the folded box under the In trials
+    # list. Furthest trial stage first, then A to Z. No rank.
+    more_in_trials: List[TrialMedicine] = field(default_factory=list)
+    # Ticket 2.24. In a trial for the disease, and no form we can see is
+    # approved for anything: the second folded box, under that one.
+    # Furthest trial stage first, then A to Z. No rank.
+    new_in_trials: List[TrialMedicine] = field(default_factory=list)
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -409,6 +521,8 @@ def sort_into_tabs(
     listed: Iterable[Listed],
     withdrawn_listed: Iterable[Listed] = (),
     neighbours: Iterable[Neighbour] = (),
+    on_list: Iterable[OnList] = (),
+    by_hand: Iterable[HandApproval] = (),
 ) -> Tabs:
     """The tray from find_clues and the disease's own list -> the three tabs.
 
@@ -451,9 +565,56 @@ def sort_into_tabs(
         an unclear link to the disease stays counted in unclear_link too.
       - Withdrawn on a parent's or child's list is withdrawn in every
         source, and counted in not_approved if it was approved there.
+
+    on_list (ticket 2.21, Kashish's decisions of 22 Nov) is the disease's
+    own list as records (fetch.fetch_listed_medicines). It only fills
+    more_in_trials, the folded box under the In trials list. Like a second
+    guest list checked at the door, after everyone else is seated:
+      - the same rule as In trials decides (filter.group_of): approved for
+        at least one disease, not withdrawn, and a trial stage for this one;
+      - withdrawn in any source is left out, as everywhere;
+      - a medicine that acts on one of the proteins looked at is never in
+        the box, whatever group the tray put it in: the box's label says
+        "They do not act on one of the 25 proteins";
+      - a medicine on the Approved tab or in one of its boxes is already
+        on the page, so it is not in this box.
+    Nothing else in the answer changes: the box is worked out last.
+
+    on_list also fills new_in_trials (ticket 2.24, Kashish's decisions of
+    23 Nov), the second folded box. The same guest list, read once more
+    for the guests the first reading turned away:
+      - the list gives it a trial stage for this disease, the same stage
+        words as In trials;
+      - no form of it that we can see is approved for anything: not on
+        the list, and not on a path through one of the proteins;
+      - the list must be able to tell (OnList.all_seen). If it names a
+        parent or a tablet form it has no row for, the medicine stays out
+        of both boxes;
+      - withdrawn in any source is left out, as everywhere;
+      - a medicine on any tab or in any other box is not in this one.
+    A medicine in this box that acts on one of the proteins looked at is
+    still counted in left_out as before: the counts keep their meaning.
+
+    by_hand (ticket 2.26, Kashish's decisions of 23 Nov) holds the entries
+    of the hand-written list of missing approvals for THIS disease
+    (added_by_hand). Like a name written by hand at the bottom of a class
+    list: the child sits with the class, and the list says who wrote it in.
+      - The medicine is on the main Approved list, A to Z with the others,
+        named as the file names it. Its card carries ADDED_LINE and links
+        to the label in the file.
+      - It is nowhere else on the page: not in In trials, not in New clues,
+        not in any folded box, and not counted as left out.
+      - Nothing new is asked. If the page already fetched a path for it
+        through one of the proteins, the card shows that path. Its forms
+        and its report count come from what was already fetched too.
+      - Withdrawn comes first, as everywhere: a medicine withdrawn in any
+        source is not added, and the page is as if the entry was not there.
+      - If the database already records it as approved for this exact
+        disease, nothing is missing: its card stays as the database has it.
     """
     withdrawn_listed = list(withdrawn_listed)
     neighbours = list(neighbours)
+    on_list = list(on_list)
     withdrawn_nearby = [entry for neighbour in neighbours for entry in neighbour.withdrawn]
     withdrawn_ids = {
         _family_id(path.medicine)
@@ -467,6 +628,14 @@ def sort_into_tabs(
     own_ids = set(listed_by_id) | {
         _family_id(path.medicine) for path in tray.get(ALREADY_APPROVED, [])
     }
+    # Ticket 2.26. Added by hand: not withdrawn in any source, and not
+    # already recorded as approved for this exact disease.
+    hand = {
+        entry.medicine_id: entry
+        for entry in by_hand
+        if entry.medicine_id not in withdrawn_ids and entry.medicine_id not in own_ids
+    }
+    own_ids |= set(hand)  # so it is in no folded box, like any other medicine of this list
     # family id -> where else it is approved: [child names, parent names, entries]
     nearby: Dict[str, Tuple[List[str], List[str], List[Listed]]] = {}
     for neighbour in neighbours:
@@ -487,7 +656,7 @@ def sort_into_tabs(
             family_id = _family_id(path.medicine)
             if family_id in withdrawn_ids:
                 others[NOT_APPROVED].append(path)  # counted, never named
-            elif group == ALREADY_APPROVED or family_id in listed_by_id:
+            elif group == ALREADY_APPROVED or family_id in listed_by_id or family_id in hand:
                 approved_paths.append(path)
             elif family_id in nearby:
                 nearby_paths.setdefault(family_id, []).append(path)
@@ -505,10 +674,16 @@ def sort_into_tabs(
         family_id = _family_id(clue.medicine)
         seen.add(family_id)
         entry = listed_by_id.get(family_id)
-        approved.append(_approved_medicine(family_id, clue, [entry] if entry else []))
+        if family_id in hand:
+            approved.append(_added_medicine(hand[family_id], clue, on_list))
+        else:
+            approved.append(_approved_medicine(family_id, clue, [entry] if entry else []))
     for entry in listed_by_id.values():
         if entry.id not in seen:
             approved.append(_approved_medicine(entry.id, None, [entry]))
+    for family_id, entry in hand.items():
+        if family_id not in seen:
+            approved.append(_added_medicine(entry, None, on_list))
 
     narrower: List[ApprovedMedicine] = []
     wider_group: List[ApprovedMedicine] = []
@@ -530,6 +705,45 @@ def sort_into_tabs(
     narrower.sort(key=a_to_z)
     wider_group.sort(key=a_to_z)
 
+    acts_on_a_protein = {
+        _family_id(path.medicine) for paths in tray.values() for path in paths
+    }
+    more_in_trials = [
+        _trial_medicine(entry)
+        for entry in on_list
+        if group_of(entry.medicine) == BEING_STUDIED  # the same rule as In trials
+        and _family_id(entry.medicine) not in withdrawn_ids
+        and _family_id(entry.medicine) not in acts_on_a_protein
+        and _family_id(entry.medicine) not in own_ids
+        and _family_id(entry.medicine) not in nearby
+    ]
+    # Furthest trial stage first, then A to Z, ignoring capitals. The last
+    # two only make the order the same every time.
+    more_in_trials.sort(key=lambda medicine: (
+        STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id))
+
+    # Ticket 2.24. Approved for something, as far as a path can see.
+    approved_on_a_path = {
+        _family_id(path.medicine)
+        for paths in tray.values()
+        for path in paths
+        if path.medicine.best_stage == fetch.APPROVAL
+    }
+    new_in_trials = [
+        _trial_medicine(entry)
+        for entry in on_list
+        if entry.all_seen  # the list can tell: nobody in the family is missing
+        and entry.medicine.best_stage != fetch.APPROVAL  # approved for nothing
+        and _is_a_trial(entry.medicine.disease_stage)
+        and entry.medicine.withdrawn is not True
+        and _family_id(entry.medicine) not in withdrawn_ids
+        and _family_id(entry.medicine) not in approved_on_a_path
+        and _family_id(entry.medicine) not in own_ids
+        and _family_id(entry.medicine) not in nearby
+    ]
+    new_in_trials.sort(key=lambda medicine: (
+        STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id))
+
     return Tabs(
         approved=approved,
         being_studied=rank_clues(others[BEING_STUDIED]),
@@ -545,7 +759,44 @@ def sort_into_tabs(
         },
         wider_group=wider_group,
         narrower=narrower,
+        more_in_trials=more_in_trials,
+        new_in_trials=new_in_trials,
     )
+
+
+def _is_a_trial(stage: Optional[str]) -> bool:
+    """Is this stage word a trial in people? The same words filter.group_of
+    takes as "being studied": a phase, early or not. Nothing else."""
+    return stage is not None and (stage.startswith("PHASE_") or stage.startswith("EARLY_PHASE_"))
+
+
+def _trial_medicine(entry: OnList) -> TrialMedicine:
+    """One card of either box, from the family's records on the disease's list."""
+    medicine = entry.medicine
+    stage = medicine.disease_stage  # the strongest of its forms
+    # The receipt for the stage on the card first, then the other links.
+    links = [link for link, said in entry.reports if said == stage]
+    links += [link for link, _ in entry.reports if link not in links]
+    return TrialMedicine(
+        id=_family_id(medicine),
+        name=medicine.name,
+        forms=tuple(form.name for form in medicine.forms),
+        stage=stage,
+        sources=tuple(links),
+    )
+
+
+def keep_out(more: Iterable[TrialMedicine], listed: Iterable[str]) -> List[TrialMedicine]:
+    """The box without the listed medicines. The rest keep their order.
+
+    Tickets 2.21 and 2.24: no existing rule may be undone by a box under
+    the In trials list. more is either box's cards. listed holds
+    the family ids a hand-written list names for this disease
+    (pushes_wrong_way and looks_wrong). Nothing is counted or said about
+    the ones taken out.
+    """
+    listed = set(listed)
+    return [medicine for medicine in more if medicine.id not in listed]
 
 
 def _approved_medicine(
@@ -590,6 +841,92 @@ def _approved_medicine(
     )
 
 
+def _added_medicine(
+    entry: HandApproval, clue: Optional[Clue], on_list: Iterable[OnList]
+) -> ApprovedMedicine:
+    """One Approved card for a medicine added by hand (ticket 2.26).
+
+    The name is the file's. Everything else is what the page already
+    fetched: its paths, if it acts on one of the proteins looked at, and
+    its forms and report links on the disease's own list, if it is there.
+    A medicine that is in neither has one form, the name in the file.
+    """
+    forms: Dict[str, str] = {}  # form id -> name, each form once
+    for path in clue.paths if clue else ():
+        for form in path.medicine.forms:
+            forms.setdefault(form.id, form.name)
+    links: List[str] = []
+    for listed in on_list:
+        if _family_id(listed.medicine) != entry.medicine_id:
+            continue
+        for form in listed.medicine.forms:
+            forms.setdefault(form.id, form.name)
+        links.extend(link for link, _ in listed.reports if link not in links)
+    if not forms:
+        forms[entry.medicine_id] = entry.name
+    return ApprovedMedicine(
+        id=entry.medicine_id,
+        name=entry.name,
+        forms=_parent_first(entry.medicine_id, forms),
+        clue=clue,
+        listed_sources=tuple(links),
+        added_from_label=entry.label,
+    )
+
+
+def _read_approvals() -> list:
+    """The one place the approvals file is read. Tests replace this."""
+    return json.loads(APPROVALS_FILE.read_text(encoding="utf-8"))
+
+
+def approvals_by_hand() -> List[HandApproval]:
+    """The hand-written list of missing approvals, in the file's order
+    (ticket 2.26).
+
+    Each entry holds exactly five things: the medicine's id, the name the
+    card shows, the disease's id, the date and the label, an https link to
+    the regulator's own page. An entry that is not written this way raises
+    ValueError, as for corrections: the list is never half read. The same
+    medicine and disease written twice with a different name or label is
+    refused too.
+
+    This list is written by hand. No code adds to it, and Moonlight never
+    creates an approval by itself.
+    """
+    entries = _read_approvals()
+    if not isinstance(entries, list):
+        raise ValueError("approvals.json must hold a list.")
+    found: Dict[Tuple[str, str], HandApproval] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, APPROVAL_KEYS, "An approval added by hand")
+        name, label = entry["name"], entry["label"]
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(f"An approval added by hand needs a name: {entry!r}")
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(
+                f"An approval added by hand needs an https link to its label: {entry!r}")
+        approval = HandApproval(pair[0], name, pair[1], label)
+        if found.setdefault(pair, approval) != approval:
+            raise ValueError(f"An approval is written twice in two different ways: {entry!r}")
+    return list(found.values())
+
+
+def added_by_hand(disease_id: str) -> List[HandApproval]:
+    """The approvals added by hand for this disease, for sort_into_tabs.
+
+    An entry works only for the disease written on it. Existing rules
+    still win (Kashish, 23 Nov): a medicine on the corrections list for
+    this disease is not handed over, so its entry does nothing. A
+    withdrawn medicine is turned away by sort_into_tabs, which is where
+    the withdrawn notes are known.
+    """
+    wrong = looks_wrong(disease_id)
+    return [
+        entry for entry in approvals_by_hand()
+        if entry.disease_id == disease_id and entry.medicine_id not in wrong
+    ]
+
+
 def _read_corrections() -> list:
     """The one place the corrections file is read. Tests replace this."""
     return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
@@ -599,8 +936,8 @@ def _checked_pair(entry: object, keys: Set[str], kind: str) -> Tuple[str, str]:
     """One hand-written entry -> (medicine id, disease id), or ValueError.
 
     The entry must hold exactly the things in keys, with a medicine id, a
-    disease id and a real date (like "2026-11-16"). Nothing else: no name,
-    no reason.
+    disease id and a real date (like "2026-11-16"). Nothing that is not
+    in keys: no doctor's name, no reason.
     """
     if not isinstance(entry, dict) or set(entry) != keys:
         raise ValueError(f"{kind} must hold exactly {sorted(keys)}: {entry!r}")

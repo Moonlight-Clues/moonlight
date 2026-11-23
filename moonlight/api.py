@@ -4,8 +4,15 @@
     GET /api/search?q=                      matching diseases, best first, and "did you mean"
     GET /api/clues?disease_id=              the three tabs: approved, being studied
                                             and new clues. No explanations. Also
+                                            "more_in_trials": the folded box under
+                                            the In trials list (ticket 2.21), and
+                                            "new_in_trials": the second folded box,
+                                            under that one (ticket 2.24). Also
                                             "about_disease": Open Targets' own
-                                            description and "also called" names
+                                            description and "also called" names.
+                                            A medicine on the hand-written list of
+                                            missing approvals (ticket 2.26) is in
+                                            "approved", and nowhere else
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -72,17 +79,20 @@ from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
+from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
+from moonlight.engine import HandApproval, added_by_hand
 from moonlight.fetch import (
     FetchError,
     data_version,
     fetch_approved,
     fetch_disease,
+    fetch_listed_medicines,
     fetch_targets,
     fetch_withdrawn,
     search_diseases,
     search_matches,
 )
-from moonlight.fetch import Listed
+from moonlight.fetch import Listed, OnList
 from moonlight.filter import NOT_APPROVED, UNCLEAR_LINK
 from moonlight.rank import RULE_TEXT, Clue
 from moonlight.records import Disease, Path
@@ -226,9 +236,12 @@ class _Found:
     """Everything worked out for one disease in one request."""
 
     def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed],
-                 withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = ()):
+                 withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = (),
+                 on_list: List[OnList] = (), by_hand: List[HandApproval] = ()):
         self.disease = disease
-        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours)
+        # by_hand (ticket 2.26): the hand-written list's entries for this
+        # disease. Each is on the main Approved list and nowhere else.
+        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list, by_hand)
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
@@ -237,6 +250,13 @@ class _Found:
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
         self.left_out = tabs.left_out
+        # In a trial for the disease, on none of the proteins (ticket 2.21):
+        # the folded box under the In trials list. Their names are not added
+        # to known_names below: the explainer's check is as it was.
+        self.more_in_trials = tabs.more_in_trials
+        # In a trial for the disease, approved for nothing (ticket 2.24):
+        # the second folded box. Their names are not added either.
+        self.new_in_trials = tabs.new_in_trials
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -246,6 +266,11 @@ class _Found:
                 names.update(form.name for form in path.medicine.forms)
         # Also the ones only on the disease's own list, or on a parent's or child's.
         for medicine in tabs.approved + tabs.narrower + tabs.wider_group:
+            if medicine.added_from_label:
+                # Added by hand (ticket 2.26). Its name comes from a file,
+                # not from Open Targets, so it is not added: the
+                # explainer's check is as it was.
+                continue
             names.add(medicine.name)
             names.update(medicine.forms)
         self.known_names = names
@@ -260,7 +285,9 @@ def _find(disease_id: str) -> _Found:
         targets = fetch_targets(disease, TOP_TARGETS)
         return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
                       fetch_withdrawn(disease),  # the same saved answer, not a new question
-                      fetch_neighbours(disease))  # one step up and one step down
+                      fetch_neighbours(disease),  # one step up and one step down
+                      fetch_listed_medicines(disease),  # the same saved answer again
+                      added_by_hand(disease.id))  # a file, not a question (ticket 2.26)
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -361,6 +388,10 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
 
     Ticket 2.14. source is the engine's choice (source_record): an exact
     approval receipt, else Japan's general list, else the link shown before.
+
+    Ticket 2.26. For a medicine added from the hand-written list of missing
+    approvals, proof_note is the engine's line for it and source is the
+    label written in the file. Both are the engine's choice, as above.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
@@ -380,6 +411,26 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     if medicine.id in wrong:
         item["warning"] = (words or {}).get(medicine.id, WRONG_WARNING)
     return item
+
+
+def _more_in_trials_json(medicine: TrialMedicine) -> dict:
+    """One card of a box under the In trials list (tickets 2.21 and 2.24).
+
+    The medicine, its trial stage and its source link. It is not a clue,
+    so it has no proteins, no points and no reports count, and it is never
+    explained. The stage is written the way an In
+    trials card writes it. ending is the engine's one sentence, word for
+    word (Kashish, 23 Nov): not a clue's ending, which speaks of a protein.
+    """
+    display = explain._display
+    return {
+        "id": medicine.id,
+        "medicine": display(medicine.name),
+        "forms": [display(name) for name in medicine.forms],
+        "trial_phase": explain._phase_words(medicine.stage),
+        "source": medicine.source_record,
+        "ending": MORE_IN_TRIALS_ENDING,  # the engine's words, never changed here
+    }
 
 
 def _about_json(disease: Disease) -> dict:
@@ -493,6 +544,18 @@ def clues(disease_id: str) -> dict:
         # The folded box in the Approved tab. Only there when it holds something.
         answer["wider_group"] = [
             _approved_json(medicine, wrong, words) for medicine in found.wider_group]
+    # Ticket 2.21. The folded box under the In trials list. No existing rule
+    # is undone by it: a medicine left out by hand for this disease, or on
+    # the corrections list for it, is not shown here either.
+    more = keep_out(found.more_in_trials, pushes_wrong_way(disease.id) | wrong)
+    if more:
+        # Only there when it holds something, like the Approved tab's boxes.
+        answer["more_in_trials"] = [_more_in_trials_json(medicine) for medicine in more]
+    # Ticket 2.24. The second folded box, under that one. The same holds:
+    # the hand-written lists take a medicine out of it too.
+    new = keep_out(found.new_in_trials, pushes_wrong_way(disease.id) | wrong)
+    if new:
+        answer["new_in_trials"] = [_more_in_trials_json(medicine) for medicine in new]
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.

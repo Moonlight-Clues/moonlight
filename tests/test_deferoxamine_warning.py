@@ -82,8 +82,9 @@ def test_the_note_is_the_engines_second_note_exactly():
     assert engine.SECOND_NOTE == SECOND_NOTE
 
 
-def test_the_new_entry_is_the_last_one_in_the_real_file():
-    assert real_corrections()[-1] == THE_ENTRY
+def test_the_new_entry_is_in_the_real_file():
+    # Kashish, 23 Nov (ticket 2.25): in the file, not last. Later entries follow it.
+    assert THE_ENTRY in real_corrections()
 
 
 def test_it_is_the_only_entry_of_that_day_and_the_only_one_for_deferoxamine():

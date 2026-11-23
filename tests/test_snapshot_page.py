@@ -50,10 +50,9 @@ APPROVED_TOP_LINE = (
     "the database. Nothing here says how well any of them works. Listed A to Z."
 )
 TRIALS_TOP_LINE = (
-    "Approved for another disease and now being tested for this one. A "
+    "Medicines being tested for this disease. A "
     "separate research category, not a prediction of effectiveness. Not every "
-    "trial is listed. Only medicines that act on one of the proteins most "
-    "linked to this disease."
+    "trial is listed."
 )
 DIRECTION_LINE = "The data does not say which direction this disease needs."
 NEVER_TREATMENTS = "These are connections worth reading about, never treatments."

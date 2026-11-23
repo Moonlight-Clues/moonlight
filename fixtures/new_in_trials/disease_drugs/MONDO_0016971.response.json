@@ -1,0 +1,257 @@
+{
+ "data": {
+  "disease": {
+   "id": "MONDO_0016971",
+   "name": "limb-girdle muscular dystrophy",
+   "parents": [
+    {
+     "id": "MONDO_0016106",
+     "name": "progressive muscular dystrophy"
+    }
+   ],
+   "children": [
+    {
+     "id": "MONDO_0015151",
+     "name": "muscular dystrophy, limb-girdle, autosomal dominant"
+    },
+    {
+     "id": "MONDO_0015152",
+     "name": "autosomal recessive limb-girdle muscular dystrophy"
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 4,
+    "rows": [
+     {
+      "id": "2f71fda8eecafbd3a26f4b926257fd78e3e1ac732ea84b2c4f772098e5ff8dce",
+      "maxClinicalStage": "PHASE_1_2",
+      "drug": {
+       "id": "CHEMBL4650240",
+       "name": "BIDRIDISTROGENE XEBOPARVOVEC",
+       "drugType": "Gene",
+       "maximumClinicalStage": "PHASE_3",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "d3rt4a/limb girdle muscular dystrophy",
+        "source": "TTD",
+        "url": "https://ttd.idrblab.cn/data/drug/details/D3RT4A",
+        "clinicalStage": "PHASE_1_2",
+        "type": "INDICATION",
+        "trialPhase": null,
+        "phaseFromSource": "phase 1/2",
+        "trialOverallStatus": null,
+        "trialStudyType": null,
+        "title": "Report in Phase 1 2 stage for Srp-9003 and Limb Girdle Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         }
+        ]
+       },
+       {
+        "id": "bidridistrogene xeboparvovec",
+        "source": "USAN",
+        "url": "https://searchusan.ama-assn.org/finder/usan/search/BIDRIDISTROGENE%20XEBOPARVOVEC/relevant/1/",
+        "clinicalStage": "UNKNOWN",
+        "type": "INDICATION",
+        "trialPhase": null,
+        "phaseFromSource": "UNKNOWN",
+        "trialOverallStatus": null,
+        "trialStudyType": null,
+        "title": "Report in Unknown stage for Bidridistrogene Xeboparvovec and Limb-Girdle Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb-girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "id": "713fc050a458ec39160cee107d779580ff90a11bc5d82cd4e9d0b1c01b3bb478",
+      "maxClinicalStage": "PHASE_2",
+      "drug": {
+       "id": "CHEMBL635",
+       "name": "PREDNISONE",
+       "drugType": "Small molecule",
+       "maximumClinicalStage": "APPROVAL",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "nct04054375",
+        "source": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT04054375",
+        "clinicalStage": "PHASE_2",
+        "type": "INDICATION",
+        "trialPhase": "PHASE2",
+        "phaseFromSource": "PHASE2",
+        "trialOverallStatus": "COMPLETED",
+        "trialStudyType": "INTERVENTIONAL",
+        "title": "Open Label Safety and Efficacy of Once Weekly Steroid in Patients With LGMD and Becker Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "becker muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0010311",
+           "name": "Becker muscular dystrophy"
+          }
+         },
+         {
+          "diseaseFromSource": "limb girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "id": "a3499cf999e2eff52225da24b9fbb8d27c9f1d69db681f3d05af5a347133c326",
+      "maxClinicalStage": "PHASE_1_2",
+      "drug": {
+       "id": "CHEMBL4297550",
+       "name": "ATYR-1940",
+       "drugType": "Unknown",
+       "maximumClinicalStage": "PHASE_1_2",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "nct02579239",
+        "source": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT02579239",
+        "clinicalStage": "PHASE_1_2",
+        "type": "INDICATION",
+        "trialPhase": "PHASE1/PHASE2",
+        "phaseFromSource": "PHASE1/PHASE2",
+        "trialOverallStatus": "COMPLETED",
+        "trialStudyType": "INTERVENTIONAL",
+        "title": "An Open-Label, Intrapatient Dose Escalation Study to Evaluate the Safety, Tolerability, Immunogenicity, and Biological Activity of ATYR1940 in Patients With Limb Girdle and Facioscapulohumeral Muscular Dystrophies",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         },
+         {
+          "diseaseFromSource": "facioscapulohumeral muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0001347",
+           "name": "facioscapulohumeral muscular dystrophy"
+          }
+         }
+        ]
+       },
+       {
+        "id": "nct02836418",
+        "source": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/study/NCT02836418",
+        "clinicalStage": "PHASE_1_2",
+        "type": "INDICATION",
+        "trialPhase": "PHASE1/PHASE2",
+        "phaseFromSource": "PHASE1/PHASE2",
+        "trialOverallStatus": "COMPLETED",
+        "trialStudyType": "INTERVENTIONAL",
+        "title": "An Open-Label Extension Study to Evaluate the Long-Term Safety, Tolerability, and Biological Activity of ATYR1940 in Patients With Limb Girdle and Facioscapulohumeral Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb-girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         },
+         {
+          "diseaseFromSource": "facioscapulohumeral muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0001347",
+           "name": "facioscapulohumeral muscular dystrophy"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "id": "c50702020b9cbac6888937dca69360883e1908b9163447e4c7853875551fa863",
+      "maxClinicalStage": "PHASE_3",
+      "drug": {
+       "id": "CHEMBL3137744",
+       "name": "RIBITOL",
+       "drugType": "Small molecule",
+       "maximumClinicalStage": "PHASE_3",
+       "drugWarnings": [],
+       "parentMolecule": null,
+       "childMolecules": []
+      },
+      "clinicalReports": [
+       {
+        "id": "d5lzo9/limb-girdle muscular dystrophy",
+        "source": "TTD",
+        "url": "https://ttd.idrblab.cn/data/drug/details/D5LZO9",
+        "clinicalStage": "PHASE_3",
+        "type": "INDICATION",
+        "trialPhase": null,
+        "phaseFromSource": "phase 3",
+        "trialOverallStatus": null,
+        "trialStudyType": null,
+        "title": "Report in Phase 3 stage for Ribitol and Limb-Girdle Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb-girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         }
+        ]
+       },
+       {
+        "id": "ribitol",
+        "source": "USAN",
+        "url": "https://searchusan.ama-assn.org/finder/usan/search/RIBITOL/relevant/1/",
+        "clinicalStage": "UNKNOWN",
+        "type": "INDICATION",
+        "trialPhase": null,
+        "phaseFromSource": "UNKNOWN",
+        "trialOverallStatus": null,
+        "trialStudyType": null,
+        "title": "Report in Unknown stage for Ribitol and Limb-Girdle Muscular Dystrophy",
+        "diseases": [
+         {
+          "diseaseFromSource": "limb-girdle muscular dystrophy",
+          "disease": {
+           "id": "MONDO_0016971",
+           "name": "limb-girdle muscular dystrophy"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

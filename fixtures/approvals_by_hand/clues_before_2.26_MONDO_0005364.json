@@ -1,0 +1,463 @@
+{
+  "disease": {
+    "id": "MONDO_0005364",
+    "name": "Graves disease"
+  },
+  "about_disease": {
+    "description": "Graves' disease is an autoimmune disorder that leads to overactivity of the thyroid gland (hyperthyroidism).It is caused by an abnormal immune system response that causes the thyroid gland to produce too much thyroid hormones. Graves disease is the most common cause of hyperthyroidism andoccurs mostoften in women over age 20. However, the disorder may occur at any age and may affect males as well.Treatmentmayinclude radioiodine therapy, antithyroid drugs, and/or thyroid surgery.",
+    "source": "Open Targets",
+    "also_called": [
+      "Basedow disease",
+      "Basedow's disease",
+      "Flajani-Basedow-Graves disease",
+      "Graves' disease",
+      "exophthalmic goiter",
+      "toxic diffuse goiter"
+    ]
+  },
+  "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+  "approved": [
+    {
+      "id": "CHEMBL1201243",
+      "medicine": "Ipodate",
+      "forms": [
+        "Ipodate"
+      ],
+      "proteins": [],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D06AAP",
+      "proof_note": "The database lists this as approved, but gives no regulator record for it."
+    },
+    {
+      "id": "CHEMBL1743079",
+      "medicine": "Teprotumumab",
+      "forms": [
+        "Teprotumumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "IGF1R",
+          "points": 57,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 30,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0EN0W",
+      "proof_note": "The database lists this as approved, but gives no regulator record for it."
+    }
+  ],
+  "being_studied": [],
+  "new_clues": [
+    {
+      "id": "CHEMBL1789844",
+      "medicine": "Ipilimumab",
+      "forms": [
+        "Ipilimumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CTLA4",
+          "points": 59,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 804,
+      "source": "https://clinicaltrials.gov/study/NCT02068196",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108658",
+      "medicine": "Tremelimumab",
+      "forms": [
+        "Tremelimumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CTLA4",
+          "points": 59,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 264,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/tremelimumab-astrazeneca",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201716",
+      "medicine": "Mecasermin",
+      "forms": [
+        "Mecasermin"
+      ],
+      "proteins": [
+        {
+          "symbol": "IGF1R",
+          "points": 57,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "opposite_way": "Opposite way to the approved medicines for this disease."
+        }
+      ],
+      "reports": 44,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a8b27a1b-a611-4f91-ad22-76d4b390c3ae",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL313972",
+      "medicine": "Masoprocol",
+      "forms": [
+        "Masoprocol"
+      ],
+      "proteins": [
+        {
+          "symbol": "IGF1R",
+          "points": 57,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 2,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0U3YB",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201533",
+      "medicine": "Thyrotropin Alfa",
+      "forms": [
+        "Thyrotropin Alfa"
+      ],
+      "proteins": [
+        {
+          "symbol": "TSHR",
+          "points": 54,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 10,
+      "source": "https://clinicaltrials.gov/study/NCT00001730",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201532",
+      "medicine": "Thyrotropin",
+      "forms": [
+        "Thyrotropin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TSHR",
+          "points": 54,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 6,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D03EER",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201438",
+      "medicine": "Aldesleukin",
+      "forms": [
+        "Aldesleukin"
+      ],
+      "proteins": [
+        {
+          "symbol": "IL2RA",
+          "points": 47,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 724,
+      "source": "https://clinicaltrials.gov/study/NCT01683188",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201439",
+      "medicine": "Basiliximab",
+      "forms": [
+        "Basiliximab"
+      ],
+      "proteins": [
+        {
+          "symbol": "IL2RA",
+          "points": 47,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 71,
+      "source": "https://clinicaltrials.gov/study/NCT00113269",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201550",
+      "medicine": "Denileukin Diftitox",
+      "forms": [
+        "Denileukin Diftitox"
+      ],
+      "proteins": [
+        {
+          "symbol": "IL2RA",
+          "points": 47,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 50,
+      "source": "https://clinicaltrials.gov/study/NCT00051012",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3039545",
+      "medicine": "Luspatercept",
+      "forms": [
+        "Luspatercept"
+      ],
+      "proteins": [
+        {
+          "symbol": "TGFB2",
+          "points": 47,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 61,
+      "source": "https://clinicaltrials.gov/study/NCT05462548",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    }
+  ],
+  "left_out": {
+    "not_approved": 47,
+    "unclear_link": 0
+  },
+  "more_in_trials": [
+    {
+      "id": "CHEMBL508102",
+      "medicine": "Carbimazole",
+      "forms": [
+        "Carbimazole"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT01436994",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201625",
+      "medicine": "Cholestyramine",
+      "forms": [
+        "Cholestyramine"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT03303053",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297551",
+      "medicine": "Efgartigimod Alfa",
+      "forms": [
+        "Efgartigimod Alfa"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT07570316",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201225",
+      "medicine": "Iodine",
+      "forms": [
+        "Iodine"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT04856488",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1515",
+      "medicine": "Methimazole",
+      "forms": [
+        "Methimazole"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT05118542",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1141",
+      "medicine": "Potassium Iodide",
+      "forms": [
+        "Potassium Iodide"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT04080505",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL131",
+      "medicine": "Prednisolone",
+      "forms": [
+        "Prednisolone"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT03303053",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1518",
+      "medicine": "Propylthiouracil",
+      "forms": [
+        "Propylthiouracil"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT01436994",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL42115",
+      "medicine": "Thyroxine",
+      "forms": [
+        "Thyroxine"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT01436994",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1456",
+      "medicine": "Mycophenolate Mofetil",
+      "forms": [
+        "Mycophenolate Mofetil"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT06068179",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1601669",
+      "medicine": "Alfacalcidol",
+      "forms": [
+        "Alfacalcidol"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT02993302",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1536",
+      "medicine": "Ergocalciferol",
+      "forms": [
+        "Ergocalciferol"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT07369063",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1233550",
+      "medicine": "Iodide",
+      "forms": [
+        "Iodide"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT01269749",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3702854",
+      "medicine": "Rilzabrutinib",
+      "forms": [
+        "Rilzabrutinib"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT06984627",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL413",
+      "medicine": "Sirolimus",
+      "forms": [
+        "Sirolimus"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT04598815",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201576",
+      "medicine": "Rituximab",
+      "forms": [
+        "Rituximab"
+      ],
+      "trial_phase": "Phase 1/2",
+      "source": "https://clinicaltrials.gov/study/NCT00150111",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL384467",
+      "medicine": "Dexamethasone",
+      "forms": [
+        "Dexamethasone"
+      ],
+      "trial_phase": "Phase 1",
+      "source": "https://clinicaltrials.gov/study/NCT01534169",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL650",
+      "medicine": "Methylprednisolone",
+      "forms": [
+        "Methylprednisolone"
+      ],
+      "trial_phase": "Early Phase 1",
+      "source": "https://clinicaltrials.gov/study/NCT05532072",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    }
+  ],
+  "new_in_trials": [
+    {
+      "id": "CHEMBL4650514",
+      "medicine": "Batoclimab",
+      "forms": [
+        "Batoclimab"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT05907668",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4298210",
+      "medicine": "Iscalimab",
+      "forms": [
+        "Iscalimab"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0SD6V",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    }
+  ]
+}
