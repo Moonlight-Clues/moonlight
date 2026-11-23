@@ -60,7 +60,7 @@ SEE_THE_SITE = "See the site for these."
 SITE = "moonlightclues.com"
 COLUMNS = ["Medicine", "Protein", "Turns it", "Points / 100", "Source"]
 DASH = "—"
-NO_SOURCE = "No source link in the data"  # the card's own words
+NO_SOURCE = "The database gives no source link for this medicine."  # the card's own words
 
 # Where the made-up warning and grey lines sit in the 103.
 WARNED, JAPAN, NO_REGULATOR, NO_LINK = 5, 6, 7, 8
