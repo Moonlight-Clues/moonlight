@@ -645,7 +645,8 @@ def test_add_on_the_words_follow_the_box_open_or_closed():
     for box in ("narrower-box", "wider-box"):
         assert draw.index(f'byId("{box}").open = ') < draw.index(f'tapWords(byId("{box}"));')
     # The guide's own folds do not get the words.
-    assert PAGE.count('<span data-part="tap">') == 4
+    # 5 since ticket 2.28: the opposite-way box on the New clues tab is the fifth.
+    assert PAGE.count('<span data-part="tap">') == 5
 
 
 def test_add_on_the_decision_is_written_down():

@@ -32,6 +32,7 @@ SAVED = ROOT / "fixtures" / "tafamidis_warning"
 
 TAFAMIDIS = "CHEMBL2103837"
 AL_AMYLOIDOSIS = "MONDO_0019438"
+DARATUMUMAB = "CHEMBL1743007"  # ticket 2.30 added its approval for this disease by hand
 AMYLOIDOSIS = "MONDO_0019065"  # the wider group "amyloidosis": another page, out of scope
 THE_DAY = "2026-11-23"
 # Kashish's words of 19 Nov, exactly (ticket 2.18).
@@ -157,7 +158,9 @@ def test_the_saved_page_has_one_tafamidis_card_under_approved_with_this_id():
     tafamidis = [card for card in every_card(page)
                  if "tafamidis" in json.dumps(card).lower()]
     assert len(tafamidis) == 1
-    assert tafamidis == page["approved"]  # under Approved, and nowhere else
+    # Under Approved, and nowhere else. Ticket 2.30 added daratumumab to this
+    # list by hand, so the list is no longer tafamidis alone.
+    assert tafamidis == [card for card in page["approved"] if card["id"] == TAFAMIDIS]
     assert tafamidis[0]["id"] == TAFAMIDIS
     assert tafamidis[0]["medicine"] == "Tafamidis"
     assert tafamidis[0]["forms"] == ["Tafamidis", "Tafamidis Meglumine"]
@@ -166,7 +169,9 @@ def test_the_saved_page_has_one_tafamidis_card_under_approved_with_this_id():
 # ---- the EXAMPLE: the red warning, word for word ----
 
 def test_the_tafamidis_card_on_the_real_page_shows_the_red_words_word_for_word():
-    assert real_page()["approved"][0]["warning"] == SECOND_NOTE
+    # Ticket 2.30: daratumumab, added by hand, now comes before it A to Z.
+    cards = [card for card in real_page()["approved"] if card["id"] == TAFAMIDIS]
+    assert [card["warning"] for card in cards] == [SECOND_NOTE]
 
 
 def test_no_other_card_on_the_page_has_a_warning():
@@ -185,6 +190,14 @@ def test_the_card_keeps_its_place_and_nothing_else_on_the_page_changes():
     page = real_page()
     assert set(page) - set(before) == {"new_in_trials"}
     del page["new_in_trials"]
+    # Ticket 2.30 added daratumumab's approval by hand after that copy was
+    # saved. Its card moved from the "more in trials" box to Approved, where
+    # it comes before tafamidis A to Z. It is set aside here too.
+    assert [card["id"] for card in page["approved"]] == [DARATUMUMAB, TAFAMIDIS]
+    page["approved"] = page["approved"][1:]
+    assert DARATUMUMAB in [card["id"] for card in expected["more_in_trials"]]
+    expected["more_in_trials"] = [card for card in expected["more_in_trials"]
+                                  if card["id"] != DARATUMUMAB]
     assert page == expected
 
 

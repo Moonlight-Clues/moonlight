@@ -422,11 +422,13 @@ body.registering>:not(.register){display:none!important}
         <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
         <details class="wider-box" id="more-trials-box" hidden>
           <summary>More medicines in trials for this disease. They do not act on one of the 25 proteins. (<span id="more-trials-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <p class="doctor-line" data-part="caution">Never start, stop or change any medicine without a doctor.</p>
           <div class="cards" id="more-trials-cards"></div>
         </details>
         <!-- New medicines in trials, approved for nothing (ticket 2.24). Folded, under that box. -->
         <details class="wider-box" id="new-trials-box" hidden>
           <summary>New medicines being tested for this disease. The database records no approval for them for any disease. (<span id="new-trials-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <p class="doctor-line" data-part="caution">Never start, stop or change any medicine without a doctor.</p>
           <div class="cards" id="new-trials-cards"></div>
         </details>
       </section>
@@ -444,6 +446,12 @@ body.registering>:not(.register){display:none!important}
           <h3>No new clues found for this disease.</h3>
           <p>There may not be enough information in the available research records yet. You can try another disease or check back when new data is available. This does not mean a treatment exists or does not exist.</p>
         </div>
+        <!-- New clues that carry the opposite-way line (ticket 2.28). Folded, at the bottom of the tab.
+             The API names its cards. Each card is as it was, with its place on the whole list. -->
+        <details class="wider-box" id="opposite-box" hidden>
+          <summary>These push the opposite way to the approved medicines for this disease. (<span id="opposite-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <div class="cards" id="opposite-cards"></div>
+        </details>
         <!-- Ticket 2.18. How many clues were left out by hand. The words come from the API. -->
         <p class="wrong-way-line" id="wrong-way-line" role="note" hidden></p>
       </section>
@@ -973,7 +981,14 @@ body.registering>:not(.register){display:none!important}
     // In a trial for this disease, approved for nothing: the second folded box, under that one.
     const newTrialsCards = (data.new_in_trials || []).map(medicine => trialBoxCard(medicine));
     byId("approved-cards").replaceChildren(...approvedCards);
-    byId("new-cards").replaceChildren(...newCards);
+    // Ticket 2.28. The API names the clues of the folded box. Each card keeps its number.
+    const [aboveCards, oppositeCards] = aboveAndBox(data.new_clues, data.opposite_way_box, newCards);
+    byId("new-cards").replaceChildren(...aboveCards);
+    byId("opposite-cards").replaceChildren(...oppositeCards);
+    byId("opposite-count").textContent = oppositeCards.length;
+    byId("opposite-box").hidden = !oppositeCards.length;
+    byId("opposite-box").open = !aboveCards.length;  // open only when it is all there is
+    tapWords(byId("opposite-box"));
     byId("studied-cards").replaceChildren(...studiedCards);
     byId("approved-list").hidden = !approvedCards.length;
     byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length || !!narrowerCards.length;
@@ -1023,7 +1038,8 @@ body.registering>:not(.register){display:none!important}
     drawFilters(data.new_clues);
     applyFilter(null);
 
-    waiting = newCards.slice(0, FIRST_EXPLAINED);
+    // The first cards a reader can see: the list above the folded box, or the box when it is all there is.
+    waiting = (aboveCards.length ? aboveCards : oppositeCards).slice(0, FIRST_EXPLAINED);
 
     shown = data;  // The print button reads this. It never asks the API again.
     byId("print-page").hidden = false;
@@ -1036,6 +1052,17 @@ body.registering>:not(.register){display:none!important}
   for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
   byId("more-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the In trials list
   byId("new-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the second box under it
+  byId("opposite-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the New clues list
+
+  /* Ticket 2.28. The new clues (or their cards) in two piles, each in the
+     list's own order: above the opposite-way box, and inside it. The API
+     says which are inside ("opposite_way_box", ids). Nothing is worked out
+     here, and no clue is dropped. */
+  function aboveAndBox(clues, boxedIds, things) {
+    const inBox = new Set(boxedIds || []), above = [], boxed = [];
+    clues.forEach((clue, place) => (inBox.has(clue.id) ? boxed : above).push(things[place]));
+    return [above, boxed];
+  }
 
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {
@@ -1065,17 +1092,16 @@ body.registering>:not(.register){display:none!important}
     return el;
   }
 
-  /* A card of the box under the In trials list (ticket 2.21): the medicine,
-     its trial stage and its source link, and the API's one closing
-     sentence. It acts on none of the 25 proteins, so it has no path, no
-     points and no explanation. */
+  /* A card of a folded box on the In trials tab (tickets 2.21 and 2.24):
+     the medicine, its trial stage and its source link. The caution
+     sentence is written once at the top of the box, not on each card
+     (ticket 2.29). No path, no points and no explanation. */
   function trialBoxCard(medicine) {
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation"])
+    for (const name of ["rank", "reports", "label", "proof-note", "warning", "path", "explanation", "ending"])
       slot(el, name).remove();
-    slot(el, "ending").textContent = medicine.ending;
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
     const phase = slot(el, "phase");
@@ -1197,9 +1223,12 @@ body.registering>:not(.register){display:none!important}
     chosen = symbol;
     byId("filters").querySelectorAll("button").forEach(button =>
       button.setAttribute("aria-pressed", String(button.dataset.protein === symbol)));
-    byId("new-cards").querySelectorAll(".card").forEach(el => {
+    const boxCards = [...byId("opposite-cards").querySelectorAll(".card")];
+    [...byId("new-cards").querySelectorAll(".card"), ...boxCards].forEach(el => {
       el.hidden = symbol !== null && !el.dataset.proteins.split(",").includes(symbol);
     });
+    // The box is put away while none of its cards acts on the chosen protein.
+    byId("opposite-box").hidden = !boxCards.some(el => !el.hidden);
     byId("filter-note").textContent = symbol === null ? ""
       : "Showing only the medicines that act on " + symbol + ". The numbers are their places on the whole list.";
   }
@@ -1333,14 +1362,15 @@ body.registering>:not(.register){display:none!important}
     reg("trials").textContent = studied + (studied === 1 ? " medicine. " : " medicines. ")
       + pageWords("#panel-trials .section-desc");
 
-    const first = data.new_clues.slice(0, REGISTER_CLUES);  // the page's own order
+    // The page's own order, from the list above the opposite-way box (ticket 2.28).
+    const first = aboveAndBox(data.new_clues, data.opposite_way_box, data.new_clues)[0].slice(0, REGISTER_CLUES);
     reg("clues-count").textContent = "Showing the first " + first.length + " of " + data.new_clues.length
       + " new clues. Being first on the list does not mean best.";
     registerRows(byId("register-clues"), first, null, true);
     reg("wrong-way").textContent = data.wrong_way_line || "";  // the API's words (ticket 2.18), as the page shows them
     reg("wrong-way").hidden = !data.wrong_way_line;
     reg("clues-empty").textContent = pageWords("#empty h3");
-    reg("clues-empty").hidden = !!first.length;
+    reg("clues-empty").hidden = !!data.new_clues.length;  // only when the tab holds no clue at all
     reg("direction").textContent = pageWords(".direction-note", byId("card-template").content);
   }
 
