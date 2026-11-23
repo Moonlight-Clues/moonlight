@@ -4,6 +4,8 @@
     GET /api/search?q=                      matching diseases, best first, and "did you mean"
     GET /api/clues?disease_id=              the three tabs: approved, being studied
                                             and new clues. No explanations. Also
+                                            "more_in_trials": the folded box under
+                                            the In trials list (ticket 2.21). Also
                                             "about_disease": Open Targets' own
                                             description and "also called" names
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
@@ -72,17 +74,19 @@ from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_way
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
+from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.fetch import (
     FetchError,
     data_version,
     fetch_approved,
     fetch_disease,
+    fetch_listed_medicines,
     fetch_targets,
     fetch_withdrawn,
     search_diseases,
     search_matches,
 )
-from moonlight.fetch import Listed
+from moonlight.fetch import Listed, OnList
 from moonlight.filter import NOT_APPROVED, UNCLEAR_LINK
 from moonlight.rank import RULE_TEXT, Clue
 from moonlight.records import Disease, Path
@@ -226,9 +230,10 @@ class _Found:
     """Everything worked out for one disease in one request."""
 
     def __init__(self, disease: Disease, tray: Dict[str, List[Path]], listed: List[Listed],
-                 withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = ()):
+                 withdrawn_listed: List[Listed] = (), neighbours: List[Neighbour] = (),
+                 on_list: List[OnList] = ()):
         self.disease = disease
-        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours)
+        tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list)
         self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
@@ -237,6 +242,10 @@ class _Found:
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
         self.left_out = tabs.left_out
+        # In a trial for the disease, on none of the proteins (ticket 2.21):
+        # the folded box under the In trials list. Their names are not added
+        # to known_names below: the explainer's check is as it was.
+        self.more_in_trials = tabs.more_in_trials
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -260,7 +269,8 @@ def _find(disease_id: str) -> _Found:
         targets = fetch_targets(disease, TOP_TARGETS)
         return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
                       fetch_withdrawn(disease),  # the same saved answer, not a new question
-                      fetch_neighbours(disease))  # one step up and one step down
+                      fetch_neighbours(disease),  # one step up and one step down
+                      fetch_listed_medicines(disease))  # the same saved answer again
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -382,6 +392,26 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     return item
 
 
+def _more_in_trials_json(medicine: TrialMedicine) -> dict:
+    """One card of the box under the In trials list (ticket 2.21).
+
+    The medicine, its trial stage and its source link. It acts on none of
+    the proteins looked at, so it has no proteins, no points and no reports
+    count, and it is never explained. The stage is written the way an In
+    trials card writes it. ending is the engine's one sentence, word for
+    word (Kashish, 23 Nov): not a clue's ending, which speaks of a protein.
+    """
+    display = explain._display
+    return {
+        "id": medicine.id,
+        "medicine": display(medicine.name),
+        "forms": [display(name) for name in medicine.forms],
+        "trial_phase": explain._phase_words(medicine.stage),
+        "source": medicine.source_record,
+        "ending": MORE_IN_TRIALS_ENDING,  # the engine's words, never changed here
+    }
+
+
 def _about_json(disease: Disease) -> dict:
     """The disease in Open Targets' own words (ticket 5.5).
 
@@ -493,6 +523,13 @@ def clues(disease_id: str) -> dict:
         # The folded box in the Approved tab. Only there when it holds something.
         answer["wider_group"] = [
             _approved_json(medicine, wrong, words) for medicine in found.wider_group]
+    # Ticket 2.21. The folded box under the In trials list. No existing rule
+    # is undone by it: a medicine left out by hand for this disease, or on
+    # the corrections list for it, is not shown here either.
+    more = keep_out(found.more_in_trials, pushes_wrong_way(disease.id) | wrong)
+    if more:
+        # Only there when it holds something, like the Approved tab's boxes.
+        answer["more_in_trials"] = [_more_in_trials_json(medicine) for medicine in more]
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.

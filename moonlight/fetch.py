@@ -14,6 +14,9 @@ Five questions, five functions:
                                       list that were withdrawn in any country
     fetch_family(disease)          -> Family: the disease's direct parents and
                                       direct children, one step only
+    fetch_listed_medicines(disease) -> list of OnList: every medicine family on
+                                      the disease's own list, as records
+                                      (ticket 2.21). The same question again.
 
 and one about the data itself:
 
@@ -731,8 +734,23 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             family_id,
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
              "approval_sources": [], "reports": 0, "source_said": False,
-             "regulator_report": False},
+             "regulator_report": False, "records": [], "stage_reports": []},
         )
+        # Ticket 2.21. The same form as a record: how far it got for any
+        # disease, and how far for THIS disease (the row's own stage).
+        record = MedicineForm(
+            id=drug["id"],
+            name=drug["name"],
+            best_stage=drug["maximumClinicalStage"],
+            disease_stage=row["maxClinicalStage"],
+            parent_id=parent["id"] if parent else None,
+            withdrawn=_was_withdrawn(drug),
+        )
+        if record.id not in [known.id for known in family["records"]]:
+            if parent:
+                family["records"].append(record)
+            else:
+                family["records"].insert(0, record)  # the parent itself goes first
         family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
             family["name"] = family["name"] or parent["name"]
@@ -751,6 +769,9 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             url = report["url"]
             if url and url not in family["sources"]:
                 family["sources"].append(url)
+            # Ticket 2.21. Each link once, with the stage of its own report.
+            if url and url not in [link for link, _ in family["stage_reports"]]:
+                family["stage_reports"].append((url, report.get("clinicalStage")))
             # .get: an answer to the old question has no stage on its reports.
             is_approval = report.get("clinicalStage") == APPROVAL
             if url and is_approval and url not in family["approval_sources"]:
@@ -790,6 +811,42 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         approval_sources=tuple(family["approval_sources"]),
         regulator_record=_regulator_record(family),
     )
+
+
+@dataclass(frozen=True)
+class OnList:
+    """One medicine family on the disease's own list, as records (ticket 2.21).
+
+    medicine holds the family's forms that are on the list, the parent
+    first if it has a row. Each form's best_stage is how far it got for any
+    disease, and its disease_stage is how far it got for THIS disease, both
+    in Open Targets' words. A form that is not on the list is not here:
+    the list says nothing about its stages, so nothing is guessed.
+
+    reports holds (link, stage) for each report link, once: the stage is
+    that report's own, or None if the answer did not say.
+    """
+
+    medicine: Medicine
+    reports: Tuple[Tuple[str, Optional[str]], ...]
+
+
+def fetch_listed_medicines(disease: Disease) -> List[OnList]:
+    """Every medicine family on the disease's own list, approved for it or
+    not, in the order Open Targets first mentions them. The same question
+    as fetch_approved, so it is answered from the saved results. [] if the
+    disease is not known.
+
+    Nothing is sorted into groups here. engine.py does that, with the rule
+    in filter.py.
+    """
+    return [
+        OnList(
+            medicine=Medicine(name=family["name"], forms=family["records"]),
+            reports=tuple(family["stage_reports"]),
+        )
+        for family in _list_families(disease).values()
+    ]
 
 
 def fetch_withdrawn(disease: Disease) -> List[Listed]:

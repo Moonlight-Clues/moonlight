@@ -228,8 +228,7 @@ def test_the_box_titles_and_their_order_are_unchanged():
 TRIALS_LINE = (
     "Approved for another disease and now being tested for this one. A "
     "separate research category, not a prediction of effectiveness. Not "
-    "every trial is listed. Only medicines that act on one of the proteins "
-    "most linked to this disease."
+    "every trial is listed."
 )
 
 
