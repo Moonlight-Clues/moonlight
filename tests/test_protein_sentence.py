@@ -516,6 +516,7 @@ def test_claude_md_has_the_new_line_in_the_sources_rule():
 
 def test_decisions_md_ends_with_the_two_new_lines():
     lines = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")
+    lines = lines[:-2]  # ticket 2.43 added two lines (R1 and R6) after these
     assert lines[-2] == (
         "- 2026-11-23: A medicine whose official label covers only some people with the "
         "disease goes under Approved from the label, with one more line: \"The label "
