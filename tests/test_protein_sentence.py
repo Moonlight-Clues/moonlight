@@ -788,3 +788,78 @@ def test_browser_the_page_is_not_wider_than_the_phone_and_keeps_the_safety_line(
         assert not seen[name]["read"]["sideways"]
         assert seen[name]["read"]["safety"]
         assert seen[name]["uniprotAsked"] == 0
+
+
+# ---- commit B: the explanation slot is off the card ----
+#
+# Shreshth, 24 Nov 2026, after speaking with Kashish: the "Plain-language
+# explanation" written by Gemini leaves the card. explain.py and
+# /api/explain stay in the repo and keep working (tests/test_explain.py and
+# tests/test_api.py test them). Only the page stops using them.
+
+# The caution sentence said once at the top of each trial box (ticket 2.29).
+ONCE_PER_BOX = ('<p class="doctor-line" data-part="caution">Never start, stop or change any '
+                "medicine without a doctor.</p>")
+
+
+def test_b_the_page_has_no_explanation_slot_in_any_form():
+    for gone in ("Plain-language explanation", "Read explanation", 'data-slot="explanation"',
+                 "explanation-loading", "explanation-ready", "explanation-failed",
+                 "explanation-too-many", "readExplanation", "Read more",
+                 "Moonlight could not get this explanation"):
+        assert gone not in PAGE, gone
+
+
+def test_b_the_page_never_calls_the_explain_address():
+    assert "/api/explain" not in PAGE
+    assert "FIRST_EXPLAINED" not in PAGE  # the first-five fetch when a tab opens
+
+
+def test_b_the_fixed_ending_stays_word_for_word():
+    card = PAGE[PAGE.index('<template id="card-template">'):]
+    card = card[:card.index("</template>")]
+    assert '<p class="ending" data-slot="ending"></p>' in card
+    assert 'slot(el, "ending").textContent = clue.ending;' in PAGE
+    assert ENDING in re.sub(r"\s+", " ", GUIDE)  # the sample card's ending
+    assert PAGE.count(ONCE_PER_BOX) == 2  # once in each of the two trial boxes
+    assert SAFETY_LINE in re.sub(r"\s+", " ", PAGE)
+
+
+def test_b_the_guide_says_nothing_untrue_about_explanations():
+    words = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", GUIDE))
+    for untrue in ("Plain-language explanation", "Explanations are written by Gemini",
+                   "Explanations come from", "The clue in plain words",
+                   "Doxapram grabs a protein called KCNK3"):
+        assert untrue not in words, untrue
+    # the true parts stay
+    assert "Gemini suggests which disease you mean, and Open Targets confirms it." in words
+    assert "What you type is sent to Gemini, so type no names or private details." in words
+
+
+def test_b_explain_py_and_its_address_are_still_in_the_repo():
+    assert (ROOT / "moonlight" / "explain.py").exists()
+    assert (ROOT / "tests" / "test_explain.py").exists()
+    assert "/api/explain" in [route.path for route in api.app.routes]
+
+
+def test_browser_b_no_card_has_an_explanation_slot_and_none_is_asked_for(seen):
+    for name in ("graves", "edited", "made"):
+        assert seen[name]["explainCalls"] == 0, name
+        for card in seen[name]["read"]["clues"]:
+            assert card["explanations"] == 0, (name, card["name"])
+            assert "explanation" not in card["text"].lower(), (name, card["name"])
+            assert card["ending"] == ENDING
+
+
+def test_browser_b_example_the_first_card_reads_like_this_top_to_bottom(seen):
+    first = seen["graves"]["read"]["clues"][0]
+    lines = [line.strip() for line in first["text"].split("\n") if line.strip()]
+    assert lines == [
+        "1", "Ipilimumab", "Forms: Ipilimumab", "804 reports", "RESEARCH PATHWAY",
+        "Ipilimumab", "→", "CTLA4", "→", "Graves disease",
+        "CTLA4", "Down", "59 / 100 points",
+        CTLA4_SENTENCE,
+        DIRECTION_LINE,
+        ENDING,
+        "Source record",
+    ]

@@ -217,7 +217,8 @@ def test_5_the_page_still_takes_the_ending_off_an_approved_card(page):
     script = page[page.index("function approvedCard("):]
     script = script[:script.index("\n  }\n")]
     assert 'slot(el, "ending").remove()' in script
-    assert 'slot(el, "explanation").remove()' in script
+    # Ticket 3.8, commit B: no card has an explanation slot any more.
+    assert 'data-slot="explanation"' not in page
     assert "Do not try it" not in script and "/api/explain" not in script
 
 

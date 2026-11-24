@@ -151,18 +151,6 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 /* Ticket 2.18. One plain line under the New clues cards. */
 .wrong-way-line{font-size:13px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 
-/* explanation slot */
-.explanation{margin:16px 0;border:1px solid var(--line);background:#F8FAFA;border-radius:10px;min-height:115px}
-div.explanation{padding:12px 13px}
-.explanation summary{cursor:pointer;list-style:none;padding:12px 13px;position:relative}
-.explanation summary::-webkit-details-marker{display:none}.explanation summary:focus-visible{outline-offset:-2px}
-.slot-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:#327F80;margin-bottom:6px}
-.excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;height:4.5em;line-height:1.5;font-size:12px;color:var(--navy)}
-.read-more{display:inline-block;color:#327F80;font-size:12px;font-weight:750;margin-top:6px}
-.explanation[open] .excerpt{display:none}.explanation[open] .read-more{display:none}
-.full-explanation{padding:0 13px 14px;font-size:12px;line-height:1.65;color:var(--navy)}.full-explanation p{margin:0}
-.explanation[open] summary{padding-bottom:6px}
-.placeholder{color:var(--muted);font-size:12px;margin:0 0 10px}
 .ghost-btn{display:inline-block;text-decoration:none;color:#287D7C;border:1px solid #A9CACB;background:white;padding:9px 12px;border-radius:9px;font-size:12px;font-weight:700}
 .ghost-btn:hover{background:var(--mist)}
 .ending{background:var(--cream);padding:12px;border-radius:9px;font-size:12px;line-height:1.6;margin:13px 0;border:1px solid #EAE4D8}
@@ -231,8 +219,7 @@ div.explanation{padding:12px 13px}
 
 /* the example card, with its lettered key */
 .guide .card h3{font-size:22px;letter-spacing:-.035em}
-.guide .reports,.guide .card-subhead,.guide .slot-label{display:flex;align-items:center;gap:7px}
-.guide .explanation{min-height:0;font-size:12px;line-height:1.6}
+.guide .reports,.guide .card-subhead{display:flex;align-items:center;gap:7px}
 .guide .ending{display:grid;grid-template-columns:auto 1fr;gap:9px}
 .guide .card-foot{justify-content:flex-start;gap:7px}
 .guide .source-link{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
@@ -526,7 +513,6 @@ body.registering>:not(.register){display:none!important}
           <span class="protein-facts"><span class="direction" title="The medicine turns this protein down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 3v10m-4-4 4 4 4-4"/></svg>Down</span><span class="k" aria-label="D">D</span><span class="score">79 / 100 points</span><span class="k" aria-label="E">E</span></span>
         </div></div>
         <p class="direction-note">The data does not say which direction this disease needs.</p>
-        <div class="explanation"><div class="slot-label">Plain-language explanation <span class="k" aria-label="F">F</span></div>Doxapram grabs a protein called KCNK3 and turns it down, like a volume knob.</div>
         <div class="ending"><span class="k" aria-label="G">G</span><span>But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor.</span></div>
         <div class="card-foot"><span class="source-link">Source record</span> <span class="k" aria-label="H">H</span></div>
       </article>
@@ -537,7 +523,6 @@ body.registering>:not(.register){display:none!important}
         <li><span class="k" aria-hidden="true">C</span><span>The path, in three steps</span></li>
         <li><span class="k" aria-hidden="true">D</span><span>Up, down or unknown</span></li>
         <li><span class="k" aria-hidden="true">E</span><span>How strong the link is</span></li>
-        <li><span class="k" aria-hidden="true">F</span><span>The clue in plain words</span></li>
         <li><span class="k" aria-hidden="true">G</span><span>The catch, on every clue</span></li>
         <li><span class="k" aria-hidden="true">H</span><span>Where the fact comes from</span></li>
       </ul>
@@ -573,7 +558,7 @@ body.registering>:not(.register){display:none!important}
           <li><div><b>Known gaps.</b> <span>A missing medicine may be withdrawn somewhere, filed further away, or not recorded yet.</span></div></li>
           <li><div><b>Weak proof.</b> <span>Japan-list-only approvals say so. Approvals with no regulator record say so. Confirmed mistakes carry a red warning.</span></div></li>
           <li><div><b>Ranking.</b> <span>Link strength across the top 25 proteins. One protein machine counts once.</span></div></li>
-          <li><div><b>AI.</b> <span>Gemini suggests which disease you mean, and Open Targets confirms it. Explanations are written by Gemini from the card’s records, or by Moonlight’s own template.</span></div></li>
+          <li><div><b>AI.</b> <span>Gemini suggests which disease you mean, and Open Targets confirms it.</span></div></li>
         </ul>
         <p class="not-reference">Moonlight is not a prescribing reference.</p>
       </details>
@@ -581,7 +566,7 @@ body.registering>:not(.register){display:none!important}
         <summary id="guide-facts-title">Where the facts come from</summary>
         <ul class="limits">
           <li><div><b>Facts.</b> <span>Open Targets Platform, a free and open research database.</span></div></li>
-          <li><div><b>Words.</b> <span>Explanations come from Google’s Gemini or Moonlight’s own template. What you type is sent to Gemini, so type no names or private details.</span></div></li>
+          <li><div><b>Words.</b> <span>What you type is sent to Gemini, so type no names or private details.</span></div></li>
           <li><div><b>Visits.</b> <span>Counted with Umami. No cookies. Never the disease or anything you type.</span></div></li>
           <li><div><b>Protein descriptions.</b> <span>Written by UniProt, read through Open Targets. CC BY 4.0.</span></div></li>
         </ul>
@@ -662,10 +647,6 @@ body.registering>:not(.register){display:none!important}
     <div data-part="machines"></div>
     <p class="machine-note no-path" data-part="no-path" hidden>This medicine does not act on one of the 25 proteins most linked to this disease, so no path is shown.</p>
     <p class="direction-note">The data does not say which direction this disease needs.</p>
-    <div class="explanation" data-slot="explanation">
-      <div class="slot-label">Plain-language explanation</div>
-      <button class="ghost-btn" type="button" data-part="read">Read explanation</button>
-    </div>
     <p class="ending" data-slot="ending"></p>
     <div class="card-foot">
       <a class="source-link" data-slot="source" hidden>Source record</a>
@@ -693,45 +674,9 @@ body.registering>:not(.register){display:none!important}
 <template id="direction-mixed"><span class="direction" data-slot="direction" title="The data says the medicine turns this protein both up and down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M5 13V3M2 6l3-3 3 3m3-3v10m-3-3 3 3 3-3"/></svg>Mixed</span></template>
 <template id="direction-unknown"><span class="direction" data-slot="direction" title="The data does not say if the medicine turns this protein up or down">Unknown</span></template>
 
-<!-- The explanation slot while it waits. -->
-<template id="explanation-loading">
-  <div aria-label="Explanation loading" aria-busy="true" class="explanation" data-slot="explanation">
-    <div class="slot-label">Plain-language explanation</div>
-    <div class="skeleton"></div><div class="skeleton medium"></div><div class="skeleton short"></div>
-  </div>
-</template>
-
-<!-- The explanation slot when the words have arrived. -->
-<template id="explanation-ready">
-  <details class="explanation" data-slot="explanation">
-    <summary><div class="slot-label">Plain-language explanation</div><span class="excerpt"></span><span class="read-more">Read more ↓</span></summary>
-    <div class="full-explanation"><p data-part="text"></p><p class="fine muted" style="margin-top:7px" data-part="writer"></p><p class="fine muted" style="margin-top:7px">Tap the explanation heading to close.</p></div>
-  </details>
-</template>
-
-<!-- The explanation slot when the words could not be fetched. -->
-<template id="explanation-failed">
-  <div class="explanation" data-slot="explanation">
-    <div class="slot-label">Plain-language explanation</div>
-    <p class="placeholder">Moonlight could not get this explanation. The facts on this card are still correct.</p>
-    <button class="ghost-btn" type="button" data-part="read">Try again</button>
-  </div>
-</template>
-
-<!-- Over the limit (status 429). The script fills in the words. This is
-     never the code-written explanation. -->
-<template id="explanation-too-many">
-  <div class="explanation" data-slot="explanation">
-    <div class="slot-label">Plain-language explanation</div>
-    <p class="placeholder" data-part="message"></p>
-    <button class="ghost-btn" type="button" data-part="read">Try again</button>
-  </div>
-</template>
-
 <script>
 (() => {
   "use strict";
-  const FIRST_EXPLAINED = 5;  // this many cards fetch their explanation straight away
   const byId = id => document.getElementById(id);
   const copyOf = id => byId(id).content.firstElementChild.cloneNode(true);
   const part = (el, name) => el.querySelector('[data-part="' + name + '"]');
@@ -744,7 +689,6 @@ body.registering>:not(.register){display:none!important}
 
   let latest = 0;       // the number of the newest request; older answers are dropped
   let chosen = null;    // the protein whose filter button is pressed, or null
-  let waiting = [];     // new-clue cards that fetch their explanation when their tab first opens
   let shown = null;     // the answer the results on the page were drawn from, kept for the register
 
   // What the page says when the API answers 429. Kashish's exact words.
@@ -786,7 +730,6 @@ body.registering>:not(.register){display:none!important}
     byId("more-trials-cards").replaceChildren();
     byId("new-trials-cards").replaceChildren();
     byId("filters").replaceChildren();
-    waiting = [];
     shown = null;
     byId("print-page").hidden = true;
   }
@@ -913,9 +856,6 @@ body.registering>:not(.register){display:none!important}
       button.tabIndex = on ? 0 : -1;
       byId(button.getAttribute("aria-controls")).hidden = !on;
     }
-    // The first new clues fetch their explanations together, the first
-    // time their tab is opened. The rest wait for a tap.
-    if (name === "clues") waiting.splice(0).forEach(el => el.readExplanation());
   }
 
   tabButtons.forEach((button, place) => {
@@ -981,8 +921,8 @@ body.registering>:not(.register){display:none!important}
     const narrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
     // Approved only for a wider group: the folded box at the bottom of the tab.
     const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
-    const newCards = data.new_clues.map((clue, place) => card(clue, disease, diseaseName, place + 1));
-    const studiedCards = data.being_studied.map(clue => card(clue, disease, diseaseName, null));
+    const newCards = data.new_clues.map((clue, place) => card(clue, diseaseName, place + 1));
+    const studiedCards = data.being_studied.map(clue => card(clue, diseaseName, null));
     // In a trial for this disease, on none of the 25 proteins: the folded box under the list.
     const moreTrialsCards = (data.more_in_trials || []).map(medicine => trialBoxCard(medicine));
     // In a trial for this disease, approved for nothing: the second folded box, under that one.
@@ -1045,9 +985,6 @@ body.registering>:not(.register){display:none!important}
     drawFilters(data.new_clues);
     applyFilter(null);
 
-    // The first cards a reader can see: the list above the folded box, or the box when it is all there is.
-    waiting = (aboveCards.length ? aboveCards : oppositeCards).slice(0, FIRST_EXPLAINED);
-
     shown = data;  // The print button reads this. It never asks the API again.
     byId("print-page").hidden = false;
   }
@@ -1075,7 +1012,6 @@ body.registering>:not(.register){display:none!important}
   function approvedCard(medicine, diseaseName) {
     const el = baseCard(medicine, diseaseName);
     slot(el, "rank").remove();
-    slot(el, "explanation").remove();
     slot(el, "ending").remove();
     slot(el, "phase").remove();
     if (medicine.label) {  // found on a parent or child entry: say which
@@ -1115,7 +1051,7 @@ body.registering>:not(.register){display:none!important}
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "limit-note", "withdrawal-note", "warning", "path", "explanation", "ending"])
+    for (const name of ["rank", "reports", "label", "proof-note", "limit-note", "withdrawal-note", "warning", "path", "ending"])
       slot(el, name).remove();
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
@@ -1133,7 +1069,7 @@ body.registering>:not(.register){display:none!important}
   }
 
   /* A new clue, with its number on the list, or a medicine being studied. */
-  function card(clue, disease, diseaseName, number) {
+  function card(clue, diseaseName, number) {
     const el = baseCard(clue, diseaseName);
     if (number !== null) {
       const rank = slot(el, "rank");
@@ -1147,11 +1083,6 @@ body.registering>:not(.register){display:none!important}
       phase.textContent = clue.trial_phase;
       phase.hidden = false;
     }
-
-    // Fetched straight away: stays closed, three lines showing. Fetched by a tap: opens.
-    el.readExplanation = () => readExplanation(el, clue, disease, false);
-    el.readNow = () => readExplanation(el, clue, disease, true);
-    part(el, "read").addEventListener("click", el.readNow);
     return el;
   }
 
@@ -1252,40 +1183,6 @@ body.registering>:not(.register){display:none!important}
     byId("opposite-box").hidden = !boxCards.some(el => !el.hidden);
     byId("filter-note").textContent = symbol === null ? ""
       : "Showing only the medicines that act on " + symbol + ". The numbers are their places on the whole list.";
-  }
-
-  /* ---- explanations ---- */
-
-  async function readExplanation(el, clue, disease, open) {
-    slot(el, "explanation").replaceWith(copyOf("explanation-loading"));
-    let answer;
-    try {
-      answer = await ask("/api/explain", {disease_id: disease.id, clue_id: clue.id});
-    } catch (problem) {
-      if (problem.status === 429) {
-        // Over the limit: say so. No explanation of any kind is shown.
-        const wait = copyOf("explanation-too-many");
-        part(wait, "message").textContent = TOO_MANY;
-        part(wait, "read").addEventListener("click", el.readNow);
-        slot(el, "explanation").replaceWith(wait);
-        return;
-      }
-      const failed = copyOf("explanation-failed");
-      part(failed, "read").addEventListener("click", el.readNow);
-      slot(el, "explanation").replaceWith(failed);
-      return;
-    }
-    // The ending is already on the card, always in view, so it is not printed twice.
-    let text = answer.text;
-    if (text.endsWith(clue.ending)) text = text.slice(0, -clue.ending.length).trim();
-    const ready = copyOf("explanation-ready");
-    ready.querySelector(".excerpt").textContent = text;
-    part(ready, "text").textContent = text;
-    part(ready, "writer").textContent = answer.source === "gemini"
-      ? "Written by Gemini (" + answer.model + ") from the facts on this card, then checked by Moonlight."
-      : "Written by Moonlight's own template from the facts on this card.";
-    ready.open = open;
-    slot(el, "explanation").replaceWith(ready);
   }
 
   /* ---- the register, behind the print button (ticket 5.1) ----

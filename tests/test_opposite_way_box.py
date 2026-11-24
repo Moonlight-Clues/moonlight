@@ -579,7 +579,8 @@ def test_browser_example_every_card_is_unchanged_word_for_word(seen):
         old = before_cards[card["name"]]
         same = ("rank", "line", "buttons", "words", "explanations")
         assert {key: card[key] for key in same} == {key: old[key] for key in same}, card["name"]
-        assert card["explanations"] == 1  # it can still be explained
+        # Ticket 3.8, commit B: the explanation slot is off every card.
+        assert card["explanations"] == 0
 
 
 def test_browser_example_the_numbers_are_the_places_on_the_whole_list(seen):
@@ -596,16 +597,12 @@ def test_browser_example_every_box_card_carries_the_line_and_no_card_above_does(
     assert all(card["line"] == [] for card in closed["list"])
 
 
-def test_browser_example_the_first_explanations_are_for_the_list_above(seen):
-    """Five cards read their explanation when the tab opens, as before. They
-    are the first five a reader can see: the list above the folded box."""
-    assert len(seen["example"]["explainAskedFor"]) == 5 == len(seen["before"]["explainAskedFor"])
-    # Terlipressin, Conivaptan, Mozavaptan, Tacrolimus Anhydrous, Temsirolimus
-    assert sorted(seen["example"]["explainAskedFor"]) == sorted(
-        ["CHEMBL2135460", "CHEMBL1755", "CHEMBL420762", "CHEMBL269732", "CHEMBL1201182"])
-    # Before the ticket: the first five of the whole list.
-    assert sorted(seen["before"]["explainAskedFor"]) == sorted(
-        ["CHEMBL1429", "CHEMBL2135460", "CHEMBL373742", "CHEMBL1755", "CHEMBL2108986"])
+# Ticket 3.8, commit B: the page asks for no explanation any more. This test
+# used to be test_browser_example_the_first_explanations_are_for_the_list_above
+# (five cards read their explanation when the tab opened).
+def test_browser_example_no_explanation_is_asked_for(seen):
+    assert seen["example"]["explainAskedFor"] == []
+    assert seen["before"]["explainAskedFor"] == []
 
 
 def test_browser_example_the_protein_buttons_work_on_the_list_and_the_box(seen):
@@ -632,9 +629,10 @@ def test_browser_the_box_is_open_when_it_is_the_only_thing_on_the_tab(seen):
     assert closed["emptyShown"] is False  # there ARE new clues: the "no new clues" words stay away
 
 
-def test_browser_only_the_box_the_first_explanations_are_for_its_cards(seen):
-    assert sorted(seen["only_box"]["explainAskedFor"]) == sorted(
-        clue_id for clue_id, _, _ in ADPKD_BOX_4)
+# Ticket 3.8, commit B. This test used to be
+# test_browser_only_the_box_the_first_explanations_are_for_its_cards.
+def test_browser_only_the_box_no_explanation_is_asked_for(seen):
+    assert seen["only_box"]["explainAskedFor"] == []
 
 
 def test_browser_no_key_means_no_box_and_the_list_as_before(seen):

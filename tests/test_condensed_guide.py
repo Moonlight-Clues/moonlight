@@ -54,7 +54,7 @@ KEY = [
     ("C", "The path, in three steps"),
     ("D", "Up, down or unknown"),
     ("E", "How strong the link is"),
-    ("F", "The clue in plain words"),
+    # No F: ticket 3.8, commit B, took the explanation off the card.
     ("G", "The catch, on every clue"),
     ("H", "Where the fact comes from"),
 ]
@@ -82,16 +82,15 @@ DOCTORS = [
     ("Weak proof.", "Japan-list-only approvals say so. Approvals with no regulator "
                     "record say so. Confirmed mistakes carry a red warning."),
     ("Ranking.", "Link strength across the top 25 proteins. One protein machine counts once."),
-    ("AI.", "Gemini suggests which disease you mean, and Open Targets confirms it. "
-            "Explanations are written by Gemini from the card’s records, or by "
-            "Moonlight’s own template."),
+    # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
+    ("AI.", "Gemini suggests which disease you mean, and Open Targets confirms it."),
 ]
 NOT_REFERENCE = "Moonlight is not a prescribing reference."
 FACTS_TITLE = "Where the facts come from"
 FACTS = [
     ("Facts.", "Open Targets Platform, a free and open research database."),
-    ("Words.", "Explanations come from Google’s Gemini or Moonlight’s own template. "
-               "What you type is sent to Gemini, so type no names or private details."),
+    # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
+    ("Words.", "What you type is sent to Gemini, so type no names or private details."),
     ("Visits.", "Counted with Umami. No cookies. Never the disease or anything you type."),
     # Ticket 3.8: Kashish's credit line, 23 Nov 2026.
     ("Protein descriptions.", "Written by UniProt, read through Open Targets. CC BY 4.0."),
@@ -199,9 +198,10 @@ def test_the_card_part_has_its_sub_line(guide):
     assert '<p class="guide-sub">A real clue. Match the gold letters.</p>' in card
 
 
+# Ticket 3.8, commit B: no letter F, because the card has no explanation.
 def test_the_example_card_is_doxapram_with_its_gold_letters_a_to_h(guide):
     card = part(guide, '<article class="card">', "</article>")
-    assert re.findall(r'<span class="k" aria-label="([A-H])">\1</span>', card) == list("ABCDEFGH")
+    assert re.findall(r'<span class="k" aria-label="([A-H])">\1</span>', card) == list("ABCDEGH")
     words = plain(card)
     assert "Forms: Doxapram, Doxapram Hydrochloride" in words
     assert "8 reports" in words
@@ -210,10 +210,13 @@ def test_the_example_card_is_doxapram_with_its_gold_letters_a_to_h(guide):
     assert "The data does not say which direction this disease needs." in words
 
 
-def test_the_example_cards_explanation_is_one_sentence(guide):
+# Ticket 3.8, commit B. This test used to be
+# test_the_example_cards_explanation_is_one_sentence.
+def test_the_example_card_has_no_explanation(guide):
     card = part(guide, '<article class="card">', "</article>")
-    explanation = part(card, '<div class="explanation">', '<div class="ending">')
-    assert plain(explanation) == "Plain-language explanation F " + CARD_EXPLANATION
+    assert '<div class="explanation">' not in card
+    assert "Plain-language explanation" not in guide
+    assert CARD_EXPLANATION not in guide
 
 
 def test_the_example_cards_fixed_ending_is_word_for_word(guide):
@@ -222,7 +225,9 @@ def test_the_example_cards_fixed_ending_is_word_for_word(guide):
     assert plain(ending) == "G " + ENDING
 
 
-def test_under_the_card_are_eight_chips_each_a_gold_letter_and_a_few_words(guide):
+# Ticket 3.8, commit B: seven chips now. This test used to be
+# test_under_the_card_are_eight_chips_each_a_gold_letter_and_a_few_words.
+def test_under_the_card_are_seven_chips_each_a_gold_letter_and_a_few_words(guide):
     card_part = guide[guide.index('id="guide-card"'):]
     assert card_part.index("</article>") < card_part.index('<ul class="key">')
     key = part(guide, '<ul class="key">', "</ul>")
