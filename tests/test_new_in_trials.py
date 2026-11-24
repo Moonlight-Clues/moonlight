@@ -140,7 +140,8 @@ def lgmd(offline, client):
 
 @pytest.fixture
 def pbc(client):
-    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json):
+    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json), \
+            test_more_in_trials.without_hand_approvals_for_the_example():  # ticket 2.34
         answer = client.get("/api/clues", params={"disease_id": PBC.id})
     assert answer.status_code == 200
     return answer.json()
@@ -732,7 +733,8 @@ def answers():
     api.forget_visitors()
     with patch("moonlight.fetch._post_json", side_effect=saved_post_json):
         example = TestClient(api.app).get("/api/clues", params={"disease_id": LGMD.id}).json()
-    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json):
+    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json), \
+            test_more_in_trials.without_hand_approvals_for_the_example():  # ticket 2.34
         liver = TestClient(api.app).get("/api/clues", params={"disease_id": PBC.id}).json()
     only_new = copy.deepcopy(example)
     del only_new["more_in_trials"]

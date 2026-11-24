@@ -103,3 +103,63 @@ and a whole search for Huntington disease. The tests read them from there.
   approvals.json (Kashish, 23 Nov): it stays inside Tetrabenazine's card.
 
 So this folder now holds 51 answers.
+
+## Added for ticket 2.34 (fourth batch)
+
+Four more answers, asked live on 2026-11-24 (Open Targets data 26.09) with
+DISEASE_DRUGS_QUERY, the way fetch.py asks it. Saved as sent. Only each
+disease's own list: no whole search.
+
+Two diseases whose entries were added:
+
+- `disease_drugs/MONDO_0009688.response.json`, myasthenia gravis (77
+  medicines). CHEMBL1201828 ECULIZUMAB is on it with the stage PHASE_3 and
+  4 reports, none an approval. No tablet form. Its only warnings are "Black
+  Box Warning", which is not a withdrawal. Seen live, not saved: its three
+  children (MONDO_0006866 neonatal, MONDO_0018324 adult-onset and
+  MONDO_0018325 juvenile myasthenia gravis) and its parent MONDO_0000590
+  had empty lists.
+- `disease_drugs/MONDO_0006559.response.json`, hidradenitis suppurativa (77
+  medicines). CHEMBL1743068 SECUKINUMAB is on it with the stage PHASE_3 and
+  9 reports. CHEMBL4297700 BIMEKIZUMAB is on it with the stage PHASE_3 and
+  5 reports. Neither has an approval report, a tablet form or a warning.
+  Seen live, not saved: its child MONDO_0024516 familial acne inversa and
+  its parent MONDO_0002260 hidradenitis had empty lists.
+
+Not saved again: primary biliary cholangitis (MONDO_0005388, 51 medicines).
+`fixtures/more_in_trials/` already holds its whole search, and its list is
+letter for letter the live answer of 2026-11-24. The tests read it from
+there.
+
+- CHEMBL3707395 ELAFIBRANOR is on it with the stage PHASE_3 and 5 reports,
+  none an approval. No tablet form, no warning.
+- CHEMBL230158 SELADELPAR is on it with the stage PHASE_3 and 8 reports,
+  none an approval. The database records it as approved for nothing yet. It
+  has one tablet form, CHEMBL3989960 SELADELPAR LYSINE, with no row on the
+  list. No warning.
+
+Two diseases whose entries were NOT added. They wait for Kashish. The lists
+are saved so the tests can show why.
+
+- `disease_drugs/Orphanet_95157.response.json`, Acute hepatic porphyria (2
+  medicines). CHEMBL4297760 GIVOSIRAN and CHEMBL4594265 GIVOSIRAN SODIUM
+  are both on it with the stage APPROVAL (the sodium form has an FDA
+  approval report). So the database already records the approval, and the
+  hand-added line would be untrue. Other porphyria pages, seen live, not
+  saved: MONDO_0002520 hepatic porphyria lists givosiran with the stage
+  APPROVAL (an EMA report). MONDO_0008294 acute intermittent porphyria
+  lists it with the stage PHASE_1_2. MONDO_0013000 porphyria due to ALA
+  dehydratase deficiency has "acute hepatic porphyria" as an exact "also
+  called" name and an empty list. MONDO_0008297 variegate porphyria,
+  MONDO_0007369 hereditary coproporphyria and MONDO_0037939 porphyria do
+  not list it.
+- `disease_drugs/MONDO_0008558.response.json`, autoimmune thrombocytopenic
+  purpura (105 medicines). No page is named "immune thrombocytopenia". This
+  is the first one the search for those words finds; "ITP" is one of its
+  exact "also called" names. CHEMBL2103883 AVATROMBOPAG is on it with the
+  stage PHASE_3 and 13 reports, none an approval. It has one tablet form,
+  CHEMBL2105758 AVATROMBOPAG MALEATE, with no row on the list. No warning.
+  A second, wider page exists: MONDO_0019098 autoimmune thrombocytopenia.
+  Its list was empty (seen live, not saved).
+
+So this folder now holds 55 answers.

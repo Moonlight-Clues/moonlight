@@ -179,8 +179,8 @@ def test_the_line_is_kashishs_words_exactly():
 # ---- the hand-written file ----
 
 def test_the_real_file_holds_the_eight_earlier_entries_then_the_two_new_ones():
-    assert load(APPROVALS_FILE) == FIRST_EIGHT + NEW_TWO
-    assert len(load(APPROVALS_FILE)) == 10
+    # Ticket 2.34 added to the file. tests/test_approvals_fourth_batch.py holds the whole file.
+    assert load(APPROVALS_FILE)[:10] == FIRST_EIGHT + NEW_TWO
 
 
 def test_the_eight_earlier_entries_are_written_as_they_were_with_no_new_key():
@@ -193,7 +193,7 @@ def test_the_five_required_keys_are_as_they_were():
 
 
 def test_the_engine_reads_the_two_new_entries_as_limited():
-    assert engine.approvals_by_hand()[8:] == [
+    assert engine.approvals_by_hand()[8:10] == [  # ticket 2.34 added five after these
         engine.HandApproval(IMATINIB, "Imatinib", MASTOCYTOSIS, IMATINIB_LABEL, limited=True),
         engine.HandApproval(PROPYLTHIOURACIL, "Propylthiouracil", GRAVES,
                             PROPYLTHIOURACIL_LABEL, limited=True)]

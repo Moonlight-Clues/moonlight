@@ -1,0 +1,58 @@
+{
+  "data": {
+    "disease": {
+      "id": "Orphanet_95157",
+      "drugAndClinicalCandidates": {
+        "count": 2,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4594265",
+              "name": "GIVOSIRAN SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "http://www.accessdata.fda.gov/drugsatfda_docs/label/2019/0212194s000lbl.pdf",
+                "clinicalStage": "APPROVAL",
+                "source": "FDA"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL4297760",
+              "name": "GIVOSIRAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04056481",
+                "clinicalStage": "APPROVAL",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03338816",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/GIVOSIRAN/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
