@@ -163,3 +163,12 @@ are saved so the tests can show why.
   Its list was empty (seen live, not saved).
 
 So this folder now holds 55 answers.
+
+## Ticket 2.34b: avatrombopag added
+
+Nothing new was saved. The main window answered on 24 Nov: of the two
+pages, the entry goes on MONDO_0008558 autoimmune thrombocytopenic purpura,
+with "limited": true. The tests read
+`disease_drugs/MONDO_0008558.response.json`, saved for ticket 2.34. The
+wider page, MONDO_0019098 autoimmune thrombocytopenia, gets no entry.
+Givosiran stays out.

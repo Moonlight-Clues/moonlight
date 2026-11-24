@@ -10,23 +10,26 @@ the end of moonlight/approvals.json, dated 2026-11-24, in the ticket's order:
   - elafibranor for primary biliary cholangitis (MONDO_0005388), limited
   - seladelpar for primary biliary cholangitis (MONDO_0005388), limited
 
-Two are left out and wait for Kashish (the ticket's STOP AND ASK):
+Ticket 2.34b added a sixth, after those five (the main window's answer of
+24 Nov to the ticket's STOP AND ASK: of the two pages, this one):
+
+  - avatrombopag for autoimmune thrombocytopenic purpura (MONDO_0008558),
+    limited. No page is named "immune thrombocytopenia". This is the one
+    the search for those words finds. The wider page, "autoimmune
+    thrombocytopenia" (MONDO_0019098), gets no entry.
+
+One is left out for good (the main window, 24 Nov):
 
   - givosiran for acute hepatic porphyria. The database already records
     the approval on the list of its page "Acute hepatic porphyria"
-    (Orphanet_95157), so the hand-added line would be untrue there. And
-    there is more than one page a doctor could open.
-  - avatrombopag for immune thrombocytopenia. No page has that name. The
-    search finds "autoimmune thrombocytopenic purpura" (MONDO_0008558), and
-    the database also has a wider page, "autoimmune thrombocytopenia"
-    (MONDO_0019098). The ticket says: do not pick.
+    (Orphanet_95157), so the hand-added line would be untrue there.
 
 The EXAMPLE is the primary biliary cholangitis page: elafibranor and
 seladelpar are each under Approved, A to Z, each with two grey lines, and
 no longer in a trials box or list.
 
-Saved files only. Myasthenia gravis, hidradenitis suppurativa, and the two
-lists that show the stops: each disease's own list, asked live on
+Saved files only. Myasthenia gravis, hidradenitis suppurativa, autoimmune
+thrombocytopenic purpura and acute hepatic porphyria: each disease's own list, asked live on
 2026-11-24 (Open Targets data 26.09) with fetch.py's own question, in
 fixtures/approvals_by_hand/disease_drugs/. Primary biliary cholangitis:
 the whole search ticket 2.21 saved in fixtures/more_in_trials/. Its own
@@ -64,7 +67,9 @@ THE_DAY = "2026-11-24"
 MYASTHENIA = "MONDO_0009688"  # myasthenia gravis
 HIDRADENITIS = "MONDO_0006559"  # hidradenitis suppurativa
 PBC = "MONDO_0005388"  # primary biliary cholangitis
-SAVED_LISTS = {MYASTHENIA: NEW_LISTS, HIDRADENITIS: NEW_LISTS, PBC: PBC_LISTS}
+ITP = "MONDO_0008558"  # autoimmune thrombocytopenic purpura
+SAVED_LISTS = {MYASTHENIA: NEW_LISTS, HIDRADENITIS: NEW_LISTS, PBC: PBC_LISTS,
+               ITP: NEW_LISTS}
 
 ECULIZUMAB = "CHEMBL1201828"
 SECUKINUMAB = "CHEMBL1743068"
@@ -72,6 +77,8 @@ BIMEKIZUMAB = "CHEMBL4297700"
 ELAFIBRANOR = "CHEMBL3707395"
 SELADELPAR = "CHEMBL230158"
 SELADELPAR_TABLET = "CHEMBL3989960"  # seladelpar lysine
+AVATROMBOPAG = "CHEMBL2103883"
+AVATROMBOPAG_TABLET = "CHEMBL2105758"  # avatrombopag maleate
 
 ECULIZUMAB_LABEL = ("https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/"
                     "125166s454lbl.pdf")
@@ -83,6 +90,8 @@ ELAFIBRANOR_LABEL = ("https://www.accessdata.fda.gov/drugsatfda_docs/nda/2024/"
                      "218860Orig1s000Lbl.pdf")
 SELADELPAR_LABEL = ("https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/"
                     "217899s002lbl.pdf")
+AVATROMBOPAG_LABEL = ("https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/"
+                      "210238Orig1s010lbl.pdf")
 
 FIRST_TEN = limited_batch.FIRST_EIGHT + limited_batch.NEW_TWO
 FOURTH_BATCH = [
@@ -99,22 +108,27 @@ FOURTH_BATCH = [
 ]
 ECULIZUMAB_ENTRY, SECUKINUMAB_ENTRY, BIMEKIZUMAB_ENTRY, ELAFIBRANOR_ENTRY, SELADELPAR_ENTRY = \
     FOURTH_BATCH
-LIMITED = [ECULIZUMAB_ENTRY, ELAFIBRANOR_ENTRY, SELADELPAR_ENTRY]
-NOT_LIMITED = [SECUKINUMAB_ENTRY, BIMEKIZUMAB_ENTRY]
-ON_OWN_LIST_ONLY = FOURTH_BATCH[:3]  # no whole search is saved for their two diseases
+# Ticket 2.34b: the sixteenth entry.
+AVATROMBOPAG_ENTRY = {"medicine_id": AVATROMBOPAG, "name": "Avatrombopag", "disease_id": ITP,
+                      "date": THE_DAY, "label": AVATROMBOPAG_LABEL, "limited": True}
+ALL_NEW = FOURTH_BATCH + [AVATROMBOPAG_ENTRY]
+FIRST_FIFTEEN = FIRST_TEN + FOURTH_BATCH
+TABLETS = {SELADELPAR: [(SELADELPAR_TABLET, "SELADELPAR LYSINE")],
+           AVATROMBOPAG: [(AVATROMBOPAG_TABLET, "AVATROMBOPAG MALEATE")]}
+# No whole search is saved for these three diseases.
+ON_OWN_LIST_ONLY = FOURTH_BATCH[:3] + [AVATROMBOPAG_ENTRY]
+
+
 def names(value):
     """A test's short name: the medicine's, for an entry."""
     return value["name"] if isinstance(value, dict) else None
 
 
-# The two left out. Their ids, as the saved lists write them.
+# The one left out. Its ids, as the saved list writes them.
 GIVOSIRAN = "CHEMBL4297760"
 GIVOSIRAN_SODIUM = "CHEMBL4594265"
 ACUTE_HEPATIC_PORPHYRIA = "Orphanet_95157"
-AVATROMBOPAG = "CHEMBL2103883"
-AVATROMBOPAG_TABLET = "CHEMBL2105758"  # avatrombopag maleate
-ITP = "MONDO_0008558"  # autoimmune thrombocytopenic purpura
-NOT_ADDED_LISTS = {ACUTE_HEPATIC_PORPHYRIA: NEW_LISTS, ITP: NEW_LISTS}
+NOT_ADDED_LISTS = {ACUTE_HEPATIC_PORPHYRIA: NEW_LISTS}
 
 # The cards, exactly as /api/clues must send them.
 ECULIZUMAB_CARD = {
@@ -145,8 +159,18 @@ BIMEKIZUMAB_CARD = {
     "source": BIMEKIZUMAB_LABEL,
     "proof_note": ADDED_LINE,
 }
+AVATROMBOPAG_CARD = {
+    "id": AVATROMBOPAG,
+    "medicine": "Avatrombopag",
+    "forms": ["Avatrombopag"],  # its tablet form has no row on this list
+    "proteins": [],
+    "reports": 13,
+    "source": AVATROMBOPAG_LABEL,
+    "proof_note": ADDED_LINE,
+    "limit_note": LIMITED_LINE,
+}
 OWN_LIST_CARDS = {ECULIZUMAB: ECULIZUMAB_CARD, SECUKINUMAB: SECUKINUMAB_CARD,
-                  BIMEKIZUMAB: BIMEKIZUMAB_CARD}
+                  BIMEKIZUMAB: BIMEKIZUMAB_CARD, AVATROMBOPAG: AVATROMBOPAG_CARD}
 # On the whole saved page. Everything but the last three lines is what the
 # In trials card already said about the medicine.
 ELAFIBRANOR_CARD = {
@@ -236,9 +260,12 @@ def tabs_from_own_list(disease_id, entries=None):
 
 # ---- the hand-written file, entry for entry ----
 
-def test_the_real_file_holds_the_first_ten_entries_then_the_five_new_ones():
-    assert load(APPROVALS_FILE)[:15] == FIRST_TEN + FOURTH_BATCH  # ticket 2.41 added six after these
-    assert len(FIRST_TEN + FOURTH_BATCH) == 15
+def test_the_real_file_holds_the_first_ten_entries_then_the_five_then_avatrombopag():
+    # Ticket 2.41's six sit between the five and avatrombopag (entries 15 to 20).
+    # tests/test_label_batch.py holds them.
+    assert load(APPROVALS_FILE)[:15] == FIRST_TEN + FOURTH_BATCH
+    assert load(APPROVALS_FILE)[21:] == [AVATROMBOPAG_ENTRY]
+    assert len(load(APPROVALS_FILE)) == 22
 
 
 def test_the_first_ten_entries_are_written_as_they_were():
@@ -247,25 +274,30 @@ def test_the_first_ten_entries_are_written_as_they_were():
 
 
 def test_the_new_entries_are_dated_the_day_the_labels_were_read():
-    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:15]] == [THE_DAY] * 5  # ticket 2.41 added six after these
+    # Ticket 2.41's six (entries 15 to 20) are left out of this batch's slice.
+    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]] \
+        == [THE_DAY] * 6
 
 
-def test_three_new_entries_are_limited_and_two_are_not():
-    new = load(APPROVALS_FILE)[10:15]  # ticket 2.41 added six after these
+def test_four_new_entries_are_limited_and_two_are_not():
+    new = load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]  # not ticket 2.41's six
     assert [entry["name"] for entry in new if entry.get("limited") is True] == [
-        "Eculizumab", "Elafibranor", "Seladelpar"]
+        "Eculizumab", "Elafibranor", "Seladelpar", "Avatrombopag"]
     assert [entry["name"] for entry in new if "limited" not in entry] == [
         "Secukinumab", "Bimekizumab"]
 
 
-def test_the_engine_reads_the_five_new_entries():
-    assert engine.approvals_by_hand()[10:15] == [  # ticket 2.41 added six after these
+def test_the_engine_reads_the_six_new_entries():
+    # Not ticket 2.41's six (entries 15 to 20).
+    assert engine.approvals_by_hand()[10:15] + engine.approvals_by_hand()[21:] == [
         engine.HandApproval(ECULIZUMAB, "Eculizumab", MYASTHENIA, ECULIZUMAB_LABEL,
                             limited=True),
         engine.HandApproval(SECUKINUMAB, "Secukinumab", HIDRADENITIS, SECUKINUMAB_LABEL),
         engine.HandApproval(BIMEKIZUMAB, "Bimekizumab", HIDRADENITIS, BIMEKIZUMAB_LABEL),
         engine.HandApproval(ELAFIBRANOR, "Elafibranor", PBC, ELAFIBRANOR_LABEL, limited=True),
-        engine.HandApproval(SELADELPAR, "Seladelpar", PBC, SELADELPAR_LABEL, limited=True)]
+        engine.HandApproval(SELADELPAR, "Seladelpar", PBC, SELADELPAR_LABEL, limited=True),
+        engine.HandApproval(AVATROMBOPAG, "Avatrombopag", ITP, AVATROMBOPAG_LABEL,
+                            limited=True)]
 
 
 def test_each_new_entry_is_handed_only_to_its_own_disease():
@@ -275,10 +307,13 @@ def test_each_new_entry_is_handed_only_to_its_own_disease():
         SECUKINUMAB, BIMEKIZUMAB]
     assert [entry.medicine_id for entry in engine.added_by_hand(PBC)] == [
         ELAFIBRANOR, SELADELPAR]
-    new = {entry["medicine_id"] for entry in FOURTH_BATCH}
+    assert [entry.medicine_id for entry in engine.added_by_hand(ITP)] == [AVATROMBOPAG]
+    new = {entry["medicine_id"] for entry in ALL_NEW}
     # Not to a narrower disease, a wider group, or an earlier batch's disease.
     others = ["MONDO_0018324", "MONDO_0018325", "MONDO_0006866", "MONDO_0000590",
-              "MONDO_0024516", "MONDO_0002260", "MONDO_0007329", "MONDO_0004868"]
+              "MONDO_0024516", "MONDO_0002260", "MONDO_0007329", "MONDO_0004868",
+              # the three wider pages of autoimmune thrombocytopenic purpura
+              "MONDO_0019098", "MONDO_0043768", "MONDO_0004680"]
     others += sorted({entry["disease_id"] for entry in FIRST_TEN})
     for other in others:
         assert not new & {entry.medicine_id for entry in engine.added_by_hand(other)}
@@ -286,11 +321,9 @@ def test_each_new_entry_is_handed_only_to_its_own_disease():
 
 # ---- "Find each medicine's id ... Parent medicine id, not a salt form's." ----
 
-@pytest.mark.parametrize("entry, tablets", [
-    (ECULIZUMAB_ENTRY, []), (SECUKINUMAB_ENTRY, []), (BIMEKIZUMAB_ENTRY, []),
-    (ELAFIBRANOR_ENTRY, []), (SELADELPAR_ENTRY, [(SELADELPAR_TABLET, "SELADELPAR LYSINE")])],
-    ids=names)
-def test_the_id_is_the_one_open_targets_uses_in_the_saved_list(entry, tablets):
+@pytest.mark.parametrize("entry", ALL_NEW, ids=names)
+def test_the_id_is_the_one_open_targets_uses_in_the_saved_list(entry):
+    tablets = TABLETS.get(entry["medicine_id"], [])
     drugs = {row["drug"]["id"]: row["drug"] for row in saved_rows(entry["disease_id"])}
     drug = drugs[entry["medicine_id"]]
     assert drug["name"] == entry["name"].upper()
@@ -304,23 +337,25 @@ def test_the_saved_lists_are_the_diseases_own():
     assert len(saved_rows(MYASTHENIA)) == 77
     assert len(saved_rows(HIDRADENITIS)) == 77
     assert len(saved_rows(PBC)) == 51
+    assert len(saved_rows(ITP)) == 105
 
 
-@pytest.mark.parametrize("entry", FOURTH_BATCH, ids=names)
+@pytest.mark.parametrize("entry", ALL_NEW, ids=names)
 def test_the_database_records_no_approval_on_the_list_so_the_line_is_true(entry):
-    family = [entry["medicine_id"]] + (
-        [SELADELPAR_TABLET] if entry["medicine_id"] == SELADELPAR else [])
+    family = [entry["medicine_id"]] + [
+        tablet_id for tablet_id, _ in TABLETS.get(entry["medicine_id"], [])]
     rows = [row for row in saved_rows(entry["disease_id"])
             if row["drug"]["id"] in family
             or (row["drug"]["parentMolecule"] or {}).get("id") in family]
     assert [row["drug"]["id"] for row in rows] == [entry["medicine_id"]]
-    assert rows[0]["maxClinicalStage"] == "PHASE_3"  # in trials, all five
+    assert rows[0]["maxClinicalStage"] == "PHASE_3"  # in trials, all six
     assert "APPROVAL" not in [report["clinicalStage"] for report in rows[0]["clinicalReports"]]
 
 
 @pytest.mark.parametrize("entry, warnings", [
     (ECULIZUMAB_ENTRY, ["Black Box Warning", "Black Box Warning"]), (SECUKINUMAB_ENTRY, []),
-    (BIMEKIZUMAB_ENTRY, []), (ELAFIBRANOR_ENTRY, []), (SELADELPAR_ENTRY, [])], ids=names)
+    (BIMEKIZUMAB_ENTRY, []), (ELAFIBRANOR_ENTRY, []), (SELADELPAR_ENTRY, []),
+    (AVATROMBOPAG_ENTRY, [])], ids=names)
 def test_none_is_hidden_by_the_older_withdrawn_flag(entry, warnings):
     drug = [row["drug"] for row in saved_rows(entry["disease_id"])
             if row["drug"]["id"] == entry["medicine_id"]][0]
@@ -331,7 +366,7 @@ def test_none_is_hidden_by_the_older_withdrawn_flag(entry, warnings):
 
 
 def test_the_new_entries_clash_with_no_existing_rule():
-    ids = {entry["medicine_id"] for entry in FOURTH_BATCH} | {SELADELPAR_TABLET}
+    ids = {entry["medicine_id"] for entry in ALL_NEW} | {SELADELPAR_TABLET, AVATROMBOPAG_TABLET}
     for file in (CORRECTIONS_FILE, LEFT_OUT_FILE):
         assert not [one for one in load(file) if one["medicine_id"] in ids]
     assert engine.approvals_left_out() == []
@@ -346,19 +381,22 @@ def test_no_entry_in_the_whole_file_clashes_or_is_written_twice():
 
 
 def test_each_label_link_is_the_tickets_and_a_regulators():
-    assert [entry["label"] for entry in load(APPROVALS_FILE)[10:15]] == [  # ticket 2.41 added six after these
+    assert [entry["label"] for entry in
+            load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]] == [  # not 2.41's six
         ECULIZUMAB_LABEL, SECUKINUMAB_LABEL, BIMEKIZUMAB_LABEL, ELAFIBRANOR_LABEL,
-        SELADELPAR_LABEL]
-    for entry in FOURTH_BATCH:
+        SELADELPAR_LABEL, AVATROMBOPAG_LABEL]
+    for entry in ALL_NEW:
         assert entry["label"].startswith(("https://www.accessdata.fda.gov/drugsatfda_docs/",
                                           "https://dailymed.nlm.nih.gov/dailymed/"))
 
 
-# ---- eculizumab, secukinumab and bimekizumab, on their diseases' own saved lists ----
+# ---- eculizumab, secukinumab, bimekizumab and avatrombopag, on their diseases' own
+# ---- saved lists ----
 
 @pytest.mark.parametrize("entry", ON_OWN_LIST_ONLY, ids=names)
 def test_before_each_was_in_the_more_in_trials_box_and_not_under_approved(entry):
-    places = first_batch.everywhere(tabs_from_own_list(entry["disease_id"], FIRST_TEN))
+    earlier = FIRST_TEN if entry in FOURTH_BATCH else FIRST_FIFTEEN
+    places = first_batch.everywhere(tabs_from_own_list(entry["disease_id"], earlier))
     assert [place for place, ids in places.items() if entry["medicine_id"] in ids] == [
         "more_in_trials"]
 
@@ -381,12 +419,17 @@ def test_each_is_now_only_under_approved_with_the_line_and_its_label(entry):
         "GUANIDINE", "NEOSTIGMINE", "NIPOCALIMAB", "PRALIDOXIME", "PYRIDOSTIGMINE",
         "ROZANOLIXIZUMAB", "ZILUCOPLAN", "ZILUCOPLAN SODIUM"]),
     (HIDRADENITIS, [BIMEKIZUMAB, SECUKINUMAB], ["ADALIMUMAB", "Bimekizumab", "Secukinumab"]),
-], ids=["myasthenia gravis", "hidradenitis suppurativa"])
+    (ITP, [AVATROMBOPAG], [
+        "Avatrombopag", "CORTISONE ACETATE", "DEXAMETHASONE", "DEXAMETHASONE PHOSPHORIC ACID",
+        "ELTROMBOPAG", "ESOMEPRAZOLE", "FOSTAMATINIB", "GMA-161", "HUMAN IMMUNOGLOBULIN G",
+        "PREDNISONE", "RILZABRUTINIB", "ROMIPLOSTIM", "VALZIFLOCEPT", "VONOPRAZAN"]),
+], ids=["myasthenia gravis", "hidradenitis suppurativa",
+        "autoimmune thrombocytopenic purpura"])
 def test_the_approved_list_is_a_to_z_and_every_other_card_stays_where_it_was(
         disease_id, added, a_to_z):
     before = tabs_from_own_list(disease_id, FIRST_TEN)
-    # Ticket 2.41 added ravulizumab for myasthenia gravis: this batch's file is used.
-    tabs = tabs_from_own_list(disease_id, FIRST_TEN + FOURTH_BATCH)
+    # Ticket 2.41 added ravulizumab for myasthenia gravis: this batch's entries are used.
+    tabs = tabs_from_own_list(disease_id, FIRST_TEN + ALL_NEW)
     assert [medicine.name for medicine in tabs.approved] == a_to_z
     assert [name.lower() for name in a_to_z] == sorted(name.lower() for name in a_to_z)
     assert len(tabs.approved) == len(before.approved) + len(added)
@@ -405,6 +448,21 @@ def test_eculizumab_carries_the_only_some_people_line():
     assert card.limit_note == LIMITED_LINE
     sent = api._approved_json(card)
     assert list(sent).index("proof_note") < list(sent).index("limit_note")
+
+
+def test_avatrombopag_carries_the_only_some_people_line():
+    tabs = tabs_from_own_list(ITP)
+    assert [medicine.id for medicine in tabs.approved if medicine.limit_note] == [AVATROMBOPAG]
+    card = [medicine for medicine in tabs.approved if medicine.id == AVATROMBOPAG][0]
+    assert card.limit_note == LIMITED_LINE
+    sent = api._approved_json(card)
+    assert list(sent).index("proof_note") < list(sent).index("limit_note")
+
+
+def test_the_wider_page_autoimmune_thrombocytopenia_gets_no_entry():
+    assert engine.added_by_hand("MONDO_0019098") == []
+    assert [entry["disease_id"] for entry in load(APPROVALS_FILE)
+            if entry["medicine_id"] == AVATROMBOPAG] == [ITP]
 
 
 def test_secukinumab_and_bimekizumab_do_not_carry_it():
@@ -467,13 +525,12 @@ def test_they_are_no_longer_in_a_trials_box_or_list_and_nothing_else_changes():
     assert len(new["more_in_trials"]) == 26 and len(new["new_in_trials"]) == 10  # as before
 
 
-# ---- STOP AND ASK: the two entries left out ----
+# ---- STOP AND ASK: the entry left out ----
 
-def test_neither_left_out_medicine_has_an_entry_in_the_hand_written_file():
+def test_givosiran_has_no_entry_in_the_hand_written_file():
     for entry in load(APPROVALS_FILE):
-        assert entry["medicine_id"] not in (GIVOSIRAN, GIVOSIRAN_SODIUM, AVATROMBOPAG,
-                                            AVATROMBOPAG_TABLET)
-        assert entry["name"] not in ("Givosiran", "Avatrombopag")
+        assert entry["medicine_id"] not in (GIVOSIRAN, GIVOSIRAN_SODIUM)
+        assert entry["name"] != "Givosiran"
 
 
 def test_the_database_already_records_givosirans_approval_for_acute_hepatic_porphyria():
@@ -494,15 +551,3 @@ def test_givosiran_is_under_approved_there_already_without_a_hand_added_line():
     assert first_batch.only_under_approved(tabs, GIVOSIRAN)
     assert [medicine.proof_note for medicine in tabs.approved
             if medicine.proof_note == ADDED_LINE] == []
-
-
-def test_avatrombopag_waits_in_the_more_in_trials_box_of_the_page_the_search_finds():
-    """Two pages exist, so no entry was written. This is where it sits today
-    on the one the search for "immune thrombocytopenia" finds."""
-    rows = [row for row in saved_rows(ITP, NOT_ADDED_LISTS)
-            if row["drug"]["id"] in (AVATROMBOPAG, AVATROMBOPAG_TABLET)]
-    assert [(row["drug"]["id"], row["drug"]["name"], row["maxClinicalStage"])
-            for row in rows] == [(AVATROMBOPAG, "AVATROMBOPAG", "PHASE_3")]
-    assert "APPROVAL" not in [report["clinicalStage"] for report in rows[0]["clinicalReports"]]
-    places = first_batch.everywhere(tabs_from_own_list(ITP))
-    assert [place for place, ids in places.items() if AVATROMBOPAG in ids] == ["more_in_trials"]
