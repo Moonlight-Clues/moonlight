@@ -82,3 +82,5 @@ Format: date, the decision, why.
 - 2026-11-23: A medicine with a WITHDRAWAL report keeps its card on the Approved tab, with the line "The database records a withdrawal for this medicine in some country or region." This replaces the 22 Nov decision to hide it. The older Withdrawn warning flag still hides.
 - 2026-11-23: A medicine whose official label covers only some people with the disease goes under Approved from the label, with one more line: "The label covers only some people with this disease."
 - 2026-11-23: A clue card shows one sentence on what its protein does, 200 letters or less, written by UniProt and read through Open Targets. It never says which way the disease needs the protein turned.
+- 2026-11-24: R1. Blood thinners are not clues on the haemophilia A page, and medicines that lower or block cortisol are not clues on the Addison's disease page. They push the wrong way. (Spoken 24 Nov, to be signed. Ticket 2.43.)
+- 2026-11-24: R6. Imaging tracers and contrast agents are not shown in the medicine lists. They are not treatments. (Spoken 24 Nov, to be signed. Ticket 2.43.)
