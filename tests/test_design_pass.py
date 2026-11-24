@@ -25,8 +25,7 @@ MOTTO = "Old medicines. New questions."
 MADE = "Made with care by a family in Kochi"
 HEADING = "Research a disease: approved medicines, trials and new clues."
 LINE_UNDER = (
-    "Moonlight follows Open Targets research data from a disease to its "
-    "proteins, then to medicines that act on them. Research clues, not "
+    "Type a disease name to begin. Research clues, not "
     "treatment recommendations."
 )
 CONTACT = "Found something wrong or have any feedback? Contact hello@moonlightclues.com"

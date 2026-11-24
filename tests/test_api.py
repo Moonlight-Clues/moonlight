@@ -454,8 +454,8 @@ def test_the_page_wording(client):
     assert 'placeholder="Type a disease name"' in page
     assert "Search by disease name<" in page
     assert (
-        "An explorer that shows which existing medicines act on the proteins "
-        "linked to a disease, using open research data."
+        "A free, open-source explorer of medicines and trials for any disease, "
+        "built from public research data."
     ) in page
     assert "Please wait, fetching data" in page
     assert "Already being studied for this disease" in page

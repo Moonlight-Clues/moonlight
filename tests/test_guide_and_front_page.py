@@ -23,8 +23,7 @@ from test_api import FOOTER_LINE, FOOTER_NOTE, NEW_ORDER, SAFETY_LINE, guide_of,
 
 HEADING = "Research a disease: approved medicines, trials and new clues."
 LINE_UNDER = (
-    "Moonlight follows Open Targets research data from a disease to its "
-    "proteins, then to medicines that act on them. Research clues, not "
+    "Type a disease name to begin. Research clues, not "
     "treatment recommendations."
 )
 MOTTO = "Old medicines. New questions."
