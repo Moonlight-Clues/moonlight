@@ -33,6 +33,7 @@ from moonlight import api, engine
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 import test_approvals_fourth_batch as fourth_batch
+import test_approvals_third_batch as third_batch  # ticket 2.39
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
@@ -373,7 +374,8 @@ def test_each_card_now_shows_the_red_words_and_sits_in_the_folded_box(card):
 # ---- Part B: the six missing approvals ----
 
 def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
-    assert load(APPROVALS_FILE)[:21] == FIRST_FIFTEEN + PART_B
+    # Ticket 2.39 marked valbenazine (entry 8) "limited".
+    assert load(APPROVALS_FILE)[:21] == third_batch.as_written_now(FIRST_FIFTEEN) + PART_B
     assert len(load(APPROVALS_FILE)) == 22  # ticket 2.34b added avatrombopag after these
 
 
