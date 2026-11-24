@@ -127,7 +127,7 @@ def test_the_ticket_lists_33_different_medicines_and_not_isoxsuprine():
 
 
 def test_the_file_ends_with_the_33_for_anaphylaxis_in_the_tickets_order():
-    last = real_entries()[-33:]
+    last = real_entries()[4:37]  # ticket 2.43 added sixteen after these
     assert [entry["medicine_id"] for entry in last] == THE_33
     for entry in last:
         assert entry == {"medicine_id": entry["medicine_id"],
@@ -173,7 +173,8 @@ def test_the_four_for_addisons_are_still_there_first_and_unchanged():
         {"medicine_id": "CHEMBL3099695", "disease_id": ADDISON, "date": "2026-11-19"},
         {"medicine_id": "CHEMBL934", "disease_id": ADDISON, "date": "2026-11-19"},
     ]
-    assert len(real_entries()) == 4 + 33
+    # Ticket 2.43 added sixteen, dated 2026-11-24, after these.
+    assert len([entry for entry in real_entries() if entry["date"] < "2026-11-24"]) == 4 + 33
 
 
 # ---- the page ----

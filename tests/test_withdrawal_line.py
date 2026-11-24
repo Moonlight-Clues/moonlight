@@ -191,9 +191,20 @@ def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wro
     return response.json()
 
 
+def left_out_before_2_43():
+    """Ticket 2.43 (24 Nov) left out ten blood thinners on this page by hand.
+    The comparisons with main's saved page here are about the withdrawal line,
+    so they read the left-out list as it was before that ticket.
+    tests/test_left_out_r1_r6.py holds the new entries."""
+    entries = json.loads((ROOT / "moonlight" / "left_out.json").read_text(encoding="utf-8"))
+    return patch.object(engine, "_read_left_out",
+                        return_value=[e for e in entries if e["date"] < "2026-11-24"])
+
+
 @pytest.fixture(scope="module")
 def hem_a():
-    return page_answer()
+    with left_out_before_2_43():
+        return page_answer()
 
 
 @pytest.fixture(scope="module")
@@ -645,8 +656,9 @@ def test_guard_a_hand_added_approval_with_no_report_has_no_line():
 def test_guard_a_wider_group_card_gets_the_line_from_the_list_it_came_from(before):
     """Thrombin is approved on the parent "hemorrhagic disease" only. Here
     that list is given a WITHDRAWAL report for it."""
-    answer = page_answer(
-        post_json=changed_list(HEMORRHAGIC, add_withdrawal_report(THROMBIN)))
+    with left_out_before_2_43():  # ticket 2.43, see above
+        answer = page_answer(
+            post_json=changed_list(HEMORRHAGIC, add_withdrawal_report(THROMBIN)))
     assert card(answer, THROMBIN, "wider_group")[KEY] == LINE
     assert [item["medicine"] for item in answer["wider_group"]] == HEM_A_WIDER_11
     assert without_the_key(answer) == before  # nothing moved

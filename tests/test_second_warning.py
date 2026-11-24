@@ -524,13 +524,18 @@ def test_the_real_left_out_file_holds_the_four_for_addisons_and_nothing_else():
     for entry in every_entry:
         assert set(entry) == {"medicine_id", "disease_id", "date"}
     entries = [entry for entry in every_entry if entry["disease_id"] == ADDISON]
+    # Ticket 2.43 (R1, 24 Nov) added mifepristone for Addison's.
+    # tests/test_left_out_r1_r6.py holds it. Here: the four of 19 Nov.
+    assert [entry for entry in entries if entry["date"] > TODAY] == [
+        {"medicine_id": "CHEMBL1276308", "disease_id": ADDISON, "date": "2026-11-24"}]
+    entries = [entry for entry in entries if entry["date"] == TODAY]
     assert len(entries) == 4
     for entry in entries:
         assert entry["date"] == TODAY
     assert {entry["medicine_id"] for entry in entries} == ADDISON_FOUR
     assert {pair for pair in engine.left_out_by_hand() if pair[1] == ADDISON} == {
-        (medicine_id, ADDISON) for medicine_id in ADDISON_FOUR}
-    assert engine.pushes_wrong_way(ADDISON) == ADDISON_FOUR
+        (medicine_id, ADDISON) for medicine_id in ADDISON_FOUR | {"CHEMBL1276308"}}
+    assert engine.pushes_wrong_way(ADDISON) == ADDISON_FOUR | {"CHEMBL1276308"}
     # Read as plain text: only the keys, the ids and the day. No names, no reasons.
     text = LEFT_OUT_FILE.read_text(encoding="utf-8")
     other_diseases = [entry for entry in every_entry if entry["disease_id"] != ADDISON]
@@ -539,8 +544,8 @@ def test_the_real_left_out_file_holds_the_four_for_addisons_and_nothing_else():
         assert re.fullmatch(r"[A-Za-z]+_\d+", entry["disease_id"])
         assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", entry["date"])
     others = {value for entry in other_diseases for value in entry.values()}
-    for known in ["medicine_id", "disease_id", "date", ADDISON, TODAY,
-                  *sorted(ADDISON_FOUR | others, key=len, reverse=True)]:
+    for known in ["medicine_id", "disease_id", "date", ADDISON, TODAY, "2026-11-24",
+                  *sorted(ADDISON_FOUR | others | {"CHEMBL1276308"}, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
