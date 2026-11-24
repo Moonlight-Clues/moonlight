@@ -648,7 +648,8 @@ def test_add_on_the_words_follow_the_box_open_or_closed():
         assert draw.index(f'byId("{box}").open = ') < draw.index(f'tapWords(byId("{box}"));')
     # The guide's own folds do not get the words.
     # 5 since ticket 2.28: the opposite-way box on the New clues tab is the fifth.
-    assert PAGE.count('<span data-part="tap">') == 5
+    # 6 since ticket 2.27: the red-warning box on the Approved tab is the sixth.
+    assert PAGE.count('<span data-part="tap">') == 6
 
 
 def test_add_on_the_decision_is_written_down():

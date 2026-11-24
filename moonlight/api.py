@@ -17,7 +17,12 @@
                                             new clues the page shows in the
                                             folded box at the bottom of the New
                                             clues tab (ticket 2.28). They are
-                                            still in "new_clues"
+                                            still in "new_clues". Also
+                                            "wrong_approvals_box": the ids of
+                                            the Approved cards the page shows
+                                            in the folded box at the bottom of
+                                            the Approved tab (ticket 2.27).
+                                            They are still in "approved"
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -83,6 +88,7 @@ from moonlight import explain, protein, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
+from moonlight.engine import wrong_approvals_box
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -599,6 +605,15 @@ def clues(disease_id: str) -> dict:
     if boxed:
         # Only there when it holds something, like the other boxes.
         answer["opposite_way_box"] = [_clue_id(clue) for clue in boxed]
+    # Ticket 2.27. The folded box at the bottom of the Approved tab: the ids
+    # of the main list's cards that carry a red warning, in the list's own
+    # order. The cards themselves stay in "approved", each with its
+    # "warning", so nothing is removed. The page leaves them out of the
+    # main list and out of the tab's number.
+    looks_wrong_box = wrong_approvals_box(found.approved, disease.id)
+    if looks_wrong_box:
+        # Only there when it holds something, like the other boxes.
+        answer["wrong_approvals_box"] = [medicine.id for medicine in looks_wrong_box]
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.

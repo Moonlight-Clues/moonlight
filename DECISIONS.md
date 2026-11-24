@@ -71,7 +71,7 @@ Format: date, the decision, why.
 - 2026-11-18: When the proof is weak, the card says so. We do not hide it.
 - 2026-11-19: A machine may add a note. Only a hand check may remove a card.
 - 2026-11-23: A machine may also MOVE an opposite-way clue into a folded box. Nothing is removed.
-- 2026-11-23: A medicine with a red warning sits in its own folded box on the Approved tab, not on the main list. (Ticket 2.27, not built.)
+- 2026-11-23: A medicine with a red warning sits in its own folded box on the Approved tab, not on the main list. (Ticket 2.27.)
 - 2026-11-23: Two machine sources, Open Targets and the trials register. Official labels are read by hand, for warnings and missing approvals.
 - 2026-11-23: A hand-written list of missing approvals. Card line: "This approval is missing from the database. We added it from the official label."
 - 2026-11-23: In trials shows medicines approved for nothing, in their own box.

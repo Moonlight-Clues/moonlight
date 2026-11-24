@@ -110,7 +110,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 #narrower-box summary:focus-visible,#wider-box summary:focus-visible{clip-path:none}
 /* The box under the In trials list (ticket 2.21) has a long label that runs
    over several lines, so the cut above is not used: it would cut the first
-   letter off each new line. */
+   letter off each new line. The same holds for the red-warning box at the
+   bottom of the Approved tab (ticket 2.27). */
 .more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
@@ -399,6 +400,12 @@ body.registering>:not(.register){display:none!important}
           <summary>Approved for a wider group (<span id="wider-count"></span>) <span data-part="tap">Tap to open</span></summary>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="wider-cards"></div>
+        </details>
+        <!-- Approved cards with a red warning (ticket 2.27). Folded, at the very bottom of the tab.
+             The API names its cards. Each card is as it was. The box never opens by itself. -->
+        <details class="wider-box" id="wrong-box" hidden>
+          <summary>The database lists these as approved for this disease. They look like mistakes. (<span id="wrong-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <div class="cards" id="wrong-cards"></div>
         </details>
       </section>
 
@@ -725,6 +732,7 @@ body.registering>:not(.register){display:none!important}
     byId("approved-cards").replaceChildren();
     byId("narrower-cards").replaceChildren();
     byId("wider-cards").replaceChildren();
+    byId("wrong-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
     byId("more-trials-cards").replaceChildren();
@@ -916,7 +924,10 @@ body.registering>:not(.register){display:none!important}
     drawAbout(data.about_disease);
     byId("rule-text").textContent = data.rule_text;
 
-    const approvedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
+    const allApprovedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
+    // Ticket 2.27. The API names the cards with a red warning: they sit in the folded box at the
+    // bottom of the tab. approvedCards is the main list without them, in the same A to Z order.
+    const [approvedCards, wrongCards] = aboveAndBox(data.approved, data.wrong_approvals_box, allApprovedCards);
     // Approved only for a narrower disease: its own folded box, above the wider one.
     const narrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
     // Approved only for a wider group: the folded box at the bottom of the tab.
@@ -939,6 +950,8 @@ body.registering>:not(.register){display:none!important}
     byId("studied-cards").replaceChildren(...studiedCards);
     byId("approved-list").hidden = !approvedCards.length;
     byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length || !!narrowerCards.length;
+    // Ticket 2.27. The "nothing approved" words would be untrue while the red-warning box holds a card.
+    if (wrongCards.length) byId("approved-empty").hidden = true;
     byId("narrower-cards").replaceChildren(...narrowerCards);
     byId("narrower-count").textContent = narrowerCards.length;
     byId("narrower-box").hidden = !narrowerCards.length;
@@ -949,6 +962,11 @@ body.registering>:not(.register){display:none!important}
     byId("wider-box").open = !approvedCards.length;  // open only when it is all there is
     tapWords(byId("narrower-box"));
     tapWords(byId("wider-box"));
+    byId("wrong-cards").replaceChildren(...wrongCards);
+    byId("wrong-count").textContent = wrongCards.length;
+    byId("wrong-box").hidden = !wrongCards.length;
+    byId("wrong-box").open = false;  // always folded: it never opens by itself, even when it is all there is
+    tapWords(byId("wrong-box"));
     // So nobody misses the boxes: how many more cards they hold, both together.
     const boxedCards = narrowerCards.length + widerCards.length;
     byId("more-line").textContent = boxedCards === 1
@@ -974,7 +992,8 @@ body.registering>:not(.register){display:none!important}
     tapWords(byId("new-trials-box"));
 
     const counts = {
-      approved: approvedCards.length + narrowerCards.length + widerCards.length,  // the main list and both boxes
+      // The main list and the two older boxes. The red-warning box is not counted (ticket 2.27).
+      approved: approvedCards.length + narrowerCards.length + widerCards.length,
       trials: studiedCards.length + moreTrialsCards.length + newTrialsCards.length,  // the list and both its boxes
       clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
@@ -994,6 +1013,7 @@ body.registering>:not(.register){display:none!important}
     part(box, "tap").textContent = box.open ? "Tap to close" : "Tap to open";
   }
   for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
+  byId("wrong-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the red-warning box under them
   byId("more-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the In trials list
   byId("new-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the second box under it
   byId("opposite-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the New clues list
@@ -1001,7 +1021,8 @@ body.registering>:not(.register){display:none!important}
   /* Ticket 2.28. The new clues (or their cards) in two piles, each in the
      list's own order: above the opposite-way box, and inside it. The API
      says which are inside ("opposite_way_box", ids). Nothing is worked out
-     here, and no clue is dropped. */
+     here, and no clue is dropped. Ticket 2.27 uses it the same way for the
+     Approved cards and "wrong_approvals_box". */
   function aboveAndBox(clues, boxedIds, things) {
     const inBox = new Set(boxedIds || []), above = [], boxed = [];
     clues.forEach((clue, place) => (inBox.has(clue.id) ? boxed : above).push(things[place]));
