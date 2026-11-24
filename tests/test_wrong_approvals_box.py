@@ -180,6 +180,16 @@ def sarcoidosis():
     return page_answer(SARCOIDOSIS, huntington_files.saved_post_json)
 
 
+def before_2_39(answer):
+    """Ticket 2.39 gave two Huntington cards, tetrabenazine and valbenazine,
+    the key limit_note, and nothing else. The answer without it, to compare
+    with what main sent before."""
+    marked = [card["id"] for card in answer["approved"] if "limit_note" in card]
+    assert marked == [] or marked == ["CHEMBL117785", "CHEMBL2364639"]
+    return dict(answer, approved=[{key: value for key, value in card.items()
+                                   if key != "limit_note"} for card in answer["approved"]])
+
+
 def names(cards):
     return [card["medicine"] for card in cards]
 
@@ -358,7 +368,7 @@ def test_example_approved_is_unchanged_the_same_six_in_the_same_order(huntington
     assert names(huntington["approved"]) == [
         "Atomoxetine", "Guanfacine", "Lisdexamfetamine", "Methylphenidate",
         "Tetrabenazine", "Valbenazine"]
-    assert fingerprint(huntington["approved"]) == MAIN_SENT[HUNTINGTON]["approved"]
+    assert fingerprint(before_2_39(huntington)["approved"]) == MAIN_SENT[HUNTINGTON]["approved"]
 
 
 def test_example_the_number_on_the_tab_is_six(huntington):
@@ -381,7 +391,7 @@ def test_example_in_trials_and_new_clues_are_letter_for_letter_what_main_gives(h
 @pytest.mark.parametrize("disease_id", [HUNTINGTON, AL_AMYLOIDOSIS])
 def test_example_every_old_key_answers_what_main_answered_and_one_key_is_new(
         disease_id, huntington, amyloidosis):
-    answer = {HUNTINGTON: huntington, AL_AMYLOIDOSIS: amyloidosis}[disease_id]
+    answer = {HUNTINGTON: before_2_39(huntington), AL_AMYLOIDOSIS: amyloidosis}[disease_id]
     old = MAIN_SENT[disease_id]
     assert [key for key in answer if key != KEY] == list(old)  # in the same order
     assert {key: fingerprint(answer[key]) for key in old} == old

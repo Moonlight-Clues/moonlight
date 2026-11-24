@@ -180,11 +180,16 @@ def test_the_line_is_kashishs_words_exactly():
 
 def test_the_real_file_holds_the_eight_earlier_entries_then_the_two_new_ones():
     # Ticket 2.34 added to the file. tests/test_approvals_fourth_batch.py holds the whole file.
-    assert load(APPROVALS_FILE)[:10] == FIRST_EIGHT + NEW_TWO
+    # Ticket 2.39 marked valbenazine "limited".
+    assert load(APPROVALS_FILE)[:10] == third_batch.as_written_now(FIRST_EIGHT) + NEW_TWO
 
 
 def test_the_eight_earlier_entries_are_written_as_they_were_with_no_new_key():
     for entry in load(APPROVALS_FILE)[:8]:
+        if entry["medicine_id"] == third_batch.VALBENAZINE:  # ticket 2.39 marked it
+            assert set(entry) == {"medicine_id", "name", "disease_id", "date", "label",
+                                  "limited"}
+            continue
         assert set(entry) == {"medicine_id", "name", "disease_id", "date", "label"}
 
 
@@ -202,7 +207,7 @@ def test_the_engine_reads_the_two_new_entries_as_limited():
 def test_the_eight_earlier_entries_are_not_limited():
     earlier = engine.approvals_by_hand()[:8]
     assert [entry.medicine_id for entry in earlier] == [e["medicine_id"] for e in FIRST_EIGHT]
-    assert [entry.limited for entry in earlier] == [False] * 8
+    assert [entry.limited for entry in earlier] == [False] * 7 + [True]  # ticket 2.39
     # Written the old way, with four things, an entry is as it was.
     assert engine.HandApproval("CHEMBL1", "Name", "MONDO_1", "https://example.org/label") \
         == engine.HandApproval("CHEMBL1", "Name", "MONDO_1", "https://example.org/label",
@@ -376,9 +381,11 @@ def test_guard_a_card_the_database_records_never_has_the_line():
                          ids=[card[2] for card in EARLIER_CARDS])
 def test_guard_the_eight_earlier_entries_give_the_cards_they_gave_on_main(
         disease_id, medicine_id, name, reports, label):
-    assert own_list_card(disease_id, medicine_id) == {
-        "id": medicine_id, "medicine": name, "forms": [name], "proteins": [],
-        "reports": reports, "source": label, "proof_note": ADDED_LINE}
+    card = {"id": medicine_id, "medicine": name, "forms": [name], "proteins": [],
+            "reports": reports, "source": label, "proof_note": ADDED_LINE}
+    if medicine_id == third_batch.VALBENAZINE:  # ticket 2.39: one more line
+        card[KEY] = LINE
+    assert own_list_card(disease_id, medicine_id) == card
 
 
 # ---- the EXAMPLE, on the whole saved page: Graves disease ----
@@ -436,10 +443,12 @@ def test_the_line_on_the_page_is_the_engines():
         assert page(GRAVES)["approved"][2][KEY] == other
 
 
-@pytest.mark.parametrize("disease_id", ["MONDO_0003233", "MONDO_0007739", "MONDO_0019438"])
+# Ticket 2.39 took Huntington disease (MONDO_0007739) out of this list: its
+# two cards now carry the line. tests/test_huntington_limit_line.py checks it.
+@pytest.mark.parametrize("disease_id", ["MONDO_0003233", "MONDO_0019438"])
 def test_guard_the_other_saved_pages_are_as_they_were_and_have_no_such_line(disease_id):
-    """Essential tremor, Huntington disease and AL amyloidosis: whole saved
-    pages with a hand-added card each. Not one letter moves."""
+    """Essential tremor and AL amyloidosis: whole saved pages with a
+    hand-added card each. Not one letter moves."""
     new = page(disease_id)
     assert new == page(disease_id, FIRST_EIGHT)
     assert cards_with_the_key(new) == []

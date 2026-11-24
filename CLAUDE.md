@@ -82,7 +82,7 @@ Changing safety text or the grounding rule needs Kashish's explicit approval.
   Open Targets also sends UniProt's sentence on what a protein does.
   Moonlight shows it as sent, cleaned, never rewritten.
 - Official labels are read by hand, never by code, and only for
-  warnings and missing approvals.
+  warnings, missing approvals and labels that cover only some people.
 - Check field names against live responses or files in fixtures/. Never
   assume a field name from memory.
 

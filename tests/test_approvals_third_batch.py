@@ -77,6 +77,18 @@ THIRD_BATCH = ON_OWN_LIST + [
      "date": THE_DAY, "label": VALBENAZINE_LABEL},
 ]
 FIRST_FIVE = first_batch.FIRST_ENTRIES + second_batch.SECOND_BATCH
+# Ticket 2.39 (Kashish's answer A to question 3, 24 Nov): the valbenazine
+# entry gained "limited": true, and nothing else. THIRD_BATCH stays as it
+# was written on 23 Nov. LIMITED_LINE is the line its card gained.
+LIMITED_LINE = "The label covers only some people with this disease."
+
+
+def as_written_now(entries):
+    """The entries as the file holds them since ticket 2.39."""
+    return [dict(entry, limited=True)
+            if (entry["medicine_id"], entry["disease_id"]) == (VALBENAZINE, HUNTINGTON)
+            else entry for entry in entries]
+
 
 # The card, exactly as /api/clues must send it. Everything but the last two
 # lines is what the page already knew about valbenazine.
@@ -90,6 +102,7 @@ VALBENAZINE_CARD = {
     "source": VALBENAZINE_LABEL,
     "proof_note": LINE,
 }
+VALBENAZINE_CARD_NOW = dict(VALBENAZINE_CARD, limit_note=LIMITED_LINE)  # ticket 2.39
 
 
 def load(file):
@@ -136,14 +149,16 @@ def page(entries):
 # ---- the hand-written file, entry for entry ----
 
 def test_the_real_file_holds_the_first_five_entries_then_the_three_new_ones():
-    assert load(APPROVALS_FILE)[:8] == FIRST_FIVE + THIRD_BATCH  # ticket 2.33 added two after
+    # Ticket 2.33 added two after. Ticket 2.39 marked valbenazine "limited".
+    assert load(APPROVALS_FILE)[:8] == as_written_now(FIRST_FIVE + THIRD_BATCH)
 
 
 def test_the_engine_reads_the_three_new_entries():
     assert engine.approvals_by_hand()[5:8] == [  # ticket 2.33 added two after these
         engine.HandApproval(RAVULIZUMAB, "Ravulizumab", NMO, RAVULIZUMAB_LABEL),
         engine.HandApproval(AVAPRITINIB, "Avapritinib", MASTOCYTOSIS, AVAPRITINIB_LABEL),
-        engine.HandApproval(VALBENAZINE, "Valbenazine", HUNTINGTON, VALBENAZINE_LABEL)]
+        engine.HandApproval(VALBENAZINE, "Valbenazine", HUNTINGTON, VALBENAZINE_LABEL,
+                            limited=True)]  # ticket 2.39
 
 
 def test_each_new_entry_is_handed_only_to_its_own_disease():
@@ -269,14 +284,14 @@ def test_valbenazine_is_on_the_approved_list_a_to_z_with_the_line_and_its_label(
     assert [card["medicine"] for card in new["approved"]] == [
         "Atomoxetine", "Guanfacine", "Lisdexamfetamine", "Methylphenidate", "Tetrabenazine",
         "Valbenazine"]
-    assert new["approved"][-1] == VALBENAZINE_CARD
+    assert new["approved"][-1] == VALBENAZINE_CARD_NOW  # ticket 2.39: one more line
 
 
 def test_valbenazine_is_nowhere_else_on_the_page_and_nothing_else_changes():
     old = page(FIRST_FIVE)
     new = page(load(APPROVALS_FILE))
     assert [key for key, _ in first_batch.cards_naming(new, "valbenazine")] == ["approved"]
-    expected = dict(old, approved=old["approved"] + [VALBENAZINE_CARD],
+    expected = dict(old, approved=old["approved"] + [VALBENAZINE_CARD_NOW],  # ticket 2.39
                     wider_group=[card for card in old["wider_group"]
                                  if card["id"] != VALBENAZINE])
     assert new == expected
