@@ -445,10 +445,26 @@ def test_nobody_in_the_example_box_is_anywhere_else_on_the_page(pbc_found):
 
 # ---- /api/clues ----
 
+def with_ursodiol_confirmed(before):
+    """Ticket 2.42. Ursodiol for primary biliary cholangitis is on the
+    hand-written list of confirmed approvals: its card shows the label as
+    source and has no grey line. Nothing else on its card changes, and it
+    stays on the main list. tests/test_no_regulator_box.py holds it."""
+    before = copy.deepcopy(before)
+    labels = engine.confirmed_by_label()
+    for card in before["approved"]:
+        if (card["id"], PBC.id) in labels:
+            card["source"] = labels[(card["id"], PBC.id)]
+            card.pop("proof_note", None)
+    return before
+
+
 def test_every_old_key_answers_what_it_answered_before(pbc):
     before = load(SAVED / "clues_before_2.21.json")  # made on main, commit 7734f6f
+    before = with_ursodiol_confirmed(before)  # ticket 2.42
     assert {key: pbc[key] for key in before} == before
-    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials"}  # this ticket's key, and ticket 2.24's
+    # This ticket's key, ticket 2.24's, and ticket 2.42's (taurursodiol is in the new box).
+    assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials", "no_regulator_box"}
     assert [card["medicine"] for card in pbc["being_studied"]] == PBC_LIST_7
 
 

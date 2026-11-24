@@ -607,8 +607,13 @@ def test_example_6_the_same_cards_in_the_same_order_as_before(disease, saved_jso
         assert [(one["id"], one["medicine"]) for one in now] == [
             (one["id"], one["medicine"]) for one in as_before]
         # The Source record link and the number of reports are as before.
-        assert [(one["source"], one["reports"]) for one in now] == [
-            (one["source"], one["reports"]) for one in as_before]
+        # Ticket 2.42: a card on the hand-written list of confirmed approvals
+        # (dextroamphetamine for narcolepsy) shows its label as source and has
+        # no grey line. Its source is set aside here. test_no_regulator_box.py holds it.
+        confirmed = {medicine_id for medicine_id, disease_id in engine.confirmed_by_label()
+                     if disease_id == disease.id}
+        assert [(one["source"], one["reports"]) for one in now if one["id"] not in confirmed] == [
+            (one["source"], one["reports"]) for one in as_before if one["id"] not in confirmed]
         for one, was in zip(now, as_before):
             if was["proof_note"]:  # a Japan line stays a Japan line
                 assert one["proof_note"] == was["proof_note"] == JAPAN_LINE

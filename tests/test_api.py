@@ -1141,6 +1141,7 @@ def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
     assert list(data) == [
         "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
         "left_out", "more_in_trials",
+        "no_regulator_box",  # ticket 2.42: Beraprost, with the Japan line, is in the new box
     ]
     assert data["rule_text"] == RULE_TEXT
 
