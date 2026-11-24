@@ -428,8 +428,8 @@ def test_each_is_now_only_under_approved_with_the_line_and_its_label(entry):
 def test_the_approved_list_is_a_to_z_and_every_other_card_stays_where_it_was(
         disease_id, added, a_to_z):
     before = tabs_from_own_list(disease_id, FIRST_TEN)
-    # Ticket 2.41 added ravulizumab for myasthenia gravis: this batch's file is used.
-    tabs = tabs_from_own_list(disease_id, FIRST_TEN + FOURTH_BATCH)
+    # Ticket 2.41 added ravulizumab for myasthenia gravis: this batch's entries are used.
+    tabs = tabs_from_own_list(disease_id, FIRST_TEN + ALL_NEW)
     assert [medicine.name for medicine in tabs.approved] == a_to_z
     assert [name.lower() for name in a_to_z] == sorted(name.lower() for name in a_to_z)
     assert len(tabs.approved) == len(before.approved) + len(added)

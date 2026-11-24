@@ -373,12 +373,12 @@ def test_each_card_now_shows_the_red_words_and_sits_in_the_folded_box(card):
 # ---- Part B: the six missing approvals ----
 
 def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
-    assert load(APPROVALS_FILE) == FIRST_FIFTEEN + PART_B
-    assert len(load(APPROVALS_FILE)) == 21
+    assert load(APPROVALS_FILE)[:21] == FIRST_FIFTEEN + PART_B
+    assert len(load(APPROVALS_FILE)) == 22  # ticket 2.34b added avatrombopag after these
 
 
 def test_two_new_entries_are_limited_and_four_are_not():
-    new = load(APPROVALS_FILE)[15:]
+    new = load(APPROVALS_FILE)[15:21]  # ticket 2.34b added avatrombopag after these
     assert [(entry["name"], entry["disease_id"]) for entry in new
             if entry.get("limited") is True] == [
         ("Ravulizumab", MYASTHENIA), ("Delandistrogene Moxeparvovec", DUCHENNE)]
@@ -387,7 +387,7 @@ def test_two_new_entries_are_limited_and_four_are_not():
 
 
 def test_the_engine_reads_the_six_new_entries():
-    assert engine.approvals_by_hand()[15:] == [
+    assert engine.approvals_by_hand()[15:21] == [  # then ticket 2.34b's avatrombopag
         engine.HandApproval(entry["medicine_id"], entry["name"], entry["disease_id"],
                             entry["label"], limited=entry.get("limited", False))
         for entry in PART_B]
