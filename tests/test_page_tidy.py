@@ -112,17 +112,21 @@ def test_the_dot_is_not_part_of_the_tap_words(page):
     assert 'box.open ? "Tap to close" : "Tap to open";' in page
 
 
-def test_the_style_draws_the_dot_in_front_of_the_words(page):
+def test_the_style_draws_no_dot_in_front_of_the_words(page):
+    # Ticket 2.37: the dot is gone. Before, the style drew it in front of the words.
     styles = styles_of(page)
-    assert '.wider-box summary [data-part="tap"]::before{content:"·";' in styles
+    assert '.wider-box summary [data-part="tap"]::before' not in styles
+    assert 'content:"·"' not in styles
 
 
-def test_the_dot_is_cut_off_when_the_words_sit_on_their_own_line(page):
+def test_the_words_sit_on_their_own_line_so_no_dot_needs_cutting_off(page):
+    # Ticket 2.37: the words are always on a line of their own, on every box.
+    # Before, a cut hid the dot when the words dropped to a new line.
     styles = styles_of(page)
-    # The title's box starts a dot's width to the left, and its first line is
-    # pushed back by the same width, so only a dropped line starts with the dot.
-    assert ("#narrower-box summary,#wider-box summary"
-            "{margin-left:-.55em;text-indent:.55em;clip-path:inset(-8px -8px -8px .55em)}") in styles
+    assert ('.wider-box summary [data-part="tap"]{display:block;font-weight:500;'
+            'color:var(--muted);white-space:nowrap}') in styles
+    assert "#narrower-box summary,#wider-box summary" not in styles
+    assert "clip-path" not in styles
 
 
 def test_the_folded_boxes_are_still_details_with_a_summary(page):

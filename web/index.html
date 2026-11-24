@@ -101,17 +101,9 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .wider-box{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:17px 0 0;padding:0 14px}
 .wider-box summary{cursor:pointer;font-weight:700;color:var(--navy);padding:14px 0}
 .wider-box[open]{padding-bottom:14px}
-.wider-box summary [data-part="tap"]{font-weight:500;color:var(--muted);white-space:nowrap}
-/* The dot before "Tap to open" (ticket 4.1). It is drawn in a small space in
-   front of the words. On a line of their own, that space is cut off. */
-.wider-box summary [data-part="tap"]{display:inline-block;position:relative;padding-left:.55em;text-indent:0}
-.wider-box summary [data-part="tap"]::before{content:"·";position:absolute;left:0}
-#narrower-box summary,#wider-box summary{margin-left:-.55em;text-indent:.55em;clip-path:inset(-8px -8px -8px .55em)}
-#narrower-box summary:focus-visible,#wider-box summary:focus-visible{clip-path:none}
-/* The box under the In trials list (ticket 2.21) has a long label that runs
-   over several lines, so the cut above is not used: it would cut the first
-   letter off each new line. The same holds for the red-warning box at the
-   bottom of the Approved tab (ticket 2.27). */
+/* "Tap to open" always sits on a line of its own under the label, on every
+   folded box, with nothing drawn in front of it (ticket 2.37). */
+.wider-box summary [data-part="tap"]{display:block;font-weight:500;color:var(--muted);white-space:nowrap}
 .more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
