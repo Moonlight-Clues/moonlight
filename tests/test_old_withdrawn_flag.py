@@ -1,0 +1,378 @@
+"""Ticket 2.40. The older "Withdrawn" flag: eight cards come back, with the line.
+
+Since ticket 2.11 a medicine carrying the older "Withdrawn" warning flag is
+in no tab. Study P11 (branch probe-old-withdrawn-flag) found 88 such cards
+across 50 diseases. Kashish's signed answer, 24 Nov 2026:
+
+    Show the ones with a regulator approval, with the grey withdrawal line.
+    Keep the rest hidden.
+
+and answer B to the follow-up of the same day: all eight with a regulator's
+approval report come back, rosiglitazone too, although its list also holds
+a WITHDRAWAL report.
+
+The rule: a medicine the older flag would hide is on the Approved tab's main
+list when it is on the searched disease's OWN list, approved there, and that
+list holds an APPROVAL report for it from a regulator (fetch.REGULATOR_SOURCES).
+Its card carries engine.WITHDRAWAL_LINE. Everything else the flag hides stays
+hidden: approval reports only from TTD or ATC, no approval report, and every
+card that would sit in the narrower or wider boxes.
+
+Before the code, the labels behind the eight cards' regulator reports were
+saved in fixtures/labels_read/ticket_2.40/. Prasterone's label (lupus) does not name
+rheumatoid arthritis, so its card also carries the red label warning (rule 6),
+and so sits in the red-warning box of the Approved tab (ticket 2.27).
+
+Saved answers only: fixtures/old_withdrawn_flag/ (see old_flag_saved.py).
+"""
+
+import json
+import pathlib
+from unittest.mock import patch
+
+import pytest
+
+from moonlight import engine
+from moonlight.fetch import Listed
+from moonlight.filter import sort_paths
+from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
+
+import old_flag_saved as saved
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+CORRECTIONS_FILE = ROOT / "moonlight" / "corrections.json"
+
+# Kashish's words of 23 Nov, exactly.
+LINE = "The database records a withdrawal for this medicine in some country or region."
+LABEL_WARNING = ("This looks like a mistake in the database. The official label is for a "
+                 "different disease.")
+
+ASTHMA = "MONDO_0004979"
+T2D = "MONDO_0005148"
+EPILEPSY = "MONDO_0005027"
+RA = "MONDO_0008383"
+PARKINSON = "MONDO_0005180"
+AML = "MONDO_0018874"
+CUSHING = "MONDO_0018912"
+DEPRESSION = "MONDO_0002050"
+CML = "MONDO_0011996"
+DISEASES = [ASTHMA, T2D, EPILEPSY, RA, PARKINSON, AML, CUSHING, DEPRESSION, CML]
+
+PRASTERONE = "CHEMBL90593"
+# The eight of P11's CSV (hidden_by_old_flag.csv): main list, a regulator's
+# approval report on the disease's own list. (disease, id, name on the card)
+EIGHT = [
+    (ASTHMA, "CHEMBL211456", "Ephedrine"),
+    (ASTHMA, "CHEMBL776", "Metaproterenol"),
+    (T2D, "CHEMBL121", "Rosiglitazone"),
+    (EPILEPSY, "CHEMBL87493", "Fenfluramine"),
+    (RA, PRASTERONE, "Prasterone"),
+    (PARKINSON, "CHEMBL1324", "Tolcapone"),
+    (AML, "CHEMBL1201506", "Gemtuzumab Ozogamicin"),
+    (CUSHING, "CHEMBL157101", "Ketoconazole"),
+]
+BACK = {}
+for _disease, _id, _ in EIGHT:
+    BACK.setdefault(_disease, []).append(_id)
+
+# Hidden today and hidden after, from the same CSV. (disease, id, why)
+STAY_HIDDEN = [
+    (ASTHMA, "CHEMBL32800", "fenoterol: main list, approval report from TTD only"),
+    (EPILEPSY, "CHEMBL40", "phenobarbital: main list, approval reports from ATC and TTD"),
+    (RA, "CHEMBL94081", "alclofenac: main list, approval report from TTD only"),
+    (RA, "CHEMBL865", "valdecoxib: main list, no approval report, a WITHDRAWAL report"),
+    (DEPRESSION, "CHEMBL37744", "zimeldine: main list, no approval report at all"),
+    (DEPRESSION, "CHEMBL273575", "nomifensine: narrower box"),
+    (T2D, "CHEMBL408", "troglitazone: wider-group box"),
+    (RA, "CHEMBL122", "rofecoxib: wider-group box"),
+    (CML, "CHEMBL1201506", "gemtuzumab ozogamicin: wider-group box, DailyMed on that list"),
+]
+
+CARD_PARTS = ("approved", "narrower", "wider_group", "being_studied", "new_clues",
+              "more_in_trials", "new_in_trials")
+
+
+@pytest.fixture(scope="module")
+def pages():
+    return {disease_id: saved.page_answer(disease_id) for disease_id in DISEASES}
+
+
+def card_ids(answer, part):
+    ids = []
+    for card in answer.get(part, []):
+        ids.append(card["id"] if "id" in card else card.get("medicine_id"))
+    return ids
+
+
+def every_id_on(answer):
+    """Every medicine id on any tab or in any box of the page."""
+    found = set()
+    for part in CARD_PARTS:
+        for card in answer.get(part, []):
+            found.add(card.get("id"))
+            found.update(protein.get("medicine_id") for protein in card.get("proteins", [])
+                         if isinstance(protein, dict))
+    return found - {None}
+
+
+def main_list(answer):
+    boxed = set(answer.get("wrong_approvals_box", []))
+    return [card for card in answer["approved"] if card["id"] not in boxed]
+
+
+def tab_number(answer):
+    """The Approved tab's number, as the page counts it (ticket 2.27)."""
+    return len(main_list(answer)) + len(answer.get("narrower", [])) + len(
+        answer.get("wider_group", []))
+
+
+# ---- the saved lists say what P11 said ----
+
+def test_the_saved_answers_hide_all_eight_today():
+    for disease_id, medicine_id, name in EIGHT:
+        before = saved.before(disease_id)
+        assert medicine_id not in [card["id"] for part in ("approved", "narrower", "wider_group")
+                                   for card in before.get(part, [])], name
+
+
+# ---- the eight come back ----
+
+@pytest.mark.parametrize("disease_id, medicine_id, name", EIGHT, ids=[e[2] for e in EIGHT])
+def test_each_of_the_eight_is_on_its_approved_list_with_the_line(pages, disease_id,
+                                                                 medicine_id, name):
+    answer = pages[disease_id]
+    cards = {card["id"]: card for card in answer["approved"]}
+    assert medicine_id in cards, name
+    card = cards[medicine_id]
+    assert card["medicine"] == name
+    assert card["withdrawal_note"] == LINE
+    # Only the Approved tab: no box of it, no other tab.
+    for part in CARD_PARTS[1:]:
+        assert medicine_id not in [one.get("id") for one in answer.get(part, [])], part
+
+
+@pytest.mark.parametrize("disease_id, medicine_id, name", EIGHT, ids=[e[2] for e in EIGHT])
+def test_each_card_shows_a_regulators_receipt_or_the_japan_line(pages, disease_id,
+                                                                medicine_id, name):
+    card = {card["id"]: card for card in pages[disease_id]["approved"]}[medicine_id]
+    assert card["source"].startswith("https://")
+    # A regulator's report is there, so never the "no regulator record" line.
+    assert card.get("proof_note") != engine.NO_REGULATOR_LINE
+
+
+def test_seven_are_on_the_main_list_and_prasterone_is_in_the_red_warning_box(pages):
+    for disease_id, medicine_id, name in EIGHT:
+        answer = pages[disease_id]
+        on_main = medicine_id in [card["id"] for card in main_list(answer)]
+        assert on_main == (medicine_id != PRASTERONE), name
+    ra = pages[RA]
+    # The box keeps the main list's own order, A to Z (ticket 2.27).
+    expected = set(saved.before(RA)["wrong_approvals_box"]) | {PRASTERONE}
+    assert ra["wrong_approvals_box"] == [card["id"] for card in ra["approved"]
+                                         if card["id"] in expected]
+    card = {card["id"]: card for card in ra["approved"]}[PRASTERONE]
+    assert card["warning"] == LABEL_WARNING
+    assert card["withdrawal_note"] == LINE
+
+
+def test_rosiglitazone_comes_back_although_its_list_holds_a_withdrawal_report(pages):
+    # Kashish's answer B of 24 Nov.
+    card = {card["id"]: card for card in pages[T2D]["approved"]}["CHEMBL121"]
+    assert card["withdrawal_note"] == LINE
+    assert "warning" not in card
+
+
+def test_exactly_the_eight_come_back_and_nothing_else(pages):
+    came_back = []
+    for disease_id in DISEASES:
+        before = {card["id"] for card in saved.before(disease_id)["approved"]}
+        after = [card["id"] for card in pages[disease_id]["approved"]]
+        came_back += [(disease_id, medicine_id) for medicine_id in after if medicine_id not in before]
+    assert sorted(came_back) == sorted((disease_id, medicine_id)
+                                       for disease_id, medicine_id, _ in EIGHT)
+
+
+# ---- the rest stay hidden ----
+
+@pytest.mark.parametrize("disease_id, medicine_id, why", STAY_HIDDEN,
+                         ids=[e[2].split(":")[0] for e in STAY_HIDDEN])
+def test_the_others_the_flag_hides_stay_in_no_tab(pages, disease_id, medicine_id, why):
+    answer = pages[disease_id]
+    for part in CARD_PARTS:
+        assert medicine_id not in [card.get("id") for card in answer.get(part, [])], (why, part)
+    assert f'"{medicine_id}"' not in json.dumps(answer), why  # the exact id, quoted
+
+
+# ---- nothing shown today moves ----
+
+@pytest.mark.parametrize("disease_id", DISEASES)
+def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease_id):
+    before, after = saved.before(disease_id), pages[disease_id]
+    back = set(BACK.get(disease_id, []))
+    assert [card for card in after["approved"] if card["id"] not in back] == before["approved"]
+    for key in before:
+        if key in ("approved", "left_out", "wrong_approvals_box"):
+            continue
+        assert after[key] == before[key], key
+    # Ticket 2.42 (merged after these pages were saved) adds the key
+    # no_regulator_box and moves cards into that box. They stay in
+    # "approved", so the check above already holds each card letter for letter.
+    assert set(after) - set(before) <= {"wrong_approvals_box", "no_regulator_box"}
+    approved_ids = [card["id"] for card in after["approved"]]
+    assert all(medicine_id in approved_ids for medicine_id in after.get("no_regulator_box", []))
+    boxed = [medicine_id for medicine_id in after.get("wrong_approvals_box", [])
+             if medicine_id not in back]
+    assert boxed == before.get("wrong_approvals_box", [])
+
+
+@pytest.mark.parametrize("disease_id", DISEASES)
+def test_the_tab_number_counts_the_cards_that_came_back(pages, disease_id):
+    back_on_main = [medicine_id for medicine_id in BACK.get(disease_id, [])
+                    if medicine_id != PRASTERONE]  # in the red-warning box, as every such card
+    assert tab_number(pages[disease_id]) == tab_number(saved.before(disease_id)) + len(back_on_main)
+
+
+@pytest.mark.parametrize("disease_id", DISEASES)
+def test_not_approved_goes_down_by_exactly_the_cards_that_came_back(pages, disease_id):
+    before, after = saved.before(disease_id)["left_out"], pages[disease_id]["left_out"]
+    assert before["not_approved"] - after["not_approved"] == len(BACK.get(disease_id, []))
+    assert after["unclear_link"] == before["unclear_link"]
+
+
+def test_the_total_count_goes_down_by_eight(pages):
+    total = sum(saved.before(d)["left_out"]["not_approved"] - pages[d]["left_out"]["not_approved"]
+                for d in DISEASES)
+    assert total == 8
+
+
+def test_no_new_question_to_open_targets():
+    asked = []
+
+    def counting(body):
+        asked.append(json.dumps(body, sort_keys=True))
+        return saved.saved_post_json(body)
+
+    for disease_id in (ASTHMA, T2D):
+        saved.page_answer(disease_id, counting)
+    after = sorted(asked)
+    del asked[:]
+    with patch.object(engine, "_comes_back", return_value=False):
+        for disease_id in (ASTHMA, T2D):
+            saved.page_answer(disease_id, counting)
+    assert after == sorted(asked)
+
+
+def test_the_line_on_the_page_is_the_engines():
+    other = "Other words, to show whose they are."
+    with patch.object(engine, "WITHDRAWAL_LINE", other):
+        answer = saved.page_answer(CUSHING)
+    card = {card["id"]: card for card in answer["approved"]}["CHEMBL157101"]
+    assert card["withdrawal_note"] == other
+
+
+# ---- the hand-written files ----
+
+def test_prasterone_has_the_label_warning_for_rheumatoid_arthritis_only():
+    entries = json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    mine = [entry for entry in entries if entry["medicine_id"] == PRASTERONE]
+    assert mine == [{"medicine_id": PRASTERONE, "disease_id": RA, "date": "2026-11-24",
+                     "note": LABEL_WARNING}]
+    assert entries[-1] == mine[0]  # added at the end
+
+
+def test_each_label_read_is_saved():
+    folder = ROOT / "fixtures" / "labels_read" / "ticket_2.40"
+    for name in ("prastera-prasterone.txt", "primatene-ephedrine.txt",
+                 "metaproterenol-tablets.txt", "avandia-rosiglitazone-ef14122b.txt",
+                 "pmda-general-list-fenfluramine.txt", "tasmar-tolcapone.txt",
+                 "mylotarg-gemtuzumab-ozogamicin-ema.txt", "ketoconazole-esteve-ema.txt"):
+        lines = (folder / name).read_text(encoding="utf-8").splitlines()
+        assert lines[0].startswith("https://") and lines[1] == "2026-11-24", name
+    prastera = (folder / "prastera-prasterone.txt").read_text(encoding="utf-8")
+    assert "rheumatoid" not in prastera.lower()
+
+
+# ---- the engine, with hand-built lists ----
+
+DISEASE = Disease("TEST_0000001", "test disease")
+PROTEIN = Target("ENSG00000000001", "ABC1", "test protein", 0.8)
+
+
+def flagged_path(name, medicine_id):
+    form = MedicineForm(medicine_id, name, best_stage="APPROVAL", disease_stage="APPROVAL",
+                        withdrawn=True)
+    return Path(Medicine(name, (form,)), PROTEIN, DISEASE, ("INHIBITOR",), PROTEIN.score,
+                (f"https://example.org/{medicine_id}",))
+
+
+def flagged(medicine_id, regulator_record=True, approved=True, withdrawal_report=False):
+    return Listed(medicine_id, "FLAGMIL", ((medicine_id, "FLAGMIL"),),
+                  ("https://example.org/label",), approved=approved,
+                  approval_sources=("https://example.org/label",),
+                  regulator_record=regulator_record, withdrawal_report=withdrawal_report)
+
+
+def tabs_with(entry, neighbours=(), paths=()):
+    return engine.sort_into_tabs(sort_paths(list(paths)), [], [entry] if entry else [],
+                                 neighbours)
+
+
+def test_engine_a_regulator_approval_on_the_own_list_brings_it_back_with_the_line():
+    tabs = tabs_with(flagged("CHEMBL9001"), paths=[flagged_path("FLAGMIL", "CHEMBL9001")])
+    assert [medicine.id for medicine in tabs.approved] == ["CHEMBL9001"]
+    assert tabs.approved[0].clue is not None  # its path goes with it
+    assert tabs.left_out["not_approved"] == 0
+    assert engine.withdrawal_notes(tabs, []) == {"CHEMBL9001": LINE}
+
+
+def test_engine_with_a_withdrawal_report_too_it_still_comes_back():
+    tabs = tabs_with(flagged("CHEMBL9001", withdrawal_report=True))
+    assert [medicine.id for medicine in tabs.approved] == ["CHEMBL9001"]
+
+
+@pytest.mark.parametrize("entry", [
+    flagged("CHEMBL9001", regulator_record=False),  # TTD or ATC only, or no approval report
+    flagged("CHEMBL9001", regulator_record=None),  # not said
+    flagged("CHEMBL9001", approved=False),  # on the list, not approved for this disease
+], ids=["no-regulator", "not-said", "not-approved-here"])
+def test_engine_without_all_three_it_stays_hidden(entry):
+    tabs = tabs_with(entry, paths=[flagged_path("FLAGMIL", "CHEMBL9001")])
+    assert tabs.approved == [] and tabs.new_clues == [] and tabs.being_studied == []
+    assert engine.withdrawal_notes(tabs, []) == {}
+
+
+def test_engine_a_flag_only_on_a_neighbours_list_stays_hidden():
+    child = engine.Neighbour(engine.CHILD, Disease("TEST_0000002", "child disease"),
+                             (), (flagged("CHEMBL9001"),))
+    tabs = tabs_with(None, neighbours=[child])
+    assert tabs.approved == [] and tabs.narrower == [] and tabs.wider_group == []
+
+
+def test_engine_a_neighbours_flag_does_not_hide_one_that_comes_back():
+    parent = engine.Neighbour(engine.PARENT, Disease("TEST_0000003", "parent disease"),
+                              (), (flagged("CHEMBL9001"),))
+    tabs = tabs_with(flagged("CHEMBL9001"), neighbours=[parent])
+    assert [medicine.id for medicine in tabs.approved] == ["CHEMBL9001"]
+    assert tabs.wider_group == [] and tabs.left_out["not_approved"] == 0
+
+
+def test_engine_a_hand_added_approval_is_never_added_for_a_flagged_medicine():
+    hand = engine.HandApproval("CHEMBL9001", "Flagmil", DISEASE.id, "https://example.org/l")
+    entry = flagged("CHEMBL9001", regulator_record=False)
+    tabs = engine.sort_into_tabs({}, [], [entry], by_hand=[hand])
+    assert tabs.approved == []
+
+
+# ---- the written rules ----
+
+def test_decisions_md_has_her_answer():
+    lines = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")
+    assert lines[-1].startswith("- 2026-11-24: ")
+    assert "regulator" in lines[-1] and LINE in lines[-1]
+
+
+def test_claude_md_rule_says_the_exception():
+    rules = " ".join((ROOT / "CLAUDE.md").read_text(encoding="utf-8").split())
+    assert ("A medicine withdrawn in any country does not count as approved, unless the "
+            "disease's own list holds a regulator's approval of it for that disease: then it is "
+            "on the Approved tab with the withdrawal line below.") in rules

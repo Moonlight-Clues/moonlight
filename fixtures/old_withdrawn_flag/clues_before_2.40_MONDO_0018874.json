@@ -1,0 +1,6237 @@
+{
+ "disease": {
+  "id": "MONDO_0018874",
+  "name": "acute myeloid leukemia"
+ },
+ "about_disease": {
+  "description": "Acute myeloid leukemia (AML) is a group of neoplasms arising from precursor cells committed to the myeloid cell-line differentiation. All of them are characterized by clonal expansion of myeloid blasts. AML manifests by fever, pallor, anemia, hemorrhages and recurrent infections.",
+  "source": "Open Targets",
+  "also_called": [
+   "AML",
+   "AML - acute myeloid leukaemia",
+   "AML - acute myeloid leukemia",
+   "ANLL",
+   "acute Nonlymphocytic leukaemia",
+   "acute Nonlymphocytic leukemia",
+   "acute granulocytic leukaemia",
+   "acute granulocytic leukemia",
+   "acute myeloblastic leukemia",
+   "acute myelocytic leukaemia",
+   "acute myelocytic leukemia",
+   "acute myelogenous leukemia",
+   "acute myelogenous leukemias",
+   "acute myeloid leukaemia (AML)",
+   "acute myeloid leukemia (AML)",
+   "acute myeloid leukemia, somatic",
+   "acute nonlymphocytic leukaemia",
+   "acute nonlymphocytic leukemia",
+   "hematopoeitic - acute Myleogenous leukaemia (AML)",
+   "hematopoeitic - acute Myleogenous leukemia (AML)",
+   "leukemia, acute myeloid, autosomal dominant, somatic mutation",
+   "leukemia, acute myeloid, reduced survival in, somatic",
+   "leukemia, acute myeloid, somatic",
+   "leukemia, acute myeloid, susceptibility to, autosomal dominant, somatic mutation",
+   "leukemia, myelocytic, acute",
+   "myeloid leukemia, acute",
+   "myeloid leukemia, acute, M4/M4Eo subtype, somatic"
+  ]
+ },
+ "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+ "approved": [
+  {
+   "id": "CHEMBL1489",
+   "medicine": "Azacitidine",
+   "forms": [
+    "Azacitidine"
+   ],
+   "proteins": [
+    {
+     "symbol": "DNMT3A",
+     "points": 87,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 787,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/vidaza",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL803",
+   "medicine": "Cytarabine",
+   "forms": [
+    "Cytarabine"
+   ],
+   "proteins": [],
+   "reports": 662,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/vyxeos-liposomal"
+  },
+  {
+   "id": "CHEMBL178",
+   "medicine": "Daunorubicin",
+   "forms": [
+    "Daunorubicin",
+    "Daunorubicin Hydrochloride"
+   ],
+   "proteins": [],
+   "reports": 208,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/vyxeos-liposomal"
+  },
+  {
+   "id": "CHEMBL3989908",
+   "medicine": "Enasidenib",
+   "forms": [
+    "Enasidenib",
+    "Enasidenib Mesylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "IDH2",
+     "points": 75,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 43,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a5b4cdf0-3fa8-4c6c-80f6-8d8a00e3a5b6"
+  },
+  {
+   "id": "CHEMBL3301622",
+   "medicine": "Gilteritinib",
+   "forms": [
+    "Gilteritinib",
+    "Gilteritinib Fumarate"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 68,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/211349s000lbl.pdf"
+  },
+  {
+   "id": "CHEMBL2043437",
+   "medicine": "Glasdegib",
+   "forms": [
+    "Glasdegib",
+    "Glasdegib Maleate"
+   ],
+   "proteins": [],
+   "reports": 15,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/daurismo"
+  },
+  {
+   "id": "CHEMBL90",
+   "medicine": "Histamine",
+   "forms": [
+    "Histamine Dihydrochloride"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/ceplene"
+  },
+  {
+   "id": "CHEMBL1117",
+   "medicine": "Idarubicin",
+   "forms": [
+    "Idarubicin",
+    "Idarubicin Hydrochloride"
+   ],
+   "proteins": [],
+   "reports": 174,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a5a6d93-cc1e-4d7f-8da1-446c134503b3"
+  },
+  {
+   "id": "CHEMBL3989958",
+   "medicine": "Ivosidenib",
+   "forms": [
+    "Ivosidenib"
+   ],
+   "proteins": [
+    {
+     "symbol": "IDH1",
+     "points": 80,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 62,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/tibsovo"
+  },
+  {
+   "id": "CHEMBL852",
+   "medicine": "Melphalan",
+   "forms": [
+    "Melphalan"
+   ],
+   "proteins": [],
+   "reports": 46,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/phelinun"
+  },
+  {
+   "id": "CHEMBL608533",
+   "medicine": "Midostaurin",
+   "forms": [
+    "Midostaurin"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 208,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/rydapt"
+  },
+  {
+   "id": "CHEMBL4297610",
+   "medicine": "Olutasidenib",
+   "forms": [
+    "Olutasidenib"
+   ],
+   "proteins": [
+    {
+     "symbol": "IDH1",
+     "points": 80,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 20,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/215814s000lbl.pdf"
+  },
+  {
+   "id": "CHEMBL576982",
+   "medicine": "Quizartinib",
+   "forms": [
+    "Quizartinib",
+    "Quizartinib Dihydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 161,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/216993s000lbl.pdf"
+  },
+  {
+   "id": "CHEMBL1201670",
+   "medicine": "Sargramostim",
+   "forms": [
+    "Sargramostim"
+   ],
+   "proteins": [],
+   "reports": 23,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/103362s5237lbl.pdf"
+  },
+  {
+   "id": "CHEMBL4297573",
+   "medicine": "Tagraxofusp",
+   "forms": [
+    "Tagraxofusp"
+   ],
+   "proteins": [],
+   "reports": 12,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/761116s000lbl.pdf"
+  }
+ ],
+ "being_studied": [
+  {
+   "id": "CHEMBL1336",
+   "medicine": "Sorafenib",
+   "forms": [
+    "Sorafenib",
+    "Sorafenib Tosylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 2001,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL535",
+   "medicine": "Sunitinib",
+   "forms": [
+    "Sunitinib",
+    "Sunitinib Malate"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 1764,
+   "source": "https://clinicaltrials.gov/study/NCT00930345",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3813873",
+   "medicine": "Pexidartinib",
+   "forms": [
+    "Pexidartinib",
+    "Pexidartinib Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 60,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24c5a6f1-b640-4d14-b44b-dd293ed002b1",
+   "trial_phase": "Phase 1/2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2035187",
+   "medicine": "Pacritinib",
+   "forms": [
+    "Pacritinib",
+    "Pacritinib Citrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 92,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0PN8H",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL603469",
+   "medicine": "Lestaurtinib",
+   "forms": [
+    "Lestaurtinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 24,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V9WF",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL941",
+   "medicine": "Imatinib",
+   "forms": [
+    "Imatinib",
+    "Imatinib Mesylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 1020,
+   "source": "https://clinicaltrials.gov/study/NCT00171899",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1946170",
+   "medicine": "Regorafenib",
+   "forms": [
+    "Regorafenib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 852,
+   "source": "https://clinicaltrials.gov/study/NCT02287025",
+   "trial_phase": "Phase 1",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL477772",
+   "medicine": "Pazopanib",
+   "forms": [
+    "Pazopanib",
+    "Pazopanib Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 780,
+   "source": "https://clinicaltrials.gov/study/NCT01205230",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1421",
+   "medicine": "Dasatinib Anhydrous",
+   "forms": [
+    "Dasatinib Anhydrous"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 470,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/dasatinib-accordpharma",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL491473",
+   "medicine": "Cediranib",
+   "forms": [
+    "Cediranib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 204,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L01EK02",
+   "trial_phase": "Phase 1",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4204794",
+   "medicine": "Avapritinib",
+   "forms": [
+    "Avapritinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 56,
+   "source": "https://clinicaltrials.gov/study/NCT04825574",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201129",
+   "medicine": "Decitabine",
+   "forms": [
+    "Decitabine"
+   ],
+   "proteins": [
+    {
+     "symbol": "DNMT3A",
+     "points": 87,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 485,
+   "source": "https://clinicaltrials.gov/study/NCT01011283",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1789941",
+   "medicine": "Ruxolitinib",
+   "forms": [
+    "Ruxolitinib",
+    "Deuruxolitinib Phosphate",
+    "Ruxolitinib Phosphate"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 373,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217900Orig1s000correctedlbl.pdf",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1078178",
+   "medicine": "Momelotinib",
+   "forms": [
+    "Momelotinib",
+    "Momelotinib Dihydrochloride Monohydrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 28,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": "Phase 1/2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107856",
+   "medicine": "Imetelstat",
+   "forms": [
+    "Imetelstat"
+   ],
+   "proteins": [
+    {
+     "symbol": "TERT",
+     "points": 71,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 18,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/rytelo",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL601719",
+   "medicine": "Crizotinib",
+   "forms": [
+    "Crizotinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "NPM1",
+     "points": 70,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 108,
+   "source": "https://clinicaltrials.gov/study/NCT02487316",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL38",
+   "medicine": "Tretinoin",
+   "forms": [
+    "Tretinoin"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 288,
+   "source": "https://clinicaltrials.gov/study/NCT00240513",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL547",
+   "medicine": "Isotretinoin",
+   "forms": [
+    "Isotretinoin"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 138,
+   "source": "https://clinicaltrials.gov/study/NCT01404130",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL502835",
+   "medicine": "Nintedanib",
+   "forms": [
+    "Nintedanib",
+    "Nintedanib Esylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 326,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_clues": [
+  {
+   "id": "CHEMBL1287853",
+   "medicine": "Fedratinib",
+   "forms": [
+    "Fedratinib",
+    "Fedratinib Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 54,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f0f55a2a-4e0c-4cba-8571-03e1424486d7",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4303201",
+   "medicine": "Catequentinib",
+   "forms": [
+    "Catequentinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 726,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G2CG",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1908391",
+   "medicine": "Masitinib",
+   "forms": [
+    "Masitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 132,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L01EX06",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1289494",
+   "medicine": "Tivozanib",
+   "forms": [
+    "Tivozanib",
+    "Tivozanib Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 80,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0W7JZ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4216467",
+   "medicine": "Ripretinib",
+   "forms": [
+    "Ripretinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KIT",
+     "points": 77,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 32,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09AAK",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4279047",
+   "medicine": "Vorasidenib",
+   "forms": [
+    "Vorasidenib",
+    "Vorasidenib Citrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "IDH1",
+     "points": 80,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IDH2",
+     "points": 75,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 42,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/voranigo",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4535757",
+   "medicine": "Sotorasib",
+   "forms": [
+    "Sotorasib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KRAS",
+     "points": 75,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 56,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0R7LD",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594350",
+   "medicine": "Adagrasib",
+   "forms": [
+    "Adagrasib"
+   ],
+   "proteins": [
+    {
+     "symbol": "KRAS",
+     "points": 75,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 40,
+   "source": "https://ttd.idrblab.cn/data/drug/details/DUQV41",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL221959",
+   "medicine": "Tofacitinib",
+   "forms": [
+    "Tofacitinib",
+    "Tofacitinib Citrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 203,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68e3d6b2-7838-4d2d-a417-09d919b43e13",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105759",
+   "medicine": "Baricitinib",
+   "forms": [
+    "Baricitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 153,
+   "source": "https://clinicaltrials.gov/study/NCT03915964",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3622821",
+   "medicine": "Upadacitinib",
+   "forms": [
+    "Upadacitinib",
+    "Upadacitinib Hemihydrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 111,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2966aec7-2ef0-923c-d8ff-fe1a957bf095",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3301607",
+   "medicine": "Filgotinib",
+   "forms": [
+    "Filgotinib",
+    "Filgotinib Maleate"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 50,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297507",
+   "medicine": "Delgocitinib",
+   "forms": [
+    "Delgocitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 23,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108702",
+   "medicine": "Imetelstat Sodium",
+   "forms": [
+    "Imetelstat Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "TERT",
+     "points": 71,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 14,
+   "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/217779s000lbl.pdf",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2403108",
+   "medicine": "Ceritinib",
+   "forms": [
+    "Ceritinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "NPM1",
+     "points": 70,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 48,
+   "source": "https://clinicaltrials.gov/study/NCT02584933",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1265",
+   "medicine": "Adapalene",
+   "forms": [
+    "Adapalene"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 127,
+   "source": "https://clinicaltrials.gov/study/NCT00160394",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1657",
+   "medicine": "Tazarotene",
+   "forms": [
+    "Tazarotene"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 67,
+   "source": "https://clinicaltrials.gov/study/NCT00145106",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1131",
+   "medicine": "Acitretin",
+   "forms": [
+    "Acitretin"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 35,
+   "source": "https://clinicaltrials.gov/study/NCT00723437",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL705",
+   "medicine": "Alitretinoin",
+   "forms": [
+    "Alitretinoin"
+   ],
+   "proteins": [
+    {
+     "symbol": "RARA",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 19,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/panretin",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201556",
+   "medicine": "Becaplermin",
+   "forms": [
+    "Becaplermin"
+   ],
+   "proteins": [
+    {
+     "symbol": "PDGFRB",
+     "points": 69,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    },
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 42,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/regranex",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743049",
+   "medicine": "Olaratumab",
+   "forms": [
+    "Olaratumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "PDGFRA",
+     "points": 66,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 27,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lartruvo",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "left_out": {
+  "not_approved": 76,
+  "unclear_link": 0
+ },
+ "narrower": [
+  {
+   "id": "CHEMBL502620",
+   "medicine": "Aclarubicin",
+   "forms": [
+    "Aclarubicin"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D01UBX",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL3183409",
+   "medicine": "Apalutamide",
+   "forms": [
+    "Apalutamide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0S7LG",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL66115",
+   "medicine": "Doxecitine",
+   "forms": [
+    "Doxecitine"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0RX7Z",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL603469",
+   "medicine": "Lestaurtinib",
+   "forms": [
+    "Lestaurtinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "FLT3",
+     "points": 85,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "JAK2",
+     "points": 73,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 24,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V9WF",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL727",
+   "medicine": "Thioguanine",
+   "forms": [
+    "Thioguanine"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02ZXM",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL29292",
+   "medicine": "Ubenimex",
+   "forms": [
+    "Ubenimex"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0RA5Q",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1488",
+   "medicine": "Uracil Mustard",
+   "forms": [
+    "Uracil Mustard"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0J9UN",
+   "label": "Not listed as approved for this exact disease. Approved for acute myeloid leukemia by FAB classification, which the database lists under this disease.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  }
+ ],
+ "wider_group": [
+  {
+   "id": "CHEMBL288441",
+   "medicine": "Bosutinib",
+   "forms": [
+    "Bosutinib"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/bosulif",
+   "label": "Not listed as approved for this exact disease. Approved for myeloid leukemia, a wider group the database puts this disease in."
+  },
+  {
+   "id": "CHEMBL3237547",
+   "medicine": "Cedazuridine",
+   "forms": [
+    "Cedazuridine"
+   ],
+   "proteins": [],
+   "reports": 4,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/inaqovi",
+   "label": "Not listed as approved for this exact disease. Approved for myeloid leukemia, a wider group the database puts this disease in."
+  },
+  {
+   "id": "CHEMBL2108931",
+   "medicine": "Crisantaspase",
+   "forms": [
+    "Crisantaspase"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "label": "Not listed as approved for this exact disease. Approved for acute leukemia, a wider group the database puts this disease in.",
+   "proof_note": "Approved in Japan, according to the database. Moonlight could not find the exact record for this disease."
+  },
+  {
+   "id": "CHEMBL1201129",
+   "medicine": "Decitabine",
+   "forms": [
+    "Decitabine"
+   ],
+   "proteins": [
+    {
+     "symbol": "DNMT3A",
+     "points": 87,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 485,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/dacogen",
+   "label": "Not listed as approved for this exact disease. Approved for myeloid leukemia, a wider group the database puts this disease in."
+  },
+  {
+   "id": "CHEMBL1171837",
+   "medicine": "Ponatinib",
+   "forms": [
+    "Ponatinib"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/iclusig",
+   "label": "Not listed as approved for this exact disease. Approved for myeloid leukemia, a wider group the database puts this disease in."
+  }
+ ],
+ "more_in_trials": [
+  {
+   "id": "CHEMBL1201438",
+   "medicine": "Aldesleukin",
+   "forms": [
+    "Aldesleukin"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002945",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201587",
+   "medicine": "Alemtuzumab",
+   "forms": [
+    "Alemtuzumab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00226512",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL43",
+   "medicine": "Amsacrine",
+   "forms": [
+    "Amsacrine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002658",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108981",
+   "medicine": "Antilymphocyte Immunoglobulin (HORSE)",
+   "forms": [
+    "Antilymphocyte Immunoglobulin (HORSE)"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002534",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5483015",
+   "medicine": "Arsenic Trioxide",
+   "forms": [
+    "Arsenic Trioxide"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00513305",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108989",
+   "medicine": "Asparaginase",
+   "forms": [
+    "Asparaginase"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00003436",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1863514",
+   "medicine": "Asparaginase Erwinia Chrysanthemi",
+   "forms": [
+    "Asparaginase Erwinia Chrysanthemi"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02521493",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL325041",
+   "medicine": "Bortezomib",
+   "forms": [
+    "Bortezomib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01371981",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL820",
+   "medicine": "Busulfan",
+   "forms": [
+    "Busulfan"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002549",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL513",
+   "medicine": "Carmustine",
+   "forms": [
+    "Carmustine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002719",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1630575",
+   "medicine": "Caspofungin",
+   "forms": [
+    "Caspofungin"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01288378",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1619",
+   "medicine": "Cladribine",
+   "forms": [
+    "Cladribine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00136084",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1750",
+   "medicine": "Clofarabine",
+   "forms": [
+    "Clofarabine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00317642",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL88",
+   "medicine": "Cyclophosphamide Anhydrous",
+   "forms": [
+    "Cyclophosphamide"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002534",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL160",
+   "medicine": "Cyclosporine",
+   "forms": [
+    "Cyclosporine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00568633",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL384467",
+   "medicine": "Dexamethasone",
+   "forms": [
+    "Dexamethasone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002517",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1738",
+   "medicine": "Dexrazoxane",
+   "forms": [
+    "Dexrazoxane",
+    "Dexrazoxane Hydrochloride"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04293562",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201565",
+   "medicine": "Epoetin Alfa",
+   "forms": [
+    "Epoetin Alfa"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00656448",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL44657",
+   "medicine": "Etoposide",
+   "forms": [
+    "Etoposide"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002517",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201567",
+   "medicine": "Filgrastim",
+   "forms": [
+    "Filgrastim"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002549",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1568",
+   "medicine": "Fludarabine",
+   "forms": [
+    "Fludarabine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00186966",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1096882",
+   "medicine": "Fludarabine Phosphate",
+   "forms": [
+    "Fludarabine Phosphate"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00005863",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL389621",
+   "medicine": "Hydrocortisone",
+   "forms": [
+    "Hydrocortisone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00003436",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL467",
+   "medicine": "Hydroxyurea",
+   "forms": [
+    "Hydroxyurea"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00005823",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108494",
+   "medicine": "Interferon",
+   "forms": [
+    "Interferon"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06802718",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108506",
+   "medicine": "Interferon Alfa",
+   "forms": [
+    "Interferon Alfa"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06802718",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201558",
+   "medicine": "Interferon ALFA-2B",
+   "forms": [
+    "Interferon ALFA-2B"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06802718",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL848",
+   "medicine": "Lenalidomide",
+   "forms": [
+    "Lenalidomide"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00179621",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109128",
+   "medicine": "Lenograstim",
+   "forms": [
+    "Lenograstim"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002719",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL514",
+   "medicine": "Lomustine",
+   "forms": [
+    "Lomustine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00590837",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL34259",
+   "medicine": "Methotrexate",
+   "forms": [
+    "Methotrexate"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00003436",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL650",
+   "medicine": "Methylprednisolone",
+   "forms": [
+    "Methylprednisolone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002534",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201265",
+   "medicine": "Methylprednisolone Hemisuccinate",
+   "forms": [
+    "Methylprednisolone Sodium Succinate"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00568633",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL58",
+   "medicine": "Mitoxantrone",
+   "forms": [
+    "Mitoxantrone",
+    "Mitoxantrone Hydrochloride"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002658",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109134",
+   "medicine": "Molgramostim",
+   "forms": [
+    "Molgramostim"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00880243",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1456",
+   "medicine": "Mycophenolate Mofetil",
+   "forms": [
+    "Mycophenolate Mofetil"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00568633",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL46286",
+   "medicine": "Omacetaxine Mepesuccinate",
+   "forms": [
+    "Omacetaxine Mepesuccinate"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03978364",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298190",
+   "medicine": "Omidubicel",
+   "forms": [
+    "Omidubicel"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02730299",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL483254",
+   "medicine": "Panobinostat",
+   "forms": [
+    "Panobinostat"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04326764",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201568",
+   "medicine": "Pegfilgrastim",
+   "forms": [
+    "Pegfilgrastim"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002719",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201560",
+   "medicine": "Peginterferon ALFA-2A",
+   "forms": [
+    "Peginterferon ALFA-2A"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06802718",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802180",
+   "medicine": "Recombinant Human Thrombopoietin",
+   "forms": [
+    "Recombinant Human Thrombopoietin"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02244658",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107881",
+   "medicine": "Regramostim",
+   "forms": [
+    "Regramostim"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00880243",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201576",
+   "medicine": "Rituximab",
+   "forms": [
+    "Rituximab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT05457556",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545185",
+   "medicine": "Selinexor",
+   "forms": [
+    "Selinexor"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT05726110",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL413",
+   "medicine": "Sirolimus",
+   "forms": [
+    "Sirolimus"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00993343",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL269732",
+   "medicine": "Tacrolimus Anhydrous",
+   "forms": [
+    "Tacrolimus Anhydrous",
+    "Tacrolimus"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT05457556",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL671",
+   "medicine": "Thiotepa",
+   "forms": [
+    "Thiotepa"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00002534",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3621988",
+   "medicine": "Tucidinostat",
+   "forms": [
+    "Tucidinostat"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT07514936",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3137309",
+   "medicine": "Venetoclax",
+   "forms": [
+    "Venetoclax"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02993523",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL98",
+   "medicine": "Vorinostat",
+   "forms": [
+    "Vorinostat"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00703820",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL68117",
+   "medicine": "Vosaroxin",
+   "forms": [
+    "Vosaroxin"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01191801",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1873475",
+   "medicine": "Ibrutinib",
+   "forms": [
+    "Ibrutinib"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT03642236",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL866",
+   "medicine": "Mycophenolic Acid",
+   "forms": [
+    "Mycophenolic Acid"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT02416388",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108738",
+   "medicine": "Nivolumab",
+   "forms": [
+    "Nivolumab"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT03092674",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL12948",
+   "medicine": "Semustine",
+   "forms": [
+    "Semustine"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT07583888",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201823",
+   "medicine": "Abatacept",
+   "forms": [
+    "Abatacept"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT07238712",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL600",
+   "medicine": "Acetylcysteine",
+   "forms": [
+    "Acetylcysteine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06024031",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1742982",
+   "medicine": "Aflibercept",
+   "forms": [
+    "Aflibercept"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00601991",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1006",
+   "medicine": "Amifostine",
+   "forms": [
+    "Amifostine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00003405",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL376180",
+   "medicine": "Aminopterin",
+   "forms": [
+    "Aminopterin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00003305",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL267345",
+   "medicine": "Amphotericin B",
+   "forms": [
+    "Amphotericin B"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03849651",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL196",
+   "medicine": "Ascorbic Acid",
+   "forms": [
+    "Ascorbic Acid"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00184054",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1289926",
+   "medicine": "Axitinib",
+   "forms": [
+    "Axitinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00071006",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL408513",
+   "medicine": "Belinostat",
+   "forms": [
+    "Belinostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00357032",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL487253",
+   "medicine": "Bendamustine",
+   "forms": [
+    "Bendamustine",
+    "Bendamustine Hydrochloride"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04943757",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201583",
+   "medicine": "Bevacizumab",
+   "forms": [
+    "Bevacizumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00015951",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1023",
+   "medicine": "Bexarotene",
+   "forms": [
+    "Bexarotene"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00425477",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1742992",
+   "medicine": "Blinatumomab",
+   "forms": [
+    "Blinatumomab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03849651",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108728",
+   "medicine": "Calaspargase Pegol",
+   "forms": [
+    "Calaspargase Pegol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05761171",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297715",
+   "medicine": "Camrelizumab",
+   "forms": [
+    "Camrelizumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04353479",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1351",
+   "medicine": "Carboplatin",
+   "forms": [
+    "Carboplatin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00003255",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1042",
+   "medicine": "Cholecalciferol",
+   "forms": [
+    "Cholecalciferol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02341495",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297727",
+   "medicine": "Choline Magnesium Trisalicylate",
+   "forms": [
+    "Choline Magnesium Trisalicylate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01009931",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2095208",
+   "medicine": "Cobicistat",
+   "forms": [
+    "Cobicistat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06014489",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743007",
+   "medicine": "Daratumumab",
+   "forms": [
+    "Daratumumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03067571",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL550348",
+   "medicine": "Deferasirox",
+   "forms": [
+    "Deferasirox"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02341495",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201550",
+   "medicine": "Denileukin Diftitox",
+   "forms": [
+    "Denileukin Diftitox"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01106950",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201459",
+   "medicine": "Desoxyribonuclease",
+   "forms": [
+    "Desoxyribonuclease"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02462265",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL92",
+   "medicine": "Docetaxel Anhydrous",
+   "forms": [
+    "Docetaxel"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00021242",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201431",
+   "medicine": "Dornase Alfa",
+   "forms": [
+    "Dornase Alfa"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02462265",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL53463",
+   "medicine": "Doxorubicin",
+   "forms": [
+    "Doxorubicin",
+    "Doxorubicin Hydrochloride"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00051311",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3301587",
+   "medicine": "Durvalumab",
+   "forms": [
+    "Durvalumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02775903",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL461101",
+   "medicine": "Eltrombopag",
+   "forms": [
+    "Eltrombopag",
+    "Eltrombopag Olamine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01440374",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL27759",
+   "medicine": "Entinostat",
+   "forms": [
+    "Entinostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00313586",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL553",
+   "medicine": "Erlotinib",
+   "forms": [
+    "Erlotinib",
+    "Erlotinib Hydrochloride"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01664897",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL532",
+   "medicine": "Erythromycin",
+   "forms": [
+    "Erythromycin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06858618",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1908360",
+   "medicine": "Everolimus",
+   "forms": [
+    "Everolimus"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02638428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297535",
+   "medicine": "Fish Oil Triglycerides",
+   "forms": [
+    "Fish Oil Triglycerides"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01999413",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL939",
+   "medicine": "Gefitinib",
+   "forms": [
+    "Gefitinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00130702",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL888",
+   "medicine": "Gemcitabine",
+   "forms": [
+    "Gemcitabine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00006462",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105745",
+   "medicine": "Glycerol Phenylbutyrate",
+   "forms": [
+    "Glycerol Phenylbutyrate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00006019",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL977",
+   "medicine": "Hydrocortisone Hemisuccinate Anhydrous",
+   "forms": [
+    "Hydrocortisone Sodium Succinate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05761171",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2216870",
+   "medicine": "Idelalisib",
+   "forms": [
+    "Idelalisib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01620216",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1024",
+   "medicine": "Ifosfamide",
+   "forms": [
+    "Ifosfamide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02638428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201564",
+   "medicine": "Interferon GAMMA-1B",
+   "forms": [
+    "Interferon GAMMA-1B"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06529731",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1789844",
+   "medicine": "Ipilimumab",
+   "forms": [
+    "Ipilimumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02397720",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545131",
+   "medicine": "Isatuximab",
+   "forms": [
+    "Isatuximab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03860844",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL64391",
+   "medicine": "Itraconazole",
+   "forms": [
+    "Itraconazole"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT07069933",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2141296",
+   "medicine": "Ixazomib",
+   "forms": [
+    "Ixazomib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02030405",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201199",
+   "medicine": "Leuprolide",
+   "forms": [
+    "Leuprolide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01338987",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1431",
+   "medicine": "Metformin",
+   "forms": [
+    "Metformin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05854966",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095030",
+   "medicine": "Motixafortide",
+   "forms": [
+    "Motixafortide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01838395",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL255863",
+   "medicine": "Nilotinib",
+   "forms": [
+    "Nilotinib",
+    "Nilotinib Laurylsulfate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01690065",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL521686",
+   "medicine": "Olaparib",
+   "forms": [
+    "Olaparib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03953898",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108546",
+   "medicine": "Pegaspargase",
+   "forms": [
+    "Pegaspargase"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03318419",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201561",
+   "medicine": "Peginterferon ALFA-2B",
+   "forms": [
+    "Peginterferon ALFA-2B"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT07108530",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3137343",
+   "medicine": "Pembrolizumab",
+   "forms": [
+    "Pembrolizumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02708641",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1469",
+   "medicine": "Phenylbutanoic Acid",
+   "forms": [
+    "Sodium Phenylbutyrate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00006019",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL595",
+   "medicine": "Pioglitazone",
+   "forms": [
+    "Pioglitazone"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02942758",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL18442",
+   "medicine": "Plerixafor",
+   "forms": [
+    "Plerixafor"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06141304",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL43452",
+   "medicine": "Pomalidomide",
+   "forms": [
+    "Pomalidomide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04802161",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1144",
+   "medicine": "Pravastatin",
+   "forms": [
+    "Pravastatin",
+    "Pravastatin Sodium"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00840177",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL131",
+   "medicine": "Prednisolone",
+   "forms": [
+    "Prednisolone"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05761171",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL635",
+   "medicine": "Prednisone",
+   "forms": [
+    "Prednisone"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00051311",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL35228",
+   "medicine": "Pyronaridine",
+   "forms": [
+    "Pyronaridine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05291390",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594401",
+   "medicine": "Rafutrombopag",
+   "forms": [
+    "Rafutrombopag"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05944211",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3990044",
+   "medicine": "Relatlimab",
+   "forms": [
+    "Relatlimab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04913922",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1643",
+   "medicine": "Ribavirin",
+   "forms": [
+    "Ribavirin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00559091",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2103839",
+   "medicine": "Ridaforolimus",
+   "forms": [
+    "Ridaforolimus"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00086125",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL343448",
+   "medicine": "Romidepsin",
+   "forms": [
+    "Romidepsin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00042822",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594575",
+   "medicine": "Sabatolimab",
+   "forms": [
+    "Sabatolimab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04150029",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL154111",
+   "medicine": "Salsalate",
+   "forms": [
+    "Salsalate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04146038",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1614701",
+   "medicine": "Selumetinib",
+   "forms": [
+    "Selumetinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00588809",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6067962",
+   "medicine": "Sodium Stibogluconate",
+   "forms": [
+    "Sodium Stibogluconate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04906031",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201073",
+   "medicine": "Succimer",
+   "forms": [
+    "Succimer"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06811233",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL15770",
+   "medicine": "Sulindac",
+   "forms": [
+    "Sulindac"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01843179",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL810",
+   "medicine": "Temozolomide",
+   "forms": [
+    "Temozolomide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00611247",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201182",
+   "medicine": "Temsirolimus",
+   "forms": [
+    "Temsirolimus"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00084916",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297840",
+   "medicine": "Tislelizumab",
+   "forms": [
+    "Tislelizumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04541277",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL84",
+   "medicine": "Topotecan",
+   "forms": [
+    "Topotecan",
+    "Topotecan Hydrochloride"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00003255",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2103875",
+   "medicine": "Trametinib",
+   "forms": [
+    "Trametinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00920140",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201585",
+   "medicine": "Trastuzumab",
+   "forms": [
+    "Trastuzumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02638428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL455186",
+   "medicine": "Treosulfan",
+   "forms": [
+    "Treosulfan"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00491634",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL109",
+   "medicine": "Valproic Acid",
+   "forms": [
+    "Valproic Acid"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00326170",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL24828",
+   "medicine": "Vandetanib",
+   "forms": [
+    "Vandetanib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02638428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL506871",
+   "medicine": "Veliparib",
+   "forms": [
+    "Veliparib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03289910",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1229517",
+   "medicine": "Vemurafenib",
+   "forms": [
+    "Vemurafenib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02638428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL159",
+   "medicine": "Vinblastine",
+   "forms": [
+    "Vinblastine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05062278",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL90555",
+   "medicine": "Vincristine",
+   "forms": [
+    "Vincristine",
+    "Vincristine Sulfate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00051311",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL473417",
+   "medicine": "Vismodegib",
+   "forms": [
+    "Vismodegib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01880437",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1551724",
+   "medicine": "Acadesine",
+   "forms": [
+    "Acadesine"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01813838",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4208229",
+   "medicine": "Asciminib",
+   "forms": [
+    "Asciminib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT07604233",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3707227",
+   "medicine": "Atezolizumab",
+   "forms": [
+    "Atezolizumab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03154827",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1487",
+   "medicine": "Atorvastatin",
+   "forms": [
+    "Atorvastatin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT06684509",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3833373",
+   "medicine": "Avelumab",
+   "forms": [
+    "Avelumab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02953561",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3187723",
+   "medicine": "Binimetinib",
+   "forms": [
+    "Binimetinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02089230",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1742994",
+   "medicine": "Brentuximab Vedotin",
+   "forms": [
+    "Brentuximab Vedotin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02096042",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL8",
+   "medicine": "Ciprofloxacin",
+   "forms": [
+    "Ciprofloxacin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02773732",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1751",
+   "medicine": "Digoxin",
+   "forms": [
+    "Digoxin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03113071",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297310",
+   "medicine": "Dordaviprone",
+   "forms": [
+    "Dordaviprone"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02392572",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL35",
+   "medicine": "Furosemide",
+   "forms": [
+    "Furosemide"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02575963",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL503",
+   "medicine": "Lovastatin",
+   "forms": [
+    "Lovastatin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00583102",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1425",
+   "medicine": "Mercaptopurine Anhydrous",
+   "forms": [
+    "Mercaptopurine"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT06199557",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL655",
+   "medicine": "Midazolam",
+   "forms": [
+    "Midazolam"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03760445",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201608",
+   "medicine": "MUROMONAB-CD3",
+   "forms": [
+    "MUROMONAB-CD3"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00202917",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL414804",
+   "medicine": "Oxaliplatin",
+   "forms": [
+    "Oxaliplatin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00480987",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL189963",
+   "medicine": "Palbociclib",
+   "forms": [
+    "Palbociclib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02310243",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201821",
+   "medicine": "Palifermin",
+   "forms": [
+    "Palifermin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02356159",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL167731",
+   "medicine": "Pixantrone",
+   "forms": [
+    "Pixantrone"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00106600",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL451930",
+   "medicine": "Plitidepsin",
+   "forms": [
+    "Plitidepsin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00780143",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1397",
+   "medicine": "Posaconazole",
+   "forms": [
+    "Posaconazole"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03760445",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1393",
+   "medicine": "Spironolactone",
+   "forms": [
+    "Spironolactone"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02575963",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL421",
+   "medicine": "Sulfasalazine",
+   "forms": [
+    "Sulfasalazine"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05580861",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3137320",
+   "medicine": "Talazoparib",
+   "forms": [
+    "Talazoparib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02878785",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3989843",
+   "medicine": "Tranylcypromine",
+   "forms": [
+    "Tranylcypromine"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02261779",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2396661",
+   "medicine": "Alpelisib",
+   "forms": [
+    "Alpelisib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01449058",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594608",
+   "medicine": "Axatilimab",
+   "forms": [
+    "Axatilimab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT07511062",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201439",
+   "medicine": "Basiliximab",
+   "forms": [
+    "Basiliximab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01842139",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105717",
+   "medicine": "Cabozantinib",
+   "forms": [
+    "Cabozantinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01961765",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL113",
+   "medicine": "Caffeine",
+   "forms": [
+    "Caffeine"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03720366",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200496",
+   "medicine": "Calcium",
+   "forms": [
+    "Calcium"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05607199",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL451887",
+   "medicine": "Carfilzomib",
+   "forms": [
+    "Carfilzomib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01137747",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297723",
+   "medicine": "Cemiplimab",
+   "forms": [
+    "Cemiplimab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03017820",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2146883",
+   "medicine": "Cobimetinib",
+   "forms": [
+    "Cobimetinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02670044",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL52440",
+   "medicine": "Dextromethorphan",
+   "forms": [
+    "Dextromethorphan"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03720366",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743010",
+   "medicine": "Elotuzumab",
+   "forms": [
+    "Elotuzumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04614636",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1983268",
+   "medicine": "Entrectinib",
+   "forms": [
+    "Entrectinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05396859",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545369",
+   "medicine": "Epacadostat",
+   "forms": [
+    "Epacadostat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03444649",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200645",
+   "medicine": "Etoposide Phosphate",
+   "forms": [
+    "Etoposide Phosphate"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01249430",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL185",
+   "medicine": "Fluorouracil",
+   "forms": [
+    "Fluorouracil"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04553692",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL563",
+   "medicine": "Flurbiprofen",
+   "forms": [
+    "Flurbiprofen"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03720366",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1358",
+   "medicine": "Fulvestrant",
+   "forms": [
+    "Fulvestrant"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04872166",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL182",
+   "medicine": "Ganciclovir",
+   "forms": [
+    "Ganciclovir"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04180059",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297559",
+   "medicine": "Hiltonol",
+   "forms": [
+    "Hiltonol"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01834248",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1535",
+   "medicine": "Hydroxychloroquine",
+   "forms": [
+    "Hydroxychloroquine"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02631252",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL481",
+   "medicine": "Irinotecan",
+   "forms": [
+    "Irinotecan Hydrochloride"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00053144",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1679",
+   "medicine": "Leucovorin",
+   "forms": [
+    "Leucovorin Calcium"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04553692",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200826",
+   "medicine": "Lithium Carbonate",
+   "forms": [
+    "Lithium Carbonate"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01820624",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL105",
+   "medicine": "Mitomycin",
+   "forms": [
+    "Mitomycin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00003003",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL443684",
+   "medicine": "Navitoclax",
+   "forms": [
+    "Navitoclax"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05222984",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1448",
+   "medicine": "Niclosamide",
+   "forms": [
+    "Niclosamide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05188170",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743048",
+   "medicine": "Obinutuzumab",
+   "forms": [
+    "Obinutuzumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04023071",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108324",
+   "medicine": "Oblimersen",
+   "forms": [
+    "Oblimersen"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00039117",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1503",
+   "medicine": "Omeprazole",
+   "forms": [
+    "Omeprazole"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03720366",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL428647",
+   "medicine": "Paclitaxel",
+   "forms": [
+    "Paclitaxel"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05768932",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297803",
+   "medicine": "Pegzilarginase",
+   "forms": [
+    "Pegzilarginase"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02732184",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297522",
+   "medicine": "Pemigatinib",
+   "forms": [
+    "Pemigatinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04659616",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201753",
+   "medicine": "Pitavastatin",
+   "forms": [
+    "Pitavastatin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04512105",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201832",
+   "medicine": "Romiplostim",
+   "forms": [
+    "Romiplostim"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT07321626",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1496",
+   "medicine": "Rosuvastatin",
+   "forms": [
+    "Rosuvastatin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03720366",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL809",
+   "medicine": "Sertraline",
+   "forms": [
+    "Sertraline"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02891278",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743070",
+   "medicine": "Siltuximab",
+   "forms": [
+    "Siltuximab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05697510",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1644695",
+   "medicine": "Sodium Iodide",
+   "forms": [
+    "Sodium Iodide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03017820",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL447868",
+   "medicine": "Sodium Salicylate",
+   "forms": [
+    "Sodium Salicylate"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00004245",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105737",
+   "medicine": "Sonidegib",
+   "forms": [
+    "Sonidegib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02129101",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3414621",
+   "medicine": "Tazemetostat",
+   "forms": [
+    "Tazemetostat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05627232",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL376140",
+   "medicine": "Tigecycline",
+   "forms": [
+    "Tigecycline"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01332786",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL571546",
+   "medicine": "Tirbanibulin",
+   "forms": [
+    "Tirbanibulin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01397799",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1237022",
+   "medicine": "Tocilizumab",
+   "forms": [
+    "Tocilizumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02057770",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4597193",
+   "medicine": "Valemetostat",
+   "forms": [
+    "Valemetostat Tosylate"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03110354",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650626",
+   "medicine": "Yttrium",
+   "forms": [
+    "Yttrium Y-90"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00988715",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1450",
+   "medicine": "Atovaquone",
+   "forms": [
+    "Atovaquone"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03568994",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650410",
+   "medicine": "Novaferon",
+   "forms": [
+    "Novaferon"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02331706",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297819",
+   "medicine": "Ropeginterferon ALFA-2B",
+   "forms": [
+    "Ropeginterferon ALFA-2B"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02331706",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1353",
+   "medicine": "Sodium Bicarbonate",
+   "forms": [
+    "Sodium Bicarbonate"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04321161",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297843",
+   "medicine": "Toripalimab",
+   "forms": [
+    "Toripalimab"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06980155",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_in_trials": [
+  {
+   "id": "CHEMBL4650374",
+   "medicine": "APG-2575",
+   "forms": [
+    "APG-2575"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06389292",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314509",
+   "medicine": "Bleximenib",
+   "forms": [
+    "Bleximenib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06852222",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3186849",
+   "medicine": "Cpi 613",
+   "forms": [
+    "Cpi 613"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03504410",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105728",
+   "medicine": "Crenolanib",
+   "forms": [
+    "Crenolanib",
+    "Crenolanib Besylate"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02298166",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3990006",
+   "medicine": "Dociparstat Sodium",
+   "forms": [
+    "Dociparstat Sodium"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04571645",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105665",
+   "medicine": "Elacytarabine",
+   "forms": [
+    "Elacytarabine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01147939",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3265032",
+   "medicine": "Entospletinib",
+   "forms": [
+    "Entospletinib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT05020665",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3833386",
+   "medicine": "GALINPEPIMUT-S",
+   "forms": [
+    "GALINPEPIMUT-S"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04229979",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3544916",
+   "medicine": "Guadecitabine",
+   "forms": [
+    "Guadecitabine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02348489",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2402737",
+   "medicine": "Idasanutlin",
+   "forms": [
+    "Idasanutlin"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02545283",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297997",
+   "medicine": "Iodine I 131 Apamistamab",
+   "forms": [
+    "Iodine I 131 Apamistamab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02665065",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL167691",
+   "medicine": "Laromustine",
+   "forms": [
+    "Laromustine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00112554",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109150",
+   "medicine": "Lintuzumab",
+   "forms": [
+    "Lintuzumab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00006045",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297985",
+   "medicine": "Magrolimab",
+   "forms": [
+    "Magrolimab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04778397",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1697845",
+   "medicine": "Norethandrolone",
+   "forms": [
+    "Norethandrolone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00700544",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109229",
+   "medicine": "Oblimersen Sodium",
+   "forms": [
+    "Oblimersen Sodium"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00085124",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1231160",
+   "medicine": "Pevonedistat",
+   "forms": [
+    "Pevonedistat"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03268954",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297811",
+   "medicine": "PR1 Leukemia Peptide Vaccine",
+   "forms": [
+    "PR1 Leukemia Peptide Vaccine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00454168",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1851943",
+   "medicine": "Pracinostat",
+   "forms": [
+    "Pracinostat"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03151408",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068069",
+   "medicine": "Ranosidenib",
+   "forms": [
+    "Ranosidenib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06387069",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1241855",
+   "medicine": "Rigosertib",
+   "forms": [
+    "Rigosertib",
+    "Rigosertib Sodium"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01241500",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3678958",
+   "medicine": "Ruserontinib",
+   "forms": [
+    "Ruserontinib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04716114",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105681",
+   "medicine": "Sapacitabine",
+   "forms": [
+    "Sapacitabine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT01303796",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL289228",
+   "medicine": "Tipifarnib",
+   "forms": [
+    "Tipifarnib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00093990",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3990021",
+   "medicine": "Vadastuximab Talirine",
+   "forms": [
+    "Vadastuximab Talirine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02785900",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1086218",
+   "medicine": "Valspodar",
+   "forms": [
+    "Valspodar"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00003190",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108811",
+   "medicine": "Visilizumab",
+   "forms": [
+    "Visilizumab"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04722952",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095038",
+   "medicine": "Ziftomenib",
+   "forms": [
+    "Ziftomenib"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT07007312",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL444172",
+   "medicine": "Zosuquidar",
+   "forms": [
+    "Zosuquidar",
+    "Zosuquidar Trihydrochloride"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00046930",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL415049",
+   "medicine": "Barasertib",
+   "forms": [
+    "Barasertib"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT00952588",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068408",
+   "medicine": "Naxtarubicin",
+   "forms": [
+    "Naxtarubicin"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT06788756",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297991",
+   "medicine": "Pivekimab Sunirine",
+   "forms": [
+    "Pivekimab Sunirine"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT07581002",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3989979",
+   "medicine": "Rivogenlecleucel",
+   "forms": [
+    "Rivogenlecleucel"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT03699475",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297837",
+   "medicine": "Talacotuzumab",
+   "forms": [
+    "Talacotuzumab"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT02472145",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1976040",
+   "medicine": "Adavosertib",
+   "forms": [
+    "Adavosertib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02666950",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068598",
+   "medicine": "AEG-35156",
+   "forms": [
+    "AEG-35156"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01018069",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL483158",
+   "medicine": "Alisertib",
+   "forms": [
+    "Alisertib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00830518",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL428690",
+   "medicine": "Alvocidib",
+   "forms": [
+    "Alvocidib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00407966",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4584965",
+   "medicine": "Ammonium Trichlorotellurate",
+   "forms": [
+    "Ammonium Trichlorotellurate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01010373",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3235620",
+   "medicine": "Antroquinonol",
+   "forms": [
+    "Antroquinonol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03823352",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2263632",
+   "medicine": "ASLAN-003",
+   "forms": [
+    "ASLAN-003"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03451084",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297599",
+   "medicine": "Aspacytarabine",
+   "forms": [
+    "Aspacytarabine",
+    "Aspacytarabine Hydrochloride"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03435848",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3809489",
+   "medicine": "Bemcentinib",
+   "forms": [
+    "Bemcentinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03824080",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL25336",
+   "medicine": "Bisantrene",
+   "forms": [
+    "Bisantrene"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03820908",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095110",
+   "medicine": "Briquilimab",
+   "forms": [
+    "Briquilimab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05907746",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL449158",
+   "medicine": "Bryostatin 1",
+   "forms": [
+    "Bryostatin 1"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00017342",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297871",
+   "medicine": "Camidanlumab Tesirine",
+   "forms": [
+    "Camidanlumab Tesirine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04639024",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108280",
+   "medicine": "Cenersen",
+   "forms": [
+    "Cenersen"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00967512",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2219776",
+   "medicine": "Cenersen Sodium",
+   "forms": [
+    "Cenersen Sodium"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00074737",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL429876",
+   "medicine": "Cilengitide",
+   "forms": [
+    "Cilengitide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00089388",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297891",
+   "medicine": "Cusatuzumab",
+   "forms": [
+    "Cusatuzumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04023526",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2103840",
+   "medicine": "Dinaciclib",
+   "forms": [
+    "Dinaciclib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00798213",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297376",
+   "medicine": "E-7820",
+   "forms": [
+    "E-7820"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05024994",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3674570",
+   "medicine": "Edicotinib",
+   "forms": [
+    "Edicotinib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03557970",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3186011",
+   "medicine": "Eprenetapopt",
+   "forms": [
+    "Eprenetapopt"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03931291",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743018",
+   "medicine": "Ficlatuzumab",
+   "forms": [
+    "Ficlatuzumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04100330",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3990038",
+   "medicine": "Flotetuzumab",
+   "forms": [
+    "Flotetuzumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04582864",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2219774",
+   "medicine": "Gataparsen",
+   "forms": [
+    "Gataparsen"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00620321",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL592445",
+   "medicine": "Gedatolisib",
+   "forms": [
+    "Gedatolisib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02438761",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108342",
+   "medicine": "Gemtuzumab",
+   "forms": [
+    "Gemtuzumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03226418",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297763",
+   "medicine": "GTI-2040",
+   "forms": [
+    "GTI-2040"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00565058",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650400",
+   "medicine": "Incomplete FREUND'S Adjuvant",
+   "forms": [
+    "Incomplete FREUND'S Adjuvant"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00488592",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL77517",
+   "medicine": "Indisulam",
+   "forms": [
+    "Indisulam"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01692197",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105107",
+   "medicine": "Inecalcitol",
+   "forms": [
+    "Inecalcitol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02802267",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297989",
+   "medicine": "Interleukin 15, Recombinant NON-GLYCOSYLATED",
+   "forms": [
+    "Interleukin 15, Recombinant NON-GLYCOSYLATED"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02395822",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109500",
+   "medicine": "Lirilumab",
+   "forms": [
+    "Lirilumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01687387",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1079175",
+   "medicine": "MK-2206",
+   "forms": [
+    "MK-2206"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01253447",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL272980",
+   "medicine": "Mocetinostat",
+   "forms": [
+    "Mocetinostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00374296",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297787",
+   "medicine": "Monalizumab",
+   "forms": [
+    "Monalizumab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06892223",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297308",
+   "medicine": "Nerofe",
+   "forms": [
+    "Nerofe"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03059615",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297690",
+   "medicine": "Nogapendekin Alfa",
+   "forms": [
+    "Nogapendekin Alfa"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02782546",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL408194",
+   "medicine": "Obatoclax",
+   "forms": [
+    "Obatoclax",
+    "Obatoclax Mesylate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00684918",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297235",
+   "medicine": "OMBIPEPIMUT-S",
+   "forms": [
+    "OMBIPEPIMUT-S"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04747002",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3137346",
+   "medicine": "Pegargiminase",
+   "forms": [
+    "Pegargiminase"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01910012",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL372764",
+   "medicine": "Perifosine",
+   "forms": [
+    "Perifosine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00391560",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3989978",
+   "medicine": "Prexigebersen",
+   "forms": [
+    "Prexigebersen"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02781883",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650421",
+   "medicine": "Recombinant Human INTERLEUKIN-15",
+   "forms": [
+    "Recombinant Human INTERLEUKIN-15"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02395822",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2386889",
+   "medicine": "SCH-900776",
+   "forms": [
+    "SCH-900776"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01870596",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298079",
+   "medicine": "SEPHB4-HSA",
+   "forms": [
+    "SEPHB4-HSA"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03146871",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314951",
+   "medicine": "Sonrotoclax",
+   "forms": [
+    "Sonrotoclax"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT06497062",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL25202",
+   "medicine": "Tamibarotene",
+   "forms": [
+    "Tamibarotene"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02807558",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL502495",
+   "medicine": "Tetradecanoyl Phorbol Acetate",
+   "forms": [
+    "Tetradecanoyl Phorbol Acetate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01009931",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2103847",
+   "medicine": "Tosedostat",
+   "forms": [
+    "Tosedostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00780598",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314888",
+   "medicine": "Troculeucel",
+   "forms": [
+    "Troculeucel"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00274846",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL359164",
+   "medicine": "Troxacitabine",
+   "forms": [
+    "Troxacitabine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00129948",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3137336",
+   "medicine": "Uprosertib",
+   "forms": [
+    "Uprosertib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01907815",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL101253",
+   "medicine": "Vatalanib",
+   "forms": [
+    "Vatalanib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00072475",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298131",
+   "medicine": "Vibecotamab",
+   "forms": [
+    "Vibecotamab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05285813",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1233528",
+   "medicine": "Volasertib",
+   "forms": [
+    "Volasertib"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00804856",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314391",
+   "medicine": "XL-999",
+   "forms": [
+    "XL-999"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00322673",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650493",
+   "medicine": "Zedenoleucel",
+   "forms": [
+    "Zedenoleucel"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04511130",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5939817",
+   "medicine": "Zeprumetostat",
+   "forms": [
+    "Zeprumetostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT07562568",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594396",
+   "medicine": "8-CHLOROADENOSINE",
+   "forms": [
+    "8-CHLOROADENOSINE"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02509546",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095208",
+   "medicine": "AB-8939",
+   "forms": [
+    "AB-8939"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05211570",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4790100",
+   "medicine": "AKN-028",
+   "forms": [
+    "AKN-028"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01573247",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4091801",
+   "medicine": "Alrizomadlin",
+   "forms": [
+    "Alrizomadlin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04358393",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL495727",
+   "medicine": "AT-9283",
+   "forms": [
+    "AT-9283"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00522990",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4078100",
+   "medicine": "AZD-5153",
+   "forms": [
+    "AZD-5153"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03013998",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297482",
+   "medicine": "AZD-5991",
+   "forms": [
+    "AZD-5991"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03013998",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095036",
+   "medicine": "Azenosertib",
+   "forms": [
+    "Azenosertib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05682170",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594544",
+   "medicine": "Bexmarilimab",
+   "forms": [
+    "Bexmarilimab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05428969",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3581647",
+   "medicine": "Birabresib",
+   "forms": [
+    "Birabresib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02303782",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3039522",
+   "medicine": "Birinapant",
+   "forms": [
+    "Birinapant"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01486784",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068545",
+   "medicine": "BN-104",
+   "forms": [
+    "BN-104"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT06052813",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3655762",
+   "medicine": "CYC-065",
+   "forms": [
+    "CYC-065"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05168904",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1097999",
+   "medicine": "E-6201",
+   "forms": [
+    "E-6201"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02418000",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297623",
+   "medicine": "Eltanexor",
+   "forms": [
+    "Eltanexor"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02649790",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314915",
+   "medicine": "Enzomenib",
+   "forms": [
+    "Enzomenib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04988555",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5315021",
+   "medicine": "Erzotabart",
+   "forms": [
+    "Erzotabart"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04824794",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2347655",
+   "medicine": "Filanesib",
+   "forms": [
+    "Filanesib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00637052",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650288",
+   "medicine": "Flysyn",
+   "forms": [
+    "Flysyn"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02789254",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802149",
+   "medicine": "Fosciclopirox",
+   "forms": [
+    "Fosciclopirox"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04956042",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2103879",
+   "medicine": "Ganetespib",
+   "forms": [
+    "Ganetespib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01236144",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297466",
+   "medicine": "GO-203-2C",
+   "forms": [
+    "GO-203-2C"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02204085",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3334759",
+   "medicine": "Granaticin B",
+   "forms": [
+    "Granaticin B"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05756322",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594553",
+   "medicine": "IBI-188",
+   "forms": [
+    "IBI-188"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04485052",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095243",
+   "medicine": "INCB-059872",
+   "forms": [
+    "INCB-059872"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02712905",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297772",
+   "medicine": "INTERLEUKIN-7",
+   "forms": [
+    "INTERLEUKIN-7"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03941769",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297883",
+   "medicine": "Ivuxolimab",
+   "forms": [
+    "Ivuxolimab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03390296",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109398",
+   "medicine": "KB-004",
+   "forms": [
+    "KB-004"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01211691",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650520",
+   "medicine": "Lemzoparlimab",
+   "forms": [
+    "Lemzoparlimab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04202003",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095133",
+   "medicine": "Luveltamab Tazevibulin",
+   "forms": [
+    "Luveltamab Tazevibulin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT06679582",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3688339",
+   "medicine": "Melk Inhibitor",
+   "forms": [
+    "Melk Inhibitor"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02795520",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298096",
+   "medicine": "MIK-665",
+   "forms": [
+    "MIK-665"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04629443",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4292264",
+   "medicine": "Milademetan",
+   "forms": [
+    "Milademetan",
+    "Milademetan Tosylate"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03634228",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3979920",
+   "medicine": "Mivavotinib",
+   "forms": [
+    "Mivavotinib",
+    "Mivavotinib Citrate"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02323113",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2207503",
+   "medicine": "Mobinitinib",
+   "forms": [
+    "Mobinitinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04581512",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650408",
+   "medicine": "MRX-2843",
+   "forms": [
+    "MRX-2843"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04946890",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3125702",
+   "medicine": "Navtemadlin",
+   "forms": [
+    "Navtemadlin"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04113616",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297470",
+   "medicine": "Nefextinib",
+   "forms": [
+    "Nefextinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05061147",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095365",
+   "medicine": "Nidanilimab",
+   "forms": [
+    "Nidanilimab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT06548230",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL324846",
+   "medicine": "Octanoic Acid",
+   "forms": [
+    "Octanoic Acid"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02472626",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1205402",
+   "medicine": "OXI-4503",
+   "forms": [
+    "OXI-4503"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02576301",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802151",
+   "medicine": "Pelcitoclax",
+   "forms": [
+    "Pelcitoclax"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT07508982",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4466233",
+   "medicine": "Pemrametostat",
+   "forms": [
+    "Pemrametostat"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03614728",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL279115",
+   "medicine": "Phorbol Myristate Acetate",
+   "forms": [
+    "Phorbol Myristate Acetate"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01795924",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3414626",
+   "medicine": "Pinometostat",
+   "forms": [
+    "Pinometostat"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03701295",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297321",
+   "medicine": "PR-104",
+   "forms": [
+    "PR-104"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01037556",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297813",
+   "medicine": "PRI-724",
+   "forms": [
+    "PRI-724"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT01606579",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL269259",
+   "medicine": "Rimiducid",
+   "forms": [
+    "Rimiducid"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02743611",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5202010",
+   "medicine": "Rogocekib",
+   "forms": [
+    "Rogocekib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05732103",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068290",
+   "medicine": "Safimestomig",
+   "forms": [
+    "Safimestomig"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05448599",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743067",
+   "medicine": "Samalizumab",
+   "forms": [
+    "Samalizumab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03013998",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL276711",
+   "medicine": "Semaxanib",
+   "forms": [
+    "Semaxanib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00005942",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL16498",
+   "medicine": "SJG-136",
+   "forms": [
+    "SJG-136"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02034227",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314429",
+   "medicine": "Tamnorzatinib",
+   "forms": [
+    "Tamnorzatinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03176277",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL124660",
+   "medicine": "Tandutinib",
+   "forms": [
+    "Tandutinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT00297921",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314779",
+   "medicine": "Timdarpacept",
+   "forms": [
+    "Timdarpacept"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT05140811",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314420",
+   "medicine": "Tuspetinib",
+   "forms": [
+    "Tuspetinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT03850574",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3590106",
+   "medicine": "Ulixertinib",
+   "forms": [
+    "Ulixertinib"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02296242",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3039543",
+   "medicine": "Ulocuplumab",
+   "forms": [
+    "Ulocuplumab"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02305563",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3701382",
+   "medicine": "VOB-560",
+   "forms": [
+    "VOB-560"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT04742101",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297454",
+   "medicine": "ABBV-744",
+   "forms": [
+    "ABBV-744"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03360006",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297893",
+   "medicine": "AGS62P1",
+   "forms": [
+    "AGS62P1"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02864290",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2140408",
+   "medicine": "AMG-900",
+   "forms": [
+    "AMG-900"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01380756",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650295",
+   "medicine": "AMG553",
+   "forms": [
+    "AMG553"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03904069",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297552",
+   "medicine": "AMV-564",
+   "forms": [
+    "AMV-564"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03144245",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095321",
+   "medicine": "Anzurstobart",
+   "forms": [
+    "Anzurstobart"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05168202",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068090",
+   "medicine": "Aplitabart",
+   "forms": [
+    "Aplitabart"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04553692",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108252",
+   "medicine": "Apolizumab",
+   "forms": [
+    "Apolizumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00017472",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297261",
+   "medicine": "APTO-253",
+   "forms": [
+    "APTO-253"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02267863",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594525",
+   "medicine": "APVO-436",
+   "forms": [
+    "APVO-436"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03647800",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL191482",
+   "medicine": "AR-42",
+   "forms": [
+    "AR-42"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01798901",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4173974",
+   "medicine": "ASTX-660",
+   "forms": [
+    "ASTX-660"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04155580",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594461",
+   "medicine": "Autologous Cord Blood",
+   "forms": [
+    "Autologous Cord Blood"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04687657",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109266",
+   "medicine": "AVE-9633",
+   "forms": [
+    "AVE-9633"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00543972",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545423",
+   "medicine": "AZD-1208",
+   "forms": [
+    "AZD-1208"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01489722",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1829433",
+   "medicine": "AZD-4877",
+   "forms": [
+    "AZD-4877"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00460460",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4206033",
+   "medicine": "BAY1436032",
+   "forms": [
+    "BAY1436032"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03127735",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4754493",
+   "medicine": "BTX-A51",
+   "forms": [
+    "BTX-A51"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04243785",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095181",
+   "medicine": "Camibirstat",
+   "forms": [
+    "Camibirstat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04891757",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1614713",
+   "medicine": "CC-401",
+   "forms": [
+    "CC-401"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00126893",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL155886",
+   "medicine": "Ceramide",
+   "forms": [
+    "Ceramide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04716452",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4784318",
+   "medicine": "Cirtuvivint",
+   "forms": [
+    "Cirtuvivint"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06484062",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109327",
+   "medicine": "CSL-360",
+   "forms": [
+    "CSL-360"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00401739",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1879463",
+   "medicine": "Dactolisib",
+   "forms": [
+    "Dactolisib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01756118",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297739",
+   "medicine": "Danvatirsen",
+   "forms": [
+    "Danvatirsen"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05986240",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5315018",
+   "medicine": "DCLL-9718S",
+   "forms": [
+    "DCLL-9718S"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03298516",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL215152",
+   "medicine": "Defosbarasertib",
+   "forms": [
+    "Defosbarasertib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03217838",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095332",
+   "medicine": "DVX-201",
+   "forms": [
+    "DVX-201"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04901416",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594322",
+   "medicine": "Eftozanermin Alfa",
+   "forms": [
+    "Eftozanermin Alfa"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03082209",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3984425",
+   "medicine": "Eganelisib",
+   "forms": [
+    "Eganelisib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06533761",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1972860",
+   "medicine": "Elesclomol",
+   "forms": [
+    "Elesclomol"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01280786",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594521",
+   "medicine": "Eluvixtamab",
+   "forms": [
+    "Eluvixtamab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04478695",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297881",
+   "medicine": "Emirodatamab",
+   "forms": [
+    "Emirodatamab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03541369",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650336",
+   "medicine": "Emvododstat",
+   "forms": [
+    "Emvododstat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03761069",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802196",
+   "medicine": "Eragidomide",
+   "forms": [
+    "Eragidomide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02848001",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297880",
+   "medicine": "Evorpacept",
+   "forms": [
+    "Evorpacept"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04755244",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109583",
+   "medicine": "F16IL2",
+   "forms": [
+    "F16IL2"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02957032",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL7301",
+   "medicine": "Fenretinide",
+   "forms": [
+    "Fenretinide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01187810",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650283",
+   "medicine": "FF-10101",
+   "forms": [
+    "FF-10101"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03194685",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297591",
+   "medicine": "Fosmanogepix",
+   "forms": [
+    "Fosmanogepix"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03333005",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314984",
+   "medicine": "Gentulizumab",
+   "forms": [
+    "Gentulizumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05263271",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297962",
+   "medicine": "GNKG-168",
+   "forms": [
+    "GNKG-168"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01743807",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3786182",
+   "medicine": "GSK2879552",
+   "forms": [
+    "GSK2879552"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02177812",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802174",
+   "medicine": "H3B-8800",
+   "forms": [
+    "H3B-8800"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02841540",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650499",
+   "medicine": "IACS-010759",
+   "forms": [
+    "IACS-010759"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02882321",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3781751",
+   "medicine": "Iadademstat",
+   "forms": [
+    "Iadademstat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05546580",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068392",
+   "medicine": "Icovamenib",
+   "forms": [
+    "Icovamenib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05153330",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4167360",
+   "medicine": "IDH305",
+   "forms": [
+    "IDH305"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02381886",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594556",
+   "medicine": "IGN-523",
+   "forms": [
+    "IGN-523"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02040506",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109328",
+   "medicine": "IMC-EB10",
+   "forms": [
+    "IMC-EB10"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00887926",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297992",
+   "medicine": "IMGN-779",
+   "forms": [
+    "IMGN-779"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02674763",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL599552",
+   "medicine": "Indigo",
+   "forms": [
+    "Indigo"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05297123",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL571209",
+   "medicine": "Indoximod",
+   "forms": [
+    "Indoximod"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02835729",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095343",
+   "medicine": "INTERLEUKIN-12 Human Recombinant",
+   "forms": [
+    "INTERLEUKIN-12 Human Recombinant"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02483312",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109498",
+   "medicine": "IPH-2101",
+   "forms": [
+    "IPH-2101"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01256073",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL118218",
+   "medicine": "Irofulven",
+   "forms": [
+    "Irofulven"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00003997",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314920",
+   "medicine": "JNJ-64264681",
+   "forms": [
+    "JNJ-64264681"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06788509",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1908397",
+   "medicine": "KW-2449",
+   "forms": [
+    "KW-2449"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00346632",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3651966",
+   "medicine": "LGH-447",
+   "forms": [
+    "LGH-447"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02078609",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2105661",
+   "medicine": "Litronesib",
+   "forms": [
+    "Litronesib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01214655",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594420",
+   "medicine": "Luxeptinib",
+   "forms": [
+    "Luxeptinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04477291",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3828009",
+   "medicine": "LY-2874455",
+   "forms": [
+    "LY-2874455"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03125239",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802185",
+   "medicine": "Maplirpacept",
+   "forms": [
+    "Maplirpacept"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03530683",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298033",
+   "medicine": "MEDI-7247",
+   "forms": [
+    "MEDI-7247"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03106428",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545307",
+   "medicine": "Merestinib",
+   "forms": [
+    "Merestinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03125239",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4648616",
+   "medicine": "Mezigdomide",
+   "forms": [
+    "Mezigdomide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT07355335",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3987016",
+   "medicine": "Mivebresib",
+   "forms": [
+    "Mivebresib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02391480",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297629",
+   "medicine": "Nedisertib",
+   "forms": [
+    "Nedisertib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03983824",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3984441",
+   "medicine": "Ningetinib",
+   "forms": [
+    "Ningetinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03125876",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL107430",
+   "medicine": "NRX195183",
+   "forms": [
+    "NRX195183"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02749708",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2316582",
+   "medicine": "Olverembatinib",
+   "forms": [
+    "Olverembatinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06401603",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4249337",
+   "medicine": "Onametostat",
+   "forms": [
+    "Onametostat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06788509",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297467",
+   "medicine": "Padnarsertib",
+   "forms": [
+    "Padnarsertib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04914845",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068463",
+   "medicine": "Pasifolate Exatecan",
+   "forms": [
+    "Pasifolate Exatecan"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05622591",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095142",
+   "medicine": "Pemvidutide",
+   "forms": [
+    "Pemvidutide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01478074",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297806",
+   "medicine": "PF-06747143",
+   "forms": [
+    "PF-06747143"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02954653",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802136",
+   "medicine": "PHI-101",
+   "forms": [
+    "PHI-101"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04842370",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4521078",
+   "medicine": "PLX-51107",
+   "forms": [
+    "PLX-51107"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04022785",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3544911",
+   "medicine": "Prexasertib",
+   "forms": [
+    "Prexasertib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02649764",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1738757",
+   "medicine": "Rebastinib",
+   "forms": [
+    "Rebastinib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00827138",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL370100",
+   "medicine": "Rebeccamycin",
+   "forms": [
+    "Rebeccamycin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00087204",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314538",
+   "medicine": "Rezatapopt",
+   "forms": [
+    "Rezatapopt"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06616636",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314871",
+   "medicine": "Rezetamig",
+   "forms": [
+    "Rezetamig"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06788509",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2386346",
+   "medicine": "RO-5045337",
+   "forms": [
+    "RO-5045337"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00623870",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594601",
+   "medicine": "RO-5429083",
+   "forms": [
+    "RO-5429083"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01641250",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297423",
+   "medicine": "RO-6870810",
+   "forms": [
+    "RO-6870810"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02308761",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095244",
+   "medicine": "Safimaltib",
+   "forms": [
+    "Safimaltib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06788509",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297826",
+   "medicine": "SGN-CD123A",
+   "forms": [
+    "SGN-CD123A"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02848248",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297831",
+   "medicine": "Spartalizumab",
+   "forms": [
+    "Spartalizumab"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03066648",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095209",
+   "medicine": "Sulanemadlin",
+   "forms": [
+    "Sulanemadlin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02909972",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297405",
+   "medicine": "TAK-243",
+   "forms": [
+    "TAK-243"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03816319",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL109480",
+   "medicine": "Tanespimycin",
+   "forms": [
+    "Tanespimycin"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00098423",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314619",
+   "medicine": "Taniraleucel",
+   "forms": [
+    "Taniraleucel"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02781467",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4446378",
+   "medicine": "Tapotoclax",
+   "forms": [
+    "Tapotoclax"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02675452",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068624",
+   "medicine": "TAS-1553",
+   "forms": [
+    "TAS-1553"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04637009",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297582",
+   "medicine": "Tefinostat",
+   "forms": [
+    "Tefinostat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00820508",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3601411",
+   "medicine": "Tegavivint",
+   "forms": [
+    "Tegavivint"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT04874480",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2311128",
+   "medicine": "Tetrahydrouridine",
+   "forms": [
+    "Tetrahydrouridine"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01041443",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108568",
+   "medicine": "Trebananib",
+   "forms": [
+    "Trebananib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01555268",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL574737",
+   "medicine": "UCN-01",
+   "forms": [
+    "UCN-01"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00004263",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3905910",
+   "medicine": "Voruciclib",
+   "forms": [
+    "Voruciclib"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03547115",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3040440",
+   "medicine": "VS-4718",
+   "forms": [
+    "VS-4718"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT02215629",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2158051",
+   "medicine": "Xevinapant",
+   "forms": [
+    "Xevinapant"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT01265199",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3357685",
+   "medicine": "Zelenirstat",
+   "forms": [
+    "Zelenirstat"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06613217",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4802264",
+   "medicine": "Emerfetamab",
+   "forms": [
+    "Emerfetamab"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03224819",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "opposite_way_box": [
+  "CHEMBL1201556"
+ ]
+}

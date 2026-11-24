@@ -127,6 +127,15 @@ withdrawal_notes, it is worked out after sort_into_tabs, which is not
 changed. A card added from approvals.json is marked there instead: the same
 pair in both files is refused.
 
+Ticket 2.40, the older flag with a regulator's approval. Kashish's answers
+of 24 Nov: a medicine the older "Withdrawn" flag hides comes back on the
+main Approved list when the searched disease's own list has it approved
+there and holds an APPROVAL report for it from a regulator
+(fetch.REGULATOR_SOURCES). A WITHDRAWAL report on that list does not keep it
+out. Its card carries WITHDRAWAL_LINE (withdrawal_notes). Everything else
+the flag hides stays hidden, in every tab and every box. _comes_back says
+which; the lists it reads are the ones already fetched.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -470,6 +479,9 @@ class Tabs:
     # approved for anything: the second folded box, under that one.
     # Furthest trial stage first, then A to Z. No rank.
     new_in_trials: List[TrialMedicine] = field(default_factory=list)
+    # Ticket 2.40. The ids of the main list's cards that the older
+    # "Withdrawn" flag would hide, and that came back (_comes_back).
+    returned: List[str] = field(default_factory=list)
 
 
 PARENT = "parent"  # one sheet up: a wider group the database puts the disease in
@@ -635,6 +647,21 @@ def find_ranked_clues(
     )
 
 
+def _comes_back(entry: Listed) -> bool:
+    """Ticket 2.40. Does a family the disease's OWN list marks as withdrawn
+    (fetch.fetch_withdrawn) still go on the main Approved list?
+
+    Like a returned parcel with an official stamp on it: it is let back in
+    only when the list says it is approved for this disease and holds an
+    approval report from a regulator for it. Approval reports only from TTD
+    or ATC, no approval report, or a list that does not say who wrote its
+    reports: it stays out. A WITHDRAWAL report on the list does not matter
+    here (Kashish's answer B, 24 Nov). A family marked withdrawn only on a
+    parent's or child's list never comes through here.
+    """
+    return entry.approved and entry.regulator_record is True
+
+
 def _family_id(medicine: Medicine) -> str:
     """The id shared by a medicine and its tablet forms (as in rank.py)."""
     first = medicine.forms[0]
@@ -736,8 +763,18 @@ def sort_into_tabs(
         source is not added, and the page is as if the entry was not there.
       - If the database already records it as approved for this exact
         disease, nothing is missing: its card stays as the database has it.
+
+    Ticket 2.40 (Kashish's answers of 24 Nov) makes one exception to
+    "withdrawn comes first". A family on withdrawn_listed that _comes_back
+    is not withdrawn on this page, wherever else the flag was seen: on a
+    path, or on a parent's or child's list. It is on the main Approved list
+    like any other medicine approved there, with its paths, and is not
+    counted in not_approved. Its id is in Tabs.returned, so its card
+    carries WITHDRAWAL_LINE (withdrawal_notes).
     """
     withdrawn_listed = list(withdrawn_listed)
+    # Ticket 2.40. The flagged families that come back, from the disease's own list.
+    returned = {entry.id: entry for entry in withdrawn_listed if _comes_back(entry)}
     neighbours = list(neighbours)
     on_list = list(on_list)
     withdrawn_nearby = [entry for neighbour in neighbours for entry in neighbour.withdrawn]
@@ -747,7 +784,10 @@ def sort_into_tabs(
         for path in paths
         if path.medicine.withdrawn is True
     } | {entry.id for entry in withdrawn_listed} | {entry.id for entry in withdrawn_nearby}
+    withdrawn_ids -= set(returned)  # ticket 2.40
     listed_by_id = {entry.id: entry for entry in listed if entry.id not in withdrawn_ids}
+    for family_id, entry in returned.items():  # ticket 2.40: approved on this exact entry
+        listed_by_id.setdefault(family_id, entry)
 
     # Approved for this exact disease, from either source. These get no label.
     own_ids = set(listed_by_id) | {
@@ -878,7 +918,8 @@ def sort_into_tabs(
             # So is one that has a path and is also on a withdrawn list.
             NOT_APPROVED: len(
                 {path.medicine.name for path in others[NOT_APPROVED]}
-                | {entry.name for entry in withdrawn_listed + withdrawn_nearby if entry.approved}
+                | {entry.name for entry in withdrawn_listed + withdrawn_nearby
+                   if entry.approved and entry.id not in returned}  # ticket 2.40
             ),
             UNCLEAR_LINK: len({path.medicine.name for path in others[UNCLEAR_LINK]}),
         },
@@ -886,6 +927,7 @@ def sort_into_tabs(
         narrower=narrower,
         more_in_trials=more_in_trials,
         new_in_trials=new_in_trials,
+        returned=[medicine.id for medicine in approved if medicine.id in returned],
     )
 
 
@@ -909,6 +951,9 @@ def withdrawal_notes(
         the searched disease's own list has one, or a list the card came
         from has one: a parent's or child's list that says the medicine is
         approved there.
+      - Ticket 2.40. A card on the main Approved list that the older
+        "Withdrawn" flag would hide and that came back (Tabs.returned)
+        carries the line too, report or not.
     Only these cards are ever named. In trials and New clues are not read.
     A list whose reports do not say their stage gives no line: nothing is
     guessed (fetch.OnList.withdrawal_report).
@@ -920,7 +965,9 @@ def withdrawal_notes(
         for entry in neighbour.approved
         if entry.withdrawal_report
     }
-    notes = {medicine.id: WITHDRAWAL_LINE for medicine in tabs.approved if medicine.id in own}
+    returned = set(tabs.returned)
+    notes = {medicine.id: WITHDRAWAL_LINE for medicine in tabs.approved
+             if medicine.id in own or medicine.id in returned}
     for medicine in tabs.narrower + tabs.wider_group:
         if medicine.id in own or medicine.id in nearby:
             notes[medicine.id] = WITHDRAWAL_LINE
