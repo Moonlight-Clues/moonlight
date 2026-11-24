@@ -147,6 +147,7 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .direction-note{font-size:12px;color:var(--muted);margin:12px 0 16px}
 /* Ticket 3.7. Plain words under the protein they are true for. No red, no icon. */
 .opposite-way{flex-basis:100%;font-size:12px;line-height:1.45;color:var(--muted);margin:0}
+.protein-function{flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0;overflow-wrap:anywhere}
 /* Ticket 2.18. One plain line under the New clues cards. */
 .wrong-way-line{font-size:13px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 
@@ -582,6 +583,7 @@ body.registering>:not(.register){display:none!important}
           <li><div><b>Facts.</b> <span>Open Targets Platform, a free and open research database.</span></div></li>
           <li><div><b>Words.</b> <span>Explanations come from Google’s Gemini or Moonlight’s own template. What you type is sent to Gemini, so type no names or private details.</span></div></li>
           <li><div><b>Visits.</b> <span>Counted with Umami. No cookies. Never the disease or anything you type.</span></div></li>
+          <li><div><b>Protein descriptions.</b> <span>Written by UniProt, read through Open Targets. CC BY 4.0.</span></div></li>
         </ul>
       </details>
     </div>
@@ -681,6 +683,9 @@ body.registering>:not(.register){display:none!important}
 </template>
 
 <template id="opposite-way-template"><p class="opposite-way" data-slot="opposite-way"></p></template>
+
+<!-- What the protein does: one sentence, UniProt's words, as the API sent them (ticket 3.8). -->
+<template id="protein-function-template"><p class="protein-function" data-slot="protein-function"></p></template>
 
 <!-- What the medicine does to the protein. All four badges share one neutral style. -->
 <template id="direction-up"><span class="direction" data-slot="direction" title="The medicine turns this protein up"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 13V3m-4 4 4-4 4 4"/></svg>Up</span></template>
@@ -1185,6 +1190,12 @@ body.registering>:not(.register){display:none!important}
       if (protein.opposite_way) {  // only on a clue or In trials card, only by this protein
         const line = copyOf("opposite-way-template");
         line.textContent = protein.opposite_way;
+        row.style.flexWrap = "wrap";
+        row.append(line);
+      }
+      if (protein.function) {  // only on a clue or In trials card; shown as sent
+        const line = copyOf("protein-function-template");
+        line.textContent = protein.function;
         row.style.flexWrap = "wrap";
         row.append(line);
       }

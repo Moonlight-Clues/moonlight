@@ -726,6 +726,17 @@ def list_question_before_2_17():
     return old
 
 
+def targets_question_before_3_8():
+    """The proteins question as it was when the older files were saved: the
+    same words without "functionDescriptions" on the target (ticket 3.8
+    added it)."""
+    old = fetch.TARGETS_QUERY.replace(
+        "target { id approvedSymbol approvedName functionDescriptions }",
+        "target { id approvedSymbol approvedName }")
+    assert old != fetch.TARGETS_QUERY
+    return old
+
+
 def test_29_the_noted_pah_files_were_made_with_the_questions_fetch_asks():
     assert (load(PAH_NOTED / "disease_drugs.request.json")["query"]
             == list_question_before_2_17())

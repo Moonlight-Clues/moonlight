@@ -142,7 +142,8 @@ def in_tab(tabs):
 
 def test_the_saved_files_were_made_with_the_questions_fetch_asks():
     questions = {
-        "disease": fetch.DISEASE_QUERY, "associated_targets": fetch.TARGETS_QUERY,
+        "disease": fetch.DISEASE_QUERY,
+        "associated_targets": test_fetch.targets_question_before_3_8(),
         "family": fetch.FAMILY_QUERY, "disease_drugs": test_fetch.list_question_before_2_17(),
         "target_drugs": fetch.TARGET_DRUGS_QUERY,
     }

@@ -79,6 +79,8 @@ Changing safety text or the grounding rule needs Kashish's explicit approval.
 - Moonlight's code reads facts from two machine sources and no more:
   Open Targets and the trials register (approved, not built yet).
   Gemini only explains. It is not a source of facts. Do not use any other.
+  Open Targets also sends UniProt's sentence on what a protein does.
+  Moonlight shows it as sent, cleaned, never rewritten.
 - Official labels are read by hand, never by code, and only for
   warnings and missing approvals.
 - Check field names against live responses or files in fixtures/. Never

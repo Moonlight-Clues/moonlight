@@ -98,6 +98,12 @@ class Target:
     symbol: str
     name: str
     score: float  # link strength to the disease, 0 to 1
+    # What the protein does, in UniProt's words, as Open Targets sends them
+    # ("functionDescriptions"). () when the answer has none (ticket 3.8).
+    function_texts: Tuple[str, ...] = ()
+
+    def __post_init__(self):
+        object.__setattr__(self, "function_texts", tuple(self.function_texts or ()))
 
 
 @dataclass(frozen=True)

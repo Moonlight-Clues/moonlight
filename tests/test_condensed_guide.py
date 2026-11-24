@@ -93,6 +93,8 @@ FACTS = [
     ("Words.", "Explanations come from Google’s Gemini or Moonlight’s own template. "
                "What you type is sent to Gemini, so type no names or private details."),
     ("Visits.", "Counted with Umami. No cookies. Never the disease or anything you type."),
+    # Ticket 3.8: Kashish's credit line, 23 Nov 2026.
+    ("Protein descriptions.", "Written by UniProt, read through Open Targets. CC BY 4.0."),
 ]
 STRIP = "Test a condition you know well. Tell us what is missing or wrong."
 
@@ -274,7 +276,7 @@ def test_the_fold_for_doctors_holds_these_eight_lines_then_the_sentence_set_apar
     assert guide.count(NOT_REFERENCE) == 1
 
 
-def test_the_fold_of_sources_holds_these_three_lines(guide):
+def test_the_fold_of_sources_holds_these_four_lines(guide):
     _, inside = fold(guide, FACTS_TITLE)
     assert lines_of(inside) == FACTS
 

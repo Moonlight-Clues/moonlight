@@ -79,7 +79,7 @@ import requests
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 
-from moonlight import explain, translate
+from moonlight import explain, protein, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -321,8 +321,14 @@ def _one_source(clue: Clue) -> Optional[str]:
     return _first_link(source for path in clue.paths for source in path.sources)
 
 
-def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None) -> List[dict]:
+def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None,
+                   with_function: bool = False) -> List[dict]:
     """The proteins of one medicine, strongest first, with points and direction.
+
+    Ticket 3.8. with_function is only given for a clue card (a new clue or
+    a medicine being studied). Then a protein carries "function": one
+    sentence on what it does, UniProt's words as cleaned by protein.py.
+    A protein with no sentence has no such key.
 
     Ticket 3.7. one_way is only given for a new clue or a medicine being
     studied: the proteins the main Approved list turns one way
@@ -351,6 +357,10 @@ def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None) -> List
         )
         if path.target.id in opposite:
             proteins[-1]["opposite_way"] = OPPOSITE_LINE  # the engine's words
+        if with_function:
+            function = protein.sentence(path.target.function_texts)
+            if function:
+                proteins[-1]["function"] = function
     return proteins
 
 
@@ -366,7 +376,7 @@ def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] =
         "id": _clue_id(clue),
         "medicine": facts["medicine"]["name"],
         "forms": facts["medicine"]["forms"],
-        "proteins": _proteins_json(clue, one_way),
+        "proteins": _proteins_json(clue, one_way, with_function=True),
         "reports": clue.reports,
         "source": _one_source(clue),
         "trial_phase": facts.get("trial_phase"),  # only for being studied
