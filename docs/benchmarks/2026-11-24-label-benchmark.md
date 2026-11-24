@@ -1,6 +1,6 @@
 # Moonlight label benchmark 1: 24 November 2026
 
-Published 24 November 2026. This file is a dated record. It is not edited after publication, except to fill the three items marked "not yet recorded". The next run gets its own file and is compared with this one.
+Published 24 November 2026. This file is a dated record. It was completed on 24 November 2026 (model name, prompt, scripts and disease selection added) and is not edited after that. The next run gets its own file and is compared with this one.
 
 ## Headline
 
@@ -23,11 +23,11 @@ Goal: 99%, confirmed by doctors.
 One question per card: does the official medicine label say this medicine is approved for this disease?
 
 - Snapshot of moonlightclues.com taken 24 Nov 2026, 10:14 IST. Open Targets data 26.09.
-- 50 diseases: the ten audited ones and 40 others. How the 40 were picked: not yet recorded here.
+- 50 diseases: the ten audited ones and 40 others. The 40 were picked by judgement, not by a random draw: a spread of 20 rare, 20 chronic and 8 cancer diseases, from which the 8 with the most Approved cards were dropped to keep the run under 800 cards. The list was fixed at 10:18 am IST on 24 November 2026, before any label was read, and the drops used card counts only. Because it is a hand-picked list that leaves out the largest diseases, the figure describes these 50 diseases and should not be read as a figure for the whole site.
 - Every card under the Approved tab: 797 cards.
 - The label came from the card's own source link where it had one (label_link), or was looked up by medicine name (label_by_name).
 - The cards were sent as one offline batch job (a batch API: all requests are submitted together and the answers come back together, with no person steering in between). Each request held one card's label text and the same fixed question.
-- An AI model answered (exact model name: not yet recorded here; it will be copied from the batch job's own record). It answered YES, PARTIAL, NO or UNCLEAR, with the sentence from the label it relied on. The prompt and the script: not yet recorded here.
+- An AI model answered: `claude-sonnet-5-5` at low effort, through the Anthropic Batch API. The same model was requested in every call and recorded by the API on all 691 results. It answered YES, PARTIAL, NO or UNCLEAR, with the sentence from the label it relied on. The exact prompt and the three scripts are in the folder `2026-11-24/` beside this file: `prompt.txt`, `build_requests.py`, `submit_batch.py` and `score.py`.
 - Code, not the model, then checked that each quoted sentence is present in the label text.
 - A YES or PARTIAL counted only if the quoted sentence was found in the label text.
 
