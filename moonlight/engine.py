@@ -31,8 +31,10 @@ disease". ApprovedMedicine.source_record picks the link a card shows as
 Ticket 2.17, a quiet line on approvals with no regulator record. An
 Approved card whose medicine has no approval report from a regulator
 (fetch.REGULATOR_SOURCES) gets the line NO_REGULATOR_LINE, in the same
-place as the Japan line (ApprovedMedicine.proof_note). The card stays
-where it is. A medicine with no reports at all gets the line too. If it
+place as the Japan line (ApprovedMedicine.proof_note). The line itself
+never moves a card: since ticket 2.42 the page moves a main-list card
+that carries it, or the Japan line, into its own folded box (see below).
+A medicine with no reports at all gets the line too. If it
 has reports and none says where it comes from (answers saved before this
 ticket), the card gets no line: not said is not the same as no.
 
@@ -54,6 +56,19 @@ warning for the disease, in the list's own order. The page shows them in
 one folded box at the bottom of the Approved tab, labelled
 WRONG_APPROVALS_BOX_LABEL, and leaves them out of the tab's number.
 sort_into_tabs is not changed: the cards are still on its approved list.
+
+Ticket 2.42, the box for approvals with no regulator record. Kashish's
+decisions of 24 Nov: a card on the main Approved list that carries
+NO_REGULATOR_LINE or JAPAN_LINE sits in its own folded box on the Approved
+tab, directly above the red box, and is not counted in the tab's number.
+no_regulator_box(approved, disease_id) names those cards, in the list's own
+order, leaving out any card the red box already holds: the red box wins.
+The box is labelled NO_REGULATOR_BOX_LABEL. sort_into_tabs is not changed,
+and neither is any card: it keeps its grey line and only moves.
+confirm_by_label(approved, disease_id) first marks the main-list cards on
+moonlight/confirmed.json, a list written by hand: an approval the official
+label confirms (confirmed_by_label). Such a card has no grey line, shows
+the label as its source, and stays on the main list.
 
 Ticket 2.18, a second red warning, and clues left out by hand. A
 corrections entry's note is one of two sentences (CORRECTION_NOTES).
@@ -124,7 +139,7 @@ import pathlib
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 
 from moonlight import fetch
@@ -177,6 +192,12 @@ OPPOSITE_BOX_LABEL = "These push the opposite way to the approved medicines for 
 # tab. Proposed in the ticket of 24 Nov. Changing it needs Kashish's approval.
 WRONG_APPROVALS_BOX_LABEL = (
     "The database lists these as approved for this disease. They look like mistakes."
+)
+# Ticket 2.42. The label of the folded box directly above the red box.
+# Worded by MAIN 3, chosen by Kashish (option A) on 24 Nov. Changing it
+# needs Kashish's approval.
+NO_REGULATOR_BOX_LABEL = (
+    "The database lists these as approved, but gives no regulator record for them."
 )
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
 CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the first note
@@ -238,6 +259,10 @@ APPROVAL_EXTRA_KEY = "limited"
 # writes here.
 LIMITS_FILE = pathlib.Path(__file__).resolve().parent / "limits.json"
 LIMIT_KEYS = {"medicine_id", "disease_id", "date", "label"}
+# Ticket 2.42. Approvals the database has, confirmed by hand from the
+# official label. Nothing in Moonlight writes here.
+CONFIRMED_FILE = pathlib.Path(__file__).resolve().parent / "confirmed.json"
+CONFIRMED_KEYS = {"medicine_id", "disease_id", "date", "label"}
 
 
 @dataclass(frozen=True)
@@ -306,6 +331,10 @@ class ApprovedMedicine:
     # Ticket 2.33. True only for a card added from the hand-written list
     # whose entry says its label covers only some people with the disease.
     limited: bool = False
+    # Ticket 2.42. None unless the card is on the hand-written list of
+    # confirmed approvals (confirmed.json) for this disease: then the link
+    # to the official label that names the disease as an indication.
+    confirmed_from_label: Optional[str] = None
 
     @property
     def limit_note(self) -> Optional[str]:
@@ -332,10 +361,15 @@ class ApprovedMedicine:
              (regulator_record is False)? Then NO_REGULATOR_LINE
              (ticket 2.17). That includes no approval report at all.
         None if it has a regulator's approval report, or if nobody said
-        where its reports come from. The line never moves or hides a card.
+        where its reports come from. A card on the hand-written list of
+        confirmed approvals (ticket 2.42) has no line. The line never hides a card. On the
+        main Approved list, a card with JAPAN_LINE or NO_REGULATOR_LINE is
+        moved into its own folded box (no_regulator_box, ticket 2.42).
         """
         if self.added_from_label:
             return ADDED_LINE
+        if self.confirmed_from_label:
+            return None  # ticket 2.42: the label confirms it, so no grey line
         if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
             return JAPAN_LINE
         if self.regulator_record is False:
@@ -358,6 +392,8 @@ class ApprovedMedicine:
         """
         if self.added_from_label:
             return self.added_from_label
+        if self.confirmed_from_label:
+            return self.confirmed_from_label  # ticket 2.42: the label, and nothing else
         receipts = [link for link in self.approval_sources if link.startswith("https://")]
         for link in receipts:
             if link != JAPAN_LIST:
@@ -1244,6 +1280,78 @@ def wrong_approvals_box(approved: Iterable[ApprovedMedicine],
     """
     words = warning_words(disease_id)
     return [medicine for medicine in approved if medicine.id in words]
+
+
+def no_regulator_box(approved: Iterable[ApprovedMedicine],
+                     disease_id: str) -> List[ApprovedMedicine]:
+    """The Approved-tab cards that go in the box above the red box (ticket 2.42).
+
+    Kashish's decisions of 24 Nov: a card on the main Approved list whose
+    grey line is NO_REGULATOR_LINE or JAPAN_LINE sits in its own folded
+    box, not on the main list. approved is the MAIN Approved list
+    (sort_into_tabs' approved). The red box wins: a card that
+    wrong_approvals_box puts in the red box is never in this one. A card
+    added by hand carries ADDED_LINE, so it is never in it either. The
+    cards come back in the order they were handed in: the list's own, A
+    to Z. Nothing is taken off the list and no card is changed. A card in
+    the narrower box or the wider-group box is not handed in, so it stays
+    where it is.
+    """
+    approved = list(approved)
+    red = {medicine.id for medicine in wrong_approvals_box(approved, disease_id)}
+    return [medicine for medicine in approved
+            if medicine.id not in red and medicine.proof_note in (NO_REGULATOR_LINE, JAPAN_LINE)]
+
+
+def _read_confirmed() -> list:
+    """The one place the confirmed file is read. Tests replace this."""
+    return json.loads(CONFIRMED_FILE.read_text(encoding="utf-8"))
+
+
+def confirmed_by_label() -> Dict[Tuple[str, str], str]:
+    """The hand-written list of confirmed approvals (ticket 2.42), as
+    (medicine id, disease id) -> the link to the official label.
+
+    Each entry holds exactly four things: the medicine's id, the disease's
+    id, the date and the label, an https link to the label that names the
+    disease as an indication. Checked like approvals.json: an entry that is
+    not written this way raises ValueError, and the list is never half
+    read. The same pair written twice with two labels is refused too.
+
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_confirmed()
+    if not isinstance(entries, list):
+        raise ValueError("confirmed.json must hold a list.")
+    found: Dict[Tuple[str, str], str] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, CONFIRMED_KEYS, "A confirmed approval")
+        label = entry["label"]
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(f"A confirmed approval needs an https link to its label: {entry!r}")
+        if found.setdefault(pair, label) != label:
+            raise ValueError(f"A confirmed approval is written twice in two ways: {entry!r}")
+    return found
+
+
+def confirm_by_label(approved: Iterable[ApprovedMedicine],
+                     disease_id: str) -> List[ApprovedMedicine]:
+    """The main Approved list, with the confirmed cards marked (ticket 2.42).
+
+    approved is the MAIN Approved list (sort_into_tabs' approved). A card
+    on the confirmed list for this disease comes back with its label: it
+    then has no grey line, shows the label as its source, and so never
+    goes in no_regulator_box. Every other card comes back as it was, in
+    the same order. A card added by hand is never changed: its own label
+    is already its source. Nothing is added or taken off the list.
+    """
+    labels = confirmed_by_label()
+    return [
+        replace(medicine, confirmed_from_label=labels[(medicine.id, disease_id)])
+        if (medicine.id, disease_id) in labels and not medicine.added_from_label
+        else medicine
+        for medicine in approved
+    ]
 
 
 def _read_left_out() -> list:

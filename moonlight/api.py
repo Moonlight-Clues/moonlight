@@ -22,7 +22,14 @@
                                             the Approved cards the page shows
                                             in the folded box at the bottom of
                                             the Approved tab (ticket 2.27).
-                                            They are still in "approved"
+                                            They are still in "approved".
+                                            Also "no_regulator_box": the ids
+                                            of the Approved cards the page
+                                            shows in the folded box directly
+                                            above that one: a grey line saying
+                                            there is no regulator record, or
+                                            only Japan's general list (ticket
+                                            2.42). They are still in "approved"
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
 
 Run it with:  uvicorn moonlight.api:app
@@ -89,7 +96,7 @@ from moonlight import explain, protein, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
-from moonlight.engine import wrong_approvals_box
+from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -266,7 +273,10 @@ class _Found:
         # by_hand (ticket 2.26): the hand-written list's entries for this
         # disease. Each is on the main Approved list and nowhere else.
         tabs = sort_into_tabs(tray, listed, withdrawn_listed, neighbours, on_list, by_hand)
-        self.approved = tabs.approved  # A to Z. Not clues: no rank, never explained.
+        # A to Z. Not clues: no rank, never explained. Ticket 2.42: a card on
+        # the hand-written list of confirmed approvals for this disease shows
+        # its label as source and has no grey line. No card moves by it.
+        self.approved = confirm_by_label(tabs.approved, disease.id)
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = tabs.wider_group
         # Approved only for a narrower disease (ticket 2.14): its own folded box.
@@ -641,6 +651,15 @@ def clues(disease_id: str) -> dict:
     if looks_wrong_box:
         # Only there when it holds something, like the other boxes.
         answer["wrong_approvals_box"] = [medicine.id for medicine in looks_wrong_box]
+    # Ticket 2.42. The folded box directly above that one: the ids of the
+    # main list's cards whose grey line is the "no regulator record" line or
+    # the Japan line, in the list's own order. The red box wins: a card in
+    # it is not named here. The cards stay in "approved", each as it was.
+    # The page leaves them out of the main list and out of the tab's number.
+    no_record_box = no_regulator_box(found.approved, disease.id)
+    if no_record_box:
+        # Only there when it holds something, like the other boxes.
+        answer["no_regulator_box"] = [medicine.id for medicine in no_record_box]
     if wrong_way:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.

@@ -393,6 +393,13 @@ body.registering>:not(.register){display:none!important}
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
           <div class="cards" id="wider-cards"></div>
         </details>
+        <!-- Approved cards with no regulator record, or only Japan's general list (ticket 2.42).
+             Folded, directly above the red-warning box. The API names its cards. Each card is as it
+             was, grey line included. The box never opens by itself. -->
+        <details class="wider-box" id="no-regulator-box" hidden>
+          <summary>The database lists these as approved, but gives no regulator record for them. (<span id="no-regulator-count"></span>) <span data-part="tap">Tap to open</span></summary>
+          <div class="cards" id="no-regulator-cards"></div>
+        </details>
         <!-- Approved cards with a red warning (ticket 2.27). Folded, at the very bottom of the tab.
              The API names its cards. Each card is as it was. The box never opens by itself. -->
         <details class="wider-box" id="wrong-box" hidden>
@@ -725,6 +732,7 @@ body.registering>:not(.register){display:none!important}
     byId("narrower-cards").replaceChildren();
     byId("wider-cards").replaceChildren();
     byId("wrong-cards").replaceChildren();
+    byId("no-regulator-cards").replaceChildren();
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
     byId("more-trials-cards").replaceChildren();
@@ -919,7 +927,13 @@ body.registering>:not(.register){display:none!important}
     const allApprovedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
     // Ticket 2.27. The API names the cards with a red warning: they sit in the folded box at the
     // bottom of the tab. approvedCards is the main list without them, in the same A to Z order.
-    const [approvedCards, wrongCards] = aboveAndBox(data.approved, data.wrong_approvals_box, allApprovedCards);
+    const [notWrongCards, wrongCards] = aboveAndBox(data.approved, data.wrong_approvals_box, allApprovedCards);
+    // Ticket 2.42. Of the rest, the API names the cards with no regulator record (or only Japan's
+    // general list): they sit in the folded box above the red one. The red box wins, so the API
+    // never names a card for both. approvedCards is the main list without either box's cards.
+    const wrongIds = new Set(data.wrong_approvals_box || []);
+    const notWrong = data.approved.filter(medicine => !wrongIds.has(medicine.id));
+    const [approvedCards, noRegulatorCards] = aboveAndBox(notWrong, data.no_regulator_box, notWrongCards);
     // Approved only for a narrower disease: its own folded box, above the wider one.
     const narrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
     // Approved only for a wider group: the folded box at the bottom of the tab.
@@ -944,6 +958,7 @@ body.registering>:not(.register){display:none!important}
     byId("approved-empty").hidden = !!approvedCards.length || !!widerCards.length || !!narrowerCards.length;
     // Ticket 2.27. The "nothing approved" words would be untrue while the red-warning box holds a card.
     if (wrongCards.length) byId("approved-empty").hidden = true;
+    if (noRegulatorCards.length) byId("approved-empty").hidden = true;  // the same for its box (ticket 2.42)
     byId("narrower-cards").replaceChildren(...narrowerCards);
     byId("narrower-count").textContent = narrowerCards.length;
     byId("narrower-box").hidden = !narrowerCards.length;
@@ -959,6 +974,11 @@ body.registering>:not(.register){display:none!important}
     byId("wrong-box").hidden = !wrongCards.length;
     byId("wrong-box").open = false;  // always folded: it never opens by itself, even when it is all there is
     tapWords(byId("wrong-box"));
+    byId("no-regulator-cards").replaceChildren(...noRegulatorCards);
+    byId("no-regulator-count").textContent = noRegulatorCards.length;
+    byId("no-regulator-box").hidden = !noRegulatorCards.length;
+    byId("no-regulator-box").open = false;  // always folded, like the red-warning box (ticket 2.42)
+    tapWords(byId("no-regulator-box"));
     // So nobody misses the boxes: how many more cards they hold, both together.
     const boxedCards = narrowerCards.length + widerCards.length;
     byId("more-line").textContent = boxedCards === 1
@@ -984,7 +1004,8 @@ body.registering>:not(.register){display:none!important}
     tapWords(byId("new-trials-box"));
 
     const counts = {
-      // The main list and the two older boxes. The red-warning box is not counted (ticket 2.27).
+      // The main list and the two older boxes. The red-warning box is not counted (ticket 2.27),
+      // nor is the no-regulator box (ticket 2.42).
       approved: approvedCards.length + narrowerCards.length + widerCards.length,
       trials: studiedCards.length + moreTrialsCards.length + newTrialsCards.length,  // the list and both its boxes
       clues: newCards.length};
@@ -1006,6 +1027,7 @@ body.registering>:not(.register){display:none!important}
   }
   for (const id of ["narrower-box", "wider-box"]) byId(id).addEventListener("toggle", event => tapWords(event.currentTarget));
   byId("wrong-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the red-warning box under them
+  byId("no-regulator-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box above it (ticket 2.42)
   byId("more-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the In trials list
   byId("new-trials-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the second box under it
   byId("opposite-box").addEventListener("toggle", event => tapWords(event.currentTarget));  // the box under the New clues list
