@@ -126,6 +126,7 @@ or the id of one of their forms, is written there for this disease. Like
 withdrawal_notes, it is worked out after sort_into_tabs, which is not
 changed. A card added from approvals.json is marked there instead: the same
 pair in both files is refused.
+
 Ticket 2.40, the older flag with a regulator's approval. Kashish's answers
 of 24 Nov: a medicine the older "Withdrawn" flag hides comes back on the
 main Approved list when the searched disease's own list has it approved

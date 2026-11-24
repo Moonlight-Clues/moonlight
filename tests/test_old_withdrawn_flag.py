@@ -214,7 +214,12 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
         if key in ("approved", "left_out", "wrong_approvals_box"):
             continue
         assert after[key] == before[key], key
-    assert set(after) - set(before) <= {"wrong_approvals_box"}
+    # Ticket 2.42 (merged after these pages were saved) adds the key
+    # no_regulator_box and moves cards into that box. They stay in
+    # "approved", so the check above already holds each card letter for letter.
+    assert set(after) - set(before) <= {"wrong_approvals_box", "no_regulator_box"}
+    approved_ids = [card["id"] for card in after["approved"]]
+    assert all(medicine_id in approved_ids for medicine_id in after.get("no_regulator_box", []))
     boxed = [medicine_id for medicine_id in after.get("wrong_approvals_box", [])
              if medicine_id not in back]
     assert boxed == before.get("wrong_approvals_box", [])
