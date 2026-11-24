@@ -699,11 +699,18 @@ def test_guard_a_card_can_carry_the_no_regulator_line_and_this_line():
 
 def test_guard_the_older_withdrawn_flag_still_hides_a_medicine():
     """Out of this ticket, so it must be as it was: a "Withdrawn" warning on
-    octocog alfa takes its card off the page and counts it as left out."""
+    octocog alfa takes its card off the page and counts it as left out.
+
+    Ticket 2.40: a flagged medicine with a regulator's approval report on
+    the disease's own list now comes back. So here its reports are also
+    made to come from TTD, which is not a regulator, as for the cards that
+    stay hidden."""
     def change(rows):
         for row in rows:
             if row["drug"]["id"] == OCTOCOG:
                 row["drug"]["drugWarnings"] = [{"warningType": "Withdrawn"}]
+                for report in row["clinicalReports"]:
+                    report["source"] = "TTD"
     answer = page_answer(post_json=changed_list(HEM_A, change))
     assert OCTOCOG not in [item["id"] for item in answer["approved"]]
     assert len(answer["approved"]) == 17
@@ -748,9 +755,12 @@ def test_page_the_safety_line_is_still_there():
 
 def test_claude_md_keeps_the_withdrawn_rule_and_adds_the_new_words():
     text = (ROOT / "CLAUDE.md").read_text(encoding="utf-8")
-    old = ("- A medicine withdrawn in any country does not count as approved. It\n"
-           "  is not shown anywhere on the page: no tab, no folded box, and it is\n"
-           "  never added from the hand-written list of missing approvals.\n")
+    # Ticket 2.40 (Kashish's answers of 24 Nov) added the exception.
+    old = ("- A medicine withdrawn in any country does not count as approved, unless\n"
+           "  the disease's own list holds a regulator's approval of it for that\n"
+           "  disease: then it is on the Approved tab with the withdrawal line below.\n"
+           "  Otherwise it is not shown anywhere on the page: no tab, no folded box,\n"
+           "  and it is never added from the hand-written list of missing approvals.\n")
     assert old in text
     after = " ".join(text[text.index(old) + len(old):].split("- New clue:")[0].split())
     assert after == (

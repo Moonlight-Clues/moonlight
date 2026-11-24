@@ -1,0 +1,4960 @@
+{
+ "disease": {
+  "id": "MONDO_0005027",
+  "name": "epilepsy"
+ },
+ "about_disease": {
+  "description": "A brain disorder characterized by episodes of abnormally increased neuronal discharge resulting in transient episodes of sensory or motor neurological dysfunction, or psychic dysfunction. These episodes may or may not be associated with loss of consciousness or convulsions.",
+  "source": "Open Targets",
+  "also_called": [
+   "seizure disorder",
+   "EF - Epileptic fit",
+   "EP - Epilepsy",
+   "EPILEP NEC W/O INTR EPIL",
+   "EPILEP NOS W/O INTR EPIL",
+   "EPILEPSY NEC W INTR EPIL",
+   "EPILEPSY NOS W INTR EPIL",
+   "Epilectic attack, NOS",
+   "Epilepsy (disorder)",
+   "Epilepsy NOS",
+   "Epilepsy NOS (disorder)",
+   "Epilepsy and recurrent seizures",
+   "Epilepsy, NOS",
+   "Epilepsy, unspecified",
+   "Epilepsy, unspecified, with intractable epilepsy",
+   "Epilepsy, unspecified, without mention of intractable epilepsy",
+   "Epileptic",
+   "Epileptic Seizure",
+   "Epileptic attack",
+   "Epileptic attack, NOS",
+   "Epileptic convulsions",
+   "Epileptic convulsions, NOS",
+   "Epileptic disorder",
+   "Epileptic disorder, NOS",
+   "Epileptic fit",
+   "Epileptic fits",
+   "Epileptic fits, NOS",
+   "Epileptic seizure (finding)",
+   "Epileptic seizures",
+   "Epileptic seizures, NOS",
+   "Generalised convulsion",
+   "Generalised fit",
+   "Generalised seizure",
+   "Generalized convulsion",
+   "Generalized fit",
+   "Generalized seizure",
+   "Generalized seizure (finding)",
+   "Other forms of epilepsy",
+   "Other forms of epilepsy (disorder)",
+   "Other forms of epilepsy NOS",
+   "Other forms of epilepsy NOS (disorder)",
+   "Other forms of epilepsy and recurrent seizures",
+   "Other forms of epilepsy, with intractable epilepsy",
+   "Other forms of epilepsy, without mention of intractable epilepsy",
+   "Seizure disorder (disorder)",
+   "[X]Other epilepsy",
+   "[X]Other epilepsy (disorder)"
+  ]
+ },
+ "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+ "approved": [
+  {
+   "id": "CHEMBL20",
+   "medicine": "Acetazolamide",
+   "forms": [
+    "Acetazolamide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1cb912d1-0d48-7e6f-a7b6-f766be6b86b0"
+  },
+  {
+   "id": "CHEMBL3707389",
+   "medicine": "AMINO(DIPHENYLHYDANTOIN) Valeric Acid",
+   "forms": [
+    "AMINO(DIPHENYLHYDANTOIN) Valeric Acid"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AB03",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL3833301",
+   "medicine": "Barbexaclone",
+   "forms": [
+    "Barbexaclone"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AA04",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL64195",
+   "medicine": "Beclamide",
+   "forms": [
+    "Beclamide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX30",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL607400",
+   "medicine": "Brivaracetam",
+   "forms": [
+    "Brivaracetam"
+   ],
+   "proteins": [],
+   "reports": 23,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/briviact-italy-nubriveo"
+  },
+  {
+   "id": "CHEMBL190461",
+   "medicine": "Cannabidiol",
+   "forms": [
+    "Cannabidiol"
+   ],
+   "proteins": [],
+   "reports": 25,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX24",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL108",
+   "medicine": "Carbamazepine",
+   "forms": [
+    "Carbamazepine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 292,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0526a054-3eda-49b4-b390-7d5d16e30af8"
+  },
+  {
+   "id": "CHEMBL2087003",
+   "medicine": "Carisbamate",
+   "forms": [
+    "Carisbamate"
+   ],
+   "proteins": [],
+   "reports": 3,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX19",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL3989949",
+   "medicine": "Cenobamate",
+   "forms": [
+    "Cenobamate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 176,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/ontozry"
+  },
+  {
+   "id": "CHEMBL70418",
+   "medicine": "Clobazam",
+   "forms": [
+    "Clobazam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 92,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0S9MC",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL452",
+   "medicine": "Clonazepam",
+   "forms": [
+    "Clonazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 128,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0CP4E",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL12",
+   "medicine": "Diazepam",
+   "forms": [
+    "Diazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 532,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1a8bcc90-68fa-474d-832c-0df01e825f39"
+  },
+  {
+   "id": "CHEMBL315985",
+   "medicine": "Eslicarbazepine",
+   "forms": [
+    "Eslicarbazepine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D04QZD",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL87992",
+   "medicine": "Eslicarbazepine Acetate",
+   "forms": [
+    "Eslicarbazepine Acetate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 124,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/zebinix",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL327407",
+   "medicine": "Eterobarb",
+   "forms": [
+    "Eterobarb"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0E3WQ",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL93047",
+   "medicine": "Ethadione",
+   "forms": [
+    "Ethadione"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AC03",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL696",
+   "medicine": "Ethosuximide",
+   "forms": [
+    "Ethosuximide"
+   ],
+   "proteins": [],
+   "reports": 12,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01e8e8ee-b19f-4b3f-a140-9c7391393e1c"
+  },
+  {
+   "id": "CHEMBL1095",
+   "medicine": "Ethotoin",
+   "forms": [
+    "Ethotoin"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AB01",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL41355",
+   "medicine": "Ezogabine",
+   "forms": [
+    "Ezogabine"
+   ],
+   "proteins": [
+    {
+     "symbol": "KCNQ2",
+     "points": 89,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 25,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX21",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL1094",
+   "medicine": "Felbamate",
+   "forms": [
+    "Felbamate"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 10,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2f522701-397a-11de-8a39-0800200c9a66"
+  },
+  {
+   "id": "CHEMBL1201336",
+   "medicine": "Fosphenytoin",
+   "forms": [
+    "Fosphenytoin",
+    "Fosphenytoin Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 64,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0J5YC",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL940",
+   "medicine": "Gabapentin",
+   "forms": [
+    "Gabapentin"
+   ],
+   "proteins": [
+    {
+     "symbol": "CACNA1A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 374,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0002eded-a283-4590-a78c-b6ff2027e684"
+  },
+  {
+   "id": "CHEMBL96",
+   "medicine": "GAMMA-AMINOBUTYRIC Acid",
+   "forms": [
+    "GAMMA-AMINOBUTYRIC Acid"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AG03",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1568698",
+   "medicine": "Ganaxolone",
+   "forms": [
+    "Ganaxolone"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 116,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0X0CH",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2110679",
+   "medicine": "Iomazenil",
+   "forms": [
+    "Iomazenil (123I)"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "proof_note": "Approved in Japan, according to the database. Moonlight could not find the exact record for this disease."
+  },
+  {
+   "id": "CHEMBL58323",
+   "medicine": "Lacosamide",
+   "forms": [
+    "Lacosamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 392,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1310e776-65c8-413d-aab5-81a8c15719c5"
+  },
+  {
+   "id": "CHEMBL741",
+   "medicine": "Lamotrigine",
+   "forms": [
+    "Lamotrigine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 860,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=03f1d6d9-0300-46d8-8c6e-eeda78bf45d4"
+  },
+  {
+   "id": "CHEMBL1286",
+   "medicine": "Levetiracetam",
+   "forms": [
+    "Levetiracetam"
+   ],
+   "proteins": [],
+   "reports": 177,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0081f751-e2e5-4d28-9053-306accab3561"
+  },
+  {
+   "id": "CHEMBL861",
+   "medicine": "Mephenytoin",
+   "forms": [
+    "Mephenytoin"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 12,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07RGW",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL45029",
+   "medicine": "Mephobarbital",
+   "forms": [
+    "Mephobarbital"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AA01",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL450",
+   "medicine": "Metharbital",
+   "forms": [
+    "Metharbital"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02OZY",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL697",
+   "medicine": "Methsuximide",
+   "forms": [
+    "Methsuximide"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08EOD",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL655",
+   "medicine": "Midazolam",
+   "forms": [
+    "Midazolam",
+    "Midazolam Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 1464,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2b29422e-54d5-4a49-8522-e9cf752368c3"
+  },
+  {
+   "id": "CHEMBL13209",
+   "medicine": "Nitrazepam",
+   "forms": [
+    "Nitrazepam"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0T5WK",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1068",
+   "medicine": "Oxcarbazepine",
+   "forms": [
+    "Oxcarbazepine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 312,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1664b832-7fed-451c-9783-4ad8f8fc354d"
+  },
+  {
+   "id": "CHEMBL1100",
+   "medicine": "Paramethadione",
+   "forms": [
+    "Paramethadione"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09JBP",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1214124",
+   "medicine": "Perampanel",
+   "forms": [
+    "Perampanel"
+   ],
+   "proteins": [],
+   "reports": 16,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=71cf3309-e182-473c-8b0b-280cabd0e122"
+  },
+  {
+   "id": "CHEMBL918",
+   "medicine": "Phenacemide",
+   "forms": [
+    "Phenacemide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07ONP",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2107062",
+   "medicine": "Pheneturide",
+   "forms": [
+    "Pheneturide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX13",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL797",
+   "medicine": "Phensuximide",
+   "forms": [
+    "Phensuximide"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D06BYV",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL16",
+   "medicine": "Phenytoin",
+   "forms": [
+    "Phenytoin",
+    "Phenytoin Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 248,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=051742b5-b0f0-44a5-8d31-3288527b0638"
+  },
+  {
+   "id": "CHEMBL1059",
+   "medicine": "Pregabalin",
+   "forms": [
+    "Pregabalin"
+   ],
+   "proteins": [
+    {
+     "symbol": "CACNA1A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 377,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lyrica",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL856",
+   "medicine": "Primidone",
+   "forms": [
+    "Primidone"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 40,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=06738af4-2755-41b0-9a43-552d912e14be"
+  },
+  {
+   "id": "CHEMBL287631",
+   "medicine": "Progabide",
+   "forms": [
+    "Progabide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AG05",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1201754",
+   "medicine": "Rufinamide",
+   "forms": [
+    "Rufinamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 68,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0MD2L"
+  },
+  {
+   "id": "CHEMBL1983350",
+   "medicine": "Stiripentol",
+   "forms": [
+    "Stiripentol"
+   ],
+   "proteins": [],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02XSA",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL328560",
+   "medicine": "Sulthiame",
+   "forms": [
+    "Sulthiame"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AX03",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1027",
+   "medicine": "Tiagabine",
+   "forms": [
+    "Tiagabine"
+   ],
+   "proteins": [],
+   "reports": 3,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0ED7U",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL220492",
+   "medicine": "Topiramate",
+   "forms": [
+    "Topiramate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 2,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 2200,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=011eedbd-efb1-4d4e-99f0-b6bca81fb5ad"
+  },
+  {
+   "id": "CHEMBL695",
+   "medicine": "Trimethadione",
+   "forms": [
+    "Trimethadione"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0U4VT",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL109",
+   "medicine": "Valproic Acid",
+   "forms": [
+    "Valproic Acid",
+    "Valproate Sodium",
+    "Divalproex Sodium"
+   ],
+   "proteins": [],
+   "reports": 168,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7a687b2f-246d-4736-a20c-92421c263268"
+  },
+  {
+   "id": "CHEMBL93836",
+   "medicine": "Valpromide",
+   "forms": [
+    "Valpromide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N03AG02",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL89598",
+   "medicine": "Vigabatrin",
+   "forms": [
+    "Vigabatrin"
+   ],
+   "proteins": [],
+   "reports": 2,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0R3QY",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL750",
+   "medicine": "Zonisamide",
+   "forms": [
+    "Zonisamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 364,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ab183cf-51aa-402a-9351-53a4f112d1f9"
+  }
+ ],
+ "being_studied": [
+  {
+   "id": "CHEMBL661",
+   "medicine": "Alprazolam",
+   "forms": [
+    "Alprazolam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 436,
+   "source": "https://clinicaltrials.gov/study/NCT00634790",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL742",
+   "medicine": "Ketamine",
+   "forms": [
+    "Ketamine",
+    "Ketamine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 713,
+   "source": "https://clinicaltrials.gov/study/NCT00163969",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL807",
+   "medicine": "Memantine",
+   "forms": [
+    "Memantine",
+    "Memantine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 194,
+   "source": "https://clinicaltrials.gov/study/NCT03168997",
+   "trial_phase": "Phase 1",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_clues": [
+  {
+   "id": "CHEMBL900",
+   "medicine": "Orphenadrine",
+   "forms": [
+    "Orphenadrine",
+    "Orphenadrine Hydrochloride",
+    "Orphenadrine Citrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 65,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N04AB02",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201293",
+   "medicine": "Acamprosate",
+   "forms": [
+    "Acamprosate",
+    "Acamprosate Calcium"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 200,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL79",
+   "medicine": "Lidocaine",
+   "forms": [
+    "Lidocaine",
+    "Lidocaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4132,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/senstend",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1077896",
+   "medicine": "Ropivacaine",
+   "forms": [
+    "Ropivacaine",
+    "Ropivacaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 1300,
+   "source": "https://clinicaltrials.gov/study/NCT00523289",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL744",
+   "medicine": "Riluzole",
+   "forms": [
+    "Riluzole"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 292,
+   "source": "https://clinicaltrials.gov/study/NCT00542412",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1194",
+   "medicine": "Prilocaine",
+   "forms": [
+    "Prilocaine",
+    "Prilocaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 276,
+   "source": "https://clinicaltrials.gov/study/NCT01412632",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1093",
+   "medicine": "Articaine",
+   "forms": [
+    "Articaine",
+    "Articaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 252,
+   "source": "https://clinicaltrials.gov/study/NCT01536717",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL698",
+   "medicine": "Tetracaine",
+   "forms": [
+    "Tetracaine",
+    "Tetracaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 200,
+   "source": "https://clinicaltrials.gov/study/NCT01710787",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1294",
+   "medicine": "Quinidine",
+   "forms": [
+    "Quinidine",
+    "Quinidine Gluconate",
+    "Quinidine Sulfate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 164,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5023f053-fcc4-4c2c-aa59-9ec198ad185e",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1087",
+   "medicine": "Mepivacaine",
+   "forms": [
+    "Mepivacaine",
+    "Mepivacaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 156,
+   "source": "https://clinicaltrials.gov/study/NCT04477317",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL558",
+   "medicine": "Mexiletine",
+   "forms": [
+    "Mexiletine",
+    "Mexiletine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 140,
+   "source": "https://clinicaltrials.gov/study/NCT02260388",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL184412",
+   "medicine": "Dronedarone",
+   "forms": [
+    "Dronedarone",
+    "Dronedarone Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 124,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=236d4549-f44b-4677-b857-acedd10b9920",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1179047",
+   "medicine": "Chloroprocaine",
+   "forms": [
+    "Chloroprocaine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 112,
+   "source": "https://clinicaltrials.gov/study/NCT02287870",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL631",
+   "medicine": "Propafenone",
+   "forms": [
+    "Propafenone",
+    "Propafenone Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 100,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0c887381-42fe-4f37-858a-d9ffb218dd1c",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL370805",
+   "medicine": "Cocaine",
+   "forms": [
+    "Cocaine",
+    "Cocaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 72,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D04XPW",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL640",
+   "medicine": "Procainamide",
+   "forms": [
+    "Procainamide",
+    "Procainamide Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 64,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abb4a154-8e7f-44c7-ab96-ee1bd928288f",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL569",
+   "medicine": "Procaine",
+   "forms": [
+    "Procaine",
+    "Procaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 40,
+   "source": "https://clinicaltrials.gov/study/NCT00857688",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL517",
+   "medicine": "Disopyramide",
+   "forms": [
+    "Disopyramide",
+    "Disopyramide Phosphate"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 32,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0M4YC",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1196",
+   "medicine": "Proparacaine",
+   "forms": [
+    "Proparacaine",
+    "Proparacaine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 24,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0Q7ZG",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200",
+   "medicine": "Benoxinate",
+   "forms": [
+    "Benoxinate",
+    "Benoxinate Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 20,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=D04AB03",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1075",
+   "medicine": "Moricizine",
+   "forms": [
+    "Moricizine",
+    "Moricizine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 16,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D04VPA",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201217",
+   "medicine": "Dyclonine",
+   "forms": [
+    "Dyclonine",
+    "Dyclonine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D04QLR",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1762",
+   "medicine": "Tocainide",
+   "forms": [
+    "Tocainide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01BB03",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL492",
+   "medicine": "Etidocaine",
+   "forms": [
+    "Etidocaine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G7DJ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1197",
+   "medicine": "Hexylcaine",
+   "forms": [
+    "Hexylcaine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08MRN",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201242",
+   "medicine": "Indecainide",
+   "forms": [
+    "Indecainide"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0K4CQ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1195",
+   "medicine": "Propoxycaine",
+   "forms": [
+    "Propoxycaine"
+   ],
+   "proteins": [
+    {
+     "symbol": "SCN1A",
+     "points": 93,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN2A",
+     "points": 91,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN8A",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "SCN3A",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0N6CR",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200694",
+   "medicine": "Sevoflurane",
+   "forms": [
+    "Sevoflurane"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 1096,
+   "source": "https://clinicaltrials.gov/study/NCT00144118",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297526",
+   "medicine": "Remimazolam",
+   "forms": [
+    "Remimazolam",
+    "Remimazolam Besylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 584,
+   "source": "https://clinicaltrials.gov/study/NCT04621305",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL454",
+   "medicine": "Butalbital",
+   "forms": [
+    "Butalbital"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 484,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04bddbc4-86c7-4bac-9327-010568020568",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL911",
+   "medicine": "Zolpidem",
+   "forms": [
+    "Zolpidem",
+    "Zolpidem Tartrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 432,
+   "source": "https://clinicaltrials.gov/study/NCT00296790",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1522",
+   "medicine": "Eszopiclone",
+   "forms": [
+    "Eszopiclone"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 376,
+   "source": "https://clinicaltrials.gov/study/NCT00365976",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200733",
+   "medicine": "Desflurane",
+   "forms": [
+    "Desflurane"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 320,
+   "source": "https://clinicaltrials.gov/study/NCT01199237",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1256",
+   "medicine": "Isoflurane",
+   "forms": [
+    "Isoflurane"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 236,
+   "source": "https://clinicaltrials.gov/study/NCT00144118",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL967",
+   "medicine": "Temazepam",
+   "forms": [
+    "Temazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 224,
+   "source": "https://clinicaltrials.gov/study/NCT02153788",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL681",
+   "medicine": "Etomidate",
+   "forms": [
+    "Etomidate"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 212,
+   "source": "https://clinicaltrials.gov/study/NCT00415701",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4094894",
+   "medicine": "Cipepofol",
+   "forms": [
+    "Cipepofol"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 200,
+   "source": "https://clinicaltrials.gov/study/NCT05035069",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL207538",
+   "medicine": "Brexanolone",
+   "forms": [
+    "Brexanolone"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 140,
+   "source": "https://clinicaltrials.gov/study/NCT04273191",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL407",
+   "medicine": "Flumazenil",
+   "forms": [
+    "Flumazenil"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 116,
+   "source": "https://clinicaltrials.gov/study/NCT02899156",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4105630",
+   "medicine": "Zuranolone",
+   "forms": [
+    "Zuranolone"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 84,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0S5IR",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL568",
+   "medicine": "Oxazepam",
+   "forms": [
+    "Oxazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 60,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1382470a-7eec-4e7c-aa86-15254fb57a5a",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL441",
+   "medicine": "Thiopental",
+   "forms": [
+    "Thiopental",
+    "Thiopental Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 60,
+   "source": "https://clinicaltrials.gov/study/NCT01495949",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL285674",
+   "medicine": "Estazolam",
+   "forms": [
+    "Estazolam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 48,
+   "source": "https://clinicaltrials.gov/study/NCT03997058",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL451",
+   "medicine": "Chlordiazepoxide",
+   "forms": [
+    "Chlordiazepoxide",
+    "Chlordiazepoxide Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 40,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=720bb488-30df-4eca-8b5d-87b73272a509",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1213252",
+   "medicine": "Clorazepic Acid",
+   "forms": [
+    "Clorazepic Acid",
+    "Clorazepate Dipotassium"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 36,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P3JU",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1521",
+   "medicine": "Zaleplon",
+   "forms": [
+    "Zaleplon"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 28,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/sonata",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL968",
+   "medicine": "Flurazepam",
+   "forms": [
+    "Flurazepam",
+    "Flurazepam Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 16,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08XFV",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2106227",
+   "medicine": "Etifoxine",
+   "forms": [
+    "Etifoxine"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": true,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=N05BX03",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL7413",
+   "medicine": "Methohexital",
+   "forms": [
+    "Methohexital"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 12,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0S8TD",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1697737",
+   "medicine": "Clotiazepam",
+   "forms": [
+    "Clotiazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0R4DP",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1257",
+   "medicine": "Enflurane",
+   "forms": [
+    "Enflurane"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0AO9S",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL970",
+   "medicine": "Halazepam",
+   "forms": [
+    "Halazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0Z9VB",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL931",
+   "medicine": "Halothane",
+   "forms": [
+    "Halothane"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0D8VE",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL969",
+   "medicine": "Prazepam",
+   "forms": [
+    "Prazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G3AQ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200472",
+   "medicine": "Quazepam",
+   "forms": [
+    "Quazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 8,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9727e8b4-14f1-451d-9630-84eabc772e42",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL449",
+   "medicine": "Butabarbital",
+   "forms": [
+    "Butabarbital"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0A4JK",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL591",
+   "medicine": "Ethchlorvynol",
+   "forms": [
+    "Ethchlorvynol"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03VZH",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1102",
+   "medicine": "Glutethimide",
+   "forms": [
+    "Glutethimide"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0Z9NZ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200790",
+   "medicine": "Methyprylon",
+   "forms": [
+    "Methyprylon"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D05OQJ",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200802",
+   "medicine": "Talbutal",
+   "forms": [
+    "Talbutal"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0W0MF",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL440",
+   "medicine": "Thiamylal",
+   "forms": [
+    "Thiamylal"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D06NSA",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201317",
+   "medicine": "Triclofos",
+   "forms": [
+    "Triclofos Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0B2DP",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL284348",
+   "medicine": "Dalfampridine",
+   "forms": [
+    "Dalfampridine"
+   ],
+   "proteins": [
+    {
+     "symbol": "KCNQ2",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 68,
+   "source": "https://clinicaltrials.gov/study/NCT01356940",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL354077",
+   "medicine": "Amifampridine",
+   "forms": [
+    "Amifampridine",
+    "Amifampridine Phosphate"
+   ],
+   "proteins": [
+    {
+     "symbol": "KCNQ2",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 35,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL821",
+   "medicine": "Guanidine",
+   "forms": [
+    "Guanidine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "KCNQ2",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 2,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=903fbd33-e5d9-41fb-9414-7bd6f42a8593",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL113461",
+   "medicine": "Tedisamil",
+   "forms": [
+    "Tedisamil"
+   ],
+   "proteins": [
+    {
+     "symbol": "KCNQ2",
+     "points": 89,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 1,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C01BD06",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL262075",
+   "medicine": "Indiplon",
+   "forms": [
+    "Indiplon"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 3,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0GA5T",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL52440",
+   "medicine": "Dextromethorphan",
+   "forms": [
+    "Dextromethorphan",
+    "Dextromethorphan Polistirex",
+    "Dextromethorphan Hydrobromide"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 254,
+   "source": "https://clinicaltrials.gov/study/NCT00605605",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL395091",
+   "medicine": "Esketamine",
+   "forms": [
+    "Esketamine",
+    "Esketamine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 177,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d81a6a79-a74a-44b7-822c-0dfa3036eaed",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL660",
+   "medicine": "Amantadine",
+   "forms": [
+    "Amantadine",
+    "Amantadine Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "GRIN2A",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 106,
+   "source": "https://clinicaltrials.gov/study/NCT00632762",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1628502",
+   "medicine": "Gabapentin Enacarbil",
+   "forms": [
+    "Gabapentin Enacarbil"
+   ],
+   "proteins": [
+    {
+     "symbol": "CACNA1A",
+     "points": 88,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 26,
+   "source": "https://clinicaltrials.gov/study/NCT01668667",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL473159",
+   "medicine": "Phloroglucinol",
+   "forms": [
+    "Phloroglucinol"
+   ],
+   "proteins": [
+    {
+     "symbol": "CACNA1A",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 5,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=A03AX12",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1008",
+   "medicine": "Bepridil",
+   "forms": [
+    "Bepridil"
+   ],
+   "proteins": [
+    {
+     "symbol": "CACNA1A",
+     "points": 88,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 2,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=C08EA02",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL312443",
+   "medicine": "Gaboxadol",
+   "forms": [
+    "Gaboxadol"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 24,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00EEL",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "left_out": {
+  "not_approved": 43,
+  "unclear_link": 1
+ },
+ "narrower": [
+  {
+   "id": "CHEMBL580",
+   "medicine": "Lorazepam",
+   "forms": [
+    "Lorazepam"
+   ],
+   "proteins": [
+    {
+     "symbol": "GABRG2",
+     "points": 90,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRA1",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB3",
+     "points": 88,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "GABRB2",
+     "points": 86,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 676,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f495605-0959-442c-8636-9c2d2f93bdff",
+   "label": "Not listed as approved for this exact disease. Approved for status epilepticus, which the database lists under this disease."
+  }
+ ],
+ "wider_group": [
+  {
+   "id": "CHEMBL1200593",
+   "medicine": "Gadoteridol",
+   "forms": [
+    "Gadoteridol"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0M1PL",
+   "label": "Not listed as approved for this exact disease. Approved for brain disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1201239",
+   "medicine": "Iodamide",
+   "forms": [
+    "Iodamide"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D06LHU",
+   "label": "Not listed as approved for this exact disease. Approved for brain disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it.",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL2107214",
+   "medicine": "Iomeprol",
+   "forms": [
+    "Iomeprol"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09RUW",
+   "label": "Not listed as approved for this exact disease. Approved for brain disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL159776",
+   "medicine": "Pramiracetam",
+   "forms": [
+    "Pramiracetam"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P7VJ",
+   "label": "Not listed as approved for this exact disease. Approved for brain disorder, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  }
+ ],
+ "more_in_trials": [
+  {
+   "id": "CHEMBL53",
+   "medicine": "Apomorphine",
+   "forms": [
+    "Apomorphine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D01KYP",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1042",
+   "medicine": "Cholecalciferol",
+   "forms": [
+    "Cholecalciferol"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03475225",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL465",
+   "medicine": "Dronabinol",
+   "forms": [
+    "Dronabinol"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03808935",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201599",
+   "medicine": "Human Immunoglobulin G",
+   "forms": [
+    "Human Immunoglobulin G"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02697292",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3833333",
+   "medicine": "Nabiximols",
+   "forms": [
+    "Nabiximols"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT07403266",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL80",
+   "medicine": "Naloxone",
+   "forms": [
+    "Naloxone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT02332447",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298065",
+   "medicine": "OMEGA-3 Fatty Acids",
+   "forms": [
+    "OMEGA-3 Fatty Acids"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00299533",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL809",
+   "medicine": "Sertraline",
+   "forms": [
+    "Sertraline"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT00026637",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL723",
+   "medicine": "Carvedilol",
+   "forms": [
+    "Carvedilol"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT00524134",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL45",
+   "medicine": "Melatonin",
+   "forms": [
+    "Melatonin"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT05439876",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL269732",
+   "medicine": "Tacrolimus Anhydrous",
+   "forms": [
+    "Tacrolimus Anhydrous"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT00545493",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL600",
+   "medicine": "Acetylcysteine",
+   "forms": [
+    "Acetylcysteine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05485558",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1467",
+   "medicine": "Allopurinol",
+   "forms": [
+    "Allopurinol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03776656",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL367149",
+   "medicine": "Doconexent",
+   "forms": [
+    "Doconexent"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00871377",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1908360",
+   "medicine": "Everolimus",
+   "forms": [
+    "Everolimus"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01997255",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL41",
+   "medicine": "Fluoxetine",
+   "forms": [
+    "Fluoxetine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02929667",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL460026",
+   "medicine": "Icosapent",
+   "forms": [
+    "Icosapent"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00871377",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL717",
+   "medicine": "Medroxyprogesterone Acetate",
+   "forms": [
+    "Medroxyprogesterone Acetate"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00027209",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200711",
+   "medicine": "OMEGA-3-ACID Ethyl Esters",
+   "forms": [
+    "OMEGA-3-ACID Ethyl Esters"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02899741",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1364",
+   "medicine": "Pyridoxine",
+   "forms": [
+    "Pyridoxine"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01730313",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297585",
+   "medicine": "Triheptanoin",
+   "forms": [
+    "Triheptanoin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT02696044",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL98",
+   "medicine": "Vorinostat",
+   "forms": [
+    "Vorinostat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03894826",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL71752",
+   "medicine": "Vinpocetine",
+   "forms": [
+    "Vinpocetine"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://clinicaltrials.gov/study/NCT02011971",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201451",
+   "medicine": "Albumin Human",
+   "forms": [
+    "Albumin Human"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT03646240",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200574",
+   "medicine": "Sodium Chloride",
+   "forms": [
+    "Sodium Chloride"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00005925",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743007",
+   "medicine": "Daratumumab",
+   "forms": [
+    "Daratumumab"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT07026604",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107830",
+   "medicine": "Empagliflozin",
+   "forms": [
+    "Empagliflozin"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT05512130",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL27",
+   "medicine": "Propranolol",
+   "forms": [
+    "Propranolol"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06719804",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL413",
+   "medicine": "Sirolimus",
+   "forms": [
+    "Sirolimus"
+   ],
+   "trial_phase": "Early Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06719791",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_in_trials": [
+  {
+   "id": "CHEMBL3989601",
+   "medicine": "Losigamone",
+   "forms": [
+    "Losigamone"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0C1QB",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297521",
+   "medicine": "Padsevonil",
+   "forms": [
+    "Padsevonil"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT03739840",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3918017",
+   "medicine": "Seletracetam",
+   "forms": [
+    "Seletracetam"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0L9AJ",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068317",
+   "medicine": "Vormatrigine",
+   "forms": [
+    "Vormatrigine"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT07287163",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1812161",
+   "medicine": "Vatiquinone",
+   "forms": [
+    "Vatiquinone"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://clinicaltrials.gov/study/NCT04378075",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1880349",
+   "medicine": "2-DEOXY-D-GLUCOSE",
+   "forms": [
+    "2-DEOXY-D-GLUCOSE"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05605301",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3989682",
+   "medicine": "Becampanel",
+   "forms": [
+    "Becampanel"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P1QW",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107819",
+   "medicine": "Belnacasan",
+   "forms": [
+    "Belnacasan"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0HK3N",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2387742",
+   "medicine": "Cannabidivarin",
+   "forms": [
+    "Cannabidivarin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DEKM09",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL39933",
+   "medicine": "Carabersat",
+   "forms": [
+    "Carabersat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D05TLP",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2104646",
+   "medicine": "Dezinamide",
+   "forms": [
+    "Dezinamide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D01BBR",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL550961",
+   "medicine": "Diazepinomicin",
+   "forms": [
+    "Diazepinomicin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03493607",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3092995",
+   "medicine": "JNJ-26489112",
+   "forms": [
+    "JNJ-26489112"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0C2KF",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3337527",
+   "medicine": "JNJ-40411813",
+   "forms": [
+    "JNJ-40411813"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D2JF0S",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1397886",
+   "medicine": "Loreclezole",
+   "forms": [
+    "Loreclezole"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0H6PN",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL209821",
+   "medicine": "Naluzotan",
+   "forms": [
+    "Naluzotan"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT01281956",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107801",
+   "medicine": "Resequinil",
+   "forms": [
+    "Resequinil"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08LQD",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545042",
+   "medicine": "Selurampanel",
+   "forms": [
+    "Selurampanel"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02RVN",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL106124",
+   "medicine": "Senktide",
+   "forms": [
+    "Senktide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D05ZWG",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL318191",
+   "medicine": "Tonabersat",
+   "forms": [
+    "Tonabersat"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0E8IZ",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL471638",
+   "medicine": "Valrocemide",
+   "forms": [
+    "Valrocemide"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0XT1M",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL22916",
+   "medicine": "Ameltolide",
+   "forms": [
+    "Ameltolide"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07IIX",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095264",
+   "medicine": "Azetukalner",
+   "forms": [
+    "Azetukalner"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0WW3O",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL291962",
+   "medicine": "Leucine",
+   "forms": [
+    "Leucine"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT06387186",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL273481",
+   "medicine": "Muscimol",
+   "forms": [
+    "Muscimol"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://clinicaltrials.gov/study/NCT00005925",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL182066",
+   "medicine": "Radiprodil",
+   "forms": [
+    "Radiprodil"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0N3EJ",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650313",
+   "medicine": "Zandatrigine",
+   "forms": [
+    "Zandatrigine"
+   ],
+   "trial_phase": "Phase 1",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D01QTJ",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "opposite_way_box": [
+  "CHEMBL2106227",
+  "CHEMBL284348",
+  "CHEMBL354077",
+  "CHEMBL821",
+  "CHEMBL113461"
+ ]
+}

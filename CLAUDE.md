@@ -34,9 +34,11 @@ MedicineForm, Medicine, Path.
   shown inside it. The item takes the strongest stage of its forms.
 - "Approved" means approved for at least one disease. A medicine that
   is not approved anywhere is left out.
-- A medicine withdrawn in any country does not count as approved. It
-  is not shown anywhere on the page: no tab, no folded box, and it is
-  never added from the hand-written list of missing approvals.
+- A medicine withdrawn in any country does not count as approved, unless
+  the disease's own list holds a regulator's approval of it for that
+  disease: then it is on the Approved tab with the withdrawal line below.
+  Otherwise it is not shown anywhere on the page: no tab, no folded box,
+  and it is never added from the hand-written list of missing approvals.
   A WITHDRAWAL report on a disease's list is a different thing. It does
   not hide a card. On the Approved tab the card stays and says: The
   database records a withdrawal for this medicine in some country or
