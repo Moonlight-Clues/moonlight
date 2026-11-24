@@ -48,6 +48,7 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import test_api
+import test_fetch
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SAVED = ROOT / "fixtures" / "withdrawal_reports"
@@ -331,9 +332,13 @@ def test_fetch_a_report_on_a_tablet_form_counts_for_the_whole_family():
 
 def test_fetch_asks_the_same_questions_as_main():
     """No new question and no new field in a question: the questions are
-    letter for letter the ones main has."""
+    letter for letter the ones main had. One later change, by ticket 3.8
+    (Kashish, 23 Nov 2026): the proteins question also asks for
+    "functionDescriptions"."""
     main = load(SAVED / "questions_on_main.json")
-    assert {name: getattr(fetch, name) for name in main} == main
+    now = {name: getattr(fetch, name) for name in main}
+    now["TARGETS_QUERY"] = test_fetch.targets_question_before_3_8()
+    assert now == main
     assert sorted(main) == sorted(
         name for name in dir(fetch) if name.endswith("_QUERY"))
 
@@ -742,12 +747,14 @@ def test_claude_md_keeps_the_withdrawn_rule_and_adds_the_new_words():
         + " (Kashish, 23 Nov 2026.)")
 
 
-def test_decisions_md_ends_with_the_new_line():
-    last = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")[-1]
-    assert last == (
+# Ticket 3.8 added later decisions under it, so the line is no longer the
+# last one. This test used to be test_decisions_md_ends_with_the_new_line.
+def test_decisions_md_still_holds_the_new_line():
+    lines = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")
+    assert lines.count(
         "- 2026-11-23: A medicine with a WITHDRAWAL report keeps its card on the Approved "
         'tab, with the line "' + LINE + '" This replaces the 22 Nov decision to hide it. '
-        "The older Withdrawn warning flag still hides.")
+        "The older Withdrawn warning flag still hides.") == 1
 
 
 # ---- the page, in a real browser, at phone width ----

@@ -405,10 +405,12 @@ def test_the_page_has_the_rule_text_slot_and_sidhas_other_slots(client):
     for slot in (
         "rule-text", "safety-line", "search", "matches", "chips", "new-clues",
         "studied", "left-out", "card", "medicine-name", "forms", "reports",
-        "path", "protein", "score", "direction", "explanation", "ending",
+        "path", "protein", "score", "direction", "ending",
         "source", "phase", "loading", "empty",
     ):
         assert f'data-slot="{slot}"' in page, slot
+    # Ticket 3.8, commit B: the explanation slot is off the card.
+    assert 'data-slot="explanation"' not in page
 
 
 # Kashish's decision, 2026-11-16 (ticket 8.3, asked under STOP). The page
@@ -458,7 +460,8 @@ def test_the_page_wording(client):
     assert "Please wait, fetching data" in page
     assert "Already being studied for this disease" in page
     assert "The data does not say which direction this disease needs." in page
-    assert "Read explanation" in page
+    # Ticket 3.8, commit B: the explanation slot and its button are off the card.
+    assert "Read explanation" not in page
 
 
 def test_the_only_quick_start_chip_is_pah_by_its_id(client):
@@ -1334,9 +1337,11 @@ def test_53_approved_cards_get_no_number_no_explanation_and_no_ending(client):
     script = page_script(client)
     approved_card = script[script.index("function approvedCard("):]
     approved_card = approved_card[:approved_card.index("\n  }\n")]
-    for gone in ('slot(el, "explanation").remove()', 'slot(el, "ending").remove()',
-                 'slot(el, "rank").remove()'):
+    # Ticket 3.8, commit B: no card has an explanation slot any more, so
+    # there is none to take off an approved card.
+    for gone in ('slot(el, "ending").remove()', 'slot(el, "rank").remove()'):
         assert gone in approved_card, gone
+    assert 'data-slot="explanation"' not in client.get("/").text
     assert "/api/explain" not in approved_card and "readExplanation" not in approved_card
 
 
@@ -1573,8 +1578,10 @@ def test_54_the_guides_key_is_chips_and_the_four_wrong_sentences_stay_out(client
     key = guide[guide.index('<ul class="key"'):]
     key = key[:key.index("</ul>")]
     for letter, words in (("C", "The path, in three steps"), ("D", "Up, down or unknown"),
-                          ("F", "The clue in plain words"), ("G", "The catch, on every clue")):
+                          ("G", "The catch, on every clue")):
         assert '>%s</span><span>%s</span>' % (letter, words) in key, letter
+    # Ticket 3.8, commit B: the sample card has no explanation, so no chip F.
+    assert "The clue in plain words" not in guide
     for old in ("If any step is missing", "The same on every card",
                 "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
         assert old not in guide, old
@@ -1682,10 +1689,9 @@ def test_211_case_2_the_list_says_withdrawn_and_the_protein_answer_has_no_note(c
 TOO_MANY = "Too many requests. Please wait a minute."
 # Ticket 5.8: the guide is condensed. This is the line as it is now, in
 # the folded part "Where the facts come from".
-GUIDE_LINE = (
-    "Explanations come from Google’s Gemini or Moonlight’s own template. "
-    "What you type is sent to Gemini, so type no names or private details."
-)
+# Ticket 3.8, commit B: the first sentence ("Explanations come from Google’s
+# Gemini or Moonlight’s own template.") is no longer true and is gone.
+GUIDE_LINE = "What you type is sent to Gemini, so type no names or private details."
 TOO_LONG = "That search is too long. Please use 100 letters or fewer."
 VISITOR_A = {"X-Forwarded-For": "203.0.113.7"}
 VISITOR_B = {"X-Forwarded-For": "198.51.100.23"}
@@ -1908,16 +1914,14 @@ def test_82_the_page_shows_the_too_many_requests_words_exactly(client):
     assert "429" in script
 
 
+# Ticket 3.8, commit B: the page asks for no explanation at all, so it has
+# no explanation to show for too many requests, of any kind. This test used
+# to check the "explanation-too-many" form of the slot.
 def test_82_the_page_does_not_show_the_template_explanation_for_too_many_requests(client):
     page = client.get("/").text
-    block = re.search(r'(?s)<template id="explanation-too-many">(.*?)</template>', page).group(1)
-    # The words are filled in by the script, and nothing here is the
-    # code-written explanation.
-    assert 'data-part="message"' in block
-    assert "template" not in plain(block).lower()
-    read = re.search(r"(?s)async function readExplanation\(.*?\n  }\n", page_script(client)).group(0)
-    assert read.index("429") < read.index("explanation-failed")
-    assert "explanation-too-many" in read
+    assert "explanation-too-many" not in page and "explanation-failed" not in page
+    assert "readExplanation" not in page_script(client)
+    assert "/api/explain" not in page
 
 
 # ---- Example 6: the guide line ----

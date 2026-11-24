@@ -62,15 +62,20 @@ def test_a_the_leftover_sentence_is_gone(page):
     assert "A short explanation" not in page
 
 
-def test_a_the_box_shows_only_its_label_and_the_button(page):
-    box = explanation_box_of(template_of(page, "card-template"))
-    words = [w.strip() for w in re.sub(r"<[^>]+>", "\n", box).split("\n") if w.strip()]
-    assert words == ["Plain-language explanation", "Read explanation"]
+# Ticket 3.8, commit B (Shreshth, 24 Nov 2026, after speaking with Kashish):
+# the explanation box is off the card. These two tests used to be
+# test_a_the_box_shows_only_its_label_and_the_button and
+# test_a_the_other_two_messages_in_the_box_stay.
+def test_a_the_card_has_no_explanation_box(page):
+    card = template_of(page, "card-template")
+    assert '<div class="explanation" data-slot="explanation">' not in card
+    assert "Plain-language explanation" not in page
 
 
-def test_a_the_other_two_messages_in_the_box_stay(page):
-    assert COULD_NOT_FETCH in template_of(page, "explanation-failed")
-    assert 'aria-label="Explanation loading"' in template_of(page, "explanation-loading")
+def test_a_the_other_two_messages_of_the_box_are_gone_with_it(page):
+    assert COULD_NOT_FETCH not in page
+    assert '<template id="explanation-failed">' not in page
+    assert '<template id="explanation-loading">' not in page
 
 
 # ---- b. the heading ----
@@ -98,8 +103,11 @@ def test_c_the_safety_line_is_still_there_word_for_word(page):
 
 # ---- d. the button ----
 
-def test_d_the_read_explanation_button_is_still_in_the_clue_card(page):
-    assert READ_BUTTON in explanation_box_of(template_of(page, "card-template"))
+# Ticket 3.8, commit B. This test used to be
+# test_d_the_read_explanation_button_is_still_in_the_clue_card.
+def test_d_the_read_explanation_button_is_no_longer_in_the_clue_card(page):
+    assert READ_BUTTON not in page
+    assert "Read explanation" not in page
 
 
 # ---- the stray dot ----

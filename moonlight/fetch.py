@@ -53,6 +53,9 @@ fixtures/MONDO_0015924/disease_about.* and fixtures/MONDO_0100338/disease_about.
 "source" on a clinical report, and its values, were read from the answers
 saved in fixtures/probe_p3/ on the branch probe-approval-proof (2026-11-17)
 and from the live API on 2026-11-18. They are saved in fixtures/no_regulator/.
+"functionDescriptions" on a target was read from the answers saved in
+fixtures/probe_p8/ on the branch probe-uniprot (2026-11-22) and from the
+live API on 2026-11-24. It is saved in fixtures/protein_sentence/.
 """
 
 import logging
@@ -161,7 +164,7 @@ query AssociatedTargets($diseaseId: String!, $size: Int!) {
       count
       rows {
         score
-        target { id approvedSymbol approvedName }
+        target { id approvedSymbol approvedName functionDescriptions }
       }
     }
   }
@@ -528,6 +531,8 @@ def fetch_targets(disease: Disease, limit: int = 25) -> List[Target]:
             symbol=row["target"]["approvedSymbol"],
             name=row["target"]["approvedName"],
             score=row["score"],
+            # Old saved answers do not hold this field: then there are no texts.
+            function_texts=row["target"].get("functionDescriptions") or (),
         )
         for row in data["disease"]["associatedTargets"]["rows"]
     ]

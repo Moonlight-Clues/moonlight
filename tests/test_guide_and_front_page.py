@@ -77,9 +77,8 @@ DOCTOR_POINTS = [
     "Weak proof. Japan-list-only approvals say so. Approvals with no regulator "
     "record say so. Confirmed mistakes carry a red warning.",
     "Ranking. Link strength across the top 25 proteins. One protein machine counts once.",
-    "AI. Gemini suggests which disease you mean, and Open Targets confirms it. "
-    "Explanations are written by Gemini from the card’s records, or by "
-    "Moonlight’s own template.",
+    # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
+    "AI. Gemini suggests which disease you mean, and Open Targets confirms it.",
 ]
 LAST_SENTENCE = "Moonlight is not a prescribing reference."
 
