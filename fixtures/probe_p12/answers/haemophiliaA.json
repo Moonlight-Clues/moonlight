@@ -1,0 +1,1598 @@
+{
+ "disease": {
+  "id": "MONDO_0010602",
+  "name": "hemophilia A"
+ },
+ "about_disease": {
+  "description": "The most common form of hemophilia characterized by spontaneous or prolonged hemorrhages due to factor VIII deficiency.",
+  "source": "Open Targets",
+  "also_called": [
+   "congenital factor VIII disorder",
+   "factor VIII deficiency",
+   "haemophilia a, X-linked recessive",
+   "haemophilia type A",
+   "haemophilia type a",
+   "hemophilia a, X-linked recessive",
+   "hemophilia type A",
+   "hemophilia type a",
+   "hereditary Factor VIII deficiency",
+   "hereditary Factor VIII deficiency disease",
+   "Hemophilia A (disorder)",
+   "Subhemophilia"
+  ]
+ },
+ "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+ "approved": [
+  {
+   "id": "CHEMBL4594584",
+   "medicine": "Antihemophilic FACTOR, Pegylated (MW 20000) Human Sequence Recombinant",
+   "forms": [
+    "Antihemophilic FACTOR, Pegylated (MW 20000) Human Sequence Recombinant"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 85,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/adynovi"
+  },
+  {
+   "id": "CHEMBL4297730",
+   "medicine": "Concizumab",
+   "forms": [
+    "Concizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "TFPI",
+     "points": 55,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 11,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/alhemo"
+  },
+  {
+   "id": "CHEMBL5315069",
+   "medicine": "Damoctocog Alfa Pegol",
+   "forms": [
+    "Damoctocog Alfa Pegol"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 16,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D8B9KJ"
+  },
+  {
+   "id": "CHEMBL5095275",
+   "medicine": "Efanesoctocog Alfa",
+   "forms": [
+    "Efanesoctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 15,
+   "source": "https://ttd.idrblab.cn/data/drug/details/DMU9P2"
+  },
+  {
+   "id": "CHEMBL4297945",
+   "medicine": "Efmoroctocog Alfa",
+   "forms": [
+    "Efmoroctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 67,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0UQ1R"
+  },
+  {
+   "id": "CHEMBL3833393",
+   "medicine": "Emicizumab",
+   "forms": [
+    "Emicizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 60,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09XTN"
+  },
+  {
+   "id": "CHEMBL2108334",
+   "medicine": "Eptacog Alfa (ACTIVATED)",
+   "forms": [
+    "Eptacog Alfa (ACTIVATED)"
+   ],
+   "proteins": [
+    {
+     "symbol": "F7",
+     "points": 56,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 70,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoseven"
+  },
+  {
+   "id": "CHEMBL5315078",
+   "medicine": "Eptacog Beta (ACTIVATED)",
+   "forms": [
+    "Eptacog Beta (ACTIVATED)"
+   ],
+   "proteins": [
+    {
+     "symbol": "F7",
+     "points": 56,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 1,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/cevenfacta"
+  },
+  {
+   "id": "CHEMBL4594603",
+   "medicine": "Lonoctocog Alfa",
+   "forms": [
+    "Lonoctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 77,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/afstyla"
+  },
+  {
+   "id": "CHEMBL3990039",
+   "medicine": "Marstacimab",
+   "forms": [
+    "Marstacimab"
+   ],
+   "proteins": [
+    {
+     "symbol": "TFPI",
+     "points": 55,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/hympavzi"
+  },
+  {
+   "id": "CHEMBL2109137",
+   "medicine": "Moroctocog Alfa",
+   "forms": [
+    "Moroctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 102,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/refacto-af"
+  },
+  {
+   "id": "CHEMBL4297873",
+   "medicine": "Octocog Alfa",
+   "forms": [
+    "Octocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 119,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/advate",
+   "withdrawal_note": "The database records a withdrawal for this medicine in some country or region."
+  },
+  {
+   "id": "CHEMBL2108319",
+   "medicine": "Simoctocog Alfa",
+   "forms": [
+    "Simoctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 7,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuwiq"
+  },
+  {
+   "id": "CHEMBL5315075",
+   "medicine": "Susoctocog Alfa",
+   "forms": [
+    "Susoctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 10,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0G0AI"
+  },
+  {
+   "id": "CHEMBL877",
+   "medicine": "Tranexamic Acid",
+   "forms": [
+    "Tranexamic Acid"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 506,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=19f3483e-da9f-4a11-b2eb-b3c6d5d92fc8"
+  },
+  {
+   "id": "CHEMBL2108286",
+   "medicine": "Turoctocog Alfa",
+   "forms": [
+    "Turoctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 38,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novoeight"
+  },
+  {
+   "id": "CHEMBL5315071",
+   "medicine": "Turoctocog Alfa Pegol",
+   "forms": [
+    "Turoctocog Alfa Pegol"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 15,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/esperoct"
+  },
+  {
+   "id": "CHEMBL4297579",
+   "medicine": "Valoctocogene Roxaparvovec",
+   "forms": [
+    "Valoctocogene Roxaparvovec"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.fda.gov/media/169937/download?attachment"
+  }
+ ],
+ "being_studied": [
+  {
+   "id": "CHEMBL4594605",
+   "medicine": "Omfiloctocog Alfa",
+   "forms": [
+    "Omfiloctocog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 13,
+   "source": "https://clinicaltrials.gov/study/NCT02246868",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108175",
+   "medicine": "Human Coagulation Factor Viii",
+   "forms": [
+    "Human Coagulation Factor Viii"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 9,
+   "source": "https://clinicaltrials.gov/study/NCT02932618",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109205",
+   "medicine": "Coagulation Factor Ix Recombinant Human",
+   "forms": [
+    "Coagulation Factor Ix Recombinant Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 38,
+   "source": "https://clinicaltrials.gov/study/NCT00581126",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594598",
+   "medicine": "Eftrenonacog Alfa",
+   "forms": [
+    "Eftrenonacog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 26,
+   "source": "https://clinicaltrials.gov/study/NCT00749476",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298126",
+   "medicine": "Von Willebrand Factor Human",
+   "forms": [
+    "Von Willebrand Factor Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "VWF",
+     "points": 47,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 23,
+   "source": "https://clinicaltrials.gov/study/NCT04555785",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297754",
+   "medicine": "Fitusiran",
+   "forms": [
+    "Fitusiran"
+   ],
+   "proteins": [
+    {
+     "symbol": "SERPINC1",
+     "points": 39,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 8,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D46RKC",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201560",
+   "medicine": "Peginterferon ALFA-2A",
+   "forms": [
+    "Peginterferon ALFA-2A"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 900,
+   "source": "https://clinicaltrials.gov/study/NCT00077636",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201561",
+   "medicine": "Peginterferon ALFA-2B",
+   "forms": [
+    "Peginterferon ALFA-2B"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 536,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/pegintron",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108508",
+   "medicine": "Interferon ALFA-2A",
+   "forms": [
+    "Interferon ALFA-2A"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 306,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D09PMV",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL256997",
+   "medicine": "Ataluren",
+   "forms": [
+    "Ataluren"
+   ],
+   "proteins": [
+    {
+     "symbol": "RPL17",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPL18A",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPL31",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPL36",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPL5",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS10",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS17",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS20",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS21",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS4Y1",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "RPS6",
+     "points": 7,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 341,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/translarna",
+   "trial_phase": "Phase 2",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_clues": [
+  {
+   "id": "CHEMBL6068614",
+   "medicine": "Prothrombin Complex Concentrate",
+   "forms": [
+    "Prothrombin Complex Concentrate"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "unknown",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "F7",
+     "points": 56,
+     "direction": "unknown",
+     "machine": 3,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 96,
+   "source": "https://clinicaltrials.gov/study/NCT00928915",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109065",
+   "medicine": "Drotrecogin Alfa (ACTIVATED)",
+   "forms": [
+    "Drotrecogin Alfa (ACTIVATED)"
+   ],
+   "proteins": [
+    {
+     "symbol": "F8",
+     "points": 92,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 23,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/xigris",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108348",
+   "medicine": "Nonacog Beta Pegol",
+   "forms": [
+    "Nonacog Beta Pegol"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3990034",
+   "medicine": "Fidanacogene Elaparvovec",
+   "forms": [
+    "Fidanacogene Elaparvovec"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 7,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/beqvez",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5095451",
+   "medicine": "Etranacogene Dezaparvovec",
+   "forms": [
+    "Etranacogene Dezaparvovec"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 6,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B02BD16",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5315076",
+   "medicine": "Albutrepenonacog Alfa",
+   "forms": [
+    "Albutrepenonacog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 4,
+   "source": "https://clinicaltrials.gov/study/NCT04108260",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3707365",
+   "medicine": "Bemiparin",
+   "forms": [
+    "Bemiparin"
+   ],
+   "proteins": [
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 33,
+   "source": "https://clinicaltrials.gov/study/NCT02607319",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201554",
+   "medicine": "Antithrombin Alfa",
+   "forms": [
+    "Antithrombin Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 8,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/atryn",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297951",
+   "medicine": "Coagulation Factor X Human",
+   "forms": [
+    "Coagulation Factor X Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 8,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B02BD13",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL512351",
+   "medicine": "Betrixaban",
+   "forms": [
+    "Betrixaban"
+   ],
+   "proteins": [
+    {
+     "symbol": "F10",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 7,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ebaa2dd9-257e-4a68-ab6a-fb2791bb62ce",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3301583",
+   "medicine": "Andexanet Alfa",
+   "forms": [
+    "Andexanet Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "TFPI",
+     "points": 55,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 13,
+   "source": "https://ttd.idrblab.cn/data/drug/details/DY49OT",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109624",
+   "medicine": "Caplacizumab",
+   "forms": [
+    "Caplacizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "VWF",
+     "points": 47,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 17,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AX07",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107873",
+   "medicine": "Vonicog Alfa",
+   "forms": [
+    "Vonicog Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "VWF",
+     "points": 47,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 8,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108147",
+   "medicine": "Streptokinase",
+   "forms": [
+    "Streptokinase"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 19,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD01",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108396",
+   "medicine": "Defibrotide",
+   "forms": [
+    "Defibrotide"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 18,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AX01",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3707226",
+   "medicine": "Defibrotide Sodium",
+   "forms": [
+    "Defibrotide Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 3,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108250",
+   "medicine": "Anistreplase",
+   "forms": [
+    "Anistreplase"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease."
+    }
+   ],
+   "reports": 2,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD03",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109204",
+   "medicine": "Nadroparin Calcium",
+   "forms": [
+    "Nadroparin Calcium"
+   ],
+   "proteins": [
+    {
+     "symbol": "SERPINC1",
+     "points": 39,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 36,
+   "source": "https://clinicaltrials.gov/study/NCT02295150",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201534",
+   "medicine": "Danaparoid Sodium",
+   "forms": [
+    "Danaparoid Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "SERPINC1",
+     "points": 39,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 4,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AB09",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201558",
+   "medicine": "Interferon ALFA-2B",
+   "forms": [
+    "Interferon ALFA-2B"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 612,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/introna",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201562",
+   "medicine": "Interferon BETA-1A",
+   "forms": [
+    "Interferon BETA-1A"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 254,
+   "source": "https://clinicaltrials.gov/study/NCT00037115",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297819",
+   "medicine": "Ropeginterferon ALFA-2B",
+   "forms": [
+    "Ropeginterferon ALFA-2B"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 192,
+   "source": "https://clinicaltrials.gov/study/NCT06290765",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201563",
+   "medicine": "Interferon BETA-1B",
+   "forms": [
+    "Interferon BETA-1B"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 136,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/extavia",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2364653",
+   "medicine": "Anifrolumab",
+   "forms": [
+    "Anifrolumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 34,
+   "source": "https://clinicaltrials.gov/study/NCT06594068",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108677",
+   "medicine": "Peginterferon BETA-1A",
+   "forms": [
+    "Peginterferon BETA-1A"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 32,
+   "source": "https://clinicaltrials.gov/study/NCT02234869",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201557",
+   "medicine": "Interferon ALFACON-1",
+   "forms": [
+    "Interferon ALFACON-1"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 24,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/infergen",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107842",
+   "medicine": "Albinterferon ALFA-2B",
+   "forms": [
+    "Albinterferon ALFA-2B"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 22,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L03AB12",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2109047",
+   "medicine": "Interferon ALFA-N3",
+   "forms": [
+    "Interferon ALFA-N3"
+   ],
+   "proteins": [
+    {
+     "symbol": "IFNAR1",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    },
+    {
+     "symbol": "IFNAR2",
+     "points": 10,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": true
+    }
+   ],
+   "reports": 12,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D07CMM",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "left_out": {
+  "not_approved": 23,
+  "unclear_link": 0
+ },
+ "wider_group": [
+  {
+   "id": "CHEMBL1046",
+   "medicine": "Aminocaproic Acid",
+   "forms": [
+    "Aminocaproic Acid"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 47,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 26,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0FD0H",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2108282",
+   "medicine": "Catridecacog",
+   "forms": [
+    "Catridecacog"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/novothirteen",
+   "label": "Not listed as approved for this exact disease. Approved for inherited blood coagulation disorder, a wider group the database puts this disease in."
+  },
+  {
+   "id": "CHEMBL4297986",
+   "medicine": "Coagulation Factor Ix Human",
+   "forms": [
+    "Coagulation Factor Ix Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 4,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V0RY",
+   "label": "Not listed as approved for this exact disease. Approved for hemophilia, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2109205",
+   "medicine": "Coagulation Factor Ix Recombinant Human",
+   "forms": [
+    "Coagulation Factor Ix Recombinant Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "F9",
+     "points": 76,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 38,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P8QN",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1466",
+   "medicine": "Dicumarol",
+   "forms": [
+    "Dicumarol"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D02TJS",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL3989529",
+   "medicine": "Ethanolamine Oleate",
+   "forms": [
+    "Ethanolamine Oleate"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0O1PH",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2108122",
+   "medicine": "Pentastarch",
+   "forms": [
+    "Pentastarch"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0J6BR",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1550",
+   "medicine": "Phytonadione",
+   "forms": [
+    "Phytonadione"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D00FSV",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL1201651",
+   "medicine": "Protamine Sulfate",
+   "forms": [
+    "Protamine Sulfate"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D03FXM",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL2108110",
+   "medicine": "Thrombin",
+   "forms": [
+    "Thrombin"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0P2BV",
+   "label": "Not listed as approved for this exact disease. Approved for hemorrhagic disease, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  },
+  {
+   "id": "CHEMBL4298126",
+   "medicine": "Von Willebrand Factor Human",
+   "forms": [
+    "Von Willebrand Factor Human"
+   ],
+   "proteins": [
+    {
+     "symbol": "VWF",
+     "points": 47,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 23,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0XE8H",
+   "label": "Not listed as approved for this exact disease. Approved for hemophilia, a wider group the database puts this disease in.",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  }
+ ],
+ "more_in_trials": [
+  {
+   "id": "CHEMBL4297953",
+   "medicine": "ANTI-INHIBITOR Coagulant Complex",
+   "forms": [
+    "ANTI-INHIBITOR Coagulant Complex"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04563520",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201573",
+   "medicine": "Oprelvekin",
+   "forms": [
+    "Oprelvekin"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00994929",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201478",
+   "medicine": "Polyethylene Glycol",
+   "forms": [
+    "Polyethylene Glycol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05265286",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201479",
+   "medicine": "Polyethylene Glycol 3350",
+   "forms": [
+    "Polyethylene Glycol 3350"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05265286",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108780",
+   "medicine": "Polyethylene Glycol 4000",
+   "forms": [
+    "Polyethylene Glycol 4000"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT05265286",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201576",
+   "medicine": "Rituximab",
+   "forms": [
+    "Rituximab"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT00331006",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_in_trials": [
+  {
+   "id": "CHEMBL5314810",
+   "medicine": "Bemiltenase Alfa",
+   "forms": [
+    "Bemiltenase Alfa"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06922045",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314670",
+   "medicine": "Denecimig",
+   "forms": [
+    "Denecimig"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D2AK6X",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298194",
+   "medicine": "Giroctocogene Fitelparvovec",
+   "forms": [
+    "Giroctocogene Fitelparvovec"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DZ9AJ3",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298072",
+   "medicine": "Marzeptacog Alfa (ACTIVATED)",
+   "forms": [
+    "Marzeptacog Alfa (ACTIVATED)"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT04489537",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297904",
+   "medicine": "BAY-1093884",
+   "forms": [
+    "BAY-1093884"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT03597022",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL5314642",
+   "medicine": "Rondaptivon Pegol",
+   "forms": [
+    "Rondaptivon Pegol"
+   ],
+   "trial_phase": "Phase 2",
+   "source": "https://clinicaltrials.gov/study/NCT04677803",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650253",
+   "medicine": "Dirloctocogene Samoparvovec",
+   "forms": [
+    "Dirloctocogene Samoparvovec"
+   ],
+   "trial_phase": "Phase 1/2",
+   "source": "https://ttd.idrblab.cn/data/drug/details/DW7PT6",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "opposite_way_box": [
+  "CHEMBL2108147",
+  "CHEMBL2108396",
+  "CHEMBL3707226",
+  "CHEMBL2108250"
+ ],
+ "wrong_way_line": "10 medicines left out because they push the wrong way for this disease."
+}
