@@ -136,12 +136,11 @@ def page(entries):
 # ---- the hand-written file, entry for entry ----
 
 def test_the_real_file_holds_the_first_five_entries_then_the_three_new_ones():
-    assert load(APPROVALS_FILE) == FIRST_FIVE + THIRD_BATCH
-    assert len(load(APPROVALS_FILE)) == 8
+    assert load(APPROVALS_FILE)[:8] == FIRST_FIVE + THIRD_BATCH  # ticket 2.33 added two after
 
 
 def test_the_engine_reads_the_three_new_entries():
-    assert engine.approvals_by_hand()[5:] == [
+    assert engine.approvals_by_hand()[5:8] == [  # ticket 2.33 added two after these
         engine.HandApproval(RAVULIZUMAB, "Ravulizumab", NMO, RAVULIZUMAB_LABEL),
         engine.HandApproval(AVAPRITINIB, "Avapritinib", MASTOCYTOSIS, AVAPRITINIB_LABEL),
         engine.HandApproval(VALBENAZINE, "Valbenazine", HUNTINGTON, VALBENAZINE_LABEL)]
@@ -149,7 +148,8 @@ def test_the_engine_reads_the_three_new_entries():
 
 def test_each_new_entry_is_handed_only_to_its_own_disease():
     assert [entry.medicine_id for entry in engine.added_by_hand(NMO)] == [RAVULIZUMAB]
-    assert [entry.medicine_id for entry in engine.added_by_hand(MASTOCYTOSIS)] == [AVAPRITINIB]
+    assert [entry.medicine_id for entry in engine.added_by_hand(MASTOCYTOSIS)] == [
+        AVAPRITINIB, "CHEMBL941"]  # ticket 2.33 added imatinib
     assert [entry.medicine_id for entry in engine.added_by_hand(HUNTINGTON)] == [VALBENAZINE]
     new = {RAVULIZUMAB, AVAPRITINIB, VALBENAZINE}
     # Not to a sub-form, a wider group, or another batch's disease.
@@ -234,7 +234,10 @@ def test_before_each_was_in_the_more_in_trials_box_and_not_under_approved(entry)
 def test_each_is_now_only_under_approved_with_the_line_and_its_label(entry):
     disease_id = entry["disease_id"]
     before = second_batch.tabs_for(disease_id, [])
-    tabs = second_batch.tabs_for(disease_id, engine.added_by_hand(disease_id))
+    # Ticket 2.33 gave systemic mastocytosis a second entry: only this one is asked about.
+    tabs = second_batch.tabs_for(disease_id, [
+        hand for hand in engine.added_by_hand(disease_id)
+        if hand.medicine_id == entry["medicine_id"]])
     assert first_batch.only_under_approved(tabs, entry["medicine_id"])
     card = [medicine for medicine in tabs.approved if medicine.id == entry["medicine_id"]][0]
     assert card.name == entry["name"]

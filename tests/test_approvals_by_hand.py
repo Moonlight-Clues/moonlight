@@ -56,6 +56,7 @@ ESSENTIAL_TREMOR = "MONDO_0003233"
 GRAVES = "MONDO_0005364"
 PROPRANOLOL = "CHEMBL27"
 METHIMAZOLE = "CHEMBL1515"
+PROPYLTHIOURACIL = "CHEMBL1518"  # ticket 2.33 added it to the Graves disease page
 PROPRANOLOL_LABEL = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
                      "?setid=013a485a-4227-46ae-b19f-c550302fcb96")
 METHIMAZOLE_LABEL = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
@@ -308,7 +309,8 @@ def test_an_empty_file_adds_nothing():
 
 def test_an_entry_is_handed_only_to_its_own_disease():
     assert [entry.medicine_id for entry in engine.added_by_hand(ESSENTIAL_TREMOR)] == [PROPRANOLOL]
-    assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [METHIMAZOLE]
+    assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [
+        METHIMAZOLE, PROPYLTHIOURACIL]  # ticket 2.33 added the second
     assert engine.added_by_hand("MONDO_0005395") == []  # movement disorder, the wider group
     assert engine.added_by_hand(DISEASE.id) == []
 
@@ -316,9 +318,11 @@ def test_an_entry_is_handed_only_to_its_own_disease():
 def test_on_the_other_saved_page_neither_medicine_is_added():
     assert not [card for card in page(GRAVES)["approved"] if card["id"] == PROPRANOLOL]
     assert not cards_naming(page(ESSENTIAL_TREMOR), "methimazole")
-    for a_page, own in ((page(GRAVES), METHIMAZOLE), (page(ESSENTIAL_TREMOR), PROPRANOLOL)):
+    # Ticket 2.33 added propylthiouracil to the Graves disease page.
+    for a_page, own in ((page(GRAVES), [METHIMAZOLE, PROPYLTHIOURACIL]),
+                        (page(ESSENTIAL_TREMOR), [PROPRANOLOL])):
         with_line = [card["id"] for _, card in cards_naming(a_page, LINE.lower())]
-        assert with_line == [own]
+        assert with_line == own
 
 
 # ---- the EXAMPLE, page 1: propranolol for essential tremor ----
@@ -352,26 +356,32 @@ def test_before_methimazole_was_only_in_the_more_in_trials_box():
 
 def test_methimazole_is_on_the_approved_list_of_graves_disease_a_to_z():
     approved = page(GRAVES)["approved"]
-    assert [card["medicine"] for card in approved] == ["Ipodate", "Methimazole", "Teprotumumab"]
+    # Ticket 2.33 added propylthiouracil to this list.
+    assert [card["medicine"] for card in approved] == [
+        "Ipodate", "Methimazole", "Propylthiouracil", "Teprotumumab"]
     assert approved[1] == METHIMAZOLE_CARD
 
 
 def test_methimazole_is_shown_only_under_approved():
     new = page(GRAVES)
     assert [key for key, _ in cards_naming(new, "methimazole")] == ["approved"]
-    assert len(new["more_in_trials"]) == 17
+    assert len(new["more_in_trials"]) == 16  # ticket 2.33 moved propylthiouracil out too
 
 
 def test_nothing_else_on_the_graves_page_changes():
     old = before(GRAVES)
     expected = copy.deepcopy(old)
-    expected["approved"] = [old["approved"][0], METHIMAZOLE_CARD, old["approved"][1]]
+    # Ticket 2.33 added propylthiouracil's card. tests/test_label_limit_line.py pins it.
+    new = page(GRAVES)
+    assert new["approved"][2]["id"] == PROPYLTHIOURACIL
+    expected["approved"] = [old["approved"][0], METHIMAZOLE_CARD, new["approved"][2],
+                            old["approved"][1]]
     expected["more_in_trials"] = [card for card in old["more_in_trials"]
-                                  if card["id"] != METHIMAZOLE]
+                                  if card["id"] not in (METHIMAZOLE, PROPYLTHIOURACIL)]
     # Ticket 2.28 added one key: the new clue that carries the opposite-way
     # line is named for the folded box. It is still in "new_clues", as before.
     expected["opposite_way_box"] = ["CHEMBL1201716"]
-    assert page(GRAVES) == expected
+    assert new == expected
 
 
 # ---- "No new request to Open Targets." ----
@@ -538,7 +548,8 @@ def test_a_medicine_on_the_corrections_list_for_this_disease_is_not_added():
               "note": engine.CORRECTION_NOTE}]
     with patch.object(engine, "_read_corrections", return_value=wrong):
         assert engine.added_by_hand(ESSENTIAL_TREMOR) == []
-        assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [METHIMAZOLE]
+        assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [
+            METHIMAZOLE, PROPYLTHIOURACIL]  # ticket 2.33 added the second
         new = page(ESSENTIAL_TREMOR)
     assert new == before(ESSENTIAL_TREMOR)  # the page is as it was before the ticket
 
