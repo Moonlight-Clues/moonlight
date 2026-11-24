@@ -116,7 +116,8 @@ def test_the_dot_is_not_part_of_the_tap_words(page):
     assert "· Tap to" not in page
     # 5 since ticket 2.28: the opposite-way box on the New clues tab is the fifth.
     # 6 since ticket 2.27: the red-warning box on the Approved tab is the sixth.
-    assert page.count('<span data-part="tap">Tap to open</span>') == 6
+    # 7 since ticket 2.42: the no-regulator box above it is the seventh.
+    assert page.count('<span data-part="tap">Tap to open</span>') == 7
     assert 'box.open ? "Tap to close" : "Tap to open";' in page
 
 

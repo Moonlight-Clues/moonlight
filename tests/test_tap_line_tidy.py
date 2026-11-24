@@ -102,7 +102,7 @@ def test_the_markup_of_each_box_title_is_unchanged():
 
 
 def test_the_words_tap_to_open_and_tap_to_close_do_not_change():
-    assert PAGE.count(f'<span data-part="tap">{TAP_OPEN}</span>') == 6
+    assert PAGE.count(f'<span data-part="tap">{TAP_OPEN}</span>') == 7  # 7 since ticket 2.42
     assert 'part(box, "tap").textContent = box.open ? "Tap to close" : "Tap to open";' in PAGE
 
 

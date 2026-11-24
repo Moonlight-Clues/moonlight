@@ -381,6 +381,10 @@ def test_nothing_else_on_the_graves_page_changes():
     # Ticket 2.28 added one key: the new clue that carries the opposite-way
     # line is named for the folded box. It is still in "new_clues", as before.
     expected["opposite_way_box"] = ["CHEMBL1201716"]
+    # Ticket 2.42 added one key: ipodate and teprotumumab, with the "no
+    # regulator record" line, are named for the new folded box. They are
+    # still in "approved", as before.
+    expected["no_regulator_box"] = ["CHEMBL1201243", "CHEMBL1743079"]
     assert new == expected
 
 

@@ -581,13 +581,16 @@ def open_the_page(answer, folder, picture=""):
 
 
 def test_browser_at_phone_width_the_card_shows_the_two_grey_lines_stacked(tmp_path):
-    seen = open_the_page(page(GRAVES), tmp_path)
+    answer = page(GRAVES)
+    seen = open_the_page(answer, tmp_path)
     assert seen["errors"] == []
     read = seen["read"]
     assert not read["sideways"]  # nothing sticks out at 390 wide
     assert read["elsewhere"] == 0
     cards = {card["name"]: card for card in read["approved"]}
-    assert list(cards) == ["Ipodate", "Methimazole", "Propylthiouracil", "Teprotumumab"]
+    # Ticket 2.42: ipodate and teprotumumab, with the "no regulator record"
+    # line, are in the folded box now, not on the main list.
+    assert list(cards) == ["Methimazole", "Propylthiouracil"]
     card = cards["Propylthiouracil"]
     assert card["lines"] == [
         {"slot": "proof-note", "words": ADDED_LINE, "cls": "proof-note"},
@@ -596,5 +599,6 @@ def test_browser_at_phone_width_the_card_shows_the_two_grey_lines_stacked(tmp_pa
     assert card["gaps"] == [12]  # the same gap the grey lines already keep
     assert cards["Methimazole"]["lines"] == [
         {"slot": "proof-note", "words": ADDED_LINE, "cls": "proof-note"}]
-    for name in ("Ipodate", "Teprotumumab"):
-        assert "limit-note" not in [line["slot"] for line in cards[name]["lines"]]
+    for item in answer["approved"]:
+        if item["medicine"] in ("Ipodate", "Teprotumumab"):  # in the folded box (ticket 2.42)
+            assert "limit_note" not in item
