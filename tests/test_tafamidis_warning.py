@@ -138,9 +138,10 @@ def test_the_real_file_is_in_date_order():
 
 
 def test_the_file_holds_24_entries():
-    # Ticket 2.41 added fourteen after these, dated 2026-11-24.
-    assert len(real_corrections()) == 38
-    assert len(engine.corrections()) == 38
+    # Ticket 2.41 added fourteen after these, dated 2026-11-24. Ticket 2.40
+    # added one more the same day.
+    assert len(real_corrections()) == 39
+    assert len(engine.corrections()) == 39
     assert len(real_corrections()[:24]) == 24
 
 

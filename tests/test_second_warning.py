@@ -303,9 +303,10 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     entries = real_corrections()
     # Ticket 2.19 added one: deferoxamine, hemochromatosis. Ticket 2.25 added
     # one: tafamidis, AL amyloidosis (Kashish's yes, 23 Nov). Ticket 2.41
-    # added fourteen, dated 2026-11-24, with the second note.
-    assert len(entries) == 38
-    assert len(engine.corrections()) == 38
+    # added fourteen, dated 2026-11-24, with the second note. Ticket 2.40
+    # added one more, the same day, with the second note: prasterone.
+    assert len(entries) == 39
+    assert len(engine.corrections()) == 39
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)
