@@ -103,6 +103,15 @@ disease. Its card then carries a second grey line, LIMITED_LINE
 (ApprovedMedicine.limit_note), under the hand-added line, which is
 unchanged. Moonlight never writes which people.
 
+Ticket 2.39, the same line on a card the database records. limits_by_hand()
+reads moonlight/limits.json, a hand-written list: medicine, disease, date and
+the label read by hand. limit_notes(tabs, disease_id, listed, on_list) says
+which cards of the main Approved list carry LIMITED_LINE: the ones whose id,
+or the id of one of their forms, is written there for this disease. Like
+withdrawal_notes, it is worked out after sort_into_tabs, which is not
+changed. A card added from approvals.json is marked there instead: the same
+pair in both files is refused.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -224,6 +233,11 @@ APPROVALS_FILE = pathlib.Path(__file__).resolve().parent / "approvals.json"
 APPROVAL_KEYS = {"medicine_id", "name", "disease_id", "date", "label"}
 # Ticket 2.33. The one extra key an entry may carry, and only as true.
 APPROVAL_EXTRA_KEY = "limited"
+# Ticket 2.39. The cards the database records as approved whose official
+# label covers only some people with the disease. Nothing in Moonlight
+# writes here.
+LIMITS_FILE = pathlib.Path(__file__).resolve().parent / "limits.json"
+LIMIT_KEYS = {"medicine_id", "disease_id", "date", "label"}
 
 
 @dataclass(frozen=True)
@@ -237,6 +251,15 @@ class HandApproval:
     # Ticket 2.33. True if the entry says the label covers only some people
     # with the disease. The card then carries LIMITED_LINE too.
     limited: bool = False
+
+
+@dataclass(frozen=True)
+class HandLimit:
+    """One entry of the hand-written list of limited labels (ticket 2.39)."""
+
+    medicine_id: str  # the card's id, or the id of one of its forms
+    disease_id: str  # the one disease the entry works for
+    label: str  # the official label that was read by hand
 
 
 @dataclass(frozen=True)
@@ -1053,6 +1076,81 @@ def approvals_left_out() -> List[HandApproval]:
     left_out = left_out_by_hand()
     return [entry for entry in approvals_by_hand()
             if (entry.medicine_id, entry.disease_id) in left_out]
+
+
+def _read_limits() -> list:
+    """The one place the limits file is read. Tests replace this."""
+    return json.loads(LIMITS_FILE.read_text(encoding="utf-8"))
+
+
+def limits_by_hand() -> List[HandLimit]:
+    """The hand-written list of limited labels, in the file's order
+    (ticket 2.39).
+
+    Each entry holds exactly four things: the medicine's id, the disease's
+    id, the date and the label, an https link to the official label that
+    was read by hand. Checked the way approvals.json is: an entry not
+    written this way raises ValueError, and the list is never half read.
+    Two entries for the same medicine and disease are refused, even when
+    alike. So is a pair that approvals.json also holds: that card is marked
+    there, with "limited": true. One place per card.
+
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_limits()
+    if not isinstance(entries, list):
+        raise ValueError("limits.json must hold a list.")
+    found: Dict[Tuple[str, str], HandLimit] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, LIMIT_KEYS, "A limited label")
+        label = entry["label"]
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(f"A limited label needs an https link to its label: {entry!r}")
+        if pair in found:
+            raise ValueError(f"A limited label is written twice: {entry!r}")
+        found[pair] = HandLimit(pair[0], pair[1], label)
+    by_hand = {(entry.medicine_id, entry.disease_id) for entry in approvals_by_hand()}
+    for pair in found:
+        if pair in by_hand:
+            raise ValueError(
+                f"{pair} is in both limits.json and approvals.json. A card added by hand "
+                f'is marked in approvals.json with "limited": true, not in limits.json.')
+    return list(found.values())
+
+
+def limit_notes(
+    tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = ()
+) -> Dict[str, str]:
+    """Card id -> LIMITED_LINE, for the cards of the main Approved list that
+    limits.json marks for this disease (ticket 2.39, Kashish's answer of
+    24 Nov).
+
+    Like the withdrawal line, a sticky note put on a card after the cards
+    are laid out: tabs is only read. A card matches when its id, or the id
+    of one of its forms, is written there with this disease. Its forms are
+    the ones the page already fetched: its paths, the disease's own list
+    (listed) and the same list as records (on_list). Nothing new is asked.
+
+    Only the main Approved list is read. The narrower and wider boxes, In
+    trials and New clues never carry this line.
+    """
+    wanted = {entry.medicine_id for entry in limits_by_hand() if entry.disease_id == disease_id}
+    if not wanted:
+        return {}
+    form_ids: Dict[str, Set[str]] = {}
+    for entry in listed:
+        form_ids.setdefault(entry.id, set()).update(form_id for form_id, _ in entry.forms)
+    for entry in on_list:
+        form_ids.setdefault(_family_id(entry.medicine), set()).update(
+            form.id for form in entry.medicine.forms)
+    notes = {}
+    for medicine in tabs.approved:
+        ids = {medicine.id} | form_ids.get(medicine.id, set())
+        for path in medicine.clue.paths if medicine.clue else ():
+            ids.update(form.id for form in path.medicine.forms)
+        if ids & wanted:
+            notes[medicine.id] = LIMITED_LINE
+    return notes
 
 
 def _read_corrections() -> list:

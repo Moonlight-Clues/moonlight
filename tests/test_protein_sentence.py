@@ -516,7 +516,12 @@ def test_claude_md_has_the_new_line_in_the_sources_rule():
 
 def test_decisions_md_ends_with_the_two_new_lines():
     lines = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")
-    lines = lines[:-2]  # ticket 2.43 added two lines (R1 and R6) after these
+    # Tickets 2.43 (R1, R6) and 2.39 added lines dated 24 Nov after these two. They are checked
+    # where they are, and everything after them is dated later.
+    end = next(number for number, line in enumerate(lines)
+               if line.startswith("- 2026-11-23: A clue card shows one sentence")) + 1
+    assert all(line.startswith("- 2026-11-24") for line in lines[end:])
+    lines = lines[:end]
     assert lines[-2] == (
         "- 2026-11-23: A medicine whose official label covers only some people with the "
         "disease goes under Approved from the label, with one more line: \"The label "

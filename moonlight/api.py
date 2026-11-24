@@ -77,6 +77,7 @@ import pathlib
 import threading
 import time
 from collections import deque
+import contextlib
 from concurrent.futures import ThreadPoolExecutor
 from typing import Deque, Dict, Iterable, List, Optional, Tuple
 
@@ -92,6 +93,7 @@ from moonlight.engine import wrong_approvals_box
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
+from moonlight.engine import limit_notes, limits_by_hand
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -240,7 +242,18 @@ def _count_visit(lane: str, request: Request) -> None:
         raise HTTPException(status_code=429, detail=TOO_MANY)
 
 
-app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None)
+@contextlib.asynccontextmanager
+async def _check_hand_lists(_app: FastAPI):
+    """Ticket 2.39. Read the hand-written list of limited labels once before
+    the app starts. A list not written the right way, or a card marked in
+    both limits.json and approvals.json, stops the app with the engine's
+    plain message, before any page is served."""
+    limits_by_hand()
+    yield
+
+
+app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None,
+              lifespan=_check_hand_lists)
 
 
 class _Found:
@@ -272,6 +285,10 @@ class _Found:
         # card id -> the engine's words. Worked out from the same lists.
         # No card is hidden or moved by it.
         self.withdrawal_notes = withdrawal_notes(tabs, on_list, neighbours)
+        # Ticket 2.39. Which cards of the main Approved list carry the "only
+        # some people" line because limits.json marks them: card id -> the
+        # engine's words. Worked out from the same lists. Nothing moves.
+        self.limit_notes = limit_notes(tabs, disease.id, listed, on_list)
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -392,7 +409,8 @@ def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] =
 
 def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
                    words: Optional[Dict[str, str]] = None,
-                   notes: Optional[Dict[str, str]] = None) -> dict:
+                   notes: Optional[Dict[str, str]] = None,
+                   limits: Optional[Dict[str, str]] = None) -> dict:
     """One medicine already approved for the disease. It is not a clue, so
     it has no rank, no explanation and no ending.
 
@@ -421,7 +439,12 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
 
     Ticket 2.33. A card added from the hand-written list whose entry is
     limited gains the key limit_note: the engine's words, a second grey
-    line. Its proof_note is unchanged. No other card ever has the key.
+    line. Its proof_note is unchanged.
+
+    Ticket 2.39. limits says which cards the database records carry the
+    same line because limits.json marks them (engine.limit_notes): card id
+    -> the engine's words. Such a card gains the same key, limit_note.
+    Only the main Approved list is handed limits.
 
     Ticket 2.31. notes says which cards carry the withdrawal line
     (engine.withdrawal_notes): card id -> the engine's words. Such a card
@@ -446,6 +469,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
         item["proof_note"] = medicine.proof_note  # the engine's words too
     if medicine.limit_note:
         item["limit_note"] = medicine.limit_note  # the engine's words, never typed here
+    elif medicine.id in (limits or {}):
+        item["limit_note"] = limits[medicine.id]  # the engine's words, never typed here
     if medicine.id in wrong:
         item["warning"] = (words or {}).get(medicine.id, WRONG_WARNING)
     if medicine.id in (notes or {}):
@@ -571,7 +596,9 @@ def clues(disease_id: str) -> dict:
         "about_disease": _about_json(disease),
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
-        "approved": [_approved_json(medicine, wrong, words, notes) for medicine in found.approved],
+        # Ticket 2.39: only the main list is handed the limit notes.
+        "approved": [_approved_json(medicine, wrong, words, notes, found.limit_notes)
+                     for medicine in found.approved],
         "being_studied": [_clue_json(clue, disease, one_way) for clue in found.being_studied],
         "new_clues": [_clue_json(clue, disease, one_way) for clue in new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},

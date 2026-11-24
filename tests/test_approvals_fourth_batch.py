@@ -48,6 +48,7 @@ from fastapi.testclient import TestClient
 from moonlight import api, engine
 
 import test_approvals_batch as second_batch
+import test_approvals_third_batch as third_batch  # ticket 2.39
 import test_approvals_by_hand as first_batch
 import test_label_limit_line as limited_batch
 import test_more_in_trials as pbc_page
@@ -262,14 +263,14 @@ def tabs_from_own_list(disease_id, entries=None):
 
 def test_the_real_file_holds_the_first_ten_entries_then_the_five_then_avatrombopag():
     # Ticket 2.41's six sit between the five and avatrombopag (entries 15 to 20).
-    # tests/test_label_batch.py holds them.
-    assert load(APPROVALS_FILE)[:15] == FIRST_TEN + FOURTH_BATCH
+    # tests/test_label_batch.py holds them. Ticket 2.39 marked valbenazine "limited".
+    assert load(APPROVALS_FILE)[:15] == third_batch.as_written_now(FIRST_TEN) + FOURTH_BATCH
     assert load(APPROVALS_FILE)[21:] == [AVATROMBOPAG_ENTRY]
     assert len(load(APPROVALS_FILE)) == 22
 
 
 def test_the_first_ten_entries_are_written_as_they_were():
-    assert load(APPROVALS_FILE)[:10] == FIRST_TEN
+    assert load(APPROVALS_FILE)[:10] == third_batch.as_written_now(FIRST_TEN)  # ticket 2.39
     assert [entry["date"] for entry in FIRST_TEN] == ["2026-11-23"] * 10
 
 

@@ -84,3 +84,4 @@ Format: date, the decision, why.
 - 2026-11-23: A clue card shows one sentence on what its protein does, 200 letters or less, written by UniProt and read through Open Targets. It never says which way the disease needs the protein turned.
 - 2026-11-24: R1. Blood thinners are not clues on the haemophilia A page, and medicines that lower or block cortisol are not clues on the Addison's disease page. They push the wrong way. (Spoken 24 Nov, to be signed. Ticket 2.43.)
 - 2026-11-24: R6. Imaging tracers and contrast agents are not shown in the medicine lists. They are not treatments. (Spoken 24 Nov, to be signed. Ticket 2.43.)
+- 2026-11-24: The Huntington disease cards whose official label covers chorea only, valbenazine and tetrabenazine, carry the line "The label covers only some people with this disease." A card the database records is marked in a new hand-written list, limits.json. (Kashish, answer A to question 3.)
