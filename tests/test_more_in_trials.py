@@ -141,9 +141,21 @@ def saved_post_json(body):
     return load(SAVED / kind / f"{disease_id}.response.json")
 
 
+def without_hand_approvals_for_the_example():
+    """Ticket 2.34 (24 Nov) put elafibranor and seladelpar under Approved for
+    this disease, by hand, from their labels. The example in this file is the
+    page as it was saved on 21 Nov: 7 cards in the list. So it is read without
+    the hand-written approvals for this one disease. Every other disease gets
+    the real file. tests/test_approvals_fourth_batch.py holds the page as it
+    is with them: 5 cards in the list, and those two under Approved."""
+    kept = [entry for entry in engine._read_approvals() if entry["disease_id"] != PBC.id]
+    return patch.object(engine, "_read_approvals", return_value=kept)
+
+
 @pytest.fixture
 def offline():
-    with patch("moonlight.fetch._post_json", side_effect=saved_post_json) as mock:
+    with patch("moonlight.fetch._post_json", side_effect=saved_post_json) as mock, \
+            without_hand_approvals_for_the_example():
         yield mock
 
 
@@ -705,7 +717,8 @@ def answers():
     """Three answers of /api/clues: the example, the example with an empty
     list above the box, and the example as it was before this ticket."""
     api.forget_visitors()
-    with patch("moonlight.fetch._post_json", side_effect=saved_post_json):
+    with patch("moonlight.fetch._post_json", side_effect=saved_post_json), \
+            without_hand_approvals_for_the_example():  # ticket 2.34
         example = TestClient(api.app).get("/api/clues", params={"disease_id": PBC.id}).json()
     empty_list = copy.deepcopy(example)
     empty_list["being_studied"] = []

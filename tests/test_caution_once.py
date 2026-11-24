@@ -173,7 +173,8 @@ def answers():
     """Answers of /api/clues: the example, the example with only its
     second box, and the example as it was before ticket 2.21 (no boxes)."""
     api.forget_visitors()
-    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json):
+    with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json), \
+            test_more_in_trials.without_hand_approvals_for_the_example():  # ticket 2.34
         example = TestClient(api.app).get("/api/clues", params={"disease_id": PBC.id}).json()
     only_new = copy.deepcopy(example)
     only_new["being_studied"] = []
