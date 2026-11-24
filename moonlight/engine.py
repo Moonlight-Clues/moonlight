@@ -46,6 +46,15 @@ the new clues that carry OPPOSITE_LINE on at least one protein, in the
 list's own order. The page shows them in one folded box at the bottom of
 the New clues tab, labelled OPPOSITE_BOX_LABEL. Nothing is removed.
 
+Ticket 2.27, the box for approvals that look wrong. Kashish's decision of
+23 Nov: a medicine with a red warning sits in its own folded box on the
+Approved tab, not on the main list. wrong_approvals_box(approved,
+disease_id) names the cards of the main Approved list that carry a red
+warning for the disease, in the list's own order. The page shows them in
+one folded box at the bottom of the Approved tab, labelled
+WRONG_APPROVALS_BOX_LABEL, and leaves them out of the tab's number.
+sort_into_tabs is not changed: the cards are still on its approved list.
+
 Ticket 2.18, a second red warning, and clues left out by hand. A
 corrections entry's note is one of two sentences (CORRECTION_NOTES).
 warning_words(disease_id) says which red words each listed card shows: its
@@ -155,6 +164,11 @@ OPPOSITE_LINE = "Opposite way to the approved medicines for this disease."
 # Ticket 2.28. The label of the folded box at the bottom of the New clues
 # tab. Proposed in the ticket of 23 Nov. Changing it needs Kashish's approval.
 OPPOSITE_BOX_LABEL = "These push the opposite way to the approved medicines for this disease."
+# Ticket 2.27. The label of the folded box at the bottom of the Approved
+# tab. Proposed in the ticket of 24 Nov. Changing it needs Kashish's approval.
+WRONG_APPROVALS_BOX_LABEL = (
+    "The database lists these as approved for this disease. They look like mistakes."
+)
 WRONG_WARNING = "A doctor has told us this looks like a mistake in the database."
 CORRECTION_NOTE = "A doctor confirmed this looks wrong."  # the first note
 # Ticket 2.18, Kashish's words of 19 Nov, exactly. The second note an entry
@@ -1115,6 +1129,23 @@ def warning_words(disease_id: str) -> Dict[str, str]:
         for (medicine_id, listed_for), note in _corrections_with_notes().items()
         if listed_for == disease_id
     }
+
+
+def wrong_approvals_box(approved: Iterable[ApprovedMedicine],
+                        disease_id: str) -> List[ApprovedMedicine]:
+    """The Approved-tab cards that go in the folded box (ticket 2.27).
+
+    Kashish's decision of 23 Nov: a medicine with a red warning sits in its
+    own folded box on the Approved tab, not on the main list. approved is
+    the MAIN Approved list (sort_into_tabs' approved). A card is in the box
+    when it carries a red warning for this disease (warning_words), either
+    of the two. The cards come back in the order they were handed in: the
+    list's own, A to Z. Nothing is taken off the list by this: the answer
+    only says which of its cards sit in the box. A card in the narrower
+    box or the wider-group box is not handed in, so it stays where it is.
+    """
+    words = warning_words(disease_id)
+    return [medicine for medicine in approved if medicine.id in words]
 
 
 def _read_left_out() -> list:

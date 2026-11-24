@@ -188,7 +188,10 @@ def test_the_card_keeps_its_place_and_nothing_else_on_the_page_changes():
     # Ticket 2.24 added the box of new medicines in trials after that copy
     # was saved. It is set aside here, and it is the only extra key.
     page = real_page()
-    assert set(page) - set(before) == {"new_in_trials"}
+    # Ticket 2.27 added one key: the ids of the cards in the red-warning box.
+    # It names tafamidis. The card itself is still in "approved", as below.
+    assert set(page) - set(before) == {"new_in_trials", "wrong_approvals_box"}
+    assert page.pop("wrong_approvals_box") == [TAFAMIDIS]
     del page["new_in_trials"]
     # Ticket 2.30 added daratumumab's approval by hand after that copy was
     # saved. Its card moved from the "more in trials" box to Approved, where
