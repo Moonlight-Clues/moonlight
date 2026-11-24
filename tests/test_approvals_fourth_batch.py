@@ -237,8 +237,8 @@ def tabs_from_own_list(disease_id, entries=None):
 # ---- the hand-written file, entry for entry ----
 
 def test_the_real_file_holds_the_first_ten_entries_then_the_five_new_ones():
-    assert load(APPROVALS_FILE) == FIRST_TEN + FOURTH_BATCH
-    assert len(load(APPROVALS_FILE)) == 15
+    assert load(APPROVALS_FILE)[:15] == FIRST_TEN + FOURTH_BATCH  # ticket 2.41 added six after these
+    assert len(FIRST_TEN + FOURTH_BATCH) == 15
 
 
 def test_the_first_ten_entries_are_written_as_they_were():
@@ -247,11 +247,11 @@ def test_the_first_ten_entries_are_written_as_they_were():
 
 
 def test_the_new_entries_are_dated_the_day_the_labels_were_read():
-    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:]] == [THE_DAY] * 5
+    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:15]] == [THE_DAY] * 5  # ticket 2.41 added six after these
 
 
 def test_three_new_entries_are_limited_and_two_are_not():
-    new = load(APPROVALS_FILE)[10:]
+    new = load(APPROVALS_FILE)[10:15]  # ticket 2.41 added six after these
     assert [entry["name"] for entry in new if entry.get("limited") is True] == [
         "Eculizumab", "Elafibranor", "Seladelpar"]
     assert [entry["name"] for entry in new if "limited" not in entry] == [
@@ -259,7 +259,7 @@ def test_three_new_entries_are_limited_and_two_are_not():
 
 
 def test_the_engine_reads_the_five_new_entries():
-    assert engine.approvals_by_hand()[10:] == [
+    assert engine.approvals_by_hand()[10:15] == [  # ticket 2.41 added six after these
         engine.HandApproval(ECULIZUMAB, "Eculizumab", MYASTHENIA, ECULIZUMAB_LABEL,
                             limited=True),
         engine.HandApproval(SECUKINUMAB, "Secukinumab", HIDRADENITIS, SECUKINUMAB_LABEL),
@@ -269,7 +269,8 @@ def test_the_engine_reads_the_five_new_entries():
 
 
 def test_each_new_entry_is_handed_only_to_its_own_disease():
-    assert [entry.medicine_id for entry in engine.added_by_hand(MYASTHENIA)] == [ECULIZUMAB]
+    # Ticket 2.41 added ravulizumab after eculizumab for myasthenia gravis.
+    assert [entry.medicine_id for entry in engine.added_by_hand(MYASTHENIA)][:1] == [ECULIZUMAB]
     assert [entry.medicine_id for entry in engine.added_by_hand(HIDRADENITIS)] == [
         SECUKINUMAB, BIMEKIZUMAB]
     assert [entry.medicine_id for entry in engine.added_by_hand(PBC)] == [
@@ -345,7 +346,7 @@ def test_no_entry_in_the_whole_file_clashes_or_is_written_twice():
 
 
 def test_each_label_link_is_the_tickets_and_a_regulators():
-    assert [entry["label"] for entry in load(APPROVALS_FILE)[10:]] == [
+    assert [entry["label"] for entry in load(APPROVALS_FILE)[10:15]] == [  # ticket 2.41 added six after these
         ECULIZUMAB_LABEL, SECUKINUMAB_LABEL, BIMEKIZUMAB_LABEL, ELAFIBRANOR_LABEL,
         SELADELPAR_LABEL]
     for entry in FOURTH_BATCH:
@@ -384,7 +385,8 @@ def test_each_is_now_only_under_approved_with_the_line_and_its_label(entry):
 def test_the_approved_list_is_a_to_z_and_every_other_card_stays_where_it_was(
         disease_id, added, a_to_z):
     before = tabs_from_own_list(disease_id, FIRST_TEN)
-    tabs = tabs_from_own_list(disease_id)
+    # Ticket 2.41 added ravulizumab for myasthenia gravis: this batch's file is used.
+    tabs = tabs_from_own_list(disease_id, FIRST_TEN + FOURTH_BATCH)
     assert [medicine.name for medicine in tabs.approved] == a_to_z
     assert [name.lower() for name in a_to_z] == sorted(name.lower() for name in a_to_z)
     assert len(tabs.approved) == len(before.approved) + len(added)
@@ -396,7 +398,8 @@ def test_the_approved_list_is_a_to_z_and_every_other_card_stays_where_it_was(
 
 
 def test_eculizumab_carries_the_only_some_people_line():
-    tabs = tabs_from_own_list(MYASTHENIA)
+    # Ticket 2.41 added ravulizumab, also limited: this batch's file is used.
+    tabs = tabs_from_own_list(MYASTHENIA, FIRST_TEN + FOURTH_BATCH)
     assert [medicine.id for medicine in tabs.approved if medicine.limit_note] == [ECULIZUMAB]
     card = [medicine for medicine in tabs.approved if medicine.id == ECULIZUMAB][0]
     assert card.limit_note == LIMITED_LINE

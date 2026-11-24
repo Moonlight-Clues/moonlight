@@ -1,0 +1,1406 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0005420",
+      "drugAndClinicalCandidates": {
+        "count": 18,
+        "rows": [
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201532",
+              "name": "THYROTROPIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D03EER",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1544",
+              "name": "LIOTHYRONINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1201119",
+                  "name": "LIOTHYRONINE SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                },
+                {
+                  "id": "CHEMBL2106622",
+                  "name": "LIOTHYRONINE I 131",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0S6JG",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00531713",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05247476",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05682482",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03053115",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06731764",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00106119",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01800617",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03627611",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04782856",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07424183",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00488644",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02317926",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL196",
+              "name": "ASCORBIC ACID",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05733078",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL2103741",
+              "name": "LEVOTHYROXINE SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL1624",
+                "name": "LEVOTHYROXINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00a4fc0b-7162-455e-8ed3-56efdbbe182e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0213903b-9662-465e-a668-f228cedf5e9e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02786c40-5745-4bd9-b429-53948e9ce262",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02ca8555-a726-4dd3-afee-4435ae3e0ae1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02dbb433-dc86-4967-8cd0-0424d7836b7a",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=04c2e322-151f-4a95-b34a-622183c506fe",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=05897f7a-4d31-497f-aa9e-52708b361640",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=07562e72-7eaa-4ce6-94f0-e08814787e50",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0986e998-ad13-4546-867d-95ed3db314ed",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0aad8c43-6a19-4420-8987-97a3d95c52cf",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0af3f268-7e5d-4ce5-af2b-35ae6c362dab",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0bf2cfc3-b564-44ed-9268-1a5409a89eeb",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f11c856-af9a-409a-9c0f-e7a10bbfe5a6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0f547137-d471-15f6-e054-00144ff8d46c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1221646b-ea75-1ce9-e054-00144ff8d46c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=13caa583-2238-4c2c-bc32-d88e7725a02e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=16eb7d1c-77c4-4709-970a-1e1bdb29eb76",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1ad32038-f484-4469-93fe-d3da81d8b9ea",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=21a12ab0-43ac-4f9e-877d-a81d7463de17",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=22985313-7619-4e82-88a9-ad2c71ade0d7",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=26cc174c-197c-448e-b9f6-50df4926f4f4",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2eabc9b4-2d5c-44b2-bf05-eb6c3260c1bd",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3177aea1-c0c6-4ae1-b20e-3ca66a949e2c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3218d7d0-08c8-4e96-a717-94a8cbad2092",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=32723719-5d99-4ef1-a991-b65767327c1d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=34c775d0-8982-45c4-9c10-d5a52d8dad63",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3802ed01-e081-4c07-ac66-1bc0a3dc8737",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3aa52a8d-0bdb-4ae4-8acb-4ea8c29fa480",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+                "clinicalStage": "APPROVAL",
+                "source": "PMDA"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3d2820e6-5bb4-4c71-9fb0-422a5c1ebaf0",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3e5544bb-142b-4cfb-89a0-b97cb521e1db",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3f7bf9a8-fcfa-47fc-826d-c36174abbca0",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4220ded0-36b2-4e48-8280-aecfce89ebe2",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=44a290d4-18f3-4077-89ae-ddb7db914ae7",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=46a9e4e6-af7f-4f60-a888-c6d3afce8113",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=48428150-629d-4745-9238-18c52cb2adf8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=49205c04-076b-4a6d-97aa-f0b4d3eaac46",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4c9642fa-9d53-4c16-85a7-0b3c9cadb1dd",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4f6a74de-bbc3-46ef-a21f-6a45aa75ccb5",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52b448ca-30fa-464c-b79d-2835779357cb",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=53ee103c-52d2-4f8a-8e24-54d1f1551b8e",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5644d405-8dea-48f7-8be7-828de94742b1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5680bf94-524d-45ee-b1dd-d2e81e48a312",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=574d2da2-9440-43d5-ac8e-c46017ec4bd3",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58d8f240-2c83-406c-bf44-3931e40103e1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5915b2bb-ae53-4781-91ed-ff90188fe1d8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5ada7c99-cb63-4b68-8dd2-e0f4fafdf4f6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5cf37653-c6a1-4360-b073-5f116bd16b9d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e1d8d43-193d-443d-9304-9f4f59620151",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=600c2d08-e92f-46fa-a835-c225cc759dd1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6182a0e9-ea40-41fc-be24-822b165af1bb",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=63bea240-a32d-4c12-85d1-b7edeca76b67",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=67032026-6b2a-4f2b-aafe-cdcf3febb6eb",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=68eb8ab6-c018-4112-affb-71c0db88f8de",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6977f0ea-3343-4f99-bcc6-85acfeb69710",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=69de922e-931e-4723-a91f-0cd774f008d1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6a3aa7ea-4a9d-4be2-a6d9-5fbf21673835",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=707fb53f-f27d-4169-86ff-62d02014e9c4",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=70df9c08-665f-4b12-9b11-e5521ebca3ea",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=71139e30-10c8-4474-b7a3-b575c3fd32f9",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=784e246c-058d-44f0-a0a0-d96539d8888d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7a5a9e87-383a-4450-bf79-1f4f68655ace",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7a9d4020-09d3-4a3f-a919-c16d994c65be",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7a9ecaf3-0a05-4233-a402-ecfc512c693f",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ab991f3-3984-4925-88fa-f11027ac7a36",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7d8e9ae0-2299-4d96-b925-bbceecf2c5d9",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7f8fda21-ed5b-4db1-ada0-627cf3e1c248",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=82212ab9-776f-4838-ba16-83e87c33d479",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=82549679-2e3b-48e8-95d7-7fdb902f9215",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=82a99646-c6a2-4fe1-a0e8-32cd521283c3",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=847fed05-7256-4d0e-a743-716784abc5f9",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=853ff15d-bbb1-40a1-b551-db2cfcdd0bd3",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8553a519-571b-4b9e-a638-06fc523ac373",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8bea42cb-5e06-4be7-983d-cae573ceaba6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8dda27c0-8368-47b7-b502-8fcaa1066e9f",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=94690757-d8ca-424c-acea-eece9c342712",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9562b54c-7ccd-411f-8e84-0c9de897cfea",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=95bf72d9-3d2d-435d-8543-a9a7bb4a3bca",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=99aebc74-0e34-4ab3-bb59-d9fb2b9a4444",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9f87f620-e576-4a51-91d3-9a9e6819c638",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9fde935e-f927-46aa-ba7b-e8874f4e190d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a3845f91-e0fe-42aa-8043-aeaac43f8eef",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a3b269b2-6c33-4e5e-8880-5cc8f825f60c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a432460c-85b3-4d51-b945-bd62340a29bd",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a4e39e5c-59ee-4ba2-bf7f-62b5eae3afbc",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abea9e57-11b6-4c31-b41a-3d305e57e022",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac81bf65-080b-450e-b1ff-6758a1733e0c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac83ac72-b447-47df-b6ad-94537305b7b8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b37ec531-9a69-4919-ba54-ffb674848a96",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b6ced930-2630-441d-926c-7c6d2188b27d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b722a6c8-c44b-4ec7-9402-02dc7e965753",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba302d90-1555-47f1-9d75-9a6bde299f98",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ba633224-8f70-4533-a5fc-4dfd2df703d6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bc695a1b-b510-4376-a9a0-bcbd7c63906f",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd11d40c-67f6-4149-a705-dcf281c913a9",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bd1ce5e4-9dd5-4bd5-ae5e-c88822c04f98",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c202834e-0aba-4a06-838c-cf076681e6e4",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c697292b-e67f-4753-abba-c06f98b7ce90",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c91d4f5b-dc9a-44aa-82e5-809831c260f6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca9cc882-1ae9-4260-989a-2fa7d6613470",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cadf4802-b53f-419c-a775-82af525887e4",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cadf57e5-7682-425b-8f0c-a7998114f375",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cc47cc71-5bdf-40fa-bb0f-12d77366ad01",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d336bf7d-6c91-4285-a877-9521c659ff99",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3ce7029-9e12-4de6-8f59-145bc91369a8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d3ce9a73-5f3a-4c1b-a4b7-06f45316d61a",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d71ff261-ffd5-47a8-840f-40e464612bf6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d804fd47-a37b-41c6-ab34-c311abf14d71",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dac99035-9098-4710-bf55-c46889ffc282",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dcbb33d6-9bb6-420a-9ee9-4527320d3d5c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dd073a5a-d344-4c1a-9957-e501ff14f4ba",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dddad621-c42a-45a1-b6af-8f0503f67474",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dec03393-0e77-4716-8db8-2ff996dd3f74",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e0dcc021-0831-41dd-9750-251c2f71a614",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e29d7f37-212b-4caa-a1da-171c828e2d52",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e44f82cc-4a34-40fc-bc31-42e06ca5e8b8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e7fd03db-72cd-4dc3-ae94-e11cb67126a8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e9060459-ec1b-4eb5-a34a-d777f1544f3d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ea2463ca-26fc-4c37-9cde-a8730c60a9e6",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eaf78aff-a6d2-4fb5-b4e5-8b2cb60de0de",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ee5e8470-131f-4b3d-b99b-3528853689fa",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eed5fdf6-2861-45a2-ae10-d8031137ed03",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=efe4d28c-8399-48b9-96f6-d9302e25de6d",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f347f490-7199-4de6-bca2-0d44a74979af",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f4d851f6-6bf5-4ed5-8d3a-1646773c4d40",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f887a801-744c-43c2-81d6-6433b1089667",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f8eaf67a-72e6-4ecd-bbf6-7ec8d34df2a2",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f924199f-fcac-445e-a7b9-4f57d4062be1",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fce4372d-8bba-4995-b809-fb4e256ee798",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ff852ce9-44ce-4d7c-b756-c164adda3796",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03094416",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06073665",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00921050",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05823012",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07424183",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03191188",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03880578",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05240911",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1200711",
+              "name": "OMEGA-3-ACID ETHYL ESTERS",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0d842966-26bc-4521-b401-635a83618012",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1535",
+              "name": "HYDROXYCHLOROQUINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1690",
+                  "name": "HYDROXYCHLOROQUINE SULFATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01760421",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1624",
+              "name": "LEVOTHYROXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL2103741",
+                  "name": "LEVOTHYROXINE SODIUM",
+                  "drugWarnings": [
+                    {
+                      "warningType": "Black Box Warning"
+                    }
+                  ]
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D06RGG",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00565864",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01647750",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01660126",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02577367",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02917863",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03634371",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04354896",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04747275",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04878614",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05247476",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06135948",
+                "clinicalStage": "PHASE_4",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00388297",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05682482",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02090907",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02548715",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03053115",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06345339",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06731764",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00106119",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01916304",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03627611",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04124705",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04782856",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05733078",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00535561",
+                "clinicalStage": "PHASE_1",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03102177",
+                "clinicalStage": "EARLY_PHASE_1",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00230802",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00488644",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00524238",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00770016",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01189344",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01739972",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02317926",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02467244",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02567877",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02891668",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT02993562",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03095963",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03115515",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03977207",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04098991",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04936698",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06757712",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07421869",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL1536",
+              "name": "ERGOCALCIFEROL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06276205",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05871957",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2_3",
+            "drug": {
+              "id": "CHEMBL2108878",
+              "name": "THYROID",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT06345339",
+                "clinicalStage": "PHASE_2_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04124705",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://searchusan.ama-assn.org/finder/usan/search/THYROID/relevant/1/",
+                "clinicalStage": "UNKNOWN",
+                "source": "USAN"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL1518",
+              "name": "PROPYLTHIOURACIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT04936698",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_1",
+            "drug": {
+              "id": "CHEMBL1200830",
+              "name": "FERROUS SULFATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00535561",
+                "clinicalStage": "PHASE_1",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201625",
+              "name": "CHOLESTYRAMINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=362ddd91-a63f-4ec6-841a-75785dd208c8",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL672",
+              "name": "FENOFIBRATE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=66d2c555-2880-4ac6-80f8-69a00f1fbc4c",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201716",
+              "name": "MECASERMIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a8b27a1b-a611-4f91-ad22-76d4b390c3ae",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201650",
+              "name": "THYROGLOBULIN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://ttd.idrblab.cn/data/drug/details/D0QD9R",
+                "clinicalStage": "APPROVAL",
+                "source": "TTD"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL4297912",
+              "name": "BIFIDOBACTERIUM SPP.",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT03095963",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "APPROVAL",
+            "drug": {
+              "id": "CHEMBL1201119",
+              "name": "LIOTHYRONINE SODIUM",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": {
+                "id": "CHEMBL1544",
+                "name": "LIOTHYRONINE",
+                "drugWarnings": [
+                  {
+                    "warningType": "Black Box Warning"
+                  }
+                ]
+              },
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=51452b31-ff68-4e0c-b982-c15502ebf1d3",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5ccacb47-6348-6143-e053-2991aa0ac066",
+                "clinicalStage": "APPROVAL",
+                "source": "DailyMed"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01581463",
+                "clinicalStage": "PHASE_1",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00715572",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL42115",
+              "name": "THYROXINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00715572",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

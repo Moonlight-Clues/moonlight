@@ -138,8 +138,10 @@ def test_the_real_file_is_in_date_order():
 
 
 def test_the_file_holds_24_entries():
-    assert len(real_corrections()) == 24
-    assert len(engine.corrections()) == 24
+    # Ticket 2.41 added fourteen after these, dated 2026-11-24.
+    assert len(real_corrections()) == 38
+    assert len(engine.corrections()) == 38
+    assert len(real_corrections()[:24]) == 24
 
 
 def test_it_is_the_only_entry_of_that_day_and_the_only_one_for_tafamidis():

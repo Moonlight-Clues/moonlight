@@ -302,20 +302,21 @@ def test_the_real_file_holds_todays_ten_with_the_new_note_and_no_other():
 def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     entries = real_corrections()
     # Ticket 2.19 added one: deferoxamine, hemochromatosis. Ticket 2.25 added
-    # one: tafamidis, AL amyloidosis (Kashish's yes, 23 Nov).
-    assert len(entries) == 24
-    assert len(engine.corrections()) == 24
+    # one: tafamidis, AL amyloidosis (Kashish's yes, 23 Nov). Ticket 2.41
+    # added fourteen, dated 2026-11-24, with the second note.
+    assert len(entries) == 38
+    assert len(engine.corrections()) == 38
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)
     assert {entry["date"] for entry in entries} == {
-        MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23"}
+        MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24"}
     # Read as plain text: nothing is left once the keys, the ids, the two
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
     for known in ["medicine_id", "disease_id", "date", "note", FIRST_NOTE, SECOND_NOTE,
-                  MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23",
+                  MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24",
                   *sorted(ids, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""

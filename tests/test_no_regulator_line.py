@@ -614,7 +614,11 @@ def test_example_6_the_same_cards_in_the_same_order_as_before(disease, saved_jso
                 assert one["proof_note"] == was["proof_note"] == JAPAN_LINE
             else:  # the only new thing a card can gain is the new line
                 assert one.get("proof_note") in (None, LINE)
-    assert [one["id"] for one in data["being_studied"]] == before["being_studied"]
+    # Ticket 2.41. Delandistrogene moxeparvovec for Duchenne muscular dystrophy
+    # was added by hand: it left In trials for Approved. Set aside here too.
+    # tests/test_label_batch.py holds that move.
+    assert [one["id"] for one in data["being_studied"] if one["id"] not in by_hand] == [
+        one for one in before["being_studied"] if one not in by_hand]
     assert [one["id"] for one in data["new_clues"]] == before["new_clues"]
     assert data["left_out"] == before["left_out"]
 
@@ -700,7 +704,8 @@ def test_api_no_approved_card_gains_an_ending_or_an_explanation(saved_json):
             assert "ending" not in one and "explanation" not in one
             assert set(one) <= {"id", "medicine", "forms", "proteins", "reports", "source",
                                 "label", "proof_note", "warning",
-                                "withdrawal_note"}  # ticket 2.31: one more key
+                                "withdrawal_note",  # ticket 2.31: one more key
+                                "limit_note"}  # ticket 2.41: Elevidys, limited, by hand
 
 
 # ---- the page: the same slot, the same grey, the engine's words ----
