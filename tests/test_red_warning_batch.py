@@ -319,7 +319,9 @@ def test_no_pair_is_written_twice_and_none_clashes_with_another_list():
 
 
 def test_the_other_files_the_ticket_names_are_not_part_of_this_change():
-    assert len(load(APPROVALS_FILE)) == 22 and len(load(LEFT_OUT_FILE)) == 53
+    # Ticket 2.46 added entries dated 2026-11-25 to the approvals file after this one.
+    before_2_46 = [e for e in load(APPROVALS_FILE) if e["date"] != THE_DAY]
+    assert len(before_2_46) == 22 and len(load(LEFT_OUT_FILE)) == 53
 
 
 # ---- the pages: the new red cards are in the red box ----
