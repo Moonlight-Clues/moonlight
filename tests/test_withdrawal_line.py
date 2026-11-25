@@ -201,8 +201,15 @@ def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wro
     # tests/test_hand_withdrawals_2_51.py holds the new entry.
     guards.append(patch.object(engine, "_read_withdrawals",
                                     return_value=withdrawals or []))
-    if wrong is not None:
-        guards.append(patch.object(engine, "_read_corrections", return_value=wrong))
+    if wrong is None:
+        # Ticket 2.55 (25 Nov, Kashish's signed Q10) gives dicumarol on this
+        # page a red sentence. The comparisons with main's saved page here are
+        # about the withdrawal line, so they read the corrections file without
+        # that entry. tests/test_red_note_2_55.py holds the new entry.
+        entries = json.loads((ROOT / "moonlight" / "corrections.json").read_text(encoding="utf-8"))
+        wrong = [e for e in entries
+                 if (e["medicine_id"], e["disease_id"]) != ("CHEMBL1466", HEM_A)]
+    guards.append(patch.object(engine, "_read_corrections", return_value=wrong))
     for guard in guards:
         guard.start()
     try:

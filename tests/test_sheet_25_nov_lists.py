@@ -110,6 +110,10 @@ def gone_and_new(disease_id):
 def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
     entries = load(LISTS / name)
     new = NEW[name]
+    if name == "corrections.json":
+        # Ticket 2.55 (signed Q10 and Q22) added two after these:
+        # tests/test_red_note_2_55.py holds them.
+        entries = entries[:-2]
     assert entries[-len(new):] == new
     assert all(entry["date"] == THE_DAY for entry in new)
     assert len(entries) > len(new)  # the older entries stay in front, untouched
@@ -222,8 +226,10 @@ def test_prostate_testosterones_in_being_studied_are_untouched():
 
 # ---- Q10 / item 6: dicumarol waits ----
 
-def test_dicumarol_has_no_correction_yet():
-    assert "CHEMBL1466" not in engine.looks_wrong(HEM_A)
+def test_dicumarol_had_no_correction_in_2_54():
+    # Ticket 2.55 (Kashish's signed Q10) added the entry, with the third note:
+    # tests/test_red_note_2_55.py. The saved pages below are 2.54's.
+    assert engine.warning_words(HEM_A)["CHEMBL1466"] == engine.THIRD_NOTE
     assert places(answer("before", HEM_A), "CHEMBL1466") == ["wider_group"]
     assert places(answer("after", HEM_A), "CHEMBL1466") == ["wider_group"]
     assert answer("before", HEM_A) == answer("after", HEM_A)

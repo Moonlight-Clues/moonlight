@@ -145,8 +145,9 @@ def test_the_file_holds_24_entries():
     # added one more the same day. Ticket 2.45 added 62, dated 2026-11-25.
     # Ticket 2.52 added seven more, dated 2026-11-25.
     # Ticket 2.54, signed answers Q22 and 10b: two more, dated 2026-11-25.
-    assert len(real_corrections()) == 111
-    assert len(engine.corrections()) == 111
+    # Ticket 2.55, signed answers Q10 and Q22: two more, dated 2026-11-25.
+    assert len(real_corrections()) == 113
+    assert len(engine.corrections()) == 113
     assert len(real_corrections()[:24]) == 24
 
 
