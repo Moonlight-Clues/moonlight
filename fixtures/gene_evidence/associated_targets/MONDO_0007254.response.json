@@ -1,0 +1,849 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0007254",
+      "therapeuticAreas": [
+        {
+          "id": "OTAR_0000017"
+        },
+        {
+          "id": "MONDO_0045024"
+        }
+      ],
+      "associatedTargets": {
+        "count": 17252,
+        "rows": [
+          {
+            "score": 0.9251085451993997,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.9349245886946165
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.865457038266544
+              },
+              {
+                "id": "literature",
+                "score": 0.99676140121174
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9779648614959878
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8836543739371956
+              }
+            ],
+            "target": {
+              "id": "ENSG00000139618",
+              "approvedSymbol": "BRCA2",
+              "approvedName": "BRCA2 DNA repair associated",
+              "functionDescriptions": [
+                "Tumor suppressor protein that maintains genome stability primarily by repairing damaged DNA through homologous recombination (HR) (PubMed:11239456, PubMed:12442171, PubMed:15115758, PubMed:15199141, PubMed:15671039, PubMed:15937124, PubMed:17515903, PubMed:17515904, PubMed:18317453, PubMed:19303847, PubMed:20729832, PubMed:20729858, PubMed:20729859, PubMed:21719596, PubMed:27941124, PubMed:37499663, PubMed:37515771). Facilitates the repair of double- strand breaks (DSBs) by binding and mediating the loading of the RAD51 protein onto single-stranded DNA (ssDNA), thereby promoting the activity of RAD51, which catalyzes DNA strand exchange (PubMed:11239456, PubMed:12442171, PubMed:15937124, PubMed:17515903, PubMed:17515904, PubMed:18317453, PubMed:19303847, PubMed:20729832, PubMed:20729858, PubMed:20729859, PubMed:27941124, PubMed:37499663). BRCA2 nucleates and stabilizes RAD51 on ssDNA directly and delivers RAD51 to ssDNA-double-stranded DNA (dsDNA) junctions by sliding along dsDNA backbone (PubMed:12442171, PubMed:19303847, PubMed:37499663). RAD51 targeting to ssDNA promotes removal of replication protein-A (RPA) from ssDNA and stabilization of RAD51-ssDNA filaments by blocking ATP hydrolysis (PubMed:20729859). May play a role in the extension step after strand invasion at replication-dependent DNA double-strand breaks; together with PALB2 is involved in both POLH localization at collapsed replication forks and DNA polymerization activity (PubMed:24485656). Required to prevent R-loop-associated DNA damage and thus transcription-associated genomic instability (PubMed:24896180). Silencing of BRCA2 promotes R-loop accumulation at actively transcribed genes in replicating and non-replicating cells, suggesting that BRCA2 mediates the control of R-loop associated genomic instability, independently of its known role in homologous recombination (PubMed:24896180). Also promotes RAD51 loading to telomeric regions, facilitating telomere replication and capping (PubMed:21076401). Also required for homologous recombination during meiosis by promoting the recruitment of RAD51 and DMC1 recombinases to meiotic DSB sites, enabling proper chromosome pairing and crossing over (PubMed:26976601). Also promotes homologous recombination by inactivating the FIGNL1-FIRRM complex to protect RAD51 filament from premature disassembly (PubMed:37515771). Together with NPM1, may also regulate centrosome duplication (PubMed:21084279). {ECO:0000269|PubMed:11239456, ECO:0000269|PubMed:12442171, ECO:0000269|PubMed:15115758, ECO:0000269|PubMed:15199141, ECO:0000269|PubMed:15671039, ECO:0000269|PubMed:15937124, ECO:0000269|PubMed:17515903, ECO:0000269|PubMed:17515904, ECO:0000269|PubMed:18317453, ECO:0000269|PubMed:19303847, ECO:0000269|PubMed:20729832, ECO:0000269|PubMed:20729858, ECO:0000269|PubMed:20729859, ECO:0000269|PubMed:21076401, ECO:0000269|PubMed:21084279, ECO:0000269|PubMed:21719596, ECO:0000269|PubMed:24485656, ECO:0000269|PubMed:24896180, ECO:0000269|PubMed:26976601, ECO:0000269|PubMed:27941124, ECO:0000269|PubMed:37499663, ECO:0000269|PubMed:37515771}."
+              ]
+            }
+          },
+          {
+            "score": 0.9194443258299257,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.9329176669938845
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.865457038266544
+              },
+              {
+                "id": "literature",
+                "score": 0.9992057106453129
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9760769424320358
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8987195371726127
+              },
+              {
+                "id": "animal_model",
+                "score": 0.40179666241146067
+              }
+            ],
+            "target": {
+              "id": "ENSG00000012048",
+              "approvedSymbol": "BRCA1",
+              "approvedName": "BRCA1 DNA repair associated",
+              "functionDescriptions": [
+                "E3 ubiquitin-protein ligase that specifically mediates the formation of 'Lys-6'-linked polyubiquitin chains and plays a central role in DNA repair by facilitating cellular responses to DNA damage (PubMed:10500182, PubMed:12887909, PubMed:12890688, PubMed:14976165, PubMed:16818604, PubMed:17525340, PubMed:19261748). It is unclear whether it also mediates the formation of other types of polyubiquitin chains (PubMed:12890688). The BRCA1-BARD1 heterodimer coordinates a diverse range of cellular pathways such as DNA damage repair, ubiquitination and transcriptional regulation to maintain genomic stability (PubMed:12890688, PubMed:14976165, PubMed:20351172). Regulates centrosomal microtubule nucleation (PubMed:18056443). Required for appropriate cell cycle arrests after ionizing irradiation in both the S-phase and the G2 phase of the cell cycle (PubMed:10724175, PubMed:11836499, PubMed:12183412, PubMed:19261748). Required for FANCD2 targeting to sites of DNA damage (PubMed:12887909). Inhibits lipid synthesis by binding to inactive phosphorylated ACACA and preventing its dephosphorylation (PubMed:16326698). Contributes to homologous recombination repair (HRR) via its direct interaction with PALB2, fine-tunes recombinational repair partly through its modulatory role in the PALB2-dependent loading of BRCA2-RAD51 repair machinery at DNA breaks (PubMed:19369211). Component of the BRCA1-RBBP8 complex which regulates CHEK1 activation and controls cell cycle G2/M checkpoints on DNA damage via BRCA1-mediated ubiquitination of RBBP8 (PubMed:16818604). Acts as a transcriptional activator (PubMed:20160719). {ECO:0000269|PubMed:10500182, ECO:0000269|PubMed:10724175, ECO:0000269|PubMed:11836499, ECO:0000269|PubMed:12183412, ECO:0000269|PubMed:12887909, ECO:0000269|PubMed:12890688, ECO:0000269|PubMed:14976165, ECO:0000269|PubMed:16326698, ECO:0000269|PubMed:16818604, ECO:0000269|PubMed:17525340, ECO:0000269|PubMed:18056443, ECO:0000269|PubMed:19261748, ECO:0000269|PubMed:19369211, ECO:0000269|PubMed:20160719, ECO:0000269|PubMed:20351172}."
+              ]
+            }
+          },
+          {
+            "score": 0.883711182935059,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.8680836563749998
+              },
+              {
+                "id": "clinical",
+                "score": 0.16929184016823612
+              },
+              {
+                "id": "literature",
+                "score": 0.9916499798144078
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.957752659607361
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.6109520946722211
+              }
+            ],
+            "target": {
+              "id": "ENSG00000183765",
+              "approvedSymbol": "CHEK2",
+              "approvedName": "checkpoint kinase 2",
+              "functionDescriptions": [
+                "Serine/threonine-protein kinase which is required for checkpoint-mediated cell cycle arrest, activation of DNA repair and apoptosis in response to the presence of DNA double-strand breaks. May also negatively regulate cell cycle progression during unperturbed cell cycles. Following activation, phosphorylates numerous effectors preferentially at the consensus sequence [L-X-R-X-X-S/T] (PubMed:37943659). Regulates cell cycle checkpoint arrest through phosphorylation of CDC25A, CDC25B and CDC25C, inhibiting their activity. Inhibition of CDC25 phosphatase activity leads to increased inhibitory tyrosine phosphorylation of CDK-cyclin complexes and blocks cell cycle progression. May also phosphorylate NEK6 which is involved in G2/M cell cycle arrest. Regulates DNA repair through phosphorylation of BRCA2, enhancing the association of RAD51 with chromatin which promotes DNA repair by homologous recombination. Also stimulates the transcription of genes involved in DNA repair (including BRCA2) through the phosphorylation and activation of the transcription factor FOXM1. Regulates apoptosis through the phosphorylation of p53/TP53, MDM4 and PML. Phosphorylation of p53/TP53 at 'Ser-20' by CHEK2 may alleviate inhibition by MDM2, leading to accumulation of active p53/TP53. Phosphorylation of MDM4 may also reduce degradation of p53/TP53. Also controls the transcription of pro-apoptotic genes through phosphorylation of the transcription factor E2F1. Tumor suppressor, it may also have a DNA damage-independent function in mitotic spindle assembly by phosphorylating BRCA1. Its absence may be a cause of the chromosomal instability observed in some cancer cells. Promotes the CCAR2-SIRT1 association and is required for CCAR2-mediated SIRT1 inhibition (PubMed:25361978). Under oxidative stress, promotes ATG7 ubiquitination by phosphorylating the E3 ubiquitin ligase TRIM32 at 'Ser-55' leading to positive regulation of the autophagosme assembly (PubMed:37943659). {ECO:0000250|UniProtKB:Q9Z265, ECO:0000269|PubMed:10097108, ECO:0000269|PubMed:10724175, ECO:0000269|PubMed:11298456, ECO:0000269|PubMed:12402044, ECO:0000269|PubMed:12607004, ECO:0000269|PubMed:12717439, ECO:0000269|PubMed:12810724, ECO:0000269|PubMed:16163388, ECO:0000269|PubMed:17101782, ECO:0000269|PubMed:17380128, ECO:0000269|PubMed:17715138, ECO:0000269|PubMed:18317453, ECO:0000269|PubMed:18644861, ECO:0000269|PubMed:18728393, ECO:0000269|PubMed:20364141, ECO:0000269|PubMed:25361978, ECO:0000269|PubMed:25619829, ECO:0000269|PubMed:37943659, ECO:0000269|PubMed:9836640, ECO:0000269|PubMed:9889122}.",
+                "(Microbial infection) Phosphorylates herpes simplex virus 1/HHV-1 protein ICP0 and thus activates its SUMO-targeted ubiquitin ligase activity. ."
+              ]
+            }
+          },
+          {
+            "score": 0.8830551393973749,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.989283939488924
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9746101865975701
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8412836902101531
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.9242039942382337
+              }
+            ],
+            "target": {
+              "id": "ENSG00000083093",
+              "approvedSymbol": "PALB2",
+              "approvedName": "partner and localizer of BRCA2",
+              "functionDescriptions": [
+                "Plays a critical role in homologous recombination repair (HRR) through its ability to recruit BRCA2 and RAD51 to DNA breaks (PubMed:16793542, PubMed:19369211, PubMed:19423707, PubMed:22941656, PubMed:24141787, PubMed:28319063). Strongly stimulates the DNA strand- invasion activity of RAD51, stabilizes the nucleoprotein filament against a disruptive BRC3-BRC4 polypeptide and helps RAD51 to overcome the suppressive effect of replication protein A (RPA) (PubMed:20871615). Functionally cooperates with RAD51AP1 in promoting of D-loop formation by RAD51 (PubMed:20871616). Serves as the molecular scaffold in the formation of the BRCA1-PALB2-BRCA2 complex which is essential for homologous recombination (PubMed:19369211). Via its WD repeats is proposed to scaffold a HR complex containing RAD51C and BRCA2 which is thought to play a role in HR-mediated DNA repair (PubMed:24141787). Essential partner of BRCA2 that promotes the localization and stability of BRCA2 (PubMed:16793542). Also enables its recombinational repair and checkpoint functions of BRCA2 (PubMed:16793542). May act by promoting stable association of BRCA2 with nuclear structures, allowing BRCA2 to escape the effects of proteasome-mediated degradation (PubMed:16793542). Binds DNA with high affinity for D loop, which comprises single-stranded, double-stranded and branched DNA structures (PubMed:20871616). May play a role in the extension step after strand invasion at replication-dependent DNA double-strand breaks; together with BRCA2 is involved in both POLH localization at collapsed replication forks and DNA polymerization activity (PubMed:24485656). {ECO:0000269|PubMed:16793542, ECO:0000269|PubMed:19369211, ECO:0000269|PubMed:19423707, ECO:0000269|PubMed:20871615, ECO:0000269|PubMed:20871616, ECO:0000269|PubMed:22941656, ECO:0000269|PubMed:24141787, ECO:0000269|PubMed:24485656, ECO:0000269|PubMed:28319063}."
+              ]
+            }
+          },
+          {
+            "score": 0.8776045843448664,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.4875604996845201
+              },
+              {
+                "id": "clinical",
+                "score": 0.9437931618504064
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.8253561331837682
+              },
+              {
+                "id": "literature",
+                "score": 0.9976463825849289
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8969903279516878
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.9466360075260054
+              }
+            ],
+            "target": {
+              "id": "ENSG00000121879",
+              "approvedSymbol": "PIK3CA",
+              "approvedName": "phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha",
+              "functionDescriptions": [
+                "Phosphoinositide-3-kinase (PI3K) phosphorylates phosphatidylinositol (PI) and its phosphorylated derivatives at position 3 of the inositol ring to produce 3-phosphoinositides (PubMed:15135396, PubMed:23936502, PubMed:28676499). Uses ATP and PtdIns(4,5)P2 (phosphatidylinositol 4,5-bisphosphate) to generate phosphatidylinositol 3,4,5-trisphosphate (PIP3) (PubMed:15135396, PubMed:28676499). PIP3 plays a key role by recruiting PH domain- containing proteins to the membrane, including AKT1 and PDPK1, activating signaling cascades involved in cell growth, survival, proliferation, motility and morphology. Participates in cellular signaling in response to various growth factors. Involved in the activation of AKT1 upon stimulation by receptor tyrosine kinases ligands such as EGF, insulin, IGF1, VEGFA and PDGF. Involved in signaling via insulin-receptor substrate (IRS) proteins. Essential in endothelial cell migration during vascular development through VEGFA signaling, possibly by regulating RhoA activity. Required for lymphatic vasculature development, possibly by binding to RAS and by activation by EGF and FGF2, but not by PDGF. Regulates invadopodia formation through the PDPK1-AKT1 pathway. Participates in cardiomyogenesis in embryonic stem cells through a AKT1 pathway. Participates in vasculogenesis in embryonic stem cells through PDK1 and protein kinase C pathway. In addition to its lipid kinase activity, it displays a serine-protein kinase activity that results in the autophosphorylation of the p85alpha regulatory subunit as well as phosphorylation of other proteins such as 4EBP1, H-Ras, the IL-3 beta c receptor and possibly others (PubMed:23936502, PubMed:28676499). Plays a role in the positive regulation of phagocytosis and pinocytosis (By similarity). {ECO:0000250|UniProtKB:P42337, ECO:0000269|PubMed:15135396, ECO:0000269|PubMed:21708979, ECO:0000269|PubMed:23936502, ECO:0000269|PubMed:26593112, ECO:0000269|PubMed:28676499}."
+              ]
+            }
+          },
+          {
+            "score": 0.8670173650584002,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.865457038266544
+              },
+              {
+                "id": "literature",
+                "score": 0.9907196973859548
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9623065508889521
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.654600783973845
+              },
+              {
+                "id": "animal_model",
+                "score": 0.35697696435754384
+              }
+            ],
+            "target": {
+              "id": "ENSG00000149311",
+              "approvedSymbol": "ATM",
+              "approvedName": "ATM serine/threonine kinase",
+              "functionDescriptions": [
+                "Serine/threonine protein kinase which activates checkpoint signaling upon double strand breaks (DSBs), apoptosis and genotoxic stresses such as ionizing ultraviolet A light (UVA), thereby acting as a DNA damage sensor (PubMed:10550055, PubMed:10839545, PubMed:10910365, PubMed:12556884, PubMed:14871926, PubMed:15064416, PubMed:15448695, PubMed:15456891, PubMed:15790808, PubMed:15916964, PubMed:17923702, PubMed:21757780, PubMed:24534091, PubMed:27941124, PubMed:35076389, PubMed:9733514). Recognizes the substrate consensus sequence [ST]-Q (PubMed:10550055, PubMed:10839545, PubMed:10910365, PubMed:12556884, PubMed:14871926, PubMed:15448695, PubMed:15456891, PubMed:15916964, PubMed:17923702, PubMed:24534091, PubMed:27941124, PubMed:9733514). Phosphorylates 'Ser-139' of histone variant H2AX at double strand breaks (DSBs), thereby regulating DNA damage response mechanism (By similarity). Also plays a role in pre-B cell allelic exclusion, a process leading to expression of a single immunoglobulin heavy chain allele to enforce clonality and monospecific recognition by the B-cell antigen receptor (BCR) expressed on individual B-lymphocytes. After the introduction of DNA breaks by the RAG complex on one immunoglobulin allele, acts by mediating a repositioning of the second allele to pericentromeric heterochromatin, preventing accessibility to the RAG complex and recombination of the second allele. Also involved in signal transduction and cell cycle control. May function as a tumor suppressor. Necessary for activation of ABL1 and SAPK. Phosphorylates DYRK2, CHEK2, p53/TP53, FBXW7, FANCD2, NFKBIA, BRCA1, CREBBP/CBP, RBBP8/CTIP, FBXO46, MRE11, nibrin (NBN), RAD50, RAD17, PELI1, TERF1, UFL1, RAD9, UBQLN4, UCHL3 and DCLRE1C (PubMed:10550055, PubMed:10766245, PubMed:10802669, PubMed:10839545, PubMed:10910365, PubMed:10973490, PubMed:11375976, PubMed:12086603, PubMed:15456891, PubMed:19965871, PubMed:21757780, PubMed:24534091, PubMed:26240375, PubMed:26774286, PubMed:27941124, PubMed:30171069, PubMed:30612738, PubMed:30886146, PubMed:30952868, PubMed:38128537, PubMed:9733515, PubMed:9843217). May play a role in vesicle and/or protein transport. Could play a role in T-cell development, gonad and neurological function. Plays a role in replication-dependent histone mRNA degradation. Binds DNA ends. Phosphorylation of DYRK2 in nucleus in response to genotoxic stress prevents its MDM2-mediated ubiquitination and subsequent proteasome degradation (PubMed:19965871). Phosphorylates ATF2 which stimulates its function in DNA damage response (PubMed:15916964). Phosphorylates ERCC6 which is essential for its chromatin remodeling activity at DNA double-strand breaks (PubMed:29203878). Phosphorylates TTC5/STRAP at 'Ser-203' in the cytoplasm in response to DNA damage, which promotes TTC5/STRAP nuclear localization (PubMed:15448695). Also involved in pexophagy by mediating phosphorylation of PEX5: translocated to peroxisomes in response to reactive oxygen species (ROS), and catalyzes phosphorylation of PEX5, promoting PEX5 ubiquitination and induction of pexophagy (PubMed:26344566). {ECO:0000250|UniProtKB:Q62388, ECO:0000269|PubMed:10550055, ECO:0000269|PubMed:10766245, ECO:0000269|PubMed:10802669, ECO:0000269|PubMed:10839545, ECO:0000269|PubMed:10910365, ECO:0000269|PubMed:10973490, ECO:0000269|PubMed:11375976, ECO:0000269|PubMed:12086603, ECO:0000269|PubMed:12556884, ECO:0000269|PubMed:14871926, ECO:0000269|PubMed:15448695, ECO:0000269|PubMed:15456891, ECO:0000269|PubMed:15916964, ECO:0000269|PubMed:16086026, ECO:0000269|PubMed:16858402, ECO:0000269|PubMed:17923702, ECO:0000269|PubMed:19431188, ECO:0000269|PubMed:19965871, ECO:0000269|PubMed:21757780, ECO:0000269|PubMed:24534091, ECO:0000269|PubMed:26240375, ECO:0000269|PubMed:26344566, ECO:0000269|PubMed:26774286, ECO:0000269|PubMed:27941124, ECO:0000269|PubMed:29203878, ECO:0000269|PubMed:30171069, ECO:0000269|PubMed:30612738, ECO:0000269|PubMed:30886146, ECO:0000269|PubMed:30952868, ECO:0000269|PubMed:35076389, ECO:0000269|PubMed:38128537, ECO:0000269|PubMed:9733514, ECO:0000269|PubMed:9733515, ECO:0000269|PubMed:9843217}."
+              ]
+            }
+          },
+          {
+            "score": 0.865037302344107,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.14438356443276001
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.9066612367713315
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.607930797611621
+              },
+              {
+                "id": "literature",
+                "score": 0.998683409280062
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8949409015051764
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.9496584476629428
+              },
+              {
+                "id": "animal_model",
+                "score": 0.4930076671473644
+              }
+            ],
+            "target": {
+              "id": "ENSG00000141510",
+              "approvedSymbol": "TP53",
+              "approvedName": "tumor protein p53",
+              "functionDescriptions": [
+                "Multifunctional transcription factor that induces cell cycle arrest, DNA repair or apoptosis upon binding to its target DNA sequence (PubMed:11025664, PubMed:12524540, PubMed:12810724, PubMed:15186775, PubMed:15340061, PubMed:17317671, PubMed:17349958, PubMed:19556538, PubMed:20673990, PubMed:20959462, PubMed:22726440, PubMed:24051492, PubMed:24652652, PubMed:35618207, PubMed:36634798, PubMed:38653238, PubMed:9840937). Acts as a tumor suppressor in many tumor types; induces growth arrest or apoptosis depending on the physiological circumstances and cell type (PubMed:11025664, PubMed:12524540, PubMed:12810724, PubMed:15186775, PubMed:15340061, PubMed:17189187, PubMed:17317671, PubMed:17349958, PubMed:19556538, PubMed:20673990, PubMed:20959462, PubMed:22726440, PubMed:24051492, PubMed:24652652, PubMed:38653238, PubMed:9840937). Negatively regulates cell division by controlling expression of a set of genes required for this process (PubMed:11025664, PubMed:12524540, PubMed:12810724, PubMed:15186775, PubMed:15340061, PubMed:17317671, PubMed:17349958, PubMed:19556538, PubMed:20673990, PubMed:20959462, PubMed:22726440, PubMed:24051492, PubMed:24652652, PubMed:9840937). One of the activated genes is an inhibitor of cyclin-dependent kinases. Apoptosis induction seems to be mediated either by stimulation of BAX and FAS antigen expression, or by repression of Bcl-2 expression (PubMed:12524540, PubMed:17189187). Its pro-apoptotic activity is activated via its interaction with PPP1R13B/ASPP1 or TP53BP2/ASPP2 (PubMed:12524540). However, this activity is inhibited when the interaction with PPP1R13B/ASPP1 or TP53BP2/ASPP2 is displaced by PPP1R13L/iASPP (PubMed:12524540). In cooperation with mitochondrial PPIF is involved in activating oxidative stress-induced necrosis; the function is largely independent of transcription. Induces the transcription of long intergenic non-coding RNA p21 (lincRNA-p21) and lincRNA-Mkln1. LincRNA-p21 participates in TP53-dependent transcriptional repression leading to apoptosis and seems to have an effect on cell-cycle regulation. Implicated in Notch signaling cross-over. Prevents CDK7 kinase activity when associated to CAK complex in response to DNA damage, thus stopping cell cycle progression. Isoform 2 enhances the transactivation activity of isoform 1 from some but not all TP53-inducible promoters. Isoform 4 suppresses transactivation activity and impairs growth suppression mediated by isoform 1. Isoform 7 inhibits isoform 1-mediated apoptosis. Regulates the circadian clock by repressing CLOCK-BMAL1-mediated transcriptional activation of PER2 (PubMed:24051492). {ECO:0000269|PubMed:11025664, ECO:0000269|PubMed:12524540, ECO:0000269|PubMed:12810724, ECO:0000269|PubMed:15186775, ECO:0000269|PubMed:15340061, ECO:0000269|PubMed:17189187, ECO:0000269|PubMed:17317671, ECO:0000269|PubMed:17349958, ECO:0000269|PubMed:19556538, ECO:0000269|PubMed:20673990, ECO:0000269|PubMed:20959462, ECO:0000269|PubMed:22726440, ECO:0000269|PubMed:24051492, ECO:0000269|PubMed:24652652, ECO:0000269|PubMed:35618207, ECO:0000269|PubMed:36634798, ECO:0000269|PubMed:38653238, ECO:0000269|PubMed:9840937}."
+              ]
+            }
+          },
+          {
+            "score": 0.8586552367077667,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.994265868466511
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.8492097570461924
+              },
+              {
+                "id": "literature",
+                "score": 0.999724149345102
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7452711912783567
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8434081063784343
+              }
+            ],
+            "target": {
+              "id": "ENSG00000091831",
+              "approvedSymbol": "ESR1",
+              "approvedName": "estrogen receptor 1",
+              "functionDescriptions": [
+                "Nuclear hormone receptor. The steroid hormones and their receptors are involved in the regulation of eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues. Ligand-dependent nuclear transactivation involves either direct homodimer binding to a palindromic estrogen response element (ERE) sequence or association with other DNA-binding transcription factors, such as AP-1/c-Jun, c-Fos, ATF-2, Sp1 and Sp3, to mediate ERE- independent signaling. Ligand binding induces a conformational change allowing subsequent or combinatorial association with multiprotein coactivator complexes through LXXLL motifs of their respective components. Mutual transrepression occurs between the estrogen receptor (ER) and NF-kappa-B in a cell-type specific manner. Decreases NF-kappa- B DNA-binding activity and inhibits NF-kappa-B-mediated transcription from the IL6 promoter and displace RELA/p65 and associated coregulators from the promoter. Recruited to the NF-kappa-B response element of the CCL2 and IL8 promoters and can displace CREBBP. Present with NF-kappa-B components RELA/p65 and NFKB1/p50 on ERE sequences. Can also act synergistically with NF-kappa-B to activate transcription involving respective recruitment adjacent response elements; the function involves CREBBP. Can activate the transcriptional activity of TFF1. Also mediates membrane-initiated estrogen signaling involving various kinase cascades. Essential for MTA1-mediated transcriptional regulation of BRCA1 and BCAS3 (PubMed:17922032). Maintains neuronal survival in response to ischemic reperfusion injury when in the presence of circulating estradiol (17-beta-estradiol/E2) (By similarity). {ECO:0000250|UniProtKB:P06211, ECO:0000269|PubMed:10681512, ECO:0000269|PubMed:10816575, ECO:0000269|PubMed:11477071, ECO:0000269|PubMed:11682626, ECO:0000269|PubMed:14764652, ECO:0000269|PubMed:15078875, ECO:0000269|PubMed:15891768, ECO:0000269|PubMed:16043358, ECO:0000269|PubMed:16617102, ECO:0000269|PubMed:16684779, ECO:0000269|PubMed:17922032, ECO:0000269|PubMed:17932106, ECO:0000269|PubMed:18247370, ECO:0000269|PubMed:19350539, ECO:0000269|PubMed:20074560, ECO:0000269|PubMed:20705611, ECO:0000269|PubMed:21330404, ECO:0000269|PubMed:22083956, ECO:0000269|PubMed:37478846, ECO:0000269|PubMed:7651415, ECO:0000269|PubMed:9328340}.",
+                "[Isoform 3]: Involved in activation of NOS3 and endothelial nitric oxide production (PubMed:21937726). Isoforms lacking one or several functional domains are thought to modulate transcriptional activity by competitive ligand or DNA binding and/or heterodimerization with the full-length receptor (PubMed:10970861). Binds to ERE and inhibits isoform 1 (PubMed:10970861). {ECO:0000269|PubMed:10970861, ECO:0000269|PubMed:21937726}."
+              ]
+            }
+          },
+          {
+            "score": 0.8327584282582509,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.607930797611621
+              },
+              {
+                "id": "clinical",
+                "score": 0.904764133048627
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.7578762546625437
+              },
+              {
+                "id": "literature",
+                "score": 0.9971921203413947
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.5513822723530936
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8945760085906901
+              }
+            ],
+            "target": {
+              "id": "ENSG00000142208",
+              "approvedSymbol": "AKT1",
+              "approvedName": "AKT serine/threonine kinase 1",
+              "functionDescriptions": [
+                "AKT1 is one of 3 closely related serine/threonine-protein kinases (AKT1, AKT2 and AKT3) called the AKT kinase, and which regulate many processes including metabolism, proliferation, cell survival, growth and angiogenesis (PubMed:11882383, PubMed:15526160, PubMed:15861136, PubMed:21432781, PubMed:21620960, PubMed:31204173). This is mediated through serine and/or threonine phosphorylation of a range of downstream substrates (PubMed:11882383, PubMed:15526160, PubMed:21432781, PubMed:21620960, PubMed:29343641, PubMed:31204173). Over 100 substrate candidates have been reported so far, but for most of them, no isoform specificity has been reported (PubMed:11882383, PubMed:15526160, PubMed:21432781, PubMed:21620960). AKT is responsible of the regulation of glucose uptake by mediating insulin-induced translocation of the SLC2A4/GLUT4 glucose transporter to the cell surface (By similarity). Phosphorylation of PTPN1 at 'Ser-50' negatively modulates its phosphatase activity preventing dephosphorylation of the insulin receptor and the attenuation of insulin signaling (By similarity). Phosphorylation of TBC1D4 triggers the binding of this effector to inhibitory 14-3-3 proteins, which is required for insulin-stimulated glucose transport (PubMed:11994271). AKT also regulates the storage of glucose in the form of glycogen by phosphorylating GSK3A at 'Ser-21' and GSK3B at 'Ser-9', resulting in inhibition of its kinase activity (By similarity). Phosphorylation of GSK3 isoforms by AKT is also thought to be one mechanism by which cell proliferation is driven (By similarity). AKT also regulates cell survival via the phosphorylation of MAP3K5 (apoptosis signal-related kinase) (PubMed:11154276). Phosphorylation of 'Ser-83' decreases MAP3K5 kinase activity stimulated by oxidative stress and thereby prevents apoptosis (PubMed:11154276). AKT mediates insulin-stimulated protein synthesis by phosphorylating TSC2 at 'Ser-939' and 'Thr-1462', thereby activating the mTORC1 signaling pathway, and leading to both phosphorylation of 4E-BP1 and in activation of RPS6KB1 (PubMed:12150915, PubMed:12172553). Also regulates the mTORC1 signaling pathway by catalyzing phosphorylation of CASTOR1 and DEPDC5 (PubMed:31548394, PubMed:33594058). AKT plays a role as key modulator of the AKT-mTOR signaling pathway controlling the tempo of the process of newborn neurons integration during adult neurogenesis, including correct neuron positioning, dendritic development and synapse formation (By similarity). Part of a positive feedback loop of mTORC2 signaling by mediating phosphorylation of MAPKAP1/SIN1, promoting mTORC2 activation (By similarity). AKT is involved in the phosphorylation of members of the FOXO factors (Forkhead family of transcription factors), leading to binding of 14-3-3 proteins and cytoplasmic localization (PubMed:10358075). In particular, FOXO1 is phosphorylated at 'Thr-24', 'Ser-256' and 'Ser-319' (PubMed:10358075). FOXO3 and FOXO4 are phosphorylated on equivalent sites (PubMed:10358075). AKT has an important role in the regulation of NF-kappa-B-dependent gene transcription and positively regulates the activity of CREB1 (cyclic AMP (cAMP)-response element binding protein) (PubMed:9829964). The phosphorylation of CREB1 induces the binding of accessory proteins that are necessary for the transcription of pro-survival genes such as BCL2 and MCL1 (PubMed:9829964). AKT phosphorylates 'Ser-454' on ATP citrate lyase (ACLY), thereby potentially regulating ACLY activity and fatty acid synthesis (By similarity). Activates the 3B isoform of cyclic nucleotide phosphodiesterase (PDE3B) via phosphorylation of 'Ser-273', resulting in reduced cyclic AMP levels and inhibition of lipolysis (By similarity). Phosphorylates PIKFYVE on 'Ser-318', which results in increased PI(3)P-5 activity (By similarity). The Rho GTPase-activating protein DLC1 is another substrate and its phosphorylation is implicated in the regulation cell proliferation and cell growth (By similarity). Signals downstream of phosphatidylinositol 3-kinase (PI(3)K) to mediate the effects of various growth factors such as platelet-derived growth factor (PDGF), epidermal growth factor (EGF), insulin and insulin-like growth factor 1 (IGF1) (PubMed:12176338, PubMed:12964941). AKT mediates the antiapoptotic effects of IGF1 (By similarity). Essential for the SPATA13-mediated regulation of cell migration and adhesion assembly and disassembly (PubMed:19934221). May be involved in the regulation of the placental development (By similarity). Phosphorylates STK4/MST1 at 'Thr-120' and 'Thr-387' leading to inhibition of its: kinase activity, nuclear translocation, autophosphorylation and ability to phosphorylate FOXO3 (PubMed:17726016). Phosphorylates STK3/MST2 at 'Thr-117' and 'Thr-384' leading to inhibition of its: cleavage, kinase activity, autophosphorylation at Thr-180, binding to RASSF1 and nuclear translocation (PubMed:20086174). Phosphorylates SRPK2 and enhances its kinase activity towards SRSF2 and ACIN1 and promotes its nuclear translocation (PubMed:19592491). Phosphorylates RAF1 at 'Ser-259' and negatively regulates its activity (PubMed:10576742). Phosphorylation of BAD stimulates its pro-apoptotic activity (PubMed:10926925). Phosphorylates KAT6A at 'Thr-369' and this phosphorylation inhibits the interaction of KAT6A with PML and negatively regulates its acetylation activity towards p53/TP53 (PubMed:23431171). Phosphorylates palladin (PALLD), modulating cytoskeletal organization and cell motility (PubMed:20471940). Phosphorylates prohibitin (PHB), playing an important role in cell metabolism and proliferation (PubMed:18507042). Phosphorylates CDKN1A, for which phosphorylation at 'Thr-145' induces its release from CDK2 and cytoplasmic relocalization (PubMed:16982699). These recent findings indicate that the AKT1 isoform has a more specific role in cell motility and proliferation (PubMed:16139227). Phosphorylates CLK2 thereby controlling cell survival to ionizing radiation (PubMed:20682768). Phosphorylates PCK1 at 'Ser-90', reducing the binding affinity of PCK1 to oxaloacetate and changing PCK1 into an atypical protein kinase activity using GTP as donor (PubMed:32322062). Also acts as an activator of TMEM175 potassium channel activity in response to growth factors: forms the lysoK(GF) complex together with TMEM175 and acts by promoting TMEM175 channel activation, independently of its protein kinase activity (PubMed:32228865). Acts as a regulator of mitochondrial calcium uptake by mediating phosphorylation of MICU1 in the mitochondrial intermembrane space, impairing MICU1 maturation (PubMed:30504268). Acts as an inhibitor of tRNA methylation by mediating phosphorylation of the N-terminus of METTL1, thereby inhibiting METTL1 methyltransferase activity (PubMed:15861136). In response to LPAR1 receptor pathway activation, phosphorylates Rabin8/RAB3IP which alters its activity and phosphorylates WDR44 which induces WDR44 binding to Rab11, thereby switching Rab11 vesicular function from preciliary trafficking to endocytic recycling (PubMed:31204173). {ECO:0000250|UniProtKB:P31750, ECO:0000250|UniProtKB:P47196, ECO:0000269|PubMed:10358075, ECO:0000269|PubMed:10576742, ECO:0000269|PubMed:10926925, ECO:0000269|PubMed:11154276, ECO:0000269|PubMed:11994271, ECO:0000269|PubMed:12150915, ECO:0000269|PubMed:12172553, ECO:0000269|PubMed:12176338, ECO:0000269|PubMed:12964941, ECO:0000269|PubMed:15861136, ECO:0000269|PubMed:16139227, ECO:0000269|PubMed:16982699, ECO:0000269|PubMed:17726016, ECO:0000269|PubMed:18507042, ECO:0000269|PubMed:19592491, ECO:0000269|PubMed:19934221, ECO:0000269|PubMed:20086174, ECO:0000269|PubMed:20471940, ECO:0000269|PubMed:20682768, ECO:0000269|PubMed:23431171, ECO:0000269|PubMed:30504268, ECO:0000269|PubMed:31204173, ECO:0000269|PubMed:31548394, ECO:0000269|PubMed:32228865, ECO:0000269|PubMed:32322062, ECO:0000269|PubMed:33594058, ECO:0000269|PubMed:9829964, ECO:0000303|PubMed:11882383, ECO:0000303|PubMed:15526160, ECO:0000303|PubMed:21432781, ECO:0000303|PubMed:21620960}."
+              ]
+            }
+          },
+          {
+            "score": 0.8322372160178141,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.9955905233093966
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.8678361603226922
+              },
+              {
+                "id": "literature",
+                "score": 0.999882228182053
+              },
+              {
+                "id": "genetic_association",
+                "score": 0
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8291500734685089
+              }
+            ],
+            "target": {
+              "id": "ENSG00000141736",
+              "approvedSymbol": "ERBB2",
+              "approvedName": "erb-b2 receptor tyrosine kinase 2",
+              "functionDescriptions": [
+                "Protein tyrosine kinase that is part of several cell surface receptor complexes, but that apparently needs a coreceptor for ligand binding. Essential component of a neuregulin-receptor complex, although neuregulins do not interact with it alone. GP30 is a potential ligand for this receptor. Regulates outgrowth and stabilization of peripheral microtubules (MTs). Upon ERBB2 activation, the MEMO1-RHOA-DIAPH1 signaling pathway elicits the phosphorylation and thus the inhibition of GSK3B at cell membrane. This prevents the phosphorylation of APC and CLASP2, allowing its association with the cell membrane. In turn, membrane-bound APC allows the localization of MACF1 to the cell membrane, which is required for microtubule capture and stabilization. .",
+                "In the nucleus is involved in transcriptional regulation. Associates with the 5'-TCAAATTC-3' sequence in the PTGS2/COX-2 promoter and activates its transcription. Implicated in transcriptional activation of CDKN1A; the function involves STAT3 and SRC. Involved in the transcription of rRNA genes by RNA Pol I and enhances protein synthesis and cell growth. {ECO:0000269|PubMed:10358079, ECO:0000269|PubMed:15380516, ECO:0000269|PubMed:21555369}."
+              ]
+            }
+          },
+          {
+            "score": 0.8224462200644425,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.8304334695374743
+              },
+              {
+                "id": "literature",
+                "score": 0.9165274257901178
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9057712342775838
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.6940504501635887
+              },
+              {
+                "id": "animal_model",
+                "score": 0.24955559241957043
+              }
+            ],
+            "target": {
+              "id": "ENSG00000108384",
+              "approvedSymbol": "RAD51C",
+              "approvedName": "RAD51 paralog C",
+              "functionDescriptions": [
+                "Essential for the homologous recombination (HR) pathway of DNA repair. Involved in the homologous recombination repair (HRR) pathway of double-stranded DNA breaks arising during DNA replication or induced by DNA-damaging agents. Part of the RAD51 paralog protein complexes BCDX2 and CX3 which act at different stages of the BRCA1- BRCA2-dependent HR pathway. Upon DNA damage, BCDX2 seems to act downstream of BRCA2 recruitment and upstream of RAD51 recruitment; CX3 seems to act downstream of RAD51 recruitment; both complexes bind predominantly to the intersection of the four duplex arms of the Holliday junction (HJ) and to junction of replication forks. The BCDX2 complex was originally reported to bind single-stranded DNA, single- stranded gaps in duplex DNA and specifically to nicks in duplex DNA. The BCDX2 subcomplex RAD51B:RAD51C exhibits single-stranded DNA- dependent ATPase activity suggesting an involvement in early stages of the HR pathway. Involved in RAD51 foci formation in response to DNA damage suggesting an involvement in early stages of HR probably in the invasion step. Has an early function in DNA repair in facilitating phosphorylation of the checkpoint kinase CHEK2 and thereby transduction of the damage signal, leading to cell cycle arrest and HR activation. Participates in branch migration and HJ resolution and thus is important for processing HR intermediates late in the DNA repair process; the function may be linked to the CX3 complex. Part of a PALB2-scaffolded HR complex containing BRCA2 and which is thought to play a role in DNA repair by HR. Protects RAD51 from ubiquitin-mediated degradation that is enhanced following DNA damage. Plays a role in regulating mitochondrial DNA copy number under conditions of oxidative stress in the presence of RAD51 and XRCC3. Contributes to DNA cross- link resistance, sister chromatid cohesion and genomic stability. Involved in maintaining centrosome number in mitosis. {ECO:0000269|PubMed:14716019, ECO:0000269|PubMed:16215984, ECO:0000269|PubMed:16395335, ECO:0000269|PubMed:19451272, ECO:0000269|PubMed:19783859, ECO:0000269|PubMed:20413593, ECO:0000269|PubMed:23108668, ECO:0000269|PubMed:23149936}."
+              ]
+            }
+          },
+          {
+            "score": 0.8189733575024325,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.6704608225088164
+              },
+              {
+                "id": "literature",
+                "score": 0.9453775625427872
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9326683404404653
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.893195867327965
+              },
+              {
+                "id": "animal_model",
+                "score": 0.25922169210159524
+              }
+            ],
+            "target": {
+              "id": "ENSG00000136492",
+              "approvedSymbol": "BRIP1",
+              "approvedName": "BRCA1 interacting DNA helicase 1",
+              "functionDescriptions": [
+                "DNA-dependent ATPase and 5'-3' DNA helicase required for the maintenance of chromosomal stability (PubMed:11301010, PubMed:14983014, PubMed:16116421, PubMed:16153896, PubMed:17596542, PubMed:36608669). Acts late in the Fanconi anemia pathway, after FANCD2 ubiquitination (PubMed:14983014, PubMed:16153896). Involved in the repair of DNA double-strand breaks by homologous recombination in a manner that depends on its association with BRCA1 (PubMed:14983014, PubMed:16153896). Involved in the repair of abasic sites at replication forks by promoting the degradation of DNA-protein cross-links: acts by catalyzing unfolding of HMCES DNA-protein cross-link via its helicase activity, exposing the underlying DNA and enabling cleavage of the DNA- protein adduct by the SPRTN metalloprotease (PubMed:16116421, PubMed:36608669). Can unwind RNA:DNA substrates (PubMed:14983014). Unwinds G-quadruplex DNA; unwinding requires a 5'-single stranded tail (PubMed:18426915, PubMed:20639400). {ECO:0000269|PubMed:11301010, ECO:0000269|PubMed:14983014, ECO:0000269|PubMed:16116421, ECO:0000269|PubMed:16153896, ECO:0000269|PubMed:17596542, ECO:0000269|PubMed:18426915, ECO:0000269|PubMed:20639400, ECO:0000269|PubMed:36608669}."
+              ]
+            }
+          },
+          {
+            "score": 0.8156613168776804,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.3039653988058105
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.607930797611621
+              },
+              {
+                "id": "literature",
+                "score": 0.9904550281268897
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9327682101097388
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.9109613119902249
+              }
+            ],
+            "target": {
+              "id": "ENSG00000039068",
+              "approvedSymbol": "CDH1",
+              "approvedName": "cadherin 1",
+              "functionDescriptions": [
+                "Cadherins are calcium-dependent cell adhesion proteins (PubMed:11976333). They preferentially interact with themselves in a homophilic manner in connecting cells; cadherins may thus contribute to the sorting of heterogeneous cell types. CDH1 is involved in mechanisms regulating cell-cell adhesions, mobility and proliferation of epithelial cells (PubMed:11976333). Promotes organization of radial actin fiber structure and cellular response to contractile forces, via its interaction with AMOTL2 which facilitates anchoring of radial actin fibers to CDH1 junction complexes at the cell membrane (By similarity). Plays a role in the early stages of desmosome cell-cell junction formation via facilitating the recruitment of DSG2 and DSP to desmosome plaques (PubMed:29999492). Has a potent invasive suppressor role. It is a ligand for integrin alpha-E/beta-7. {ECO:0000250|UniProtKB:F1PAA9, ECO:0000269|PubMed:11976333, ECO:0000269|PubMed:16417575, ECO:0000269|PubMed:29999492}.",
+                "E-Cad/CTF2 promotes non-amyloidogenic degradation of Abeta precursors. Has a strong inhibitory effect on APP C99 and C83 production. .",
+                "(Microbial infection) Serves as a receptor for Listeria monocytogenes; internalin A (InlA) binds to this protein and promotes uptake of the bacteria. {ECO:0000269|PubMed:10406800, ECO:0000269|PubMed:17540170, ECO:0000269|PubMed:8601315}."
+              ]
+            }
+          },
+          {
+            "score": 0.8051908612638072,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.8443483300161404
+              },
+              {
+                "id": "literature",
+                "score": 0.969645995355183
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8806098462775835
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.7008427633961629
+              },
+              {
+                "id": "animal_model",
+                "score": 0.2659089308753231
+              }
+            ],
+            "target": {
+              "id": "ENSG00000138376",
+              "approvedSymbol": "BARD1",
+              "approvedName": "BRCA1 associated RING domain 1",
+              "functionDescriptions": [
+                "E3 ubiquitin-protein ligase. The BRCA1-BARD1 heterodimer specifically mediates the formation of 'Lys-6'-linked polyubiquitin chains and coordinates a diverse range of cellular pathways such as DNA damage repair, ubiquitination and transcriptional regulation to maintain genomic stability. Plays a central role in the control of the cell cycle in response to DNA damage. Acts by mediating ubiquitin E3 ligase activity that is required for its tumor suppressor function. Also forms a heterodimer with CSTF1/CSTF-50 to modulate mRNA processing and RNAP II stability by inhibiting pre-mRNA 3' cleavage. {ECO:0000269|PubMed:12890688, ECO:0000269|PubMed:14976165, ECO:0000269|PubMed:20351172}."
+              ]
+            }
+          },
+          {
+            "score": 0.7967728878861421,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.8586178167934132
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.9190679877429972
+              },
+              {
+                "id": "literature",
+                "score": 0.9961516297076004
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7937478589549612
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8970076937525521
+              },
+              {
+                "id": "animal_model",
+                "score": 0.6386385878269243
+              }
+            ],
+            "target": {
+              "id": "ENSG00000171862",
+              "approvedSymbol": "PTEN",
+              "approvedName": "phosphatase and tensin homolog",
+              "functionDescriptions": [
+                "Dual-specificity protein phosphatase, dephosphorylating tyrosine-, serine- and threonine-phosphorylated proteins (PubMed:9187108, PubMed:9256433, PubMed:9616126). Also functions as a lipid phosphatase, removing the phosphate in the D3 position of the inositol ring of PtdIns(3,4,5)P3/phosphatidylinositol 3,4,5- trisphosphate, PtdIns(3,4)P2/phosphatidylinositol 3,4-diphosphate and PtdIns3P/phosphatidylinositol 3-phosphate with a preference for PtdIns(3,4,5)P3 (PubMed:16824732, PubMed:26504226, PubMed:9593664, PubMed:9811831). Furthermore, this enzyme can also act as a cytosolic inositol 3-phosphatase acting on Ins(1,3,4,5,6)P5/inositol 1,3,4,5,6 pentakisphosphate and possibly Ins(1,3,4,5)P4/1D-myo-inositol 1,3,4,5- tetrakisphosphate (PubMed:11418101, PubMed:15979280). Antagonizes the PI3K-AKT/PKB signaling pathway by dephosphorylating phosphoinositides and thereby modulating cell cycle progression and cell survival (PubMed:31492966, PubMed:37279284). The unphosphorylated form cooperates with MAGI2 to suppress AKT1 activation (PubMed:11707428). In motile cells, suppresses the formation of lateral pseudopods and thereby promotes cell polarization and directed movement (PubMed:22279049). Dephosphorylates tyrosine-phosphorylated focal adhesion kinase and inhibits cell migration and integrin-mediated cell spreading and focal adhesion formation (PubMed:22279049). Required for growth factor-induced epithelial cell migration; growth factor stimulation induces PTEN phosphorylation which changes its binding preference from the p85 regulatory subunit of the PI3K kinase complex to DLC1 and results in translocation of the PTEN-DLC1 complex to the posterior of migrating cells to promote RHOA activation (PubMed:26166433). Meanwhile, TNS3 switches binding preference from DLC1 to p85 and the TNS3-p85 complex translocates to the leading edge of migrating cells to activate RAC1 activation (PubMed:26166433). Plays a role as a key modulator of the AKT-mTOR signaling pathway controlling the tempo of the process of newborn neurons integration during adult neurogenesis, including correct neuron positioning, dendritic development and synapse formation (By similarity). Involved in the regulation of synaptic function in excitatory hippocampal synapses. Recruited to the postsynaptic membrane upon NMDA receptor activation, is required for the modulation of synaptic activity during plasticity. Enhancement of lipid phosphatase activity is able to drive depression of AMPA receptor-mediated synaptic responses, activity required for NMDA receptor-dependent long-term depression (LTD) (By similarity). May be a negative regulator of insulin signaling and glucose metabolism in adipose tissue. The nuclear monoubiquitinated form possesses greater apoptotic potential, whereas the cytoplasmic nonubiquitinated form induces less tumor suppressive ability (PubMed:10468583, PubMed:18716620). {ECO:0000250|UniProtKB:O08586, ECO:0000250|UniProtKB:O54857, ECO:0000269|PubMed:10468583, ECO:0000269|PubMed:11418101, ECO:0000269|PubMed:11707428, ECO:0000269|PubMed:15979280, ECO:0000269|PubMed:16824732, ECO:0000269|PubMed:18716620, ECO:0000269|PubMed:22279049, ECO:0000269|PubMed:26166433, ECO:0000269|PubMed:26504226, ECO:0000269|PubMed:31492966, ECO:0000269|PubMed:37279284, ECO:0000269|PubMed:9187108, ECO:0000269|PubMed:9256433, ECO:0000269|PubMed:9593664, ECO:0000269|PubMed:9616126, ECO:0000269|PubMed:9811831}.",
+                "[Isoform alpha]: Functional kinase, like isoform 1 it antagonizes the PI3K-AKT/PKB signaling pathway. Plays a role in mitochondrial energetic metabolism by promoting COX activity and ATP production, via collaboration with isoform 1 in increasing protein levels of PINK1. ."
+              ]
+            }
+          },
+          {
+            "score": 0.7861824472077518,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7930217994293777
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8717546744252145
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.6517524759394587
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.8139517901355594
+              }
+            ],
+            "target": {
+              "id": "ENSG00000185379",
+              "approvedSymbol": "RAD51D",
+              "approvedName": "RAD51 paralog D",
+              "functionDescriptions": [
+                "Involved in the homologous recombination repair (HRR) pathway of double-stranded DNA breaks arising during DNA replication or induced by DNA-damaging agents. Bind to single-stranded DNA (ssDNA) and has DNA-dependent ATPase activity. Part of the RAD51 paralog protein complex BCDX2 which acts in the BRCA1-BRCA2-dependent HR pathway. Upon DNA damage, BCDX2 acts downstream of BRCA2 recruitment and upstream of RAD51 recruitment. BCDX2 binds predominantly to the intersection of the four duplex arms of the Holliday junction and to junction of replication forks. The BCDX2 complex was originally reported to bind single-stranded DNA, single-stranded gaps in duplex DNA and specifically to nicks in duplex DNA. Involved in telomere maintenance. The BCDX2 subcomplex XRCC2:RAD51D can stimulate Holliday junction resolution by BLM. {ECO:0000269|PubMed:10871607, ECO:0000269|PubMed:11751635, ECO:0000269|PubMed:11834724, ECO:0000269|PubMed:11842113, ECO:0000269|PubMed:12975363, ECO:0000269|PubMed:15109494, ECO:0000269|PubMed:23149936}."
+              ]
+            }
+          },
+          {
+            "score": 0.7772716975289415,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.4984320850617423
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.7094676468064854
+              },
+              {
+                "id": "literature",
+                "score": 0.9817801442972734
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7509740619834646
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.6485544725271947
+              }
+            ],
+            "target": {
+              "id": "ENSG00000066468",
+              "approvedSymbol": "FGFR2",
+              "approvedName": "fibroblast growth factor receptor 2",
+              "functionDescriptions": [
+                "Tyrosine-protein kinase that acts as a cell-surface receptor for fibroblast growth factors and plays an essential role in the regulation of cell proliferation, differentiation, migration and apoptosis, and in the regulation of embryonic development. Required for normal embryonic patterning, trophoblast function, limb bud development, lung morphogenesis, osteogenesis and skin development. Plays an essential role in the regulation of osteoblast differentiation, proliferation and apoptosis, and is required for normal skeleton development. Promotes cell proliferation in keratinocytes and immature osteoblasts, but promotes apoptosis in differentiated osteoblasts. Phosphorylates PLCG1, FRS2 and PAK4. Ligand binding leads to the activation of several signaling cascades. Activation of PLCG1 leads to the production of the cellular signaling molecules diacylglycerol and inositol 1,4,5-trisphosphate. Phosphorylation of FRS2 triggers recruitment of GRB2, GAB1, PIK3R1 and SOS1, and mediates activation of RAS, MAPK1/ERK2, MAPK3/ERK1 and the MAP kinase signaling pathway, as well as of the AKT1 signaling pathway. FGFR2 signaling is down-regulated by ubiquitination, internalization and degradation. Mutations that lead to constitutive kinase activation or impair normal FGFR2 maturation, internalization and degradation lead to aberrant signaling. Over-expressed FGFR2 promotes activation of STAT1. {ECO:0000269|PubMed:12529371, ECO:0000269|PubMed:15190072, ECO:0000269|PubMed:15629145, ECO:0000269|PubMed:16384934, ECO:0000269|PubMed:16597617, ECO:0000269|PubMed:17311277, ECO:0000269|PubMed:17623664, ECO:0000269|PubMed:18374639, ECO:0000269|PubMed:19103595, ECO:0000269|PubMed:19387476, ECO:0000269|PubMed:19410646, ECO:0000269|PubMed:21596750, ECO:0000269|PubMed:8663044}."
+              ]
+            }
+          },
+          {
+            "score": 0.7719271300208279,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9263526432830207
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.589508422245083
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.9253817811029752
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.3799567485072632
+              }
+            ],
+            "target": {
+              "id": "ENSG00000095015",
+              "approvedSymbol": "MAP3K1",
+              "approvedName": "mitogen-activated protein kinase kinase kinase 1",
+              "functionDescriptions": [
+                "Component of a protein kinase signal transduction cascade (PubMed:9808624). Activates the ERK and JNK kinase pathways by phosphorylation of MAP2K1 and MAP2K4 (PubMed:9808624). May phosphorylate the MAPK8/JNK1 kinase (PubMed:17761173). Activates CHUK and IKBKB, the central protein kinases of the NF-kappa-B pathway (PubMed:9808624). {ECO:0000269|PubMed:17761173, ECO:0000269|PubMed:9808624}."
+              ]
+            }
+          },
+          {
+            "score": 0.7572950508341676,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.9703262826407584
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.2942385153203124
+              },
+              {
+                "id": "literature",
+                "score": 0.9979105260413362
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.486258086845465
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.5603921948302915
+              }
+            ],
+            "target": {
+              "id": "ENSG00000146648",
+              "approvedSymbol": "EGFR",
+              "approvedName": "epidermal growth factor receptor",
+              "functionDescriptions": [
+                "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses (PubMed:10805725, PubMed:12297050, PubMed:12620237, PubMed:12873986, PubMed:15374980, PubMed:15590694, PubMed:17115032, PubMed:19560417, PubMed:21258366, PubMed:27153536, PubMed:2790960, PubMed:35538033, PubMed:9488479). Known ligands include EGF, TGFA/TGF-alpha, AREG, epigen/EPGN, BTC/betacellulin, epiregulin/EREG and HBEGF/heparin-binding EGF (PubMed:12297049, PubMed:15611079, PubMed:17909029, PubMed:20837704, PubMed:27153536, PubMed:2790960, PubMed:7679104, PubMed:8144591, PubMed:9419975). Ligand binding triggers receptor homo- and/or heterodimerization and autophosphorylation on key cytoplasmic residues (PubMed:10026169, PubMed:17349580, PubMed:18046415, PubMed:19560417, PubMed:19836242). The phosphorylated receptor recruits adapter proteins like GRB2 which in turn activates complex downstream signaling cascades (PubMed:10026169, PubMed:17349580, PubMed:18046415, PubMed:19560417, PubMed:19836242). Activates at least 4 major downstream signaling cascades including the RAS-RAF-MEK-ERK, PI3 kinase-AKT, PLCgamma-PKC and STATs modules (PubMed:27153536). May also activate the NF-kappa-B signaling cascade (PubMed:11116146). Also directly phosphorylates other proteins like RGS16, activating its GTPase activity and probably coupling the EGF receptor signaling to the G protein-coupled receptor signaling (PubMed:11602604). Also phosphorylates MUC1 and increases its interaction with SRC and CTNNB1/beta-catenin (PubMed:11483589). Positively regulates cell migration via interaction with CCDC88A/GIV which retains EGFR at the cell membrane following ligand stimulation, promoting EGFR signaling which triggers cell migration (PubMed:20462955). Acts as a positive regulator of cGAS-STING signaling by mediating tyrosine phosphorylation of STING1, promoting production of type I interferon (IFN-alpha and IFN-beta), while inhibiting STING1 ability to regulate autophagy (PubMed:32926474). Plays a role in enhancing learning and memory performance (By similarity). Plays a role in mammalian pain signaling (long-lasting hypersensitivity) (By similarity). {ECO:0000250|UniProtKB:Q01279, ECO:0000269|PubMed:10026169, ECO:0000269|PubMed:10805725, ECO:0000269|PubMed:11116146, ECO:0000269|PubMed:11483589, ECO:0000269|PubMed:11602604, ECO:0000269|PubMed:12297049, ECO:0000269|PubMed:12297050, ECO:0000269|PubMed:12620237, ECO:0000269|PubMed:12873986, ECO:0000269|PubMed:15374980, ECO:0000269|PubMed:15590694, ECO:0000269|PubMed:15611079, ECO:0000269|PubMed:17115032, ECO:0000269|PubMed:17349580, ECO:0000269|PubMed:17909029, ECO:0000269|PubMed:18046415, ECO:0000269|PubMed:19560417, ECO:0000269|PubMed:19836242, ECO:0000269|PubMed:20462955, ECO:0000269|PubMed:20837704, ECO:0000269|PubMed:21258366, ECO:0000269|PubMed:27153536, ECO:0000269|PubMed:2790960, ECO:0000269|PubMed:32926474, ECO:0000269|PubMed:35538033, ECO:0000269|PubMed:7679104, ECO:0000269|PubMed:8144591, ECO:0000269|PubMed:9419975, ECO:0000269|PubMed:9488479}.",
+                "[Isoform 2]: May act as an antagonist of EGF action. .",
+                "(Microbial infection) Acts as a receptor for hepatitis C virus (HCV) in hepatocytes and facilitates its cell entry. Mediates HCV entry by promoting the formation of the CD81-CLDN1 receptor complexes that are essential for HCV entry and by enhancing membrane fusion of cells expressing HCV envelope glycoproteins. ."
+              ]
+            }
+          },
+          {
+            "score": 0.7563773870325938,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9558257060506435
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.29667022459632714
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.6709606887218105
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8965569555421323
+              }
+            ],
+            "target": {
+              "id": "ENSG00000135111",
+              "approvedSymbol": "TBX3",
+              "approvedName": "T-box transcription factor 3",
+              "functionDescriptions": [
+                "Transcriptional repressor involved in developmental processes (PubMed:10468588). Binds to the palindromic T site 5'- TTCACACCTAGGTGTGAA-3' DNA sequence, or a half-site, which are present in the regulatory region of several genes (PubMed:12000749). Probably plays a role in limb pattern formation (PubMed:10468588). Required for mammary placode induction, and maintenance of the mammary buds during development (By similarity). Involved in branching morphogenesis in both developing lungs and adult mammary glands, via negative modulation of target genes; acting redundantly with TBX2 (By similarity). Required, together with TBX2, to maintain cell proliferation in the embryonic lung mesenchyme; perhaps acting downstream of SHH, BMP and TGFbeta signaling (By similarity). Involved in modulating early inner ear development, acting independently of, and also redundantly with, TBX2 in different subregions of the developing ear (By similarity). Acts as a negative regulator of PML function in cellular senescence (PubMed:22002537). {ECO:0000250|UniProtKB:P70324, ECO:0000269|PubMed:10468588, ECO:0000269|PubMed:12000749, ECO:0000269|PubMed:22002537}."
+              ]
+            }
+          },
+          {
+            "score": 0.7441216083016393,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7633288161952496
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8699743018321302
+              },
+              {
+                "id": "clinical",
+                "score": 0.9895671041542442
+              }
+            ],
+            "target": {
+              "id": "ENSG00000105810",
+              "approvedSymbol": "CDK6",
+              "approvedName": "cyclin dependent kinase 6",
+              "functionDescriptions": [
+                "Serine/threonine-protein kinase involved in the control of the cell cycle and differentiation; promotes G1/S transition. Phosphorylates pRB/RB1 and NPM1. Interacts with D-type G1 cyclins during interphase at G1 to form a pRB/RB1 kinase and controls the entrance into the cell cycle. Involved in initiation and maintenance of cell cycle exit during cell differentiation; prevents cell proliferation and negatively regulates cell differentiation, but is required for the proliferation of specific cell types (e.g. erythroid and hematopoietic cells). Essential for cell proliferation within the dentate gyrus of the hippocampus and the subventricular zone of the lateral ventricles. Required during thymocyte development. Promotes the production of newborn neurons, probably by modulating G1 length. Promotes, at least in astrocytes, changes in patterns of gene expression, changes in the actin cytoskeleton including loss of stress fibers, and enhanced motility during cell differentiation. Prevents myeloid differentiation by interfering with RUNX1 and reducing its transcription transactivation activity, but promotes proliferation of normal myeloid progenitors. Delays senescence. Promotes the proliferation of beta-cells in pancreatic islets of Langerhans. May play a role in the centrosome organization during the cell cycle phases (PubMed:23918663). {ECO:0000269|PubMed:12833137, ECO:0000269|PubMed:14985467, ECO:0000269|PubMed:15254224, ECO:0000269|PubMed:15809340, ECO:0000269|PubMed:17420273, ECO:0000269|PubMed:17431401, ECO:0000269|PubMed:20333249, ECO:0000269|PubMed:20668294, ECO:0000269|PubMed:23918663, ECO:0000269|PubMed:8114739}."
+              ]
+            }
+          },
+          {
+            "score": 0.7388269085008862,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.993105304987659
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.5641597801835843
+              },
+              {
+                "id": "genetic_association",
+                "score": 0
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.8413279704757045
+              }
+            ],
+            "target": {
+              "id": "ENSG00000107485",
+              "approvedSymbol": "GATA3",
+              "approvedName": "GATA binding protein 3",
+              "functionDescriptions": [
+                "Transcriptional activator which binds to the enhancer of the T-cell receptor alpha and delta genes. Binds to the consensus sequence 5'-AGATAG-3'. Required for the T-helper 2 (Th2) differentiation process following immune and inflammatory responses. Positively regulates ASB2 expression (By similarity). Coordinates macrophage transcriptional activation and UCP2-dependent metabolic reprogramming in response to IL33. Upon tissue injury, acts downstream of IL33 signaling to drive differentiation of inflammation-resolving alternatively activated macrophages. {ECO:0000250|UniProtKB:P23772, ECO:0000269|PubMed:23824597}."
+              ]
+            }
+          },
+          {
+            "score": 0.738504206923606,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.8905363954117437
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.607930797611621
+              },
+              {
+                "id": "literature",
+                "score": 0.9721965224816113
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.48959604218897174
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.7638009280469588
+              }
+            ],
+            "target": {
+              "id": "ENSG00000178568",
+              "approvedSymbol": "ERBB4",
+              "approvedName": "erb-b2 receptor tyrosine kinase 4",
+              "functionDescriptions": [
+                "Tyrosine-protein kinase that plays an essential role as cell surface receptor for neuregulins and EGF family members and regulates development of the heart, the central nervous system and the mammary gland, gene transcription, cell proliferation, differentiation, migration and apoptosis. Required for normal cardiac muscle differentiation during embryonic development, and for postnatal cardiomyocyte proliferation. Required for normal development of the embryonic central nervous system, especially for normal neural crest cell migration and normal axon guidance. Required for mammary gland differentiation, induction of milk proteins and lactation. Acts as cell-surface receptor for the neuregulins NRG1, NRG2, NRG3 and NRG4 and the EGF family members BTC, EREG and HBEGF. Ligand binding triggers receptor dimerization and autophosphorylation at specific tyrosine residues that then serve as binding sites for scaffold proteins and effectors. Ligand specificity and signaling is modulated by alternative splicing, proteolytic processing, and by the formation of heterodimers with other ERBB family members, thereby creating multiple combinations of intracellular phosphotyrosines that trigger ligand- and context- specific cellular responses. Mediates phosphorylation of SHC1 and activation of the MAP kinases MAPK1/ERK2 and MAPK3/ERK1. Isoform JM-A CYT-1 and isoform JM-B CYT-1 phosphorylate PIK3R1, leading to the activation of phosphatidylinositol 3-kinase and AKT1 and protect cells against apoptosis. Isoform JM-A CYT-1 and isoform JM-B CYT-1 mediate reorganization of the actin cytoskeleton and promote cell migration in response to NRG1. Isoform JM-A CYT-2 and isoform JM-B CYT-2 lack the phosphotyrosine that mediates interaction with PIK3R1, and hence do not phosphorylate PIK3R1, do not protect cells against apoptosis, and do not promote reorganization of the actin cytoskeleton and cell migration. Proteolytic processing of isoform JM-A CYT-1 and isoform JM- A CYT-2 gives rise to the corresponding soluble intracellular domains (4ICD) that translocate to the nucleus, promote nuclear import of STAT5A, activation of STAT5A, mammary epithelium differentiation, cell proliferation and activation of gene expression. The ERBB4 soluble intracellular domains (4ICD) colocalize with STAT5A at the CSN2 promoter to regulate transcription of milk proteins during lactation. The ERBB4 soluble intracellular domains can also translocate to mitochondria and promote apoptosis. {ECO:0000269|PubMed:10348342, ECO:0000269|PubMed:10353604, ECO:0000269|PubMed:10358079, ECO:0000269|PubMed:10722704, ECO:0000269|PubMed:10867024, ECO:0000269|PubMed:11178955, ECO:0000269|PubMed:11390655, ECO:0000269|PubMed:12807903, ECO:0000269|PubMed:15534001, ECO:0000269|PubMed:15746097, ECO:0000269|PubMed:16251361, ECO:0000269|PubMed:16778220, ECO:0000269|PubMed:16837552, ECO:0000269|PubMed:17486069, ECO:0000269|PubMed:17638867, ECO:0000269|PubMed:19098003, ECO:0000269|PubMed:20858735, ECO:0000269|PubMed:8383326, ECO:0000269|PubMed:8617750, ECO:0000269|PubMed:9135143, ECO:0000269|PubMed:9168115, ECO:0000269|PubMed:9334263}."
+              ]
+            }
+          },
+          {
+            "score": 0.7383769102353269,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.9722442980078801
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.43002592936960776
+              },
+              {
+                "id": "literature",
+                "score": 0.9893879043382331
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.27290932945390056
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.6612513946521403
+              }
+            ],
+            "target": {
+              "id": "ENSG00000110092",
+              "approvedSymbol": "CCND1",
+              "approvedName": "cyclin D1",
+              "functionDescriptions": [
+                "Regulatory component of the cyclin D1-CDK4 (DC) complex that phosphorylates and inhibits members of the retinoblastoma (RB) protein family including RB1 and regulates the cell-cycle during G(1)/S transition (PubMed:1827756, PubMed:1833066, PubMed:19412162, PubMed:33854235, PubMed:8114739, PubMed:8302605). Phosphorylation of RB1 allows dissociation of the transcription factor E2F from the RB/E2F complex and the subsequent transcription of E2F target genes which are responsible for the progression through the G(1) phase (PubMed:1827756, PubMed:1833066, PubMed:19412162, PubMed:8114739, PubMed:8302605). Hypophosphorylates RB1 in early G(1) phase (PubMed:1827756, PubMed:1833066, PubMed:19412162, PubMed:8114739, PubMed:8302605). Cyclin D-CDK4 complexes are major integrators of various mitogenenic and antimitogenic signals (PubMed:1827756, PubMed:1833066, PubMed:19412162, PubMed:8302605). Also a substrate for SMAD3, phosphorylating SMAD3 in a cell-cycle-dependent manner and repressing its transcriptional activity (PubMed:15241418). Component of the ternary complex, cyclin D1/CDK4/CDKN1B, required for nuclear translocation and activity of the cyclin D-CDK4 complex (PubMed:9106657). Exhibits transcriptional corepressor activity with INSM1 on the NEUROD1 and INS promoters in a cell cycle-independent manner (PubMed:16569215, PubMed:18417529). {ECO:0000269|PubMed:15241418, ECO:0000269|PubMed:16569215, ECO:0000269|PubMed:1827756, ECO:0000269|PubMed:1833066, ECO:0000269|PubMed:18417529, ECO:0000269|PubMed:19412162, ECO:0000269|PubMed:33854235, ECO:0000269|PubMed:8114739, ECO:0000269|PubMed:8302605, ECO:0000269|PubMed:9106657}."
+              ]
+            }
+          },
+          {
+            "score": 0.7325238864752485,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.9895671041542442
+              },
+              {
+                "id": "affected_pathway",
+                "score": 0.3981682350153665
+              },
+              {
+                "id": "literature",
+                "score": 0.9937419160189204
+              },
+              {
+                "id": "genetic_association",
+                "score": 0
+              },
+              {
+                "id": "somatic_mutation",
+                "score": 0.634865509339136
+              }
+            ],
+            "target": {
+              "id": "ENSG00000135446",
+              "approvedSymbol": "CDK4",
+              "approvedName": "cyclin dependent kinase 4",
+              "functionDescriptions": [
+                "Ser/Thr-kinase component of cyclin D-CDK4 (DC) complexes that phosphorylate and inhibit members of the retinoblastoma (RB) protein family including RB1 and regulate the cell-cycle during G(1)/S transition. Phosphorylation of RB1 allows dissociation of the transcription factor E2F from the RB/E2F complexes and the subsequent transcription of E2F target genes which are responsible for the progression through the G(1) phase. Hypophosphorylates RB1 in early G(1) phase. Cyclin D-CDK4 complexes are major integrators of various mitogenenic and antimitogenic signals. Also phosphorylates SMAD3 in a cell-cycle-dependent manner and represses its transcriptional activity. Component of the ternary complex, cyclin D/CDK4/CDKN1B, required for nuclear translocation and activity of the cyclin D-CDK4 complex. {ECO:0000269|PubMed:15241418, ECO:0000269|PubMed:18827403, ECO:0000269|PubMed:9003781}."
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

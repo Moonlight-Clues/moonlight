@@ -19,8 +19,14 @@ A kind counts when its score for that gene and disease is at least 0.5 (one
 constant in engine.py). At most three names, in the table's order. A gene
 linked only by papers still gets the line. Nothing at the cut-off: no line.
 "known_drug" is never named: it is the medicine itself. Any other id is
-ignored. (In the live data, release 26.09, that id is called "clinical",
-and there is a seventh id, "genetic_literature". Both are ignored.)
+ignored. (In the live data, release 26.09, that id is called "clinical".)
+
+Decisions of 25 Nov, after the first review of PR 80:
+1. "somatic_mutation" counts only when the disease is a cancer: its Open
+   Targets therapeutic areas include MONDO_0045024 ("cancer or benign
+   tumor"), read on the same proteins question.
+2. "genetic_literature" counts as "inherited gene changes". With both at
+   the cut-off, the name appears once, in its own place.
 
 The engine sends only the ids. The page types the words once; engine.py
 keeps a copy, and a test here checks the two match.
@@ -56,6 +62,9 @@ PAGE = PAGE_FILE.read_text(encoding="utf-8")
 HUNTINGTON = "MONDO_0007739"
 T2D = "MONDO_0005148"
 NMO = "MONDO_0019100"  # neuromyelitis optica: genes linked by papers alone
+PAH = "MONDO_0015924"  # pulmonary arterial hypertension: CPS1, linked by curated genetics only
+BREAST_CANCER = "MONDO_0007254"  # a cancer: only its proteins question is saved
+CANCER = "MONDO_0045024"  # Open Targets' therapeutic area "cancer or benign tumor"
 KEY = "evidence"  # the one new key on a protein of a clue card
 
 # Kashish's words, exactly.
@@ -74,9 +83,17 @@ DIRECTION_LINE = "The data does not say which direction this disease needs."
 
 
 def gene(**scores):
-    """A hand-built protein with these evidence scores."""
+    """A hand-built protein with these evidence scores, for a cancer, so
+    every one of the six kinds can count (decision 1 of 25 Nov)."""
     return Target("ENSG00000000001", "ABC1", "test protein", 0.6,
-                  evidence_scores=tuple(scores.items()))
+                  evidence_scores=tuple(scores.items()), disease_areas=(CANCER,))
+
+
+def not_cancer_gene(**scores):
+    """The same, for a disease whose therapeutic areas hold no cancer."""
+    return Target("ENSG00000000001", "ABC1", "test protein", 0.6,
+                  evidence_scores=tuple(scores.items()),
+                  disease_areas=("MONDO_0005151", "OTAR_0000020"))
 
 
 def line_for(target):
@@ -150,8 +167,7 @@ def test_literature_can_be_one_of_the_three():
 
 
 def test_any_other_id_is_ignored():
-    target = gene(genetic_literature=0.95, clinical=0.99, known_drug=1.0,
-                  something_new=0.9, rna_expression=0.8)
+    target = gene(clinical=0.99, known_drug=1.0, something_new=0.9, rna_expression=0.8)
     assert engine.evidence_ids(target) == ("rna_expression",)
 
 
@@ -174,7 +190,66 @@ def test_the_engines_copy_of_the_words_is_kashishs():
 def test_a_target_made_the_old_way_has_no_scores_and_no_line():
     old = Target("ENSG_TEST", "TEST1", "test protein", 0.5)
     assert old.evidence_scores == ()
+    assert old.disease_areas == ()
     assert engine.evidence_ids(old) == ()
+
+
+# ---- decision 1 (25 Nov): tumours only for cancers ----
+
+def test_tumours_are_not_named_for_a_disease_that_is_not_a_cancer():
+    target = not_cancer_gene(genetic_association=0.9, somatic_mutation=0.9,
+                             animal_model=0.6, literature=0.8)
+    assert engine.evidence_ids(target) == (
+        "genetic_association", "animal_model", "literature")
+    assert "tumours" not in line_for(target)
+
+
+def test_tumours_alone_for_a_disease_that_is_not_a_cancer_gives_no_line():
+    assert engine.evidence_ids(not_cancer_gene(somatic_mutation=0.9)) == ()
+
+
+def test_tumours_are_named_for_a_cancer():
+    target = gene(genetic_association=0.9, somatic_mutation=0.9)
+    assert line_for(target) == (
+        "Linked to this disease by: inherited gene changes, gene changes found in tumours.")
+
+
+def test_with_no_therapeutic_areas_sent_tumours_do_not_count():
+    """An answer saved before this change says nothing about the disease's
+    areas. Nothing is guessed: it is not known to be a cancer."""
+    target = Target("ENSG_TEST", "TEST1", "test protein", 0.5,
+                    evidence_scores=(("somatic_mutation", 0.9), ("literature", 0.6)))
+    assert engine.evidence_ids(target) == ("literature",)
+
+
+def test_the_cancer_area_is_one_constant_in_the_engine():
+    assert engine.CANCER_AREA == CANCER
+
+
+# ---- decision 2 (25 Nov): genetic_literature counts as inherited gene changes ----
+
+def test_genetic_literature_alone_is_inherited_gene_changes():
+    target = gene(genetic_literature=0.61)
+    assert engine.evidence_ids(target) == ("genetic_association",)
+    assert line_for(target) == "Linked to this disease by: inherited gene changes."
+
+
+def test_both_genetic_kinds_name_inherited_gene_changes_once_in_its_place():
+    target = gene(literature=0.9, animal_model=0.7, genetic_literature=0.8,
+                  genetic_association=0.6)
+    assert engine.evidence_ids(target) == (
+        "genetic_association", "animal_model", "literature")
+    assert line_for(target).count("inherited gene changes") == 1
+
+
+def test_genetic_literature_below_the_cut_off_does_not_count():
+    assert engine.evidence_ids(gene(genetic_literature=0.49, literature=0.6)) == (
+        "literature",)
+
+
+def test_genetic_literature_is_never_sent_as_its_own_id():
+    assert "genetic_literature" not in engine.EVIDENCE_NAMES
+    assert engine.EVIDENCE_SAME_AS == {"genetic_literature": "genetic_association"}
 
 
 # ---- 2. fetch.py and api.py, from the saved answers ----
@@ -253,6 +328,11 @@ def nmo():
     return page_answer(NMO)
 
 
+@pytest.fixture(scope="module")
+def pah():
+    return page_answer(PAH)
+
+
 def saved_scores(disease_id):
     """symbol -> {id: score}, as Open Targets sent them."""
     answer = load(SAVED / "associated_targets" / f"{disease_id}.response.json")
@@ -274,11 +354,51 @@ def evidence_of(item):
 def test_the_question_asks_for_the_scores_on_the_same_rows():
     rows = fetch.TARGETS_QUERY[fetch.TARGETS_QUERY.index("rows {"):]
     assert "datatypeScores { id score }" in rows
+    # and, on the same disease, its therapeutic areas (decision 1 of 25 Nov)
+    assert "therapeuticAreas { id }" in fetch.TARGETS_QUERY[
+        :fetch.TARGETS_QUERY.index("associatedTargets")]
     assert "target { id approvedSymbol approvedName functionDescriptions }" in rows
     assert fetch.TARGETS_QUERY.count("query ") == 1  # no new question
     for query in (fetch.DISEASE_QUERY, fetch.FAMILY_QUERY, fetch.TARGET_DRUGS_QUERY,
                   fetch.DISEASE_DRUGS_QUERY):
         assert "datatypeScores" not in query
+        assert "therapeuticAreas" not in query
+
+
+def test_a_target_carries_its_diseases_therapeutic_areas():
+    with patch("moonlight.fetch._post_json", side_effect=saved_post_json):
+        diabetes = fetch.fetch_targets(Disease(T2D, "type 2 diabetes mellitus"), 25)
+        cancer = fetch.fetch_targets(Disease(BREAST_CANCER, "breast cancer"), 25)
+    assert all(CANCER not in target.disease_areas for target in diabetes)
+    assert all(target.disease_areas == diabetes[0].disease_areas for target in diabetes)
+    assert all(CANCER in target.disease_areas for target in cancer)
+
+
+def test_example_a_cancer_still_names_tumours():
+    """Breast cancer, saved live: its top genes' tumour evidence counts."""
+    with patch("moonlight.fetch._post_json", side_effect=saved_post_json):
+        targets = fetch.fetch_targets(Disease(BREAST_CANCER, "breast cancer"), 25)
+    named = [target.symbol for target in targets
+             if "somatic_mutation" in engine.evidence_ids(target)]
+    assert named  # at least one
+    for target in targets:
+        if target.symbol in named:
+            assert dict(target.evidence_scores)["somatic_mutation"] >= 0.5
+            assert "gene changes found in tumours" in line_for(target)
+
+
+def test_example_cps1_in_pah_now_gets_the_line(pah):
+    """CPS1: genetic_literature 0.61, papers 0.24. Decision 2 of 25 Nov."""
+    scores = saved_scores(PAH)["CPS1"]
+    assert scores.get("genetic_literature", 0) >= 0.5
+    assert scores.get("genetic_association", 0) < 0.5
+    found = [protein for item in pah["new_clues"] + pah["being_studied"]
+             for protein in item["proteins"] if protein["symbol"] == "CPS1"]
+    assert found
+    for protein in found:
+        assert protein[KEY] == ["genetic_association"]
+    target = Target("x", "CPS1", "x", 0.5, evidence_scores=tuple(scores.items()))
+    assert line_for(target) == "Linked to this disease by: inherited gene changes."
 
 
 def test_a_target_carries_the_scores_as_open_targets_sent_them():
@@ -322,14 +442,19 @@ def test_example_huntington_metformin_in_trials(huntington):
     assert [symbol for symbol, ids in found.items() if ids] == ["NDUFS4"]
 
 
-def test_example_t2d_three_names_at_most(t2d):
-    """ABCC8 reaches four kinds: inherited 0.92, tumours 0.62, animals 0.55
-    and papers 0.78. Only the first three are named."""
+def test_example_t2d_no_tumours_for_a_disease_that_is_not_a_cancer(t2d):
+    """ABCC8: inherited 0.92, tumours 0.62, animals 0.55, papers 0.78.
+    KCNJ11: inherited 0.92, tumours 0.71, papers 0.94. Type 2 diabetes is
+    not a cancer, so the tumour evidence is not named (decision 1)."""
+    scores = saved_scores(T2D)
+    assert scores["ABCC8"]["somatic_mutation"] >= 0.5
+    assert scores["KCNJ11"]["somatic_mutation"] >= 0.5
     item = clue(t2d, "Gliclazide", "being_studied")
     assert evidence_of(item) == {
-        "KCNJ11": ["genetic_association", "somatic_mutation", "literature"],
-        "ABCC8": ["genetic_association", "somatic_mutation", "animal_model"],
+        "KCNJ11": ["genetic_association", "literature"],
+        "ABCC8": ["genetic_association", "animal_model", "literature"],
     }
+    assert "somatic_mutation" not in json.dumps(t2d)
     assert evidence_of(clue(t2d, "Mesalamine")) == {
         "PPARG": ["genetic_association", "animal_model", "literature"]}
 
@@ -339,14 +464,18 @@ def test_example_nmo_papers_alone(nmo):
     assert evidence_of(clue(nmo, "Blinatumomab")) == {"CD19": ["literature"]}
 
 
-def test_every_clue_gene_follows_the_rule(huntington, t2d, nmo):
-    for disease_id, answer in ((HUNTINGTON, huntington), (T2D, t2d), (NMO, nmo)):
+def test_every_clue_gene_follows_the_rule(huntington, t2d, nmo, pah):
+    """None of the four diseases is a cancer, so tumours never count."""
+    for disease_id, answer in ((HUNTINGTON, huntington), (T2D, t2d), (NMO, nmo), (PAH, pah)):
         scores = saved_scores(disease_id)
         for part in ("new_clues", "being_studied"):
             for item in answer[part]:
                 for found in item["proteins"]:
-                    counted = [kind for kind, _ in NAMES
-                               if scores[found["symbol"]].get(kind, 0) >= 0.5][:3]
+                    got = dict(scores[found["symbol"]])
+                    got["genetic_association"] = max(
+                        got.get("genetic_association", 0), got.get("genetic_literature", 0))
+                    counted = [kind for kind, _ in NAMES if kind != "somatic_mutation"
+                               and got.get(kind, 0) >= 0.5][:3]
                     assert found.get(KEY) == (counted or None), (item["medicine"], found)
 
 
@@ -581,9 +710,12 @@ def test_browser_example_huntington_lamotrigine(seen):
 
 def test_browser_example_t2d_three_names_on_an_in_trials_card(seen):
     card = card_in(seen["t2d"]["trials"], "Gliclazide")
-    assert lines_by_symbol(card)["ABCC8"] == [
-        "Linked to this disease by: inherited gene changes, gene changes found in tumours, "
-        "studies in animals."]
+    assert lines_by_symbol(card) == {
+        "KCNJ11": ["Linked to this disease by: inherited gene changes, mentioned together "
+                   "in research papers."],
+        "ABCC8": ["Linked to this disease by: inherited gene changes, studies in animals, "
+                  "mentioned together in research papers."],
+    }
 
 
 def test_browser_example_nmo_papers_alone(seen):
@@ -620,3 +752,167 @@ def test_browser_no_approved_card_shows_the_line(seen):
 def test_browser_nothing_runs_sideways_at_phone_width(seen):
     for key in ("huntington", "t2d", "nmo"):
         assert not seen[key]["sideways"], key
+
+
+# ---- 5. the printed page (decision 3 of 25 Nov) ----
+# The New clues table of the register shows, under each medicine, every
+# protein whose card shows the protein sentence (ticket 3.8) or the evidence
+# line, with those lines in the card's words. Approved rows get neither.
+
+PRINT_SCRIPT = r"""
+"use strict";
+const fs = require("fs");
+const { chromium } = require("playwright");
+const PAGE = fs.readFileSync(process.argv[1], "utf-8");
+const ANSWERS = JSON.parse(fs.readFileSync(process.argv[2], "utf-8"));
+const SHOT = process.argv[3];
+const SITE = "http://moonlight.test";
+
+function readScreen() {
+  return [...document.querySelectorAll("#panel-clues .card")].map(card => ({
+    name: card.querySelector('[data-slot="medicine-name"]').textContent,
+    proteins: [...card.querySelectorAll('[data-slot="protein"]')].map(row => ({
+      symbol: row.querySelector(".protein-id").textContent,
+      lines: [...row.querySelectorAll('[data-slot="protein-function"], [data-slot="protein-evidence"]')]
+        .map(line => line.textContent),
+    })),
+  }));
+}
+
+function readRegister() {
+  const table = id => [...document.querySelectorAll("#" + id + " > tbody")].map(body => ({
+    name: body.rows[0].cells[0].innerText.trim(),
+    notes: [...body.querySelectorAll('tr[data-row="protein-note"]')].map(row => ({
+      symbol: row.querySelector(".register-protein-id").textContent,
+      lines: [...row.querySelectorAll("[data-reg-line]")].map(line => line.textContent),
+      spans: row.cells[0].colSpan,
+    })),
+  }));
+  const approvedArea = [document.getElementById("register-approved"),
+                        document.querySelector('#register [data-reg="approved-boxes"]')];
+  return {
+    clues: table("register-clues"),
+    approved: table("register-approved"),
+    approvedNotes: approvedArea.reduce((n, el) => n + el.querySelectorAll(
+      'tr[data-row="protein-note"], [data-reg-line]').length, 0),
+    approvedText: approvedArea.map(el => el.innerText).join("\n"),
+    sideways: document.documentElement.scrollWidth > document.documentElement.clientWidth,
+  };
+}
+
+(async () => {
+  const browser = await chromium.launch();
+  const out = {};
+  for (const name of Object.keys(ANSWERS)) {
+    const context = await browser.newContext({ viewport: { width: 390, height: 844 },
+                                               deviceScaleFactor: SHOT ? 2 : 1 });
+    const page = await context.newPage();
+    const errors = [];
+    page.on("pageerror", problem => errors.push(String(problem)));
+    await page.addInitScript(() => { window.print = () => {}; });
+    await context.route("**/*", route => {
+      const url = route.request().url();
+      if (url === SITE + "/" || url.startsWith(SITE + "/?"))
+        return route.fulfill({ contentType: "text/html; charset=utf-8", body: PAGE });
+      if (url.startsWith(SITE + "/api/clues?"))
+        return route.fulfill({ contentType: "application/json", body: JSON.stringify(ANSWERS[name]) });
+      if (url.startsWith(SITE + "/api/explain?"))
+        return route.fulfill({ status: 404, contentType: "application/json", body: "{}" });
+      return route.abort();
+    });
+    await page.goto(SITE + "/?disease=" + ANSWERS[name].disease.id);
+    await page.waitForSelector("#found", { state: "visible" });
+    await page.click("#tab-clues");
+    await page.waitForTimeout(300);
+    const screen = await page.evaluate(readScreen);
+    await page.click("#print-page");
+    await page.waitForTimeout(300);
+    out[name] = { screen, register: await page.evaluate(readRegister), errors };
+    if (SHOT && name === "t2d") {
+      await page.emulateMedia({ media: "print" });
+      const first = page.locator("#register-clues > tbody").first();
+      await first.evaluate(el => el.scrollIntoView());
+      await page.locator("#register-clues").screenshot({ path: SHOT });
+    }
+    await context.close();
+  }
+  await browser.close();
+  console.log(JSON.stringify(out));
+})().catch(problem => { console.error(problem); process.exit(1); });
+"""
+
+
+@pytest.fixture(scope="module")
+def printed(huntington, t2d, nmo, pah, tmp_path_factory):
+    node = shutil.which("node")
+    if not node or subprocess.run(
+            [node, "-e", "require('playwright')"], capture_output=True).returncode:
+        pytest.skip("needs node with playwright to open a real browser")
+    answers = {"huntington": huntington, "t2d": t2d, "nmo": nmo, "pah": pah}
+    answers_file = tmp_path_factory.mktemp("gene_evidence_print") / "answers.json"
+    answers_file.write_text(json.dumps(answers), encoding="utf-8")
+    run = subprocess.run(
+        [node, "-e", PRINT_SCRIPT, str(PAGE_FILE), str(answers_file), ""],
+        capture_output=True, text=True, timeout=240, cwd=str(ROOT))
+    assert run.returncode == 0, run.stderr[-3000:]
+    out = json.loads(run.stdout)
+    for name in answers:
+        assert out[name]["errors"] == [], name
+    return out
+
+
+@pytest.mark.parametrize("name", ["huntington", "t2d", "nmo", "pah"])
+def test_print_each_new_clue_shows_the_cards_protein_lines_word_for_word(printed, name):
+    screen = {card["name"]: card for card in printed[name]["screen"]}
+    rows = printed[name]["register"]["clues"]
+    assert rows
+    seen_lines = 0
+    for row in rows:
+        card = screen[row["name"]]
+        want = [{"symbol": protein["symbol"], "lines": protein["lines"], "spans": 5}
+                for protein in card["proteins"] if protein["lines"]]
+        assert row["notes"] == want, (name, row["name"])
+        seen_lines += sum(len(note["lines"]) for note in row["notes"])
+    assert seen_lines > 0
+
+
+def test_print_example_t2d_mesalamine(printed):
+    (row,) = [row for row in printed["t2d"]["register"]["clues"] if row["name"] == "Mesalamine"]
+    (note,) = row["notes"]
+    assert note["symbol"] == "PPARG"
+    # PPARG's card shows no protein sentence (UniProt's is over 200 letters),
+    # so the printed row has only the evidence line, as the card does.
+    assert note["lines"] == [
+        "Linked to this disease by: inherited gene changes, studies in animals, mentioned "
+        "together in research papers."]
+
+
+def test_print_example_t2d_insulin_sentence_then_evidence(printed):
+    """Clue 9 of type 2 diabetes. The print page holds the first 10 new clues."""
+    (row,) = [row for row in printed["t2d"]["register"]["clues"]
+              if row["name"] == "Insulin Susp Isophane Recombinant Human"]
+    assert row["notes"] == [{"symbol": "INSR", "spans": 5, "lines": [
+        "Receptor tyrosine kinase which mediates the pleiotropic actions of insulin.",
+        "Linked to this disease by: inherited gene changes, studies in animals, mentioned "
+        "together in research papers."]}]
+
+
+def test_print_example_nmo_papers_alone(printed):
+    rows = {row["name"]: row for row in printed["nmo"]["register"]["clues"]}
+    lines = [line for row in rows.values() for note in row["notes"] for line in note["lines"]]
+    assert "Linked to this disease by: mentioned together in research papers." in lines
+
+
+@pytest.mark.parametrize("name", ["huntington", "t2d", "nmo", "pah"])
+def test_print_approved_rows_get_neither_line(printed, name):
+    register = printed[name]["register"]
+    assert register["approved"] or name == "x"
+    assert register["approvedNotes"] == 0
+    assert "Linked to this disease by" not in register["approvedText"]
+    for row in register["approved"]:
+        assert row["notes"] == []
+
+
+def test_print_nothing_runs_sideways(printed):
+    for name in printed:
+        assert not printed[name]["register"]["sideways"], name

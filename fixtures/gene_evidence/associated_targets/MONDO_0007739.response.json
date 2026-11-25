@@ -2,6 +2,17 @@
   "data": {
     "disease": {
       "id": "MONDO_0007739",
+      "therapeuticAreas": [
+        {
+          "id": "MONDO_0005071"
+        },
+        {
+          "id": "EFO_0000651"
+        },
+        {
+          "id": "OTAR_0000018"
+        }
+      ],
       "associatedTargets": {
         "count": 5280,
         "rows": [
@@ -190,11 +201,11 @@
               }
             ],
             "target": {
-              "id": "ENSG00000184160",
-              "approvedSymbol": "ADRA2C",
-              "approvedName": "adrenoceptor alpha 2C",
+              "id": "ENSG00000150594",
+              "approvedSymbol": "ADRA2A",
+              "approvedName": "adrenoceptor alpha 2A",
               "functionDescriptions": [
-                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2842764). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2842764). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for physiological agonists of ADRA2C is epinephrine > norepinephrine > dopamine (PubMed:2842764). ."
+                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2170371, PubMed:23105096, PubMed:2568356, PubMed:35245122, PubMed:27376152). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2568356, PubMed:27376152). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for agonists of ADRA2A is oxymetazoline > clonidine > epinephrine > norepinephrine > phenylephrine > dopamine > p-synephrine > p-tyramine > serotonin = p-octopamine. For antagonists, the rank order is yohimbine > phentolamine = mianserine > chlorpromazine = spiperone = prazosin > propanolol > alprenolol = pindolol (PubMed:2170371, PubMed:2568356). {ECO:0000250|UniProtKB:Q01338, ECO:0000269|PubMed:2170371, ECO:0000269|PubMed:23105096, ECO:0000269|PubMed:2568356, ECO:0000269|PubMed:27376152, ECO:0000269|PubMed:35245122}."
               ]
             }
           },
@@ -207,11 +218,11 @@
               }
             ],
             "target": {
-              "id": "ENSG00000150594",
-              "approvedSymbol": "ADRA2A",
-              "approvedName": "adrenoceptor alpha 2A",
+              "id": "ENSG00000184160",
+              "approvedSymbol": "ADRA2C",
+              "approvedName": "adrenoceptor alpha 2C",
               "functionDescriptions": [
-                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2170371, PubMed:23105096, PubMed:2568356, PubMed:35245122, PubMed:27376152). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2568356, PubMed:27376152). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for agonists of ADRA2A is oxymetazoline > clonidine > epinephrine > norepinephrine > phenylephrine > dopamine > p-synephrine > p-tyramine > serotonin = p-octopamine. For antagonists, the rank order is yohimbine > phentolamine = mianserine > chlorpromazine = spiperone = prazosin > propanolol > alprenolol = pindolol (PubMed:2170371, PubMed:2568356). {ECO:0000250|UniProtKB:Q01338, ECO:0000269|PubMed:2170371, ECO:0000269|PubMed:23105096, ECO:0000269|PubMed:2568356, ECO:0000269|PubMed:27376152, ECO:0000269|PubMed:35245122}."
+                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2842764). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2842764). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for physiological agonists of ADRA2C is epinephrine > norepinephrine > dopamine (PubMed:2842764). ."
               ]
             }
           },

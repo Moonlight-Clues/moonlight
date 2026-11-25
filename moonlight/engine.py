@@ -267,6 +267,14 @@ LIMITED_LINE = "The label covers only some people with this disease."
 # the words needs her approval.
 EVIDENCE_CUTOFF = 0.5
 EVIDENCE_MOST = 3
+# Decision 1 of 25 Nov. "somatic_mutation" counts only when the disease is a
+# cancer: its therapeutic areas include this one, "cancer or benign tumor".
+# When the areas were not sent, it is not known to be a cancer: no tumours.
+CANCER_AREA = "MONDO_0045024"
+CANCER_ONLY = "somatic_mutation"
+# Decision 2 of 25 Nov. Curated inherited-gene evidence counts as the kind
+# it stands for. Only the kind's own id is ever sent, so its name is said once.
+EVIDENCE_SAME_AS = {"genetic_literature": "genetic_association"}
 EVIDENCE_START = "Linked to this disease by: "
 EVIDENCE_NAMES = {
     "genetic_association": "inherited gene changes",
@@ -276,7 +284,7 @@ EVIDENCE_NAMES = {
     "rna_expression": "how active the gene is in the disease",
     "literature": "mentioned together in research papers",
 }
-CORRECTIONS_FILE =pathlib.Path(__file__).resolve().parent / "corrections.json"
+CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
 LEFT_OUT_FILE = pathlib.Path(__file__).resolve().parent / "left_out.json"
@@ -554,11 +562,17 @@ def evidence_ids(target: Target) -> Tuple[str, ...]:
     """Ticket 3.1. The kinds of evidence a gene's line names, as ids.
 
     The kinds in EVIDENCE_NAMES whose score reaches EVIDENCE_CUTOFF, in
-    that table's order, at most EVIDENCE_MOST. () when none does.
+    that table's order, at most EVIDENCE_MOST. () when none does. A kind
+    in EVIDENCE_SAME_AS counts as the kind it names. CANCER_ONLY counts
+    only when the disease's areas include CANCER_AREA.
     """
-    scores = dict(target.evidence_scores)
-    counted = [kind for kind in EVIDENCE_NAMES
-               if scores.get(kind) is not None and scores[kind] >= EVIDENCE_CUTOFF]
+    reached = set()
+    for kind, score in target.evidence_scores:
+        if score is not None and score >= EVIDENCE_CUTOFF:
+            reached.add(EVIDENCE_SAME_AS.get(kind, kind))
+    if CANCER_AREA not in target.disease_areas:
+        reached.discard(CANCER_ONLY)
+    counted = [kind for kind in EVIDENCE_NAMES if kind in reached]
     return tuple(counted[:EVIDENCE_MOST])
 
 

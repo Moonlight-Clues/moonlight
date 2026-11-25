@@ -1,0 +1,147 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0019944",
+      "drugAndClinicalCandidates": {
+        "count": 6,
+        "rows": [
+          {
+            "maxClinicalStage": "UNKNOWN",
+            "drug": {
+              "id": "CHEMBL628",
+              "name": "PENTOXIFYLLINE",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT05611268",
+                "clinicalStage": "UNKNOWN",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL1743073",
+              "name": "SOTATERCEPT",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT07498803",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL192",
+              "name": "SILDENAFIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": [
+                {
+                  "id": "CHEMBL1737",
+                  "name": "SILDENAFIL CITRATE",
+                  "drugWarnings": []
+                }
+              ]
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00303004",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00586794",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL957",
+              "name": "BOSENTAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                },
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT00303004",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_3",
+            "drug": {
+              "id": "CHEMBL2103873",
+              "name": "MACITENTAN",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [
+                {
+                  "warningType": "Black Box Warning"
+                }
+              ],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01739400",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              },
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01743001",
+                "clinicalStage": "PHASE_3",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          },
+          {
+            "maxClinicalStage": "PHASE_2",
+            "drug": {
+              "id": "CHEMBL779",
+              "name": "TADALAFIL",
+              "maximumClinicalStage": "APPROVAL",
+              "drugWarnings": [],
+              "parentMolecule": null,
+              "childMolecules": []
+            },
+            "clinicalReports": [
+              {
+                "url": "https://clinicaltrials.gov/study/NCT01200732",
+                "clinicalStage": "PHASE_2",
+                "source": "ClinicalTrials.gov"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

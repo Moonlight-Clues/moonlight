@@ -1,0 +1,635 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0015924",
+      "therapeuticAreas": [
+        {
+          "id": "MONDO_0004995"
+        },
+        {
+          "id": "EFO_0000651"
+        }
+      ],
+      "associatedTargets": {
+        "count": 4549,
+        "rows": [
+          {
+            "score": 0.8545015323243759,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9868301435087785
+              },
+              {
+                "id": "animal_model",
+                "score": 0.6401666371305036
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.9421959954117681
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.8587228342172539
+              }
+            ],
+            "target": {
+              "id": "ENSG00000204217",
+              "approvedSymbol": "BMPR2",
+              "approvedName": "bone morphogenetic protein receptor type 2",
+              "functionDescriptions": [
+                "On ligand binding, forms a receptor complex consisting of two type II and two type I transmembrane serine/threonine kinases. Type II receptors phosphorylate and activate type I receptors which autophosphorylate, then bind and activate SMAD transcriptional regulators. Can also mediate signaling through the activation of the p38MAPK cascade (PubMed:12045205). Binds to BMP7, BMP2 and, less efficiently, BMP4. Binding is weak but enhanced by the presence of type I receptors for BMPs. Mediates induction of adipogenesis by GDF6. Promotes signaling also by binding to activin A/INHBA (PubMed:24018044). {ECO:0000250|UniProtKB:O35607, ECO:0000269|PubMed:12045205, ECO:0000269|PubMed:24018044}."
+              ]
+            }
+          },
+          {
+            "score": 0.8100772784662233,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.848327570847232
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8820482217300326
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.8365213862795708
+              }
+            ],
+            "target": {
+              "id": "ENSG00000128829",
+              "approvedSymbol": "EIF2AK4",
+              "approvedName": "eukaryotic translation initiation factor 2 alpha kinase 4",
+              "functionDescriptions": [
+                "Metabolic-stress sensing protein kinase that phosphorylates the alpha subunit of eukaryotic translation initiation factor 2 (EIF2S1/eIF-2-alpha) in response to low amino acid availability (PubMed:25329545, PubMed:32610081). Plays a role as an activator of the integrated stress response (ISR) required for adaptation to amino acid starvation (By similarity). EIF2S1/eIF-2-alpha phosphorylation in response to stress converts EIF2S1/eIF-2-alpha into a global protein synthesis inhibitor, leading to a global attenuation of cap-dependent translation, and thus to a reduced overall utilization of amino acids, while concomitantly initiating the preferential translation of ISR- specific mRNAs, such as the transcriptional activator ATF4, and hence allowing ATF4-mediated reprogramming of amino acid biosynthetic gene expression to alleviate nutrient depletion (PubMed:32610081). Binds uncharged tRNAs (By similarity). Required for the translational induction of protein kinase PRKCH following amino acid starvation (By similarity). Involved in cell cycle arrest by promoting cyclin D1 mRNA translation repression after the unfolded protein response pathway (UPR) activation or cell cycle inhibitor CDKN1A/p21 mRNA translation activation in response to amino acid deprivation (PubMed:26102367). Plays a role in the consolidation of synaptic plasticity, learning as well as formation of long-term memory (By similarity). Plays a role in neurite outgrowth inhibition (By similarity). Plays a proapoptotic role in response to glucose deprivation (By similarity). Promotes global cellular protein synthesis repression in response to UV irradiation independently of the stress-activated protein kinase/c-Jun N-terminal kinase (SAPK/JNK) and p38 MAPK signaling pathways (By similarity). Plays a role in the antiviral response against alphavirus infection; impairs early viral mRNA translation of the incoming genomic virus RNA, thus preventing alphavirus replication (By similarity). {ECO:0000250|UniProtKB:P15442, ECO:0000250|UniProtKB:Q9QZ05, ECO:0000269|PubMed:25329545, ECO:0000269|PubMed:26102367, ECO:0000269|PubMed:32610081}.",
+                "(Microbial infection) Plays a role in modulating the adaptive immune response to yellow fever virus infection; promotes dendritic cells to initiate autophagy and antigene presentation to both CD4(+) and CD8(+) T-cells under amino acid starvation (PubMed:24310610). ."
+              ]
+            }
+          },
+          {
+            "score": 0.7857493667584852,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9041350422515319
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8762847111654011
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.7195915563566126
+              }
+            ],
+            "target": {
+              "id": "ENSG00000171303",
+              "approvedSymbol": "KCNK3",
+              "approvedName": "potassium two pore domain channel subfamily K member 3",
+              "functionDescriptions": [
+                "K(+) channel that conducts voltage-dependent outward rectifying currents upon membrane depolarization. Voltage sensing is coupled to K(+) electrochemical gradient in an 'ion flux gating' mode where outward but not inward ion flow opens the gate (PubMed:23169818, PubMed:26919430, PubMed:32499642, PubMed:36195757, PubMed:9312005). Changes ion selectivity and becomes permeable to Na(+) ions in response to extracellular acidification. Protonation of the pH sensor His-98 stabilizes C-type inactivation conformation likely converting the channel from outward K(+)-conducting, to inward Na(+)-conducting to nonconductive state (PubMed:22948150). Homo- and heterodimerizes to form functional channels with distinct regulatory and gating properties (PubMed:23169818, PubMed:32499642). Allows K(+) currents with fast- gating kinetics important for the repolarization and hyperpolarization phases of action potentials (By similarity). In cerebellar granule cells, heteromeric KCNK3:KCNK9 channel may hyperpolarize the resting membrane potential to limit intrinsic neuronal excitability, but once the action potential threshold is reached, it may support high- frequency action potential firing and increased neuronal excitability (By similarity). Dispensable for central chemosensory respiration i.e. breathing controlled by brainstem CO2/pH, it rather conducts pH- sensitive currents and controls the firing rate of serotonergic raphe neurons involved in potentiation of the respiratory chemoreflex. Additionally, imparts chemosensitivity to type 1 cells in carotid bodies which respond to a decrease in arterial oxygen pressure or an increase in carbon dioxide pressure or pH to initiate adaptive changes in pulmonary ventilation (By similarity). In adrenal gland, contributes to the maintenance of a hyperpolarized resting membrane potential of aldosterone-producing cells at zona glomerulosa and limits aldosterone release as part of a regulatory mechanism that controls arterial blood pressure and electrolyte homeostasis (By similarity). In brown adipocytes, mediates K(+) efflux that counteracts norepinephrine- induced membrane depolarization, limits Ca(2+) efflux and downstream cAMP and PKA signaling, ultimately attenuating lipid oxidation and adaptive thermogenesis (By similarity). {ECO:0000250|UniProtKB:O35111, ECO:0000250|UniProtKB:O54912, ECO:0000269|PubMed:22948150, ECO:0000269|PubMed:23169818, ECO:0000269|PubMed:26919430, ECO:0000269|PubMed:32499642, ECO:0000269|PubMed:36195757, ECO:0000269|PubMed:9312005}."
+              ]
+            }
+          },
+          {
+            "score": 0.78379826134249,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.2714009531618833
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5943515653931012
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8198144567289644
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.8117078843362394
+              }
+            ],
+            "target": {
+              "id": "ENSG00000120693",
+              "approvedSymbol": "SMAD9",
+              "approvedName": "SMAD family member 9",
+              "functionDescriptions": [
+                "Transcriptional modulator activated by BMP (bone morphogenetic proteins) type 1 receptor kinase. SMAD9 is a receptor- regulated SMAD (R-SMAD)."
+              ]
+            }
+          },
+          {
+            "score": 0.7546551907259683,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7335719526876973
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5322959620165568
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8255895301924214
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.7692185602432756
+              }
+            ],
+            "target": {
+              "id": "ENSG00000133657",
+              "approvedSymbol": "ATP13A3",
+              "approvedName": "ATPase 13A3",
+              "functionDescriptions": [
+                "ATP-driven pump involved in endocytosis-dependent polyamine transport. Uses ATP as an energy source to transfer polyamine precursor putrescine from the endosomal compartment to the cytosol. ."
+              ]
+            }
+          },
+          {
+            "score": 0.6815876444835155,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.5773949554805846
+              },
+              {
+                "id": "animal_model",
+                "score": 0.6170181923823616
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7936290404043271
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.5946211108747951
+              }
+            ],
+            "target": {
+              "id": "ENSG00000105974",
+              "approvedSymbol": "CAV1",
+              "approvedName": "caveolin 1",
+              "functionDescriptions": [
+                "May act as a scaffolding protein within caveolar membranes (PubMed:11751885). Forms a stable heterooligomeric complex with CAV2 that targets to lipid rafts and drives caveolae formation. Mediates the recruitment of CAVIN proteins (CAVIN1/2/3/4) to the caveolae (PubMed:19262564). Interacts directly with G protein alpha subunits and can functionally regulate their activity (By similarity). Involved in the costimulatory signal essential for T-cell receptor (TCR)-mediated T-cell activation. Its binding to DPP4 induces T-cell proliferation and NF-kappa-B activation in a T-cell receptor/CD3-dependent manner (PubMed:17287217). Recruits CTNNB1 to caveolar membranes and may regulate CTNNB1-mediated signaling through the Wnt pathway (By similarity). Negatively regulates TGFB1-mediated activation of SMAD2/3 by mediating the internalization of TGFBR1 from membrane rafts leading to its subsequent degradation (PubMed:25893292). Binds 20(S)- hydroxycholesterol (20(S)-OHC) (By similarity). {ECO:0000250|UniProtKB:P49817, ECO:0000269|PubMed:11751885, ECO:0000269|PubMed:17287217, ECO:0000269|PubMed:19262564, ECO:0000269|PubMed:25893292}."
+              ]
+            }
+          },
+          {
+            "score": 0.6804389776879061,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8693206303983766
+              },
+              {
+                "id": "animal_model",
+                "score": 0.4275982586800939
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8877418951359423
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.8274613634158176
+              }
+            ],
+            "target": {
+              "id": "ENSG00000139567",
+              "approvedSymbol": "ACVRL1",
+              "approvedName": "activin A receptor like type 1",
+              "functionDescriptions": [
+                "Type I receptor for TGF-beta family ligands BMP9/GDF2 and BMP10 and important regulator of normal blood vessel development. On ligand binding, forms a receptor complex consisting of two type II and two type I transmembrane serine/threonine kinases. Type II receptors phosphorylate and activate type I receptors which autophosphorylate, then bind and activate SMAD transcriptional regulators. May bind activin as well. {ECO:0000269|PubMed:22718755, ECO:0000269|PubMed:22799562, ECO:0000269|PubMed:26176610}."
+              ]
+            }
+          },
+          {
+            "score": 0.6710395123760721,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7830623235454576
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8211783186411619
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000121075",
+              "approvedSymbol": "TBX4",
+              "approvedName": "T-box transcription factor 4",
+              "functionDescriptions": [
+                "Transcriptional regulator that has an essential role in the organogenesis of lungs, pelvis, and hindlimbs. ."
+              ]
+            }
+          },
+          {
+            "score": 0.6325927943252849,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9598153219561196
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.6573671230099334
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.7295169571339454
+              }
+            ],
+            "target": {
+              "id": "ENSG00000164736",
+              "approvedSymbol": "SOX17",
+              "approvedName": "SRY-box transcription factor 17",
+              "functionDescriptions": [
+                "Acts as a transcription regulator that binds target promoter DNA (PubMed:33952808). Binds to the sequences 5'-AACAAT-'3 or 5'- AACAAAG-3'. Modulates transcriptional regulation via WNT3A. Inhibits Wnt signaling. Promotes degradation of activated CTNNB1. Plays a key role in the regulation of embryonic development. Required for normal development of the definitive gut endoderm. Required for normal looping of the embryonic heart tube. Plays an important role in embryonic and postnatal vascular development, including development of arteries. Plays an important role in postnatal angiogenesis, where it is functionally redundant with SOX18. Required for the generation and maintenance of fetal hematopoietic stem cells, and for fetal hematopoiesis. Probable transcriptional activator in the premeiotic germ cells. {ECO:0000250|UniProtKB:Q61473, ECO:0000269|PubMed:33952808}."
+              ]
+            }
+          },
+          {
+            "score": 0.6220827982614225,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.4949776473654408
+              },
+              {
+                "id": "animal_model",
+                "score": 0.47429367172429393
+              },
+              {
+                "id": "clinical",
+                "score": 0.9879902247236949
+              }
+            ],
+            "target": {
+              "id": "ENSG00000151617",
+              "approvedSymbol": "EDNRA",
+              "approvedName": "endothelin receptor type A",
+              "functionDescriptions": [
+                "Receptor for endothelin-1. Mediates its action by association with G proteins that activate a phosphatidylinositol-calcium second messenger system. The rank order of binding affinities for ET-A is: ET1 > ET2 >> ET3."
+              ]
+            }
+          },
+          {
+            "score": 0.6219292254675951,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7009776742216873
+              },
+              {
+                "id": "clinical",
+                "score": 0.9879774671679462
+              }
+            ],
+            "target": {
+              "id": "ENSG00000136160",
+              "approvedSymbol": "EDNRB",
+              "approvedName": "endothelin receptor type B",
+              "functionDescriptions": [
+                "Non-specific receptor for endothelin 1, 2, and 3. Mediates its action by association with G proteins that activate a phosphatidylinositol-calcium second messenger system. ."
+              ]
+            }
+          },
+          {
+            "score": 0.6213212346929581,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.6302024854669626
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5055155669223134
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.8117244337041739
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.7599134970145264
+              }
+            ],
+            "target": {
+              "id": "ENSG00000106991",
+              "approvedSymbol": "ENG",
+              "approvedName": "endoglin",
+              "functionDescriptions": [
+                "Vascular endothelium glycoprotein that plays an important role in the regulation of angiogenesis (PubMed:21737454, PubMed:23300529). Required for normal structure and integrity of adult vasculature (PubMed:7894484). Regulates the migration of vascular endothelial cells (PubMed:17540773). Required for normal extraembryonic angiogenesis and for embryonic heart development (By similarity). May regulate endothelial cell shape changes in response to blood flow, which drive vascular remodeling and establishment of normal vascular morphology during angiogenesis (By similarity). May play a critical role in the binding of endothelial cells to integrins and/or other RGD receptors (PubMed:1692830). Acts as a TGF-beta coreceptor and is involved in the TGF-beta/BMP signaling cascade that ultimately leads to the activation of SMAD transcription factors (PubMed:21737454, PubMed:22347366, PubMed:23300529, PubMed:8370410). Required for GDF2/BMP9 signaling through SMAD1 in endothelial cells and modulates TGFB1 signaling through SMAD3 (PubMed:21737454, PubMed:22347366, PubMed:23300529). {ECO:0000250|UniProtKB:Q63961, ECO:0000269|PubMed:17540773, ECO:0000269|PubMed:21737454, ECO:0000269|PubMed:23300529, ECO:0000269|PubMed:7894484, ECO:0000269|PubMed:8370410, ECO:0000305|PubMed:1692830}."
+              ]
+            }
+          },
+          {
+            "score": 0.6180258853670982,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9643677472998017
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.5805739117190981
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.7295169571339454
+              }
+            ],
+            "target": {
+              "id": "ENSG00000263761",
+              "approvedSymbol": "GDF2",
+              "approvedName": "growth differentiation factor 2",
+              "functionDescriptions": [
+                "Potent circulating inhibitor of angiogenesis. Signals through the type I activin receptor ACVRL1 but not other Alks. Signaling through SMAD1 in endothelial cells requires TGF-beta coreceptor endoglin/ENG. {ECO:0000269|PubMed:18309101, ECO:0000269|PubMed:21710321, ECO:0000269|PubMed:22799562, ECO:0000269|PubMed:23300529, ECO:0000269|PubMed:25237187}."
+              ]
+            }
+          },
+          {
+            "score": 0.6118857446795574,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.3412859149845567
+              },
+              {
+                "id": "clinical",
+                "score": 0.9894412918661293
+              }
+            ],
+            "target": {
+              "id": "ENSG00000160013",
+              "approvedSymbol": "PTGIR",
+              "approvedName": "prostaglandin I2 receptor",
+              "functionDescriptions": [
+                "Receptor for prostacyclin (prostaglandin I2 or PGI2). The activity of this receptor is mediated by G(s) proteins which activate adenylate cyclase."
+              ]
+            }
+          },
+          {
+            "score": 0.6094751179004597,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.5264179887245308
+              },
+              {
+                "id": "clinical",
+                "score": 0.9762193901738834
+              }
+            ],
+            "target": {
+              "id": "ENSG00000138735",
+              "approvedSymbol": "PDE5A",
+              "approvedName": "phosphodiesterase 5A",
+              "functionDescriptions": [
+                "Plays a role in signal transduction by regulating the intracellular concentration of cyclic nucleotides. This phosphodiesterase catalyzes the specific hydrolysis of cGMP to 5'-GMP (PubMed:15489334, PubMed:9714779). Specifically regulates nitric-oxide- generated cGMP (PubMed:15489334). {ECO:0000269|PubMed:15489334, ECO:0000269|PubMed:9714779}."
+              ]
+            }
+          },
+          {
+            "score": 0.599496461931553,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.03343619386863916
+              },
+              {
+                "id": "animal_model",
+                "score": 0.606694835217995
+              },
+              {
+                "id": "clinical",
+                "score": 0.9550483899602435
+              }
+            ],
+            "target": {
+              "id": "ENSG00000164116",
+              "approvedSymbol": "GUCY1A1",
+              "approvedName": "guanylate cyclase 1 soluble subunit alpha 1",
+              "functionDescriptions": [
+                "Alpha subunit of soluble guanylate cyclase (sGC), a key enzyme in nitric oxide (NO) signaling. sGC functions as a heterodimer consisting of one alpha and one beta subunit. It serves as the primary intracellular receptor for NO, which binds to a heme prosthetic group located on the beta subunit. Upon NO binding, sGC catalyzes the conversion of GTP into cyclic GMP (cGMP), thereby transmitting the NO signal into an ubiquitous intracellular second messenger. {ECO:0000269|PubMed:23505436, ECO:0000269|PubMed:24669844, ECO:0000269|PubMed:9742212}."
+              ]
+            }
+          },
+          {
+            "score": 0.5901895122914343,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.6360018988017463
+              },
+              {
+                "id": "clinical",
+                "score": 0.9390168378590291
+              }
+            ],
+            "target": {
+              "id": "ENSG00000122641",
+              "approvedSymbol": "INHBA",
+              "approvedName": "inhibin subunit beta A",
+              "functionDescriptions": [
+                "Inhibins/activins are involved in regulating a number of diverse functions such as hypothalamic and pituitary hormone secretion, gonadal hormone secretion, germ cell development and maturation, erythroid differentiation, insulin secretion, nerve cell survival, embryonic axial development or bone growth, depending on their subunit composition. .",
+                "Activin A is a homodimer of INHBA that plays a role in several essential biological processes including embryonic development, stem cell maintenance and differentiation, haematopoiesis, cell proliferation and tissue fibrosis (PubMed:3194407, PubMed:16440334). Signals through type I (such as ACVR1B or ACVR1C) and type II receptors (such as ACVR2A, ACVR2B or BMPR2) which, upon ligand binding, phosphorylate SMAD2 and SMAD3 intracellular signaling mediators that form a complex with SMAD4, translocate to the nucleus and modulate gene expression (PubMed:10652306, PubMed:24018044). Can also activate alternative non-canonical intracellular signaling pathways including the p38 MAPK, extracellular signal-regulated kinases 1/2 (ERK1/2) and c-Jun N-terminal kinases (JNKs) to modulate cell migration and differentiation (PubMed:16440334). Alternatively, promotes osteoblastic differentiation via ACVRL1-SMAD1/5/9 pathway (PubMed:34948289). In addition, can engage the type I receptor ACVR1 to form an ACVR1-activin A-type II receptor non-signaling complex (NSC) that renders receptors unavailable for engagement with BMPs, hence resulting in an apparent inhibition of ACVR1-mediated BMP signaling (PubMed:26333933). {ECO:0000269|PubMed:10652306, ECO:0000269|PubMed:16440334, ECO:0000269|PubMed:24018044, ECO:0000269|PubMed:26333933, ECO:0000269|PubMed:3194407, ECO:0000269|PubMed:34948289}.",
+                "Inhibin A is a dimer of alpha/INHA and beta-A/INHBA that functions as a feedback regulator in the hypothalamic-pituitary-gonadal (HPG) axis. Inhibits the secretion of FSH from the anterior pituitary gland by acting on pituitary gonadotrope cells. Antagonizes activin A by binding to the proteoglycan, betaglycan, and forming a stable complex with and, thereby, sequestering type II activin receptors while excluding type I receptor. ."
+              ]
+            }
+          },
+          {
+            "score": 0.5817069359767422,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.03630697819069404
+              },
+              {
+                "id": "clinical",
+                "score": 0.9550483899602435
+              }
+            ],
+            "target": {
+              "id": "ENSG00000061918",
+              "approvedSymbol": "GUCY1B1",
+              "approvedName": "guanylate cyclase 1 soluble subunit beta 1",
+              "functionDescriptions": [
+                "Beta subunit of soluble guanylate cyclase (sGC), a key enzyme in nitric oxide (NO) signaling. sGC functions as a heterodimer consisting of one alpha and one beta subunit. It serves as the primary intracellular receptor for NO, which binds to a heme prosthetic group located on the beta subunit. Upon NO binding, sGC catalyzes the conversion of GTP into cyclic GMP (cGMP), thereby transmitting the NO signal into an ubiquitous intracellular second messenger. ."
+              ]
+            }
+          },
+          {
+            "score": 0.5811576992482524,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.01823792392834863
+              },
+              {
+                "id": "clinical",
+                "score": 0.9550483899602435
+              }
+            ],
+            "target": {
+              "id": "ENSG00000152402",
+              "approvedSymbol": "GUCY1A2",
+              "approvedName": "guanylate cyclase 1 soluble subunit alpha 2",
+              "functionDescriptions": [
+                "Alpha subunit of soluble guanylate cyclase (sGC), a central enzyme in nitric oxide (NO) signaling. Functions as the main intracellular receptor for NO. Upon NO binding, catalyzes the conversion of GTP to cyclic GMP (cGMP) and thereby transducing NO signal into a ubiquitous intracellular second messenger. .",
+                "[Isoform 2]: Acts as a negative regulator of guanylyl cyclase activity as it forms non-functional heterodimers with the beta subunit. ."
+              ]
+            }
+          },
+          {
+            "score": 0.49079168779759197,
+            "datatypeScores": [
+              {
+                "id": "genetic_association",
+                "score": 0.8073150590918674
+              }
+            ],
+            "target": {
+              "id": "ENSG00000289490",
+              "approvedSymbol": "ENSG00000289490",
+              "approvedName": "novel protein",
+              "functionDescriptions": []
+            }
+          },
+          {
+            "score": 0.48630540534909555,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.5370026831730869
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7612644543425522
+              },
+              {
+                "id": "clinical",
+                "score": 0.10638788958203368
+              }
+            ],
+            "target": {
+              "id": "ENSG00000171759",
+              "approvedSymbol": "PAH",
+              "approvedName": "phenylalanine hydroxylase",
+              "functionDescriptions": [
+                "Catalyzes the hydroxylation of L-phenylalanine to L-tyrosine. ."
+              ]
+            }
+          },
+          {
+            "score": 0.47757930110923136,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.19757750922377684
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7051997252294805
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.3039653988058105
+              }
+            ],
+            "target": {
+              "id": "ENSG00000126247",
+              "approvedSymbol": "CAPNS1",
+              "approvedName": "calpain small subunit 1",
+              "functionDescriptions": [
+                "Regulatory subunit of the calcium-regulated non-lysosomal thiol-protease which catalyzes limited proteolysis of substrates involved in cytoskeletal remodeling and signal transduction. Essential for embryonic development (By similarity). ."
+              ]
+            }
+          },
+          {
+            "score": 0.4751950987574875,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8076055463405724
+              },
+              {
+                "id": "clinical",
+                "score": 0.06079307976116211
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000128052",
+              "approvedSymbol": "KDR",
+              "approvedName": "kinase insert domain receptor",
+              "functionDescriptions": [
+                "Tyrosine-protein kinase that acts as a cell-surface receptor for VEGFA, VEGFC and VEGFD. Plays an essential role in the regulation of angiogenesis, vascular development, vascular permeability, and embryonic hematopoiesis. Promotes proliferation, survival, migration and differentiation of endothelial cells. Promotes reorganization of the actin cytoskeleton. Isoforms lacking a transmembrane domain, such as isoform 2 and isoform 3, may function as decoy receptors for VEGFA, VEGFC and/or VEGFD. Isoform 2 plays an important role as negative regulator of VEGFA- and VEGFC-mediated lymphangiogenesis by limiting the amount of free VEGFA and/or VEGFC and preventing their binding to FLT4. Modulates FLT1 and FLT4 signaling by forming heterodimers. Binding of vascular growth factors to isoform 1 leads to the activation of several signaling cascades. Activation of PLCG1 leads to the production of the cellular signaling molecules diacylglycerol and inositol 1,4,5-trisphosphate and the activation of protein kinase C. Mediates activation of MAPK1/ERK2, MAPK3/ERK1 and the MAP kinase signaling pathway, as well as of the AKT1 signaling pathway. Mediates phosphorylation of PIK3R1, the regulatory subunit of phosphatidylinositol 3-kinase, reorganization of the actin cytoskeleton and activation of PTK2/FAK1. Required for VEGFA-mediated induction of NOS2 and NOS3, leading to the production of the signaling molecule nitric oxide (NO) by endothelial cells. Phosphorylates PLCG1. Promotes phosphorylation of FYN, NCK1, NOS3, PIK3R1, PTK2/FAK1 and SRC. {ECO:0000269|PubMed:10102632, ECO:0000269|PubMed:10368301, ECO:0000269|PubMed:10600473, ECO:0000269|PubMed:11387210, ECO:0000269|PubMed:12649282, ECO:0000269|PubMed:1417831, ECO:0000269|PubMed:15026417, ECO:0000269|PubMed:15215251, ECO:0000269|PubMed:15962004, ECO:0000269|PubMed:16966330, ECO:0000269|PubMed:17303569, ECO:0000269|PubMed:18529047, ECO:0000269|PubMed:19668192, ECO:0000269|PubMed:19834490, ECO:0000269|PubMed:20080685, ECO:0000269|PubMed:20224550, ECO:0000269|PubMed:20705758, ECO:0000269|PubMed:21893193, ECO:0000269|PubMed:25825981, ECO:0000269|PubMed:7929439, ECO:0000269|PubMed:9160888, ECO:0000269|PubMed:9804796, ECO:0000269|PubMed:9837777}."
+              ]
+            }
+          },
+          {
+            "score": 0.46521588590994223,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.2399089509956054
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000021826",
+              "approvedSymbol": "CPS1",
+              "approvedName": "carbamoyl-phosphate synthase 1",
+              "functionDescriptions": [
+                "Involved in the urea cycle of ureotelic animals where the enzyme plays an important role in removing excess ammonia from the cell."
+              ]
+            }
+          },
+          {
+            "score": 0.4406343614292286,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.5760941360039589
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.3031806762373831
+              },
+              {
+                "id": "genetic_literature",
+                "score": 0.547137717850459
+              }
+            ],
+            "target": {
+              "id": "ENSG00000006071",
+              "approvedSymbol": "ABCC8",
+              "approvedName": "ATP binding cassette subfamily C member 8",
+              "functionDescriptions": [
+                "Regulator subunit of pancreatic ATP-sensitive potassium channel (KATP), playing a major role in the regulation of insulin release. In pancreatic cells, it forms KATP channels with KCNJ11; KCNJ11 forms the channel pore while ABCC8 is required for activation and regulation. {ECO:0000269|PubMed:24814349, ECO:0000269|PubMed:25720052, ECO:0000269|PubMed:29286281, ECO:0000269|PubMed:34815345}."
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
