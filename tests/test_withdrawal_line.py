@@ -172,7 +172,7 @@ def offline():
 
 
 def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wrong=None,
-                limits=None):
+                limits=None, withdrawals=None):
     """What /api/clues sends, from saved answers. The hand-written files are
     the real ones unless a test hands in its own."""
     api.forget_visitors()
@@ -193,6 +193,13 @@ def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wro
         entries = json.loads((ROOT / "moonlight" / "limits.json").read_text(encoding="utf-8"))
         limits = [e for e in entries if e["date"] < "2026-11-25"]
     guards.append(patch.object(engine, "_read_limits", return_value=limits))
+    # Ticket 2.51 (25 Nov) adds withdrawals.json, which gives Roctavian on this
+    # page a hand-written line. The comparisons here are about the database's
+    # withdrawal line (ticket 2.31), so the hand-written list is read as empty
+    # unless a test hands in its own.
+    # tests/test_hand_withdrawals_2_51.py holds the new entry.
+    guards.append(patch.object(engine, "_read_withdrawals",
+                                    return_value=withdrawals or []))
     if wrong is not None:
         guards.append(patch.object(engine, "_read_corrections", return_value=wrong))
     for guard in guards:

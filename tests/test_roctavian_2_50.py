@@ -58,7 +58,10 @@ def text(*parts):
 @pytest.fixture(scope="module")
 def page():
     with hem_a_page.left_out_before_2_43():
-        return hem_a_page.page_answer(limits=load(LIMITS_FILE))  # the real limits file
+        # the real limits file, and (ticket 2.51) the real withdrawals file
+        return hem_a_page.page_answer(
+            limits=load(LIMITS_FILE),
+            withdrawals=load(ROOT / "moonlight" / "withdrawals.json"))
 
 
 def roctavian_card(answer):
@@ -103,8 +106,13 @@ def test_open_targets_today_has_no_withdrawal_for_roctavian():
     assert "WITHDRAWAL" not in {report["clinicalStage"] for report in row["clinicalReports"]}
 
 
-def test_the_card_has_no_withdrawal_line(page):
-    assert "withdrawal_note" not in roctavian_card(page)
+def test_the_card_has_no_database_withdrawal_line(page):
+    # Ticket 2.51 (Shreshth's decision of 25 Nov, option A) changed this test.
+    # It said the card had no withdrawal line at all. The card now carries the
+    # hand-written line from moonlight/withdrawals.json (HAND_WITHDRAWAL_LINE).
+    # Still true, and still checked: the database's own line (WITHDRAWAL_LINE)
+    # is not there, because Open Targets 26.09 records no withdrawal.
+    assert roctavian_card(page)["withdrawal_note"] == engine.HAND_WITHDRAWAL_LINE
     assert WITHDRAWAL_LINE not in json.dumps(roctavian_card(page))
 
 
