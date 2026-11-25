@@ -1108,9 +1108,11 @@ def studies_for_this_disease(on_list: Iterable[OnList]) -> Dict[str, Set[str]]:
 
     Like a folder per medicine in the disease's own drawer: Open Targets
     files the disease's own medicine list under the disease's id, so every
-    report on it is a record for the page's disease. Only a report whose
-    own stage is a trial in people (_is_a_trial) counts. A report whose
-    stage is not said is left out: nothing is guessed. A family with no
+    report on it is a record for the page's disease. A report counts only
+    if its own stage is a trial in people (_is_a_trial) AND its "source"
+    is the trials register (fetch.STUDY_SOURCE, entry.study_links): a TTD
+    drug page with a trial stage is not a study. A report whose stage or
+    source is not said is left out: nothing is guessed. A family with no
     such report is not in the answer.
 
     The page uses these only to choose which of a main In trials card's
@@ -1118,7 +1120,9 @@ def studies_for_this_disease(on_list: Iterable[OnList]) -> Dict[str, Set[str]]:
     """
     found: Dict[str, Set[str]] = {}
     for entry in on_list:
-        links = {link for link, stage in entry.reports if link and _is_a_trial(stage)}
+        studies = set(entry.study_links)
+        links = {link for link, stage in entry.reports
+                 if link and link in studies and _is_a_trial(stage)}
         if links:
             found.setdefault(_family_id(entry.medicine), set()).update(links)
     return found

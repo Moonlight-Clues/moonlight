@@ -10,9 +10,12 @@ THE RULE (a card on the main In trials list, api._one_source):
   2. otherwise the first https link among them, as before.
 "A trial report for this disease" (engine.studies_for_this_disease): a
 report on the disease's own medicine list, filed under the medicine's own
-family, whose own stage is a trial phase. Open Targets files that list
+family, whose own stage is a trial phase and whose "source" is exactly
+"ClinicalTrials.gov" (fetch.STUDY_SOURCE). Open Targets files that list
 under the disease's id, so the record's disease is the page's disease.
-A report whose stage is not said is not a trial report: nothing is guessed.
+A TTD drug page with a trial stage is not a study (Kashish's answer of
+25 Nov: a trial card links only to a ClinicalTrials.gov study). A report
+whose stage or source is not said does not count: nothing is guessed.
 The card's records are matched by their link, letter for letter.
 Nothing else on the card changes: not its place, box, count, stage or words.
 
@@ -163,20 +166,38 @@ def test_only_trial_reports_on_the_list_count():
 
 
 def test_a_report_whose_stage_is_not_said_is_not_for_this_disease():
-    studies = studies_from(list_answer({"url": STUDY + "T"}, {"url": STUDY + "U", "clinicalStage": None}))
+    studies = studies_from(list_answer(
+        {"url": STUDY + "T"},
+        {"url": STUDY + "U", "clinicalStage": None, "source": "ClinicalTrials.gov"}))
+    assert studies == {}
+
+
+def test_a_ttd_page_with_a_trial_stage_is_not_a_study():
+    studies = studies_from(list_answer(
+        {"url": "https://ttd.idrblab.cn/data/drug/details/D0Q0OD", "clinicalStage": "PHASE_2",
+         "source": "TTD"},
+        {"url": STUDY + "T", "clinicalStage": "PHASE_2", "source": "ClinicalTrials.gov"}))
+    assert studies == {"CHEMBL1": {STUDY + "T"}}
+
+
+@pytest.mark.parametrize("said", [{}, {"source": None}, {"source": "TTD"}])
+def test_a_report_whose_source_is_not_the_register_does_not_count(said):
+    # Even a clinicaltrials.gov link: the source field decides, not the link.
+    studies = studies_from(list_answer(dict(url=STUDY + "T", clinicalStage="PHASE_3", **said)))
     assert studies == {}
 
 
 def test_a_tablet_form_s_study_is_filed_under_its_family():
     studies = studies_from(list_answer(
-        {"url": STUDY + "T", "clinicalStage": "PHASE_3"},
+        {"url": STUDY + "T", "clinicalStage": "PHASE_3", "source": "ClinicalTrials.gov"},
         drug_id="CHEMBL2", parent={"id": "CHEMBL1", "name": "MADE-UP", "drugWarnings": []}))
     assert studies == {"CHEMBL1": {STUDY + "T"}}
 
 
 def test_another_medicine_s_study_does_not_count():
     # A study filed under medicine CHEMBL2 is not this card's (CHEMBL1).
-    studies = studies_from(list_answer({"url": STUDY + "B", "clinicalStage": "PHASE_3"},
+    studies = studies_from(list_answer({"url": STUDY + "B", "clinicalStage": "PHASE_3",
+                                        "source": "ClinicalTrials.gov"},
                                        drug_id="CHEMBL2"))
     clue = clue_of((STUDY + "A", STUDY + "B"))
     assert api._one_source(clue, studies.get("CHEMBL1", set())) == STUDY + "A"
