@@ -1,0 +1,10 @@
+{
+  "query": "query MapIds($terms: [String!]!) {\n  mapIds(queryTerms: $terms, entityNames: [\"disease\"]) { mappings { term hits { id name } } }\n}\n",
+  "variables": {
+    "terms": [
+      "MONDO_0005301",
+      "EFO_0003885",
+      "multiple sclerosis"
+    ]
+  }
+}
