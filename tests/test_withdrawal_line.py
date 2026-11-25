@@ -67,6 +67,7 @@ SAFETY_LINE = ("For learning and research exploration, not medical advice. Never
                "change any medicine without a doctor.")
 
 OCTOCOG = "CHEMBL4297873"
+OBIZUR = "CHEMBL5315075"  # susoctocog alfa: in the red box since ticket 2.47
 ROCTAVIAN = "CHEMBL4297579"
 # The main Approved list of haemophilia A, counted from the saved answers
 # as main sorts them: 18 cards, A to Z.
@@ -235,6 +236,13 @@ def without_the_key(answer):
     for where in CARD_LISTS:
         for item in plain.get(where, []):
             item.pop(KEY, None)
+    # Ticket 2.47 (Kashish): Obizur's card sits in the red box of this page.
+    # Its warning and the box's key are the only change, so they are not
+    # part of what these tests compare.
+    plain.pop("wrong_approvals_box", None)
+    for item in plain.get("approved", []):
+        if item.get("id") == OBIZUR:
+            item.pop("warning", None)
     return plain
 
 
@@ -546,7 +554,8 @@ def test_example_everything_else_is_letter_for_letter_what_main_gives(hem_a, bef
     assert hem_a["left_out"] == {"not_approved": 23, "unclear_link": 0}
     assert len(hem_a["being_studied"]) == 10 and len(hem_a["new_clues"]) == 38
     assert without_the_key(hem_a) == before
-    assert list(hem_a) == list(before)  # the same keys in the same order
+    # Same keys in the same order; ticket 2.47 adds the red box's key for Obizur.
+    assert [key for key in hem_a if key != "wrong_approvals_box"] == list(before)
 
 
 def test_example_there_is_no_not_shown_line(hem_a):
@@ -921,9 +930,13 @@ def seen_card(seen_page, name, where="approved"):
 
 
 def test_browser_example_the_approved_tab_shows_the_same_18_cards_in_order(seen):
+    # Ticket 2.47: Obizur (susoctocog alfa) is in the red box now, so the main list shows 17.
     assert seen["example"]["firstTab"] == "approved"
-    assert seen["example"]["read"]["tab"] == seen["before"]["read"]["tab"]
-    assert [item["name"] for item in seen["example"]["read"]["approved"]] == HEM_A_APPROVED_18
+    # The tab's number is one less: the red box's card is not counted (ticket 2.47).
+    assert seen["before"]["read"]["tab"] == "Approved (29)"
+    assert seen["example"]["read"]["tab"] == "Approved (28)"
+    assert [item["name"] for item in seen["example"]["read"]["approved"]] == [
+        name for name in HEM_A_APPROVED_18 if name != "Susoctocog Alfa"]
     assert [item["name"] for item in seen["example"]["read"]["wider"]] == HEM_A_WIDER_11
 
 
@@ -955,6 +968,7 @@ def test_browser_example_no_other_card_shows_the_line(seen):
 def test_browser_example_every_other_card_reads_as_on_main(seen):
     for where in ("approved", "wider", "narrower"):
         now, was = seen["example"]["read"][where], seen["before"]["read"][where]
+        was = [item for item in was if item["name"] != "Susoctocog Alfa"]  # red box since 2.47
         assert len(now) == len(was)
         for card_now, card_was in zip(now, was):
             if card_now["name"] == "Octocog Alfa":

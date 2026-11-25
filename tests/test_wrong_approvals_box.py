@@ -438,7 +438,8 @@ def test_second_example_daratumumab_is_alone_on_the_main_list(amyloidosis):
 # ---- guards ----
 
 def test_guard_a_page_with_no_red_warning_has_no_key(adpkd, hem_a, sarcoidosis):
-    for answer in (adpkd, hem_a, sarcoidosis):
+    # Haemophilia A is not here since ticket 2.47: Obizur has a red warning there.
+    for answer in (adpkd, sarcoidosis):
         assert answer["approved"]
         assert not any("warning" in card for card in answer["approved"])
         assert KEY not in answer
@@ -452,7 +453,7 @@ def test_guard_a_card_with_only_a_grey_line_never_goes_in_the_box(huntington, he
     # The withdrawal line (ticket 2.31): octocog alfa, on haemophilia A's page.
     assert [card["id"] for card in hem_a["approved"]
             if card.get("withdrawal_note") == hem_a_files.LINE] == [hem_a_files.OCTOCOG]
-    assert KEY not in hem_a
+    assert hem_a[KEY] == ["CHEMBL5315075"]  # only Obizur's red warning (ticket 2.47)
     # No regulator record (ticket 2.17): collagenase, on sarcoidosis's page.
     assert [card["id"] for card in sarcoidosis["approved"]
             if card.get("proof_note") == hem_a_files.NO_REGULATOR_LINE] == [COLLAGENASE]

@@ -1,14 +1,16 @@
 """Ticket 2.47. Four cards from public feedback: avapritinib, imatinib,
 deferoxamine, Obizur.
 
-No list changed. The labels were read on 25 Nov 2026 (fixtures/labels_read/2.47/):
+One list change, decided by Kashish after the report: Obizur goes in corrections.json
+(card 4). The labels were read on 25 Nov 2026 (fixtures/labels_read/2.47/):
 
   1. avapritinib, systemic mastocytosis: already in approvals.json (23 Nov).
   2. imatinib, systemic mastocytosis: already in approvals.json, limited (23 Nov).
   3. deferoxamine, hemochromatosis: already in corrections.json (22 Nov, 2.19).
-  4. susoctocog alfa (Obizur), haemophilia A: the label does not say what the
-     ticket expected (it never says "not for congenital haemophilia A"), so
-     nothing is added and Kashish decides.
+  4. susoctocog alfa (Obizur), haemophilia A: the label never says "not for
+     congenital haemophilia A", but names only acquired haemophilia A. Kashish:
+     the rule is "no current label names the disease", so the red box. Added to
+     corrections.json with the standard note.
 
 One test per card on what the page answer shows, from the disease's own saved
 list (taken live on 2026-11-25) with the REAL approvals and corrections files.
@@ -127,7 +129,7 @@ def test_each_readme_quote_is_a_sentence_of_its_saved_label(medicine_id):
     cells = [c for c in readme_rows() if medicine_id in c[0]][0]
     assert cells[2] == sentence
     assert cells[3] == lines[0]
-    assert cells[1].startswith("none")  # no list changed
+    assert cells[1].startswith("none") == (medicine_id != OBIZUR)
 
 
 def test_the_mitem_deferoxamine_label_is_recorded_as_not_read():
@@ -184,15 +186,19 @@ def test_deferoxamine_is_in_the_red_box_for_hemochromatosis_and_the_card_is_kept
 
 # ---- card 4: Obizur ----
 
-def test_obizur_label_is_for_acquired_haemophilia_a_and_has_no_not_for_congenital_sentence():
+def test_obizur_label_names_only_acquired_haemophilia_a():
     text = (FOLDER / CARDS[OBIZUR][0]).read_text(encoding="utf-8")
     assert "adults with acquired hemophilia A" in text
     assert CARDS[OBIZUR][1] in text
-    assert "congenital" not in text.lower()  # the ticket expected such a sentence: it is not there
+    assert "congenital" not in text.lower()  # it names no other kind of haemophilia A
 
 
-def test_obizur_card_on_the_haemophilia_a_page_is_unchanged_by_this_ticket():
+def test_obizur_is_in_the_red_box_for_haemophilia_a_and_the_card_is_kept():
     page = tabs(HAEMOPHILIA_A)
-    obizur = card(page, OBIZUR)
-    assert obizur.id not in [m.id for m in engine.wrong_approvals_box(page.approved, HAEMOPHILIA_A)]
+    assert OBIZUR in [m.id for m in page.approved]  # the card is kept, not removed
+    assert OBIZUR in [m.id for m in engine.wrong_approvals_box(page.approved, HAEMOPHILIA_A)]
+    assert engine.warning_words(HAEMOPHILIA_A)[OBIZUR] == SECOND_NOTE
+    assert [e for e in load(CORRECTIONS_FILE) if e["medicine_id"] == OBIZUR] == [
+        {"medicine_id": OBIZUR, "disease_id": HAEMOPHILIA_A,
+         "date": "2026-11-25", "note": SECOND_NOTE}]
     assert OBIZUR not in {e["medicine_id"] for e in load(APPROVALS_FILE)}

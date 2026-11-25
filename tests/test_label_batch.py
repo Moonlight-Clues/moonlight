@@ -308,7 +308,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 101  # ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
+    assert len(entries) == 102  # ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
     assert entries[24:38] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
