@@ -657,7 +657,7 @@ function readTrials() {
     source: (card.querySelector('[data-slot="source"]') || {}).href || null,
     sourceShown: shownOnPage(card.querySelector('[data-slot="source"]')),
     noSourceShown: shownOnPage(card.querySelector('[data-part="no-source"]')),
-    buttons: card.querySelectorAll("button").length,
+    buttons: card.querySelectorAll("button:not(.report-link)").length,  // 3.3: the Report link is not an explain button
     explanation: card.querySelectorAll('[data-slot="explanation"]').length,
     ending: [...card.querySelectorAll('[data-slot="ending"]')].map(el => el.textContent),
     endingShown: shownOnPage(card.querySelector('[data-slot="ending"]')),
@@ -803,7 +803,7 @@ def test_browser_a_box_card_shows_the_medicine_its_stage_and_its_source(seen):
     assert colchicine["sourceShown"] and not colchicine["noSourceShown"]
     # Nothing else is written on the card.
     # Ticket 2.29: the sentence is once at the top of the box, not on the card.
-    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3"
+    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3 Report"  # 3.3: the Report link
 
 
 def test_browser_a_box_card_has_no_score_and_no_explain_button(seen):

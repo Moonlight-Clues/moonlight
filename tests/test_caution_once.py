@@ -242,10 +242,10 @@ def test_browser_no_card_inside_a_box_carries_the_sentence(seen, box):
 
 def test_browser_one_card_of_each_box_in_full(seen):
     colchicine = seen["example"]["tapped"]["oldBox"]["cards"][2]
-    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3"
+    assert colchicine["words"] == "Colchicine Forms: Colchicine Source record Phase 3 Report"  # 3.3: the Report link
     first_new = seen["example"]["tapped"]["newBox"]["cards"][0]
     assert first_new["words"] == (
-        f"{first_new['name']} Forms: {first_new['name']} Source record Phase 3")
+        f"{first_new['name']} Forms: {first_new['name']} Source record Phase 3 Report")  # 3.3: the Report link
 
 
 def test_browser_a_folded_box_keeps_the_sentence_folded_away_with_its_cards(seen):

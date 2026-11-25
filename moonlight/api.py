@@ -31,6 +31,9 @@
                                             only Japan's general list (ticket
                                             2.42). They are still in "approved"
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
+    POST /api/report                        a visitor's report about one card,
+                                            kept in Firestore by reports.py
+                                            (ticket 3.3)
 
 Run it with:  uvicorn moonlight.api:app
 
@@ -78,8 +81,15 @@ that number must change.
 The notepads live in this program's memory and nowhere else. An address
 is never printed, never written to a file and never sent to anyone, and
 it is forgotten once its minute has passed.
+
+Reports (ticket 3.3) have their own notepad, apart from the cost guard:
+MAX_REPORTS in REPORT_WINDOW_SECONDS for each visitor. The same address
+is the key, and the same holds: it is only a key in this program's
+memory, never kept with a report, never printed, never written down.
 """
 
+import datetime
+import os
 import pathlib
 import threading
 import time
@@ -90,9 +100,9 @@ from typing import Deque, Dict, Iterable, List, Optional, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 
-from moonlight import explain, protein, translate
+from moonlight import explain, protein, reports, translate
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -158,6 +168,22 @@ _visits: Dict[Tuple[str, str], Deque[float]] = {}
 _visits_lock = threading.Lock()
 _swept_at = 0.0  # when the old notepads were last thrown away
 
+# ---- the report counter (ticket 3.3) ----
+# Reports one visitor may send in REPORT_WINDOW_SECONDS. Its own notepads,
+# apart from the cost guard's, kept with the same lock.
+MAX_REPORTS = 5
+REPORT_WINDOW_SECONDS = 600
+REPORT_ID_LIMIT = 64  # disease_id and medicine_id
+REPORT_NAME_LIMIT = 200  # medicine_name
+# Where a card can be, as the page sends it: its tab, and its folded box
+# (None: the tab's own list). Anything else is refused, so no free words
+# reach the database except the note.
+REPORT_TABS = ("approved", "trials", "clues")
+REPORT_BOXES = (None, "narrower", "wider", "no_regulator", "wrong",
+                "more_in_trials", "new_in_trials", "opposite_way")
+# The address -> the times of its kept reports, oldest first.
+_reports_sent: Dict[str, Deque[float]] = {}
+
 
 def _now() -> float:
     """The cost guard's clock, in seconds. Tests replace this."""
@@ -165,11 +191,12 @@ def _now() -> float:
 
 
 def forget_visitors() -> None:
-    """Throw every notepad away."""
+    """Throw every notepad away, the reports' one too."""
     global _swept_at
     with _visits_lock:
         _visits.clear()
         _swept_at = 0.0
+        _reports_sent.clear()
 
 
 def visitors_remembered() -> int:
@@ -731,3 +758,115 @@ def explain_clue(request: Request, disease_id: str, clue_id: str) -> dict:
             _give_back(place)
     explain.remember(disease_id, clue_id, version, answer)
     return _explanation_json(clue_id, answer)
+
+
+# ---- reports (ticket 3.3) ----
+
+def _take_report_place(request: Request) -> Optional[_Place]:
+    """Write this report on the visitor's report notepad and say where,
+    or say None if MAX_REPORTS are already on it from the last
+    REPORT_WINDOW_SECONDS. Empty notepads are thrown away as it goes."""
+    now = _now()
+    oldest_kept = now - REPORT_WINDOW_SECONDS
+    key = _visitor(request)
+    with _visits_lock:
+        for old in [k for k, times in _reports_sent.items() if times[-1] <= oldest_kept]:
+            del _reports_sent[old]
+        times = _reports_sent.setdefault(key, deque())
+        while times and times[0] <= oldest_kept:
+            times.popleft()
+        if len(times) >= MAX_REPORTS:
+            return None
+        times.append(now)
+    return (("report", key), now)
+
+
+def _give_back_report(place: _Place) -> None:
+    """Rub a report off the notepad: it was not kept after all."""
+    (_lane, key), written = place
+    with _visits_lock:
+        times = _reports_sent.get(key)
+        if times is None:
+            return
+        try:
+            times.remove(written)
+        except ValueError:
+            return
+        if not times:
+            del _reports_sent[key]
+
+
+def _bad(why: str) -> HTTPException:
+    return HTTPException(status_code=400, detail=why)
+
+
+def _an_id(body: dict, name: str) -> str:
+    value = body.get(name)
+    if not isinstance(value, str) or not value.strip() or len(value) > REPORT_ID_LIMIT:
+        raise _bad("A report needs " + name + ", up to " + str(REPORT_ID_LIMIT) + " letters.")
+    return value
+
+
+def _release() -> Optional[str]:
+    """The Open Targets release the page was drawn from. It is remembered by
+    fetch.py, so this normally asks nothing. If it cannot be read, the
+    report is still kept, without it."""
+    try:
+        return data_version()
+    except (FetchError, requests.RequestException):
+        return None
+
+
+@app.post("/api/report")
+async def report(request: Request):
+    """One visitor's report about one card (ticket 3.3).
+
+    Nothing about the visitor is kept: no address, no browser, no cookie.
+    The address is only the key of the report counter, in memory.
+    """
+    try:
+        body = await request.json()
+    except ValueError:
+        raise _bad("A report is sent as JSON.") from None
+    if not isinstance(body, dict):
+        raise _bad("A report is sent as JSON.")
+    # The honeypot: a box people never see. Only a robot fills it in. It is
+    # told "thank you" and nothing is kept, so it learns nothing.
+    if body.get("website"):
+        return {"ok": True}
+    disease_id, medicine_id = _an_id(body, "disease_id"), _an_id(body, "medicine_id")
+    reason = body.get("reason")
+    if not isinstance(reason, str) or reason not in reports.REASONS:
+        raise _bad("A report needs one of the four reasons.")
+    name = body.get("medicine_name")
+    if not isinstance(name, str) or len(name) > REPORT_NAME_LIMIT:
+        raise _bad("A report needs the medicine's name.")
+    tab, box = body.get("tab"), body.get("box")
+    if tab not in REPORT_TABS or box not in REPORT_BOXES:
+        raise _bad("A report needs the card's tab and box.")
+    note = body.get("note")
+    if note is not None and not isinstance(note, str):
+        raise _bad("The note is words.")
+
+    place = _take_report_place(request)
+    if place is None:
+        raise HTTPException(status_code=429, detail=TOO_MANY)
+    doc = {
+        "disease_id": disease_id,
+        "medicine_id": medicine_id,
+        "medicine_name": name.strip(),
+        "tab": tab,
+        "box": box,
+        "reason": reason,
+        "note": reports.clean_note(note),
+        "created_at": datetime.datetime.now(datetime.timezone.utc),
+        "release": _release(),
+        "revision": os.environ.get("K_REVISION") or None,
+        "status": "new",
+    }
+    try:
+        reports.save_report(doc)
+    except reports.StoreUnavailable:
+        _give_back_report(place)  # not kept, so not counted
+        return JSONResponse(status_code=503, content={"detail": "Could not keep the report."})
+    return {"ok": True}

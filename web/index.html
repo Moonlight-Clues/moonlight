@@ -152,6 +152,23 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .card-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}
 .source-link{font-size:12px;font-weight:700}
 .phase{display:inline-flex;border-radius:6px;border:1px solid #CBD3DB;background:var(--neutral-bg);font-size:12px;padding:4px 8px;color:var(--neutral);font-weight:700}
+/* the Report link and its small panel, at the bottom of every card (ticket 3.3). Tap targets 44 px. */
+.report-row{margin-top:6px;font-size:12px;color:var(--muted)}
+.report-link{display:inline-flex;align-items:center;min-height:44px;padding:0 2px;border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.report-panel{margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--slate)}
+.report-panel fieldset{border:0;margin:0;padding:0}
+.report-choice{display:flex;align-items:center;gap:10px;min-height:44px;color:var(--navy);cursor:pointer}
+.report-choice input{width:20px;height:20px;margin:0;flex:none}
+.report-panel textarea{display:block;width:100%;box-sizing:border-box;margin-top:6px;padding:8px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:13px;resize:vertical}
+.report-privacy{margin:6px 0 0;color:var(--muted)}
+.report-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.report-buttons{display:flex;gap:8px;margin-top:8px}
+.report-buttons button{min-height:44px;padding:0 16px;border-radius:9px;font-size:13px;font-weight:700}
+.report-send{border:1px solid var(--teal);background:var(--teal);color:#fff}
+.report-send:disabled{opacity:.5;cursor:default}
+.report-cancel{border:1px solid #A9CACB;background:#fff;color:#287D7C}
+.report-problem,.report-thanks{margin:8px 0 0}
+@media print{.report-row{display:none!important}}
 
 /* being studied box and left-out counts */
 .studied{background:#E9EEF2;border:1px solid #D0DBE2;border-radius:16px;padding:18px 14px}
@@ -668,6 +685,35 @@ body.registering>:not(.register){display:none!important}
   </article>
 </template>
 
+<!-- Ticket 3.3. The Report link, put at the bottom of every card on the screen when the
+     results are drawn (never on the register). Tapping it puts report-template inside it. -->
+<template id="report-row-template">
+  <div class="report-row" data-slot="report">
+    <button type="button" class="report-link" data-part="report-open">Report</button>
+    <p class="report-thanks" data-part="report-thanks" role="status" hidden></p>
+  </div>
+</template>
+
+<!-- Ticket 3.3. The small panel inside a card. Its grey line is written by the script, from REPORT_PRIVACY. -->
+<template id="report-template">
+  <form class="report-panel" data-part="report-panel" novalidate>
+    <fieldset aria-label="What looks wrong?">
+      <label class="report-choice"><input type="radio" value="wrong_disease">Wrong disease</label>
+      <label class="report-choice"><input type="radio" value="not_approved">Not approved</label>
+      <label class="report-choice"><input type="radio" value="wrong_link">Wrong link</label>
+      <label class="report-choice"><input type="radio" value="other">Something else</label>
+    </fieldset>
+    <textarea maxlength="200" rows="2" placeholder="Anything else? (optional)" aria-label="Anything else? (optional)"></textarea>
+    <p class="report-privacy fine" data-part="report-privacy"></p>
+    <div class="report-trap" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+    <div class="report-buttons">
+      <button type="submit" class="report-send" data-part="report-send" disabled>Send</button>
+      <button type="button" class="report-cancel" data-part="report-cancel">Cancel</button>
+    </div>
+    <p class="report-problem fine" data-part="report-problem" role="alert" hidden></p>
+  </form>
+</template>
+
 <template id="protein-template">
   <div class="protein-row" data-slot="protein">
     <span class="protein-id"></span>
@@ -729,6 +775,12 @@ body.registering>:not(.register){display:none!important}
     const kinds = (protein.evidence || []).filter(kind => Object.hasOwn(EVIDENCE_NAMES, kind));
     return kinds.length ? EVIDENCE_START + kinds.map(kind => EVIDENCE_NAMES[kind]).join(", ") + "." : "";
   };
+
+  // Ticket 3.3. The Report panel's words. Shreshth checks REPORT_PRIVACY: change it here, and only here.
+  const REPORT_PRIVACY = "No names or health details, please. We store nothing about you.";
+  const REPORT_THANKS = "Thank you. We read every report.";
+  const REPORT_FAILED = "Couldn't send. Please try again later.";
+  let reportPanels = 0;  // each panel's four choices get a name of their own
 
   async function ask(path, params) {
     const answer = await fetch(path + "?" + new URLSearchParams(params));
@@ -1041,6 +1093,26 @@ body.registering>:not(.register){display:none!important}
       clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
+    // Ticket 3.3. A Report link at the bottom of every card, saying which tab and box the card is in.
+    // Each card is matched to the medicine it was drawn from by its place in its own list.
+    const drawnFrom = new Map();
+    const pair = (cards, items) => cards.forEach((el, place) => drawnFrom.set(el, items[place]));
+    pair(allApprovedCards, data.approved);
+    pair(narrowerCards, data.narrower || []);
+    pair(widerCards, data.wider_group || []);
+    pair(newCards, data.new_clues);
+    pair(studiedCards, data.being_studied);
+    pair(moreTrialsCards, data.more_in_trials || []);
+    pair(newTrialsCards, data.new_in_trials || []);
+    const piles = [[approvedCards, "approved", null], [narrowerCards, "approved", "narrower"],
+      [widerCards, "approved", "wider"], [noRegulatorCards, "approved", "no_regulator"],
+      [wrongCards, "approved", "wrong"], [studiedCards, "trials", null],
+      [moreTrialsCards, "trials", "more_in_trials"], [newTrialsCards, "trials", "new_in_trials"],
+      [aboveCards, "clues", null], [oppositeCards, "clues", "opposite_way"]];
+    for (const [cards, tab, box] of piles)
+      for (const el of cards) addReport(el, {disease_id: disease.id, medicine_id: drawnFrom.get(el).id,
+                                            medicine_name: drawnFrom.get(el).medicine, tab, box});
+
     byId("count-not-approved").textContent = data.left_out.not_approved;
     byId("count-unclear-link").textContent = data.left_out.unclear_link;
 
@@ -1057,6 +1129,69 @@ body.registering>:not(.register){display:none!important}
       [byId("no-regulator-box"), notWrong.filter(medicine => noRegulatorIds.has(medicine.id))],
       [byId("wrong-box"), data.approved.filter(medicine => wrongIds.has(medicine.id))]]};
     byId("print-page").hidden = false;
+  }
+
+  /* Ticket 3.3. The Report link at the bottom of one card. Tapping it opens a small
+     panel inside the card: four reasons (one must be picked), a short note, Send and
+     Cancel. Nothing pops up. The card's facts come from "about"; nothing about the
+     visitor is sent. The panel is made the first time it is opened. */
+  function addReport(el, about) {
+    const row = copyOf("report-row-template");
+    const open = part(row, "report-open"), thanks = part(row, "report-thanks");
+    let panel = null;
+    open.addEventListener("click", () => {
+      if (!panel) panel = reportPanel(row, about, () => {
+        panel.hidden = true;
+        thanks.textContent = REPORT_THANKS;
+        thanks.hidden = false;
+      }, () => {
+        panel.hidden = true;
+        open.hidden = false;
+        open.focus();
+      });
+      panel.hidden = false;
+      open.hidden = true;
+      panel.querySelector("input").focus();
+    });
+    el.append(row);
+  }
+
+  function reportPanel(row, about, sent, cancelled) {
+    const panel = copyOf("report-template"), name = "report-reason-" + (++reportPanels);
+    const send = part(panel, "report-send"), problem = part(panel, "report-problem");
+    const note = panel.querySelector("textarea"), trap = panel.querySelector('input[name="website"]');
+    const choices = [...panel.querySelectorAll('input[type="radio"]')];
+    part(panel, "report-privacy").textContent = REPORT_PRIVACY;
+    for (const choice of choices) {
+      choice.name = name;
+      choice.addEventListener("change", () => { send.disabled = false; });
+    }
+    part(panel, "report-cancel").addEventListener("click", () => {
+      panel.reset();
+      send.disabled = true;
+      problem.hidden = true;
+      cancelled();
+    });
+    panel.addEventListener("submit", async event => {
+      event.preventDefault();
+      const picked = choices.find(choice => choice.checked);
+      if (!picked) return;
+      send.disabled = true;
+      problem.hidden = true;
+      try {
+        const answer = await fetch("/api/report", {
+          method: "POST", headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(Object.assign({}, about, {reason: picked.value, note: note.value.trim(), website: trap.value}))});
+        if (!answer.ok) throw new Error("status " + answer.status);
+        sent();
+      } catch (failed) {
+        problem.textContent = REPORT_FAILED;
+        problem.hidden = false;
+        send.disabled = false;
+      }
+    });
+    row.insertBefore(panel, part(row, "report-thanks"));
+    return panel;
   }
 
   /* A folded box says how to work it: "Tap to open" while closed, "Tap to close" while open. */

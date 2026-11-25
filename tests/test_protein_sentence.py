@@ -868,4 +868,5 @@ def test_browser_b_example_the_first_card_reads_like_this_top_to_bottom(seen):
         DIRECTION_LINE,
         ENDING,
         "Source record",
+        "Report",  # ticket 3.3: the Report link, last on every card
     ]
