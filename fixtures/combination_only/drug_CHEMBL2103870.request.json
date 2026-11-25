@@ -1,0 +1,6 @@
+{
+  "query": "\nquery DrugRecord($chemblId: String!) {\n  drug(chemblId: $chemblId) { id name maximumClinicalStage }\n}\n",
+  "variables": {
+    "chemblId": "CHEMBL2103870"
+  }
+}

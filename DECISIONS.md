@@ -101,3 +101,4 @@ Format: date, the decision, why.
 - 2026-11-25: Q21. The old test fix is accepted. (Kashish, signed 25 Nov.)
 - 2026-11-25: Q22. A combination pill's label does not count for one of its parts. Simvastatin on type 2 diabetes gets the red warning "This looks like a mistake in the database. The official label is for a different disease." (Kashish, signed 25 Nov. Ticket 2.54.)
 - 2026-11-25: Misoprostol on duodenal ulcer gets the same red warning. Its Cytotec label is for stomach ulcers from NSAIDs, and the only other label is a combination. (Label read by MAIN 4. Ticket 2.54, item 10b.)
+- 2026-11-25: Q22 exception (Q6): a combination’s label counts for a medicine on combination_only.json. Decided 25 Nov by Shreshth with Kashish’s counsel.
