@@ -69,8 +69,10 @@ def without_entry():
 
 def test_the_file_holds_the_one_entry():
     # Ticket 2.54, signed answer Q14: Relyvrio on ALS (CHEMBL1469) is the second entry.
+    # Ticket 2.57 (approved 25 Nov, Shreshth): aducanumab on Alzheimer disease is the
+    # third and last entry; tests/test_aducanumab_2_57.py holds it.
     assert json.loads(FILE.read_text(encoding="utf-8"))[0] == ENTRY
-    assert len(json.loads(FILE.read_text(encoding="utf-8"))) == 2
+    assert len(json.loads(FILE.read_text(encoding="utf-8"))) == 3
     assert engine.withdrawals_by_hand()[0] == engine.HandWithdrawal(
         ROCTAVIAN, HAEMOPHILIA_A, BIOMARIN)
 
