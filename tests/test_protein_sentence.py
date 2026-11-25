@@ -33,7 +33,7 @@ from unittest.mock import patch
 import pytest
 from fastapi.testclient import TestClient
 
-from moonlight import api, fetch
+from moonlight import api, engine, fetch
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
@@ -117,7 +117,12 @@ def page_answer(disease_id):
     for guard in guards:
         guard.start()
     try:
-        with patch("moonlight.fetch._post_json", side_effect=saved_post_json):
+        # Ticket 2.54, signed answer Q5: ipilimumab, thyrotropin and thyrotropin alfa are now left
+        # out of the Graves page. This ticket's example shows its first card, so put them back.
+        hand_list = [entry for entry in engine._read_left_out()
+                     if not (entry["disease_id"] == GRAVES and entry["date"] == "2026-11-25")]
+        with patch("moonlight.fetch._post_json", side_effect=saved_post_json), \
+                patch("moonlight.engine._read_left_out", return_value=hand_list):
             response = TestClient(api.app).get("/api/clues", params={"disease_id": disease_id})
     finally:
         for guard in guards:
@@ -520,7 +525,8 @@ def test_decisions_md_ends_with_the_two_new_lines():
     # where they are, and everything after them is dated later.
     end = next(number for number, line in enumerate(lines)
                if line.startswith("- 2026-11-23: A clue card shows one sentence")) + 1
-    assert all(line.startswith("- 2026-11-24") for line in lines[end:])
+    # Ticket 2.54 added lines dated 25 Nov (the signed answers of the sheet of 25 Nov).
+    assert all(line.startswith(("- 2026-11-24", "- 2026-11-25")) for line in lines[end:])
     lines = lines[:end]
     assert lines[-2] == (
         "- 2026-11-23: A medicine whose official label covers only some people with the "

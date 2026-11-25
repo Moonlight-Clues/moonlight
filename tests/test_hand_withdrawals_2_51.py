@@ -68,9 +68,11 @@ def without_entry():
 # ---- the list ----
 
 def test_the_file_holds_the_one_entry():
-    assert json.loads(FILE.read_text(encoding="utf-8")) == [ENTRY]
-    assert engine.withdrawals_by_hand() == [
-        engine.HandWithdrawal(ROCTAVIAN, HAEMOPHILIA_A, BIOMARIN)]
+    # Ticket 2.54, signed answer Q14: Relyvrio on ALS (CHEMBL1469) is the second entry.
+    assert json.loads(FILE.read_text(encoding="utf-8"))[0] == ENTRY
+    assert len(json.loads(FILE.read_text(encoding="utf-8"))) == 2
+    assert engine.withdrawals_by_hand()[0] == engine.HandWithdrawal(
+        ROCTAVIAN, HAEMOPHILIA_A, BIOMARIN)
 
 
 def test_the_source_is_the_link_written_in_the_2_50_readme():

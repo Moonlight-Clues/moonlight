@@ -308,7 +308,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 109  # ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
+    assert len(entries) == 111  # Ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
     assert entries[24:38] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
@@ -338,7 +338,9 @@ def test_no_pair_is_written_twice():
                        # ticket 2.52: biotin, cyanocobalamin, folic acid, omega-3-acid
                        # ethyl esters, pyridoxine, tyrosine
                        "CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711",
-                       "CHEMBL1364", "CHEMBL925"}),
+                       "CHEMBL1364", "CHEMBL925",
+                       # Ticket 2.54, signed answer Q22: simvastatin
+                       "CHEMBL1064"}),
 ])
 def test_the_engine_gives_each_page_the_red_words_for_its_cards_only(disease_id, ids):
     assert engine.looks_wrong(disease_id) == ids
@@ -380,7 +382,7 @@ def test_each_card_now_shows_the_red_words_and_sits_in_the_folded_box(card):
 def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
     # Ticket 2.39 marked valbenazine (entry 8) "limited".
     assert load(APPROVALS_FILE)[:21] == third_batch.as_written_now(FIRST_FIFTEEN) + PART_B
-    assert len(load(APPROVALS_FILE)) == 29  # 2.34b added avatrombopag after these, 2.46 seven more
+    assert len(load(APPROVALS_FILE)) == 31  # Ticket 2.54, signed answers Q2 and Q13: hydrocortisone, primidone; 2.34b added avatrombopag after these, 2.46 seven more
 
 
 def test_two_new_entries_are_limited_and_four_are_not():
@@ -484,9 +486,10 @@ def test_each_new_entry_is_handed_only_to_its_own_disease():
 # ---- STOP AND ASK: hydrocortisone for Addison disease waits ----
 
 def test_hydrocortisone_has_no_entry():
-    for entry in load(APPROVALS_FILE):
-        assert entry["medicine_id"] != HYDROCORTISONE
-        assert entry["disease_id"] not in ADDISON_PAGES
+    # Ticket 2.54, signed answer Q2: Kashish's A adds hydrocortisone for
+    # MONDO_0015129 only. The other page that fits (MONDO_0015128) still has none.
+    entries = [e for e in load(APPROVALS_FILE) if e["medicine_id"] == HYDROCORTISONE]
+    assert [e["disease_id"] for e in entries] == ["MONDO_0015129"]
 
 
 @pytest.mark.parametrize("disease_id", ADDISON_PAGES)

@@ -80,8 +80,9 @@ RED_2_45 = {
     "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
     # Ticket 2.52 put the red warning on six cards of type 2 diabetes (biotin,
     # cyanocobalamin, folic acid, omega-3-acid ethyl esters, pyridoxine, tyrosine).
+    # Ticket 2.54, signed answer Q22, put it on simvastatin (CHEMBL1064) too.
     T2D: {"CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711", "CHEMBL1364",
-          "CHEMBL925"},
+          "CHEMBL925", "CHEMBL1064"},
 }
 # Ticket 2.48 set the Source record of this card (moonlight/confirmed.json):
 # card id -> (the link the saved page shows, the label it shows now).
@@ -99,6 +100,10 @@ SOURCE_2_48 = {
         "CHEMBL2048484": (
             "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6868666b-c25e-40d1-9d1f-306bbe9390c1",
             "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3"),
+        # Ticket 2.54, item 12: ertugliflozin (Steglujan -> Steglatro).
+        "CHEMBL1770248": (
+            "https://ttd.idrblab.cn/data/drug/details/D0Q3VE",
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6f3e718-bb99-48f1-ab94-b9f0af05fed6"),
     },
 }
 BACK = {}
@@ -409,8 +414,10 @@ def test_engine_a_hand_added_approval_is_never_added_for_a_flagged_medicine():
 
 def test_decisions_md_has_her_answer():
     lines = (ROOT / "DECISIONS.md").read_text(encoding="utf-8").rstrip("\n").split("\n")
-    assert lines[-1].startswith("- 2026-11-24: ")
-    assert "regulator" in lines[-1] and LINE in lines[-1]
+    # Ticket 2.54 added dated lines after hers (13), so find hers by its words.
+    (hers,) = [line for line in lines if line.startswith("- 2026-11-24: ")
+               and "regulator" in line and LINE in line]
+    assert hers
 
 
 def test_claude_md_rule_says_the_exception():

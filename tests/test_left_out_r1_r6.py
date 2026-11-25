@@ -64,6 +64,13 @@ NEW = {
         "CHEMBL4650432",  # "Zirconium ZR-89-DESFERRIOXAMINE-IAB22M2C"
     ],
 }
+# Ticket 2.54 (signed answers Q5 and Q20) left more out of these pages later, on 2026-11-25:
+# the prostate page's testosterone propionate and methyltestosterone, and the Graves
+# page's thyrotropin, thyrotropin alfa and ipilimumab. (Terlipressin is on another page.)
+LATER_2_54 = {
+    PROSTATE: ["CHEMBL1170", "CHEMBL1395"],
+    GRAVES: ["CHEMBL1201532", "CHEMBL1201533", "CHEMBL1789844"],
+}
 NEW_ENTRIES = [{"medicine_id": medicine_id, "disease_id": disease_id, "date": THE_DAY}
                for disease_id, ids in NEW.items() for medicine_id in ids]
 
@@ -152,8 +159,8 @@ def shown(answer, tabs):
 
 def test_the_file_holds_the_37_old_entries_then_the_new_ones():
     entries = load(LEFT_OUT_FILE)
-    assert len(entries) == 37 + 16
-    assert entries[37:] == NEW_ENTRIES
+    assert len(entries) == 37 + 16 + 6  # Ticket 2.54: six more, see LATER_2_54
+    assert entries[37:53] == NEW_ENTRIES
     assert all(entry["date"] < THE_DAY for entry in entries[:37])
 
 
@@ -165,9 +172,9 @@ def test_no_pair_is_written_twice():
 def test_the_engine_reads_each_pages_new_entries():
     assert engine.pushes_wrong_way(HAEMOPHILIA_A) == set(NEW[HAEMOPHILIA_A])
     assert engine.pushes_wrong_way(ADDISON) == ADDISON_ALREADY | set(NEW[ADDISON])
-    assert engine.pushes_wrong_way(PROSTATE) == set(NEW[PROSTATE])
+    assert engine.pushes_wrong_way(PROSTATE) == set(NEW[PROSTATE]) | set(LATER_2_54[PROSTATE])
     assert engine.pushes_wrong_way(SPINAL_CORD) == set()
-    assert engine.pushes_wrong_way(GRAVES) == set()
+    assert engine.pushes_wrong_way(GRAVES) == set(LATER_2_54[GRAVES])
 
 
 # ---- every entry is a card that was a new clue or in a trials box ----
@@ -231,16 +238,18 @@ def test_now_they_are_gone_from_new_clues_and_both_trials_boxes(disease_id):
 def test_every_other_card_stays_in_its_order(disease_id):
     cards = saved(disease_id)
     answer = page(disease_id)
+    gone = set(NEW[disease_id]) | set(LATER_2_54.get(disease_id, []))  # Ticket 2.54, Q5
     for tab in CLUE_TABS + TRIAL_BOXES:
-        expected = [i for i in ids(cards, (tab,)) if i not in NEW[disease_id]]
+        expected = [i for i in ids(cards, (tab,)) if i not in gone]
         assert sorted(shown(answer, (tab,))) == sorted(expected)
     for tab in TRIAL_BOXES:  # the boxes keep their order
-        assert shown(answer, (tab,)) == [i for i in ids(cards, (tab,))
-                                          if i not in NEW[disease_id]]
+        assert shown(answer, (tab,)) == [i for i in ids(cards, (tab,)) if i not in gone]
 
 
+# Ticket 2.54, signed answer Q5: the prostate page now has two more taken out
+# (testosterone propionate and methyltestosterone, both new clues), so 2, not 0.
 @pytest.mark.parametrize("disease_id, count", [(HAEMOPHILIA_A, 10), (ADDISON, 1),
-                                               (PROSTATE, 0)])
+                                               (PROSTATE, 2)])
 def test_the_wrong_way_line_counts_only_the_new_clues_taken_out(disease_id, count):
     """The line counts new clues only. Mifepristone is the one new clue on
     the saved Addison's page; the four of 19 Nov were already off it."""
@@ -256,8 +265,10 @@ def test_the_wrong_way_line_counts_only_the_new_clues_taken_out(disease_id, coun
 def test_spinal_cord_injury_and_graves_disease_pages_are_unchanged(disease_id):
     cards = saved(disease_id)
     answer = page(disease_id)
+    gone = set(LATER_2_54.get(disease_id, []))  # Ticket 2.54, signed answer Q5: Graves
     for tab in CLUE_TABS + TRIAL_BOXES:
-        assert sorted(shown(answer, (tab,))) == sorted(ids(cards, (tab,)))
+        assert sorted(shown(answer, (tab,))) == sorted(
+            i for i in ids(cards, (tab,)) if i not in gone)
 
 
 def test_the_same_medicines_stay_on_other_pages():

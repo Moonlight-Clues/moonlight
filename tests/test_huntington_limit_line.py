@@ -68,6 +68,17 @@ def huntington():
     return box_tests.page_answer(HUNTINGTON, box_tests.huntington_files.saved_post_json)
 
 
+XENAZINE_LABEL = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
+                  "?setid=ac768bab-8afa-4446-bc7f-caeeffec0cda")
+
+
+def back_to_limits_label(cards):
+    """Ticket 2.54, signed answer Q3 (item 12): confirmed.json now sends the tetrabenazine
+    card's Source record to XENAZINE. Put the old link back, as it was on main before."""
+    return [dict(card, source=TETRABENAZINE_LABEL) if card.get("id") == TETRABENAZINE
+            else card for card in cards]
+
+
 def without_line(cards):
     return [{key: value for key, value in card.items() if key != KEY} for card in cards]
 
@@ -105,7 +116,9 @@ def test_part_b_the_list_holds_exactly_the_one_entry():
 def test_part_b_the_entry_link_is_the_cards_own_source_link(huntington):
     # STOP AND ASK 1: the link must be the card's own source, as saved.
     card = {card["id"]: card for card in huntington["approved"]}[TETRABENAZINE]
-    assert card["source"] == TETRABENAZINE_LABEL == TETRABENAZINE_ENTRY["label"]
+    # Ticket 2.54, signed answer Q3 (item 12): the Source record is now XENAZINE's label
+    # (confirmed.json), not the limits label below it.
+    assert card["source"] == XENAZINE_LABEL != TETRABENAZINE_ENTRY["label"]
 
 
 def read_limits(entries, approvals=None):
@@ -281,10 +294,10 @@ def test_example_no_other_card_on_the_page_carries_the_line(huntington):
 def test_example_the_two_cards_change_only_by_the_line(huntington):
     # Without the new key, the Approved list is letter for letter what main
     # sent before this ticket: same cards, same places, same sources and lines.
-    assert box_tests.fingerprint(without_line(huntington["approved"])) == \
+    assert box_tests.fingerprint(without_line(back_to_limits_label(huntington["approved"]))) == \
         box_tests.MAIN_SENT[HUNTINGTON]["approved"]
     cards = {card["id"]: card for card in huntington["approved"]}
-    assert cards[TETRABENAZINE]["source"] == TETRABENAZINE_LABEL
+    assert cards[TETRABENAZINE]["source"] == XENAZINE_LABEL  # Ticket 2.54, signed answer Q3
     assert "proof_note" not in cards[TETRABENAZINE]
     assert cards[VALBENAZINE]["source"] == VALBENAZINE_LABEL
     assert cards[VALBENAZINE]["proof_note"] == box_tests.VALBENAZINE_LINE

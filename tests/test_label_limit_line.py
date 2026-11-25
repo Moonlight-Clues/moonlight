@@ -449,7 +449,9 @@ def test_the_line_on_the_page_is_the_engines():
 def test_guard_the_other_saved_pages_are_as_they_were_and_have_no_such_line(disease_id):
     """Essential tremor and AL amyloidosis: whole saved pages with a
     hand-added card each. Not one letter moves."""
-    new = page(disease_id)
+    # Ticket 2.54, signed answer Q13: primidone is left off essential tremor here, so the
+    # page is the one this test knew.
+    new = page(disease_id, [e for e in load(APPROVALS_FILE) if e["medicine_id"] != "CHEMBL856"])
     assert new == page(disease_id, FIRST_EIGHT)
     assert cards_with_the_key(new) == []
     assert LINE not in json.dumps(new)

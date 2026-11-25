@@ -298,7 +298,7 @@ def test_the_ticket_cards_are_all_accounted_for():
 
 def test_the_file_holds_the_old_39_unchanged_then_the_62_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 109  # ticket 2.52 added seven after Obizur
+    assert len(entries) == 111  # Ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
     assert hashlib.sha256(json.dumps(entries[:39], sort_keys=True).encode()).hexdigest() == \
         OLD_39_SHA256
     # Ticket 2.47 added one more at the end (Obizur, Kashish's decision).
@@ -322,7 +322,8 @@ def test_no_pair_is_written_twice_and_none_clashes_with_another_list():
 def test_the_other_files_the_ticket_names_are_not_part_of_this_change():
     # Ticket 2.46 added entries dated 2026-11-25 to the approvals file after this one.
     before_2_46 = [e for e in load(APPROVALS_FILE) if e["date"] != THE_DAY]
-    assert len(before_2_46) == 22 and len(load(LEFT_OUT_FILE)) == 53
+    # Ticket 2.54 (signed answers Q5, Q20) added six left-out entries: 53 + 6.
+    assert len(before_2_46) == 22 and len(load(LEFT_OUT_FILE)) == 59
 
 
 # ---- the pages: the new red cards are in the red box ----

@@ -307,8 +307,9 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # added one more, the same day, with the second note: prasterone.
     # Ticket 2.45 added 62, dated 2026-11-25, with the second note.
     # Ticket 2.52 added seven, dated 2026-11-25, with the second note.
-    assert len(entries) == 109
-    assert len(engine.corrections()) == 109
+    # Ticket 2.54, signed answers Q22 and 10b: simvastatin and misoprostol, dated 2026-11-25.
+    assert len(entries) == 111
+    assert len(engine.corrections()) == 111
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)

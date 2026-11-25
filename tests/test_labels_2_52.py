@@ -396,9 +396,15 @@ def test_both_labels_are_in_dailymeds_current_list_and_not_in_the_corrections_fi
 # ---- card 10: simvastatin, nothing changed ----
 
 def test_simvastatin_is_in_no_list_and_still_shows_juvisync():
-    assert SIMVASTATIN not in {e["medicine_id"] for e in load(CORRECTIONS_FILE)}
+    # Ticket 2.54, signed answer Q22: simvastatin is now on corrections.json (red),
+    # because a combination pill's label does not count for one of its parts.
+    # Still true: it is in no confirmed list and still shows the Juvisync link.
+    assert [e["disease_id"] for e in load(CORRECTIONS_FILE)
+            if e["medicine_id"] == SIMVASTATIN] == [T2D]
     assert SIMVASTATIN not in {e["medicine_id"] for e in load(CONFIRMED_FILE)}
-    _, main, grey, red = approved_tab(T2D)
+    with patch.object(engine, "_read_corrections", return_value=[
+            e for e in load(CORRECTIONS_FILE) if e["medicine_id"] != SIMVASTATIN]):
+        _, main, grey, red = approved_tab(T2D)
     found = the_card(main, SIMVASTATIN)
     assert found.source_record == JUVISYNC
     assert SIMVASTATIN not in grey and SIMVASTATIN not in red

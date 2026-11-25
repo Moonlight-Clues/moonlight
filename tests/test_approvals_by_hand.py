@@ -58,6 +58,7 @@ GRAVES = "MONDO_0005364"
 PROPRANOLOL = "CHEMBL27"
 METHIMAZOLE = "CHEMBL1515"
 PROPYLTHIOURACIL = "CHEMBL1518"  # ticket 2.33 added it to the Graves disease page
+PRIMIDONE = "CHEMBL856"  # ticket 2.54 (signed answer Q13) added it to essential tremor
 PROPRANOLOL_LABEL = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
                      "?setid=013a485a-4227-46ae-b19f-c550302fcb96")
 METHIMAZOLE_LABEL = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
@@ -195,6 +196,13 @@ def page(disease_id):
     return response.json()
 
 
+def without_primidone():
+    """Ticket 2.54, signed answer Q13. The real approvals file, less primidone
+    for essential tremor, so the page is as the tests below knew it."""
+    return patch.object(engine, "_read_approvals", return_value=[
+        entry for entry in load(APPROVALS_FILE) if entry["medicine_id"] != PRIMIDONE])
+
+
 def before(disease_id):
     """What main answered for this page before the ticket, from the same saved answers."""
     return load(SAVED / f"clues_before_2.26_{disease_id}.json")
@@ -309,7 +317,9 @@ def test_an_empty_file_adds_nothing():
 # ---- "An entry works only for the disease written on it." ----
 
 def test_an_entry_is_handed_only_to_its_own_disease():
-    assert [entry.medicine_id for entry in engine.added_by_hand(ESSENTIAL_TREMOR)] == [PROPRANOLOL]
+    # Ticket 2.54, signed answer Q13: primidone is the second entry for essential tremor.
+    assert [entry.medicine_id for entry in engine.added_by_hand(ESSENTIAL_TREMOR)] == [
+        PROPRANOLOL, PRIMIDONE]
     assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [
         METHIMAZOLE, PROPYLTHIOURACIL]  # ticket 2.33 added the second
     assert engine.added_by_hand("MONDO_0005395") == []  # movement disorder, the wider group
@@ -321,7 +331,8 @@ def test_on_the_other_saved_page_neither_medicine_is_added():
     assert not cards_naming(page(ESSENTIAL_TREMOR), "methimazole")
     # Ticket 2.33 added propylthiouracil to the Graves disease page.
     for a_page, own in ((page(GRAVES), [METHIMAZOLE, PROPYLTHIOURACIL]),
-                        (page(ESSENTIAL_TREMOR), [PROPRANOLOL])):
+                        # Ticket 2.54, signed answer Q13: primidone, A to Z before propranolol.
+                        (page(ESSENTIAL_TREMOR), [PRIMIDONE, PROPRANOLOL])):
         with_line = [card["id"] for _, card in cards_naming(a_page, LINE.lower())]
         assert with_line == own
 
@@ -336,13 +347,17 @@ def test_before_essential_tremor_had_no_approved_medicine_and_no_propranolol_car
 
 
 def test_propranolol_is_the_approved_list_of_essential_tremor():
-    assert page(ESSENTIAL_TREMOR)["approved"] == [PROPRANOLOL_CARD]
+    # Ticket 2.54, signed answer Q13: primidone's card is on this list too.
+    approved = page(ESSENTIAL_TREMOR)["approved"]
+    assert [card["id"] for card in approved] == [PRIMIDONE, PROPRANOLOL]
+    assert approved[1] == PROPRANOLOL_CARD
 
 
 def test_nothing_else_on_the_essential_tremor_page_changes():
     expected = copy.deepcopy(before(ESSENTIAL_TREMOR))
     expected["approved"] = [PROPRANOLOL_CARD]
-    assert back_to_before(page(ESSENTIAL_TREMOR)) == expected
+    with without_primidone():  # Ticket 2.54, signed answer Q13
+        assert back_to_before(page(ESSENTIAL_TREMOR)) == expected
 
 
 # ---- the EXAMPLE, page 2: methimazole for Graves disease ----
@@ -386,6 +401,12 @@ def test_nothing_else_on_the_graves_page_changes():
     # regulator record" line, are named for the new folded box. They are
     # still in "approved", as before.
     expected["no_regulator_box"] = ["CHEMBL1201243", "CHEMBL1743079"]
+    # Ticket 2.54, signed answer Q5: thyrotropin, thyrotropin alfa and ipilimumab
+    # are left out of New clues, and the wrong-way line counts them.
+    expected["new_clues"] = [card for card in expected["new_clues"]
+                             if card["id"] not in ("CHEMBL1201532", "CHEMBL1201533",
+                                                   "CHEMBL1789844")]
+    expected["wrong_way_line"] = engine.wrong_way_line(3)
     assert new == expected
 
 
@@ -552,10 +573,13 @@ def test_a_medicine_on_the_corrections_list_for_this_disease_is_not_added():
     wrong = [{"medicine_id": PROPRANOLOL, "disease_id": ESSENTIAL_TREMOR, "date": THE_DAY,
               "note": engine.CORRECTION_NOTE}]
     with patch.object(engine, "_read_corrections", return_value=wrong):
-        assert engine.added_by_hand(ESSENTIAL_TREMOR) == []
+        # Ticket 2.54, signed answer Q13: primidone is still added; propranolol is not.
+        assert [entry.medicine_id for entry in engine.added_by_hand(ESSENTIAL_TREMOR)] == [
+            PRIMIDONE]
         assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [
             METHIMAZOLE, PROPYLTHIOURACIL]  # ticket 2.33 added the second
-        new = back_to_before(page(ESSENTIAL_TREMOR))
+        with without_primidone():
+            new = back_to_before(page(ESSENTIAL_TREMOR))
     assert new == before(ESSENTIAL_TREMOR)  # the page is as it was before the ticket
 
 
@@ -564,7 +588,7 @@ def test_a_correction_for_another_disease_does_not_stop_the_entry():
               "note": engine.CORRECTION_NOTE}]
     with patch.object(engine, "_read_corrections", return_value=wrong):
         assert [entry.medicine_id for entry in engine.added_by_hand(ESSENTIAL_TREMOR)] == [
-            PROPRANOLOL]
+            PROPRANOLOL, PRIMIDONE]  # Ticket 2.54, signed answer Q13
 
 
 def test_an_approval_the_database_already_records_keeps_its_own_card():
