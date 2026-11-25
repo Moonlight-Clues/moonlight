@@ -146,8 +146,6 @@ NOT_ADDED = [
     ('Ezetimibe', 'CHEMBL1138', 'MONDO_0005311'),
     ('Progesterone', 'CHEMBL103', 'MONDO_0006096'),
     ('Faricimab', 'CHEMBL4297750', 'MONDO_0007935'),
-    ('Amlodipine', 'CHEMBL1491', 'MONDO_0005252'),
-    ('Conivaptan', 'CHEMBL1755', 'MONDO_0005252'),
     ('Hydrochlorothiazide', 'CHEMBL435', 'MONDO_0005252'),
     ('Icosapent Ethyl', 'CHEMBL2095209', 'MONDO_0002525'),
     ('Amlodipine', 'CHEMBL1491', 'MONDO_0005068'),
@@ -160,6 +158,13 @@ NOT_ADDED = [
 # here (study P12: no US label at all), now has its own entry with the third
 # note. tests/test_red_note_2_55.py holds it.
 DICUMAROL = ("Dicumarol", "CHEMBL1466", "MONDO_0010602")
+# Ticket 2.56, rule Q22 (a label that names the disease only to rule it out is
+# not an approval): amlodipine and conivaptan on heart failure, left alone here,
+# now have entries. tests/test_task12_batch1.py holds them.
+MOVED_2_56 = [
+    ('Amlodipine', 'CHEMBL1491', 'MONDO_0005252'),
+    ('Conivaptan', 'CHEMBL1755', 'MONDO_0005252'),
+]
 # How each wrong-source disease is named in the label that was saved as proof.
 NAMED = {
     "MONDO_0019933": r"acromegaly", "MONDO_0011786": r"seasonal allergic rhinitis",
@@ -292,7 +297,7 @@ def test_a_card_left_alone_has_no_entry(card):
 
 
 def test_the_ticket_cards_are_all_accounted_for():
-    assert len(PART_A) + len(WRONG_SOURCE) + len(NOT_ADDED) == 97  # dicumarol, the extra one, moved out in 2.55
+    assert len(PART_A) + len(WRONG_SOURCE) + len(NOT_ADDED) + len(MOVED_2_56) == 97  # dicumarol, the extra one, moved out in 2.55; two more in 2.56
     assert DICUMAROL not in NOT_ADDED
     pairs = [(card[1], card[2]) for card in PART_A + WRONG_SOURCE]
     assert len(set(pairs)) == len(pairs)
@@ -302,7 +307,7 @@ def test_the_ticket_cards_are_all_accounted_for():
 
 def test_the_file_holds_the_old_39_unchanged_then_the_62_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 113  # Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
+    assert len(entries) == 118  # Ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
     assert hashlib.sha256(json.dumps(entries[:39], sort_keys=True).encode()).hexdigest() == \
         OLD_39_SHA256
     # Ticket 2.47 added one more at the end (Obizur, Kashish's decision).

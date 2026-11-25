@@ -58,7 +58,10 @@ def load(file):
 
 
 def old_entries():
-    return load(CORRECTIONS_FILE)[:-len(NEW)]
+    # Ticket 2.56 (signed rule Q22) added five entries after the two of this
+    # ticket, so "without this ticket's entries" is no longer "all but the last two".
+    entries = load(CORRECTIONS_FILE)
+    return entries[:111] + entries[113:]
 
 
 # ---- the words ----
@@ -91,10 +94,10 @@ def test_a_note_that_is_almost_the_third_one_is_refused(almost):
 
 def test_the_file_holds_the_old_111_unchanged_then_the_two_new_entries():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 113
+    assert len(entries) == 118  # ticket 2.56 added five after these
     assert hashlib.sha256(json.dumps(entries[:111], sort_keys=True).encode()).hexdigest() == \
         OLD_111_SHA256
-    assert entries[111:] == NEW
+    assert entries[111:113] == NEW
     assert all(list(entry) == ["medicine_id", "disease_id", "date", "note"] for entry in NEW)
 
 
