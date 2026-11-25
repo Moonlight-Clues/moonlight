@@ -265,8 +265,8 @@ def test_the_real_file_holds_the_first_ten_entries_then_the_five_then_avatrombop
     # Ticket 2.41's six sit between the five and avatrombopag (entries 15 to 20).
     # tests/test_label_batch.py holds them. Ticket 2.39 marked valbenazine "limited".
     assert load(APPROVALS_FILE)[:15] == third_batch.as_written_now(FIRST_TEN) + FOURTH_BATCH
-    assert load(APPROVALS_FILE)[21:] == [AVATROMBOPAG_ENTRY]
-    assert len(load(APPROVALS_FILE)) == 22
+    assert load(APPROVALS_FILE)[21:22] == [AVATROMBOPAG_ENTRY]  # ticket 2.46 added seven after it
+    assert len(load(APPROVALS_FILE)) == 29  # 22 until ticket 2.46
 
 
 def test_the_first_ten_entries_are_written_as_they_were():
@@ -276,12 +276,12 @@ def test_the_first_ten_entries_are_written_as_they_were():
 
 def test_the_new_entries_are_dated_the_day_the_labels_were_read():
     # Ticket 2.41's six (entries 15 to 20) are left out of this batch's slice.
-    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]] \
+    assert [entry["date"] for entry in load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:22]] \
         == [THE_DAY] * 6
 
 
 def test_four_new_entries_are_limited_and_two_are_not():
-    new = load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]  # not ticket 2.41's six
+    new = load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:22]  # not ticket 2.41's six
     assert [entry["name"] for entry in new if entry.get("limited") is True] == [
         "Eculizumab", "Elafibranor", "Seladelpar", "Avatrombopag"]
     assert [entry["name"] for entry in new if "limited" not in entry] == [
@@ -290,7 +290,7 @@ def test_four_new_entries_are_limited_and_two_are_not():
 
 def test_the_engine_reads_the_six_new_entries():
     # Not ticket 2.41's six (entries 15 to 20).
-    assert engine.approvals_by_hand()[10:15] + engine.approvals_by_hand()[21:] == [
+    assert engine.approvals_by_hand()[10:15] + engine.approvals_by_hand()[21:22] == [
         engine.HandApproval(ECULIZUMAB, "Eculizumab", MYASTHENIA, ECULIZUMAB_LABEL,
                             limited=True),
         engine.HandApproval(SECUKINUMAB, "Secukinumab", HIDRADENITIS, SECUKINUMAB_LABEL),
@@ -383,7 +383,7 @@ def test_no_entry_in_the_whole_file_clashes_or_is_written_twice():
 
 def test_each_label_link_is_the_tickets_and_a_regulators():
     assert [entry["label"] for entry in
-            load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:]] == [  # not 2.41's six
+            load(APPROVALS_FILE)[10:15] + load(APPROVALS_FILE)[21:22]] == [  # not 2.41's six
         ECULIZUMAB_LABEL, SECUKINUMAB_LABEL, BIMEKIZUMAB_LABEL, ELAFIBRANOR_LABEL,
         SELADELPAR_LABEL, AVATROMBOPAG_LABEL]
     for entry in ALL_NEW:
