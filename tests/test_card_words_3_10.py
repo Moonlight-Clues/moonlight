@@ -73,11 +73,11 @@ ON_EVERY_PAGE = {
     "CHEMBL4297855": "Technetium TC-99M Trofolastat Chloride",
     "CHEMBL4650432": "Zirconium ZR-89-DESFERRIOXAMINE-IAB22M2C",
 }
-# Held back, waiting for MAIN 4: no regulator page was found that says the
-# medicine is a diagnostic or imaging agent (acetic acid also has an approved
-# treatment use, as ear drops, so "*" would tag that card too).
-HELD = {"CHEMBL951", "CHEMBL4650356", "CHEMBL539", "CHEMBL4650432"}
-WRITTEN = [medicine_id for medicine_id in ON_EVERY_PAGE if medicine_id not in HELD]
+# Left out (MAIN 4, 25 Nov): no regulator page calls any of these four diagnostic
+# (iophendylate, Fapi Ga-68, acetic acid, Zr-89 IAB22M2C). Acetic acid also has an
+# approved treatment use, as ear drops.
+LEFT_OUT = {"CHEMBL951", "CHEMBL4650356", "CHEMBL539", "CHEMBL4650432"}
+WRITTEN = [medicine_id for medicine_id in ON_EVERY_PAGE if medicine_id not in LEFT_OUT]
 MANNITOL = "CHEMBL689"
 IPODATE = "CHEMBL1201243"
 ALZHEIMER_TRACERS = ["CHEMBL1908906", "CHEMBL1908919", "CHEMBL3546271", "CHEMBL579205"]
