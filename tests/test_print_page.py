@@ -8,7 +8,8 @@ Approved cards in the same groups, with the same lines, as the screen:
 - then each Approved box the screen shows, in the screen's order (narrower,
   wider, no-regulator, red), each under its own title as the screen writes it;
 - a box with no cards is not printed;
-- there is no "boxes" line: every box is printed in full (Kashish's decision).
+- there is no "boxes" line: every box is printed in full. MAIN 3 and Papa left it
+  out on 25 Nov 2026; it is on the sheet for Kashish's signature.
 
 How these tests work. The page is opened in a real browser (Chromium), as
 tests/test_snapshot_page.py does. The browser never reaches the network: the
@@ -246,7 +247,7 @@ def test_the_red_and_no_regulator_cards_are_not_under_the_main_approved_heading(
 @pytest.mark.parametrize("name", list(DISEASES))
 def test_there_is_no_boxes_line(seen, name):
     # Every box is printed in full under its own title, so a count adds nothing
-    # (Kashish's decision for ticket 2.36).
+    # (left out by MAIN 3 and Papa, 25 Nov 2026; on the sheet for Kashish's signature).
     assert seen[name]["register"]["boxesLine"] is None
 
 
