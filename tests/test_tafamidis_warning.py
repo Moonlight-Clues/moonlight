@@ -148,8 +148,9 @@ def test_the_file_holds_24_entries():
     # Ticket 2.54, signed answers Q22 and 10b: two more, dated 2026-11-25.
     # Ticket 2.55, signed answers Q10 and Q22: two more, dated 2026-11-25.
     # Ticket 2.56, signed rule Q22: five more, dated 2026-11-25.
-    assert len(real_corrections()) == 118
-    assert len(engine.corrections()) == 118
+    # Ticket 3.10 (MAIN 4, Q14): mannitol's red entry on asthma deleted.
+    assert len(real_corrections()) == 117
+    assert len(engine.corrections()) == 117
     assert len(real_corrections()[:24]) == 24
 
 

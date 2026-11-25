@@ -33,6 +33,7 @@ from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import test_wrong_approvals_box as box_tests
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
+from diagnostic_3_10 import back_to_before as tag_back_to_before  # ticket 3.10: the DIAGNOSTIC tag
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
@@ -315,7 +316,8 @@ def test_example_the_four_red_warning_cards_are_untouched(huntington):
 def test_example_every_other_part_is_what_main_sent(huntington):
     for part, print_ in box_tests.MAIN_SENT[HUNTINGTON].items():
         if part != "approved":
-            assert box_tests.fingerprint(trials_back_to_before(huntington)[part]) == print_, part
+            assert box_tests.fingerprint(
+                tag_back_to_before(trials_back_to_before(huntington))[part]) == print_, part
 
 
 def test_example_needs_no_more_requests():

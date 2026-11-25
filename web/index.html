@@ -121,6 +121,13 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}
 .rank{flex:none;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
 .card h3{overflow-wrap:anywhere}
+/* Ticket 3.10. The tag on a scan medicine's card, right after its name: a solid navy pill,
+   white words. Not red (warnings), teal (links, Report) or gold (the How-to letters). It is
+   one piece, so on a narrow card it goes under the name instead of running out of the card.
+   It is drawn by the style sheet from the API's word, so the name itself is unchanged. */
+[data-diagnostic]::after{content:attr(data-diagnostic);display:inline-block;margin-left:8px;padding:3px 9px;border:1px solid var(--navy);border-radius:999px;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;line-height:1.35;vertical-align:middle;white-space:nowrap}
+.register [data-diagnostic]::after{display:block;width:max-content;max-width:100%;box-sizing:border-box;margin:3px 0 0;padding:1px 5px;background:#fff;color:#000;border-color:#000;font-size:8.5px;letter-spacing:.03em}
+@media print{[data-diagnostic]::after{background:#fff!important;color:#000!important;border:1px solid #000!important}}
 .forms{font-size:12px;color:var(--muted);margin:8px 0 0}
 .reports{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;flex:none}
 .card-subhead{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:750;margin:18px 0 8px}
@@ -558,7 +565,7 @@ body.registering>:not(.register){display:none!important}
       <article class="card">
         <div class="card-top">
           <div class="card-title"><span class="rank">6</span><div><h3>Doxapram <span class="k" aria-label="A">A</span></h3><p class="forms">Forms: Doxapram, Doxapram Hydrochloride</p></div></div>
-          <span class="reports">8 reports <span class="k" aria-label="B">B</span></span>
+          <span class="reports">8 records <span class="k" aria-label="B">B</span></span>
         </div>
         <p class="card-subhead">Research pathway <span class="k" aria-label="C">C</span></p>
         <div class="path"><span class="path-node">Doxapram</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node protein-node">KCNK3</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node">Pulmonary arterial hypertension</span></div>
@@ -799,9 +806,9 @@ body.registering>:not(.register){display:none!important}
     genetic_association: "inherited gene changes",
     somatic_mutation: "gene changes found in tumours",
     animal_model: "studies in animals",
-    affected_pathway: "the body process the gene is part of",
+    affected_pathway: "a body process the gene is part of",
     rna_expression: "how active the gene is in the disease",
-    literature: "mentioned together in research papers",
+    literature: "found together in research papers",
   };
   /* The line for one protein of a clue card, or "" when it names nothing.
      The card and the printed register both use it, so the words are the same. */
@@ -1306,9 +1313,18 @@ body.registering>:not(.register){display:none!important}
     return [above, boxed];
   }
 
+  /* Ticket 3.10. The tag after a scan medicine's name, the API's word. A screen reader
+     reads it as part of the name: "Florbetapir, diagnostic". */
+  function addDiagnosticTag(name, word) {
+    name.dataset.diagnostic = word;
+    name.setAttribute("aria-label", name.textContent + ", " + word.toLowerCase());
+  }
+
+
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {
     const el = baseCard(medicine, diseaseName, false);
+    if (medicine.diagnostic_tag) addDiagnosticTag(slot(el, "medicine-name"), medicine.diagnostic_tag);
     slot(el, "rank").remove();
     slot(el, "ending").remove();
     slot(el, "phase").remove();
@@ -1394,7 +1410,8 @@ body.registering>:not(.register){display:none!important}
 
     slot(el, "medicine-name").textContent = clue.medicine;
     slot(el, "forms").textContent = "Forms: " + clue.forms.join(", ");
-    slot(el, "reports").textContent = clue.reports + (clue.reports === 1 ? " report" : " reports");
+    // Ticket 3.10 (Q15): the count says records. The Report link keeps its name.
+    slot(el, "reports").textContent = clue.reports + (clue.reports === 1 ? " record" : " records");
 
     if (symbols.length > 1) part(el, "path-head").textContent = "Research pathways";
     const path = slot(el, "path");
@@ -1547,6 +1564,8 @@ body.registering>:not(.register){display:none!important}
           cell.append(line);
         }
       }
+      // Ticket 3.10. On paper too, the tag sits after the name: a black-outlined pill.
+      if (item.diagnostic_tag) addDiagnosticTag(row.cells[0].firstChild, item.diagnostic_tag);
       for (const [words, kind] of linesUnder ? linesUnder(item) : []) {
         const noteRow = body.insertRow(), cell = noteRow.insertCell();
         noteRow.dataset.row = "note";

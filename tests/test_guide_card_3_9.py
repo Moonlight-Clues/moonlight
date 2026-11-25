@@ -125,7 +125,7 @@ def test_the_gene_line_is_written_by_the_pages_own_code_from_the_saved_ids(card,
     assert line.group(1).split() == doxapram["proteins"][0]["evidence"]
     assert engine.EVIDENCE_START + ", ".join(
         engine.EVIDENCE_NAMES[kind] for kind in line.group(1).split()) + "." == (
-        "Linked to this disease by: inherited gene changes, mentioned together in research papers.")
+        "Linked to this disease by: inherited gene changes, found together in research papers.")
 
 
 def test_the_report_link_is_closed_after_the_source_record_and_not_clickable(card):
@@ -305,7 +305,7 @@ def test_browser_the_guide_card_reads_word_for_word_like_the_live_doxapram_card(
 def test_browser_the_gene_line_starts_dark_and_names_grey_as_on_the_live_card(seen):
     guide = seen["390"]["guide"]
     assert [found["text"] for found in guide[".protein-evidence"]] == [
-        "Linked to this disease by: inherited gene changes, mentioned together in research papers."]
+        "Linked to this disease by: inherited gene changes, found together in research papers."]
     assert [found["text"] for found in guide[".evidence-start"]] == ["Linked to this disease by:"]
 
 

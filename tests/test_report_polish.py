@@ -36,9 +36,9 @@ NAMES = {
     "genetic_association": "inherited gene changes",
     "somatic_mutation": "gene changes found in tumours",
     "animal_model": "studies in animals",
-    "affected_pathway": "the body process the gene is part of",
+    "affected_pathway": "a body process the gene is part of",
     "rna_expression": "how active the gene is in the disease",
-    "literature": "mentioned together in research papers",
+    "literature": "found together in research papers",
 }
 
 BROWSER_SCRIPT = r"""

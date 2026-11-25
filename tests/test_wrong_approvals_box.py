@@ -67,6 +67,7 @@ import test_opposite_way_box as adpkd_files
 import test_tafamidis_warning as amyloidosis_files
 import test_withdrawal_line as hem_a_files
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
+from diagnostic_3_10 import back_to_before as tag_back_to_before  # ticket 3.10: the DIAGNOSTIC tag
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGE_FILE = ROOT / "web" / "index.html"
@@ -398,8 +399,8 @@ def test_example_in_trials_and_new_clues_are_letter_for_letter_what_main_gives(h
 @pytest.mark.parametrize("disease_id", [HUNTINGTON, AL_AMYLOIDOSIS])
 def test_example_every_old_key_answers_what_main_answered_and_one_key_is_new(
         disease_id, huntington, amyloidosis):
-    answer = trials_back_to_before(
-        {HUNTINGTON: before_2_39(huntington), AL_AMYLOIDOSIS: amyloidosis}[disease_id])
+    answer = tag_back_to_before(trials_back_to_before(
+        {HUNTINGTON: before_2_39(huntington), AL_AMYLOIDOSIS: amyloidosis}[disease_id]))
     old = MAIN_SENT[disease_id]
     assert [key for key in answer if key != KEY] == list(old)  # in the same order
     assert {key: fingerprint(answer[key]) for key in old} == old
