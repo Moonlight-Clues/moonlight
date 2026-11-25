@@ -454,22 +454,21 @@ def test_the_japan_line_and_the_no_regulator_line_sit_under_their_rows(seen, ans
     assert sum(len(lines) for lines in under.values()) == 3
 
 
-def test_under_the_table_one_line_counts_both_boxes(seen):
-    assert seen["big"]["register"]["boxes"] == (
-        "13 more medicines are in the narrower box and 12 more are in the "
-        "wider box. " + SEE_THE_SITE)
+def test_under_the_table_no_line_counts_the_boxes(seen):
+    # Ticket 2.36: the boxes are printed in full, so the counting line is gone.
+    assert seen["big"]["register"]["boxes"] is None
 
 
-def test_with_both_boxes_empty_the_line_says_zero(seen):
-    assert seen["small"]["register"]["boxes"] == (
-        "0 more medicines are in the narrower box and 0 more are in the "
-        "wider box. " + SEE_THE_SITE)
+def test_with_both_boxes_empty_no_line_is_printed(seen):
+    assert seen["small"]["register"]["boxes"] is None
 
 
 def test_no_boxed_medicine_is_in_the_register(seen, answers):
-    text = seen["big"]["register"]["text"]
+    # Ticket 2.36: the boxes are printed under their own titles; none is
+    # under the main APPROVED heading.
+    main = {row["cells"][0] for row in medicine_rows(seen["big"]["register"]["approved"])}
     for medicine in answers["big"]["narrower"] + answers["big"]["wider_group"]:
-        assert medicine["medicine"] not in text
+        assert medicine["medicine"] not in main
 
 
 # ---- 3. IN TRIALS ----
@@ -482,9 +481,18 @@ def test_in_trials_is_one_line_the_number_then_the_tabs_top_line(seen):
 
 
 def test_no_in_trials_medicine_is_named_in_the_register(seen, answers):
-    text = seen["big"]["register"]["text"]
-    for medicine in answers["big"]["being_studied"]:
-        assert medicine["medicine"] not in text
+    # Ticket 2.36: a medicine in trials that is also a card of a printed
+    # Approved box is printed there, under the box's title. Nowhere else.
+    big = answers["big"]
+    in_a_box = {card["medicine"] for part in ("narrower", "wider_group") for card in big[part]}
+    register = seen["big"]["register"]
+    for medicine in big["being_studied"]:
+        if medicine["medicine"] not in in_a_box:
+            assert medicine["medicine"] not in register["text"]
+    # the In trials section is its one line, with no medicine name in it
+    assert register["trials"] == "16 medicines. " + TRIALS_TOP_LINE
+    for medicine in big["being_studied"]:
+        assert medicine["medicine"] not in register["trials"]
 
 
 # ---- 4. NEW CLUES ----
@@ -536,7 +544,7 @@ def test_with_no_approved_medicine_and_no_clue_the_page_says_so_in_its_own_words
         "Showing the first 0 of 0 new clues. Being first on the list does not mean best.")
     assert register["cluesEmpty"] == "No new clues found for this disease."
     assert register["approvedTop"] == APPROVED_TOP_LINE
-    assert register["boxes"].startswith("13 more medicines are in the narrower box")
+    assert register["boxes"] is None  # ticket 2.36: no boxes line
 
 
 # ---- 5. the footer, and black on white ----
