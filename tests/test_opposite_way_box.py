@@ -42,6 +42,7 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import test_new_in_trials
+from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SAVED = ROOT / "fixtures" / "opposite_way_box"
@@ -284,7 +285,8 @@ def test_example_nothing_is_removed_and_every_old_key_answers_what_it_answered_b
         adpkd, before):
     assert len(adpkd["new_clues"]) == ADPKD_NEW_CLUES
     assert KEY not in before
-    assert {key: value for key, value in adpkd.items() if key != KEY} == before
+    assert {key: value for key, value in trials_back_to_before(adpkd).items()
+            if key != KEY} == before
     assert [key for key in adpkd if key != KEY] == list(before)  # in the same order
 
 

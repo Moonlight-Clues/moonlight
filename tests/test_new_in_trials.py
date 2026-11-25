@@ -54,6 +54,7 @@ from moonlight.records import STAGE_ORDER, Disease, Medicine, MedicineForm, Path
 
 import test_more_in_trials
 from test_more_in_trials import PBC, PBC_BOX_26, PBC_LIST_7
+from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SAVED = ROOT / "fixtures" / "new_in_trials"
@@ -567,7 +568,7 @@ def test_pbc_every_old_key_answers_what_it_answered_before(pbc):
     before = load(ROOT / "fixtures" / "more_in_trials" / "clues_before_2.21.json")
     before = test_more_in_trials.with_ursodiol_confirmed(before)  # ticket 2.42
     for key in before:
-        assert pbc[key] == before[key], key
+        assert trials_back_to_before(pbc)[key] == before[key], key
     # Ticket 2.42 added "no_regulator_box": taurursodiol is in the new box.
     assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials", "no_regulator_box"}
 
@@ -738,6 +739,7 @@ def answers():
     with patch("moonlight.fetch._post_json", side_effect=test_more_in_trials.saved_post_json), \
             test_more_in_trials.without_hand_approvals_for_the_example():  # ticket 2.34
         liver = TestClient(api.app).get("/api/clues", params={"disease_id": PBC.id}).json()
+    liver = trials_back_to_before(liver)  # ticket 3.11
     only_new = copy.deepcopy(example)
     del only_new["more_in_trials"]
     nothing = copy.deepcopy(only_new)

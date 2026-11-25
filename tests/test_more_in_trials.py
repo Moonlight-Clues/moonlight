@@ -58,6 +58,7 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import test_narrower_box
+from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SAVED = ROOT / "fixtures" / "more_in_trials"
@@ -462,7 +463,7 @@ def with_ursodiol_confirmed(before):
 def test_every_old_key_answers_what_it_answered_before(pbc):
     before = load(SAVED / "clues_before_2.21.json")  # made on main, commit 7734f6f
     before = with_ursodiol_confirmed(before)  # ticket 2.42
-    assert {key: pbc[key] for key in before} == before
+    assert {key: trials_back_to_before(pbc)[key] for key in before} == before
     # This ticket's key, ticket 2.24's, and ticket 2.42's (taurursodiol is in the new box).
     assert set(pbc) - set(before) == {"more_in_trials", "new_in_trials", "no_regulator_box"}
     assert [card["medicine"] for card in pbc["being_studied"]] == PBC_LIST_7
@@ -736,6 +737,7 @@ def answers():
     with patch("moonlight.fetch._post_json", side_effect=saved_post_json), \
             without_hand_approvals_for_the_example():  # ticket 2.34
         example = TestClient(api.app).get("/api/clues", params={"disease_id": PBC.id}).json()
+    example = trials_back_to_before(example)  # ticket 3.11
     empty_list = copy.deepcopy(example)
     empty_list["being_studied"] = []
     no_list_no_box = copy.deepcopy(empty_list)

@@ -1103,6 +1103,31 @@ def _trial_medicine(entry: OnList) -> TrialMedicine:
     )
 
 
+def studies_for_this_disease(on_list: Iterable[OnList]) -> Dict[str, Set[str]]:
+    """Family id -> the links of its trial reports for THIS disease (ticket 3.11).
+
+    Like a folder per medicine in the disease's own drawer: Open Targets
+    files the disease's own medicine list under the disease's id, so every
+    report on it is a record for the page's disease. A report counts only
+    if its own stage is a trial in people (_is_a_trial) AND its "source"
+    is the trials register (fetch.STUDY_SOURCE, entry.study_links): a TTD
+    drug page with a trial stage is not a study. A report whose stage or
+    source is not said is left out: nothing is guessed. A family with no
+    such report is not in the answer.
+
+    The page uses these only to choose which of a main In trials card's
+    own links it opens first (api._one_source). Nothing else changes.
+    """
+    found: Dict[str, Set[str]] = {}
+    for entry in on_list:
+        studies = set(entry.study_links)
+        links = {link for link, stage in entry.reports
+                 if link and link in studies and _is_a_trial(stage)}
+        if links:
+            found.setdefault(_family_id(entry.medicine), set()).update(links)
+    return found
+
+
 def keep_out(more: Iterable[TrialMedicine], listed: Iterable[str]) -> List[TrialMedicine]:
     """The box without the listed medicines. The rest keep their order.
 

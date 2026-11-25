@@ -257,6 +257,10 @@ REGULATOR_SOURCES = ("DailyMed", "FDA", "EMA Human Drugs", "PMDA")
 # new to Moonlight: it does not count as a regulator either, and it is
 # written in the log so Kashish can be told.
 KNOWN_SOURCES = REGULATOR_SOURCES + ("TTD", "ATC", "ClinicalTrials.gov", "USAN", "INN")
+# Ticket 3.11. The source value of a report that is a study in the trials
+# register, letter for letter (read from fixtures/labels_read/2.49/). A TTD
+# report with a trial stage is a drug page, not a study, so it is not this.
+STUDY_SOURCE = "ClinicalTrials.gov"
 
 # The two "which medicines?" questions. Both are asked twice, see below.
 MEDICINE_QUERIES = (TARGET_DRUGS_QUERY, DISEASE_DRUGS_QUERY)
@@ -791,7 +795,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
              "approval_sources": [], "regulator_sources": [], "reports": 0, "source_said": False,
              "regulator_report": False, "records": [], "stage_reports": [],
-             "named": set(), "told": True, "withdrawal_report": False},
+             "named": set(), "told": True, "withdrawal_report": False, "study_links": []},
         )
         # Ticket 2.24. Every relative this row names: the medicine it is a
         # form of, and its own tablet forms. If the answer does not say
@@ -845,6 +849,10 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
                 family["withdrawal_report"] = True
             if url and is_approval and url not in family["approval_sources"]:
                 family["approval_sources"].append(url)
+            # Ticket 3.11. A report whose source is exactly STUDY_SOURCE. No
+            # source value is not a study: nothing is guessed from the link.
+            if url and report.get("source") == STUDY_SOURCE and url not in family["study_links"]:
+                family["study_links"].append(url)
             # Ticket 2.17. The source is matched exactly. No source, or one
             # that is not on the list, is not a regulator. A link is not needed.
             family["reports"] += 1
@@ -916,6 +924,10 @@ class OnList:
     # family, has the stage WITHDRAWAL. False if none has, or if the answer
     # did not say each report's stage: nothing is guessed.
     withdrawal_report: bool = False
+    # Ticket 3.11. The links of its reports whose "source" is exactly
+    # STUDY_SOURCE (a study in the trials register), in the list's order.
+    # () if none says so, or the answer did not say where reports come from.
+    study_links: Tuple[str, ...] = ()
 
 
 def fetch_listed_medicines(disease: Disease) -> List[OnList]:
@@ -934,6 +946,7 @@ def fetch_listed_medicines(disease: Disease) -> List[OnList]:
             all_seen=family["told"]
             and family["named"] <= {record.id for record in family["records"]},
             withdrawal_report=family["withdrawal_report"],
+            study_links=tuple(family["study_links"]),
         )
         for family in _list_families(disease).values()
     ]
