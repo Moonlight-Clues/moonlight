@@ -122,7 +122,9 @@ def test_the_two_notes_and_the_old_red_words_are_kashishs_words_exactly():
     assert engine.CORRECTION_NOTE == FIRST_NOTE
     assert engine.WRONG_WARNING == FIRST_WARNING
     assert engine.SECOND_NOTE == SECOND_NOTE
-    assert engine.CORRECTION_NOTES == (FIRST_NOTE, SECOND_NOTE)
+    # Ticket 2.55, Kashish's signed Q10: a third note, after these two.
+    assert engine.CORRECTION_NOTES[:2] == (FIRST_NOTE, SECOND_NOTE)
+    assert engine.CORRECTION_NOTES == (FIRST_NOTE, SECOND_NOTE, engine.THIRD_NOTE)
     assert "doctor" not in SECOND_NOTE.lower()  # no doctor is named, or even mentioned
 
 
@@ -308,8 +310,9 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Ticket 2.45 added 62, dated 2026-11-25, with the second note.
     # Ticket 2.52 added seven, dated 2026-11-25, with the second note.
     # Ticket 2.54, signed answers Q22 and 10b: simvastatin and misoprostol, dated 2026-11-25.
-    assert len(entries) == 111
-    assert len(engine.corrections()) == 111
+    # Ticket 2.55, signed answers Q10 and Q22: dicumarol and sodium phenylbutyrate, 2026-11-25.
+    assert len(entries) == 113
+    assert len(engine.corrections()) == 113
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)
@@ -320,6 +323,7 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
     for known in ["medicine_id", "disease_id", "date", "note", FIRST_NOTE, SECOND_NOTE,
+                  engine.THIRD_NOTE,  # ticket 2.55, Kashish's signed Q10
                   MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24", "2026-11-25",
                   *sorted(ids, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")

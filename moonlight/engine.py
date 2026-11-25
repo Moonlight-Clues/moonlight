@@ -72,7 +72,8 @@ label confirms (confirmed_by_label). Such a card has no grey line, shows
 the label as its source, and stays on the main list.
 
 Ticket 2.18, a second red warning, and clues left out by hand. A
-corrections entry's note is one of two sentences (CORRECTION_NOTES).
+corrections entry's note is one of two sentences (CORRECTION_NOTES);
+ticket 2.55 added a third, THIRD_NOTE.
 warning_words(disease_id) says which red words each listed card shows: its
 own entry's. pushes_wrong_way(disease_id) reads moonlight/left_out.json, a
 list written by hand: for that disease those medicines are not shown in
@@ -228,8 +229,12 @@ SECOND_NOTE = (
     "This looks like a mistake in the database. The official label is for "
     "a different disease."
 )
+# Ticket 2.55, Kashish's words of 25 Nov (signed Q10, answer A), exactly. The
+# third note an entry may carry. A card with this note shows these same words
+# in red. Changing them needs her approval.
+THIRD_NOTE = "A blood thinner cannot be a treatment for a bleeding disease."
 # An entry's note is exactly one of these. Note -> the red words on the card.
-RED_WORDS = {CORRECTION_NOTE: WRONG_WARNING, SECOND_NOTE: SECOND_NOTE}
+RED_WORDS = {CORRECTION_NOTE: WRONG_WARNING, SECOND_NOTE: SECOND_NOTE, THIRD_NOTE: THIRD_NOTE}
 CORRECTION_NOTES = tuple(RED_WORDS)
 # Ticket 2.21, Kashish's words of 22 Nov, exactly. The label of the folded
 # box under the In trials list. Changing them needs her approval.
@@ -1449,7 +1454,7 @@ def _corrections_with_notes() -> Dict[Tuple[str, str], str]:
 
 def corrections() -> Set[Tuple[str, str]]:
     """The corrections list as (medicine id, disease id) pairs, whichever
-    of the two notes an entry carries. Checked as _corrections_with_notes
+    of the notes an entry carries. Checked as _corrections_with_notes
     says."""
     return set(_corrections_with_notes())
 
@@ -1468,6 +1473,7 @@ def warning_words(disease_id: str) -> Dict[str, str]:
 
     Ticket 2.18. A card shows what its own entry carries: WRONG_WARNING
     for the first note, as before, and SECOND_NOTE itself for the second.
+    Ticket 2.55: THIRD_NOTE itself for the third.
     The ids are the same ones looks_wrong gives.
     """
     return {
@@ -1484,8 +1490,8 @@ def wrong_approvals_box(approved: Iterable[ApprovedMedicine],
     Kashish's decision of 23 Nov: a medicine with a red warning sits in its
     own folded box on the Approved tab, not on the main list. approved is
     the MAIN Approved list (sort_into_tabs' approved). A card is in the box
-    when it carries a red warning for this disease (warning_words), either
-    of the two. The cards come back in the order they were handed in: the
+    when it carries a red warning for this disease (warning_words), any
+    of them. The cards come back in the order they were handed in: the
     list's own, A to Z. Nothing is taken off the list by this: the answer
     only says which of its cards sit in the box. A card in the narrower
     box or the wider-group box is not handed in, so it stays where it is.
