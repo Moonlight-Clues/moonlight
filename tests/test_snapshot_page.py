@@ -481,9 +481,18 @@ def test_in_trials_is_one_line_the_number_then_the_tabs_top_line(seen):
 
 
 def test_no_in_trials_medicine_is_named_in_the_register(seen, answers):
-    text = seen["big"]["register"]["text"]
-    for medicine in answers["big"]["being_studied"]:
-        assert medicine["medicine"] not in text
+    # Ticket 2.36: a medicine in trials that is also a card of a printed
+    # Approved box is printed there, under the box's title. Nowhere else.
+    big = answers["big"]
+    in_a_box = {card["medicine"] for part in ("narrower", "wider_group") for card in big[part]}
+    register = seen["big"]["register"]
+    for medicine in big["being_studied"]:
+        if medicine["medicine"] not in in_a_box:
+            assert medicine["medicine"] not in register["text"]
+    # the In trials section is its one line, with no medicine name in it
+    assert register["trials"] == "16 medicines. " + TRIALS_TOP_LINE
+    for medicine in big["being_studied"]:
+        assert medicine["medicine"] not in register["trials"]
 
 
 # ---- 4. NEW CLUES ----
