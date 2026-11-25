@@ -1,0 +1,43 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0004979",
+      "name": "asthma",
+      "obsoleteTerms": [
+        "HP_0002099",
+        "EFO_0000270"
+      ],
+      "dbXRefs": [
+        "DOID:2841",
+        "HP:0002099",
+        "ICD10CM:J45",
+        "ICD10WHO:J45",
+        "ICD9:493",
+        "ICD9:493.81",
+        "ICD9:493.9",
+        "MEDGEN:2109",
+        "MESH:D001249",
+        "NCIT:C28397",
+        "SCTID:31387002",
+        "UMLS:C0004096",
+        "icd11.foundation:1656445230"
+      ],
+      "therapeuticAreas": [
+        {
+          "id": "EFO_0000651",
+          "name": "phenotype"
+        },
+        {
+          "id": "OTAR_0000010",
+          "name": "respiratory or thoracic disease"
+        }
+      ],
+      "associatedTargets": {
+        "count": 7772
+      },
+      "drugAndClinicalCandidates": {
+        "count": 423
+      }
+    }
+  }
+}

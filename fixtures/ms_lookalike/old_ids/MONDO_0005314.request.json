@@ -1,0 +1,6 @@
+{
+  "query": "query OldIds($diseaseId: String!) {\n  disease(efoId: $diseaseId) {\n    id\n    name\n    obsoleteTerms\n    dbXRefs\n    therapeuticAreas { id name }\n    associatedTargets(page: {index: 0, size: 5}) { count }\n    drugAndClinicalCandidates { count }\n  }\n}\n",
+  "variables": {
+    "diseaseId": "MONDO_0005314"
+  }
+}
