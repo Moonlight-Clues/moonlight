@@ -454,10 +454,18 @@ def _one_source(clue: Clue, this_disease: Iterable[str] = ()) -> Optional[str]:
     that is in this_disease wins. If none is, the card keeps the link it
     had: the first https one. Only the link is chosen: the count, the
     stage and the words of the card stay as they are.
+
+    Ticket 3.13. If none of the card's own links is in this_disease, a
+    study in this_disease is opened anyway: Open Targets holds it under
+    another of its records for this medicine and this disease (the
+    disease's own list). The first https one in A to Z order, so the
+    page is the same every time. If this_disease has none, the card
+    keeps the link it had, as before.
     """
     links = [source for path in clue.paths for source in path.sources]
     this_disease = set(this_disease)
     return (_first_link(link for link in links if link in this_disease)
+            or _first_link(sorted(this_disease))
             or _first_link(links))
 
 
