@@ -236,14 +236,22 @@ def test_grey_line_box_and_place_are_otherwise_unchanged(card):
     assert [place for place, ids in places.items() if medicine_id in ids] == ["approved"]
     assert medicine_id not in grey and medicine_id not in red
     # The same place on the main list, the same boxes, the same name.
-    assert [m.id for m in main] == [m.id for m in main_before]
-    assert (grey, red) == (grey_before, red_before)
+    # Ticket 2.56 moved two cards on ulcerative colitis, on purpose: azathioprine
+    # (signed rule Q3) from the no-regulator box to the main list, and isopropyl
+    # alcohol (rule Q22) into the red box. Those two are left out of the comparison.
+    moved = {"CHEMBL1542", "CHEMBL582"} if disease_id == "MONDO_0005101" else set()
+    keep = lambda ids: [i for i in ids if i not in moved]
+    assert keep(m.id for m in main) == keep(m.id for m in main_before)
+    assert keep(grey) == keep(grey_before) and keep(red) == keep(red_before)
     assert the_card(main, medicine_id).name == the_card(main_before, medicine_id).name
     assert the_card(main, medicine_id).name.lower() == medicine.lower()
 
 
 def test_no_other_card_on_these_pages_changed_its_source_or_line():
     ours = {(card[1], card[2]) for card in CARDS}
+    # Ticket 2.56 (signed rule Q3): azathioprine's card now says it was
+    # confirmed from a label, so it differs from the 2.45 answer on purpose.
+    ours.add(("CHEMBL1542", "MONDO_0005101"))
     for disease_id in sorted({card[2] for card in CARDS}):
         _, approved, _, _, _ = approved_tab(disease_id)
         _, approved_before, _, _, _ = approved_tab(disease_id, before=True)
@@ -262,12 +270,15 @@ def test_confirmed_json_holds_the_23_new_entries_in_its_own_form():
     # Ticket 2.54 (signed answers Q3 and item 12) added two more, also dated today:
     # ertugliflozin (type 2 diabetes) and tetrabenazine (Huntington disease).
     later = {("CHEMBL4084119", "MONDO_0005148"), ("CHEMBL2048484", "MONDO_0005148"),
-             ("CHEMBL1770248", "MONDO_0005148"), ("CHEMBL117785", "MONDO_0007739")}
+             ("CHEMBL1770248", "MONDO_0005148"), ("CHEMBL117785", "MONDO_0007739"),
+             # Ticket 2.56 (signed rules Q3, Q13): hydroxychloroquine, azathioprine, neostigmine
+             ("CHEMBL1535", "MONDO_0007915"), ("CHEMBL1542", "MONDO_0005101"),
+             ("CHEMBL278020", "MONDO_0009688")}
     new = [entry for entry in entries if entry["date"] == THE_DAY
            and (entry["medicine_id"], entry["disease_id"]) not in later]
     assert new == [{"medicine_id": card[1], "disease_id": card[2], "date": THE_DAY,
                     "label": card[6]} for card in CARDS]
-    assert len(entries) == 3 + 23 + 2 + 2
+    assert len(entries) == 3 + 23 + 2 + 2 + 3  # ticket 2.56 added three
     labels = engine.confirmed_by_label()  # the file still reads
     assert all(labels[(card[1], card[2])] == card[6] for card in CARDS)
 

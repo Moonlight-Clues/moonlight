@@ -110,6 +110,11 @@ def gone_and_new(disease_id):
 def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
     entries = load(LISTS / name)
     new = NEW[name]
+    # Ticket 2.56 (signed rules Q22, Q3, Q13) added entries at the very end:
+    # tests/test_task12_batch1.py holds them.
+    later = {"corrections.json": 5, "confirmed.json": 3, "limits.json": 1}.get(name, 0)
+    if later:
+        entries = entries[:-later]
     if name == "corrections.json":
         # Ticket 2.55 (signed Q10 and Q22) added two after these:
         # tests/test_red_note_2_55.py holds them.
