@@ -116,7 +116,12 @@ def page_answer(disease_id, post_json=saved_post_json):
     for guard in guards:
         guard.start()
     try:
-        with patch("moonlight.fetch._post_json", side_effect=post_json):
+        # Ticket 2.54, signed answer Q20: terlipressin is now left out of the ADPKD page.
+        # Kashish's example here (23 Nov) has it on the list, so put that one entry back.
+        hand_list = [entry for entry in engine._read_left_out()
+                     if (entry["medicine_id"], entry["disease_id"]) != ("CHEMBL2135460", ADPKD)]
+        with patch("moonlight.fetch._post_json", side_effect=post_json), \
+                patch("moonlight.engine._read_left_out", return_value=hand_list):
             response = TestClient(api.app).get("/api/clues", params={"disease_id": disease_id})
     finally:
         for guard in guards:

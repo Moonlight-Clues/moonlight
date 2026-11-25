@@ -186,8 +186,14 @@ def before_2_39(answer):
     with what main sent before."""
     marked = [card["id"] for card in answer["approved"] if "limit_note" in card]
     assert marked == [] or marked == ["CHEMBL117785", "CHEMBL2364639"]
-    return dict(answer, approved=[{key: value for key, value in card.items()
-                                   if key != "limit_note"} for card in answer["approved"]])
+    # Ticket 2.54, signed answer Q3 (item 12): confirmed.json now sends tetrabenazine's
+    # Source record to XENAZINE. Put the link main sent before back.
+    old_link = ("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm"
+                "?setid=18909efa-de8a-42f1-a641-aa0319d71c35")
+    return dict(answer, approved=[
+        {key: (old_link if key == "source" and card["id"] == "CHEMBL117785" else value)
+         for key, value in card.items() if key != "limit_note"}
+        for card in answer["approved"]])
 
 
 def names(cards):

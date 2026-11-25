@@ -284,7 +284,8 @@ def test_left_out_for_another_disease_does_not_stop_the_entry():
 def test_the_whole_page_is_as_it_was_before_the_entry():
     # Ticket 2.26's saved page: propranolol for essential tremor.
     clash = [left_out(first_batch.PROPRANOLOL, first_batch.ESSENTIAL_TREMOR)]
-    with patch.object(engine, "_read_left_out", return_value=clash):
+    # Ticket 2.54, signed answer Q13: primidone (added for essential tremor) is taken out too.
+    with patch.object(engine, "_read_left_out", return_value=clash), first_batch.without_primidone():
         response = TestClient(api.app).get(
             "/api/clues", params={"disease_id": first_batch.ESSENTIAL_TREMOR})
     assert response.status_code == 200
