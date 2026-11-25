@@ -40,6 +40,7 @@ from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 import old_flag_saved as saved
 from source_2_53 import back_to_before  # ticket 2.53: Source record links
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
+from diagnostic_3_10 import back_to_before as tag_back_to_before  # ticket 3.10: the DIAGNOSTIC tag
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORRECTIONS_FILE = ROOT / "moonlight" / "corrections.json"
@@ -76,7 +77,9 @@ EIGHT = [
 # Ticket 2.45 put the red warning on these cards of the same three pages (the
 # card keeps its place; it moves into the red-warning box, so it leaves the tab number).
 RED_2_45 = {
-    ASTHMA: {"CHEMBL1512", "CHEMBL1621597", "CHEMBL689"},  # flunisolide, ipratropium, mannitol
+    # Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma was deleted, so it is
+    # a plain card again (with the DIAGNOSTIC tag). It was CHEMBL689 here.
+    ASTHMA: {"CHEMBL1512", "CHEMBL1621597"},  # flunisolide, ipratropium
     AML: {"CHEMBL4297573"},  # tagraxofusp
     "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
     # Ticket 2.52 put the red warning on six cards of type 2 diabetes (biotin,
@@ -243,7 +246,8 @@ def test_the_others_the_flag_hides_stay_in_no_tab(pages, disease_id, medicine_id
 
 @pytest.mark.parametrize("disease_id", DISEASES)
 def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease_id):
-    before, after = saved.before(disease_id), back_to_before(trials_back_to_before(pages[disease_id]))
+    before = saved.before(disease_id)
+    after = back_to_before(trials_back_to_before(tag_back_to_before(pages[disease_id])))
     back = set(BACK.get(disease_id, []))
     red = RED_2_45.get(disease_id, set())
     plain = [({key: value for key, value in card.items() if key != "warning"}

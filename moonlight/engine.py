@@ -317,9 +317,9 @@ EVIDENCE_NAMES = {
     "genetic_association": "inherited gene changes",
     "somatic_mutation": "gene changes found in tumours",
     "animal_model": "studies in animals",
-    "affected_pathway": "the body process the gene is part of",
+    "affected_pathway": "a body process the gene is part of",
     "rna_expression": "how active the gene is in the disease",
-    "literature": "mentioned together in research papers",
+    "literature": "found together in research papers",
 }
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
@@ -347,6 +347,15 @@ WITHDRAWAL_EXTRA_KEY = "region"
 # official label. Nothing in Moonlight writes here.
 CONFIRMED_FILE = pathlib.Path(__file__).resolve().parent / "confirmed.json"
 CONFIRMED_KEYS = {"medicine_id", "disease_id", "date", "label"}
+# Ticket 3.10, Q1 (decided by MAIN 4, 25 Nov). The scan medicines: their
+# Approved cards keep their place and carry a tag. Written by hand; nothing in
+# Moonlight writes here. An entry's disease is EVERY_PAGE ("*") when the tag
+# is on that medicine's card on every page.
+DIAGNOSTIC_FILE = pathlib.Path(__file__).resolve().parent / "diagnostic.json"
+DIAGNOSTIC_KEYS = {"medicine_id", "disease_id", "date", "label"}
+EVERY_PAGE = "*"
+# The signed word, in capitals. Changing it needs Kashish's approval.
+DIAGNOSTIC_TAG = "DIAGNOSTIC"
 
 
 @dataclass(frozen=True)
@@ -1630,6 +1639,48 @@ def confirm_by_label(approved: Iterable[ApprovedMedicine],
         else medicine
         for medicine in approved
     ]
+
+
+def _read_diagnostic() -> list:
+    """The one place the diagnostic file is read. Tests replace this."""
+    return json.loads(DIAGNOSTIC_FILE.read_text(encoding="utf-8"))
+
+
+def diagnostic_by_hand() -> Dict[Tuple[str, str], str]:
+    """The hand-written list of scan medicines (ticket 3.10), as
+    (medicine id, disease id or EVERY_PAGE) -> the link to the regulator's
+    page that says it is a diagnostic or imaging agent.
+
+    Each entry holds exactly four things: the medicine's id, the disease's
+    id (or "*"), the date and the label, an https link. Checked like
+    confirmed.json: an entry not written this way raises ValueError, and the
+    list is never half read. The same pair written twice is refused.
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_diagnostic()
+    if not isinstance(entries, list):
+        raise ValueError("diagnostic.json must hold a list.")
+    found: Dict[Tuple[str, str], str] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, DIAGNOSTIC_KEYS, "A diagnostic entry")
+        label = entry["label"]
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(f"A diagnostic entry needs an https link to its label: {entry!r}")
+        if pair in found:
+            raise ValueError(f"A diagnostic entry is written twice: {entry!r}")
+        found[pair] = label
+    return found
+
+
+def diagnostic_ids(disease_id: str) -> Set[str]:
+    """The ids of the medicines whose Approved cards carry DIAGNOSTIC_TAG on
+    this disease's page: the entries for every page, and this disease's own.
+
+    The tag is a label on the card only. It never moves a card, hides one,
+    or changes the tab's count (ticket 3.10).
+    """
+    return {medicine_id for medicine_id, listed_for in diagnostic_by_hand()
+            if listed_for in (EVERY_PAGE, disease_id)}
 
 
 def _read_left_out() -> list:

@@ -711,7 +711,8 @@ def test_api_no_approved_card_gains_an_ending_or_an_explanation(saved_json):
             assert set(one) <= {"id", "medicine", "forms", "proteins", "reports", "source",
                                 "label", "proof_note", "warning",
                                 "withdrawal_note",  # ticket 2.31: one more key
-                                "limit_note"}  # tickets 2.39 and 2.41: limited cards
+                                "limit_note",  # tickets 2.39 and 2.41: limited cards
+                                "diagnostic_tag"}  # ticket 3.10: scan medicines
 
 
 # ---- the page: the same slot, the same grey, the engine's words ----

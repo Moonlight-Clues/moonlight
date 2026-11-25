@@ -210,7 +210,7 @@ def test_the_example_card_is_doxapram_with_its_gold_letters_a_to_j(guide):
     assert re.findall(r'<span class="k" aria-label="([A-J])">\1</span>', card) == list("ABCDEFGHIJ")
     words = plain(card)
     assert "Forms: Doxapram, Doxapram Hydrochloride" in words
-    assert "8 reports" in words
+    assert "8 records" in words  # ticket 3.10, Q15: the count says records
     assert "Doxapram → KCNK3 → Pulmonary arterial hypertension" in words
     assert "79 / 100 points" in words and "Down" in words
     assert "The data does not say which direction this disease needs." in words

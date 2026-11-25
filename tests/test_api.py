@@ -1535,13 +1535,13 @@ def test_54_example_4_the_do_not_use_it_to_list_is_removed_and_the_safety_line_s
 
 def test_54_the_example_card_is_doxapram_with_the_facts_checked_live(client):
     # Checked against the live API on 2026-11-15: sixth new clue for
-    # pulmonary arterial hypertension, 8 reports, KCNK3 turned down, 79 points.
+    # pulmonary arterial hypertension, 8 reports (since ticket 3.10 the card says "8 records"), KCNK3 turned down, 79 points.
     guide = guide_of(client.get("/").text)
     card = guide[guide.index('<article class="card"'):guide.index("</article>")]
     words = plain(card)
     assert re.search(r'class="rank"[^>]*>6<', card)
     assert "Forms: Doxapram, Doxapram Hydrochloride" in words
-    assert "8 reports" in words
+    assert "8 records" in words  # ticket 3.10, Q15: the count says records
     assert "Doxapram → KCNK3 → Pulmonary arterial hypertension" in words
     assert "Down" in words and "79 / 100 points" in words
     assert "The data does not say which direction this disease needs." in words

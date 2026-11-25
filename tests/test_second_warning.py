@@ -312,8 +312,9 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Ticket 2.54, signed answers Q22 and 10b: simvastatin and misoprostol, dated 2026-11-25.
     # Ticket 2.55, signed answers Q10 and Q22: dicumarol and sodium phenylbutyrate, 2026-11-25.
     # Ticket 2.56, signed rule Q22: five more, dated 2026-11-25 (red cards of UC, heart failure, high blood pressure).
-    assert len(entries) == 118
-    assert len(engine.corrections()) == 118
+    # Ticket 3.10 (MAIN 4, Q14): mannitol's red entry on asthma deleted.
+    assert len(entries) == 117
+    assert len(engine.corrections()) == 117
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)

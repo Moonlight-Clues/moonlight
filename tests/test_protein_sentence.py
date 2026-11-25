@@ -867,7 +867,7 @@ def test_browser_b_example_the_first_card_reads_like_this_top_to_bottom(seen):
     first = seen["graves"]["read"]["clues"][0]
     lines = [line.strip() for line in first["text"].split("\n") if line.strip()]
     assert lines == [
-        "1", "Ipilimumab", "Forms: Ipilimumab", "804 reports", "RESEARCH PATHWAY",
+        "1", "Ipilimumab", "Forms: Ipilimumab", "804 records", "RESEARCH PATHWAY",
         "Ipilimumab", "→", "CTLA4", "→", "Graves disease",
         "CTLA4", "Down", "59 / 100 points",
         CTLA4_SENTENCE,

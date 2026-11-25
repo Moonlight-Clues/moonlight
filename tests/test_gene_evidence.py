@@ -11,9 +11,9 @@ The six names, in this order, one for each Open Targets "datatypeScores" id:
     genetic_association  inherited gene changes
     somatic_mutation     gene changes found in tumours
     animal_model         studies in animals
-    affected_pathway     the body process the gene is part of
+    affected_pathway     a body process the gene is part of
     rna_expression       how active the gene is in the disease
-    literature           mentioned together in research papers
+    literature           found together in research papers
 
 A kind counts when its score for that gene and disease is at least 0.5 (one
 constant in engine.py). At most three names, in the table's order. A gene
@@ -73,9 +73,9 @@ NAMES = (
     ("genetic_association", "inherited gene changes"),
     ("somatic_mutation", "gene changes found in tumours"),
     ("animal_model", "studies in animals"),
-    ("affected_pathway", "the body process the gene is part of"),
+    ("affected_pathway", "a body process the gene is part of"),
     ("rna_expression", "how active the gene is in the disease"),
-    ("literature", "mentioned together in research papers"),
+    ("literature", "found together in research papers"),
 )
 SAFETY_LINE = ("For learning and research exploration, not medical advice. Never start, stop or "
                "change any medicine without a doctor.")
@@ -120,13 +120,13 @@ def test_example_literature_alone_at_0_6():
     target = gene(literature=0.6)
     assert engine.evidence_ids(target) == ("literature",)
     assert line_for(target) == (
-        "Linked to this disease by: mentioned together in research papers.")
+        "Linked to this disease by: found together in research papers.")
 
 
 def test_example_literature_alone_even_when_others_are_below_the_cut_off():
     target = gene(genetic_association=0.49, animal_model=0.3, literature=0.7, known_drug=0.9)
     assert line_for(target) == (
-        "Linked to this disease by: mentioned together in research papers.")
+        "Linked to this disease by: found together in research papers.")
 
 
 def test_example_nothing_at_0_5_or_above_gives_no_line():
@@ -155,14 +155,14 @@ def test_example_at_most_three_names_in_the_tables_order():
 def test_the_tables_order_wins_over_the_scores():
     target = gene(literature=0.99, rna_expression=0.95, affected_pathway=0.51)
     assert line_for(target) == (
-        "Linked to this disease by: the body process the gene is part of, how active the "
-        "gene is in the disease, mentioned together in research papers.")
+        "Linked to this disease by: a body process the gene is part of, how active the "
+        "gene is in the disease, found together in research papers.")
 
 
 def test_literature_can_be_one_of_the_three():
     target = gene(literature=0.9, genetic_association=0.6)
     assert line_for(target) == (
-        "Linked to this disease by: inherited gene changes, mentioned together in research "
+        "Linked to this disease by: inherited gene changes, found together in research "
         "papers.")
 
 
@@ -699,7 +699,7 @@ def lines_by_symbol(card):
 def test_browser_example_huntington_lamotrigine(seen):
     card = card_in(seen["huntington"]["clues"], "Lamotrigine")
     assert lines_by_symbol(card) == {
-        "SCN4A": ["Linked to this disease by: studies in animals, mentioned together in "
+        "SCN4A": ["Linked to this disease by: studies in animals, found together in "
                   "research papers."],
         "SCN8A": ["Linked to this disease by: studies in animals."],
         "SCN1A": ["Linked to this disease by: studies in animals."],
@@ -711,17 +711,17 @@ def test_browser_example_huntington_lamotrigine(seen):
 def test_browser_example_t2d_three_names_on_an_in_trials_card(seen):
     card = card_in(seen["t2d"]["trials"], "Gliclazide")
     assert lines_by_symbol(card) == {
-        "KCNJ11": ["Linked to this disease by: inherited gene changes, mentioned together "
+        "KCNJ11": ["Linked to this disease by: inherited gene changes, found together "
                    "in research papers."],
         "ABCC8": ["Linked to this disease by: inherited gene changes, studies in animals, "
-                  "mentioned together in research papers."],
+                  "found together in research papers."],
     }
 
 
 def test_browser_example_nmo_papers_alone(seen):
     card = card_in(seen["nmo"]["clues"], "Siltuximab")
     assert lines_by_symbol(card) == {
-        "IL6": ["Linked to this disease by: mentioned together in research papers."]}
+        "IL6": ["Linked to this disease by: found together in research papers."]}
 
 
 def test_browser_every_clue_card_shows_what_the_api_sent(seen, huntington, t2d, nmo):
@@ -883,7 +883,7 @@ def test_print_example_t2d_mesalamine(printed):
     # PPARG's card shows no protein sentence (UniProt's is over 200 letters),
     # so the printed row has only the evidence line, as the card does.
     assert note["lines"] == [
-        "Linked to this disease by: inherited gene changes, studies in animals, mentioned "
+        "Linked to this disease by: inherited gene changes, studies in animals, found "
         "together in research papers."]
 
 
@@ -893,14 +893,14 @@ def test_print_example_t2d_insulin_sentence_then_evidence(printed):
               if row["name"] == "Insulin Susp Isophane Recombinant Human"]
     assert row["notes"] == [{"symbol": "INSR", "spans": 5, "lines": [
         "Receptor tyrosine kinase which mediates the pleiotropic actions of insulin.",
-        "Linked to this disease by: inherited gene changes, studies in animals, mentioned "
+        "Linked to this disease by: inherited gene changes, studies in animals, found "
         "together in research papers."]}]
 
 
 def test_print_example_nmo_papers_alone(printed):
     rows = {row["name"]: row for row in printed["nmo"]["register"]["clues"]}
     lines = [line for row in rows.values() for note in row["notes"] for line in note["lines"]]
-    assert "Linked to this disease by: mentioned together in research papers." in lines
+    assert "Linked to this disease by: found together in research papers." in lines
 
 
 @pytest.mark.parametrize("name", ["huntington", "t2d", "nmo", "pah"])
