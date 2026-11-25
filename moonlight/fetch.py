@@ -314,6 +314,19 @@ def data_version() -> str:
         return _version
 
 
+def remembered_version() -> Optional[str]:
+    """The data version if it was read less than an hour ago, else None.
+
+    Ticket 3.6. Never asks Open Targets and changes nothing: it only looks at
+    what data_version() already remembers. api.py uses it to file a finished
+    page under the version without making a call of its own.
+    """
+    with _version_lock:
+        if _version is not None and time.monotonic() - _version_read_at <= VERSION_CHECK_SECONDS:
+            return _version
+        return None
+
+
 def forget_version() -> None:
     """Forget the data version, so the next question reads it again."""
     global _version

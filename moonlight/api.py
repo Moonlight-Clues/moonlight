@@ -93,13 +93,14 @@ import os
 import pathlib
 import threading
 import time
-from collections import deque
+from collections import OrderedDict, deque
 import contextlib
 from concurrent.futures import ThreadPoolExecutor
 from typing import Deque, Dict, Iterable, List, Optional, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
 from moonlight import explain, protein, reports, translate
@@ -120,10 +121,11 @@ from moonlight.fetch import (
     fetch_listed_medicines,
     fetch_targets,
     fetch_withdrawn,
+    remembered_version,
     search_diseases,
     search_matches,
 )
-from moonlight.fetch import Listed, OnList
+from moonlight.fetch import Listed, OnList, USE_BY_SECONDS
 from moonlight.filter import NOT_APPROVED, UNCLEAR_LINK
 from moonlight.rank import RULE_TEXT, Clue
 from moonlight.records import Disease, Path
@@ -289,6 +291,49 @@ async def _check_hand_lists(_app: FastAPI):
 
 app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None,
               lifespan=_check_hand_lists)
+# Ticket 3.6. Answers over 1000 bytes are gzipped for a browser that asks.
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+# Ticket 3.6. The finished /api/clues answer for each disease, kept in
+# memory like a tray of finished plates: (disease id, Open Targets data
+# version) -> (answer, when it was kept). The use-by age is fetch.py's, the
+# tray holds at most ANSWERS_KEPT diseases (the oldest is dropped) and only
+# good answers go on it. A new deploy starts with an empty tray, which is
+# right: the hand-written lists change only with a deploy.
+ANSWER_USE_BY_SECONDS = USE_BY_SECONDS
+ANSWERS_KEPT = 200
+_answers: "OrderedDict[Tuple[str, str], Tuple[dict, float]]" = OrderedDict()
+_answers_lock = threading.Lock()
+
+
+def forget_answers() -> None:
+    """Empty the tray of finished answers. Tests use it."""
+    with _answers_lock:
+        _answers.clear()
+
+
+def _kept_answer(disease_id: str, version: str) -> Optional[dict]:
+    """The finished answer for this disease and version, or None if there is
+    none or it is past its use-by age."""
+    with _answers_lock:
+        found = _answers.get((disease_id, version))
+        if found is None:
+            return None
+        answer, kept_at = found
+        if not 0 <= _now() - kept_at <= ANSWER_USE_BY_SECONDS:
+            del _answers[(disease_id, version)]
+            return None
+        return answer
+
+
+def _keep_answer(disease_id: str, version: str, answer: dict) -> None:
+    """Put a good answer on the tray. A disease kept again becomes the newest;
+    over ANSWERS_KEPT, the oldest goes."""
+    with _answers_lock:
+        _answers.pop((disease_id, version), None)
+        _answers[(disease_id, version)] = (answer, _now())
+        while len(_answers) > ANSWERS_KEPT:
+            _answers.popitem(last=False)
 
 
 class _Found:
@@ -630,6 +675,26 @@ def search(request: Request, q: str = "") -> dict:
 
 @app.get("/api/clues")
 def clues(disease_id: str) -> dict:
+    # Ticket 3.6. The finished page is filed under the data version that
+    # fetch.py already remembers. Looking at it asks nobody anything, so a
+    # first ask after a restart, or after the hourly re-read, simply builds
+    # the page (the build re-reads the version) and keeps it afterwards.
+    # Keeping pages is only a speed-up: with no known version the page is
+    # built as before and not kept. An error or a 404 raises out of
+    # _build_clues, so it is never kept either.
+    before = remembered_version()
+    if before is not None:
+        kept = _kept_answer(disease_id, before)
+        if kept is not None:
+            return kept
+    answer = _build_clues(disease_id)
+    after = remembered_version()
+    if after is not None and before in (None, after):  # not if the version changed meanwhile
+        _keep_answer(disease_id, after, answer)
+    return answer
+
+
+def _build_clues(disease_id: str) -> dict:
     found = _find(disease_id)
     disease = found.disease
     wrong = looks_wrong(disease.id)  # the corrections list, for this disease only
