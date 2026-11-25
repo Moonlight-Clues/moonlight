@@ -142,7 +142,9 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .opposite-way{flex-basis:100%;font-size:12px;line-height:1.45;color:var(--muted);margin:0}
 .protein-function{flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0;overflow-wrap:anywhere}
 /* Ticket 3.1. Why the gene is linked to the disease: the same small, muted style, under the protein's sentence. */
-.protein-evidence{flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.protein-evidence{flex-basis:100%;font-size:13px;line-height:1.45;font-weight:400;color:var(--muted);margin:4px 0 0;overflow-wrap:anywhere}
+/* Ticket 3.5. "Linked to this disease by:" in the card's dark text; the names after it stay grey. */
+.evidence-start{color:var(--navy);font-weight:600}
 /* Ticket 2.18. One plain line under the New clues cards. */
 .wrong-way-line{font-size:13px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 
@@ -154,12 +156,17 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .phase{display:inline-flex;border-radius:6px;border:1px solid #CBD3DB;background:var(--neutral-bg);font-size:12px;padding:4px 8px;color:var(--neutral);font-weight:700}
 /* the Report link and its small panel, at the bottom of every card (ticket 3.3). Tap targets 44 px. */
 .report-row{margin-top:6px;font-size:12px;color:var(--muted)}
-.report-link{display:inline-flex;align-items:center;min-height:44px;padding:0 2px;border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px}
-.report-panel{margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--slate)}
+/* Ticket 3.5. The link is "Source record"'s teal, but regular weight, so "Source record" stays the stronger link. */
+.report-link{display:inline-flex;align-items:center;justify-content:flex-start;min-height:44px;min-width:44px;padding:0;border:0;background:none;color:var(--teal);font-size:13px;font-weight:400;text-decoration:underline;text-underline-offset:3px}
+.report-panel{position:relative;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--slate);scroll-margin:12px}
 .report-panel fieldset{border:0;margin:0;padding:0}
+/* Ticket 3.5. The heading, now shown, sits clear of the close mark at the top right. */
+.report-heading{padding:0;margin:0 44px 2px 0;font-size:12px;font-weight:600;color:var(--muted);line-height:44px}
+.report-close{position:absolute;top:2px;right:2px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;border-radius:9px;background:none;color:var(--muted);font-size:22px;line-height:1}
+.report-close:hover{color:var(--navy);background:#fff}
 .report-choice{display:flex;align-items:center;gap:10px;min-height:44px;color:var(--navy);cursor:pointer}
 .report-choice input{width:20px;height:20px;margin:0;flex:none}
-.report-panel textarea{display:block;width:100%;box-sizing:border-box;margin-top:6px;padding:8px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:13px;resize:vertical}
+.report-panel textarea{display:block;width:100%;box-sizing:border-box;margin-top:6px;padding:8px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:13px;line-height:1.5;height:calc(3em + 18px);resize:vertical}
 .report-privacy{margin:6px 0 0;color:var(--muted)}
 .report-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .report-buttons{display:flex;gap:8px;margin-top:8px}
@@ -689,7 +696,7 @@ body.registering>:not(.register){display:none!important}
      results are drawn (never on the register). Tapping it puts report-template inside it. -->
 <template id="report-row-template">
   <div class="report-row" data-slot="report">
-    <button type="button" class="report-link" data-part="report-open">Report</button>
+    <button type="button" class="report-link" data-part="report-open" aria-expanded="false">Report</button>
     <p class="report-thanks" data-part="report-thanks" role="status" hidden></p>
   </div>
 </template>
@@ -697,7 +704,9 @@ body.registering>:not(.register){display:none!important}
 <!-- Ticket 3.3. The small panel inside a card. Its grey line is written by the script, from REPORT_PRIVACY. -->
 <template id="report-template">
   <form class="report-panel" data-part="report-panel" novalidate>
-    <fieldset aria-label="What looks wrong?">
+    <button type="button" class="report-close" data-part="report-close" aria-label="Close"><span aria-hidden="true">×</span></button>
+    <fieldset>
+      <legend class="report-heading">What looks wrong?</legend>
       <label class="report-choice"><input type="radio" value="wrong_disease">Wrong disease</label>
       <label class="report-choice"><input type="radio" value="not_approved">Not approved</label>
       <label class="report-choice"><input type="radio" value="wrong_link">Wrong link</label>
@@ -1134,29 +1143,56 @@ body.registering>:not(.register){display:none!important}
   /* Ticket 3.3. The Report link at the bottom of one card. Tapping it opens a small
      panel inside the card: four reasons (one must be picked), a short note, Send and
      Cancel. Nothing pops up. The card's facts come from "about"; nothing about the
-     visitor is sent. The panel is made the first time it is opened. */
+     visitor is sent. The panel is made the first time it is opened.
+     Ticket 3.5. The link stays and works as a switch: tap again to close. The panel
+     also closes with its x mark, the Escape key or Cancel. Every way out clears the
+     choice and the note, and puts focus back on the link. */
   function addReport(el, about) {
     const row = copyOf("report-row-template");
     const open = part(row, "report-open"), thanks = part(row, "report-thanks");
     let panel = null;
+    const shut = () => {
+      panel.clear();
+      panel.hidden = true;
+      open.setAttribute("aria-expanded", "false");
+      open.focus({preventScroll: true});
+    };
     open.addEventListener("click", () => {
-      if (!panel) panel = reportPanel(row, about, () => {
-        panel.hidden = true;
-        thanks.textContent = REPORT_THANKS;
-        thanks.hidden = false;
-      }, () => {
-        panel.hidden = true;
-        open.hidden = false;
-        open.focus();
-      });
+      if (panel && !panel.hidden) return shut();
+      if (!panel) {
+        panel = reportPanel(row, about, () => {
+          panel.hidden = true;
+          open.hidden = true;
+          open.setAttribute("aria-expanded", "false");
+          thanks.textContent = REPORT_THANKS;
+          thanks.hidden = false;
+        }, shut);
+        panel.id = "report-panel-" + reportPanels;
+        open.setAttribute("aria-controls", panel.id);
+      }
       panel.hidden = false;
-      open.hidden = true;
-      panel.querySelector("input").focus();
+      open.setAttribute("aria-expanded", "true");
+      panel.querySelector('input[type="radio"]').focus({preventScroll: true});
+      showWhole(panel);
+    });
+    row.addEventListener("keydown", event => {
+      if (event.key === "Escape" && panel && !panel.hidden) {
+        event.preventDefault();
+        shut();
+      }
     });
     el.append(row);
   }
 
-  function reportPanel(row, about, sent, cancelled) {
+  /* Ticket 3.5. Scroll so the whole panel is in view, only if part of it is off the screen. */
+  function showWhole(panel) {
+    const box = panel.getBoundingClientRect();
+    if (box.top >= 0 && box.bottom <= window.innerHeight) return;
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    panel.scrollIntoView({behavior: still ? "auto" : "smooth", block: "nearest"});
+  }
+
+  function reportPanel(row, about, sent, closed) {
     const panel = copyOf("report-template"), name = "report-reason-" + (++reportPanels);
     const send = part(panel, "report-send"), problem = part(panel, "report-problem");
     const note = panel.querySelector("textarea"), trap = panel.querySelector('input[name="website"]');
@@ -1166,12 +1202,13 @@ body.registering>:not(.register){display:none!important}
       choice.name = name;
       choice.addEventListener("change", () => { send.disabled = false; });
     }
-    part(panel, "report-cancel").addEventListener("click", () => {
+    panel.clear = () => {  // every way out: no choice, no note, no failure words
       panel.reset();
       send.disabled = true;
       problem.hidden = true;
-      cancelled();
-    });
+    };
+    part(panel, "report-cancel").addEventListener("click", closed);
+    part(panel, "report-close").addEventListener("click", closed);
     panel.addEventListener("submit", async event => {
       event.preventDefault();
       const picked = choices.find(choice => choice.checked);
@@ -1343,7 +1380,12 @@ body.registering>:not(.register){display:none!important}
       const evidence = isClue ? evidenceLine(protein) : "";
       if (evidence) {  // never on an Approved card; the words are this page's own
         const line = copyOf("protein-evidence-template");
-        line.textContent = evidence;
+        // Ticket 3.5. The same words in two parts: the start dark, the names after it grey.
+        const start = document.createElement("span"), names = document.createElement("span");
+        start.className = "evidence-start";
+        start.textContent = EVIDENCE_START.trimEnd();
+        names.textContent = evidence.slice(start.textContent.length);
+        line.append(start, names);
         row.style.flexWrap = "wrap";
         row.append(line);
       }
