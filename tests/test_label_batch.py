@@ -376,7 +376,7 @@ def test_each_card_now_shows_the_red_words_and_sits_in_the_folded_box(card):
 def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
     # Ticket 2.39 marked valbenazine (entry 8) "limited".
     assert load(APPROVALS_FILE)[:21] == third_batch.as_written_now(FIRST_FIFTEEN) + PART_B
-    assert len(load(APPROVALS_FILE)) == 22  # ticket 2.34b added avatrombopag after these
+    assert len(load(APPROVALS_FILE)) == 29  # 2.34b added avatrombopag after these, 2.46 seven more
 
 
 def test_two_new_entries_are_limited_and_four_are_not():
