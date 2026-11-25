@@ -22,7 +22,9 @@
                                             the Approved cards the page shows
                                             in the folded box at the bottom of
                                             the Approved tab (ticket 2.27).
-                                            They are still in "approved".
+                                            They are still in "approved", or
+                                            in "narrower" or "wider_group"
+                                            (ticket 3.16).
                                             Also "no_regulator_box": the ids
                                             of the Approved cards the page
                                             shows in the folded box directly
@@ -809,7 +811,12 @@ def _build_clues(disease_id: str) -> dict:
     # order. The cards themselves stay in "approved", each with its
     # "warning", so nothing is removed. The page leaves them out of the
     # main list and out of the tab's number.
-    looks_wrong_box = wrong_approvals_box(found.approved, disease.id)
+    # Ticket 3.16 (Q7): the red cards of the narrower box and the
+    # wider-group box are named too, A to Z with the main list's. They also
+    # stay in their own list ("narrower", "wider_group"), and the page
+    # leaves them out of that box: each card is shown once, in the red box.
+    looks_wrong_box = wrong_approvals_box(found.approved, disease.id,
+                                          found.narrower, found.wider_group)
     if looks_wrong_box:
         # Only there when it holds something, like the other boxes.
         answer["wrong_approvals_box"] = [medicine.id for medicine in looks_wrong_box]

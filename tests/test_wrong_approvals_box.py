@@ -341,9 +341,11 @@ def test_api_the_key_is_exactly_the_main_cards_that_carry_a_warning():
     assert box(answer)[0]["warning"] == LABEL_WARNING  # its own red words, as before
 
 
-def test_api_a_red_warning_card_in_an_older_box_stays_where_it_is():
-    # Out of scope for this ticket: a red-warning card inside the narrower
-    # box or the wider-group box is left there, and is not named by the key.
+def test_api_a_red_warning_card_in_an_older_box_is_named_by_the_key_too():
+    # Ticket 3.16 (Q7, 25 Nov), changed on purpose: a red-warning card in the
+    # narrower box or the wider-group box stays in its own list in the API
+    # answer, and the key names it too, A to Z with the main list's. Before
+    # 3.16 the key named the main list's two only.
     found = found_with(*FOUR)
     found.wider_group, found.approved = found.approved[:1], found.approved[1:]
     found.narrower, found.approved = found.approved[:1], found.approved[1:]
@@ -351,7 +353,7 @@ def test_api_a_red_warning_card_in_an_older_box_stays_where_it_is():
     answer = hand_built_page(found, wrong)
     assert names(answer["wider_group"]) == ["Alphamil"] and "warning" in answer["wider_group"][0]
     assert names(answer["narrower"]) == ["Bravomil"] and "warning" in answer["narrower"][0]
-    assert answer[KEY] == ["CHEMBL9003", "CHEMBL9004"]  # the main list's two only
+    assert answer[KEY] == ["CHEMBL9001", "CHEMBL9002", "CHEMBL9003", "CHEMBL9004"]
 
 
 # ---- her example: Huntington disease, from the saved answers ----
@@ -489,7 +491,11 @@ def test_guard_a_hand_added_approval_with_a_corrections_entry_is_not_added_at_al
     wrong = real + [correction(valbenazine, Disease(HUNTINGTON, "Huntington disease"))]
     answer = page_answer(HUNTINGTON, huntington_files.saved_post_json, wrong=wrong)
     assert valbenazine not in ids(answer["approved"])  # as today: not added
-    assert answer[KEY] == [card_id for card_id, _ in HUNTINGTON_BOX_4]  # so not in the box
+    # Ticket 3.16 (Q7): valbenazine's own wider-group card (movement disorder)
+    # carries this red note, so it is in the red box now, A to Z after the four.
+    # Before 3.16 the box held the four only.
+    assert valbenazine in ids(answer["wider_group"])
+    assert answer[KEY] == [card_id for card_id, _ in HUNTINGTON_BOX_4] + [valbenazine]
     assert names(main_list(answer)) == ["Tetrabenazine"]
 
 

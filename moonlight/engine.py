@@ -53,7 +53,10 @@ Ticket 2.27, the box for approvals that look wrong. Kashish's decision of
 23 Nov: a medicine with a red warning sits in its own folded box on the
 Approved tab, not on the main list. wrong_approvals_box(approved,
 disease_id) names the cards of the main Approved list that carry a red
-warning for the disease, in the list's own order. The page shows them in
+warning for the disease, in the list's own order. Ticket 3.16 (Q7, 25 Nov):
+it is also handed the narrower box and the wider-group box, and names
+their red cards too, A to Z with the main list's: a red warning is never
+hidden in a closed box. The page shows them in
 one folded box at the bottom of the Approved tab, labelled
 WRONG_APPROVALS_BOX_LABEL, and leaves them out of the tab's number.
 sort_into_tabs is not changed: the cards are still on its approved list.
@@ -179,6 +182,7 @@ of time. From a terminal:
 """
 
 import datetime
+import heapq
 import json
 import pathlib
 import sys
@@ -866,6 +870,12 @@ def _family_id(medicine: Medicine) -> str:
     return first.parent_id or first.id
 
 
+def _a_to_z(medicine: "ApprovedMedicine"):
+    """The Approved tab's order: A to Z, ignoring capitals. The last two
+    only make the order the same every time."""
+    return (medicine.name.casefold(), medicine.name, medicine.id)
+
+
 def sort_into_tabs(
     tray: Dict[str, List[Path]],
     listed: Iterable[Listed],
@@ -1072,14 +1082,9 @@ def sort_into_tabs(
             wider_group.append(
                 _approved_medicine(family_id, clue, entries, parent_label(parents)))
 
-    # A to Z, ignoring capitals. The last two only make the order the same
-    # every time.
-    def a_to_z(medicine: ApprovedMedicine):
-        return (medicine.name.casefold(), medicine.name, medicine.id)
-
-    approved.sort(key=a_to_z)
-    narrower.sort(key=a_to_z)
-    wider_group.sort(key=a_to_z)
+    approved.sort(key=_a_to_z)
+    narrower.sort(key=_a_to_z)
+    wider_group.sort(key=_a_to_z)
 
     acts_on_a_protein = {
         _family_id(path.medicine) for paths in tray.values() for path in paths
@@ -1629,20 +1634,32 @@ def warning_words(disease_id: str) -> Dict[str, str]:
 
 
 def wrong_approvals_box(approved: Iterable[ApprovedMedicine],
-                        disease_id: str) -> List[ApprovedMedicine]:
-    """The Approved-tab cards that go in the folded box (ticket 2.27).
+                        disease_id: str,
+                        narrower: Iterable[ApprovedMedicine] = (),
+                        wider_group: Iterable[ApprovedMedicine] = ()) -> List[ApprovedMedicine]:
+    """The Approved-tab cards that go in the red box (tickets 2.27 and 3.16).
 
     Kashish's decision of 23 Nov: a medicine with a red warning sits in its
     own folded box on the Approved tab, not on the main list. approved is
     the MAIN Approved list (sort_into_tabs' approved). A card is in the box
     when it carries a red warning for this disease (warning_words), any
-    of them. The cards come back in the order they were handed in: the
-    list's own, A to Z. Nothing is taken off the list by this: the answer
-    only says which of its cards sit in the box. A card in the narrower
-    box or the wider-group box is not handed in, so it stays where it is.
+    of them.
+
+    Ticket 3.16, Kashish's decision of 25 Nov (Q7): a red warning must not
+    be hidden in a closed box. narrower and wider_group are the narrower
+    box and the wider-group box; their red cards go in the red box too,
+    whichever box they were in. (The no-regulator box is worked out from
+    the main list and already gives way to this one: ticket 2.42.)
+
+    The cards come back A to Z, all lists together; each list keeps its
+    own order inside that. Nothing is taken off any list by this: the
+    answer only says which cards sit in the red box. No card is changed,
+    so each keeps its grey lines.
     """
     words = warning_words(disease_id)
-    return [medicine for medicine in approved if medicine.id in words]
+    lists = [[medicine for medicine in cards if medicine.id in words]
+             for cards in (approved, narrower, wider_group)]
+    return list(heapq.merge(*lists, key=_a_to_z))
 
 
 def no_regulator_box(approved: Iterable[ApprovedMedicine],
