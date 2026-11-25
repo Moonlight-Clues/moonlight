@@ -95,11 +95,15 @@ def test_the_test_entries_are_one_us_and_one_eu():
 
 
 def test_the_real_file_has_no_region_and_does_not_change():
+    # Roctavian and Relyvrio, looked up by id: still there, still four keys.
     entries = load(FILE)
-    assert [(e["medicine_id"], e["disease_id"]) for e in entries] == [
-        (ROCTAVIAN, HAEMOPHILIA_A), (RELYVRIO, ALS)]
-    assert all(list(e) == ["medicine_id", "disease_id", "date", "source"] for e in entries)
-    assert [w.region for w in engine.withdrawals_by_hand()] == [None, None]
+    for medicine_id, disease_id in ((ROCTAVIAN, HAEMOPHILIA_A), (RELYVRIO, ALS)):
+        (entry,) = [e for e in entries if e["medicine_id"] == medicine_id]
+        assert entry["disease_id"] == disease_id
+        assert list(entry) == ["medicine_id", "disease_id", "date", "source"]
+    # No real entry has a region yet (the real ones come with ticket 2.59).
+    assert all("region" not in e for e in entries)
+    assert all(w.region is None for w in engine.withdrawals_by_hand())
 
 
 @pytest.mark.parametrize("region", ["us", "Eu", "UK", "", None, 1, ["US"], "US "])
