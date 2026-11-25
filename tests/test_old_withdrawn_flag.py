@@ -78,6 +78,13 @@ RED_2_45 = {
     AML: {"CHEMBL4297573"},  # tagraxofusp
     "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
 }
+# Ticket 2.48 set the Source record of this card (moonlight/confirmed.json):
+# card id -> (the link the saved page shows, the label it shows now).
+SOURCE_2_48 = {
+    ASTHMA: {"CHEMBL1900528": (  # tiotropium
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1cf82d42-5ad0-4b86-838e-9230c61cf3d4",
+        "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7b656b14-fcaa-2741-f6f0-e0be48971c02")},
+}
 BACK = {}
 for _disease, _id, _ in EIGHT:
     BACK.setdefault(_disease, []).append(_id)
@@ -220,6 +227,11 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
     plain = [({key: value for key, value in card.items() if key != "warning"}
               if card["id"] in red else card) for card in after["approved"]]
     assert all("warning" in card for card in after["approved"] if card["id"] in red)
+    sources = SOURCE_2_48.get(disease_id, {})
+    assert all(card["source"] == sources[card["id"]][1]
+               for card in plain if card["id"] in sources)
+    plain = [dict(card, source=sources[card["id"]][0]) if card["id"] in sources else card
+             for card in plain]
     assert [card for card in plain if card["id"] not in back] == before["approved"]
     for key in before:
         if key in ("approved", "left_out", "wrong_approvals_box"):
