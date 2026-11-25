@@ -95,8 +95,10 @@ def test_part_a_the_valbenazine_entry_gains_limited_and_nothing_else():
 # ---- part B: the new list ----
 
 def test_part_b_the_list_holds_exactly_the_one_entry():
-    assert load(LIMITS_FILE) == [TETRABENAZINE_ENTRY]
-    assert engine.limits_by_hand() == [
+    # Ticket 2.50 adds a second entry, for another disease (Roctavian,
+    # haemophilia A; tests/test_roctavian_2_50.py). Huntington's is still one.
+    assert [e for e in load(LIMITS_FILE) if e["disease_id"] == HUNTINGTON] == [TETRABENAZINE_ENTRY]
+    assert [hand for hand in engine.limits_by_hand() if hand.disease_id == HUNTINGTON] == [
         engine.HandLimit(TETRABENAZINE, HUNTINGTON, TETRABENAZINE_LABEL)]
 
 
