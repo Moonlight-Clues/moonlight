@@ -126,7 +126,9 @@ def clue_of(*sources_per_protein):
 
 def test_a_card_with_no_study_for_this_disease_keeps_its_link():
     clue = clue_of((STUDY + "A", STUDY + "B"))
-    assert api._one_source(clue, {STUDY + "Z"}) == STUDY + "A"
+    # Ticket 3.13 (approved by MAIN 4): a study of this disease from the
+    # disease's own list is opened even when the card's records lack it.
+    assert api._one_source(clue, {STUDY + "Z"}) == STUDY + "Z"
     assert api._one_source(clue, set()) == STUDY + "A"
     assert api._one_source(clue) == STUDY + "A"
 
