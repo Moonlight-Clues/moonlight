@@ -1,0 +1,6 @@
+{
+  "query": "\nquery DrugSearch($text: String!) {\n  search(queryString: $text, entityNames: [\"drug\"], page: {index: 0, size: 5}) {\n    hits { id entity name }\n  }\n}\n",
+  "variables": {
+    "text": "elexacaftor"
+  }
+}
