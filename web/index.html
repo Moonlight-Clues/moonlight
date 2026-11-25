@@ -614,6 +614,7 @@ body.registering>:not(.register){display:none!important}
         <thead><tr><th scope="col">Medicine</th><th scope="col">Protein</th><th scope="col">Turns it</th><th scope="col">Points / 100</th><th scope="col">Source</th></tr></thead>
       </table>
       <p data-reg="approved-empty" hidden></p>
+      <div data-reg="approved-boxes"></div>
       <p data-reg="boxes"></p>
 
       <h2 data-reg="trials-head">IN TRIALS</h2>
@@ -695,6 +696,7 @@ body.registering>:not(.register){display:none!important}
 
   let latest = 0;       // the number of the newest request; older answers are dropped
   let chosen = null;    // the protein whose filter button is pressed, or null
+  let shownBoxes = null;  // the Approved piles of that answer (ticket 2.36)
   let shown = null;     // the answer the results on the page were drawn from, kept for the register
 
   // What the page says when the API answers 429. Kashish's exact words.
@@ -1018,6 +1020,14 @@ body.registering>:not(.register){display:none!important}
     applyFilter(null);
 
     shown = data;  // The print button reads this. It never asks the API again.
+    // Ticket 2.36. The same piles the screen just drew, by the same ids, so the register prints the same cards.
+    const noRegulatorIds = new Set(data.no_regulator_box || []);
+    const inBox = medicine => wrongIds.has(medicine.id) || noRegulatorIds.has(medicine.id);
+    shownBoxes = {diseaseName, main: data.approved.filter(medicine => !inBox(medicine)), boxes: [
+      [byId("narrower-box"), data.narrower || []],
+      [byId("wider-box"), data.wider_group || []],
+      [byId("no-regulator-box"), notWrong.filter(medicine => noRegulatorIds.has(medicine.id))],
+      [byId("wrong-box"), data.approved.filter(medicine => wrongIds.has(medicine.id))]]};
     byId("print-page").hidden = false;
   }
 
@@ -1283,16 +1293,26 @@ body.registering>:not(.register){display:none!important}
     table.hidden = !items.length;
   }
 
-  /* The grey line and the red warning of an Approved card, in the card's
-     order and the card's words, for the row straight under that medicine.
-     Only Approved rows get them, as only Approved cards do. On the card the
-     red line starts with a warning sign, which reads "Warning". On paper
-     that is the word itself. */
+  /* Ticket 2.36. Every line an Approved card shows on screen, in the card's
+     order and the card's words, for the rows straight under that medicine.
+     The card is built by the screen's own function and its shown lines are
+     read off it, so nothing is typed a second time: the disease label, the
+     grey lines and the red warning. (The no-source sentence is in the Source
+     cell of the row.) On the card the red line starts with a warning sign,
+     which reads "Warning". On paper that is the word itself. */
   function cardLines(approved) {
-    const under = [];
-    if (approved.proof_note) under.push([approved.proof_note, ""]);
-    if (approved.warning) under.push(["Warning: " + approved.warning, "loud"]);
+    const el = approvedCard(approved, shownBoxes.diseaseName), under = [];
+    for (const name of ["label", "proof-note", "limit-note", "withdrawal-note"])
+      if (!slot(el, name).hidden) under.push([slot(el, name).textContent, ""]);
+    if (!slot(el, "warning").hidden) under.push(["Warning: " + part(slot(el, "warning"), "warning-words").textContent, "loud"]);
     return under;
+  }
+
+  /* A box's title as the screen writes it, without "Tap to open". */
+  function boxTitle(box) {
+    const summary = box.querySelector("summary").cloneNode(true);
+    summary.querySelector('[data-part="tap"]').remove();
+    return summary.textContent.replace(/\s+/g, " ").trim();
   }
 
   function drawRegister(data) {
@@ -1303,13 +1323,26 @@ body.registering>:not(.register){display:none!important}
     reg("footer-safety").textContent = safety;
 
     reg("approved-top").textContent = pageWords("#approved-list .tab-words");
-    registerRows(byId("register-approved"), data.approved, cardLines);
-    const narrower = (data.narrower || []).length, wider = (data.wider_group || []).length;
+    registerRows(byId("register-approved"), shownBoxes.main, cardLines);
+    // Each Approved box the screen shows, in its order, under its own title.
+    const holder = reg("approved-boxes"), head = byId("register-approved").tHead;
+    holder.replaceChildren();
+    let boxed = 0;
+    for (const [box, items] of shownBoxes.boxes) {
+      if (!items.length) continue;
+      boxed += items.length;
+      const title = document.createElement("h3"), table = document.createElement("table");
+      title.textContent = boxTitle(box);
+      table.className = "register-table";
+      table.append(head.cloneNode(true));
+      registerRows(table, items, cardLines);
+      holder.append(title, table);
+    }
     reg("approved-empty").textContent = pageWords("#approved-empty h3");
-    reg("approved-empty").hidden = !!(data.approved.length || narrower || wider);  // as on the page
-    reg("boxes").textContent = narrower + (narrower === 1 ? " more medicine is" : " more medicines are")
-      + " in the narrower box and " + wider + (wider === 1 ? " more is" : " more are")
-      + " in the wider box. See the site for these.";
+    reg("approved-empty").hidden = !!(shownBoxes.main.length || boxed);  // as on the page
+    reg("boxes").textContent = boxed + (boxed === 1 ? " more approved medicine is in the box below."
+      : " more approved medicines are in the boxes below.");
+    reg("boxes").hidden = !boxed;
 
     const studied = data.being_studied.length;
     reg("trials").textContent = studied + (studied === 1 ? " medicine. " : " medicines. ")
