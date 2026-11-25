@@ -124,7 +124,7 @@ const SITE = "http://moonlight.test";
       privacy: el.querySelector('[data-part="report-privacy"]').textContent.trim(),
       placeholder: el.querySelector("textarea").placeholder,
       maxLength: el.querySelector("textarea").maxLength,
-      buttons: [...el.querySelectorAll("button")].map(b => b.textContent.trim()),
+      buttons: [...el.querySelectorAll(".report-buttons button")].map(b => b.textContent.trim()),
       inCard: !!el.closest(".card"),
     }));
     await card.locator("label.report-choice").nth(2).click();

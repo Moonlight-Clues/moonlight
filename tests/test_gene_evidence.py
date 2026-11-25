@@ -736,7 +736,7 @@ def test_browser_every_clue_card_shows_what_the_api_sent(seen, huntington, t2d, 
                     want = ([START + ", ".join(names[kind] for kind in found[KEY]) + "."]
                             if KEY in found else [])
                     assert row["lines"] == want, (key, card["name"], row["symbol"])
-                    assert row["children"] == [0] * len(want)
+                    assert row["children"] == [2] * len(want)  # ticket 3.5: start and names in two parts
                     assert row["underTheRow"] and row["afterTheSentence"]
                     assert row["insideTheCard"]
 
