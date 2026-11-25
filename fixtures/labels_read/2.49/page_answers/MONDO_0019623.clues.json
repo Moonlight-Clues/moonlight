@@ -1,0 +1,1718 @@
+{
+ "disease": {
+  "id": "MONDO_0019623",
+  "name": "hereditary angioedema"
+ },
+ "about_disease": {
+  "description": "Hereditary angioedema (HAE) is a genetic disease characterized by the occurrence of transitory and recurrent subcutaneous and/or submucosal edemas resulting in swelling and/or abdominal pain.",
+  "source": "Open Targets",
+  "also_called": [
+   "HAE",
+   "familial angioneurotic edema",
+   "familial angioneurotic oedema",
+   "hereditary angioneurotic edema",
+   "hereditary angioneurotic oedema",
+   "hereditary bradykinine-induced angioedema",
+   "hereditary non histamine-induced angioedema"
+  ]
+ },
+ "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+ "approved": [
+  {
+   "id": "CHEMBL5189739",
+   "medicine": "Berotralstat",
+   "forms": [
+    "Berotralstat",
+    "Berotralstat Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "KLKB1",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 9,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC06"
+  },
+  {
+   "id": "CHEMBL2108350",
+   "medicine": "Conestat Alfa",
+   "forms": [
+    "Conestat Alfa"
+   ],
+   "proteins": [
+    {
+     "symbol": "SERPING1",
+     "points": 89,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 34,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC04"
+  },
+  {
+   "id": "CHEMBL4650235",
+   "medicine": "Donidalorsen",
+   "forms": [
+    "Donidalorsen"
+   ],
+   "proteins": [],
+   "reports": 8,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/dawnzera"
+  },
+  {
+   "id": "CHEMBL1201837",
+   "medicine": "Ecallantide",
+   "forms": [
+    "Ecallantide"
+   ],
+   "proteins": [
+    {
+     "symbol": "KLKB1",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 16,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC03"
+  },
+  {
+   "id": "CHEMBL4297549",
+   "medicine": "Human C1-ESTERASE Inhibitor",
+   "forms": [
+    "Human C1-ESTERASE Inhibitor"
+   ],
+   "proteins": [
+    {
+     "symbol": "F12",
+     "points": 81,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "KLKB1",
+     "points": 59,
+     "direction": "down",
+     "machine": 2,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "C1S",
+     "points": 54,
+     "direction": "down",
+     "machine": 3,
+     "piece_of_machine": false
+    },
+    {
+     "symbol": "F11",
+     "points": 52,
+     "direction": "down",
+     "machine": 4,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 24,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC01"
+  },
+  {
+   "id": "CHEMBL2028850",
+   "medicine": "Icatibant",
+   "forms": [
+    "Icatibant",
+    "Icatibant Acetate"
+   ],
+   "proteins": [
+    {
+     "symbol": "BDKRB2",
+     "points": 58,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 27,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC02"
+  },
+  {
+   "id": "CHEMBL3545189",
+   "medicine": "Lanadelumab",
+   "forms": [
+    "Lanadelumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "KLKB1",
+     "points": 59,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC05"
+  },
+  {
+   "id": "CHEMBL5095248",
+   "medicine": "Sebetralstat",
+   "forms": [
+    "Sebetralstat"
+   ],
+   "proteins": [],
+   "reports": 9,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B06AC08"
+  },
+  {
+   "id": "CHEMBL2079587",
+   "medicine": "Stanozolol",
+   "forms": [
+    "Stanozolol"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false
+    }
+   ],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D08QKJ",
+   "proof_note": "The database lists this as approved, but gives no regulator record for it."
+  }
+ ],
+ "being_studied": [
+  {
+   "id": "CHEMBL877",
+   "medicine": "Tranexamic Acid",
+   "forms": [
+    "Tranexamic Acid"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 506,
+   "source": "https://clinicaltrials.gov/study/NCT00670345",
+   "trial_phase": "Phase 3",
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "new_clues": [
+  {
+   "id": "CHEMBL1046",
+   "medicine": "Aminocaproic Acid",
+   "forms": [
+    "Aminocaproic Acid"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 26,
+   "source": "https://clinicaltrials.gov/study/NCT01873768",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108147",
+   "medicine": "Streptokinase",
+   "forms": [
+    "Streptokinase"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 19,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD01",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108396",
+   "medicine": "Defibrotide",
+   "forms": [
+    "Defibrotide"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 18,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AX01",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3707226",
+   "medicine": "Defibrotide Sodium",
+   "forms": [
+    "Defibrotide Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 3,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108250",
+   "medicine": "Anistreplase",
+   "forms": [
+    "Anistreplase"
+   ],
+   "proteins": [
+    {
+     "symbol": "PLG",
+     "points": 74,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Protease which primary function is to degrade fibrin, the main component of blood clots.",
+     "evidence": [
+      "genetic_association",
+      "literature"
+     ]
+    }
+   ],
+   "reports": 2,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=B01AD03",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297832",
+   "medicine": "Sutimlimab",
+   "forms": [
+    "Sutimlimab"
+   ],
+   "proteins": [
+    {
+     "symbol": "C1S",
+     "points": 54,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 12,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL386630",
+   "medicine": "Testosterone",
+   "forms": [
+    "Testosterone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 427,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/livensa",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1082407",
+   "medicine": "Enzalutamide",
+   "forms": [
+    "Enzalutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 316,
+   "source": "https://clinicaltrials.gov/study/NCT01977651",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL409",
+   "medicine": "Bicalutamide",
+   "forms": [
+    "Bicalutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 168,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V9BD",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3183409",
+   "medicine": "Apalutamide",
+   "forms": [
+    "Apalutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 126,
+   "source": "https://clinicaltrials.gov/study/NCT04108208",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297185",
+   "medicine": "Darolutamide",
+   "forms": [
+    "Darolutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 109,
+   "source": "https://clinicaltrials.gov/study/NCT05348876",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL254328",
+   "medicine": "Abiraterone",
+   "forms": [
+    "Abiraterone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 106,
+   "source": "https://clinicaltrials.gov/study/NCT01995513",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL806",
+   "medicine": "Flutamide",
+   "forms": [
+    "Flutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 71,
+   "source": "https://clinicaltrials.gov/study/NCT00611923",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2107067",
+   "medicine": "Testosterone Undecanoate",
+   "forms": [
+    "Testosterone Undecanoate"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 65,
+   "source": "https://clinicaltrials.gov/study/NCT00710827",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201101",
+   "medicine": "Testosterone Cypionate",
+   "forms": [
+    "Testosterone Cypionate"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 52,
+   "source": "https://clinicaltrials.gov/study/NCT04321551",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1479",
+   "medicine": "Danazol",
+   "forms": [
+    "Danazol"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 37,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=35a21f89-cf5f-4e8b-8400-3ef7023bc49c",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200335",
+   "medicine": "Testosterone Enanthate",
+   "forms": [
+    "Testosterone Enanthate"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 33,
+   "source": "https://clinicaltrials.gov/study/NCT00493987",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL139835",
+   "medicine": "Cyproterone Acetate",
+   "forms": [
+    "Cyproterone Acetate"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 29,
+   "source": "https://clinicaltrials.gov/study/NCT00003653",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3590187",
+   "medicine": "Clascoterone",
+   "forms": [
+    "Clascoterone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 23,
+   "source": "https://clinicaltrials.gov/study/NCT06336603",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200436",
+   "medicine": "Oxandrolone",
+   "forms": [
+    "Oxandrolone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 22,
+   "source": "https://clinicaltrials.gov/study/NCT05893069",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1274",
+   "medicine": "Nilutamide",
+   "forms": [
+    "Nilutamide"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "opposite_way": "Opposite way to the approved medicines for this disease.",
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 14,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=34ea4810-2d6c-4bd9-ae52-8bab786dee91",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1395",
+   "medicine": "Methyltestosterone",
+   "forms": [
+    "Methyltestosterone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 6,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=77bb4ef4-c10e-4acc-8225-651d003f4561",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1445",
+   "medicine": "Fluoxymesterone",
+   "forms": [
+    "Fluoxymesterone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 3,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5328c194-5650-4d1f-9e28-8cea038cce81",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200585",
+   "medicine": "Oxymetholone",
+   "forms": [
+    "Oxymetholone"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 2,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4b9c6c34-9cb2-4d70-b70e-c7ce2fda4212",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1200623",
+   "medicine": "Ethylestrenol",
+   "forms": [
+    "Ethylestrenol"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 1,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0SC8F",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1170",
+   "medicine": "Testosterone Propionate",
+   "forms": [
+    "Testosterone Propionate"
+   ],
+   "proteins": [
+    {
+     "symbol": "AR",
+     "points": 37,
+     "direction": "up",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Steroid hormone receptors are ligand-activated transcription factors that regulate eukaryotic gene expression and affect cellular proliferation and differentiation in target tissues."
+    }
+   ],
+   "reports": 1,
+   "source": "https://clinicaltrials.gov/study/NCT01122342",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108709",
+   "medicine": "Collagenase Clostridium Histolyticum",
+   "forms": [
+    "Collagenase Clostridium Histolyticum"
+   ],
+   "proteins": [
+    {
+     "symbol": "COL18A1",
+     "points": 11,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Probably plays a major role in determining the retinal structure as well as in the closure of the neural tube.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 91,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/xiapex",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2095222",
+   "medicine": "Ocriplasmin",
+   "forms": [
+    "Ocriplasmin"
+   ],
+   "proteins": [
+    {
+     "symbol": "COL18A1",
+     "points": 11,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Probably plays a major role in determining the retinal structure as well as in the closure of the neural tube.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 25,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/jetrea",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201583",
+   "medicine": "Bevacizumab",
+   "forms": [
+    "Bevacizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 2541,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/equidacent",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201825",
+   "medicine": "Ranibizumab",
+   "forms": [
+    "Ranibizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 457,
+   "source": "https://clinicaltrials.gov/study/NCT00674323",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1742982",
+   "medicine": "Aflibercept",
+   "forms": [
+    "Aflibercept"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 424,
+   "source": "https://clinicaltrials.gov/study/NCT01495208",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297750",
+   "medicine": "Faricimab",
+   "forms": [
+    "Faricimab"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 49,
+   "source": "https://clinicaltrials.gov/study/NCT05224102",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3707357",
+   "medicine": "Brolucizumab",
+   "forms": [
+    "Brolucizumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 47,
+   "source": "https://clinicaltrials.gov/study/NCT04679935",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201421",
+   "medicine": "Pegaptanib Sodium",
+   "forms": [
+    "Pegaptanib Sodium"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 39,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/macugen",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108313",
+   "medicine": "Conbercept",
+   "forms": [
+    "Conbercept"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 33,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0O9XO",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297684",
+   "medicine": "Abicipar Pegol",
+   "forms": [
+    "Abicipar Pegol"
+   ],
+   "proteins": [
+    {
+     "symbol": "VEGFA",
+     "points": 9,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Participates in the induction of key genes involved in the response to hypoxia and in the induction of angiogenesis such as HIF1A.",
+     "evidence": [
+      "literature"
+     ]
+    }
+   ],
+   "reports": 17,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=S01LA07",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4594328",
+   "medicine": "Beremagene Geperpavec",
+   "forms": [
+    "Beremagene Geperpavec"
+   ],
+   "proteins": [
+    {
+     "symbol": "COL7A1",
+     "points": 8,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false,
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 10,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=D03AX16",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201577",
+   "medicine": "Cetuximab",
+   "forms": [
+    "Cetuximab"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 944,
+   "source": "https://clinicaltrials.gov/study/NCT00327093",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL553",
+   "medicine": "Erlotinib",
+   "forms": [
+    "Erlotinib",
+    "Erlotinib Hydrochloride"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 724,
+   "source": "https://clinicaltrials.gov/study/NCT00949910",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL939",
+   "medicine": "Gefitinib",
+   "forms": [
+    "Gefitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 345,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/gefitinib-mylan",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3353410",
+   "medicine": "Osimertinib",
+   "forms": [
+    "Osimertinib",
+    "Osimertinib Mesylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 288,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e81b4a7-b971-45e1-9c31-29cea8c87ce7",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL554",
+   "medicine": "Lapatinib",
+   "forms": [
+    "Lapatinib",
+    "Lapatinib Ditosylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 284,
+   "source": "https://clinicaltrials.gov/study/NCT01328054",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1201827",
+   "medicine": "Panitumumab",
+   "forms": [
+    "Panitumumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 238,
+   "source": "https://clinicaltrials.gov/study/NCT02301962",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1173655",
+   "medicine": "Afatinib",
+   "forms": [
+    "Afatinib",
+    "Afatinib Dimaleate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 206,
+   "source": "https://clinicaltrials.gov/study/NCT02208843",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3647420",
+   "medicine": "Pyrotinib",
+   "forms": [
+    "Pyrotinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 186,
+   "source": "https://clinicaltrials.gov/study/NCT02973737",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2108359",
+   "medicine": "Nimotuzumab",
+   "forms": [
+    "Nimotuzumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 150,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D05BKS",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL24828",
+   "medicine": "Vandetanib",
+   "forms": [
+    "Vandetanib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 110,
+   "source": "https://clinicaltrials.gov/study/NCT01496313",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2087361",
+   "medicine": "Icotinib",
+   "forms": [
+    "Icotinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 83,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L01EB08",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL180022",
+   "medicine": "Neratinib",
+   "forms": [
+    "Neratinib",
+    "Neratinib Maleate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 83,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/nerlynx",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4761468",
+   "medicine": "Aumolertinib",
+   "forms": [
+    "Aumolertinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 73,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/aumseqa",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297258",
+   "medicine": "Firmonertinib",
+   "forms": [
+    "Firmonertinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 67,
+   "source": "https://clinicaltrials.gov/study/NCT05607550",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL2110732",
+   "medicine": "Dacomitinib Anhydrous",
+   "forms": [
+    "Dacomitinib Anhydrous",
+    "Dacomitinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 52,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297774",
+   "medicine": "Amivantamab",
+   "forms": [
+    "Amivantamab"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 51,
+   "source": "https://clinicaltrials.gov/study/NCT07469488",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545311",
+   "medicine": "Brigatinib",
+   "forms": [
+    "Brigatinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 42,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4558324",
+   "medicine": "Lazertinib",
+   "forms": [
+    "Lazertinib",
+    "Lazertinib Mesylate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 40,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lazcluze",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL1743047",
+   "medicine": "Necitumumab",
+   "forms": [
+    "Necitumumab"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 27,
+   "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/portrazza",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4650319",
+   "medicine": "Mobocertinib",
+   "forms": [
+    "Mobocertinib",
+    "Mobocertinib Succinate"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 13,
+   "source": "https://ttd.idrblab.cn/data/drug/details/DI4HA7",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4298088",
+   "medicine": "Cetuximab Sarotalocan",
+   "forms": [
+    "Cetuximab Sarotalocan"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "unknown",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 11,
+   "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3545308",
+   "medicine": "Rociletinib",
+   "forms": [
+    "Rociletinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 10,
+   "source": "https://www.whocc.no/atc_ddd_index/?code=L01EB05",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3786343",
+   "medicine": "Olmutinib",
+   "forms": [
+    "Olmutinib"
+   ],
+   "proteins": [
+    {
+     "symbol": "EGFR",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "function": "Receptor tyrosine kinase binding ligands of the EGF family and activating several signaling cascades to convert extracellular cues into appropriate cellular responses.",
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 7,
+   "source": "https://ttd.idrblab.cn/data/drug/details/D05NUH",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL3039545",
+   "medicine": "Luspatercept",
+   "forms": [
+    "Luspatercept"
+   ],
+   "proteins": [
+    {
+     "symbol": "TGFB3",
+     "points": 8,
+     "direction": "down",
+     "machine": 1,
+     "piece_of_machine": false,
+     "evidence": [
+      "animal_model"
+     ]
+    }
+   ],
+   "reports": 61,
+   "source": "https://clinicaltrials.gov/study/NCT05462548",
+   "trial_phase": null,
+   "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "left_out": {
+  "not_approved": 88,
+  "unclear_link": 0
+ },
+ "wider_group": [
+  {
+   "id": "CHEMBL1201353",
+   "medicine": "Dexchlorpheniramine",
+   "forms": [
+    "Dexchlorpheniramine Maleate"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1950f4d6-7fc2-44cd-9f7d-1359315353fc",
+   "label": "Not listed as approved for this exact disease. Approved for angioedema, a wider group the database puts this disease in."
+  },
+  {
+   "id": "CHEMBL679",
+   "medicine": "Epinephrine",
+   "forms": [
+    "Epinephrine"
+   ],
+   "proteins": [],
+   "reports": 1,
+   "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3ed35d7d-616c-43cd-9776-705821afc1f0",
+   "label": "Not listed as approved for this exact disease. Approved for angioedema, a wider group the database puts this disease in."
+  }
+ ],
+ "new_in_trials": [
+  {
+   "id": "CHEMBL5095059",
+   "medicine": "Deucrictibant",
+   "forms": [
+    "Deucrictibant"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT06343779",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL6068148",
+   "medicine": "Navenibart",
+   "forms": [
+    "Navenibart"
+   ],
+   "trial_phase": "Phase 3",
+   "source": "https://clinicaltrials.gov/study/NCT07204938",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  },
+  {
+   "id": "CHEMBL4297502",
+   "medicine": "Avoralstat",
+   "forms": [
+    "Avoralstat"
+   ],
+   "trial_phase": "Phase 2/3",
+   "source": "https://ttd.idrblab.cn/data/drug/details/D0V4HO",
+   "ending": "Never start, stop or change any medicine without a doctor."
+  }
+ ],
+ "opposite_way_box": [
+  "CHEMBL1082407",
+  "CHEMBL409",
+  "CHEMBL3183409",
+  "CHEMBL4297185",
+  "CHEMBL254328",
+  "CHEMBL806",
+  "CHEMBL139835",
+  "CHEMBL3590187",
+  "CHEMBL1274"
+ ],
+ "no_regulator_box": [
+  "CHEMBL2079587"
+ ]
+}
