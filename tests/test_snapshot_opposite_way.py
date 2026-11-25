@@ -321,8 +321,10 @@ def test_the_number_and_order_of_rows_did_not_change(seen, answer, view):
     assert [row["cells"][0][0] for row in clue_rows] == [
         clue["medicine"] for clue in answer["new_clues"][:10]]
     approved = [row for row in seen[view]["approved"] if row["kind"] == "medicine"]
+    # Ticket 2.36: the main list is the approved cards without the two boxes' cards.
+    boxed = set(answer.get("wrong_approvals_box", [])) | set(answer.get("no_regulator_box", []))
     assert [row["cells"][0][0] for row in approved] == [
-        medicine["medicine"] for medicine in answer["approved"]]
+        medicine["medicine"] for medicine in answer["approved"] if medicine["id"] not in boxed]
 
 
 # ---- example e ----
