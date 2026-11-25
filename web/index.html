@@ -200,8 +200,12 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .guide-line{font-size:12px;color:var(--muted);margin:10px 0 0}
 .intro h1{text-wrap:balance}
 .card-help{font-size:12px;text-align:right;margin:8px 2px 0}
-.guide{max-width:760px;margin-inline:auto;display:grid;gap:56px}
-.guide,.guide>section{scroll-margin-top:70px;min-width:0}
+.guide{max-width:760px;margin-inline:auto;display:grid;gap:24px}
+/* Ticket 3.9. The guide is the first thing under the header when it opens, so a margin this
+   tall makes the jump to it stop at the very top of the page: the brand header stays in view.
+   Its parts keep 70px, to stop below the pinned safety line. */
+.guide{scroll-margin-top:100vh}
+.guide>section{scroll-margin-top:70px;min-width:0}
 :where(.guide) :where(p,ul,ol,dl,dd){margin:0}
 :where(.guide) :where(ul,ol){padding:0;list-style:none}
 .guide :where(h1,h2,h3){text-wrap:balance}
@@ -241,10 +245,18 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .guide .reports,.guide .card-subhead{display:flex;align-items:center;gap:7px}
 .guide .ending{display:grid;grid-template-columns:auto 1fr;gap:9px}
 .guide .card-foot{justify-content:flex-start;gap:7px}
+/* Ticket 3.9. Each letter hugs the part it names: 5px to it, the row's 10px to the next part. */
+.kp{display:inline-flex;align-items:center;gap:5px}
+.guide .protein-row{flex-wrap:wrap}
+.guide .protein-function .k,.guide .protein-evidence .k{margin-left:5px}
+.guide .report-row{display:flex;align-items:center;gap:7px}
+.guide .report-link{cursor:default}
 .guide .source-link{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
 .k{flex:none;width:19px;height:19px;border-radius:50%;background:var(--gold);color:var(--navy);font:750 11px/19px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:center;letter-spacing:0;text-transform:none;text-decoration:none;display:inline-block}
-/* the key: eight small chips, a gold letter and a few words each */
+/* the key: ten small chips, a gold letter and a few words each. Two columns at every width,
+   so every row is full (ticket 3.9). */
 .key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.key-note{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 .key li{display:flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px;line-height:1.3;min-width:0}
 
 /* the two folded parts: the wider-group box, holding a list */
@@ -325,7 +337,7 @@ body.registering>:not(.register){display:none!important}
 @media print{.register{padding:0;font-size:10.5pt}.register-bar{display:none}.register-table{font-size:9.5pt}.register-foot{font-size:8.5pt}}
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes shimmer{to{background-position-x:-200%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner,.skeleton{animation:none}}
-@media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.tabs{gap:6px;padding:5px}.tab{font-size:14px;padding:10px 8px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}.guide{gap:68px}.idea{padding:34px}.tab-notes{grid-template-columns:repeat(3,1fr)}.pair{grid-template-columns:1fr 1fr}.key{grid-template-columns:repeat(4,minmax(0,1fr))}.chain .shape{width:66px;height:66px}}
+@media(min-width:760px){.main{padding-top:44px;padding-bottom:74px}.intro{margin-bottom:28px}.card{padding:21px 22px}.studied{padding:23px}.tabs{gap:6px;padding:5px}.tab{font-size:14px;padding:10px 8px}.left-out{gap:13px}.count{padding:16px}.safety-inner{font-size:13px;padding:12px 0}.rule{padding:15px 18px}.guide{gap:32px}.idea{padding:34px}.tab-notes{grid-template-columns:repeat(3,1fr)}.pair{grid-template-columns:1fr 1fr}.chain .shape{width:66px;height:66px}}
 @media(max-width:540px){.card-top{gap:8px}.reports{white-space:normal}.safety-inner{padding:9px 0;font-size:11px}.site-header{padding:16px 0}.page-actions{flex-direction:column}.page-actions button{text-align:center}.chain{grid-template-columns:1fr;gap:6px}.chain .arrow{padding:0;transform:rotate(90deg);justify-self:center}}
 
 </style>
@@ -537,6 +549,10 @@ body.registering>:not(.register){display:none!important}
       <h2 id="guide-card-title">How to read a card</h2>
       <p class="guide-sub">A real clue. Match the gold letters.</p>
 
+      <!-- Ticket 3.9. A picture of the live card for pulmonary arterial hypertension, New clues,
+           Doxapram, from the saved answer. The protein sentence is UniProt's, as Open Targets sent it.
+           The gene line is written by the script from these ids, with the live card's own words.
+           Nothing on it can be tapped. -->
       <article class="card">
         <div class="card-top">
           <div class="card-title"><span class="rank">6</span><div><h3>Doxapram <span class="k" aria-label="A">A</span></h3><p class="forms">Forms: Doxapram, Doxapram Hydrochloride</p></div></div>
@@ -546,22 +562,29 @@ body.registering>:not(.register){display:none!important}
         <div class="path"><span class="path-node">Doxapram</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node protein-node">KCNK3</span><span class="path-arrow" aria-hidden="true">→</span><span class="path-node">Pulmonary arterial hypertension</span></div>
         <div class="protein-list"><div class="protein-row">
           <span class="protein-id">KCNK3</span>
-          <span class="protein-facts"><span class="direction" title="The medicine turns this protein down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 3v10m-4-4 4 4 4-4"/></svg>Down</span><span class="k" aria-label="D">D</span><span class="score">79 / 100 points</span><span class="k" aria-label="E">E</span></span>
+          <span class="protein-facts"><span class="kp"><span class="direction" title="The medicine turns this protein down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 3v10m-4-4 4 4 4-4"/></svg>Down</span><span class="k" aria-label="D">D</span></span><span class="kp"><span class="score">79 / 100 points</span><span class="k" aria-label="E">E</span></span></span>
+          <p class="protein-function">K(+) channel that conducts voltage-dependent outward rectifying currents upon membrane depolarization.<span class="k" aria-label="F">F</span></p>
+          <p class="protein-evidence" data-guide-evidence="genetic_association literature"><span class="k" aria-label="G">G</span></p>
         </div></div>
         <p class="direction-note">The data does not say which direction this disease needs.</p>
-        <div class="ending"><span class="k" aria-label="G">G</span><span>But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor.</span></div>
-        <div class="card-foot"><span class="source-link">Source record</span> <span class="k" aria-label="H">H</span></div>
+        <div class="ending"><span class="k" aria-label="H">H</span><span>But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor.</span></div>
+        <div class="card-foot"><span class="source-link">Source record</span> <span class="k" aria-label="I">I</span></div>
+        <div class="report-row"><span class="report-link">Report</span> <span class="k" aria-label="J">J</span></div>
       </article>
 
       <ul class="key">
         <li><span class="k" aria-hidden="true">A</span><span>Medicine and its forms</span></li>
-        <li><span class="k" aria-hidden="true">B</span><span>Reports written about it</span></li>
+        <li><span class="k" aria-hidden="true">B</span><span>Trial and approval records in the database</span></li>
         <li><span class="k" aria-hidden="true">C</span><span>The path, in three steps</span></li>
         <li><span class="k" aria-hidden="true">D</span><span>Up, down or unknown</span></li>
         <li><span class="k" aria-hidden="true">E</span><span>How strong the link is</span></li>
-        <li><span class="k" aria-hidden="true">G</span><span>The catch, on every clue</span></li>
-        <li><span class="k" aria-hidden="true">H</span><span>Where the fact comes from</span></li>
+        <li><span class="k" aria-hidden="true">F</span><span>What the protein does</span></li>
+        <li><span class="k" aria-hidden="true">G</span><span>Why the gene is linked</span></li>
+        <li><span class="k" aria-hidden="true">H</span><span>The catch, on every clue</span></li>
+        <li><span class="k" aria-hidden="true">I</span><span>Where the fact comes from</span></li>
+        <li><span class="k" aria-hidden="true">J</span><span>Tell us if something is wrong</span></li>
       </ul>
+      <p class="key-note">We read every report.<br>Nothing about you is kept.</p>
     </section>
 
     <section aria-labelledby="guide-limits-title">
@@ -784,6 +807,19 @@ body.registering>:not(.register){display:none!important}
     const kinds = (protein.evidence || []).filter(kind => Object.hasOwn(EVIDENCE_NAMES, kind));
     return kinds.length ? EVIDENCE_START + kinds.map(kind => EVIDENCE_NAMES[kind]).join(", ") + "." : "";
   };
+
+  /* Ticket 3.5. The line's words in two parts, put at the start of the line:
+     the start dark, the names after it grey. */
+  const writeEvidence = (line, evidence) => {
+    const start = document.createElement("span"), names = document.createElement("span");
+    start.className = "evidence-start";
+    start.textContent = EVIDENCE_START.trimEnd();
+    names.textContent = evidence.slice(start.textContent.length);
+    line.prepend(start, names);
+  };
+  /* Ticket 3.9. The guide's picture of a card writes its gene line the same way, from its ids. */
+  for (const line of document.querySelectorAll("[data-guide-evidence]"))
+    writeEvidence(line, evidenceLine({evidence: line.dataset.guideEvidence.split(" ")}));
 
   // Ticket 3.3. The Report panel's words. Shreshth checks REPORT_PRIVACY: change it here, and only here.
   const REPORT_PRIVACY = "No names or health details, please. We store nothing about you.";
@@ -1380,12 +1416,7 @@ body.registering>:not(.register){display:none!important}
       const evidence = isClue ? evidenceLine(protein) : "";
       if (evidence) {  // never on an Approved card; the words are this page's own
         const line = copyOf("protein-evidence-template");
-        // Ticket 3.5. The same words in two parts: the start dark, the names after it grey.
-        const start = document.createElement("span"), names = document.createElement("span");
-        start.className = "evidence-start";
-        start.textContent = EVIDENCE_START.trimEnd();
-        names.textContent = evidence.slice(start.textContent.length);
-        line.append(start, names);
+        writeEvidence(line, evidence);
         row.style.flexWrap = "wrap";
         row.append(line);
       }

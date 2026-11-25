@@ -1583,9 +1583,10 @@ def test_54_the_guides_key_is_chips_and_the_four_wrong_sentences_stay_out(client
     key = guide[guide.index('<ul class="key"'):]
     key = key[:key.index("</ul>")]
     for letter, words in (("C", "The path, in three steps"), ("D", "Up, down or unknown"),
-                          ("G", "The catch, on every clue")):
+                          ("H", "The catch, on every clue")):  # ticket 3.9: was G
         assert '>%s</span><span>%s</span>' % (letter, words) in key, letter
     # Ticket 3.8, commit B: the sample card has no explanation, so no chip F.
+    # Ticket 3.9: F is back, for the protein sentence, never for an explanation.
     assert "The clue in plain words" not in guide
     for old in ("If any step is missing", "The same on every card",
                 "a word Moonlight does not recognise", "Nothing is added that is not on the card"):
