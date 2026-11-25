@@ -149,6 +149,13 @@ re-counted or re-ordered. A card that already carries WITHDRAWAL_LINE (from
 Open Targets) keeps only that one: the api merges the two, the database's
 line first.
 
+Ticket 3.19, Q15: withdrawn in one region (decision of 25 Nov, Shreshth with
+Kashish's counsel; signed sheet 26 Nov). An entry of withdrawals.json may
+carry one more key, "region", exactly "US" or "EU". Its card then carries
+that region's sentence of REGION_LINES instead of HAND_WITHDRAWAL_LINE. Only
+the grey line changes: the card stays in its list or box, nothing moves and
+nothing turns red. An entry with no region keeps HAND_WITHDRAWAL_LINE.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -276,6 +283,13 @@ LIMITED_LINE = "The label covers only some people with this disease."
 HAND_WITHDRAWAL_LINE = (
     "The maker or a regulator has withdrawn this medicine from the market."
 )
+# Ticket 3.19, Q15. The grey line, instead of HAND_WITHDRAWAL_LINE, for an
+# entry of the hand-written withdrawals list that names one region. The
+# signed words of 26 Nov, exactly. Changing them needs Kashish's approval.
+REGION_LINES = {
+    "US": "Its approval was withdrawn in the US. It may still be sold elsewhere.",
+    "EU": "Its approval was withdrawn in the EU. It may still be sold elsewhere.",
+}
 
 # Ticket 3.1, Kashish's decisions of 25 Nov (spoken). Under each gene on a
 # clue card, one line says why the gene is linked to the disease. A kind of
@@ -326,6 +340,9 @@ LIMIT_KEYS = {"medicine_id", "disease_id", "date", "label"}
 # by hand. Nothing in Moonlight writes here.
 WITHDRAWALS_FILE = pathlib.Path(__file__).resolve().parent / "withdrawals.json"
 WITHDRAWAL_KEYS = {"medicine_id", "disease_id", "date", "source"}
+# Ticket 3.19. The one extra key an entry may carry, and only as a key of
+# REGION_LINES.
+WITHDRAWAL_EXTRA_KEY = "region"
 # Ticket 2.42. Approvals the database has, confirmed by hand from the
 # official label. Nothing in Moonlight writes here.
 CONFIRMED_FILE = pathlib.Path(__file__).resolve().parent / "confirmed.json"
@@ -352,6 +369,8 @@ class HandWithdrawal:
     medicine_id: str  # the card's id, or the id of one of its forms
     disease_id: str  # the one disease the entry works for
     source: str  # the maker's or a regulator's own statement
+    # Ticket 3.19. "US" or "EU" if the entry names one region, else None.
+    region: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -1393,7 +1412,8 @@ def withdrawals_by_hand() -> List[HandWithdrawal]:
 
     Each entry holds exactly four things: the medicine's id, the disease's
     id, the date and the source, an https link to the maker's or a
-    regulator's own statement. Checked the way limits.json is: an entry not
+    regulator's own statement. Ticket 3.19: it may hold a fifth, "region",
+    and then only as exactly "US" or "EU" (a key of REGION_LINES). Checked the way limits.json is: an entry not
     written this way raises ValueError, and the list is never half read.
     Two entries for the same medicine and disease are refused, even when
     alike. This list is written by hand. No code adds to it.
@@ -1403,13 +1423,21 @@ def withdrawals_by_hand() -> List[HandWithdrawal]:
         raise ValueError("withdrawals.json must hold a list.")
     found: Dict[Tuple[str, str], HandWithdrawal] = {}
     for entry in entries:
-        pair = _checked_pair(entry, WITHDRAWAL_KEYS, "A withdrawal")
+        keys, region = WITHDRAWAL_KEYS, None
+        if isinstance(entry, dict) and WITHDRAWAL_EXTRA_KEY in entry:
+            region = entry[WITHDRAWAL_EXTRA_KEY]
+            if not isinstance(region, str) or region not in REGION_LINES:
+                raise ValueError(
+                    f"A withdrawal's region must be exactly one of {sorted(REGION_LINES)}: "
+                    f"{entry!r}")
+            keys = WITHDRAWAL_KEYS | {WITHDRAWAL_EXTRA_KEY}
+        pair = _checked_pair(entry, keys, "A withdrawal")
         source = entry["source"]
         if not isinstance(source, str) or not source.startswith("https://"):
             raise ValueError(f"A withdrawal needs an https link to its source: {entry!r}")
         if pair in found:
             raise ValueError(f"A withdrawal is written twice: {entry!r}")
-        found[pair] = HandWithdrawal(pair[0], pair[1], source)
+        found[pair] = HandWithdrawal(pair[0], pair[1], source, region)
     return list(found.values())
 
 
@@ -1417,18 +1445,25 @@ def hand_withdrawal_notes(
     tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = ()
 ) -> Dict[str, str]:
     """Card id -> HAND_WITHDRAWAL_LINE, for the cards of the main Approved
-    list that withdrawals.json names for this disease (ticket 2.51).
+    list that withdrawals.json names for this disease (ticket 2.51). For an
+    entry with a region, its sentence of REGION_LINES instead (ticket 3.19).
 
     A sticky note put on a card after the cards are laid out: tabs is only
     read. Matched like limit_notes. Only the main Approved list is read. An
     entry for a medicine that is not on the page, or for another disease,
     names nothing. A card that also carries WITHDRAWAL_LINE keeps only that
-    one: the api lets withdrawal_notes win.
+    one: the api lets withdrawal_notes win. If two entries name the same card
+    (its own id and a form's id), the first in the file's order gives the line.
     """
-    wanted = {entry.medicine_id for entry in withdrawals_by_hand()
-              if entry.disease_id == disease_id}
-    return {medicine_id: HAND_WITHDRAWAL_LINE
-            for medicine_id in _main_cards_named(wanted, tabs, listed, on_list)}
+    listed, on_list = list(listed), list(on_list)
+    notes: Dict[str, str] = {}
+    for entry in withdrawals_by_hand():
+        if entry.disease_id != disease_id:
+            continue
+        line = REGION_LINES[entry.region] if entry.region else HAND_WITHDRAWAL_LINE
+        for medicine_id in _main_cards_named({entry.medicine_id}, tabs, listed, on_list):
+            notes.setdefault(medicine_id, line)
+    return notes
 
 
 def _read_corrections() -> list:
