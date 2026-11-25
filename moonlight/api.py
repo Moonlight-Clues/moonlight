@@ -96,7 +96,7 @@ import time
 from collections import OrderedDict, deque
 import contextlib
 from concurrent.futures import ThreadPoolExecutor
-from typing import Deque, Dict, Iterable, List, Optional, Tuple
+from typing import Deque, Dict, Iterable, List, Optional, Set, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
@@ -114,6 +114,7 @@ from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.engine import hand_withdrawal_notes, limit_notes, limits_by_hand
 from moonlight.engine import withdrawals_by_hand
 from moonlight.engine import evidence_ids
+from moonlight.engine import studies_for_this_disease
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -381,6 +382,10 @@ class _Found:
         # some people" line because limits.json marks them: card id -> the
         # engine's words. Worked out from the same lists. Nothing moves.
         self.limit_notes = limit_notes(tabs, disease.id, listed, on_list)
+        # Ticket 3.11. Each medicine's trial links for THIS disease, read
+        # from the disease's own list. They only pick which of a main In
+        # trials card's own links it opens. Nothing moves or is counted.
+        self.studies = studies_for_this_disease(on_list)
         # Every medicine name Moonlight met, shown or not. Only the
         # explainer's check sees these. They are never sent to anyone.
         names = set()
@@ -431,9 +436,20 @@ def _first_link(sources) -> Optional[str]:
     return None
 
 
-def _one_source(clue: Clue) -> Optional[str]:
-    """One link, from the strongest protein that has one. None if there is none."""
-    return _first_link(source for path in clue.paths for source in path.sources)
+def _one_source(clue: Clue, this_disease: Iterable[str] = ()) -> Optional[str]:
+    """One link, from the strongest protein that has one. None if there is none.
+
+    Ticket 3.11. this_disease holds the links of the medicine's trial
+    reports for the page's disease (engine.studies_for_this_disease). The
+    card's own links are read in the same order as before; the first one
+    that is in this_disease wins. If none is, the card keeps the link it
+    had: the first https one. Only the link is chosen: the count, the
+    stage and the words of the card stay as they are.
+    """
+    links = [source for path in clue.paths for source in path.sources]
+    this_disease = set(this_disease)
+    return (_first_link(link for link in links if link in this_disease)
+            or _first_link(links))
 
 
 def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None,
@@ -488,10 +504,15 @@ def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None,
     return proteins
 
 
-def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] = None) -> dict:
+def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] = None,
+               studies: Optional[Dict[str, Set[str]]] = None) -> dict:
     """One clue's facts. No explanation, so this is quick.
 
     one_way (ticket 3.7) is handed on to _proteins_json.
+
+    studies (ticket 3.11) is only given for a card on the main In trials
+    list: family id -> its trial links for this disease. It only changes
+    which of the card's own links is its source (_one_source).
     """
     # The names, the points and the ending come from explain.py, so a card
     # and its explanation always say the same thing.
@@ -502,7 +523,7 @@ def _clue_json(clue: Clue, disease: Disease, one_way: Optional[Dict[str, str]] =
         "forms": facts["medicine"]["forms"],
         "proteins": _proteins_json(clue, one_way, with_function=True),
         "reports": clue.reports,
-        "source": _one_source(clue),
+        "source": _one_source(clue, (studies or {}).get(_clue_id(clue), ())),
         "trial_phase": facts.get("trial_phase"),  # only for being studied
         "ending": explain.ending_for(facts),
     }
@@ -720,7 +741,9 @@ def _build_clues(disease_id: str) -> dict:
         # Ticket 2.39: only the main list is handed the limit notes.
         "approved": [_approved_json(medicine, wrong, words, notes, found.limit_notes)
                      for medicine in found.approved],
-        "being_studied": [_clue_json(clue, disease, one_way) for clue in found.being_studied],
+        # Ticket 3.11: a trial card opens a study for this disease first.
+        "being_studied": [_clue_json(clue, disease, one_way, found.studies)
+                          for clue in found.being_studied],
         "new_clues": [_clue_json(clue, disease, one_way) for clue in new_clues],
         "left_out": {group: found.left_out[group] for group in LEFT_OUT_GROUPS},
     }
