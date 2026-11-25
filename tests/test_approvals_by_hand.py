@@ -42,6 +42,7 @@ from moonlight.engine import CHILD, PARENT, Neighbour, sort_into_tabs
 from moonlight.fetch import Listed, OnList
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
+from source_2_53 import back_to_before  # ticket 2.53: Source record links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
@@ -341,7 +342,7 @@ def test_propranolol_is_the_approved_list_of_essential_tremor():
 def test_nothing_else_on_the_essential_tremor_page_changes():
     expected = copy.deepcopy(before(ESSENTIAL_TREMOR))
     expected["approved"] = [PROPRANOLOL_CARD]
-    assert page(ESSENTIAL_TREMOR) == expected
+    assert back_to_before(page(ESSENTIAL_TREMOR)) == expected
 
 
 # ---- the EXAMPLE, page 2: methimazole for Graves disease ----
@@ -554,7 +555,7 @@ def test_a_medicine_on_the_corrections_list_for_this_disease_is_not_added():
         assert engine.added_by_hand(ESSENTIAL_TREMOR) == []
         assert [entry.medicine_id for entry in engine.added_by_hand(GRAVES)] == [
             METHIMAZOLE, PROPYLTHIOURACIL]  # ticket 2.33 added the second
-        new = page(ESSENTIAL_TREMOR)
+        new = back_to_before(page(ESSENTIAL_TREMOR))
     assert new == before(ESSENTIAL_TREMOR)  # the page is as it was before the ticket
 
 

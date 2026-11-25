@@ -45,6 +45,7 @@ from moonlight.records import Disease
 import test_approval_proof
 import test_family
 from test_family import made_up_path
+from source_2_53 import back_to_before  # ticket 2.53: Source record links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SAVED = ROOT / "fixtures" / "no_regulator"
@@ -595,7 +596,7 @@ def test_a_card_found_only_through_a_protein_is_on_no_list_and_gets_no_line():
 @pytest.mark.parametrize("disease", THE_FIVE, ids=lambda disease: disease.name)
 def test_example_6_the_same_cards_in_the_same_order_as_before(disease, saved_json):
     before = load(SAVED / "approved_tab_before_2.17.json")[disease.id]
-    data = saved_json(disease)
+    data = back_to_before(saved_json(disease))
     assert before["name"] == disease.name == data["disease"]["name"]
     # Ticket 2.32. A card added by hand (valbenazine for Huntington disease) moved
     # from the wider-group box to the main list. It is set aside here.

@@ -26,7 +26,8 @@ Ticket 2.14, a box for narrower diseases. The main Approved list holds
 only medicines approved on the disease's own entry. One approved only on a
 child entry goes in Tabs.narrower, the folded box "Approved for a narrower
 disease". ApprovedMedicine.source_record picks the link a card shows as
-"Source record": an approval receipt first.
+"Source record": a regulator's approval receipt first (ticket 2.53), then any
+approval receipt.
 
 Ticket 2.17, a quiet line on approvals with no regulator record. An
 Approved card whose medicine has no approval report from a regulator
@@ -395,6 +396,9 @@ class ApprovedMedicine:
     # lists holds such a report. None: not said. It is on no list, or on
     # one of them its reports carry no source value.
     regulator_record: Optional[bool] = None
+    # Ticket 2.53. The approval receipts whose report's source is a
+    # regulator (fetch.REGULATOR_SOURCES), in the order of approval_sources.
+    regulator_sources: Tuple[str, ...] = ()
     # Ticket 2.26. None for a medicine the database records as approved.
     # For one added from the hand-written list: the link to its label.
     added_from_label: Optional[str] = None
@@ -450,20 +454,27 @@ class ApprovedMedicine:
     def source_record(self) -> Optional[str]:
         """The one link the card shows as "Source record" (ticket 2.14).
 
-        Like looking for a receipt in three drawers, in this order:
-          1. an exact approval receipt: the first of approval_sources that
-             is not Japan's general list;
-          2. Japan's general list, if that is its only kind of receipt;
-          3. the link shown before this ticket: the first of sources.
+        Like looking for a receipt in drawers, in this order, opening the
+        next drawer only if the one before is empty:
+          1. a hand-written label (added_from_label, then
+             confirmed_from_label): that link and nothing else;
+          2. a regulator's approval receipt (ticket 2.53): the first of
+             regulator_sources that is not Japan's general list. Which
+             office wrote it is read from the report's "source" field,
+             never guessed from the link;
+          3. any exact approval receipt: the first of approval_sources
+             that is not Japan's general list;
+          4. Japan's general list, if that is its only kind of receipt,
+             then the link shown before ticket 2.14: the first of sources.
         Only an https link is ever chosen. None if it has no such link.
-
-        A card added from the hand-written list (ticket 2.26) shows the
-        label written in the file, and never anything else.
         """
         if self.added_from_label:
             return self.added_from_label
         if self.confirmed_from_label:
             return self.confirmed_from_label  # ticket 2.42: the label, and nothing else
+        for link in self.regulator_sources:
+            if link.startswith("https://") and link != JAPAN_LIST:
+                return link
         receipts = [link for link in self.approval_sources if link.startswith("https://")]
         for link in receipts:
             if link != JAPAN_LIST:
@@ -1114,12 +1125,15 @@ def _approved_medicine(
             forms.setdefault(form.id, form.name)
     sources: List[str] = []
     approval_sources: List[str] = []
+    regulator_sources: List[str] = []
     for entry in entries:
         for form_id, name in entry.forms:
             forms.setdefault(form_id, name)
         sources.extend(source for source in entry.sources if source not in sources)
         approval_sources.extend(
             source for source in entry.approval_sources if source not in approval_sources)
+        regulator_sources.extend(
+            source for source in entry.regulator_sources if source not in regulator_sources)
     # Ticket 2.17. One list with a regulator's approval report is enough.
     # "No regulator record" needs every list naming it to have said so. If
     # one of them did not say, or it is on no list at all, it is not known.
@@ -1139,6 +1153,7 @@ def _approved_medicine(
         label=label,
         approval_sources=tuple(approval_sources),
         regulator_record=regulator_record,
+        regulator_sources=tuple(regulator_sources),
     )
 
 

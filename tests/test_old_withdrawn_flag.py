@@ -38,6 +38,7 @@ from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import old_flag_saved as saved
+from source_2_53 import back_to_before  # ticket 2.53: Source record links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORRECTIONS_FILE = ROOT / "moonlight" / "corrections.json"
@@ -221,7 +222,7 @@ def test_the_others_the_flag_hides_stay_in_no_tab(pages, disease_id, medicine_id
 
 @pytest.mark.parametrize("disease_id", DISEASES)
 def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease_id):
-    before, after = saved.before(disease_id), pages[disease_id]
+    before, after = saved.before(disease_id), back_to_before(pages[disease_id])
     back = set(BACK.get(disease_id, []))
     red = RED_2_45.get(disease_id, set())
     plain = [({key: value for key, value in card.items() if key != "warning"}
