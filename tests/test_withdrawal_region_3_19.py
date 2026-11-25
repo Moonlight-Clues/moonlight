@@ -13,7 +13,10 @@ nothing moves, nothing turns red.
 
 Saved files only: fixtures/withdrawal_region/entries.json holds the two
 test-only entries; the page is haemophilia A from the saved answers of
-tests/test_withdrawal_line.py. No network.
+tests/test_withdrawal_line.py. Sickle cell disease (MONDO_0011382) is
+read from fixtures/sickle_cell/, saved live on 25 Nov, with test-only
+entries only. Part E (a hand-written line replacing the database's line)
+is not in this ticket: it waits for Kashish, as ticket 3.20. No network.
 """
 
 import json
@@ -151,3 +154,73 @@ def test_relyvrio_keeps_todays_sentence():
                                 None, ())
     tabs = Tabs(approved=[relyvrio], being_studied=[], new_clues=[], left_out={})
     assert engine.hand_withdrawal_notes(tabs, ALS) == {RELYVRIO: HAND_LINE}
+
+
+# ---- sickle cell disease (fixtures/sickle_cell, saved live 25 Nov) ----
+
+SICKLE_CELL = "MONDO_0011382"
+SICKLE_SAVED = ROOT / "fixtures" / "sickle_cell"
+HYDROXYUREA, GLUTAMINE, DEFERIPRONE = "CHEMBL467", "CHEMBL930", "CHEMBL70927"
+VOXELOTOR, CRIZANLIZUMAB = "CHEMBL4101807", "CHEMBL4297734"
+
+
+def sickle_entry(medicine_id, **region):
+    """A test-only entry. Not a real withdrawal."""
+    return {"medicine_id": medicine_id, "disease_id": SICKLE_CELL, "date": "2026-11-25",
+            "source": "https://example.org/test-only/withdrawal", **region}
+
+
+def sickle_page(entries):
+    """Sickle cell disease's page from the saved answers, with these withdrawals."""
+    with patch.object(hem_a_page, "SAVED", SICKLE_SAVED):
+        return hem_a_page.page_answer(SICKLE_CELL, withdrawals=entries)
+
+
+@pytest.fixture(scope="module")
+def sickle_with():
+    return sickle_page([sickle_entry(HYDROXYUREA, region="US"),
+                        sickle_entry(GLUTAMINE, region="EU"),
+                        sickle_entry(DEFERIPRONE)])
+
+
+@pytest.fixture(scope="module")
+def sickle_without():
+    return sickle_page([])
+
+
+def test_sickle_cell_saved_answers_give_the_saved_page():
+    # The real hand-written lists, as when the page was saved.
+    saved = load(SICKLE_SAVED / "clues_MONDO_0011382.json")
+    with patch.object(hem_a_page, "SAVED", SICKLE_SAVED):
+        answer = hem_a_page.page_answer(
+            SICKLE_CELL, approvals=load(ROOT / "moonlight" / "approvals.json"),
+            limits=load(ROOT / "moonlight" / "limits.json"),
+            wrong=load(ROOT / "moonlight" / "corrections.json"),
+            withdrawals=load(FILE))
+    assert answer == saved
+
+
+def test_sickle_cell_cards_show_the_exact_sentences(sickle_with):
+    assert card(sickle_with, HYDROXYUREA)["withdrawal_note"] == US_LINE
+    assert card(sickle_with, GLUTAMINE)["withdrawal_note"] == EU_LINE
+    assert card(sickle_with, DEFERIPRONE)["withdrawal_note"] == HAND_LINE
+
+
+def test_sickle_cell_only_the_grey_lines_change(sickle_with, sickle_without):
+    assert [c["id"] for c in sickle_with["approved"]] == \
+        [c["id"] for c in sickle_without["approved"]]
+    rest = {k: v for k, v in sickle_with.items() if k != "approved"}
+    assert rest == {k: v for k, v in sickle_without.items() if k != "approved"}
+    changed = sorted(a["id"] for a, b in zip(sickle_with["approved"], sickle_without["approved"])
+                     if a != b)
+    assert changed == sorted([HYDROXYUREA, GLUTAMINE, DEFERIPRONE])
+    for medicine_id in changed:
+        after, before = card(sickle_with, medicine_id), card(sickle_without, medicine_id)
+        assert "withdrawal_note" not in before and "warning" not in after
+        assert {k: v for k, v in after.items() if k != "withdrawal_note"} == before
+
+
+def test_sickle_cell_cards_with_the_databases_line_are_untouched(sickle_with, sickle_without):
+    for medicine_id in (VOXELOTOR, CRIZANLIZUMAB):
+        assert card(sickle_with, medicine_id) == card(sickle_without, medicine_id)
+        assert card(sickle_with, medicine_id)["withdrawal_note"] == WITHDRAWAL_LINE
