@@ -736,6 +736,11 @@ class Listed:
     report of any kind. None: not said. The family HAS reports and none of
     them carries a source value, as in answers saved before ticket 2.17.
     Not said is not the same as no (Kashish, 18 Nov).
+
+    regulator_sources (ticket 2.53) holds the links of approval_sources
+    whose own report's source is one of REGULATOR_SOURCES, in the same
+    order, each once. Decided by the report's "source" field, never by the
+    look of the link.
     """
 
     id: str  # the id shared by the medicine and its tablet forms
@@ -747,6 +752,8 @@ class Listed:
     approved: bool = True
     approval_sources: Tuple[str, ...] = ()
     regulator_record: Optional[bool] = None
+    # Ticket 2.53. The approval links whose report's source is a regulator.
+    regulator_sources: Tuple[str, ...] = ()
     # Ticket 2.31. True if a report on this list, for any form of the
     # family, has the stage WITHDRAWAL. False if none has, or if the answer
     # did not say each report's stage: nothing is guessed.
@@ -782,7 +789,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         family = families.setdefault(
             family_id,
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
-             "approval_sources": [], "reports": 0, "source_said": False,
+             "approval_sources": [], "regulator_sources": [], "reports": 0, "source_said": False,
              "regulator_report": False, "records": [], "stage_reports": [],
              "named": set(), "told": True, "withdrawal_report": False},
         )
@@ -845,6 +852,9 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
                 family["source_said"] = True
             if is_approval and report.get("source") in REGULATOR_SOURCES:
                 family["regulator_report"] = True
+                # Ticket 2.53. The same receipt, with its link, if it has one.
+                if url and url not in family["regulator_sources"]:
+                    family["regulator_sources"].append(url)
     return families
 
 
@@ -872,6 +882,7 @@ def _as_listed(family_id: str, family: dict) -> Listed:
         approved=family["approved"],
         approval_sources=tuple(family["approval_sources"]),
         regulator_record=_regulator_record(family),
+        regulator_sources=tuple(family["regulator_sources"]),
         withdrawal_report=family["withdrawal_report"],
     )
 

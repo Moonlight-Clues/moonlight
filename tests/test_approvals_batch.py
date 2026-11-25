@@ -33,6 +33,7 @@ from moonlight.records import Disease
 
 import test_approvals_by_hand as first_batch
 import test_tafamidis_warning as al_page
+from source_2_53 import back_to_before  # ticket 2.53: Source record links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
@@ -287,7 +288,7 @@ def test_the_whole_page_is_as_it_was_before_the_entry():
         response = TestClient(api.app).get(
             "/api/clues", params={"disease_id": first_batch.ESSENTIAL_TREMOR})
     assert response.status_code == 200
-    assert response.json() == first_batch.before(first_batch.ESSENTIAL_TREMOR)
+    assert back_to_before(response.json()) == first_batch.before(first_batch.ESSENTIAL_TREMOR)
 
 
 def test_a_left_out_list_that_is_not_written_properly_is_still_refused():
