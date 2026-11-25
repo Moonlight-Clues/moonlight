@@ -111,7 +111,8 @@ from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
-from moonlight.engine import limit_notes, limits_by_hand
+from moonlight.engine import hand_withdrawal_notes, limit_notes, limits_by_hand
+from moonlight.engine import withdrawals_by_hand
 from moonlight.engine import evidence_ids
 from moonlight.fetch import (
     FetchError,
@@ -284,8 +285,10 @@ async def _check_hand_lists(_app: FastAPI):
     """Ticket 2.39. Read the hand-written list of limited labels once before
     the app starts. A list not written the right way, or a card marked in
     both limits.json and approvals.json, stops the app with the engine's
-    plain message, before any page is served."""
+    plain message, before any page is served. Ticket 2.51: the same for the
+    hand-written withdrawals list."""
     limits_by_hand()
+    withdrawals_by_hand()
     yield
 
 
@@ -367,7 +370,13 @@ class _Found:
         # Ticket 2.31. Which Approved-tab cards carry the withdrawal line:
         # card id -> the engine's words. Worked out from the same lists.
         # No card is hidden or moved by it.
-        self.withdrawal_notes = withdrawal_notes(tabs, on_list, neighbours)
+        # Ticket 2.51: the hand-written withdrawals add the same key to the
+        # main list's cards they name. The database's own line wins: a card
+        # never shows both.
+        self.withdrawal_notes = {
+            **hand_withdrawal_notes(tabs, disease.id, listed, on_list),
+            **withdrawal_notes(tabs, on_list, neighbours),
+        }
         # Ticket 2.39. Which cards of the main Approved list carry the "only
         # some people" line because limits.json marks them: card id -> the
         # engine's words. Worked out from the same lists. Nothing moves.

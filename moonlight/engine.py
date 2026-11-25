@@ -136,6 +136,17 @@ out. Its card carries WITHDRAWAL_LINE (withdrawal_notes). Everything else
 the flag hides stays hidden, in every tab and every box. _comes_back says
 which; the lists it reads are the ones already fetched.
 
+Ticket 2.51, withdrawals written by hand (Shreshth, option A of 25 Nov).
+withdrawals_by_hand() reads moonlight/withdrawals.json, a hand-written list
+in the form of limits.json: medicine, disease, date and the source, an https
+link to the maker's or a regulator's own statement. hand_withdrawal_notes()
+says which cards of the main Approved list carry HAND_WITHDRAWAL_LINE: the
+ones whose id, or the id of one of their forms, is written there for this
+disease. It is a sticky note like the others: no card is hidden, moved,
+re-counted or re-ordered. A card that already carries WITHDRAWAL_LINE (from
+Open Targets) keeps only that one: the api merges the two, the database's
+line first.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -253,6 +264,12 @@ WITHDRAWAL_LINE = (
 # official label covers only some people with the disease. Moonlight never
 # writes which people. Changing these words needs her approval.
 LIMITED_LINE = "The label covers only some people with this disease."
+# Ticket 2.51. One more grey line, in the place and style of WITHDRAWAL_LINE,
+# on a card the hand-written withdrawals list names. Proposed by MAIN 3;
+# Kashish signs or changes these words. Changing them needs her approval.
+HAND_WITHDRAWAL_LINE = (
+    "The maker or a regulator has withdrawn this medicine from the market."
+)
 
 # Ticket 3.1, Kashish's decisions of 25 Nov (spoken). Under each gene on a
 # clue card, one line says why the gene is linked to the disease. A kind of
@@ -299,6 +316,10 @@ APPROVAL_EXTRA_KEY = "limited"
 # writes here.
 LIMITS_FILE = pathlib.Path(__file__).resolve().parent / "limits.json"
 LIMIT_KEYS = {"medicine_id", "disease_id", "date", "label"}
+# Ticket 2.51. The medicines their maker or a regulator has withdrawn, written
+# by hand. Nothing in Moonlight writes here.
+WITHDRAWALS_FILE = pathlib.Path(__file__).resolve().parent / "withdrawals.json"
+WITHDRAWAL_KEYS = {"medicine_id", "disease_id", "date", "source"}
 # Ticket 2.42. Approvals the database has, confirmed by hand from the
 # official label. Nothing in Moonlight writes here.
 CONFIRMED_FILE = pathlib.Path(__file__).resolve().parent / "confirmed.json"
@@ -316,6 +337,15 @@ class HandApproval:
     # Ticket 2.33. True if the entry says the label covers only some people
     # with the disease. The card then carries LIMITED_LINE too.
     limited: bool = False
+
+
+@dataclass(frozen=True)
+class HandWithdrawal:
+    """One entry of the hand-written list of withdrawals (ticket 2.51)."""
+
+    medicine_id: str  # the card's id, or the id of one of its forms
+    disease_id: str  # the one disease the entry works for
+    source: str  # the maker's or a regulator's own statement
 
 
 @dataclass(frozen=True)
@@ -1279,22 +1309,81 @@ def limit_notes(
     trials and New clues never carry this line.
     """
     wanted = {entry.medicine_id for entry in limits_by_hand() if entry.disease_id == disease_id}
+    return {medicine_id: LIMITED_LINE
+            for medicine_id in _main_cards_named(wanted, tabs, listed, on_list)}
+
+
+def _main_cards_named(
+    wanted: Set[str], tabs: Tabs, listed: Iterable[Listed], on_list: Iterable[OnList]
+) -> List[str]:
+    """The ids of the main Approved list's cards whose id, or the id of one
+    of their forms, is in wanted, in the list's order. The forms are the ones
+    the page already fetched: the card's paths, the disease's own list
+    (listed) and the same list as records (on_list). Nothing new is asked."""
     if not wanted:
-        return {}
+        return []
     form_ids: Dict[str, Set[str]] = {}
     for entry in listed:
         form_ids.setdefault(entry.id, set()).update(form_id for form_id, _ in entry.forms)
     for entry in on_list:
         form_ids.setdefault(_family_id(entry.medicine), set()).update(
             form.id for form in entry.medicine.forms)
-    notes = {}
+    found = []
     for medicine in tabs.approved:
         ids = {medicine.id} | form_ids.get(medicine.id, set())
         for path in medicine.clue.paths if medicine.clue else ():
             ids.update(form.id for form in path.medicine.forms)
         if ids & wanted:
-            notes[medicine.id] = LIMITED_LINE
-    return notes
+            found.append(medicine.id)
+    return found
+
+
+def _read_withdrawals() -> list:
+    """The one place the withdrawals file is read. Tests replace this."""
+    return json.loads(WITHDRAWALS_FILE.read_text(encoding="utf-8"))
+
+
+def withdrawals_by_hand() -> List[HandWithdrawal]:
+    """The hand-written list of withdrawals, in the file's order (ticket 2.51).
+
+    Each entry holds exactly four things: the medicine's id, the disease's
+    id, the date and the source, an https link to the maker's or a
+    regulator's own statement. Checked the way limits.json is: an entry not
+    written this way raises ValueError, and the list is never half read.
+    Two entries for the same medicine and disease are refused, even when
+    alike. This list is written by hand. No code adds to it.
+    """
+    entries = _read_withdrawals()
+    if not isinstance(entries, list):
+        raise ValueError("withdrawals.json must hold a list.")
+    found: Dict[Tuple[str, str], HandWithdrawal] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, WITHDRAWAL_KEYS, "A withdrawal")
+        source = entry["source"]
+        if not isinstance(source, str) or not source.startswith("https://"):
+            raise ValueError(f"A withdrawal needs an https link to its source: {entry!r}")
+        if pair in found:
+            raise ValueError(f"A withdrawal is written twice: {entry!r}")
+        found[pair] = HandWithdrawal(pair[0], pair[1], source)
+    return list(found.values())
+
+
+def hand_withdrawal_notes(
+    tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = ()
+) -> Dict[str, str]:
+    """Card id -> HAND_WITHDRAWAL_LINE, for the cards of the main Approved
+    list that withdrawals.json names for this disease (ticket 2.51).
+
+    A sticky note put on a card after the cards are laid out: tabs is only
+    read. Matched like limit_notes. Only the main Approved list is read. An
+    entry for a medicine that is not on the page, or for another disease,
+    names nothing. A card that also carries WITHDRAWAL_LINE keeps only that
+    one: the api lets withdrawal_notes win.
+    """
+    wanted = {entry.medicine_id for entry in withdrawals_by_hand()
+              if entry.disease_id == disease_id}
+    return {medicine_id: HAND_WITHDRAWAL_LINE
+            for medicine_id in _main_cards_named(wanted, tabs, listed, on_list)}
 
 
 def _read_corrections() -> list:
