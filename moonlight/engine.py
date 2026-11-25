@@ -162,6 +162,16 @@ that region's sentence of REGION_LINES instead of HAND_WITHDRAWAL_LINE. Only
 the grey line changes: the card stays in its list or box, nothing moves and
 nothing turns red. An entry with no region keeps HAND_WITHDRAWAL_LINE.
 
+Ticket 3.18 (Q9, Kashish's decision of 25 Nov), no wider-group box for
+groups that are too broad. broad_group_ids() reads moonlight/broad_groups.json,
+a list written by hand: one entry per group, with its disease_id, name, date
+and reason. A medicine that would go in the folded box "Approved for a wider
+group" only through groups on that list is not shown. One that also gets
+there through a group not on the list stays, its label as it was. Like a
+sieve on that one box only: every other box and tab is worked out as before,
+so the card taken out does not come back as a new clue. A box left empty is
+not shown, as before.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -369,6 +379,10 @@ DIAGNOSTIC_TAG = "DIAGNOSTIC"
 # writes here.
 SOURCE_OVERRIDES_FILE = pathlib.Path(__file__).resolve().parent / "source_overrides.json"
 SOURCE_OVERRIDE_KEYS = {"medicine_id", "disease_id", "url", "date", "note", "evidence_file"}
+# Ticket 3.18. The wider groups too broad for the wider-group box. Nothing in
+# Moonlight writes here.
+BROAD_GROUPS_FILE = pathlib.Path(__file__).resolve().parent / "broad_groups.json"
+BROAD_GROUP_KEYS = {"disease_id", "name", "date", "reason"}
 
 
 @dataclass(frozen=True)
@@ -802,6 +816,35 @@ def find_ranked_clues(
     )
 
 
+def _read_broad_groups() -> list:
+    """The one place the broad groups file is read. Tests replace this."""
+    return json.loads(BROAD_GROUPS_FILE.read_text(encoding="utf-8"))
+
+
+def broad_group_ids() -> Set[str]:
+    """The ids of the groups on moonlight/broad_groups.json (ticket 3.18).
+
+    Each entry holds exactly four things: the group's disease id, its name,
+    the date (like "2026-11-25") and the reason. An entry not written this
+    way, or a group written twice, raises ValueError: the list is never half
+    read. This list is written by hand. No code adds to it.
+    """
+    entries = _read_broad_groups()
+    if not isinstance(entries, list):
+        raise ValueError("broad_groups.json must hold a list.")
+    ids: Set[str] = set()
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != BROAD_GROUP_KEYS:
+            raise ValueError(f"A broad group must hold exactly {sorted(BROAD_GROUP_KEYS)}: {entry!r}")
+        if not all(isinstance(entry[key], str) and entry[key] for key in BROAD_GROUP_KEYS):
+            raise ValueError(f"A broad group needs an id, a name, a date and a reason: {entry!r}")
+        datetime.date.fromisoformat(entry["date"])  # ValueError if it is not a real date
+        if entry["disease_id"] in ids:
+            raise ValueError(f"A broad group is written twice: {entry!r}")
+        ids.add(entry["disease_id"])
+    return ids
+
+
 def _comes_back(entry: Listed) -> bool:
     """Ticket 2.40. Does a family the disease's OWN list marks as withdrawn
     (fetch.fetch_withdrawn) still go on the main Approved list?
@@ -926,6 +969,12 @@ def sort_into_tabs(
     like any other medicine approved there, with its paths, and is not
     counted in not_approved. Its id is in Tabs.returned, so its card
     carries WITHDRAWAL_LINE (withdrawal_notes).
+
+    Ticket 3.18 (Q9, Kashish's decision of 25 Nov). A medicine that would be
+    in wider_group only through parents on broad_groups.json (broad_group_ids)
+    is left out of wider_group, and is shown nowhere else either. One that
+    is approved on a parent not on that list too stays, with the label it
+    had, naming every parent. Nothing else in the answer changes.
     """
     withdrawn_listed = list(withdrawn_listed)
     # Ticket 2.40. The flagged families that come back, from the disease's own list.
@@ -958,6 +1007,8 @@ def sort_into_tabs(
     own_ids |= set(hand)  # so it is in no folded box, like any other medicine of this list
     # family id -> where else it is approved: [child names, parent names, entries]
     nearby: Dict[str, Tuple[List[str], List[str], List[Listed]]] = {}
+    # Ticket 3.18. Family id -> the ids of the parents it is approved on.
+    parent_ids: Dict[str, Set[str]] = {}
     for neighbour in neighbours:
         for entry in neighbour.approved:
             if entry.id in withdrawn_ids or entry.id in own_ids:
@@ -967,6 +1018,8 @@ def sort_into_tabs(
             if neighbour.disease.name not in names:
                 names.append(neighbour.disease.name)
             found[2].append(entry)
+            if neighbour.role == PARENT:
+                parent_ids.setdefault(entry.id, set()).add(neighbour.disease.id)
 
     approved_paths: List[Path] = []
     nearby_paths: Dict[str, List[Path]] = {}
@@ -1007,7 +1060,10 @@ def sort_into_tabs(
 
     narrower: List[ApprovedMedicine] = []
     wider_group: List[ApprovedMedicine] = []
+    broad = broad_group_ids() if parent_ids else set()  # ticket 3.18
     for family_id, (children, parents, entries) in nearby.items():
+        if not children and parent_ids.get(family_id, set()) <= broad:
+            continue  # ticket 3.18: only through groups too broad. Shown nowhere.
         paths = nearby_paths.get(family_id)
         clue = rank_clues(paths)[0] if paths else None  # only to join its paths
         if children:  # the child wins over the parent
