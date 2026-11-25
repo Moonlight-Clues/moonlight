@@ -71,6 +71,12 @@ moonlight/confirmed.json, a list written by hand: an approval the official
 label confirms (confirmed_by_label). Such a card has no grey line, shows
 the label as its source, and stays on the main list.
 
+Ticket 3.17 (Q8). source_overrides() reads moonlight/source_overrides.json,
+a list written by hand: for a medicine and a disease (or "*" for every
+page), the link to the medicine's own current label. override_sources()
+gives the Approved cards it names (main list and both folded boxes) that
+link as their Source record, before any other choice. Nothing else changes.
+
 Ticket 2.18, a second red warning, and clues left out by hand. A
 corrections entry's note is one of two sentences (CORRECTION_NOTES);
 ticket 2.55 added a third, THIRD_NOTE.
@@ -356,6 +362,13 @@ DIAGNOSTIC_KEYS = {"medicine_id", "disease_id", "date", "label"}
 EVERY_PAGE = "*"
 # The signed word, in capitals. Changing it needs Kashish's approval.
 DIAGNOSTIC_TAG = "DIAGNOSTIC"
+# Ticket 3.17 (Q8). The medicine's own current label, chosen by hand, that
+# an Approved card's Source record opens before any other choice. disease_id
+# may be EVERY_PAGE. note is the label's indication sentence, word for word;
+# evidence_file is the worksheet it was read in. Nothing in Moonlight
+# writes here.
+SOURCE_OVERRIDES_FILE = pathlib.Path(__file__).resolve().parent / "source_overrides.json"
+SOURCE_OVERRIDE_KEYS = {"medicine_id", "disease_id", "url", "date", "note", "evidence_file"}
 
 
 @dataclass(frozen=True)
@@ -442,6 +455,9 @@ class ApprovedMedicine:
     # confirmed approvals (confirmed.json) for this disease: then the link
     # to the official label that names the disease as an indication.
     confirmed_from_label: Optional[str] = None
+    # Ticket 3.17. None unless source_overrides.json names the card for this
+    # page: then the link to the medicine's own current label.
+    source_override: Optional[str] = None
 
     @property
     def limit_note(self) -> Optional[str]:
@@ -489,6 +505,8 @@ class ApprovedMedicine:
 
         Like looking for a receipt in drawers, in this order, opening the
         next drawer only if the one before is empty:
+          0. the medicine's own current label from source_overrides.json
+             (source_override, ticket 3.17), before any other choice;
           1. a hand-written label (added_from_label, then
              confirmed_from_label): that link and nothing else;
           2. a regulator's approval receipt (ticket 2.53): the first of
@@ -501,6 +519,8 @@ class ApprovedMedicine:
              then the link shown before ticket 2.14: the first of sources.
         Only an https link is ever chosen. None if it has no such link.
         """
+        if self.source_override:
+            return self.source_override  # ticket 3.17: its own current label
         if self.added_from_label:
             return self.added_from_label
         if self.confirmed_from_label:
@@ -1681,6 +1701,57 @@ def diagnostic_ids(disease_id: str) -> Set[str]:
     """
     return {medicine_id for medicine_id, listed_for in diagnostic_by_hand()
             if listed_for in (EVERY_PAGE, disease_id)}
+def _read_source_overrides() -> list:
+    """The one place the source overrides file is read. Tests replace this."""
+    return json.loads(SOURCE_OVERRIDES_FILE.read_text(encoding="utf-8"))
+
+
+def source_overrides() -> Dict[Tuple[str, str], str]:
+    """The hand-written list of each medicine's own current label (ticket
+    3.17, Q8), as (medicine id, disease id or EVERY_PAGE) -> the label link.
+
+    Each entry holds exactly six things: the medicine's id, the disease's id
+    (or EVERY_PAGE), the url, the date, the note and the evidence_file. The
+    url is an https link. The note and evidence_file are words, never empty.
+    Checked like confirmed.json: an entry that is not written this way
+    raises ValueError, and the list is never half read. The same pair
+    written twice with two links is refused too.
+
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_source_overrides()
+    if not isinstance(entries, list):
+        raise ValueError("source_overrides.json must hold a list.")
+    found: Dict[Tuple[str, str], str] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, SOURCE_OVERRIDE_KEYS, "A source override")
+        url = entry["url"]
+        if not isinstance(url, str) or not url.startswith("https://"):
+            raise ValueError(f"A source override needs an https link to the label: {entry!r}")
+        for key in ("note", "evidence_file"):
+            if not isinstance(entry[key], str) or not entry[key]:
+                raise ValueError(f"A source override needs a {key}: {entry!r}")
+        if found.setdefault(pair, url) != url:
+            raise ValueError(f"A source override is written twice in two ways: {entry!r}")
+    return found
+
+
+def override_sources(approved: Iterable[ApprovedMedicine],
+                     disease_id: str) -> List[ApprovedMedicine]:
+    """Approved cards, with the ones source_overrides.json names for this
+    page given their own label as Source record (ticket 3.17).
+
+    For the main Approved list and both folded boxes. A card's own entry
+    for this disease wins over an EVERY_PAGE entry. Only source_override
+    changes: no line, no box, no count. Every other card comes back as it
+    was, in the same order. Nothing is added or taken off.
+    """
+    links = source_overrides()
+    out: List[ApprovedMedicine] = []
+    for medicine in approved:
+        link = links.get((medicine.id, disease_id)) or links.get((medicine.id, EVERY_PAGE))
+        out.append(replace(medicine, source_override=link) if link else medicine)
+    return out
 
 
 def _read_left_out() -> list:
