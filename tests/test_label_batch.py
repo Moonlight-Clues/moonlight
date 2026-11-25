@@ -308,7 +308,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 117  # Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
+    assert len(entries) == 122  # Ticket 2.58: ipratropium on asthma deleted (25N-13), six type 2 diabetes entries added, dated 2026-11-26 (25N-16); Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
     assert entries[24:38] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
@@ -345,7 +345,11 @@ def test_no_pair_is_written_twice():
                        "CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711",
                        "CHEMBL1364", "CHEMBL925",
                        # Ticket 2.54, signed answer Q22: simvastatin
-                       "CHEMBL1064"}),
+                       "CHEMBL1064",
+                       # Ticket 2.58, 25N-16: candesartan, olmesartan, atenolol,
+                       # chlorthalidone, hydrochlorothiazide, lisinopril
+                       "CHEMBL1014", "CHEMBL1200692", "CHEMBL24", "CHEMBL1055",
+                       "CHEMBL435", "CHEMBL1237"}),
 ])
 def test_the_engine_gives_each_page_the_red_words_for_its_cards_only(disease_id, ids):
     assert engine.looks_wrong(disease_id) == ids

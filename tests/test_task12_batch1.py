@@ -71,6 +71,9 @@ def card(page, tab, medicine_id):
 @pytest.mark.parametrize("name", list(NEW))
 def test_each_file_ends_with_the_new_entries(name):
     entries = load(LISTS / name)
+    if name == "corrections.json":
+        # Ticket 2.58 (25N-16) added six entries after these, dated 2026-11-26.
+        entries = entries[:-6]
     assert entries[-len(NEW[name]):] == NEW[name]
     assert len(entries) > len(NEW[name])
 

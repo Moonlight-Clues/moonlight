@@ -307,13 +307,15 @@ def test_the_ticket_cards_are_all_accounted_for():
 
 def test_the_file_holds_the_old_39_unchanged_then_the_62_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 117  # Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
+    assert len(entries) == 122  # Ticket 2.58: ipratropium on asthma deleted, six added; Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
     assert hashlib.sha256(json.dumps(entries[:39], sort_keys=True).encode()).hexdigest() == \
         OLD_39_SHA256
     # Ticket 2.47 added one more at the end (Obizur, Kashish's decision).
     # Ticket 3.10 (MAIN 4, Q14): mannitol on asthma was deleted from the 62; the other 61 stay in order.
-    assert entries[39:100] == [entry for entry in NEW_CORRECTIONS
-                               if (entry["medicine_id"], entry["disease_id"]) != ("CHEMBL689", "MONDO_0004979")]
+    # Ticket 2.58 (25N-13): ipratropium on asthma was deleted from them too, so 60 stay.
+    assert entries[39:99] == [entry for entry in NEW_CORRECTIONS
+                              if (entry["medicine_id"], entry["disease_id"]) not in
+                              (("CHEMBL689", "MONDO_0004979"), ("CHEMBL1621597", "MONDO_0004979"))]
 
 
 def test_each_new_entry_has_exactly_the_four_keys_and_the_note_word_for_word():

@@ -112,6 +112,9 @@ def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
     new = NEW[name]
     # Ticket 2.56 (signed rules Q22, Q3, Q13) added entries at the very end:
     # tests/test_task12_batch1.py holds them.
+    if name == "corrections.json":
+        # Ticket 2.58 (25N-16) added six entries after these, dated 2026-11-26.
+        entries = entries[:-6]
     later = {"corrections.json": 5, "confirmed.json": 3, "limits.json": 1}.get(name, 0)
     if later:
         entries = entries[:-later]

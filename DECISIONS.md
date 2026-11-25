@@ -92,7 +92,7 @@ Format: date, the decision, why.
 - 2026-11-25: Q4. The gemtuzumab ozogamicin card on acute myeloid leukemia (CD33-positive only) and the tolcapone card on Parkinson disease (only people who failed other COMT inhibitors) carry "The label covers only some people with this disease." (Kashish, signed 25 Nov. Ticket 2.54.)
 - 2026-11-25: Q5. On Graves disease, thyrotropin, thyrotropin alfa and ipilimumab are left out of the clues. On prostate cancer, the testosterone medicines in New clues or the trial boxes are left out. Medicines that treat Graves disease are never left out. (Kashish, signed 25 Nov. Ticket 2.54.)
 - 2026-11-25: Q9. Otiprio stays. It is approved, not "on sale". (Kashish, signed 25 Nov.)
-- 2026-11-25: Q10. A blood thinner cannot be a treatment for a bleeding disease: dicumarol on hemophilia A gets a red warning in her words. Waiting for the code to accept that sentence. (Kashish, signed 25 Nov. Ticket 2.54.)
+- 2026-11-25: Q10. A blood thinner cannot be a treatment for a bleeding disease: dicumarol on hemophilia A gets a red warning in her words. The code accepts that sentence and the card carries it. (Kashish, signed 25 Nov. Tickets 2.54, 2.55.)
 - 2026-11-25: Q12. The withdrawal words are kept as they are. (Kashish, signed 25 Nov.)
 - 2026-11-25: Q13. A UK label that names the disease counts as Approved. Primidone for essential tremor is added from the UK SmPC. (Kashish, signed 25 Nov. Ticket 2.54.)
 - 2026-11-25: Q14. Relyvrio on amyotrophic lateral sclerosis is a withdrawal, from the maker's own statement. It is written on the sodium phenylbutyrate card. (Kashish, signed 25 Nov. Ticket 2.54.)
@@ -102,3 +102,15 @@ Format: date, the decision, why.
 - 2026-11-25: Q22. A combination pill's label does not count for one of its parts. Simvastatin on type 2 diabetes gets the red warning "This looks like a mistake in the database. The official label is for a different disease." (Kashish, signed 25 Nov. Ticket 2.54.)
 - 2026-11-25: Misoprostol on duodenal ulcer gets the same red warning. Its Cytotec label is for stomach ulcers from NSAIDs, and the only other label is a combination. (Label read by MAIN 4. Ticket 2.54, item 10b.)
 - 2026-11-25: Q22 exception (Q6): a combination’s label counts for a medicine on combination_only.json. Decided 25 Nov by Shreshth with Kashish’s counsel.
+- 2026-11-25: 25N-1: Scan and test cards get the tag DIAGNOSTIC (ticket 3.10). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-6: A combination’s label counts for a medicine on combination_only.json (ticket 3.15). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-7: A red card in a folded box moves to the red box (ticket 3.16). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-8: The Source record opens the medicine’s own current label when one exists (ticket 3.17). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-9: No wider-group box for groups on broad_groups.json (ticket 3.18). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-10: Eye-pressure drops on the hypertension page: main-list cards go red; narrower-box cards stay. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-13: Ipratropium on asthma loses its red note: the UK Atrovent 250 UDVs label (eMC, updated 27 Oct 2026), section 4.1, names asthma. Read by MAIN 4. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-14: Mannitol on asthma joins methacholine on the main list, with the DIAGNOSTIC tag. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-15: A withdrawal in one region says “Its approval was withdrawn in the US. It may still be sold elsewhere.” (or “in the EU”) (ticket 3.19). Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-16: Candesartan, olmesartan, atenolol, chlorthalidone, hydrochlorothiazide and lisinopril on type 2 diabetes get the red note. Their current US labels name diabetes only as heart-risk context. Read by MAIN 4. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-17: Ioflupane keeps its cards on essential tremor and Alzheimer disease, with the DIAGNOSTIC tag. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
+- 2026-11-25: 25N-a to d: Masoprocol waits (discontinued, approval never withdrawn). No line yet for masitinib’s ended trials. The three Graves medicines stay as they are. The four testosterone cards on prostate cancer stay. Decided 25 Nov by Shreshth with Kashish’s counsel; signed sheet 26 Nov.
