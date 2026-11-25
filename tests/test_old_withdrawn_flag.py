@@ -63,6 +63,8 @@ CML = "MONDO_0011996"
 DISEASES = [ASTHMA, T2D, EPILEPSY, RA, PARKINSON, AML, CUSHING, DEPRESSION, CML]
 
 PRASTERONE = "CHEMBL90593"
+US_2_59 = {"CHEMBL817", "CHEMBL782"}  # tolazamide, tolbutamide (ticket 2.59)
+US_LINE_2_59 = "Its approval was withdrawn in the US. It may still be sold elsewhere."
 # The eight of P11's CSV (hidden_by_old_flag.csv): main list, a regulator's
 # approval report on the disease's own list. (disease, id, name on the card)
 EIGHT = [
@@ -266,6 +268,13 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
                for card in plain if card["id"] in sources)
     plain = [dict(card, source=sources[card["id"]][0]) if card["id"] in sources else card
              for card in plain]
+    # Ticket 2.59 (MAIN 4 approved): tolazamide and tolbutamide on type 2 diabetes
+    # carry the US region sentence. Only that line is added; the rest is as saved.
+    if disease_id == T2D:
+        assert all(card.get("withdrawal_note") == US_LINE_2_59
+                   for card in plain if card["id"] in US_2_59)
+        plain = [{k: v for k, v in card.items() if k != "withdrawal_note"}
+                 if card["id"] in US_2_59 else card for card in plain]
     assert [card for card in plain if card["id"] not in back] == before["approved"]
     wider_red = WIDER_RED_2_58.get(disease_id, set())
     assert all("warning" in card for card in after.get("wider_group", []) if card["id"] in wider_red)
