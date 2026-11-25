@@ -298,14 +298,15 @@ def test_the_ticket_cards_are_all_accounted_for():
 
 def test_the_file_holds_the_old_39_unchanged_then_the_62_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 101
+    assert len(entries) == 102
     assert hashlib.sha256(json.dumps(entries[:39], sort_keys=True).encode()).hexdigest() == \
         OLD_39_SHA256
-    assert entries[39:] == NEW_CORRECTIONS
+    # Ticket 2.47 added one more at the end (Obizur, Kashish's decision).
+    assert entries[39:101] == NEW_CORRECTIONS
 
 
 def test_each_new_entry_has_exactly_the_four_keys_and_the_note_word_for_word():
-    for entry in load(CORRECTIONS_FILE)[39:]:
+    for entry in load(CORRECTIONS_FILE)[39:101]:
         assert list(entry) == ["medicine_id", "disease_id", "date", "note"]
         assert entry["date"] == THE_DAY and entry["note"] == NOTE
 
