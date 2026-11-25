@@ -126,6 +126,8 @@ def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
         # Ticket 2.57 (approved 25 Nov, Shreshth) added one after this:
         # tests/test_aducanumab_2_57.py holds it.
         entries = entries[:-1]
+        # Ticket 2.59 (26 Nov) added two more after that: tolazamide, tolbutamide.
+        entries = entries[:-2]
     assert entries[-len(new):] == new
     assert all(entry["date"] == THE_DAY for entry in new)
     assert len(entries) > len(new)  # the older entries stay in front, untouched

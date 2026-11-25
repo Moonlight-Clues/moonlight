@@ -101,9 +101,12 @@ def test_the_real_file_has_no_region_and_does_not_change():
         (entry,) = [e for e in entries if e["medicine_id"] == medicine_id]
         assert entry["disease_id"] == disease_id
         assert list(entry) == ["medicine_id", "disease_id", "date", "source"]
-    # No real entry has a region yet (the real ones come with ticket 2.59).
-    assert all("region" not in e for e in entries)
-    assert all(w.region is None for w in engine.withdrawals_by_hand())
+    # The original three entries have no region. Ticket 2.59 (MAIN 4 approved) appends
+    # tolazamide and tolbutamide, each "US": tests/test_region_withdrawals_2_59.py.
+    assert all("region" not in e for e in entries[:3])
+    assert all(w.region is None for w in engine.withdrawals_by_hand()[:3])
+    assert [e.get("region") for e in entries[3:]] == ["US", "US"]
+    assert [w.region for w in engine.withdrawals_by_hand()[3:]] == ["US", "US"]
 
 
 @pytest.mark.parametrize("region", ["us", "Eu", "UK", "", None, 1, ["US"], "US "])

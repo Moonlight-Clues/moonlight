@@ -56,8 +56,9 @@ def without_entry():
 
 def test_the_file_ends_with_the_aducanumab_entry():
     entries = json.loads(FILE.read_text(encoding="utf-8"))
-    assert entries[-1] == ENTRY
-    assert engine.withdrawals_by_hand()[-1] == engine.HandWithdrawal(ADUCANUMAB, ALZHEIMER, FDA)
+    # Ticket 2.59 adds two entries (tolazamide, tolbutamide) after this one.
+    assert entries[-3] == ENTRY
+    assert engine.withdrawals_by_hand()[-3] == engine.HandWithdrawal(ADUCANUMAB, ALZHEIMER, FDA)
 
 
 def test_the_words_are_the_existing_sentence():

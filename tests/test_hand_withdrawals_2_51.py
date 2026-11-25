@@ -72,7 +72,7 @@ def test_the_file_holds_the_one_entry():
     # Ticket 2.57 (approved 25 Nov, Shreshth): aducanumab on Alzheimer disease is the
     # third and last entry; tests/test_aducanumab_2_57.py holds it.
     assert json.loads(FILE.read_text(encoding="utf-8"))[0] == ENTRY
-    assert len(json.loads(FILE.read_text(encoding="utf-8"))) == 3
+    assert len(json.loads(FILE.read_text(encoding="utf-8"))) == 5  # ticket 2.59 adds two
     assert engine.withdrawals_by_hand()[0] == engine.HandWithdrawal(
         ROCTAVIAN, HAEMOPHILIA_A, BIOMARIN)
 
