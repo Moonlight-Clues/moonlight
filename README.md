@@ -25,12 +25,14 @@ The [Open Targets Platform](https://platform.opentargets.org) is a free, open-so
 ## Corrections and studies
 
 - **Open Targets** confirmed seven wrong approval records we reported and is fixing them in release 26.12 ([thread 2105](https://community.opentargets.org/t/2105)). We have also written to the **Therapeutic Target Database (TTD)** maintainers about the same seven entries.
-- **124-disease study** ([report](https://github.com/kashishdugar2017/moonlight/blob/probe-approval-proof/fixtures/probe_p3/REPORT.md)): 724 of the 2,096 medicines on the Approved lists had no DailyMed, FDA or EMA approval report attached. That measures the strength of the proof, not whether each card is right, and those cards are now marked. **50-disease study** of "up or down" data: [report](https://github.com/kashishdugar2017/moonlight/blob/probe-direction/fixtures/probe_p4/REPORT.md).
+- **124-disease study** ([report](https://github.com/Moonlight-Clues/moonlight/blob/probe-approval-proof/fixtures/probe_p3/REPORT.md)): 724 of the 2,096 medicines on the Approved lists had no DailyMed, FDA or EMA approval report attached. That measures the strength of the proof, not whether each card is right, and those cards are now marked. **50-disease study** of "up or down" data: [report](https://github.com/Moonlight-Clues/moonlight/blob/probe-direction/fixtures/probe_p4/REPORT.md).
 - Confirmed fixes live in [moonlight/corrections.json](moonlight/corrections.json).
 
 ## Found a wrong medicine?
 
 Open a **"Wrong medicine"** issue or email hello@moonlightclues.com with the disease, the medicine, what's wrong and a source (a regulator label or trial ID) if you have one. Please don't send personal health information.
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md) before opening a pull request.
 
 ## Run it
 
@@ -45,3 +47,5 @@ Pitch decks: [for doctors](docs/pitch/moonlight-deck-doctors-19nov.pdf) · [for 
 ## Team, funding, licence
 
 **The SMAKS Project**, Kochi: Kashish Dugar (product lead), Shreshth Dugar (co-founder and maintainer), Sidha Mogha (design). Licence: [MIT](LICENSE) © 2026 The SMAKS Project. Data: Open Targets Platform.
+
+The project has applied to [Open Source Collective](https://opencollective.com/opensource) for fiscal hosting. If accepted, donations and spending will be public on Open Collective. Moonlight does not sell data and does not run advertisements. See also [GOVERNANCE.md](GOVERNANCE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
