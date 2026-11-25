@@ -8,7 +8,7 @@ Approved cards in the same groups, with the same lines, as the screen:
 - then each Approved box the screen shows, in the screen's order (narrower,
   wider, no-regulator, red), each under its own title as the screen writes it;
 - a box with no cards is not printed;
-- the "boxes" line counts every box that has cards.
+- there is no "boxes" line: every box is printed in full (Kashish's decision).
 
 How these tests work. The page is opened in a real browser (Chromium), as
 tests/test_snapshot_page.py does. The browser never reaches the network: the
@@ -244,13 +244,10 @@ def test_the_red_and_no_regulator_cards_are_not_under_the_main_approved_heading(
 
 
 @pytest.mark.parametrize("name", list(DISEASES))
-def test_the_boxes_line_counts_every_box_with_cards(seen, name):
-    register = seen[name]["register"]
-    count = sum(len(box["cards"]) for box in register["boxes"])
-    if count:
-        assert register["boxesLine"].startswith(str(count) + " more approved medicine")
-    else:
-        assert register["boxesLine"] is None
+def test_there_is_no_boxes_line(seen, name):
+    # Every box is printed in full under its own title, so a count adds nothing
+    # (Kashish's decision for ticket 2.36).
+    assert seen[name]["register"]["boxesLine"] is None
 
 
 def test_nothing_else_in_the_print_page_changes(seen):

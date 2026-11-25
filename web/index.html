@@ -615,7 +615,6 @@ body.registering>:not(.register){display:none!important}
       </table>
       <p data-reg="approved-empty" hidden></p>
       <div data-reg="approved-boxes"></div>
-      <p data-reg="boxes"></p>
 
       <h2 data-reg="trials-head">IN TRIALS</h2>
       <p data-reg="trials"></p>
@@ -1340,9 +1339,6 @@ body.registering>:not(.register){display:none!important}
     }
     reg("approved-empty").textContent = pageWords("#approved-empty h3");
     reg("approved-empty").hidden = !!(shownBoxes.main.length || boxed);  // as on the page
-    reg("boxes").textContent = boxed + (boxed === 1 ? " more approved medicine is in the box below."
-      : " more approved medicines are in the boxes below.");
-    reg("boxes").hidden = !boxed;
 
     const studied = data.being_studied.length;
     reg("trials").textContent = studied + (studied === 1 ? " medicine. " : " medicines. ")
