@@ -11,11 +11,14 @@ first, after 3.11's own back_to_before is undone: it puts back the 3.11 link on
 exactly these cards of the main In trials list ("being_studied"), and only if the
 card now shows exactly the new link. Any other change still fails those tests.
 
-Found by running the whole suite on the saved answers in fixtures/ (no network):
-one card on one page. The new link is a Phase 2 report with source
-"ClinicalTrials.gov" on rheumatoid arthritis's own saved list
+Found by running the whole suite on the saved answers in fixtures/ (no network),
+logging every card whose link the new step changes: these four cards on the
+rheumatoid arthritis page are the ones a letter-for-letter test compares (rows
+approved by MAIN 4). Each new link is a report with source "ClinicalTrials.gov"
+on rheumatoid arthritis's own saved list
 (fixtures/old_withdrawn_flag/answers/disease_drugs/9a5d0cbae7806ce1.json) and is not
-among the card's own records. It has not been read by hand.
+among the card's own records. The other cards the step moves (atopic eczema, and
+two on MONDO_0015924 that had no link) are tested in test_trial_link_other_records.py.
 """
 
 import copy
@@ -24,9 +27,18 @@ STUDY = "https://clinicaltrials.gov/study/"
 
 # (page, medicine id, name, link before 3.13, link from 3.13)
 MOVED = (
+    ("MONDO_0008383", "CHEMBL514800", "Apremilast",
+     STUDY + "NCT02735707",
+     STUDY + "NCT01204138"),
+    ("MONDO_0008383", "CHEMBL932", "Dipyridamole",
+     STUDY + "NCT00223717",
+     STUDY + "NCT00551707"),
     ("MONDO_0008383", "CHEMBL628", "Pentoxifylline",
      STUDY + "NCT01214226",
      STUDY + "NCT06998628"),
+    ("MONDO_0008383", "CHEMBL193240", "Roflumilast",
+     STUDY + "NCT02340520",
+     STUDY + "NCT07566351"),
 )
 
 TRIAL_PARTS = ("being_studied",)

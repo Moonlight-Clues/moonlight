@@ -109,3 +109,40 @@ def test_new_clue_cards_keep_their_links(page):
     old = eczema_page(studies={})
     assert [card["source"] for card in page["new_clues"]] == \
         [card["source"] for card in old["new_clues"]]
+
+
+# ---- a card with no link of its own gains a study of this disease ----
+
+PAH_GAINS = {  # (medicine id) -> (name, the study PAH's own list holds for it)
+    "CHEMBL1520": ("Vardenafil", STUDY + "NCT00718952"),
+    "CHEMBL2103849": ("Udenafil", STUDY + "NCT01553721"),
+}
+
+
+def pah_page(studies=None):
+    """The saved pulmonary arterial hypertension page (fixtures/MONDO_0015924/)."""
+    import test_api as pah
+    explain.forget_everything()
+    api.forget_visitors()
+    api.forget_answers()
+    with patch("moonlight.fetch._post_json", side_effect=pah.fake_with_the_disease_list):
+        with pah.with_saved_targets():
+            if studies is None:
+                answer = TestClient(api.app).get("/api/clues", params={"disease_id": pah.PAH_ID})
+            else:
+                with patch.object(api, "studies_for_this_disease", return_value=studies):
+                    answer = TestClient(api.app).get("/api/clues",
+                                                     params={"disease_id": pah.PAH_ID})
+    assert answer.status_code == 200
+    return answer.json()
+
+
+def test_vardenafil_and_udenafil_had_no_link_and_now_open_a_pah_study():
+    old = {card["id"]: card for card in pah_page(studies={})["being_studied"]}
+    new = {card["id"]: card for card in pah_page()["being_studied"]}
+    for medicine_id, (name, study) in PAH_GAINS.items():
+        assert new[medicine_id]["medicine"] == name
+        assert old[medicine_id]["source"] is None, name  # the card has no link of its own
+        assert new[medicine_id]["source"] == study, name
+        # Nothing else on the card changes, and no words are added.
+        assert dict(new[medicine_id], source=None) == old[medicine_id], name
