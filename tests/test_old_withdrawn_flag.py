@@ -77,6 +77,10 @@ RED_2_45 = {
     ASTHMA: {"CHEMBL1512", "CHEMBL1621597", "CHEMBL689"},  # flunisolide, ipratropium, mannitol
     AML: {"CHEMBL4297573"},  # tagraxofusp
     "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
+    # Ticket 2.52 put the red warning on six cards of type 2 diabetes (biotin,
+    # cyanocobalamin, folic acid, omega-3-acid ethyl esters, pyridoxine, tyrosine).
+    T2D: {"CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711", "CHEMBL1364",
+          "CHEMBL925"},
 }
 # Ticket 2.48 set the Source record of this card (moonlight/confirmed.json):
 # card id -> (the link the saved page shows, the label it shows now).
@@ -84,6 +88,17 @@ SOURCE_2_48 = {
     ASTHMA: {"CHEMBL1900528": (  # tiotropium
         "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1cf82d42-5ad0-4b86-838e-9230c61cf3d4",
         "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7b656b14-fcaa-2741-f6f0-e0be48971c02")},
+    # Ticket 2.52 set the Source record of two cards of type 2 diabetes
+    # (moonlight/confirmed.json): liraglutide (Xultophy -> Victoza) and
+    # canagliflozin (Invokamet -> Invokana).
+    T2D: {
+        "CHEMBL4084119": (
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=21335fe4-d395-4501-ac2a-2f20d7520da9",
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5a9ef4ea-c76a-4d34-a604-27c5b505f5a4"),
+        "CHEMBL2048484": (
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6868666b-c25e-40d1-9d1f-306bbe9390c1",
+            "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b9057d3b-b104-4f09-8a61-c61ef9d4a3f3"),
+    },
 }
 BACK = {}
 for _disease, _id, _ in EIGHT:

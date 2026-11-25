@@ -1082,7 +1082,9 @@ def test_53_an_approved_item_has_its_facts_and_no_rank_explanation_or_ending(
     data = clues_json(client, *FIVE)
     for item in data["approved"]:
         # Ticket 2.31: a card with a WITHDRAWAL report on its list has one more key.
-        assert set(item) - {"proof_note", "withdrawal_note"} == {
+        # Ticket 2.52: Nitric Oxide is on the red-warning list for this disease, so it
+        # carries the "warning" key (as every red-box card does, ticket 2.19).
+        assert set(item) - {"proof_note", "withdrawal_note", "warning"} == {
             "id", "medicine", "forms", "proteins", "reports", "source"}
         assert item["id"] and item["forms"]
         assert isinstance(item["reports"], int)
@@ -1144,6 +1146,7 @@ def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
     assert list(data) == [
         "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
         "left_out", "more_in_trials",
+        "wrong_approvals_box",  # ticket 2.52: Nitric Oxide is in the red-warning box
         "no_regulator_box",  # ticket 2.42: Beraprost, with the Japan line, is in the new box
     ]
     assert data["rule_text"] == RULE_TEXT

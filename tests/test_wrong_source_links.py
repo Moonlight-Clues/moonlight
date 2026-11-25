@@ -257,10 +257,14 @@ def test_no_other_card_on_these_pages_changed_its_source_or_line():
 
 def test_confirmed_json_holds_the_23_new_entries_in_its_own_form():
     entries = load(CONFIRMED_FILE)
-    new = [entry for entry in entries if entry["date"] == THE_DAY]
+    # Ticket 2.52 added two more dated today (liraglutide and canagliflozin,
+    # type 2 diabetes); they are not part of this ticket's 23.
+    later = {("CHEMBL4084119", "MONDO_0005148"), ("CHEMBL2048484", "MONDO_0005148")}
+    new = [entry for entry in entries if entry["date"] == THE_DAY
+           and (entry["medicine_id"], entry["disease_id"]) not in later]
     assert new == [{"medicine_id": card[1], "disease_id": card[2], "date": THE_DAY,
                     "label": card[6]} for card in CARDS]
-    assert len(entries) == 3 + 23
+    assert len(entries) == 3 + 23 + 2
     labels = engine.confirmed_by_label()  # the file still reads
     assert all(labels[(card[1], card[2])] == card[6] for card in CARDS)
 
