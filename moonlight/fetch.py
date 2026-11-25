@@ -56,6 +56,9 @@ and from the live API on 2026-11-18. They are saved in fixtures/no_regulator/.
 "functionDescriptions" on a target was read from the answers saved in
 fixtures/probe_p8/ on the branch probe-uniprot (2026-11-22) and from the
 live API on 2026-11-24. It is saved in fixtures/protein_sentence/.
+"datatypeScores" ("id", "score") on an associatedTargets row was read from
+the live API on 2026-11-25 (data 26.09). So was "therapeuticAreas" ("id") on
+a disease. Both are saved in fixtures/gene_evidence/.
 """
 
 import logging
@@ -160,10 +163,12 @@ TARGETS_QUERY = """
 query AssociatedTargets($diseaseId: String!, $size: Int!) {
   disease(efoId: $diseaseId) {
     id
+    therapeuticAreas { id }
     associatedTargets(page: {index: 0, size: $size}) {
       count
       rows {
         score
+        datatypeScores { id score }
         target { id approvedSymbol approvedName functionDescriptions }
       }
     }
@@ -525,6 +530,9 @@ def fetch_targets(disease: Disease, limit: int = 25) -> List[Target]:
     data = _ask(TARGETS_QUERY, {"diseaseId": disease.id, "size": limit})
     if data["disease"] is None:
         return []
+    # Ticket 3.1, decision 1 of 25 Nov. The disease's therapeutic areas, on
+    # the same answer. Old saved answers do not hold them: then there are none.
+    areas = tuple(area["id"] for area in data["disease"].get("therapeuticAreas") or ())
     targets = [
         Target(
             id=row["target"]["id"],
@@ -533,6 +541,11 @@ def fetch_targets(disease: Disease, limit: int = 25) -> List[Target]:
             score=row["score"],
             # Old saved answers do not hold this field: then there are no texts.
             function_texts=row["target"].get("functionDescriptions") or (),
+            # Ticket 3.1. Each kind of evidence and its score, as sent. Old
+            # saved answers do not hold this field: then there are none.
+            evidence_scores=tuple(
+                (kind["id"], kind["score"]) for kind in row.get("datatypeScores") or ()),
+            disease_areas=areas,
         )
         for row in data["disease"]["associatedTargets"]["rows"]
     ]

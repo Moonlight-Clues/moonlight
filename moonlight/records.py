@@ -101,9 +101,20 @@ class Target:
     # What the protein does, in UniProt's words, as Open Targets sends them
     # ("functionDescriptions"). () when the answer has none (ticket 3.8).
     function_texts: Tuple[str, ...] = ()
+    # Ticket 3.1. Each kind of evidence linking the protein to the disease,
+    # with its score (0 to 1), as Open Targets sends them ("datatypeScores"):
+    # (id, score) pairs. () when the answer has none.
+    evidence_scores: Tuple[Tuple[str, float], ...] = ()
+    # The ids of the disease's therapeutic areas ("therapeuticAreas"), sent
+    # on the same answer as the scores, which belong to this protein AND
+    # this disease. () when the answer has none.
+    disease_areas: Tuple[str, ...] = ()
 
     def __post_init__(self):
+        object.__setattr__(self, "disease_areas", tuple(self.disease_areas or ()))
         object.__setattr__(self, "function_texts", tuple(self.function_texts or ()))
+        object.__setattr__(self, "evidence_scores", tuple(
+            (kind, score) for kind, score in (self.evidence_scores or ())))
 
 
 @dataclass(frozen=True)

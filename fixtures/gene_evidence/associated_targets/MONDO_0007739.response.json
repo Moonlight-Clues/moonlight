@@ -1,0 +1,591 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0007739",
+      "therapeuticAreas": [
+        {
+          "id": "MONDO_0005071"
+        },
+        {
+          "id": "EFO_0000651"
+        },
+        {
+          "id": "OTAR_0000018"
+        }
+      ],
+      "associatedTargets": {
+        "count": 5280,
+        "rows": [
+          {
+            "score": 0.7329375371178446,
+            "datatypeScores": [
+              {
+                "id": "genetic_literature",
+                "score": 0.7295169571339454
+              },
+              {
+                "id": "clinical",
+                "score": 0.6169467241894464
+              },
+              {
+                "id": "literature",
+                "score": 0.9911522557466832
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.840046255823229
+              },
+              {
+                "id": "animal_model",
+                "score": 0.6740288027715446
+              }
+            ],
+            "target": {
+              "id": "ENSG00000197386",
+              "approvedSymbol": "HTT",
+              "approvedName": "huntingtin",
+              "functionDescriptions": [
+                "[Huntingtin]: May play a role in microtubule-mediated transport or vesicle function.",
+                "[Huntingtin, myristoylated N-terminal fragment]: Promotes the formation of autophagic vesicles. ."
+              ]
+            }
+          },
+          {
+            "score": 0.5932607924873725,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.1964148206777624
+              },
+              {
+                "id": "animal_model",
+                "score": 0.40730350221982586
+              },
+              {
+                "id": "clinical",
+                "score": 0.9511390066057726
+              }
+            ],
+            "target": {
+              "id": "ENSG00000165646",
+              "approvedSymbol": "SLC18A2",
+              "approvedName": "solute carrier family 18 member A2",
+              "functionDescriptions": [
+                "Electrogenic antiporter that exchanges one cationic monoamine with two intravesicular protons across the membrane of secretory and synaptic vesicles. Uses the electrochemical proton gradient established by the V-type proton-pump ATPase to accumulate high concentrations of monoamines inside the vesicles prior to their release via exocytosis. Transports a variety of catecholamines such as dopamine, adrenaline and noradrenaline, histamine, and indolamines such as serotonin (PubMed:23363473, PubMed:37914936, PubMed:38081299, PubMed:38517752, PubMed:8643547). Regulates the transvesicular monoaminergic gradient that determines the quantal size. Mediates somatodendritic dopamine release in hippocampal neurons, likely as part of a regulated secretory pathway that integrates retrograde synaptic signals (By similarity). Acts as a primary transporter for striatal dopamine loading ensuring impulse-dependent release of dopamine at the synaptic cleft (By similarity). Responsible for histamine and serotonin storage and subsequent corelease from mast cell granules (PubMed:8860238). {ECO:0000250|UniProtKB:Q01827, ECO:0000250|UniProtKB:Q8BRU6, ECO:0000269|PubMed:23363473, ECO:0000269|PubMed:37914936, ECO:0000269|PubMed:38081299, ECO:0000269|PubMed:38517752, ECO:0000269|PubMed:8643547, ECO:0000269|PubMed:8860238}."
+              ]
+            }
+          },
+          {
+            "score": 0.5151106486578165,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.2451480941368862
+              },
+              {
+                "id": "clinical",
+                "score": 0.8350604983859629
+              }
+            ],
+            "target": {
+              "id": "ENSG00000103546",
+              "approvedSymbol": "SLC6A2",
+              "approvedName": "solute carrier family 6 member 2",
+              "functionDescriptions": [
+                "Mediates sodium- and chloride-dependent transport of norepinephrine (also known as noradrenaline), the primary signaling neurotransmitter in the autonomic sympathetic nervous system (PubMed:2008212, PubMed:8125921, PubMed:38750358). Is responsible for norepinephrine re-uptake and clearance from the synaptic cleft, thus playing a crucial role in norepinephrine inactivation and homeostasis (By similarity). Can also mediate sodium- and chloride-dependent transport of dopamine (PubMed:11093780, PubMed:8125921, PubMed:39395208, PubMed:39048818). {ECO:0000250|UniProtKB:O55192, ECO:0000269|PubMed:11093780, ECO:0000269|PubMed:2008212, ECO:0000269|PubMed:38750358, ECO:0000269|PubMed:39048818, ECO:0000269|PubMed:8125921}."
+              ]
+            }
+          },
+          {
+            "score": 0.4893507711521515,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7369587918869065
+              },
+              {
+                "id": "animal_model",
+                "score": 0.36825408065323945
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.7599134970145264
+              }
+            ],
+            "target": {
+              "id": "ENSG00000059804",
+              "approvedSymbol": "SLC2A3",
+              "approvedName": "solute carrier family 2 member 3",
+              "functionDescriptions": [
+                "Facilitative glucose transporter (PubMed:26176916, PubMed:32860739, PubMed:9477959). Can also mediate the uptake of various other monosaccharides across the cell membrane (PubMed:26176916, PubMed:9477959). Mediates the uptake of glucose, 2- deoxyglucose, galactose, mannose, xylose and fucose, and probably also dehydroascorbate (PubMed:26176916, PubMed:9477959). Does not mediate fructose transport (PubMed:26176916, PubMed:9477959). Required for mesendoderm differentiation (By similarity). {ECO:0000250|UniProtKB:P32037, ECO:0000269|PubMed:26176916, ECO:0000269|PubMed:32860739, ECO:0000269|PubMed:8457197, ECO:0000269|PubMed:9477959}."
+              ]
+            }
+          },
+          {
+            "score": 0.475512212859121,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.2862664515888068
+              },
+              {
+                "id": "animal_model",
+                "score": 0.3181301863901613
+              },
+              {
+                "id": "clinical",
+                "score": 0.7599134970145264
+              }
+            ],
+            "target": {
+              "id": "ENSG00000142319",
+              "approvedSymbol": "SLC6A3",
+              "approvedName": "solute carrier family 6 member 3",
+              "functionDescriptions": [
+                "Mediates sodium- and chloride-dependent transport of dopamine (PubMed:10375632, PubMed:11093780, PubMed:1406597, PubMed:15505207, PubMed:19478460, PubMed:39112701, PubMed:39112703, PubMed:39112705, PubMed:8302271). Also mediates sodium- and chloride-dependent transport of norepinephrine (also known as noradrenaline) (By similarity). Regulator of light-dependent retinal hyaloid vessel regression, downstream of OPN5 signaling (By similarity). {ECO:0000250|UniProtKB:P23977, ECO:0000250|UniProtKB:Q61327, ECO:0000269|PubMed:10375632, ECO:0000269|PubMed:11093780, ECO:0000269|PubMed:1406597, ECO:0000269|PubMed:15505207, ECO:0000269|PubMed:19478460, ECO:0000269|PubMed:39112701, ECO:0000269|PubMed:39112703, ECO:0000269|PubMed:39112705, ECO:0000269|PubMed:8302271}."
+              ]
+            }
+          },
+          {
+            "score": 0.4039624404953469,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.4721004374547935
+              },
+              {
+                "id": "animal_model",
+                "score": 0.3770505015553476
+              },
+              {
+                "id": "clinical",
+                "score": 0.6325036185864422
+              }
+            ],
+            "target": {
+              "id": "ENSG00000149295",
+              "approvedSymbol": "DRD2",
+              "approvedName": "dopamine receptor D2",
+              "functionDescriptions": [
+                "G protein-coupled receptor for dopamine, a catecholamine neurotransmitter hormone that functions as the brain's 'reward chemical', driving motivation, reinforcement learning and pleasure (PubMed:21645528, PubMed:32103023, PubMed:32528175, PubMed:33353947, PubMed:33571431, PubMed:37221270, PubMed:39103320). Dopamine binding causes a conformation change that triggers signaling via guanine nucleotide-binding proteins (G proteins) and modulates the activity of downstream effectors, such as adenylate cyclase (PubMed:32103023, PubMed:32528175, PubMed:33353947, PubMed:33571431, PubMed:37221270). Dopamine receptors can be classified in two categories: (1) DRD2 (together with DRD3 and DRD4) is a D2-type receptor and is coupled to G(i)/G(o) G proteins, mediating inhibition of adenylate cyclase activity, while D1-type receptors (DRD1 and DRD5) are coupled to G(s) G proteins and promote activation of adenylate cyclase activity (PubMed:32103023, PubMed:32528175, PubMed:33353947, PubMed:33571431, PubMed:37221270). In the central nervous system, DRD2 is mainly coupled to G(o)/GNAO1 (By similarity). D1- and D2-type dopamine receptors have antagonistic effects, particularly in the brain's striatum, where they govern voluntary movement and reward: D1-type receptors generally stimulate neural activity and promotes action, while D2-type receptors tend to inhibit neural activity and suppress movement (By similarity). DRD1 and DRD2 are the most abundant dopamine receptors in the central nervous system, especially in the basal ganglia and the prefrontal cortex (PubMed:33571431). DRD2 receptor plays a key role in risky decision-making by modulating reward sensitivity and executive control; DRD2 activation in nucleus accumbens cells leading to increased risk- taking and impulsivity (By similarity). DRD2 can also couple with G(q) by forming a heteromer with the ghrelin receptor GHSR in neurons independently of ghrelin (By similarity). Following DRD2 activation by dopamine in lumbosacral defecation centers, GHSR acts as a coreceptor promoting DRD2 coupling to G(q) at the expense of G(i)/G(o), regulating defecation (By similarity). In addition to dopamine, also acts as a receptor for tryptophan-derived metabolites in intestinal epithelial cells: activation by tryptophan metabolites produced by the gut microbiota initiates a phospholipase-C-dependent signaling that promotes colonization resistance by pathogens by controlling actin cytoskeletal organization in the gut epithelium (By similarity). Positively regulates postnatal regression of retinal hyaloid vessels via suppression of VEGFR2/KDR activity, downstream of OPN5 (By similarity). Also acts as a receptor for D-lysergic (LSD) psychedelic drug (PubMed:40683247). {ECO:0000250|UniProtKB:P61168, ECO:0000250|UniProtKB:P61169, ECO:0000269|PubMed:21645528, ECO:0000269|PubMed:32103023, ECO:0000269|PubMed:32528175, ECO:0000269|PubMed:33353947, ECO:0000269|PubMed:33571431, ECO:0000269|PubMed:37221270, ECO:0000269|PubMed:39103320, ECO:0000269|PubMed:40683247}."
+              ]
+            }
+          },
+          {
+            "score": 0.3714277539581253,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.06079307976116211
+              },
+              {
+                "id": "clinical",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000274286",
+              "approvedSymbol": "ADRA2B",
+              "approvedName": "adrenoceptor alpha 2B",
+              "functionDescriptions": [
+                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:11056163, PubMed:2164221, PubMed:2172775, PubMed:23105096, PubMed:26811329). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2164221). The rank order of potency for agonists of ADRA2B is clonidine > norepinephrine > epinephrine = oxymetazoline > dopamine > p-tyramine = phenylephrine > serotonin > p-synephrine / p-octopamine. For antagonists, the rank order is yohimbine > chlorpromazine > phentolamine > mianserine > spiperone > prazosin > alprenolol > propanolol > pindolol (PubMed:2164221, PubMed:2172775). {ECO:0000269|PubMed:11056163, ECO:0000269|PubMed:2164221, ECO:0000269|PubMed:2172775, ECO:0000269|PubMed:23105096, ECO:0000269|PubMed:26811329}."
+              ]
+            }
+          },
+          {
+            "score": 0.3695798546847018,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000150594",
+              "approvedSymbol": "ADRA2A",
+              "approvedName": "adrenoceptor alpha 2A",
+              "functionDescriptions": [
+                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2170371, PubMed:23105096, PubMed:2568356, PubMed:35245122, PubMed:27376152). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2568356, PubMed:27376152). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for agonists of ADRA2A is oxymetazoline > clonidine > epinephrine > norepinephrine > phenylephrine > dopamine > p-synephrine > p-tyramine > serotonin = p-octopamine. For antagonists, the rank order is yohimbine > phentolamine = mianserine > chlorpromazine = spiperone = prazosin > propanolol > alprenolol = pindolol (PubMed:2170371, PubMed:2568356). {ECO:0000250|UniProtKB:Q01338, ECO:0000269|PubMed:2170371, ECO:0000269|PubMed:23105096, ECO:0000269|PubMed:2568356, ECO:0000269|PubMed:27376152, ECO:0000269|PubMed:35245122}."
+              ]
+            }
+          },
+          {
+            "score": 0.3695798546847018,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.607930797611621
+              }
+            ],
+            "target": {
+              "id": "ENSG00000184160",
+              "approvedSymbol": "ADRA2C",
+              "approvedName": "adrenoceptor alpha 2C",
+              "functionDescriptions": [
+                "Alpha-2 adrenergic receptors are G protein-coupled receptors for catecholamines that activate the G(i/o) protein pathway, thereby promoting adenylyl cyclase inhibition, ERK1/2 stimulation, and voltage- gated calcium channels suppression (PubMed:2842764). Control a variety of physiological processes, such as regulation of blood pressure, lipolysis and insulin release (PubMed:2842764). ADRA2A and ADRA2C mediates the presynaptic feedback inhibition of neurotransmitter release from noradrenergic nerve terminals in sympathetic and central nervous systems. ADRA2A inhibits transmitter release at high stimulation frequencies, whereas ADRA2C modulates neurotransmission at lower levels of nerve activity (By similarity). The rank order of potency for physiological agonists of ADRA2C is epinephrine > norepinephrine > dopamine (PubMed:2842764). ."
+              ]
+            }
+          },
+          {
+            "score": 0.33571781912671117,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.27072171635641507
+              },
+              {
+                "id": "clinical",
+                "score": 0.5386942345502975
+              }
+            ],
+            "target": {
+              "id": "ENSG00000151577",
+              "approvedSymbol": "DRD3",
+              "approvedName": "dopamine receptor D3",
+              "functionDescriptions": [
+                "G protein-coupled receptor for dopamine, a catecholamine neurotransmitter hormone that functions as the brain's 'reward chemical', driving motivation, reinforcement learning and pleasure (PubMed:19520868, PubMed:33548201, PubMed:37221270, PubMed:39237617, PubMed:39984436, PubMed:8301582). Dopamine binding causes a conformation change that triggers signaling via guanine nucleotide- binding proteins (G proteins) and modulates the activity of downstream effectors, such as adenylate cyclase (PubMed:10578130, PubMed:33548201, PubMed:37221270, PubMed:39237617). Dopamine receptors can be classified in two categories: (1) DRD3 (together with DRD2 and DRD4) is a D2-type receptor and is coupled to G(i)/G(o) G proteins, mediating inhibition of adenylate cyclase activity, while D1-type receptors (DRD1 and DRD5) are coupled to G(s) G proteins and promote activation of adenylate cyclase activity (PubMed:10578130, PubMed:33548201, PubMed:37221270, PubMed:39237617). D1- and D2-type dopamine receptors have antagonistic effects, particularly in the brain's striatum, where they govern voluntary movement and reward: D1-type receptors generally stimulate neural activity and promotes action, while D2-type receptors tend to inhibit neural activity and suppress movement (PubMed:10578130, PubMed:33548201, PubMed:37221270, PubMed:39237617). DRD3 is primarily expressed in limbic areas of the brain and is involved in the modulation of cognitive, emotional and motor functions: plays a key role in regulating neuronal signaling pathways associated with motivation, reward and behavior (PubMed:39984436). Involved in the incentive salience of drugs: controls responses to drug-related stimuli, making it a key target for reducing addiction to substances like cocaine, morphine, and alcohol (PubMed:10432116, PubMed:39984436). Forms heterotetramers with DRD1 to potentiate beta-arrestin recruitment and mediate locomotor activity (By similarity). Also involved in autophagy regulation: receptor activation stimulates AMPK, which phosphorylates RPTOR and enhances its interaction with MTOR, thereby inhibiting mTORC1 signaling and its downstream target RPS6KB1 (PubMed:31538542). This leads to activation of ULK1 and initiation of the autophagy cascade (PubMed:31538542). {ECO:0000250|UniProtKB:P30728, ECO:0000269|PubMed:10432116, ECO:0000269|PubMed:10578130, ECO:0000269|PubMed:19520868, ECO:0000269|PubMed:31538542, ECO:0000269|PubMed:33548201, ECO:0000269|PubMed:37221270, ECO:0000269|PubMed:39237617, ECO:0000269|PubMed:39984436, ECO:0000269|PubMed:8301582}."
+              ]
+            }
+          },
+          {
+            "score": 0.28552285371915065,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.637482989162186
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5506967675633933
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000007314",
+              "approvedSymbol": "SCN4A",
+              "approvedName": "sodium voltage-gated channel alpha subunit 4",
+              "functionDescriptions": [
+                "Pore-forming subunit of Nav1.4, a voltage-gated sodium (Nav) channel that directly mediates the depolarizing phase of action potentials in excitable membranes. Navs, also called VGSCs (voltage- gated sodium channels) or VDSCs (voltage-dependent sodium channels), operate by switching between closed and open conformations depending on the voltage difference across the membrane. In the open conformation they allow Na(+) ions to selectively pass through the pore, along their electrochemical gradient. The influx of Na+ ions provokes membrane depolarization, initiating the propagation of electrical signals throughout cells and tissues (PubMed:12766226, PubMed:15318338, PubMed:16890191, PubMed:17898326, PubMed:18690054, PubMed:19347921, PubMed:25707578, PubMed:26659129, PubMed:26700687, PubMed:29992740, PubMed:30190309). Highly expressed in skeletal muscles, Nav1.4 generates the action potential crucial for muscle contraction (PubMed:16890191, PubMed:19347921, PubMed:25707578, PubMed:26659129, PubMed:26700687). {ECO:0000269|PubMed:12766226, ECO:0000269|PubMed:15318338, ECO:0000269|PubMed:16890191, ECO:0000269|PubMed:17898326, ECO:0000269|PubMed:18690054, ECO:0000269|PubMed:19347921, ECO:0000269|PubMed:25707578, ECO:0000269|PubMed:26659129, ECO:0000269|PubMed:26700687, ECO:0000269|PubMed:29992740, ECO:0000269|PubMed:30190309}."
+              ]
+            }
+          },
+          {
+            "score": 0.28280038884599784,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.14630530123187674
+              },
+              {
+                "id": "animal_model",
+                "score": 0.423682171125479
+              },
+              {
+                "id": "clinical",
+                "score": 0.44074982826842524
+              }
+            ],
+            "target": {
+              "id": "ENSG00000147246",
+              "approvedSymbol": "HTR2C",
+              "approvedName": "5-hydroxytryptamine receptor 2C",
+              "functionDescriptions": [
+                "G protein-coupled receptor for 5-hydroxytryptamine (serotonin) (PubMed:12970106, PubMed:18703043, PubMed:19057895, PubMed:29398112, PubMed:7895773). Also functions as a receptor for various drugs and psychoactive substances, including ergot alkaloid derivatives, 1-2,5,-dimethoxy-4-iodophenyl-2-aminopropane (DOI) and lysergic acid diethylamide (LSD) (PubMed:19057895, PubMed:29398112). Ligand binding causes a conformation change that triggers signaling via guanine nucleotide-binding proteins (G proteins) and modulates the activity of downstream effectors (PubMed:18703043, PubMed:29398112). HTR2C is coupled to G(q)/G(11) G alpha proteins and activates phospholipase C-beta, releasing diacylglycerol (DAG) and inositol 1,4,5-trisphosphate (IP3) second messengers that modulate the activity of phosphatidylinositol 3-kinase and promote the release of Ca(2+) ions from intracellular stores, respectively (PubMed:18703043, PubMed:29398112). Beta-arrestin family members inhibit signaling via G proteins and mediate activation of alternative signaling pathways (PubMed:29398112). Regulates neuronal activity via the activation of short transient receptor potential calcium channels in the brain, and thereby modulates the activation of pro-opiomelanocortin neurons and the release of CRH that then regulates the release of corticosterone (By similarity). Plays a role in the regulation of appetite and eating behavior, responses to anxiogenic stimuli and stress (By similarity). Plays a role in insulin sensitivity and glucose homeostasis (By similarity). {ECO:0000250|UniProtKB:P34968, ECO:0000269|PubMed:12970106, ECO:0000269|PubMed:18703043, ECO:0000269|PubMed:19057895, ECO:0000269|PubMed:29398112, ECO:0000269|PubMed:7895773}."
+              ]
+            }
+          },
+          {
+            "score": 0.28025277216721795,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.012158615952232422
+              },
+              {
+                "id": "animal_model",
+                "score": 0.7034555991813363
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000196876",
+              "approvedSymbol": "SCN8A",
+              "approvedName": "sodium voltage-gated channel alpha subunit 8",
+              "functionDescriptions": [
+                "Pore-forming subunit of a voltage-gated sodium channel complex assuming opened or closed conformations in response to the voltage difference across membranes and through which sodium ions selectively pass along their electrochemical gradient (PubMed:24874546, PubMed:25239001, PubMed:25725044, PubMed:26900580, PubMed:29726066, PubMed:33245860, PubMed:36696443, PubMed:36823201). Contributes to neuronal excitability by regulating action potential threshold and propagation (PubMed:24874546, PubMed:25239001, PubMed:25725044, PubMed:26900580, PubMed:29726066, PubMed:33245860, PubMed:36696443, PubMed:36823201). {ECO:0000269|PubMed:24874546, ECO:0000269|PubMed:25239001, ECO:0000269|PubMed:25725044, ECO:0000269|PubMed:26900580, ECO:0000269|PubMed:29726066, ECO:0000269|PubMed:33245860, ECO:0000269|PubMed:36696443, ECO:0000269|PubMed:36823201}.",
+                "[Isoform 5]: More specifically expressed in non-neuronal cells, could play a role in sodium release from intracellular compartments and participate in the control of podosomes formation and macrophages adhesion and movement. ."
+              ]
+            }
+          },
+          {
+            "score": 0.27633819124274484,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.0845952591843171
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5424777680328992
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000164258",
+              "approvedSymbol": "NDUFS4",
+              "approvedName": "NADH:ubiquinone oxidoreductase subunit S4",
+              "functionDescriptions": [
+                "Accessory subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I), that is believed not to be involved in catalysis. Complex I functions in the transfer of electrons from NADH to the respiratory chain. The immediate electron acceptor for the enzyme is believed to be ubiquinone. {ECO:0000269|PubMed:11181577, ECO:0000269|PubMed:12611891, ECO:0000269|PubMed:9463323}."
+              ]
+            }
+          },
+          {
+            "score": 0.27544001453980843,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.11146587989556637
+              },
+              {
+                "id": "clinical",
+                "score": 0.44750461490855437
+              }
+            ],
+            "target": {
+              "id": "ENSG00000102468",
+              "approvedSymbol": "HTR2A",
+              "approvedName": "5-hydroxytryptamine receptor 2A",
+              "functionDescriptions": [
+                "G protein-coupled receptor for 5-hydroxytryptamine (serotonin) (PubMed:1330647, PubMed:18703043, PubMed:19057895, PubMed:21645528, PubMed:22300836, PubMed:35084960, PubMed:38552625). Also functions as a receptor for various drugs and psychoactive substances, including mescaline, psilocybin, 1-(2,5-dimethoxy-4- iodophenyl)-2-aminopropane (DOI) and lysergic acid diethylamide (LSD) (PubMed:28129538, PubMed:35084960). Ligand binding causes a conformation change that triggers signaling via guanine nucleotide- binding proteins (G proteins) and modulates the activity of downstream effectors (PubMed:28129538, PubMed:35084960). HTR2A is coupled to G(q)/G(11) G alpha proteins and activates phospholipase C-beta, releasing diacylglycerol (DAG) and inositol 1,4,5-trisphosphate (IP3) second messengers that modulate the activity of phosphatidylinositol 3- kinase and promote the release of Ca(2+) ions from intracellular stores, respectively (PubMed:18703043, PubMed:28129538, PubMed:35084960). Beta-arrestin family members inhibit signaling via G proteins and mediate activation of alternative signaling pathways (PubMed:28129538, PubMed:35084960). Affects neural activity, perception, cognition and mood (PubMed:18297054). Plays a role in the regulation of behavior, including responses to anxiogenic situations and psychoactive substances. Plays a role in intestinal smooth muscle contraction, and may play a role in arterial vasoconstriction (By similarity). {ECO:0000250|UniProtKB:P35363, ECO:0000269|PubMed:1330647, ECO:0000269|PubMed:18297054, ECO:0000269|PubMed:18703043, ECO:0000269|PubMed:19057895, ECO:0000269|PubMed:21645528, ECO:0000269|PubMed:22300836, ECO:0000269|PubMed:28129538, ECO:0000269|PubMed:35084960, ECO:0000269|PubMed:38552625}.",
+                "(Microbial infection) Acts as a receptor for human JC polyomavirus/JCPyV. ."
+              ]
+            }
+          },
+          {
+            "score": 0.27533143235795227,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.07132716952644348
+              },
+              {
+                "id": "animal_model",
+                "score": 0.5152538583865545
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000144285",
+              "approvedSymbol": "SCN1A",
+              "approvedName": "sodium voltage-gated channel alpha subunit 1",
+              "functionDescriptions": [
+                "Pore-forming subunit of Nav1.1, a voltage-gated sodium (Nav) channel that directly mediates the depolarizing phase of action potentials in excitable membranes. Navs, also called VGSCs (voltage- gated sodium channels) or VDSCs (voltage-dependent sodium channels), operate by switching between closed and open conformations depending on the voltage difference across the membrane. In the open conformation they allow Na(+) ions to selectively pass through the pore, along their electrochemical gradient. The influx of Na(+) ions provokes membrane depolarization, initiating the propagation of electrical signals throughout cells and tissues (PubMed:14672992). By regulating the excitability of neurons, ensures that they respond appropriately to synaptic inputs, maintaining the balance between excitation and inhibition in brain neural circuits (By similarity). Nav1.1 plays a role in controlling the excitability and action potential propagation from somatosensory neurons, thereby contributing to the sensory perception of mechanically-induced pain (By similarity). ."
+              ]
+            }
+          },
+          {
+            "score": 0.2742615562654482,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.20779212515153786
+              },
+              {
+                "id": "clinical",
+                "score": 0.44074982826842524
+              }
+            ],
+            "target": {
+              "id": "ENSG00000069696",
+              "approvedSymbol": "DRD4",
+              "approvedName": "dopamine receptor D4",
+              "functionDescriptions": [
+                "G protein-coupled receptor for dopamine, a catecholamine neurotransmitter hormone that functions as the brain's 'reward chemical', driving motivation, reinforcement learning and pleasure (PubMed:16423344, PubMed:1840645, PubMed:27659709, PubMed:29051383, PubMed:37221270, PubMed:7512953, PubMed:7643093, PubMed:8078498, PubMed:8413587). In addition to dopamine, also activated by epinephrine and norepinephrine, and by numerous synthetic agonists and drugs (PubMed:16423344, PubMed:1840645, PubMed:27659709, PubMed:29051383, PubMed:9003072, PubMed:9042615). Ligand binding causes a conformation change that triggers signaling via guanine nucleotide-binding proteins (G proteins) and modulates the activity of downstream effectors, such as adenylate cyclase (PubMed:16423344, PubMed:27659709, PubMed:29051383, PubMed:7512953, PubMed:7643093). Dopamine receptors can be classified in two categories: (1) DRD4 (together with DRD2 and DRD3) is a D2-type receptor and is coupled to G(i)/G(o) G proteins, mediating inhibition of adenylate cyclase activity, while D1-type receptors (DRD1 and DRD5) are coupled to G(s) G proteins and promote activation of adenylate cyclase activity (PubMed:16423344, PubMed:27659709, PubMed:29051383, PubMed:7512953, PubMed:7643093). D1- and D2-type dopamine receptors have antagonistic effects, particularly in the brain's striatum, where they govern voluntary movement and reward: D1-type receptors generally stimulate neural activity and promotes action, while D2-type receptors tend to inhibit neural activity and suppress movement (PubMed:16423344, PubMed:27659709, PubMed:29051383, PubMed:7512953, PubMed:7643093). DRD4 is expressed in the mesolimbic system of the brain, an area of the brain that regulates emotion and complex behavior (PubMed:37221270). Modulates the circadian rhythm of contrast sensitivity by regulating the rhythmic expression of NPAS2 in the retinal ganglion cells (By similarity). {ECO:0000250|UniProtKB:P51436, ECO:0000269|PubMed:16423344, ECO:0000269|PubMed:1840645, ECO:0000269|PubMed:27659709, ECO:0000269|PubMed:29051383, ECO:0000269|PubMed:37221270, ECO:0000269|PubMed:7512953, ECO:0000269|PubMed:7643093, ECO:0000269|PubMed:8078498, ECO:0000269|PubMed:8413587, ECO:0000269|PubMed:9003072, ECO:0000269|PubMed:9042615}."
+              ]
+            }
+          },
+          {
+            "score": 0.26929667099009974,
+            "datatypeScores": [
+              {
+                "id": "animal_model",
+                "score": 0.3484203383811603
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000169432",
+              "approvedSymbol": "SCN9A",
+              "approvedName": "sodium voltage-gated channel alpha subunit 9",
+              "functionDescriptions": [
+                "Pore-forming subunit of Nav1.7, a voltage-gated sodium (Nav) channel that directly mediates the depolarizing phase of action potentials in excitable membranes (PubMed:38381792, PubMed:40768348). Navs, also called VGSCs (voltage-gated sodium channels) or VDSCs (voltage-dependent sodium channels), operate by switching between closed and open conformations depending on the voltage difference across the membrane. In the open conformation they allow Na(+) ions to selectively pass through the pore, along their electrochemical gradient (PubMed:38381792, PubMed:40768348). The influx of Na(+) ions provokes membrane depolarization, initiating the propagation of electrical signals throughout cells and tissues (PubMed:15385606, PubMed:16988069, PubMed:17145499, PubMed:17167479, PubMed:19369487, PubMed:24311784, PubMed:25240195, PubMed:26680203, PubMed:7720699). Nav1.7 plays a crucial role in controlling the excitability and action potential propagation from nociceptor neurons, thereby contributing to the sensory perception of pain (PubMed:17145499, PubMed:17167479, PubMed:19369487, PubMed:24311784). {ECO:0000269|PubMed:15178348, ECO:0000269|PubMed:15385606, ECO:0000269|PubMed:16988069, ECO:0000269|PubMed:17145499, ECO:0000269|PubMed:17167479, ECO:0000269|PubMed:19369487, ECO:0000269|PubMed:24311784, ECO:0000269|PubMed:25240195, ECO:0000269|PubMed:26680203, ECO:0000269|PubMed:38381792, ECO:0000269|PubMed:40768348, ECO:0000269|PubMed:7720699}."
+              ]
+            }
+          },
+          {
+            "score": 0.2642495960995618,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.18237923928348632
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000168356",
+              "approvedSymbol": "SCN11A",
+              "approvedName": "sodium voltage-gated channel alpha subunit 11",
+              "functionDescriptions": [
+                "Sodium channel mediating the voltage-dependent sodium ion permeability of excitable membranes. Assuming opened or closed conformations in response to the voltage difference across the membrane, the protein forms a sodium-selective channel through which sodium ions may pass in accordance with their electrochemical gradient (PubMed:10580103, PubMed:12384689, PubMed:24036948, PubMed:24776970, PubMed:25791876, PubMed:26645915). Involved in membrane depolarization during action potential in nociceptors which function as key relay stations for the electrical transmission of pain signals from the periphery to the central nervous system (PubMed:24036948, PubMed:24776970, PubMed:25791876, PubMed:26645915). Also involved in rapid BDNF-evoked neuronal depolarization (PubMed:12384689). {ECO:0000269|PubMed:10580103, ECO:0000269|PubMed:12384689, ECO:0000269|PubMed:24036948, ECO:0000269|PubMed:24776970, ECO:0000269|PubMed:25791876, ECO:0000269|PubMed:26645915}."
+              ]
+            }
+          },
+          {
+            "score": 0.2639379909418949,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.17212790281916893
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000198695",
+              "approvedSymbol": "MT-ND6",
+              "approvedName": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 6",
+              "functionDescriptions": [
+                "Core subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I) which catalyzes electron transfer from NADH through the respiratory chain, using ubiquinone as an electron acceptor (PubMed:14595656, PubMed:8644732). Essential for the catalytic activity and assembly of complex I (PubMed:14595656, PubMed:8644732). ."
+              ]
+            }
+          },
+          {
+            "score": 0.2631517899395421,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.14626308381537592
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000198763",
+              "approvedSymbol": "MT-ND2",
+              "approvedName": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 2",
+              "functionDescriptions": [
+                "Core subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I) which catalyzes electron transfer from NADH through the respiratory chain, using ubiquinone as an electron acceptor (PubMed:16996290). Essential for the catalytic activity and assembly of complex I (PubMed:16996290). ."
+              ]
+            }
+          },
+          {
+            "score": 0.26190750895415005,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.105328129038272
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000178127",
+              "approvedSymbol": "NDUFV2",
+              "approvedName": "NADH:ubiquinone oxidoreductase core subunit V2",
+              "functionDescriptions": [
+                "Core subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I) which catalyzes electron transfer from NADH through the respiratory chain, using ubiquinone as an electron acceptor (Probable). Parts of the peripheral arm of the enzyme, where the electrons from NADH are accepted by flavin mononucleotide (FMN) and then passed along a chain of iron-sulfur clusters by electron tunnelling to the final acceptor ubiquinone (Probable). Contains one iron-sulfur cluster (Probable). ."
+              ]
+            }
+          },
+          {
+            "score": 0.26164859234902743,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.0968101659365564
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000167792",
+              "approvedSymbol": "NDUFV1",
+              "approvedName": "NADH:ubiquinone oxidoreductase core subunit V1",
+              "functionDescriptions": [
+                "Core subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I) which catalyzes electron transfer from NADH through the respiratory chain, using ubiquinone as an electron acceptor (PubMed:28844695). Part of the peripheral arm of the enzyme, where the electrons from NADH are accepted by flavin mononucleotide (FMN) and then passed along a chain of iron-sulfur clusters by electron tunnelling to the final acceptor ubiquinone (PubMed:28844695). Contains FMN, which is the initial electron acceptor as well as one iron-sulfur cluster (PubMed:28844695). ."
+              ]
+            }
+          },
+          {
+            "score": 0.26139071312401596,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.088326331065067
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000119013",
+              "approvedSymbol": "NDUFB3",
+              "approvedName": "NADH:ubiquinone oxidoreductase subunit B3",
+              "functionDescriptions": [
+                "Accessory subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I), that is believed not to be involved in catalysis. Complex I functions in the transfer of electrons from NADH to the respiratory chain. The immediate electron acceptor for the enzyme is believed to be ubiquinone. ."
+              ]
+            }
+          },
+          {
+            "score": 0.2613312009261492,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.08636847013416662
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000198786",
+              "approvedSymbol": "MT-ND5",
+              "approvedName": "mitochondrially encoded NADH:ubiquinone oxidoreductase core subunit 5",
+              "functionDescriptions": [
+                "Core subunit of the mitochondrial membrane respiratory chain NADH dehydrogenase (Complex I) which catalyzes electron transfer from NADH through the respiratory chain, using ubiquinone as an electron acceptor (PubMed:15250827). Essential for the catalytic activity and assembly of complex I (PubMed:15250827). ."
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

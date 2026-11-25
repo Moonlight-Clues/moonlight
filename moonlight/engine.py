@@ -253,6 +253,37 @@ WITHDRAWAL_LINE = (
 # official label covers only some people with the disease. Moonlight never
 # writes which people. Changing these words needs her approval.
 LIMITED_LINE = "The label covers only some people with this disease."
+
+# Ticket 3.1, Kashish's decisions of 25 Nov (spoken). Under each gene on a
+# clue card, one line says why the gene is linked to the disease. A kind of
+# evidence counts when its score for that gene and disease is at least
+# EVIDENCE_CUTOFF (out of 1). The kinds are named in this table's order, at
+# most EVIDENCE_MOST of them. A gene linked only by papers still gets the
+# line. No kind at the cut-off: no line. Open Targets' kind for the medicine
+# itself ("known_drug", called "clinical" in data 26.09) is not here: it
+# would argue in a circle. Every other kind not here is ignored too.
+# The engine sends only the ids. The page types these words once; this is
+# its copy, and tests/test_gene_evidence.py checks the two match. Changing
+# the words needs her approval.
+EVIDENCE_CUTOFF = 0.5
+EVIDENCE_MOST = 3
+# Decision 1 of 25 Nov. "somatic_mutation" counts only when the disease is a
+# cancer: its therapeutic areas include this one, "cancer or benign tumor".
+# When the areas were not sent, it is not known to be a cancer: no tumours.
+CANCER_AREA = "MONDO_0045024"
+CANCER_ONLY = "somatic_mutation"
+# Decision 2 of 25 Nov. Curated inherited-gene evidence counts as the kind
+# it stands for. Only the kind's own id is ever sent, so its name is said once.
+EVIDENCE_SAME_AS = {"genetic_literature": "genetic_association"}
+EVIDENCE_START = "Linked to this disease by: "
+EVIDENCE_NAMES = {
+    "genetic_association": "inherited gene changes",
+    "somatic_mutation": "gene changes found in tumours",
+    "animal_model": "studies in animals",
+    "affected_pathway": "the body process the gene is part of",
+    "rna_expression": "how active the gene is in the disease",
+    "literature": "mentioned together in research papers",
+}
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
@@ -525,6 +556,36 @@ def parent_label(names: List[str]) -> str:
         f"{NOT_THIS_EXACT_DISEASE} Approved for {_joined(names)}, "
         f"{group} the database puts this disease in."
     )
+
+
+def evidence_ids(target: Target) -> Tuple[str, ...]:
+    """Ticket 3.1. The kinds of evidence a gene's line names, as ids.
+
+    The kinds in EVIDENCE_NAMES whose score reaches EVIDENCE_CUTOFF, in
+    that table's order, at most EVIDENCE_MOST. () when none does. A kind
+    in EVIDENCE_SAME_AS counts as the kind it names. CANCER_ONLY counts
+    only when the disease's areas include CANCER_AREA.
+    """
+    reached = set()
+    for kind, score in target.evidence_scores:
+        if score is not None and score >= EVIDENCE_CUTOFF:
+            reached.add(EVIDENCE_SAME_AS.get(kind, kind))
+    if CANCER_AREA not in target.disease_areas:
+        reached.discard(CANCER_ONLY)
+    counted = [kind for kind in EVIDENCE_NAMES if kind in reached]
+    return tuple(counted[:EVIDENCE_MOST])
+
+
+def evidence_line(ids: Iterable[str]) -> Optional[str]:
+    """The line the page writes for these ids, word for word. None for no ids.
+
+    The page builds the line itself from its own copy of the words; this
+    one is kept so the tests can say what the page must show.
+    """
+    names = [EVIDENCE_NAMES[kind] for kind in ids]
+    if not names:
+        return None
+    return EVIDENCE_START + ", ".join(names) + "."
 
 
 def find_clues(disease: Disease, targets: Iterable[Target]) -> Dict[str, List[Path]]:

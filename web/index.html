@@ -141,6 +141,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 /* Ticket 3.7. Plain words under the protein they are true for. No red, no icon. */
 .opposite-way{flex-basis:100%;font-size:12px;line-height:1.45;color:var(--muted);margin:0}
 .protein-function{flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0;overflow-wrap:anywhere}
+/* Ticket 3.1. Why the gene is linked to the disease: the same small, muted style, under the protein's sentence. */
+.protein-evidence{flex-basis:100%;font-size:12px;line-height:1.45;font-weight:400;color:var(--muted);margin:0;overflow-wrap:anywhere}
 /* Ticket 2.18. One plain line under the New clues cards. */
 .wrong-way-line{font-size:13px;line-height:1.5;color:var(--muted);margin:14px 0 0}
 
@@ -278,6 +280,9 @@ body.registering>:not(.register){display:none!important}
 /* a medicine and the lines under it stay together on one printed page */
 .register-table tbody,.register-table tr{break-inside:avoid;page-break-inside:avoid}
 .register-table tr[data-row="note"] td{font-weight:400}
+/* ticket 3.1: a new clue's protein sentence and evidence line, under its row */
+.register-table tr[data-row="protein-note"] td{font-weight:400}
+.register-protein-id{font-weight:700}
 /* Ticket 5.2. An empty line in the Protein and Points columns, beside the
    opposite-way words in "Turns it", so the next protein stays level across
    the row. The empty line holds the same words, unseen, at the same width,
@@ -675,6 +680,9 @@ body.registering>:not(.register){display:none!important}
 <!-- What the protein does: one sentence, UniProt's words, as the API sent them (ticket 3.8). -->
 <template id="protein-function-template"><p class="protein-function" data-slot="protein-function"></p></template>
 
+<!-- Why the gene is linked to the disease (ticket 3.1). The words are built in the script from EVIDENCE_START and EVIDENCE_NAMES. -->
+<template id="protein-evidence-template"><p class="protein-evidence" data-slot="protein-evidence"></p></template>
+
 <!-- What the medicine does to the protein. All four badges share one neutral style. -->
 <template id="direction-up"><span class="direction" data-slot="direction" title="The medicine turns this protein up"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 13V3m-4 4 4-4 4 4"/></svg>Up</span></template>
 <template id="direction-down"><span class="direction" data-slot="direction" title="The medicine turns this protein down"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 16 16"><path d="M8 3v10m-4-4 4 4 4-4"/></svg>Down</span></template>
@@ -701,6 +709,26 @@ body.registering>:not(.register){display:none!important}
 
   // What the page says when the API answers 429. Kashish's exact words.
   const TOO_MANY = "Too many requests. Please wait a minute.";
+
+  /* Ticket 3.1. Kashish's words (25 Nov), typed only here. The API sends a
+     clue card's protein the ids of the kinds of evidence, never the words.
+     moonlight/engine.py keeps a copy; tests/test_gene_evidence.py checks the
+     two match. Changing them needs her approval. */
+  const EVIDENCE_START = "Linked to this disease by: ";
+  const EVIDENCE_NAMES = {
+    genetic_association: "inherited gene changes",
+    somatic_mutation: "gene changes found in tumours",
+    animal_model: "studies in animals",
+    affected_pathway: "the body process the gene is part of",
+    rna_expression: "how active the gene is in the disease",
+    literature: "mentioned together in research papers",
+  };
+  /* The line for one protein of a clue card, or "" when it names nothing.
+     The card and the printed register both use it, so the words are the same. */
+  const evidenceLine = protein => {
+    const kinds = (protein.evidence || []).filter(kind => Object.hasOwn(EVIDENCE_NAMES, kind));
+    return kinds.length ? EVIDENCE_START + kinds.map(kind => EVIDENCE_NAMES[kind]).join(", ") + "." : "";
+  };
 
   async function ask(path, params) {
     const answer = await fetch(path + "?" + new URLSearchParams(params));
@@ -1055,7 +1083,7 @@ body.registering>:not(.register){display:none!important}
 
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {
-    const el = baseCard(medicine, diseaseName);
+    const el = baseCard(medicine, diseaseName, false);
     slot(el, "rank").remove();
     slot(el, "ending").remove();
     slot(el, "phase").remove();
@@ -1115,7 +1143,7 @@ body.registering>:not(.register){display:none!important}
 
   /* A new clue, with its number on the list, or a medicine being studied. */
   function card(clue, diseaseName, number) {
-    const el = baseCard(clue, diseaseName);
+    const el = baseCard(clue, diseaseName, true);
     if (number !== null) {
       const rank = slot(el, "rank");
       rank.textContent = number;
@@ -1131,8 +1159,10 @@ body.registering>:not(.register){display:none!important}
     return el;
   }
 
-  /* What every card shows: name, forms, reports, path, proteins, source. */
-  function baseCard(clue, diseaseName) {
+  /* What every card shows: name, forms, reports, path, proteins, source.
+     isClue is true for a new clue or a medicine being studied: only those
+     cards show why a gene is linked to the disease (ticket 3.1). */
+  function baseCard(clue, diseaseName, isClue) {
     const el = copyOf("card-template");
     const symbols = clue.proteins.map(protein => protein.symbol);
     el.dataset.proteins = symbols.join(",");
@@ -1172,6 +1202,13 @@ body.registering>:not(.register){display:none!important}
       if (protein.function) {  // only on a clue or In trials card; shown as sent
         const line = copyOf("protein-function-template");
         line.textContent = protein.function;
+        row.style.flexWrap = "wrap";
+        row.append(line);
+      }
+      const evidence = isClue ? evidenceLine(protein) : "";
+      if (evidence) {  // never on an Approved card; the words are this page's own
+        const line = copyOf("protein-evidence-template");
+        line.textContent = evidence;
         row.style.flexWrap = "wrap";
         row.append(line);
       }
@@ -1251,7 +1288,11 @@ body.registering>:not(.register){display:none!important}
      ones its card shows. Nothing is worked out here. Beside the words, the
      Protein and Points columns get an empty line of the same height, so
      the next protein's name, direction and points stay level. */
-  function registerRows(table, items, linesUnder, oppositeToo) {
+  /* Ticket 3.1 (decision 3 of 25 Nov). In the new clues table only
+     (proteinNotes), each protein whose card shows the protein sentence
+     (ticket 3.8) or the evidence line gets one row under the medicine:
+     its name, then those lines, in the card's order and the card's words. */
+  function registerRows(table, items, linesUnder, oppositeToo, proteinNotes) {
     const noSource = pageWords('[data-part="no-source"]', byId("card-template").content);
     table.querySelectorAll("tbody").forEach(body => body.remove());
     for (const item of items) {
@@ -1287,6 +1328,24 @@ body.registering>:not(.register){display:none!important}
         cell.colSpan = 5;
         cell.className = kind;
         cell.textContent = words;
+      }
+      for (const protein of proteinNotes ? item.proteins : []) {
+        const lines = [["function", protein.function || ""], ["evidence", evidenceLine(protein)]]
+          .filter(([, words]) => words);
+        if (!lines.length) continue;
+        const noteRow = body.insertRow(), cell = noteRow.insertCell();
+        noteRow.dataset.row = "protein-note";
+        cell.colSpan = 5;
+        const name = document.createElement("div");
+        name.className = "register-protein-id";
+        name.textContent = protein.symbol;
+        cell.append(name);
+        for (const [kind, words] of lines) {
+          const line = document.createElement("div");
+          line.dataset.regLine = kind;
+          line.textContent = words;
+          cell.append(line);
+        }
       }
       table.append(body);
     }
@@ -1349,7 +1408,7 @@ body.registering>:not(.register){display:none!important}
     const first = aboveAndBox(data.new_clues, data.opposite_way_box, data.new_clues)[0].slice(0, REGISTER_CLUES);
     reg("clues-count").textContent = "Showing the first " + first.length + " of " + data.new_clues.length
       + " new clues. Being first on the list does not mean best.";
-    registerRows(byId("register-clues"), first, null, true);
+    registerRows(byId("register-clues"), first, null, true, true);
     reg("wrong-way").textContent = data.wrong_way_line || "";  // the API's words (ticket 2.18), as the page shows them
     reg("wrong-way").hidden = !data.wrong_way_line;
     reg("clues-empty").textContent = pageWords("#empty h3");
