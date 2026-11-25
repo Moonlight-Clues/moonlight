@@ -56,6 +56,8 @@ and from the live API on 2026-11-18. They are saved in fixtures/no_regulator/.
 "functionDescriptions" on a target was read from the answers saved in
 fixtures/probe_p8/ on the branch probe-uniprot (2026-11-22) and from the
 live API on 2026-11-24. It is saved in fixtures/protein_sentence/.
+"datatypeScores" ("id", "score") on an associatedTargets row was read from
+the live API on 2026-11-25 (data 26.09). It is saved in fixtures/gene_evidence/.
 """
 
 import logging
@@ -164,6 +166,7 @@ query AssociatedTargets($diseaseId: String!, $size: Int!) {
       count
       rows {
         score
+        datatypeScores { id score }
         target { id approvedSymbol approvedName functionDescriptions }
       }
     }
@@ -533,6 +536,10 @@ def fetch_targets(disease: Disease, limit: int = 25) -> List[Target]:
             score=row["score"],
             # Old saved answers do not hold this field: then there are no texts.
             function_texts=row["target"].get("functionDescriptions") or (),
+            # Ticket 3.1. Each kind of evidence and its score, as sent. Old
+            # saved answers do not hold this field: then there are none.
+            evidence_scores=tuple(
+                (kind["id"], kind["score"]) for kind in row.get("datatypeScores") or ()),
         )
         for row in data["disease"]["associatedTargets"]["rows"]
     ]

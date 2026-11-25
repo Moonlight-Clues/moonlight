@@ -1,0 +1,518 @@
+{
+  "data": {
+    "disease": {
+      "id": "MONDO_0019100",
+      "associatedTargets": {
+        "count": 786,
+        "rows": [
+          {
+            "score": 0.58484980469808,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.48661297828958333
+              },
+              {
+                "id": "clinical",
+                "score": 0.9377028703541295
+              }
+            ],
+            "target": {
+              "id": "ENSG00000160712",
+              "approvedSymbol": "IL6R",
+              "approvedName": "interleukin 6 receptor",
+              "functionDescriptions": [
+                "Part of the receptor for interleukin 6. Binds to IL6 with low affinity, but does not transduce a signal (PubMed:28265003). Signal activation necessitate an association with IL6ST. Activation leads to the regulation of the immune response, acute-phase reactions and hematopoiesis (PubMed:30995492, PubMed:31235509). The interaction with membrane-bound IL6R and IL6ST stimulates 'classic signaling', the restricted expression of the IL6R limits classic IL6 signaling to only a few tissues such as the liver and some cells of the immune system. Whereas the binding of IL6 and soluble IL6R to IL6ST stimulates 'trans- signaling'. Alternatively, 'cluster signaling' occurs when membrane- bound IL6:IL6R complexes on transmitter cells activate IL6ST receptors on neighboring receiver cells (Probable). {ECO:0000269|PubMed:28265003, ECO:0000269|PubMed:31235509, ECO:0000305|PubMed:30995492}.",
+                "[Isoform 1]: Signaling via the membrane-bound IL6R is mostly regenerative and anti-inflammatory (Probable). Drives naive CD4(+) T cells to the Th17 lineage, through 'cluster signaling' by dendritic cells (By similarity). {ECO:0000250|UniProtKB:P22272, ECO:0000305|PubMed:30995492}.",
+                "[Isoform 2]: Soluble form of IL6 receptor (sIL6R) that acts as an agonist of IL6 activity (PubMed:21990364). The IL6:sIL6R complex (hyper-IL6) binds to IL6ST/gp130 on cell surfaces and induces signaling also on cells that do not express membrane-bound IL6R in a process called IL6 'trans-signaling'. sIL6R is causative for the pro- inflammatory properties of IL6 and an important player in the development of chronic inflammatory diseases (PubMed:21990364). In complex with IL6, is required for induction of VEGF production (PubMed:12794819). Plays a protective role during liver injury, being required for maintenance of tissue regeneration (By similarity). 'Trans-signaling' in central nervous system regulates energy and glucose homeostasis (By similarity). {ECO:0000250|UniProtKB:P22272, ECO:0000269|PubMed:12794819, ECO:0000269|PubMed:21990364}.",
+                "[Soluble interleukin-6 receptor subunit alpha]: Soluble form of IL6 receptor (sIL6R) that acts as an agonist of IL6 activity (PubMed:21990364). The IL6:sIL6R complex (hyper-IL6) binds to IL6ST/gp130 on cell surfaces and induces signaling also on cells that do not express membrane-bound IL6R in a process called IL6 'trans- signaling'. sIL6R is causative for the pro-inflammatory properties of IL6 and an important player in the development of chronic inflammatory diseases (PubMed:21990364). In complex with IL6, is required for induction of VEGF production (PubMed:12794819). Plays a protective role during liver injury, being required for maintenance of tissue regeneration (By similarity). 'Trans-signaling' in central nervous system regulates energy and glucose homeostasis (By similarity). {ECO:0000250|UniProtKB:P22272, ECO:0000269|PubMed:12794819, ECO:0000269|PubMed:21990364}."
+              ]
+            }
+          },
+          {
+            "score": 0.5795867350014965,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.6150816272930955
+              },
+              {
+                "id": "clinical",
+                "score": 0.9226220878942808
+              }
+            ],
+            "target": {
+              "id": "ENSG00000177455",
+              "approvedSymbol": "CD19",
+              "approvedName": "CD19 molecule",
+              "functionDescriptions": [
+                "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes (PubMed:29523808). Decreases the threshold for activation of downstream signaling pathways and for triggering B-cell responses to antigens (PubMed:1373518, PubMed:16672701, PubMed:2463100). Activates signaling pathways that lead to the activation of phosphatidylinositol 3-kinase and the mobilization of intracellular Ca(2+) stores (PubMed:12387743, PubMed:16672701, PubMed:9317126, PubMed:9382888). Is not required for early steps during B cell differentiation in the blood marrow (PubMed:9317126). Required for normal differentiation of B-1 cells (By similarity). Required for normal B cell differentiation and proliferation in response to antigen challenges (PubMed:1373518, PubMed:2463100). Required for normal levels of serum immunoglobulins, and for production of high-affinity antibodies in response to antigen challenge (PubMed:12387743, PubMed:16672701, PubMed:9317126). {ECO:0000250|UniProtKB:P25918, ECO:0000269|PubMed:12387743, ECO:0000269|PubMed:1373518, ECO:0000269|PubMed:16672701, ECO:0000269|PubMed:2463100, ECO:0000269|PubMed:29523808, ECO:0000269|PubMed:9317126, ECO:0000269|PubMed:9382888}."
+              ]
+            }
+          },
+          {
+            "score": 0.568823550063286,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.012158615952232422
+              },
+              {
+                "id": "clinical",
+                "score": 0.9350636165199847
+              }
+            ],
+            "target": {
+              "id": "ENSG00000134352",
+              "approvedSymbol": "IL6ST",
+              "approvedName": "interleukin 6 cytokine family signal transducer",
+              "functionDescriptions": [
+                "Functions as a shared signal-transducing subunit not only for IL6 but also for other cytokine receptor complexes, including IL6, LIF, OSM, CNTF, IL11, CTF1, BSF3, MT-RNR2/humanin, CLCF1 and the heterodimeric complex CRLF1-CLCF1 (PubMed:11285233, PubMed:11294841, PubMed:1542794, PubMed:19386761, PubMed:2261637, PubMed:27384491, PubMed:36930708, PubMed:39532904, PubMed:8272873, PubMed:8999038, PubMed:9030543, PubMed:9188471). Engages site 2 of CNTF, CLCF1, LIF, and IL-6, and site 3 of IL27 and IL6 (PubMed:36930708). Initiates signal transmission through three mechanisms (PubMed:11285233, PubMed:11294841, PubMed:1542794, PubMed:19386761, PubMed:19915009, PubMed:2261637, PubMed:23294003). Binding of cytokines, such as IL6 or IL11 to the alpha-chains of their specific cell surface receptor triggers homodimerization of IL6ST/gp130 (PubMed:19915009, PubMed:2261637, PubMed:23294003, PubMed:8637716). In contrast, binding of other IL-6 family cytokines can result in the formation of a IL6ST/gp130 heterodimer with another signal-transducing receptor, such as LIFR or OSMR (PubMed:1542794, PubMed:39532904, PubMed:8999038, PubMed:9030543, PubMed:9188471). Moreover, binding of CNTF or CLCF1 or the heterodimeric complex CRLF1-CLCF1 or MT-RNR2/humanin to the non- signaling receptor CNTFR induces heterodimerization of the IL6ST/gp130 with LIFR or IL27RA/WSX1 (in the case of MT-RNR2/humanin) (PubMed:11285233, PubMed:11294841, PubMed:19386761). Mechanistically, homodimerization or heterodimerization of IL6ST/gp130 activate JAK tyrosine kinases bound to their intracellular domains (PubMed:11294841, PubMed:19915009, PubMed:2261637, PubMed:23294003, PubMed:27384491, PubMed:8272873, PubMed:9030543, PubMed:9188471). These kinases subsequently phosphorylate the homodimer or heterodimer form of IL6ST/gp130 (PubMed:11285233, PubMed:11294841, PubMed:19915009, PubMed:23294003, PubMed:25731159, PubMed:9030543). The tyrosine phosphorylated signaling receptors serve in turn as docking sites for recruitment and activation of signal transducer and activators of transcription (STATs) (PubMed:11285233, PubMed:11294841, PubMed:19386761, PubMed:19915009, PubMed:23294003, PubMed:25731159, PubMed:27384491, PubMed:9030543, PubMed:9188471). The IL6 signaling pathway induces, in parallel, the expression of two cytokine receptor signaling inhibitors, SOCS1 and SOCS3, which inhibit JAK and terminate the activity of the IL6 signaling pathway as a negative feedback loop (By similarity). Also activates the yes-associated protein 1 (YAP) and NOTCH pathways to control inflammation-induced epithelial regeneration, independently of STAT3 (By similarity). Mediates signals which regulate immune response, hematopoiesis, pain control and bone metabolism (By similarity). Has a role in embryonic development (By similarity). Essential for survival of motor and sensory neurons and for differentiation of astrocytes (By similarity). Required for expression of TRPA1 in nociceptive neurons (By similarity). Required for the maintenance of PTH1R expression in the osteoblast lineage and for the stimulation of PTH-induced osteoblast differentiation (By similarity). Required for normal trabecular bone mass and cortical bone composition (By similarity). {ECO:0000250|UniProtKB:Q00560, ECO:0000269|PubMed:11285233, ECO:0000269|PubMed:11294841, ECO:0000269|PubMed:1542794, ECO:0000269|PubMed:19386761, ECO:0000269|PubMed:19915009, ECO:0000269|PubMed:2261637, ECO:0000269|PubMed:23294003, ECO:0000269|PubMed:25731159, ECO:0000269|PubMed:27384491, ECO:0000269|PubMed:28747427, ECO:0000269|PubMed:30309848, ECO:0000269|PubMed:36930708, ECO:0000269|PubMed:39532904, ECO:0000269|PubMed:8272873, ECO:0000269|PubMed:8637716, ECO:0000269|PubMed:8999038, ECO:0000269|PubMed:9030543, ECO:0000269|PubMed:9188471}.",
+                "[Isoform 2]: Binds to the soluble IL6:sIL6R complex (hyper- IL6), thereby blocking IL6 trans-signaling. Inhibits sIL6R-dependent acute phase response (PubMed:11121117, PubMed:21990364, PubMed:30279168). Also blocks IL11 cluster signaling through IL11R (PubMed:30279168). {ECO:0000269|PubMed:11121117, ECO:0000269|PubMed:21990364, ECO:0000269|PubMed:30279168}."
+              ]
+            }
+          },
+          {
+            "score": 0.5164437971639071,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.24721851201002484
+              },
+              {
+                "id": "clinical",
+                "score": 0.8371499055547238
+              }
+            ],
+            "target": {
+              "id": "ENSG00000106804",
+              "approvedSymbol": "C5",
+              "approvedName": "complement C5",
+              "functionDescriptions": [
+                "Precursor of the C5a anaphylatoxin and complement C5b components of the complement pathways, which consist in a cascade of proteins that leads to phagocytosis and breakdown of pathogens and signaling that strengthens the adaptive immune system (PubMed:12878586, PubMed:18204047, PubMed:30643019, PubMed:6554279). Activated downstream of classical, alternative, lectin and GZMK complement pathways (PubMed:12878586, PubMed:18204047, PubMed:30643019, PubMed:39914456, PubMed:39814882, PubMed:6554279). {ECO:0000269|PubMed:12878586, ECO:0000269|PubMed:18204047, ECO:0000269|PubMed:30643019, ECO:0000269|PubMed:39814882, ECO:0000269|PubMed:39914456, ECO:0000269|PubMed:6554279}.",
+                "[Complement C5b]: Component of the membrane attack complex (MAC), a multiprotein complex activated by the complement cascade, which inserts into a target cell membrane and forms a pore, leading to target cell membrane rupture and cell lysis (PubMed:26841837, PubMed:27052168, PubMed:30552328, PubMed:30643019). Complement C5b is generated following cleavage by C5 convertase and initiates formation of the MAC complex: C5b binds sequentially C6, C7, C8 and multiple copies of the pore-forming subunit C9 (PubMed:30552328, PubMed:30643019). During MAC complex assembly, the C5b6 subcomplex, composed of complement C5b and C6, associates with the outer leaflet of target cell membrane, reducing the energy for membrane bending (PubMed:30552328, PubMed:32569291). {ECO:0000269|PubMed:26841837, ECO:0000269|PubMed:27052168, ECO:0000269|PubMed:30552328, ECO:0000269|PubMed:30643019, ECO:0000269|PubMed:32569291}.",
+                "[C5a anaphylatoxin]: Mediator of local inflammatory process released following cleavage by C5 convertase (PubMed:8182049, PubMed:9553099). Acts by binding to its receptor (C5AR1 or C5AR2), activating G protein-coupled receptor signaling and inducing a variety of responses including intracellular calcium release, contraction of smooth muscle, increased vascular permeability, and histamine release from mast cells and basophilic leukocytes (PubMed:36806352, PubMed:37852260, PubMed:37169960, PubMed:8182049, PubMed:9553099). C5a is also a potent chemokine which stimulates the locomotion of polymorphonuclear leukocytes and directs their migration toward sites of inflammation (PubMed:342601, PubMed:37852260, PubMed:37169960, PubMed:5765461, PubMed:8182049, PubMed:9553099). {ECO:0000269|PubMed:342601, ECO:0000269|PubMed:36806352, ECO:0000269|PubMed:37169960, ECO:0000269|PubMed:37852260, ECO:0000269|PubMed:5765461, ECO:0000269|PubMed:8182049, ECO:0000269|PubMed:9553099}."
+              ]
+            }
+          },
+          {
+            "score": 0.41239997849695226,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.021277577916406734
+              },
+              {
+                "id": "clinical",
+                "score": 0.677302770922134
+              }
+            ],
+            "target": {
+              "id": "ENSG00000113580",
+              "approvedSymbol": "NR3C1",
+              "approvedName": "nuclear receptor subfamily 3 group C member 1",
+              "functionDescriptions": [
+                "Receptor for glucocorticoids (GC) (PubMed:27120390, PubMed:37478846). Has a dual mode of action: as a transcription factor that binds to glucocorticoid response elements (GRE), both for nuclear and mitochondrial DNA, and as a modulator of other transcription factors (PubMed:28139699). Affects inflammatory responses, cellular proliferation and differentiation in target tissues. Involved in chromatin remodeling (PubMed:9590696). Plays a role in rapid mRNA degradation by binding to the 5' UTR of target mRNAs and interacting with PNRC2 in a ligand-dependent manner which recruits the RNA helicase UPF1 and the mRNA-decapping enzyme DCP1A, leading to RNA decay (PubMed:25775514). Could act as a coactivator for STAT5-dependent transcription upon growth hormone (GH) stimulation and could reveal an essential role of hepatic GR in the control of body growth (By similarity). {ECO:0000250|UniProtKB:P06537, ECO:0000269|PubMed:25775514, ECO:0000269|PubMed:27120390, ECO:0000269|PubMed:28139699, ECO:0000269|PubMed:37478846, ECO:0000269|PubMed:9590696}.",
+                "[Isoform Alpha]: Has transcriptional activation and repression activity (PubMed:11435610, PubMed:15769988, PubMed:15866175, PubMed:17635946, PubMed:19141540, PubMed:19248771, PubMed:20484466, PubMed:21664385, PubMed:23820903). Mediates glucocorticoid-induced apoptosis (PubMed:23303127). Promotes accurate chromosome segregation during mitosis (PubMed:25847991). May act as a tumor suppressor (PubMed:25847991). May play a negative role in adipogenesis through the regulation of lipolytic and antilipogenic gene expression (By similarity). {ECO:0000250|UniProtKB:P06537, ECO:0000269|PubMed:11435610, ECO:0000269|PubMed:15769988, ECO:0000269|PubMed:15866175, ECO:0000269|PubMed:17635946, ECO:0000269|PubMed:19141540, ECO:0000269|PubMed:19248771, ECO:0000269|PubMed:20484466, ECO:0000269|PubMed:21664385, ECO:0000269|PubMed:23303127, ECO:0000269|PubMed:23820903, ECO:0000269|PubMed:25847991}.",
+                "[Isoform Beta]: Acts as a dominant negative inhibitor of isoform Alpha (PubMed:20484466, PubMed:7769088, PubMed:8621628). Has intrinsic transcriptional activity independent of isoform Alpha when both isoforms are coexpressed (PubMed:19248771, PubMed:26711253). Loses this transcription modulator function on its own (PubMed:20484466). Has no hormone-binding activity (PubMed:8621628). May play a role in controlling glucose metabolism by maintaining insulin sensitivity (By similarity). Reduces hepatic gluconeogenesis through down-regulation of PEPCK in an isoform Alpha-dependent manner (PubMed:26711253). Directly regulates STAT1 expression in isoform Alpha-independent manner (PubMed:26711253). {ECO:0000250|UniProtKB:P06537, ECO:0000269|PubMed:19248771, ECO:0000269|PubMed:20484466, ECO:0000269|PubMed:26711253, ECO:0000269|PubMed:7769088, ECO:0000269|PubMed:8621628}.",
+                "[Isoform Alpha-2]: Has lower transcriptional activation activity than isoform Alpha. Exerts a dominant negative effect on isoform Alpha trans-repression mechanism (PubMed:20484466).",
+                "[Isoform GR-P]: Increases activity of isoform Alpha. .",
+                "[Isoform Alpha-B]: More effective than isoform Alpha in transcriptional activation, but not repression activity. .",
+                "[Isoform 10]: Has transcriptional activation activity. .",
+                "[Isoform Alpha-C1]: Has transcriptional activation activity. .",
+                "[Isoform Alpha-C2]: Has transcriptional activation activity. .",
+                "[Isoform Alpha-C3]: Has highest transcriptional activation activity of all isoforms created by alternative initiation (PubMed:15866175, PubMed:23820903). Has transcriptional repression activity (PubMed:23303127). Mediates glucocorticoid-induced apoptosis (PubMed:23303127, PubMed:23820903). {ECO:0000269|PubMed:15866175, ECO:0000269|PubMed:23303127, ECO:0000269|PubMed:23820903}.",
+                "[Isoform Alpha-D1]: Has transcriptional activation activity. .",
+                "[Isoform Alpha-D2]: Has transcriptional activation activity. .",
+                "[Isoform Alpha-D3]: Has lowest transcriptional activation activity of all isoforms created by alternative initiation (PubMed:15866175, PubMed:23820903). Has transcriptional repression activity (PubMed:23303127). {ECO:0000269|PubMed:15866175, ECO:0000269|PubMed:23303127, ECO:0000269|PubMed:23820903}."
+              ]
+            }
+          },
+          {
+            "score": 0.36271453758142136,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.06839221473130737
+              },
+              {
+                "id": "clinical",
+                "score": 0.5932182615449816
+              }
+            ],
+            "target": {
+              "id": "ENSG00000156738",
+              "approvedSymbol": "MS4A1",
+              "approvedName": "membrane spanning 4-domains A1",
+              "functionDescriptions": [
+                "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes (PubMed:12920111, PubMed:3925015, PubMed:7684739). Functions as a store-operated calcium (SOC) channel component promoting calcium influx after activation by the B-cell receptor/BCR (PubMed:12920111, PubMed:18474602, PubMed:7684739). {ECO:0000269|PubMed:12920111, ECO:0000269|PubMed:18474602, ECO:0000269|PubMed:3925015, ECO:0000269|PubMed:7684739}."
+              ]
+            }
+          },
+          {
+            "score": 0.3554639574571611,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.5847112185361772
+              }
+            ],
+            "target": {
+              "id": "ENSG00000128059",
+              "approvedSymbol": "PPAT",
+              "approvedName": "phosphoribosyl pyrophosphate amidotransferase",
+              "functionDescriptions": [
+                "Catalyzes the formation of phosphoribosylamine from phosphoribosylpyrophosphate (PRPP) and glutamine. ."
+              ]
+            }
+          },
+          {
+            "score": 0.26166253711676885,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.09726892761785938
+              },
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000106348",
+              "approvedSymbol": "IMPDH1",
+              "approvedName": "inosine monophosphate dehydrogenase 1",
+              "functionDescriptions": [
+                "Catalyzes the conversion of inosine 5'-phosphate (IMP) to xanthosine 5'-phosphate (XMP), the first committed and rate-limiting step in the de novo synthesis of guanine nucleotides, and therefore plays an important role in the regulation of cell growth. Could also have a single-stranded nucleic acid-binding activity and could play a role in RNA and/or DNA metabolism. It may also have a role in the development of malignancy and the growth progression of some tumors."
+              ]
+            }
+          },
+          {
+            "score": 0.25874182965405224,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.4256106627112359
+              }
+            ],
+            "target": {
+              "id": "ENSG00000119535",
+              "approvedSymbol": "CSF3R",
+              "approvedName": "colony stimulating factor 3 receptor",
+              "functionDescriptions": [
+                "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation. Plays a crucial role in the proliferation, differentiation and survival of cells along the neutrophilic lineage. In addition it may function in some adhesion or recognition events at the cell surface. ."
+              ]
+            }
+          },
+          {
+            "score": 0.25870589827929125,
+            "datatypeScores": [
+              {
+                "id": "clinical",
+                "score": 0.42555155832813474
+              }
+            ],
+            "target": {
+              "id": "ENSG00000178035",
+              "approvedSymbol": "IMPDH2",
+              "approvedName": "inosine monophosphate dehydrogenase 2",
+              "functionDescriptions": [
+                "Catalyzes the conversion of inosine 5'-phosphate (IMP) to xanthosine 5'-phosphate (XMP), the first committed and rate-limiting step in the de novo synthesis of guanine nucleotides, and therefore plays an important role in the regulation of cell growth (PubMed:7763314, PubMed:7903306). Could also have a single-stranded nucleic acid-binding activity and could play a role in RNA and/or DNA metabolism (PubMed:14766016). It may also have a role in the development of malignancy and the growth progression of some tumors. {ECO:0000269|PubMed:14766016, ECO:0000269|PubMed:7763314, ECO:0000269|PubMed:7903306}."
+              ]
+            }
+          },
+          {
+            "score": 0.22150446416664898,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.10479027915205172
+              },
+              {
+                "id": "genetic_association",
+                "score": 0.35911851007551765
+              }
+            ],
+            "target": {
+              "id": "ENSG00000138378",
+              "approvedSymbol": "STAT4",
+              "approvedName": "signal transducer and activator of transcription 4",
+              "functionDescriptions": [
+                "Transcriptional regulator mainly expressed in hematopoietic cells that plays a critical role in cellular growth, differentiation and immune response (PubMed:10961885, PubMed:37256972, PubMed:8943379). Plays a key role in the differentiation of T-helper 1 cells and the production of interferon-gamma (PubMed:12213961, PubMed:35614130). Also participates in multiple neutrophil functions including chemotaxis and production of the neutrophil extracellular traps (By similarity). After IL12 binding to its receptor IL12RB2, STAT4 interacts with the intracellular domain of IL12RB2 and becomes tyrosine phosphorylated (PubMed:10415122, PubMed:7638186). Phosphorylated STAT4 then homodimerizes and migrates to the nucleus where it can recognize STAT target sequences present in IL12 responsive genes. Although IL12 appears to be the predominant activating signal, STAT4 can also be phosphorylated and activated in response to IFN-gamma stimulation via JAK1 and TYK2 and in response to different interleukins including IL23, IL2 and IL35 (PubMed:11114383, PubMed:34508746). Transcription activation of IFN-gamma gene is mediated by interaction with JUN that forms a complex that efficiently interacts with the AP-1-related sequence of the IFN-gamma promoter (By similarity). In response to IFN- alpha/beta signaling, acts as a transcriptional repressor and suppresses IL5 and IL13 mRNA expression during response to T-cell receptor (TCR) activation (PubMed:26990433). {ECO:0000250|UniProtKB:P42228, ECO:0000269|PubMed:10415122, ECO:0000269|PubMed:10961885, ECO:0000269|PubMed:11114383, ECO:0000269|PubMed:12213961, ECO:0000269|PubMed:26990433, ECO:0000269|PubMed:34508746, ECO:0000269|PubMed:35614130, ECO:0000269|PubMed:37256972, ECO:0000269|PubMed:7638186, ECO:0000269|PubMed:8943379}."
+              ]
+            }
+          },
+          {
+            "score": 0.18722350488169306,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.080061005262539
+              },
+              {
+                "id": "clinical",
+                "score": 0.3039653988058105
+              }
+            ],
+            "target": {
+              "id": "ENSG00000004468",
+              "approvedSymbol": "CD38",
+              "approvedName": "CD38 molecule",
+              "functionDescriptions": [
+                "Multifunctional transmembrane glycoprotein able to exert enzymatic activities and also to mobilize calcium, to transduce signals, to adhere to hyaluronan and to other ligands. Synthesizes cyclic ADP-ribose (cADPR), a second messenger for glucose-induced insulin secretion (PubMed:7961800, PubMed:8253715). Synthesizes the Ca(2+) mobilizer nicotinate-adenine dinucleotide phosphate, NAADP(+), from 2'-phospho-cADPR and nicotinic acid, as well as from NADP(+) and nicotinic acid. At both pH 5.0 and pH 7.4 preferentially transforms 2'- phospho-cADPR into NAADP(+), while preferentially cleaving NADP(+) to cADPR and ADPRP rather than into NADDP(+) (PubMed:16690024). Has cADPR hydrolase activity (PubMed:7961800, PubMed:8253715). Functions also as a receptor that binds the ligand CD31 on endothelial cells, promoting lymphocyte activation, proliferation, and migration across the endothelial barrier (PubMed:9551996). Involved in the regulation of crucial dendritic cell functions acquired at the mature stage, such as CCL21-driven migration, survival, and Th1-polarizing activity (PubMed:16293598). In lamina propria T lymphocytes, CD38/CD31 cognate interactions initiate a multistep signaling pathway resulting in activation of LCK anf LAT, followed by cytokine release (PubMed:11259373). {ECO:0000269|PubMed:11259373, ECO:0000269|PubMed:16293598, ECO:0000269|PubMed:16690024, ECO:0000269|PubMed:7961800, ECO:0000269|PubMed:8253715, ECO:0000269|PubMed:9551996}."
+              ]
+            }
+          },
+          {
+            "score": 0.1208082440546107,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.9936019406257282
+              }
+            ],
+            "target": {
+              "id": "ENSG00000171885",
+              "approvedSymbol": "AQP4",
+              "approvedName": "aquaporin 4",
+              "functionDescriptions": [
+                "Forms a water-specific channel (PubMed:19383790, PubMed:7559426, PubMed:8601457). Plays an important role in brain water homeostasis (PubMed:37143309). It is involved in glymphatic solute transport and is required for a normal rate of water exchange across the blood brain interface. Required for normal levels of cerebrospinal fluid influx into the brain cortex and parenchyma along paravascular spaces that surround penetrating arteries, and for normal drainage of interstitial fluid along paravenous drainage pathways. Thereby, it is required for normal clearance of solutes from the brain interstitial fluid, including soluble beta-amyloid peptides derived from APP. Plays a redundant role in urinary water homeostasis and urinary concentrating ability (By similarity). {ECO:0000250|UniProtKB:P55088, ECO:0000269|PubMed:19383790, ECO:0000269|PubMed:37143309, ECO:0000269|PubMed:7559426, ECO:0000269|PubMed:8601457}."
+              ]
+            }
+          },
+          {
+            "score": 0.11294662836270848,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.928943136344154
+              }
+            ],
+            "target": {
+              "id": "ENSG00000204655",
+              "approvedSymbol": "MOG",
+              "approvedName": "myelin oligodendrocyte glycoprotein",
+              "functionDescriptions": [
+                "Mediates homophilic cell-cell adhesion (By similarity). Minor component of the myelin sheath. May be involved in completion and/or maintenance of the myelin sheath and in cell-cell communication. .",
+                "(Microbial infection) Acts as a receptor for rubella virus. ."
+              ]
+            }
+          },
+          {
+            "score": 0.10958750120478138,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7873285662627462
+              },
+              {
+                "id": "clinical",
+                "score": 0.09118961964174316
+              }
+            ],
+            "target": {
+              "id": "ENSG00000102524",
+              "approvedSymbol": "TNFSF13B",
+              "approvedName": "TNF superfamily member 13b",
+              "functionDescriptions": [
+                "Cytokine that binds to TNFRSF13B/TACI and TNFRSF17/BCMA. TNFSF13/APRIL binds to the same 2 receptors. Together, they form a 2 ligands -2 receptors pathway involved in the stimulation of B- and T- cell function and the regulation of humoral immunity. A third B-cell specific BAFF-receptor (BAFFR/BR3) promotes the survival of mature B- cells and the B-cell response. .",
+                "Isoform 2 seems to inhibit isoform 1 secretion and bioactivity. .",
+                "[Isoform 3]: Acts as a transcription factor for its own parent gene, in association with NF-kappa-B p50 subunit, at least in autoimmune and proliferative B-cell diseases. The presence of Delta4BAFF is essential for soluble BAFF release by IFNG/IFN-gamma- stimulated monocytes and for B-cell survival. It can directly or indirectly regulate the differential expression of a large number of genes involved in the innate immune response and the regulation of apoptosis. ."
+              ]
+            }
+          },
+          {
+            "score": 0.10741393819306977,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8834388602705039
+              }
+            ],
+            "target": {
+              "id": "ENSG00000136244",
+              "approvedSymbol": "IL6",
+              "approvedName": "interleukin 6",
+              "functionDescriptions": [
+                "Cytokine with a wide variety of biological functions in immunity, tissue regeneration, and metabolism. Binds to IL6R, then the complex associates to the signaling subunit IL6ST/gp130 to trigger the intracellular IL6-signaling pathway (Probable). The interaction with the membrane-bound IL6R and IL6ST stimulates 'classic signaling', whereas the binding of IL6 and soluble IL6R to IL6ST stimulates 'trans- signaling'. Alternatively, 'cluster signaling' occurs when membrane- bound IL6:IL6R complexes on transmitter cells activate IL6ST receptors on neighboring receiver cells (Probable). .",
+                "IL6 is a potent inducer of the acute phase response. Rapid production of IL6 contributes to host defense during infection and tissue injury, but excessive IL6 synthesis is involved in disease pathology. In the innate immune response, is synthesized by myeloid cells, such as macrophages and dendritic cells, upon recognition of pathogens through toll-like receptors (TLRs) at the site of infection or tissue injury (Probable). In the adaptive immune response, is required for the differentiation of B cells into immunoglobulin- secreting cells. Plays a major role in the differentiation of CD4(+) T cell subsets. Essential factor for the development of T follicular helper (Tfh) cells that are required for the induction of germinal- center formation. Required to drive naive CD4(+) T cells to the Th17 lineage. Also required for proliferation of myeloma cells and the survival of plasmablast cells (By similarity). .",
+                "Acts as an essential factor in bone homeostasis and on vessels directly or indirectly by induction of VEGF, resulting in increased angiogenesis activity and vascular permeability (PubMed:12794819, PubMed:17075861). Induces, through 'trans-signaling' and synergistically with IL1B and TNF, the production of VEGF (PubMed:12794819). Involved in metabolic controls, is discharged into the bloodstream after muscle contraction increasing lipolysis and improving insulin resistance (PubMed:20823453). 'Trans-signaling' in central nervous system also regulates energy and glucose homeostasis (By similarity). Mediates, through GLP-1, crosstalk between insulin- sensitive tissues, intestinal L cells and pancreatic islets to adapt to changes in insulin demand (By similarity). Also acts as a myokine (Probable). Plays a protective role during liver injury, being required for maintenance of tissue regeneration (By similarity). Also has a pivotal role in iron metabolism by regulating HAMP/hepcidin expression upon inflammation or bacterial infection (PubMed:15124018). Through activation of IL6ST-YAP-NOTCH pathway, induces inflammation-induced epithelial regeneration (By similarity). {ECO:0000250|UniProtKB:P08505, ECO:0000269|PubMed:12794819, ECO:0000269|PubMed:15124018, ECO:0000269|PubMed:17075861, ECO:0000269|PubMed:20823453, ECO:0000305|PubMed:30995492}."
+              ]
+            }
+          },
+          {
+            "score": 0.10259952804051542,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8438421646312245
+              }
+            ],
+            "target": {
+              "id": "ENSG00000156234",
+              "approvedSymbol": "CXCL13",
+              "approvedName": "C-X-C motif chemokine ligand 13",
+              "functionDescriptions": [
+                "Chemotactic for B-lymphocytes but not for T-lymphocytes, monocytes and neutrophils. Does not induce calcium release in B- lymphocytes. Binds to BLR1/CXCR5."
+              ]
+            }
+          },
+          {
+            "score": 0.10051601695425139,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8267060769839993
+              }
+            ],
+            "target": {
+              "id": "ENSG00000196126",
+              "approvedSymbol": "HLA-DRB1",
+              "approvedName": "major histocompatibility complex, class II, DR beta 1",
+              "functionDescriptions": [
+                "A beta chain of antigen-presenting major histocompatibility complex class II (MHCII) molecule. In complex with the alpha chain HLA- DRA, displays antigenic peptides on professional antigen presenting cells (APCs) for recognition by alpha-beta T cell receptor (TCR) on HLA-DRB1-restricted CD4-positive T cells. This guides antigen-specific T-helper effector functions, both antibody-mediated immune response and macrophage activation, to ultimately eliminate the infectious agents and transformed cells (PubMed:15265931, PubMed:16148104, PubMed:22327072, PubMed:27591323, PubMed:29884618, PubMed:31495665, PubMed:8642306). Typically presents extracellular peptide antigens of 10 to 30 amino acids that arise from proteolysis of endocytosed antigens in lysosomes (PubMed:8145819). In the tumor microenvironment, presents antigenic peptides that are primarily generated in tumor- resident APCs likely via phagocytosis of apoptotic tumor cells or macropinocytosis of secreted tumor proteins (PubMed:31495665). Presents peptides derived from intracellular proteins that are trapped in autolysosomes after macroautophagy, a mechanism especially relevant for T cell selection in the thymus and central immune tolerance (PubMed:17182262, PubMed:23783831). The selection of the immunodominant epitopes follows two processing modes: 'bind first, cut/trim later' for pathogen-derived antigenic peptides and 'cut first, bind later' for autoantigens/self-peptides (PubMed:25413013). The anchor residue at position 1 of the peptide N-terminus, usually a large hydrophobic residue, is essential for high affinity interaction with MHCII molecules (PubMed:8145819). {ECO:0000269|PubMed:15265931, ECO:0000269|PubMed:17182262, ECO:0000269|PubMed:22327072, ECO:0000269|PubMed:23783831, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31495665, ECO:0000269|PubMed:8145819, ECO:0000269|PubMed:8642306}.",
+                "Allele DRB1*01:01: Displays an immunodominant epitope derived from Bacillus anthracis pagA/protective antigen, PA (KLPLYISNPNYKVNVYAVT), to both naive and PA-specific memory CD4- positive T cells (PubMed:22327072). Presents immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (PRFSLPFLSIASAYYMFYDG) and VP2 (PHQFINLRSNNSATLIVPYV), contributing to viral clearance (PubMed:27591323). Displays commonly recognized peptides derived from IAV external protein HA (PKYVKQNTLKLAT and SNGNFIAPEYAYKIVK) and from internal proteins M, NP and PB1, with M-derived epitope (GLIYNRMGAVTTEV) being the most immunogenic (PubMed:25413013, PubMed:32668259, PubMed:8145819, PubMed:9075930). Presents a self- peptide derived from COL4A3 (GWISLWKGFSF) to TCR (TRAV14 biased) on CD4-positive, FOXP3-positive regulatory T cells and mediates immune tolerance to self (PubMed:28467828). May present peptides derived from oncofetal trophoblast glycoprotein TPBG 5T4, known to be recognized by both T-helper 1 and regulatory T cells (PubMed:31619516). Displays with low affinity a self-peptide derived from MBP (VHFFKNIVTPRTP) (PubMed:9075930). {ECO:0000269|PubMed:22327072, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:28467828, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31619516, ECO:0000269|PubMed:32668259, ECO:0000269|PubMed:8145819, ECO:0000269|PubMed:9075930}.",
+                "Allele DRB1*03:01: May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (NEKQPSDDNWLNFDGTLLGN), contributing to viral clearance (PubMed:27591323). Displays self- peptides derived from retinal SAG (NRERRGIALDGKIKHE) and thyroid TG (LSSVVVDPSIRHFDV) (PubMed:25413013). Presents viral epitopes derived from HHV-6B gH/U48 and U85 antigens to polyfunctional CD4-positive T cells with cytotoxic activity implicated in control of HHV-6B infection (PubMed:31020640). Presents several immunogenic epitopes derived from C.tetani neurotoxin tetX, playing a role in immune recognition and long-term protection (PubMed:19830726). {ECO:0000269|PubMed:19830726, ECO:0000269|PubMed:25413013, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:31020640}.",
+                "Allele DRB1*04:01: Presents an immunodominant bacterial epitope derived from M.tuberculosis esxB/culture filtrate antigen CFP- 10 (EISTNIRQAGVQYSR), eliciting CD4-positive T cell effector functions such as IFNG production and cytotoxic activity (PubMed:15265931). May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (NEKQPSDDNWLNFDGTLLGN), contributing to viral clearance (PubMed:27591323). Presents tumor epitopes derived from melanoma- associated TYR antigen (QNILLSNAPLGPQFP and DYSYLQDSDPDSFQD), triggering CD4-positive T cell effector functions such as GMCSF production (PubMed:8642306). Displays preferentially citrullinated self-peptides derived from VIM (GVYATR/citSSAVR and SAVRAR/citSSVPGVR) and ACAN (VVLLVATEGR/ CitVRVNSAYQDK) (PubMed:24190431). Displays self- peptides derived from COL2A1 (PubMed:9354468). {ECO:0000269|PubMed:15265931, ECO:0000269|PubMed:24190431, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:8642306, ECO:0000269|PubMed:9354468}.",
+                "Allele DRB1*04:02: Displays native or citrullinated self- peptides derived from VIM. .",
+                "Allele DRB1*04:04: May present to T-helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (HIVMQYMYVPPGAPIPTTRN) and VP2 (RGDSTITSQDVANAVVGYGV), contributing to viral clearance (PubMed:27591323). Displays preferentially citrullinated self-peptides derived from VIM (SAVRAR/citSSVPGVR) (PubMed:24190431). .",
+                "Allele DRB1*04:05: May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies. .",
+                "Allele DRB1*05:01: Presents an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load. .",
+                "Allele DRB1*07:01: Upon EBV infection, presents latent antigen EBNA2 peptide (PRSPTVFYNIPPMPLPPSQL) to CD4-positive T cells, driving oligoclonal expansion and selection of a dominant virus- specific memory T cell subset with cytotoxic potential to directly eliminate virus-infected B cells (PubMed:31308093). May present to T- helper 1 cells several HRV-16 epitopes derived from capsid proteins VP1 (PRFSLPFLSIASAYYMFYDG) and VP2 (VPYVNAVPMDSMVRHNNWSL), contributing to viral clearance (PubMed:27591323). In the context of tumor immunesurveillance, may present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (MTEYKLVVVGAVGVGKSALTIQLI), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies (PubMed:22929521). In metastatic epithelial tumors, presents to intratumoral CD4-positive T cells a KRAS neoantigen (MTEYKLVVVGAVGVGKSALTIQLI) carrying G12V hotspot driver mutation and may mediate tumor regression (PubMed:30282837). {ECO:0000269|PubMed:22929521, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:30282837, ECO:0000269|PubMed:31308093}.",
+                "Allele DRB1*11:01: Displays an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (SDRIIQITRGDSTITSQDVA), contributing to viral clearance (PubMed:27591323). Presents several immunogenic epitopes derived from C.tetani neurotoxin tetX, playing a role in immune recognition and longterm protection (PubMed:19830726). In the context of tumor immunesurveillance, may present tumor-derived neoantigens to CD4-positive T cells and trigger anti-tumor helper functions (PubMed:31495665). {ECO:0000269|PubMed:19830726, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:29884618, ECO:0000269|PubMed:31495665}.",
+                "Allele DRB1*13:01: Presents viral epitopes derived from HHV- 6B antigens to polyfunctional CD4-positive T cells implicated in control of HHV-6B infection. .",
+                "Allele DRB1*15:01: May present to T-helper 1 cells an HRV-16 epitope derived from capsid protein VP2 (SNNSATLIVPYVNAVPMDSM), contributing to viral clearance (PubMed:27591323). Displays a self- peptide derived from MBP (ENPVVHFFKNIVTPR) (PubMed:25413013, PubMed:9782128). May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies. {ECO:0000269|PubMed:19120973, ECO:0000269|PubMed:27591323, ECO:0000269|PubMed:9782128}.",
+                "Allele DRB1*15:02: Displays an immunodominant HIV-1 gag peptide (FRDYVDRFYKTLRAEQASQE) on infected dendritic cells for recognition by TRAV24-TRBV2 TCR on CD4-positive T cells and controls viral load (PubMed:29884618). May present to T-helper 1 cells an immunogenic epitope derived from tumor-associated antigen WT1 (KRYFKLSHLQMHSRKH), likely providing for effective antitumor immunity in a wide range of solid and hematological malignancies (PubMed:19120973). {ECO:0000269|PubMed:19120973, ECO:0000269|PubMed:29884618}.",
+                "(Microbial infection) Acts as a receptor for Epstein-Barr virus on lymphocytes. {ECO:0000269|PubMed:11864610, ECO:0000269|PubMed:9151859}."
+              ]
+            }
+          },
+          {
+            "score": 0.10008535410665945,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8231640385703848
+              }
+            ],
+            "target": {
+              "id": "ENSG00000085063",
+              "approvedSymbol": "CD59",
+              "approvedName": "CD59 molecule (CD59 blood group)",
+              "functionDescriptions": [
+                "Potent inhibitor of the complement membrane attack complex (MAC) action, which protects human cells from damage during complement activation (PubMed:11882685, PubMed:1698710, PubMed:2475111, PubMed:2475570, PubMed:2606909, PubMed:9053451). Acts by binding to the beta-haipins of C8 (C8A and C8B) components of the assembling MAC, forming an intermolecular beta-sheet that prevents incorporation of the multiple copies of C9 required for complete formation of the osmolytic pore (PubMed:11882685, PubMed:1698710, PubMed:36797260). {ECO:0000269|PubMed:11882685, ECO:0000269|PubMed:1698710, ECO:0000269|PubMed:2475111, ECO:0000269|PubMed:2475570, ECO:0000269|PubMed:2606909, ECO:0000269|PubMed:36797260, ECO:0000269|PubMed:9053451}.",
+                "The soluble form from urine retains its specific complement binding activity, but exhibits greatly reduced ability to inhibit complement membrane attack complex (MAC) assembly on cell membranes. ."
+              ]
+            }
+          },
+          {
+            "score": 0.09911967462127279,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.8152216914382726
+              }
+            ],
+            "target": {
+              "id": "ENSG00000152661",
+              "approvedSymbol": "GJA1",
+              "approvedName": "gap junction protein alpha 1",
+              "functionDescriptions": [
+                "Structural component of the gap junction, a specialized intercellular structure consisting of a cluster of closely packed pairs of transmembrane channels, the connexons, that allow passage of small molecules and electrical signals between neighboring cells (By similarity). Forms homotypic and heterotypic channels gated by transjunctional voltage (By similarity). May play a critical role in the physiology of hearing by participating in the recycling of potassium to the cochlear endolymph (Probable). Negative regulator of bladder functional capacity: acts by enhancing intercellular electrical and chemical transmission, thus sensitizing bladder muscles to cholinergic neural stimuli and causing them to contract (By similarity). May play a role in the conductive system of ventricular myocardium and heart morphogenesis (By similarity). May play a role in cell growth inhibition through the regulation of NOV expression and localization (By similarity). Involved in intercellular innate immune signaling (PubMed:24077100, PubMed:31992625, PubMed:40010341). Mediates translocation of 2',3'-cGAMP and 2',5'-oligoadenylates (2-5A) second messengers from virus-infected cells to macrophages and uninfected neighboring cells to propagate and amplify the antiviral immune response (PubMed:24077100, PubMed:31992625, PubMed:40010341). {ECO:0000250|UniProtKB:P08050, ECO:0000250|UniProtKB:P23242, ECO:0000269|PubMed:24077100, ECO:0000269|PubMed:31992625, ECO:0000269|PubMed:40010341, ECO:0000305|PubMed:11741837}."
+              ]
+            }
+          },
+          {
+            "score": 0.09543016669841912,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.784876889551704
+              }
+            ],
+            "target": {
+              "id": "ENSG00000112115",
+              "approvedSymbol": "IL17A",
+              "approvedName": "interleukin 17A",
+              "functionDescriptions": [
+                "Effector cytokine of innate and adaptive immune system involved in antimicrobial host defense and maintenance of tissue integrity (PubMed:24120361). Signals via IL17RA-IL17RC heterodimeric receptor complex, triggering homotypic interaction of IL17RA and IL17RC chains with TRAF3IP2 adapter. This leads to downstream TRAF6-mediated activation of NF-kappa-B and MAPkinase pathways ultimately resulting in transcriptional activation of cytokines, chemokines, antimicrobial peptides and matrix metalloproteinases, with potential strong immune inflammation (PubMed:17911633, PubMed:18684971, PubMed:19825828, PubMed:21350122, PubMed:24120361, PubMed:8676080). Plays an important role in connecting T cell-mediated adaptive immunity and acute inflammatory response to destroy extracellular bacteria and fungi. As a signature effector cytokine of T-helper 17 cells (Th17), primarily induces neutrophil activation and recruitment at infection and inflammatory sites (By similarity). In airway epithelium, mediates neutrophil chemotaxis via induction of CXCL1 and CXCL5 chemokines (By similarity). In secondary lymphoid organs, contributes to germinal center formation by regulating the chemotactic response of B cells to CXCL12 and CXCL13, enhancing retention of B cells within the germinal centers, B cell somatic hypermutation rate and selection toward plasma cells (By similarity). Effector cytokine of a subset of gamma-delta T cells that functions as part of an inflammatory circuit downstream IL1B, TLR2 and IL23A-IL12B to promote neutrophil recruitment for efficient bacterial clearance (By similarity). Effector cytokine of innate immune cells including invariant natural killer cell (iNKT) and group 3 innate lymphoid cells that mediate initial neutrophilic inflammation (By similarity). Involved in the maintenance of the integrity of epithelial barriers during homeostasis and pathogen infection (PubMed:21350122). Upon acute injury, has a direct role in epithelial barrier formation by regulating OCLN localization and tight junction biogenesis (By similarity). As part of the mucosal immune response induced by commensal bacteria, enhances host's ability to resist pathogenic bacterial and fungal infections by promoting neutrophil recruitment and antimicrobial peptides release (By similarity). In synergy with IL17F, mediates the production of antimicrobial beta-defensins DEFB1, DEFB103A, and DEFB104A by mucosal epithelial cells, limiting the entry of microbes through the epithelial barriers (By similarity). Involved in antiviral host defense through various mechanisms (By similarity). Enhances immunity against West Nile virus by promoting T cell cytotoxicity (By similarity). May play a beneficial role in influenza A virus (H5N1) infection by enhancing B cell recruitment and immune response in the lung (By similarity). Contributes to influenza A virus (H1N1) clearance by driving the differentiation of B-1a B cells, providing for production of virus- specific IgM antibodies at first line of host defense (By similarity). {ECO:0000250|UniProtKB:Q62386, ECO:0000269|PubMed:17911633, ECO:0000269|PubMed:18684971, ECO:0000269|PubMed:19825828, ECO:0000269|PubMed:21350122, ECO:0000269|PubMed:24120361, ECO:0000269|PubMed:8676080}."
+              ]
+            }
+          },
+          {
+            "score": 0.09003764675824229,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7405254603975762
+              }
+            ],
+            "target": {
+              "id": "ENSG00000125538",
+              "approvedSymbol": "IL1B",
+              "approvedName": "interleukin 1 beta",
+              "functionDescriptions": [
+                "Potent pro-inflammatory cytokine (PubMed:10653850, PubMed:12794819, PubMed:28331908, PubMed:3920526). Initially discovered as the major endogenous pyrogen, induces prostaglandin synthesis, neutrophil influx and activation, T-cell activation and cytokine production, B-cell activation and antibody production, and fibroblast proliferation and collagen production (PubMed:3920526). Promotes Th17 differentiation of T-cells. Synergizes with IL12/interleukin-12 to induce IFNG synthesis from T-helper 1 (Th1) cells (PubMed:10653850). Plays a role in angiogenesis by inducing VEGF production synergistically with TNF and IL6 (PubMed:12794819). Involved in transduction of inflammation downstream of pyroptosis: its mature form is specifically released in the extracellular milieu by passing through the gasdermin-D (GSDMD) pore (PubMed:33377178, PubMed:33883744). Acts as a sensor of S.pyogenes infection in skin: cleaved and activated by pyogenes SpeB protease, leading to an inflammatory response that prevents bacterial growth during invasive skin infection (PubMed:28331908). {ECO:0000269|PubMed:10653850, ECO:0000269|PubMed:12794819, ECO:0000269|PubMed:28331908, ECO:0000269|PubMed:33377178, ECO:0000269|PubMed:33883744, ECO:0000269|PubMed:3920526}."
+              ]
+            }
+          },
+          {
+            "score": 0.08957172656280692,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7366934436839484
+              }
+            ],
+            "target": {
+              "id": "ENSG00000133048",
+              "approvedSymbol": "CHI3L1",
+              "approvedName": "chitinase 3 like 1",
+              "functionDescriptions": [
+                "Carbohydrate-binding lectin with a preference for chitin. Has no chitinase activity. May play a role in tissue remodeling and in the capacity of cells to respond to and cope with changes in their environment. Plays a role in T-helper cell type 2 (Th2) inflammatory response and IL-13-induced inflammation, regulating allergen sensitization, inflammatory cell apoptosis, dendritic cell accumulation and M2 macrophage differentiation. Facilitates invasion of pathogenic enteric bacteria into colonic mucosa and lymphoid organs. Mediates activation of AKT1 signaling pathway and subsequent IL8 production in colonic epithelial cells. Regulates antibacterial responses in lung by contributing to macrophage bacterial killing, controlling bacterial dissemination and augmenting host tolerance. Also regulates hyperoxia- induced injury, inflammation and epithelial apoptosis in lung. {ECO:0000269|PubMed:16472595, ECO:0000269|PubMed:19414556, ECO:0000269|PubMed:20558631, ECO:0000269|PubMed:9492324}."
+              ]
+            }
+          },
+          {
+            "score": 0.08874235662715886,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.45736903305854154
+              },
+              {
+                "id": "clinical",
+                "score": 0.12310598651635328
+              }
+            ],
+            "target": {
+              "id": "ENSG00000010671",
+              "approvedSymbol": "BTK",
+              "approvedName": "Bruton tyrosine kinase",
+              "functionDescriptions": [
+                "Non-receptor tyrosine kinase indispensable for B lymphocyte development, differentiation and signaling (PubMed:19290921). Binding of antigen to the B-cell antigen receptor (BCR) triggers signaling that ultimately leads to B-cell activation (PubMed:19290921). After BCR engagement and activation at the plasma membrane, phosphorylates PLCG2 at several sites, igniting the downstream signaling pathway through calcium mobilization, followed by activation of the protein kinase C (PKC) family members (PubMed:11606584). PLCG2 phosphorylation is performed in close cooperation with the adapter protein B-cell linker protein BLNK (PubMed:11606584). BTK acts as a platform to bring together a diverse array of signaling proteins and is implicated in cytokine receptor signaling pathways (PubMed:16517732, PubMed:17932028). Plays an important role in the function of immune cells of innate as well as adaptive immunity, as a component of the Toll-like receptors (TLR) pathway (PubMed:16517732). The TLR pathway acts as a primary surveillance system for the detection of pathogens and are crucial to the activation of host defense (PubMed:16517732). Especially, is a critical molecule in regulating TLR9 activation in splenic B-cells (PubMed:16517732, PubMed:17932028). Within the TLR pathway, induces tyrosine phosphorylation of TIRAP which leads to TIRAP degradation (PubMed:16415872). BTK also plays a critical role in transcription regulation (PubMed:19290921). Induces the activity of NF- kappa-B, which is involved in regulating the expression of hundreds of genes (PubMed:19290921). BTK is involved on the signaling pathway linking TLR8 and TLR9 to NF-kappa-B (PubMed:19290921). Acts as an activator of NLRP3 inflammasome assembly by mediating phosphorylation of NLRP3 (PubMed:34554188). Transiently phosphorylates transcription factor GTF2I on tyrosine residues in response to BCR (PubMed:9012831). GTF2I then translocates to the nucleus to bind regulatory enhancer elements to modulate gene expression (PubMed:9012831). ARID3A and NFAT are other transcriptional target of BTK (PubMed:16738337). BTK is required for the formation of functional ARID3A DNA-binding complexes (PubMed:16738337). There is however no evidence that BTK itself binds directly to DNA (PubMed:16738337). BTK has a dual role in the regulation of apoptosis (PubMed:9751072). Plays a role in STING1- mediated induction of type I interferon (IFN) response by phosphorylating DDX41 (PubMed:25704810). {ECO:0000269|PubMed:11606584, ECO:0000269|PubMed:16415872, ECO:0000269|PubMed:16517732, ECO:0000269|PubMed:16738337, ECO:0000269|PubMed:17932028, ECO:0000269|PubMed:25704810, ECO:0000269|PubMed:34554188, ECO:0000269|PubMed:9012831, ECO:0000303|PubMed:19290921, ECO:0000303|PubMed:9751072}."
+              ]
+            }
+          },
+          {
+            "score": 0.0872376111113868,
+            "datatypeScores": [
+              {
+                "id": "literature",
+                "score": 0.7174962302791482
+              }
+            ],
+            "target": {
+              "id": "ENSG00000197919",
+              "approvedSymbol": "IFNA1",
+              "approvedName": "interferon alpha 1",
+              "functionDescriptions": [
+                "Produced by macrophages, IFN-alpha have antiviral activities. Interferon stimulates the production of two enzymes: a protein kinase and an oligoadenylate synthetase. ."
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

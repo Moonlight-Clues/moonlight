@@ -101,6 +101,7 @@ from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_w
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.engine import limit_notes, limits_by_hand
+from moonlight.engine import evidence_ids
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -363,6 +364,12 @@ def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None,
     sentence on what it does, UniProt's words as cleaned by protein.py.
     A protein with no sentence has no such key.
 
+    Ticket 3.1. On the same clue cards only, a protein also carries
+    "evidence": the ids of the kinds of evidence its line names
+    (engine.evidence_ids), in the engine's order. Only the ids: the page
+    holds the words. A protein whose line would name nothing has no such
+    key. An Approved card is never given with_function, so it has neither.
+
     Ticket 3.7. one_way is only given for a new clue or a medicine being
     studied: the proteins the main Approved list turns one way
     (engine.one_way_proteins). A protein the clue turns the other way
@@ -394,6 +401,9 @@ def _proteins_json(clue: Clue, one_way: Optional[Dict[str, str]] = None,
             function = protein.sentence(path.target.function_texts)
             if function:
                 proteins[-1]["function"] = function
+            kinds = evidence_ids(path.target)
+            if kinds:
+                proteins[-1]["evidence"] = list(kinds)  # ids only, never words
     return proteins
 
 

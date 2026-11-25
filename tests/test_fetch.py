@@ -729,10 +729,11 @@ def list_question_before_2_17():
 def targets_question_before_3_8():
     """The proteins question as it was when the older files were saved: the
     same words without "functionDescriptions" on the target (ticket 3.8
-    added it)."""
+    added it) and without "datatypeScores" on the row (ticket 3.1 added it)."""
     old = fetch.TARGETS_QUERY.replace(
         "target { id approvedSymbol approvedName functionDescriptions }",
-        "target { id approvedSymbol approvedName }")
+        "target { id approvedSymbol approvedName }").replace(
+        "        datatypeScores { id score }\n", "")
     assert old != fetch.TARGETS_QUERY
     return old
 

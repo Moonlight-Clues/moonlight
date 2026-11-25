@@ -181,7 +181,9 @@ def test_each_clue_has_its_facts_and_no_explanation(client):
         assert clue["id"] and clue["forms"] and clue["proteins"]
         assert isinstance(clue["reports"], int)
         for protein in clue["proteins"]:
-            assert set(protein) == {"symbol", "points", "direction", "machine", "piece_of_machine"}
+            # Ticket 3.1: a clue's protein may also carry "evidence".
+            assert set(protein) - {"evidence"} == {
+                "symbol", "points", "direction", "machine", "piece_of_machine"}
             assert protein["direction"] in ("up", "down", "mixed", "unknown")
         ids.add(clue["id"])
     assert len(ids) == 18  # every clue has its own id
@@ -306,6 +308,7 @@ def test_sevoflurane_kcnk3_score_is_79(client):
     assert sevoflurane["proteins"] == [{
         "symbol": "KCNK3", "points": 79, "direction": "up",
         "machine": 1, "piece_of_machine": False,
+        "evidence": ["genetic_association", "literature"],  # ticket 3.1
     }]
 
 
@@ -1551,6 +1554,7 @@ def test_54_the_example_cards_facts_match_the_saved_answer(client):
     assert doxapram["proteins"] == [{
         "symbol": "KCNK3", "points": 79, "direction": "down",
         "machine": 1, "piece_of_machine": False,
+        "evidence": ["genetic_association", "literature"],  # ticket 3.1
     }]
     assert doxapram["ending"] == ENDING
 
