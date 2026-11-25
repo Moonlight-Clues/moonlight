@@ -80,7 +80,8 @@ EIGHT = [
 RED_2_45 = {
     # Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma was deleted, so it is
     # a plain card again (with the DIAGNOSTIC tag). It was CHEMBL689 here.
-    ASTHMA: {"CHEMBL1512", "CHEMBL1621597"},  # flunisolide, ipratropium
+    # Ticket 2.58 (25N-13): ipratropium (CHEMBL1621597) lost its red note too.
+    ASTHMA: {"CHEMBL1512"},  # flunisolide
     AML: {"CHEMBL4297573"},  # tagraxofusp
     "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
     # Ticket 2.52 put the red warning on six cards of type 2 diabetes (biotin,
@@ -88,6 +89,12 @@ RED_2_45 = {
     # Ticket 2.54, signed answer Q22, put it on simvastatin (CHEMBL1064) too.
     T2D: {"CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711", "CHEMBL1364",
           "CHEMBL925", "CHEMBL1064"},
+}
+# Ticket 2.58 (25N-16): six cards of type 2 diabetes got the red note while they
+# stay in the wider-group box: candesartan, olmesartan, atenolol, chlorthalidone,
+# hydrochlorothiazide, lisinopril.
+WIDER_RED_2_58 = {
+    T2D: {"CHEMBL1014", "CHEMBL1200692", "CHEMBL24", "CHEMBL1055", "CHEMBL435", "CHEMBL1237"},
 }
 # Ticket 2.48 set the Source record of this card (moonlight/confirmed.json):
 # card id -> (the link the saved page shows, the label it shows now).
@@ -260,6 +267,12 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
     plain = [dict(card, source=sources[card["id"]][0]) if card["id"] in sources else card
              for card in plain]
     assert [card for card in plain if card["id"] not in back] == before["approved"]
+    wider_red = WIDER_RED_2_58.get(disease_id, set())
+    assert all("warning" in card for card in after.get("wider_group", []) if card["id"] in wider_red)
+    after = dict(after, **({"wider_group": [
+        ({key: value for key, value in card.items() if key != "warning"}
+         if card["id"] in wider_red else card) for card in after["wider_group"]]}
+        if wider_red else {}))
     for key in before:
         if key in ("approved", "left_out", "wrong_approvals_box"):
             continue

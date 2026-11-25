@@ -313,13 +313,15 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Ticket 2.55, signed answers Q10 and Q22: dicumarol and sodium phenylbutyrate, 2026-11-25.
     # Ticket 2.56, signed rule Q22: five more, dated 2026-11-25 (red cards of UC, heart failure, high blood pressure).
     # Ticket 3.10 (MAIN 4, Q14): mannitol's red entry on asthma deleted.
-    assert len(entries) == 117
-    assert len(engine.corrections()) == 117
+    # Ticket 2.58: ipratropium on asthma deleted, six type 2 diabetes entries added, dated 2026-11-26.
+    assert len(entries) == 122
+    assert len(engine.corrections()) == 122
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)
     assert {entry["date"] for entry in entries} == {
-        MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24", "2026-11-25"}
+        MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24", "2026-11-25",
+        "2026-11-26"}  # ticket 2.58
     # Read as plain text: nothing is left once the keys, the ids, the two
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
@@ -327,6 +329,7 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     for known in ["medicine_id", "disease_id", "date", "note", FIRST_NOTE, SECOND_NOTE,
                   engine.THIRD_NOTE,  # ticket 2.55, Kashish's signed Q10
                   MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24", "2026-11-25",
+                  "2026-11-26",  # ticket 2.58
                   *sorted(ids, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""

@@ -61,8 +61,9 @@ def old_entries():
     # Ticket 2.56 (signed rule Q22) added five entries after the two of this
     # ticket, so "without this ticket's entries" is no longer "all but the last two".
     entries = load(CORRECTIONS_FILE)
-    # Ticket 3.10 (MAIN 4, Q14) deleted mannitol's entry before them, so each moved up one.
-    return entries[:110] + entries[112:]
+    # Ticket 3.10 (MAIN 4, Q14) deleted mannitol's entry and ticket 2.58 (25N-13)
+    # deleted ipratropium's, both before them, so each moved up two.
+    return entries[:109] + entries[111:]
 
 
 # ---- the words ----
@@ -95,16 +96,21 @@ def test_a_note_that_is_almost_the_third_one_is_refused(almost):
 
 def test_the_file_holds_the_old_111_unchanged_then_the_two_new_entries():
     entries = load(CORRECTIONS_FILE)
-    # ticket 2.56 added five after these; ticket 3.10 (MAIN 4, Q14) deleted mannitol's red entry on asthma
-    assert len(entries) == 117
-    # The old 111 are the first 110 with mannitol's entry back in its old place, unchanged otherwise.
+    # ticket 2.56 added five after these; ticket 3.10 (MAIN 4, Q14) deleted mannitol's red entry on asthma;
+    # ticket 2.58 deleted ipratropium's (25N-13) and added six at the end (25N-16)
+    assert len(entries) == 122
+    # The old 111 are the first 109 with ipratropium's and mannitol's entries back in
+    # their old places (56 and 57), unchanged otherwise.
+    ipratropium = {"medicine_id": "CHEMBL1621597", "disease_id": "MONDO_0004979", "date": "2026-11-25",
+                   "note": "This looks like a mistake in the database. The official label is for a "
+                           "different disease."}
     mannitol = {"medicine_id": "CHEMBL689", "disease_id": "MONDO_0004979", "date": "2026-11-25",
                 "note": "This looks like a mistake in the database. The official label is for a "
                         "different disease."}
-    old = entries[:57] + [mannitol] + entries[57:110]
+    old = entries[:56] + [ipratropium, mannitol] + entries[56:109]
     assert hashlib.sha256(json.dumps(old, sort_keys=True).encode()).hexdigest() == \
         OLD_111_SHA256
-    assert entries[110:112] == NEW
+    assert entries[109:111] == NEW
     assert all(list(entry) == ["medicine_id", "disease_id", "date", "note"] for entry in NEW)
 
 
