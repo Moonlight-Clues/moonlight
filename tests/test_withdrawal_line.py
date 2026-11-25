@@ -171,7 +171,8 @@ def offline():
         guard.stop()
 
 
-def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wrong=None):
+def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wrong=None,
+                limits=None):
     """What /api/clues sends, from saved answers. The hand-written files are
     the real ones unless a test hands in its own."""
     api.forget_visitors()
@@ -184,6 +185,14 @@ def page_answer(disease_id=HEM_A, post_json=saved_post_json, approvals=None, wro
         entries = json.loads((ROOT / "moonlight" / "approvals.json").read_text(encoding="utf-8"))
         approvals = [e for e in entries if e["date"] < "2026-11-25"]
     guards.append(patch.object(engine, "_read_approvals", return_value=approvals))
+    if limits is None:
+        # Ticket 2.50 (25 Nov) marks Roctavian on this page as limited in
+        # limits.json. The comparisons with main's saved page here are about
+        # the withdrawal line, so they read the limits file as it was before
+        # that ticket. tests/test_roctavian_2_50.py holds the new entry.
+        entries = json.loads((ROOT / "moonlight" / "limits.json").read_text(encoding="utf-8"))
+        limits = [e for e in entries if e["date"] < "2026-11-25"]
+    guards.append(patch.object(engine, "_read_limits", return_value=limits))
     if wrong is not None:
         guards.append(patch.object(engine, "_read_corrections", return_value=wrong))
     for guard in guards:

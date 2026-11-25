@@ -381,7 +381,7 @@ def test_now_the_card_is_only_under_approved_with_the_line_and_its_label(entry):
     assert card.source_record == entry["label"]
     sent = api._approved_json(card, engine.looks_wrong(entry["disease_id"]),
                               engine.warning_words(entry["disease_id"]),
-                              {}, engine.limit_notes(found.approved, entry["disease_id"]))
+                              {}, engine.limit_notes(found, entry["disease_id"]))
     assert ADDED_LINE in json.dumps(sent)
     assert (LIMITED_LINE in json.dumps(sent)) == entry.get("limited", False)
 

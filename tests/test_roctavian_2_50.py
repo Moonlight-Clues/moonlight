@@ -58,7 +58,7 @@ def text(*parts):
 @pytest.fixture(scope="module")
 def page():
     with hem_a_page.left_out_before_2_43():
-        return hem_a_page.page_answer()
+        return hem_a_page.page_answer(limits=load(LIMITS_FILE))  # the real limits file
 
 
 def roctavian_card(answer):
