@@ -308,7 +308,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 102  # ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
+    assert len(entries) == 109  # ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
     assert entries[24:38] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
@@ -334,7 +334,11 @@ def test_no_pair_is_written_twice():
     (MIGRAINE, {"CHEMBL454", "CHEMBL596"}),
     (MYASTHENIA, {"CHEMBL354077", "CHEMBL821", "CHEMBL1420"}),
     (RHEUMATOID, {"CHEMBL609", "CHEMBL90593"}),  # ticket 2.40 added prasterone
-    (TYPE_2_DIABETES, {"CHEMBL672", "CHEMBL981", "CHEMBL398435"}),
+    (TYPE_2_DIABETES, {"CHEMBL672", "CHEMBL981", "CHEMBL398435",
+                       # ticket 2.52: biotin, cyanocobalamin, folic acid, omega-3-acid
+                       # ethyl esters, pyridoxine, tyrosine
+                       "CHEMBL857", "CHEMBL2110563", "CHEMBL1622", "CHEMBL1200711",
+                       "CHEMBL1364", "CHEMBL925"}),
 ])
 def test_the_engine_gives_each_page_the_red_words_for_its_cards_only(disease_id, ids):
     assert engine.looks_wrong(disease_id) == ids

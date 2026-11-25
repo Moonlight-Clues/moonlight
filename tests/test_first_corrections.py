@@ -150,7 +150,12 @@ def test_example_2_the_real_file_warns_under_the_three_diseases_only():
     others.add(PAH.id)
     assert len(others) == 18
     for other in others:
-        assert engine.looks_wrong(other) == set()
+        if other == PAH.id:
+            # Ticket 2.52 (25 Nov): nitric oxide, whose label is for newborns, a
+            # different disease than pulmonary arterial hypertension.
+            assert engine.looks_wrong(other) == {"CHEMBL1200689"}
+        else:
+            assert engine.looks_wrong(other) == set()
 
 
 def test_example_2_the_same_four_cards_under_another_disease_carry_no_warning(saved_tabs):

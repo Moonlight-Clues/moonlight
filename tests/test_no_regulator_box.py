@@ -376,8 +376,9 @@ def test_graves_a_moved_card_keeps_every_line_and_its_source(graves):
 def test_pah_beraprost_with_the_japan_line_is_in_the_box(pah):
     assert pairs(box(pah)) == [BERAPROST]
     assert box(pah)[0]["proof_note"] == JAPAN_LINE
-    assert len(main_list(pah)) == 12
-    assert tab_number(pah) == len(pah["approved"]) - 1 + len(pah.get("wider_group", []))
+    assert len(main_list(pah)) == 11  # ticket 2.52: Nitric Oxide moved to the red box (was 12)
+    # minus Beraprost (grey box) and, since ticket 2.52, Nitric Oxide (red box)
+    assert tab_number(pah) == len(pah["approved"]) - 2 + len(pah.get("wider_group", []))
 
 
 def test_pah_a_card_with_a_regulator_approval_stays_on_the_main_list(pah):
