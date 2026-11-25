@@ -324,11 +324,13 @@ def test_the_same_pair_written_twice_with_two_labels_is_refused():
 
 
 def test_the_file_holds_the_three_entries():
-    entries = json.loads((ROOT / "moonlight" / "confirmed.json").read_text(encoding="utf-8"))
+    # Ticket 2.48 added 23 entries after these three (tests/test_wrong_source_links.py).
+    entries = json.loads((ROOT / "moonlight" / "confirmed.json").read_text(encoding="utf-8"))[:3]
     assert [(e["medicine_id"], e["disease_id"], e["label"]) for e in entries] == [
         (medicine_id, disease_id, label) for medicine_id, disease_id, label, _, _ in CONFIRMED]
     assert all(e["date"] == "2026-11-24" for e in entries)
-    assert engine.confirmed_by_label() == {
+    labels = engine.confirmed_by_label()
+    assert {pair: labels[pair] for pair in [(m, d) for m, d, _, _, _ in CONFIRMED]} == {
         (medicine_id, disease_id): label for medicine_id, disease_id, label, _, _ in CONFIRMED}
 
 
