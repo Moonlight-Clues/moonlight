@@ -68,6 +68,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
 import requests
+from requests.adapters import HTTPAdapter
 
 from moonlight import cache
 from moonlight.records import (
@@ -269,8 +270,16 @@ class AnswersDisagree(FetchError):
     """Asked the same question again, Open Targets named different medicines."""
 
 
+# The most questions Moonlight asks Open Targets at the same time (ticket 3.6a).
+# engine.py reads this number as AT_ONCE. Grok's speed study of 25 Nov: 5 at a
+# time took 14.1 s for about 50 calls, 15 took 5.5 s, 25 took 2.7 s, no failures.
+AT_ONCE = 15
+
 # One connection to Open Targets, opened once and used for every call.
+# The pool keeps one lane for each question asked at once, so no lane is opened
+# and thrown away (the default keeps only 10). No retries are added.
 _session = requests.Session()
+_session.mount("https://", HTTPAdapter(pool_connections=1, pool_maxsize=AT_ONCE))
 
 _version: Optional[str] = None
 _version_read_at = 0.0

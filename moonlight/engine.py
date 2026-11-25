@@ -169,7 +169,7 @@ from moonlight.filter import (
 from moonlight.rank import Clue, rank_clues
 from moonlight.records import STAGE_ORDER, Disease, Medicine, Path, Target
 
-AT_ONCE = 5  # the most proteins, or extra disease entries, fetched at the same time
+AT_ONCE = fetch.AT_ONCE  # 15: the most proteins, or extra disease entries, fetched at the same time (set in fetch.py, which sizes its connection pool to match)
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
 
 # Ticket 2.13, Kashish's decisions of 16 Nov.

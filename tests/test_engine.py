@@ -237,13 +237,20 @@ def test_parallel_ranked_clues_are_the_same_as_one_at_a_time(offline):
     assert ranked.being_studied == rank_clues(tray["being_studied"])
 
 
-def test_at_most_5_proteins_are_fetched_at_once(offline):
-    targets = fetch.fetch_targets(PAH)[:10]  # the ten with saved files
+def test_at_most_15_proteins_are_fetched_at_once(offline):
+    saved = fetch.fetch_targets(PAH)[:10]  # the ten with saved files
+    targets = saved * 2  # twenty, so that fifteen can really run together
     slow = SlowOpenTargets(lambda target_id: 0.03)
     offline.side_effect = slow
     engine.find_clues(PAH, targets)
-    assert engine.AT_ONCE == 5
-    assert slow.most_at_once == 5
+    assert engine.AT_ONCE == 15
+    assert slow.most_at_once == 15
+
+
+def test_the_https_connection_pool_is_as_big_as_at_once():
+    adapter = fetch._session.get_adapter(fetch.URL)
+    assert adapter._pool_maxsize == engine.AT_ONCE
+    assert adapter._pool_connections == 1
 
 
 def test_parallel_calls_start_in_the_order_the_targets_were_given():
