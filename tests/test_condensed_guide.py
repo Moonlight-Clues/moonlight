@@ -50,13 +50,17 @@ TILES = [
 CARD_EXPLANATION = "Doxapram grabs a protein called KCNK3 and turns it down, like a volume knob."
 KEY = [
     ("A", "Medicine and its forms"),
-    ("B", "Reports written about it"),
+    ("B", "Trial and approval records in the database"),  # ticket 3.9
     ("C", "The path, in three steps"),
     ("D", "Up, down or unknown"),
     ("E", "How strong the link is"),
-    # No F: ticket 3.8, commit B, took the explanation off the card.
-    ("G", "The catch, on every clue"),
-    ("H", "Where the fact comes from"),
+    # Ticket 3.9: Kashish's signed words of 25 Nov. B is new words; F, G and J are new
+    # parts of the card; the catch and the source move to H and I.
+    ("F", "What the protein does"),
+    ("G", "Why the gene is linked"),
+    ("H", "The catch, on every clue"),
+    ("I", "Where the fact comes from"),
+    ("J", "Tell us if something is wrong"),
 ]
 CAN = [
     "medicines approved for a disease",
@@ -199,9 +203,11 @@ def test_the_card_part_has_its_sub_line(guide):
 
 
 # Ticket 3.8, commit B: no letter F, because the card has no explanation.
-def test_the_example_card_is_doxapram_with_its_gold_letters_a_to_h(guide):
+# Ticket 3.9: Kashish signed the new legend (25 Nov): letters A to J, no gap. This test used to be
+# test_the_example_card_is_doxapram_with_its_gold_letters_a_to_h, checking list("ABCDEGH").
+def test_the_example_card_is_doxapram_with_its_gold_letters_a_to_j(guide):
     card = part(guide, '<article class="card">', "</article>")
-    assert re.findall(r'<span class="k" aria-label="([A-H])">\1</span>', card) == list("ABCDEGH")
+    assert re.findall(r'<span class="k" aria-label="([A-J])">\1</span>', card) == list("ABCDEFGHIJ")
     words = plain(card)
     assert "Forms: Doxapram, Doxapram Hydrochloride" in words
     assert "8 reports" in words
@@ -222,17 +228,19 @@ def test_the_example_card_has_no_explanation(guide):
 def test_the_example_cards_fixed_ending_is_word_for_word(guide):
     card = part(guide, '<article class="card">', "</article>")
     ending = card[card.index('<div class="ending">'):card.index('<div class="card-foot">')]
-    assert plain(ending) == "G " + ENDING
+    assert plain(ending) == "H " + ENDING  # ticket 3.9: the catch is letter H now, was G
 
 
 # Ticket 3.8, commit B: seven chips now. This test used to be
 # test_under_the_card_are_eight_chips_each_a_gold_letter_and_a_few_words.
-def test_under_the_card_are_seven_chips_each_a_gold_letter_and_a_few_words(guide):
+# Ticket 3.9: Kashish signed the new legend (25 Nov): letters A to J, no gap. Ten chips now. This test used to be
+# test_under_the_card_are_seven_chips_each_a_gold_letter_and_a_few_words.
+def test_under_the_card_are_ten_chips_each_a_gold_letter_and_a_few_words(guide):
     card_part = guide[guide.index('id="guide-card"'):]
     assert card_part.index("</article>") < card_part.index('<ul class="key">')
     key = part(guide, '<ul class="key">', "</ul>")
     found = re.findall(
-        r'<li><span class="k" aria-hidden="true">([A-H])</span><span>([^<]+)</span></li>', key)
+        r'<li><span class="k" aria-hidden="true">([A-J])</span><span>([^<]+)</span></li>', key)
     assert found == KEY
     assert "<dl" not in guide and "<dt" not in guide and "<dd" not in guide
 

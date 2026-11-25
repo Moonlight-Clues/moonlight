@@ -189,7 +189,7 @@ def test_4_the_sample_card_in_the_guide_has_the_new_ending(page):
     guide = guide_of(page)
     card = guide[guide.index('<section id="guide-card"'):]
     ending = card[card.index('<div class="ending">'):card.index('<div class="card-foot">')]
-    assert plain(ending) == "G " + NEW_ENDING
+    assert plain(ending) == "H " + NEW_ENDING  # ticket 3.9: the catch is letter H now, was G
 
 
 def test_4_every_ending_written_on_the_page_is_the_new_one(page):
