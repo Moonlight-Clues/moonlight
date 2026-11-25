@@ -108,6 +108,7 @@ from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
+from moonlight.engine import override_sources, source_overrides
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -288,10 +289,12 @@ async def _check_hand_lists(_app: FastAPI):
     the app starts. A list not written the right way, or a card marked in
     both limits.json and approvals.json, stops the app with the engine's
     plain message, before any page is served. Ticket 2.51: the same for the
-    hand-written withdrawals list."""
+    hand-written withdrawals list. Ticket 3.17: the same for the
+    hand-written list of labels the Source record opens."""
     limits_by_hand()
     withdrawals_by_hand()
     diagnostic_ids("")  # ticket 3.10: the hand-written list of scan medicines
+    source_overrides()
     yield
 
 
@@ -355,11 +358,15 @@ class _Found:
         # A to Z. Not clues: no rank, never explained. Ticket 2.42: a card on
         # the hand-written list of confirmed approvals for this disease shows
         # its label as source and has no grey line. No card moves by it.
-        self.approved = confirm_by_label(tabs.approved, disease.id)
+        # Ticket 3.17: a card on source_overrides.json for this page opens
+        # the medicine's own current label as its Source record. Only that
+        # link changes, here and in both folded boxes. No card moves by it.
+        self.approved = override_sources(confirm_by_label(tabs.approved, disease.id),
+                                         disease.id)
         # Approved only for a wider group (ticket 2.12): the folded box.
-        self.wider_group = tabs.wider_group
+        self.wider_group = override_sources(tabs.wider_group, disease.id)
         # Approved only for a narrower disease (ticket 2.14): its own folded box.
-        self.narrower = tabs.narrower
+        self.narrower = override_sources(tabs.narrower, disease.id)
         self.new_clues = tabs.new_clues
         self.being_studied = tabs.being_studied
         self.left_out = tabs.left_out
