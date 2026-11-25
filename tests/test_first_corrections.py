@@ -122,7 +122,9 @@ def test_example_1_each_added_card_has_the_warning_and_keeps_its_place(client, d
     data = clues_json(client, disease, real_entries())
     expected = {medicine_id for medicine_id, listed_for in saved_pairs() if listed_for == disease.id}
     assert len(expected) == 4
-    warned = [item for item in approved_cards(data) if "warning" in item]
+    # Ticket 2.45 put a red warning on promethazine for atopic eczema too (its own test).
+    warned = [item for item in approved_cards(data)
+              if "warning" in item and item["id"] != "CHEMBL643"]
     assert {item["id"] for item in warned} == expected
     assert all(item["warning"] == WARNING == engine.WRONG_WARNING for item in warned)
     assert sorted(item["medicine"].upper() for item in warned) == THE_FOUR

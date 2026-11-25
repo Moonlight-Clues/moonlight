@@ -91,6 +91,7 @@ def repeated(items, count, word):
     made = []
     for number in range(count):
         item = copy.deepcopy(items[number % len(items)])
+        item.pop("warning", None)  # ticket 2.45: real red warnings are not copied; the test sets its own
         item["id"] = "TEST%s%03d" % (word.upper(), number)
         item["medicine"] = "%s %03d" % (word, number)
         made.append(item)

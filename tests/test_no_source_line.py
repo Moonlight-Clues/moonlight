@@ -75,7 +75,9 @@ PLACES = ["approved", "narrower", "wider_group",
           "opposite_way_box"]
 # How many cards acute lymphoblastic leukemia has in each place.
 # Its 21 new clues are 20 in the list and 1 in the opposite-way box.
-LEUKEMIA_CARDS = {"approved": 15, "narrower": 13, "wider_group": 12,
+# Ticket 2.45 put red warnings on two of its 15 saved approved cards. They sit
+# in the red-warning box, not the main list.
+LEUKEMIA_CARDS = {"approved": 13, "narrower": 13, "wider_group": 12,
                   "being_studied": 16, "more_in_trials": 150, "new_in_trials": 80,
                   "new_clues": 20, "opposite_way_box": 1}
 
@@ -91,6 +93,9 @@ def cards_in(answer, place):
         return [clue for clue in answer["new_clues"] if clue["id"] not in boxed]
     if place == "opposite_way_box":
         return [clue for clue in answer["new_clues"] if clue["id"] in boxed]
+    if place == "approved":  # ticket 2.45: the main list, without the red-warning box's cards
+        red = set(answer.get("wrong_approvals_box") or [])
+        return [card for card in answer.get("approved", []) if card["id"] not in red]
     return answer.get(place, [])
 
 
