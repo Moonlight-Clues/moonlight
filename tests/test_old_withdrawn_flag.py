@@ -71,6 +71,13 @@ EIGHT = [
     (AML, "CHEMBL1201506", "Gemtuzumab Ozogamicin"),
     (CUSHING, "CHEMBL157101", "Ketoconazole"),
 ]
+# Ticket 2.45 put the red warning on these cards of the same three pages (the
+# card keeps its place; it moves into the red-warning box, so it leaves the tab number).
+RED_2_45 = {
+    ASTHMA: {"CHEMBL1512", "CHEMBL1621597", "CHEMBL689"},  # flunisolide, ipratropium, mannitol
+    AML: {"CHEMBL4297573"},  # tagraxofusp
+    "MONDO_0002050": {"CHEMBL49"},  # buspirone, depressive disorder
+}
 BACK = {}
 for _disease, _id, _ in EIGHT:
     BACK.setdefault(_disease, []).append(_id)
@@ -209,7 +216,11 @@ def test_the_others_the_flag_hides_stay_in_no_tab(pages, disease_id, medicine_id
 def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease_id):
     before, after = saved.before(disease_id), pages[disease_id]
     back = set(BACK.get(disease_id, []))
-    assert [card for card in after["approved"] if card["id"] not in back] == before["approved"]
+    red = RED_2_45.get(disease_id, set())
+    plain = [({key: value for key, value in card.items() if key != "warning"}
+              if card["id"] in red else card) for card in after["approved"]]
+    assert all("warning" in card for card in after["approved"] if card["id"] in red)
+    assert [card for card in plain if card["id"] not in back] == before["approved"]
     for key in before:
         if key in ("approved", "left_out", "wrong_approvals_box"):
             continue
@@ -221,7 +232,7 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
     approved_ids = [card["id"] for card in after["approved"]]
     assert all(medicine_id in approved_ids for medicine_id in after.get("no_regulator_box", []))
     boxed = [medicine_id for medicine_id in after.get("wrong_approvals_box", [])
-             if medicine_id not in back]
+             if medicine_id not in back and medicine_id not in red]
     assert boxed == before.get("wrong_approvals_box", [])
 
 
@@ -229,7 +240,8 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
 def test_the_tab_number_counts_the_cards_that_came_back(pages, disease_id):
     back_on_main = [medicine_id for medicine_id in BACK.get(disease_id, [])
                     if medicine_id != PRASTERONE]  # in the red-warning box, as every such card
-    assert tab_number(pages[disease_id]) == tab_number(saved.before(disease_id)) + len(back_on_main)
+    red = len(RED_2_45.get(disease_id, set()))  # ticket 2.45: in the red-warning box now
+    assert tab_number(pages[disease_id]) == tab_number(saved.before(disease_id)) + len(back_on_main) - red
 
 
 @pytest.mark.parametrize("disease_id", DISEASES)
@@ -274,10 +286,12 @@ def test_the_line_on_the_page_is_the_engines():
 
 def test_prasterone_has_the_label_warning_for_rheumatoid_arthritis_only():
     entries = json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
-    mine = [entry for entry in entries if entry["medicine_id"] == PRASTERONE]
+    # Ticket 2.45 added prasterone for osteoarthritis after this one: only the RA entry is read here.
+    mine = [entry for entry in entries
+            if entry["medicine_id"] == PRASTERONE and entry["disease_id"] == RA]
     assert mine == [{"medicine_id": PRASTERONE, "disease_id": RA, "date": "2026-11-24",
                      "note": LABEL_WARNING}]
-    assert entries[-1] == mine[0]  # added at the end
+    assert entries[38] == mine[0]  # added at the end of the 39 that were there then
 
 
 def test_each_label_read_is_saved():
