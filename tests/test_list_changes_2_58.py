@@ -4,7 +4,9 @@
 note. The UK Atrovent 250 UDVs label (eMC, updated 27 Oct 2026), section 4.1,
 names asthma.
 25N-16: six cards on type 2 diabetes (MONDO_0005148) get the red note. They
-stay in the wider-group box (ticket 3.16 moves box reds later).
+stayed in the wider-group box. Ticket 3.16 (Kashish's decision Q7, 25 Nov)
+moves them to the red box: their cards stay in "wider_group" in the API
+answer, and "wrong_approvals_box" names them.
 
 Saved answers only (fixtures/old_withdrawn_flag/). No network.
 """
@@ -132,10 +134,11 @@ def test_each_of_the_six_cards_shows_the_red_sentence(diabetes, medicine_id):
     assert card["warning"] == NOTE
 
 
-def test_the_six_stay_in_the_wider_group_box_in_the_same_order(diabetes):
+def test_the_six_cards_stay_in_wider_group_and_the_red_box_names_them(diabetes):
     before, after = diabetes
     assert ids_in(after, "wider_group") == ids_in(before, "wider_group")
-    assert not set(SIX) & set(ids_in(after, "wrong_approvals_box"))
+    # Ticket 3.16 (Q7), changed on purpose: the red box names the six. Before: none of them.
+    assert set(SIX) <= set(ids_in(after, "wrong_approvals_box"))
 
 
 def test_nothing_else_on_the_type_2_diabetes_page_changes(diabetes):
@@ -143,4 +146,6 @@ def test_nothing_else_on_the_type_2_diabetes_page_changes(diabetes):
     for card in after["wider_group"]:
         if card["id"] in SIX:
             card.pop("warning")
+    # Ticket 3.16 (Q7): the red box names the six too. Nothing else changes.
+    after["wrong_approvals_box"] = [m for m in after["wrong_approvals_box"] if m not in SIX]
     assert after == before

@@ -96,7 +96,8 @@ RED_2_45 = {
 }
 # Ticket 2.58 (25N-16): six cards of type 2 diabetes got the red note while they
 # stay in the wider-group box: candesartan, olmesartan, atenolol, chlorthalidone,
-# hydrochlorothiazide, lisinopril.
+# hydrochlorothiazide, lisinopril. Ticket 3.16 (Q7): their cards stay in
+# "wider_group", and the red box names them, so the page shows them there.
 WIDER_RED_2_58 = {
     T2D: {"CHEMBL1014", "CHEMBL1200692", "CHEMBL24", "CHEMBL1055", "CHEMBL435", "CHEMBL1237"},
 }
@@ -296,7 +297,8 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
     approved_ids = [card["id"] for card in after["approved"]]
     assert all(medicine_id in approved_ids for medicine_id in after.get("no_regulator_box", []))
     boxed = [medicine_id for medicine_id in after.get("wrong_approvals_box", [])
-             if medicine_id not in back and medicine_id not in red]
+             if medicine_id not in back and medicine_id not in red
+             and medicine_id not in wider_red]  # ticket 3.16 (Q7): the six moved to the red box
     assert boxed == before.get("wrong_approvals_box", [])
 
 

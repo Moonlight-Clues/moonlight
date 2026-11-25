@@ -1078,7 +1078,7 @@ body.registering>:not(.register){display:none!important}
     const allApprovedCards = data.approved.map(medicine => approvedCard(medicine, diseaseName));
     // Ticket 2.27. The API names the cards with a red warning: they sit in the folded box at the
     // bottom of the tab. approvedCards is the main list without them, in the same A to Z order.
-    const [notWrongCards, wrongCards] = aboveAndBox(data.approved, data.wrong_approvals_box, allApprovedCards);
+    const [notWrongCards] = aboveAndBox(data.approved, data.wrong_approvals_box, allApprovedCards);
     // Ticket 2.42. Of the rest, the API names the cards with no regulator record (or only Japan's
     // general list): they sit in the folded box above the red one. The red box wins, so the API
     // never names a card for both. approvedCards is the main list without either box's cards.
@@ -1086,9 +1086,21 @@ body.registering>:not(.register){display:none!important}
     const notWrong = data.approved.filter(medicine => !wrongIds.has(medicine.id));
     const [approvedCards, noRegulatorCards] = aboveAndBox(notWrong, data.no_regulator_box, notWrongCards);
     // Approved only for a narrower disease: its own folded box, above the wider one.
-    const narrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
+    const allNarrowerCards = (data.narrower || []).map(medicine => approvedCard(medicine, diseaseName));
     // Approved only for a wider group: the folded box at the bottom of the tab.
-    const widerCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
+    const allWiderCards = (data.wider_group || []).map(medicine => approvedCard(medicine, diseaseName));
+    // Ticket 3.16. A red card from either of these boxes is in the red box, not in its own box.
+    const [narrowerCards] = aboveAndBox(data.narrower || [], data.wrong_approvals_box, allNarrowerCards);
+    const [widerCards] = aboveAndBox(data.wider_group || [], data.wrong_approvals_box, allWiderCards);
+    // The red box, in the API's order (A to Z, all three lists together). Each card is drawn once.
+    const cardOf = new Map(), medicineOf = new Map();
+    [[data.approved, allApprovedCards], [data.narrower || [], allNarrowerCards],
+     [data.wider_group || [], allWiderCards]].forEach(([items, cards]) => items.forEach((medicine, place) => {
+      cardOf.set(medicine.id, cards[place]);
+      medicineOf.set(medicine.id, medicine);
+    }));
+    const wrongIdsShown = (data.wrong_approvals_box || []).filter(id => cardOf.has(id));  // an id with no card is skipped, as before
+    const wrongCards = wrongIdsShown.map(id => cardOf.get(id));
     const newCards = data.new_clues.map((clue, place) => card(clue, diseaseName, place + 1));
     const studiedCards = data.being_studied.map(clue => card(clue, diseaseName, null));
     // In a trial for this disease, on none of the 25 proteins: the folded box under the list.
@@ -1167,8 +1179,8 @@ body.registering>:not(.register){display:none!important}
     const drawnFrom = new Map();
     const pair = (cards, items) => cards.forEach((el, place) => drawnFrom.set(el, items[place]));
     pair(allApprovedCards, data.approved);
-    pair(narrowerCards, data.narrower || []);
-    pair(widerCards, data.wider_group || []);
+    pair(allNarrowerCards, data.narrower || []);
+    pair(allWiderCards, data.wider_group || []);
     pair(newCards, data.new_clues);
     pair(studiedCards, data.being_studied);
     pair(moreTrialsCards, data.more_in_trials || []);
@@ -1193,10 +1205,10 @@ body.registering>:not(.register){display:none!important}
     const noRegulatorIds = new Set(data.no_regulator_box || []);
     const inBox = medicine => wrongIds.has(medicine.id) || noRegulatorIds.has(medicine.id);
     shownBoxes = {diseaseName, main: data.approved.filter(medicine => !inBox(medicine)), boxes: [
-      [byId("narrower-box"), data.narrower || []],
-      [byId("wider-box"), data.wider_group || []],
+      [byId("narrower-box"), (data.narrower || []).filter(medicine => !wrongIds.has(medicine.id))],
+      [byId("wider-box"), (data.wider_group || []).filter(medicine => !wrongIds.has(medicine.id))],
       [byId("no-regulator-box"), notWrong.filter(medicine => noRegulatorIds.has(medicine.id))],
-      [byId("wrong-box"), data.approved.filter(medicine => wrongIds.has(medicine.id))]]};
+      [byId("wrong-box"), wrongIdsShown.map(id => medicineOf.get(id))]]};
     byId("print-page").hidden = false;
   }
 

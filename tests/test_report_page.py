@@ -229,10 +229,14 @@ def test_every_card_of_every_kind_has_one_report_link(seen, holder):
 
 def test_the_number_of_cards_is_the_answers(seen, answer):
     count = {p["holder"]: p["cards"] for p in seen["piles"]}
+    # Ticket 3.16 (Q7): a red card from the narrower or wider-group box is drawn
+    # in the red box instead of its own box. Each card is still drawn once.
+    red = set(answer.get("wrong_approvals_box", []))
     approved = sum(count[h] for h in ("approved-cards", "no-regulator-cards", "wrong-cards"))
-    assert approved == len(answer["approved"])
-    assert count["narrower-cards"] == len(answer["narrower"])
-    assert count["wider-cards"] == len(answer["wider_group"])
+    moved = sum(1 for part in ("narrower", "wider_group") for c in answer[part] if c["id"] in red)
+    assert approved == len(answer["approved"]) + moved
+    assert count["narrower-cards"] == len([c for c in answer["narrower"] if c["id"] not in red])
+    assert count["wider-cards"] == len([c for c in answer["wider_group"] if c["id"] not in red])
     assert count["studied-cards"] == len(answer["being_studied"])
     assert count["more-trials-cards"] == len(answer["more_in_trials"])
     assert count["new-trials-cards"] == len(answer["new_in_trials"])

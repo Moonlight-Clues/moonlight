@@ -3,10 +3,11 @@
 PART A. Kashish's signed answer Q10 (25 Nov, answer A): the corrections list
 accepts a third note, word for word, "A blood thinner cannot be a treatment
 for a bleeding disease." Dicumarol (CHEMBL1466) on haemophilia A
-(MONDO_0010602) carries it. MAIN 4's answer of 25 Nov: no rule change, so
-the card keeps its place in the wider-group box and shows the red sentence
-on the card there. (Whether red cards inside folded boxes should move to the
-red box is a new rule for Kashish's next sheet.)
+(MONDO_0010602) carries it. MAIN 4's answer of 25 Nov was no rule change, so
+the card kept its place in the wider-group box. Ticket 3.16 (Kashish's
+decision Q7, 25 Nov) reverses that on purpose: a red card in a folded box
+moves to the red box. Its card stays in "wider_group" in the API answer and
+"wrong_approvals_box" names it, so the page shows it once, in the red box.
 
 PART C. Kashish's signed answer Q22: a combination pill's label does not
 count for one of its parts. Sodium phenylbutyrate (CHEMBL1469) on
@@ -159,12 +160,14 @@ def test_before_dicumarol_sat_in_the_wider_group_box_with_no_warning(pages):
     assert DICUMAROL not in before.get("wrong_approvals_box", [])
 
 
-def test_after_dicumarol_stays_in_the_wider_group_box_with_the_red_sentence(pages):
+def test_after_dicumarol_has_the_red_sentence_and_is_named_by_the_red_box(pages):
     before, after = pages
     assert dicumarol(after)["warning"] == THIRD_NOTE
-    # MAIN 4, 25 Nov: no rule change. It keeps its place, in the same A to Z order.
+    # Its card is still in "wider_group" in the API answer, in the same A to Z order.
     assert [c["id"] for c in after["wider_group"]] == [c["id"] for c in before["wider_group"]]
-    assert DICUMAROL not in after.get("wrong_approvals_box", [])
+    # Ticket 3.16 (Q7, 25 Nov), changed on purpose: the red box names it, so the
+    # page shows it there and not in the wider-group box. Before: not named.
+    assert DICUMAROL in after["wrong_approvals_box"]
     assert all(c["id"] != DICUMAROL for c in after["approved"] + after.get("narrower", []))
 
 
@@ -172,6 +175,8 @@ def test_nothing_else_on_the_haemophilia_a_page_changes(pages):
     before, after = pages
     changed = dicumarol(after)
     changed.pop("warning")
+    # Ticket 3.16 (Q7): the red box names dicumarol too. Nothing else changes.
+    after["wrong_approvals_box"].remove(DICUMAROL)
     assert after == before
 
 
