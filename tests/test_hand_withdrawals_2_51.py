@@ -129,7 +129,7 @@ def test_roctavians_card_carries_both_lines_on_the_main_list(with_entry, without
     roctavian = card(with_entry, ROCTAVIAN)
     assert roctavian["withdrawal_note"] == HAND_LINE
     assert roctavian["limit_note"] == LIMITED_LINE
-    assert roctavian["source"] == "https://www.fda.gov/media/169937/download?attachment"
+    assert roctavian["source"] == "https://www.fda.gov/media/169937/download"  # ticket 2.60: source_overrides.json, was "?attachment" from Open Targets
     # Not hidden, moved, re-counted or re-ordered: the same ids in the same order.
     assert [i["id"] for i in with_entry["approved"]] == [i["id"] for i in without_entry["approved"]]
     assert len(with_entry["approved"]) == len(without_entry["approved"])
