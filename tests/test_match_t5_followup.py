@@ -59,6 +59,29 @@ def test_a_combination_and_placebo_for_x_still_match_nothing():
     assert match.match(["Erlotinib (Tarceva/placebo)"], drugs) is None
 
 
+def test_an_alias_list_ignores_pieces_that_match_nothing():
+    """ticket T5b. The main name decides. Commas and semicolons in an
+    other-name split into aliases. "IVA" and "BIIB141" match nothing and
+    are ignored. A "/" in an alias is still a combination."""
+    ivacaftor = _medicine("CHEMBL2010601", "IVACAFTOR",
+                          synonyms=("Ivacaftor", "VX-770"), trade_names=("Kalydeco",))
+    oma = _medicine("CHEMBL4303525", "OMAVELOXOLONE",
+                    synonyms=("Omaveloxolone", "RTA-408", "SKYCLARYS"))
+    assert match.match(["Ivacaftor", "VX-770, IVA"], [ivacaftor]) == "CHEMBL2010601"
+    assert match.match(["Ivacaftor", "Kalydeco, VX-770"], [ivacaftor]) == "CHEMBL2010601"
+    assert match.match(["Ivacaftor", "VX-770; IVA"], [ivacaftor]) == "CHEMBL2010601"
+    assert match.match(["Omaveloxolone", "BIIB141, SKYCLARYS, RTA-408"], [oma]) == "CHEMBL4303525"
+    assert match.match(["Ivacaftor", "VX-445/VX-661/VX-770"], [ivacaftor]) is None
+    assert match.match(["ELX/TEZ/IVA"], [ivacaftor]) is None
+
+
+def test_capsules_and_oral_solution_drop_only_when_the_rest_matches():
+    drugs = [_medicine(METFORMIN, "METFORMIN", synonyms=("Metformin",))]
+    assert match.match(["Metformin capsules"], drugs) == METFORMIN
+    assert match.match(["Metformin oral solution"], drugs) == METFORMIN
+    assert match.match(["notarealdrug oral solution"], drugs) is None
+
+
 def test_the_word_drug_without_brackets_is_left_as_it_is():
     drugs = [_medicine(IMATINIB, "IMATINIB", synonyms=("Imatinib",))]
     assert match.match(["investigational drug"], drugs) is None

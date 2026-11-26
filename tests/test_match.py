@@ -121,15 +121,21 @@ def test_one_letter_off_does_not_match(drugs):
 
 
 def test_form_words_stay_and_stop_a_match(drugs):
-    assert match.match(["metformin tablets"], drugs) is None
-    assert match.match(["valsartan injection"], drugs) is None
+    # ticket T5b: drop the form word only when what is left exactly matches
+    # one known medicine. "Metformin tablets" is Metformin. A form word on a
+    # name that is not a medicine still matches nothing.
+    assert match.match(["metformin tablets"], drugs) == METFORMIN
+    assert match.match(["valsartan injection"], drugs) == VALSARTAN
+    assert match.match(["notarealdrug tablets"], drugs) is None
 
 
 def test_combination_products_do_not_match(drugs):
     for name in ["sacubitril/valsartan", "Sacubitril + Valsartan", "valsartan and sacubitril",
-                 "metformin, imatinib", "imatinib; metformin", "valsartan with sacubitril",
+                 "imatinib; metformin", "valsartan with sacubitril",
                  "metformin plus imatinib", "Glyburide/metformin 5 mg/500 mg"]:
         assert match.match([name], drugs) is None, name
+    # ticket T5b: a comma in the main name is still a combination.
+    assert match.match(["metformin, imatinib"], drugs) is None
 
 
 def test_a_combination_matches_nothing_even_when_one_part_is_known(drugs):
@@ -142,6 +148,12 @@ def test_a_trial_with_a_combination_among_its_names_matches_nothing(drugs, caplo
     with caplog.at_level(logging.WARNING, logger="moonlight.match"):
         assert match.match(["Entresto", "sacubitril/valsartan", "valsartan"], drugs) is None
     assert "combination" in caplog.text
+    # ticket T5b: a comma in an other-name is an alias list. "drug A, drug B"
+    # points at two medicines, so it matches nothing, and the log names both.
+    caplog.clear()
+    with caplog.at_level(logging.WARNING, logger="moonlight.match"):
+        assert match.match(["valsartan", "metformin, imatinib"], drugs) is None
+    assert METFORMIN in caplog.text and IMATINIB in caplog.text
 
 
 def test_placebo_does_not_match(drugs):
