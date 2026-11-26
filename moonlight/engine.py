@@ -175,6 +175,14 @@ sieve on that one box only: every other box and tab is worked out as before,
 so the card taken out does not come back as a new clue. A box left empty is
 not shown, as before.
 
+Ticket 2.63 (W1, words signed by Kashish 26 Nov). wider_labels_by_hand()
+reads moonlight/wider_labels.json, a list written by hand: one entry per
+card, with the medicine, the disease, the group the official label names
+("group", in the label's own words), the date and the label. wider_label_notes
+says which cards of the main Approved list carry WIDER_LABEL_LINE with that
+group. A sticky note like limit_notes: no card moves. A pair that
+corrections.json also holds is refused, so a red card never carries it.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -297,6 +305,11 @@ WITHDRAWAL_LINE = (
 # official label covers only some people with the disease. Moonlight never
 # writes which people. Changing these words needs her approval.
 LIMITED_LINE = "The label covers only some people with this disease."
+# Ticket 2.63 (W1). A grey line under a main-list card's other lines, when
+# the card's official label names a wider group that includes the disease.
+# {group} is the label's own words, from wider_labels.json. Words signed by
+# Kashish on 26 Nov; changing them needs her approval.
+WIDER_LABEL_LINE = "The label names {group}, which includes this disease."
 # Ticket 2.51. One more grey line, in the place and style of WITHDRAWAL_LINE,
 # on a card the hand-written withdrawals list names. Proposed by MAIN 3;
 # Kashish signs or changes these words. Changing them needs her approval.
@@ -387,6 +400,21 @@ SOURCE_OVERRIDE_KEYS = {"medicine_id", "disease_id", "url", "date", "note", "evi
 # Moonlight writes here.
 BROAD_GROUPS_FILE = pathlib.Path(__file__).resolve().parent / "broad_groups.json"
 BROAD_GROUP_KEYS = {"disease_id", "name", "date", "reason"}
+
+# Ticket 2.63. The cards whose label names a wider group. Nothing in Moonlight
+# writes here.
+WIDER_LABELS_FILE = pathlib.Path(__file__).resolve().parent / "wider_labels.json"
+WIDER_LABEL_KEYS = {"medicine_id", "disease_id", "group", "date", "label"}
+
+
+@dataclass(frozen=True)
+class HandWiderLabel:
+    """One entry of the hand-written list of wider labels (ticket 2.63)."""
+
+    medicine_id: str  # the card's id, or the id of one of its forms
+    disease_id: str  # the one disease the entry works for
+    group: str  # the words the label uses for the wider group
+    label: str  # the official label that was read by hand
 
 
 @dataclass(frozen=True)
@@ -1490,6 +1518,70 @@ def _main_cards_named(
         if ids & wanted:
             found.append(medicine.id)
     return found
+
+
+def _read_wider_labels() -> list:
+    """The one place the wider-labels file is read. Tests replace this."""
+    return json.loads(WIDER_LABELS_FILE.read_text(encoding="utf-8"))
+
+
+def wider_labels_by_hand() -> List[HandWiderLabel]:
+    """The hand-written list of wider labels, in the file's order (ticket 2.63).
+
+    Each entry holds exactly five things: the medicine's id, the disease's
+    id, the group (the words the label uses, never empty), the date and the
+    label, an https link to the official label read by hand. Checked the way
+    limits.json is: an entry not written this way raises ValueError, and the
+    list is never half read. Two entries for the same medicine and disease
+    are refused, even when alike. So is a pair that corrections.json also
+    holds: a card with a red warning never carries this line. The app reads
+    this list before it serves a page, so such a list stops it.
+
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_wider_labels()
+    if not isinstance(entries, list):
+        raise ValueError("wider_labels.json must hold a list.")
+    found: Dict[Tuple[str, str], HandWiderLabel] = {}
+    for entry in entries:
+        pair = _checked_pair(entry, WIDER_LABEL_KEYS, "A wider label")
+        group, label = entry["group"], entry["label"]
+        if not isinstance(group, str) or not group.strip():
+            raise ValueError(f"A wider label needs the group its label names: {entry!r}")
+        if not isinstance(label, str) or not label.startswith("https://"):
+            raise ValueError(f"A wider label needs an https link to its label: {entry!r}")
+        if pair in found:
+            raise ValueError(f"A wider label is written twice: {entry!r}")
+        found[pair] = HandWiderLabel(pair[0], pair[1], group, label)
+    red = corrections()
+    for pair in found:
+        if pair in red:
+            raise ValueError(
+                f"{pair} is in both wider_labels.json and corrections.json. A card with a "
+                f"red warning does not carry the wider-label line.")
+    return list(found.values())
+
+
+def wider_label_notes(
+    tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = ()
+) -> Dict[str, str]:
+    """Card id -> WIDER_LABEL_LINE with its group, for the cards of the main
+    Approved list that wider_labels.json names for this disease (ticket 2.63).
+
+    A sticky note put on a card after the cards are laid out: tabs is only
+    read. Matched like limit_notes. Only the main Approved list is read. If
+    two entries name the same card (its own id and a form's id), the first
+    in the file's order gives the line.
+    """
+    listed, on_list = list(listed), list(on_list)
+    notes: Dict[str, str] = {}
+    for entry in wider_labels_by_hand():
+        if entry.disease_id != disease_id:
+            continue
+        line = WIDER_LABEL_LINE.format(group=entry.group)
+        for medicine_id in _main_cards_named({entry.medicine_id}, tabs, listed, on_list):
+            notes.setdefault(medicine_id, line)
+    return notes
 
 
 def _read_withdrawals() -> list:

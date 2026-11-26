@@ -247,7 +247,8 @@ const SITE = "http://moonlight.test";
 
 function read() {
   const visible = el => !!el && el.getClientRects().length > 0;
-  const all = [...document.querySelectorAll("#found .card")];
+  // Only the cards drawn on the open tab (a card on a closed tab has no box to measure).
+  const all = [...document.querySelectorAll("#found .card")].filter(visible);
   return all.map(card => {
     const name = card.querySelector('[data-slot="medicine-name"]').textContent;
     const proteins = [...card.querySelectorAll('[data-part="proteins"] .protein-row')];
