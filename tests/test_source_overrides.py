@@ -96,7 +96,7 @@ def test_the_file_holds_the_54_rows_of_the_batch_exactly_in_order():
     rows = batch_rows()
     assert len(rows) == 54
     written = load(OVERRIDES_FILE)
-    assert len(written) == 56
+    assert len(written) == 57  # 2.61 added givosiran, Orphanet_95157
     assert written[:54] == [
         {"medicine_id": row["medicine_id"], "disease_id": row["disease_id"],
          "url": row["url"], "date": row["label_date"], "note": row["quote"],
@@ -113,7 +113,7 @@ def test_the_engine_reads_the_real_file():
     assert found[(MACITENTAN, PAH.id)] == OPSUMIT
     assert found[(TETRABENAZINE, TREMOR.id)] == XENAZINE
     assert found[(ALOGLIPTIN, T2D.id)] == NESINA
-    assert len(found) == 56  # 54 of the batch + 2 from ticket 2.60
+    assert len(found) == 57  # 54 of the batch + 2 from ticket 2.60 + 1 from 2.61
 
 
 # ---- the file is checked like the other hand-written lists ----

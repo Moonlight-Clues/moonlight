@@ -74,6 +74,9 @@ def test_each_file_ends_with_the_new_entries(name):
     if name == "corrections.json":
         # Ticket 2.58 (25N-16) added six entries after these, dated 2026-11-26.
         entries = entries[:-6]
+    if name == "confirmed.json":
+        # Ticket 2.61 (26 Nov) added one entry after these: givosiran, Orphanet_95157.
+        entries = entries[:-1]
     assert entries[-len(NEW[name]):] == NEW[name]
     assert len(entries) > len(NEW[name])
 
