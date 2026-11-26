@@ -18,6 +18,9 @@ import pytest
 
 from moonlight import engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LISTS = ROOT / "moonlight"
 SAVED = ROOT / "fixtures" / "task12_batch1"
@@ -73,7 +76,9 @@ def test_each_file_ends_with_the_new_entries(name):
     entries = load(LISTS / name)
     if name == "corrections.json":
         # Ticket 2.58 (25N-16) added six entries after these, dated 2026-11-26.
-        entries = entries[:-6]
+        entries = entries[:-6 - len(RED_ROWS)]  # ticket 2.62 added RED_ROWS after those
+    if name == "limits.json":
+        entries = entries[:len(entries) - len(LIMIT_ROWS)]  # ticket 2.62 added LIMIT_ROWS after these
     if name == "confirmed.json":
         # Ticket 2.61 (26 Nov) added one entry after these: givosiran, Orphanet_95157.
         entries = entries[:-1]

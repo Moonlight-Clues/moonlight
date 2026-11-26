@@ -25,6 +25,9 @@ import pytest
 
 from moonlight import api, engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import RED_ROWS  # noqa: E402
+
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 
@@ -189,6 +192,9 @@ def approved_tab(disease_id, before=False):
     return tabs, approved, main, grey, red
 
 
+SIGNED_RED = {(m, d) for _, m, d, _, _ in RED_ROWS}  # ticket 2.62
+
+
 def the_card(cards, medicine_id):
     found = [medicine for medicine in cards if medicine.id == medicine_id]
     assert len(found) == 1, medicine_id
@@ -209,8 +215,9 @@ def readme_rows():
 @pytest.mark.parametrize("card", CARDS, ids=names)
 def test_the_card_source_record_is_now_the_label_that_names_its_disease(card):
     medicine, medicine_id, disease_id, disease, short, old, new = card
-    _, _, main, _, _ = approved_tab(disease_id)
-    found = the_card(main, medicine_id)
+    _, approved, main, _, _ = approved_tab(disease_id)
+    # Ticket 2.62: a signed red row sits in the red box, still one card on the Approved tab.
+    found = the_card(approved if (medicine_id, disease_id) in SIGNED_RED else main, medicine_id)
     assert found.source_record == new
     assert found.source_record != old
 
@@ -218,8 +225,9 @@ def test_the_card_source_record_is_now_the_label_that_names_its_disease(card):
 @pytest.mark.parametrize("card", CARDS, ids=names)
 def test_before_this_ticket_the_card_showed_the_old_link(card):
     medicine, medicine_id, disease_id, disease, short, old, new = card
-    _, _, main, _, _ = approved_tab(disease_id, before=True)
-    assert the_card(main, medicine_id).source_record == old
+    _, approved, main, _, _ = approved_tab(disease_id, before=True)
+    found = the_card(approved if (medicine_id, disease_id) in SIGNED_RED else main, medicine_id)
+    assert found.source_record == old
 
 
 @pytest.mark.parametrize("card", CARDS, ids=names)
@@ -234,21 +242,26 @@ def test_grey_line_box_and_place_are_otherwise_unchanged(card):
     # Only on the Approved tab, on its main list, in no folded box.
     places = first_batch.everywhere(tabs)
     assert [place for place, ids in places.items() if medicine_id in ids] == ["approved"]
-    assert medicine_id not in grey and medicine_id not in red
+    # Ticket 2.62: a signed red row (caffeine on migraine) is in the red box now.
+    assert medicine_id not in grey
+    assert (medicine_id in red) == ((medicine_id, disease_id) in SIGNED_RED)
     # The same place on the main list, the same boxes, the same name.
     # Ticket 2.56 moved two cards on ulcerative colitis, on purpose: azathioprine
     # (signed rule Q3) from the no-regulator box to the main list, and isopropyl
     # alcohol (rule Q22) into the red box. Those two are left out of the comparison.
     moved = {"CHEMBL1542", "CHEMBL582"} if disease_id == "MONDO_0005101" else set()
+    # Ticket 2.62: the signed red rows of this page move into the red box on purpose.
+    moved |= {m for m, d in SIGNED_RED if d == disease_id}
     keep = lambda ids: [i for i in ids if i not in moved]
     assert keep(m.id for m in main) == keep(m.id for m in main_before)
     assert keep(grey) == keep(grey_before) and keep(red) == keep(red_before)
-    assert the_card(main, medicine_id).name == the_card(main_before, medicine_id).name
-    assert the_card(main, medicine_id).name.lower() == medicine.lower()
+    # (the whole Approved tab: a signed red row is not on the main list, ticket 2.62)
+    assert the_card(approved, medicine_id).name == the_card(approved_before, medicine_id).name
+    assert the_card(approved, medicine_id).name.lower() == medicine.lower()
 
 
 def test_no_other_card_on_these_pages_changed_its_source_or_line():
-    ours = {(card[1], card[2]) for card in CARDS}
+    ours = {(card[1], card[2]) for card in CARDS} | SIGNED_RED  # 2.62: warning added on purpose
     # Ticket 2.56 (signed rule Q3): azathioprine's card now says it was
     # confirmed from a label, so it differs from the 2.45 answer on purpose.
     ours.add(("CHEMBL1542", "MONDO_0005101"))

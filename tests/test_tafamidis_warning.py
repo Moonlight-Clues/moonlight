@@ -23,6 +23,9 @@ import pytest
 from fastapi.testclient import TestClient
 
 from moonlight import api, engine
+
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
@@ -150,8 +153,8 @@ def test_the_file_holds_24_entries():
     # Ticket 2.56, signed rule Q22: five more, dated 2026-11-25.
     # Ticket 3.10 (MAIN 4, Q14): mannitol's red entry on asthma deleted.
     # Ticket 2.58: ipratropium on asthma deleted, six added.
-    assert len(real_corrections()) == 122
-    assert len(engine.corrections()) == 122
+    assert len(real_corrections()) == 122 + len(RED_ROWS)  # ticket 2.62 added RED_ROWS at the end
+    assert len(engine.corrections()) == 122 + len(RED_ROWS)
     assert len(real_corrections()[:24]) == 24
 
 

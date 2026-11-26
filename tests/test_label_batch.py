@@ -30,6 +30,9 @@ import pytest
 
 from moonlight import api, engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 import test_approvals_fourth_batch as fourth_batch
@@ -308,7 +311,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 122  # Ticket 2.58: ipratropium on asthma deleted (25N-13), six type 2 diabetes entries added, dated 2026-11-26 (25N-16); Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
+    assert len(entries) == 122 + len(RED_ROWS)  # Ticket 2.62 adds RED_ROWS at the end. Ticket 2.58: ipratropium on asthma deleted (25N-13), six type 2 diabetes entries added, dated 2026-11-26 (25N-16); Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
     assert entries[24:38] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
@@ -352,6 +355,8 @@ def test_no_pair_is_written_twice():
                        "CHEMBL435", "CHEMBL1237"}),
 ])
 def test_the_engine_gives_each_page_the_red_words_for_its_cards_only(disease_id, ids):
+    # Ticket 2.62: the signed rows of this page are red too.
+    ids = ids | {m for _, m, d, _, _ in RED_ROWS if d == disease_id}
     assert engine.looks_wrong(disease_id) == ids
     assert engine.warning_words(disease_id) == {medicine_id: NOTE for medicine_id in ids}
 

@@ -28,6 +28,9 @@ from unittest.mock import patch
 import pytest
 
 from moonlight import api, engine
+
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
 from moonlight.engine import ApprovedMedicine
 
 import test_withdrawal_line as hem_a_page
@@ -99,7 +102,7 @@ def test_the_file_holds_the_old_111_unchanged_then_the_two_new_entries():
     entries = load(CORRECTIONS_FILE)
     # ticket 2.56 added five after these; ticket 3.10 (MAIN 4, Q14) deleted mannitol's red entry on asthma;
     # ticket 2.58 deleted ipratropium's (25N-13) and added six at the end (25N-16)
-    assert len(entries) == 122
+    assert len(entries) == 122 + len(RED_ROWS)  # ticket 2.62 added RED_ROWS at the end
     # The old 111 are the first 109 with ipratropium's and mannitol's entries back in
     # their old places (56 and 57), unchanged otherwise.
     ipratropium = {"medicine_id": "CHEMBL1621597", "disease_id": "MONDO_0004979", "date": "2026-11-25",

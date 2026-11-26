@@ -174,7 +174,9 @@ def test_the_tag_word_is_the_signed_word():
 def test_mannitols_red_entry_on_asthma_is_deleted():
     assert (MANNITOL, ASTHMA) not in engine.corrections()
     assert MANNITOL not in engine.looks_wrong(ASTHMA)
-    assert not [e for e in load(CORRECTIONS) if e["medicine_id"] == MANNITOL]
+    # Ticket 2.62 (sheet row 7) adds mannitol on COPD: only asthma is checked here.
+    assert not [e for e in load(CORRECTIONS)
+                if e["medicine_id"] == MANNITOL and e["disease_id"] == ASTHMA]
 
 
 # ---- the API: a real page, built offline ----

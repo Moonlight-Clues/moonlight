@@ -39,6 +39,7 @@ from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import old_flag_saved as saved
 from source_2_53 import back_to_before  # ticket 2.53: Source record links
+from test_red_warnings_2_62 import RED_ROWS, opposite_ids, without_opposite_lines  # ticket 2.62
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
 from diagnostic_3_10 import back_to_before as tag_back_to_before  # ticket 3.10: the DIAGNOSTIC tag
 from source_3_17 import back_to_before as labels_back_to_before  # ticket 3.17: own-label links
@@ -149,6 +150,16 @@ def pages():
     return {disease_id: saved.page_answer(disease_id) for disease_id in DISEASES}
 
 
+# Ticket 2.62 put the red note on the signed rows of tests/test_red_warnings_2_62.py.
+# A main-list card is treated like the 2.45 ones (red box, out of the tab number); a
+# wider-group card like the 2.58 ones. Delete a row there and these follow.
+for _, _medicine, _disease, _, _box in RED_ROWS:
+    if _box == "approved":
+        RED_2_45.setdefault(_disease, set()).add(_medicine)
+    elif _box == "wider_group":
+        WIDER_RED_2_58.setdefault(_disease, set()).add(_medicine)
+
+
 def card_ids(answer, part):
     ids = []
     for card in answer.get(part, []):
@@ -219,9 +230,12 @@ def test_seven_are_on_the_main_list_and_prasterone_is_in_the_red_warning_box(pag
         assert on_main == (medicine_id != PRASTERONE), name
     ra = pages[RA]
     # The box keeps the main list's own order, A to Z (ticket 2.27).
-    expected = set(saved.before(RA)["wrong_approvals_box"]) | {PRASTERONE}
-    assert ra["wrong_approvals_box"] == [card["id"] for card in ra["approved"]
-                                         if card["id"] in expected]
+    expected = (set(saved.before(RA)["wrong_approvals_box"]) | {PRASTERONE}
+                | RED_2_45.get(RA, set()) | WIDER_RED_2_58.get(RA, set()))  # ticket 2.62
+    # (ticket 2.62: a wider-group card is in the box too; A to Z across the lists, ticket 3.16)
+    across = sorted(ra["approved"] + ra.get("narrower", []) + ra["wider_group"],
+                    key=lambda card: (card["medicine"].casefold(), card["medicine"]))
+    assert ra["wrong_approvals_box"] == [card["id"] for card in across if card["id"] in expected]
     card = {card["id"]: card for card in ra["approved"]}[PRASTERONE]
     assert card["warning"] == LABEL_WARNING
     assert card["withdrawal_note"] == LINE
@@ -288,6 +302,17 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
         if wider_red else {}))
     for key in before:
         if key in ("approved", "left_out", "wrong_approvals_box"):
+            continue
+        if key == "new_clues":
+            # Ticket 2.62: a card that is red is not one of "the approved medicines" that fix
+            # the direction, so a new clue can lose its opposite-way line. Only that differs.
+            assert without_opposite_lines(after[key]) == without_opposite_lines(before[key]), key
+            assert opposite_ids(after[key]) <= opposite_ids(before[key])
+            continue
+        if key == "opposite_way_box":
+            gone = set(before[key]) - set(after[key])
+            assert after[key] == [i for i in before[key] if i not in gone], key
+            assert not gone or disease_id in {d for _, _, d, _, _ in RED_ROWS}
             continue
         assert after[key] == before[key], key
     # Ticket 2.42 (merged after these pages were saved) adds the key
