@@ -120,7 +120,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
 .card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}
 .rank{flex:none;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
-.card h3{overflow-wrap:anywhere}
+/* Ticket 2.67 (W6). A long name breaks only with a hyphen (the page is lang="en"), never mid-word without one. */
+.card h3{hyphens:auto;overflow-wrap:break-word;word-break:normal}
 /* Ticket 3.10. The tag on a scan medicine's card, right after its name: a solid navy pill,
    white words. Not red (warnings), teal (links, Report) or gold (the How-to letters). It is
    one piece, so on a narrow card it goes under the name instead of running out of the card.
@@ -739,6 +740,8 @@ body.registering>:not(.register){display:none!important}
     <div class="card-foot">
       <a class="source-link" data-slot="source" hidden>Source record</a>
       <span class="fine muted" data-part="no-source" hidden>The database gives no source link for this medicine.</span>
+      <!-- Ticket 2.67 (W6). Kashish's words, signed 26 Nov. Only on an In trials card with no link, in place of the line above. -->
+      <span class="fine muted" data-part="no-study" hidden>No study of this disease was found for this medicine.</span>
       <span class="phase" data-slot="phase" hidden></span>
     </div>
   </article>
@@ -1510,7 +1513,7 @@ body.registering>:not(.register){display:none!important}
       source.href = medicine.source;
       source.hidden = false;
     } else {
-      part(el, "no-source").hidden = false;
+      part(el, "no-study").hidden = false;  // ticket 2.67: an In trials card says so, in place of the link
     }
     return el;
   }
@@ -1529,6 +1532,10 @@ body.registering>:not(.register){display:none!important}
       const phase = slot(el, "phase");
       phase.textContent = clue.trial_phase;
       phase.hidden = false;
+      if (!clue.source) {  // ticket 2.67: a medicine being studied with no link says so, in place of the 2.23 line
+        part(el, "no-source").hidden = true;
+        part(el, "no-study").hidden = false;
+      }
     }
     return el;
   }
