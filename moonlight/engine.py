@@ -80,6 +80,15 @@ page), the link to the medicine's own current label. override_sources()
 gives the Approved cards it names (main list and both folded boxes) that
 link as their Source record, before any other choice. Nothing else changes.
 
+Ticket 2.68 (part B), Japan cards link the PMDA English summary.
+pmda_summaries() reads moonlight/pmda_summaries.json: for a medicine and a
+disease, the link to PMDA's English review report or approval summary that
+names the disease, and the approval date it gives. link_pmda_summaries()
+gives the main-list cards it names that carry JAPAN_LINE that link as their
+Source record, and pmda_line(year) in place of JAPAN_LINE. Such a card then
+leaves the Japan folded box (no_regulator_box) for the main list. A card
+with no entry keeps JAPAN_LINE.
+
 Ticket 2.18, a second red warning, and clues left out by hand. A
 corrections entry's note is one of two sentences (CORRECTION_NOTES);
 ticket 2.55 added a third, THIRD_NOTE.
@@ -195,6 +204,7 @@ import json
 import pathlib
 import sys
 import threading
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field, replace
 from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
@@ -235,6 +245,10 @@ JAPAN_LINE = (
     "Approved in Japan, according to the database. Moonlight could not "
     "find the exact record for this disease."
 )
+# Ticket 2.68. Shreshth's words of 26 Nov (Kashish signs 27 Nov), exactly.
+# {year} is the year of the summary's approval date. Changing them needs
+# Kashish's approval. Never "verified on full label".
+PMDA_LINE = "Approved in Japan (English summary, {year}). The full label is in Japanese."
 # Ticket 2.17, Kashish's decision of 18 Nov. Her words, exactly. Changing
 # them needs her approval.
 NO_REGULATOR_LINE = (
@@ -396,6 +410,13 @@ DIAGNOSTIC_TAG = "DIAGNOSTIC"
 # writes here.
 SOURCE_OVERRIDES_FILE = pathlib.Path(__file__).resolve().parent / "source_overrides.json"
 SOURCE_OVERRIDE_KEYS = {"medicine_id", "disease_id", "url", "date", "note", "evidence_file"}
+# Ticket 2.68. PMDA's English summaries, found by hand (part A): for a
+# medicine and a disease, the summary's approval date (YYYY-MM-DD) and the
+# https link on pmda.go.jp. Nothing in Moonlight writes here.
+PMDA_SUMMARIES_FILE = pathlib.Path(__file__).resolve().parent / "pmda_summaries.json"
+PMDA_SUMMARY_KEYS = {"medicine_id", "disease_id", "date", "summary_date", "link"}
+# The one extra key an entry may carry: where its summary_date was read.
+PMDA_EXTRA_KEY = "date_source"
 # Ticket 3.18. The wider groups too broad for the wider-group box. Nothing in
 # Moonlight writes here.
 BROAD_GROUPS_FILE = pathlib.Path(__file__).resolve().parent / "broad_groups.json"
@@ -504,6 +525,11 @@ class ApprovedMedicine:
     # Ticket 3.17. None unless source_overrides.json names the card for this
     # page: then the link to the medicine's own current label.
     source_override: Optional[str] = None
+    # Ticket 2.68. None unless pmda_summaries.json names the card for this
+    # page and it carries JAPAN_LINE: then the link to PMDA's English
+    # summary, and the year of the approval date that summary gives.
+    pmda_link: Optional[str] = None
+    pmda_year: Optional[str] = None
 
     @property
     def limit_note(self) -> Optional[str]:
@@ -525,7 +551,8 @@ class ApprovedMedicine:
         For every other card, like a receipt check with two questions,
         asked in this order:
           1. Is Japan's general list its only approval receipt? Then
-             JAPAN_LINE (ticket 2.13), and nothing else.
+             JAPAN_LINE (ticket 2.13), and nothing else. If the card has
+             PMDA's English summary (ticket 2.68), pmda_line(year) instead.
           2. Is it known to have no approval report from a regulator
              (regulator_record is False)? Then NO_REGULATOR_LINE
              (ticket 2.17). That includes no approval report at all.
@@ -540,6 +567,8 @@ class ApprovedMedicine:
         if self.confirmed_from_label:
             return None  # ticket 2.42: the label confirms it, so no grey line
         if self.approval_sources and all(link == JAPAN_LIST for link in self.approval_sources):
+            if self.pmda_link and self.pmda_year:
+                return pmda_line(self.pmda_year)  # ticket 2.68: in place of JAPAN_LINE
             return JAPAN_LINE
         if self.regulator_record is False:
             return NO_REGULATOR_LINE
@@ -555,6 +584,8 @@ class ApprovedMedicine:
              (source_override, ticket 3.17), before any other choice;
           1. a hand-written label (added_from_label, then
              confirmed_from_label): that link and nothing else;
+          1b. PMDA's English summary (pmda_link, ticket 2.68), for a card
+             whose grey line is pmda_line;
           2. a regulator's approval receipt (ticket 2.53): the first of
              regulator_sources that is not Japan's general list. Which
              office wrote it is read from the report's "source" field,
@@ -571,6 +602,8 @@ class ApprovedMedicine:
             return self.added_from_label
         if self.confirmed_from_label:
             return self.confirmed_from_label  # ticket 2.42: the label, and nothing else
+        if self.pmda_link and self.proof_note == pmda_line(self.pmda_year):
+            return self.pmda_link  # ticket 2.68: PMDA's English summary
         for link in self.regulator_sources:
             if link.startswith("https://") and link != JAPAN_LIST:
                 return link
@@ -1916,6 +1949,90 @@ def override_sources(approved: Iterable[ApprovedMedicine],
     for medicine in approved:
         link = links.get((medicine.id, disease_id)) or links.get((medicine.id, EVERY_PAGE))
         out.append(replace(medicine, source_override=link) if link else medicine)
+    return out
+
+
+def pmda_line(year: str) -> str:
+    """The grey line of a Japan card with PMDA's English summary (ticket
+    2.68): PMDA_LINE with the year of the summary's approval date."""
+    return PMDA_LINE.format(year=year)
+
+
+def _read_pmda_summaries() -> list:
+    """The one place the PMDA summaries file is read. Tests replace this."""
+    return json.loads(PMDA_SUMMARIES_FILE.read_text(encoding="utf-8"))
+
+
+def _on_pmda(link: object) -> bool:
+    """True for an https link on pmda.go.jp, other than Japan's general list."""
+    if not isinstance(link, str) or link == JAPAN_LIST:
+        return False
+    address = urllib.parse.urlsplit(link)
+    host = address.hostname or ""
+    return address.scheme == "https" and (host == "pmda.go.jp" or host.endswith(".pmda.go.jp"))
+
+
+def pmda_summaries() -> Dict[Tuple[str, str], Tuple[str, str]]:
+    """The hand-found list of PMDA English summaries (ticket 2.68), as
+    (medicine id, disease id) -> (the link, the year of summary_date).
+
+    Each entry holds exactly five things: the medicine's id, the disease's
+    id, the date, the summary_date (the approval date the summary gives,
+    written YYYY-MM-DD) and the link, an https link on pmda.go.jp that is
+    not Japan's general list. It may also hold date_source, in words. An
+    entry with no approval date, or not written this way, raises
+    ValueError, and the list is never half read. The same pair written
+    twice is refused too.
+
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_pmda_summaries()
+    if not isinstance(entries, list):
+        raise ValueError("pmda_summaries.json must hold a list.")
+    found: Dict[Tuple[str, str], Tuple[str, str]] = {}
+    for entry in entries:
+        keys = PMDA_SUMMARY_KEYS
+        if isinstance(entry, dict) and PMDA_EXTRA_KEY in entry:
+            said = entry[PMDA_EXTRA_KEY]
+            if not isinstance(said, str) or not said.strip():
+                raise ValueError(f"A PMDA summary's date_source must be words: {entry!r}")
+            keys = PMDA_SUMMARY_KEYS | {PMDA_EXTRA_KEY}
+        pair = _checked_pair(entry, keys, "A PMDA summary")
+        when = entry["summary_date"]
+        if not isinstance(when, str) or len(when) != 10:
+            raise ValueError(f"A PMDA summary needs its approval date, YYYY-MM-DD: {entry!r}")
+        try:
+            datetime.date.fromisoformat(when)
+        except ValueError:
+            raise ValueError(
+                f"A PMDA summary needs its approval date, YYYY-MM-DD: {entry!r}") from None
+        if not _on_pmda(entry["link"]):
+            raise ValueError(f"A PMDA summary needs an https link on pmda.go.jp: {entry!r}")
+        if pair in found:
+            raise ValueError(f"A PMDA summary is written twice: {entry!r}")
+        found[pair] = (entry["link"], when[:4])
+    return found
+
+
+def link_pmda_summaries(approved: Iterable[ApprovedMedicine],
+                        disease_id: str) -> List[ApprovedMedicine]:
+    """The main Approved list, with the Japan cards that have PMDA's English
+    summary marked (ticket 2.68).
+
+    approved is the MAIN Approved list. A card that carries JAPAN_LINE and
+    that pmda_summaries.json names for this disease comes back with the
+    summary's link and year: it then shows pmda_line(year), opens the link
+    as its Source record, and so never goes in no_regulator_box. Every
+    other card comes back as it was, in the same order: a card with no
+    entry keeps JAPAN_LINE. Nothing is added or taken off the list.
+    """
+    summaries = pmda_summaries()
+    out: List[ApprovedMedicine] = []
+    for medicine in approved:
+        found = summaries.get((medicine.id, disease_id))
+        if found and medicine.proof_note == JAPAN_LINE:
+            medicine = replace(medicine, pmda_link=found[0], pmda_year=found[1])
+        out.append(medicine)
     return out
 
 
