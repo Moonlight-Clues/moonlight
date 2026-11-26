@@ -153,6 +153,9 @@ async function oneSearch(browser, answer) {
       await page.waitForTimeout(300);  // the box tells the page it was opened a moment later
     }
   }
+  // ticket 2.T14: reveal cards past 20 before the reads that expect every card on screen.
+  const showAll = page.locator("#more-trials-show-all");  // ticket 2.T14
+  if (await showAll.count() && await showAll.isVisible()) await showAll.click();  // ticket 2.T14
   out.tapped = await page.evaluate(readTrials);
   await context.close();
   return out;
@@ -250,9 +253,10 @@ def test_browser_one_card_of_each_box_in_full(seen):
 
 def test_browser_a_folded_box_keeps_the_sentence_folded_away_with_its_cards(seen):
     closed = seen["example"]["closed"]
-    for box in ("oldBox", "newBox"):
-        assert closed[box]["shown"] and not closed[box]["open"]
-        assert closed[box]["cautions"] == [CAUTION] and not closed[box]["cautionShown"]
+    assert closed["oldBox"]["shown"] and closed["oldBox"]["open"]  # ticket 2.T14
+    assert closed["oldBox"]["cautions"] == [CAUTION] and closed["oldBox"]["cautionShown"]  # ticket 2.T14
+    assert closed["newBox"]["shown"] and not closed["newBox"]["open"]
+    assert closed["newBox"]["cautions"] == [CAUTION] and not closed["newBox"]["cautionShown"]
 
 
 def test_browser_a_box_that_starts_open_shows_the_sentence_straight_away(seen):

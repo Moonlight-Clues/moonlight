@@ -297,7 +297,8 @@ def test_every_box_ends_with_its_count_then_tap_to_open_on_the_next_line(seen):
     for name, width, box_id, read in every_shown_box(seen):
         number = counts[name][box_id]
         assert read["cards"] == number
-        assert read["text"] == f"{label_of(box_id)} ({number})\n{TAP_OPEN}", (name, width, box_id)
+        words = TAP_CLOSE if box_id == "more-trials-box" else TAP_OPEN  # ticket 2.T14
+        assert read["text"] == f"{label_of(box_id)} ({number})\n{words}", (name, width, box_id)  # ticket 2.T14
 
 
 def test_no_box_has_a_dot_anywhere_in_its_title(seen):
@@ -374,7 +375,8 @@ def test_a_tap_changes_the_words_to_tap_to_close_and_back(seen):
 def test_folding_is_unchanged_every_box_opens_folded_on_these_pages(seen):
     # Each tab's main list holds cards here, so no box opens by itself: as before.
     for name, width, box_id, read in every_shown_box(seen):
-        assert read["open"] is False and read["tapWords"] == TAP_OPEN, (name, width, box_id)
+        opened = box_id == "more-trials-box"  # ticket 2.T14
+        assert read["open"] is opened and read["tapWords"] == (TAP_CLOSE if opened else TAP_OPEN), (name, width, box_id)  # ticket 2.T14
 
 
 def test_a_screen_reader_is_told_the_label_the_count_and_the_tap_words_without_the_dot(seen):
@@ -384,7 +386,8 @@ def test_a_screen_reader_is_told_the_label_the_count_and_the_tap_words_without_t
             spoken = seen[name][str(width)]["spoken"]
             opened = seen[name][str(width)]["spokenTapped"]
             for box_id, number in counts[name].items():
+                rest, after = ((TAP_CLOSE, TAP_OPEN) if box_id == "more-trials-box" else (TAP_OPEN, TAP_CLOSE))  # ticket 2.T14
                 assert spoken[box_id] == (
-                    f"{label_of(box_id)} ({number}) {TAP_OPEN}"), (name, width, box_id)
+                    f"{label_of(box_id)} ({number}) {rest}"), (name, width, box_id)  # ticket 2.T14
                 assert opened[box_id] == (
-                    f"{label_of(box_id)} ({number}) {TAP_CLOSE}"), (name, width, box_id)
+                    f"{label_of(box_id)} ({number}) {after}"), (name, width, box_id)  # ticket 2.T14

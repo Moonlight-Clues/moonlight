@@ -826,7 +826,7 @@ def test_browser_pbc_the_7_and_the_26_are_as_before_and_the_new_box_has_10(seen)
         (name, phase) for _, name, phase in PBC_NEW_10]
     closed = seen["pbc"]["closed"]
     assert closed["tab"] == "In trials (43)"  # 7 + 26 + 10
-    assert not closed["oldBox"]["open"] and not closed["newBox"]["open"]  # both folded
+    assert closed["oldBox"]["open"] and not closed["newBox"]["open"]  # ticket 2.T14
     assert closed["newBox"]["summary"].startswith(LABEL + " (10)")
 
 
