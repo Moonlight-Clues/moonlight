@@ -50,6 +50,17 @@ def test_the_real_list_file_is_valid_json_and_loads():
     assert isinstance(approval_years.load(), dict)
 
 
+def test_every_entry_of_the_real_file_has_a_4_digit_year_region_us_or_eu_and_an_https_source():
+    entries = json.loads(approval_years.FILE.read_text(encoding="utf-8"))
+    assert entries  # the table is filled
+    for medicine_id, entry in entries.items():
+        assert set(entry) == {"year", "region", "source"}, medicine_id
+        assert isinstance(entry["year"], int) and 1000 <= entry["year"] <= 9999, medicine_id
+        assert entry["region"] in ("US", "EU"), medicine_id
+        assert entry["source"].startswith("https://"), medicine_id
+    assert approval_years.load() == entries  # the loader drops none of them
+
+
 def test_three_good_entries_load_as_they_are():
     with read_as(THREE):
         assert approval_years.load() == THREE
