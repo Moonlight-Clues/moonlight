@@ -105,7 +105,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from moonlight import explain, protein, reports, translate, version
+from moonlight import approval_years, explain, protein, reports, translate, version
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -840,6 +840,13 @@ def _build_clues(disease_id: str) -> dict:
         # One line for the bottom of the New clues list: the engine's
         # words. Only there when a clue was left out by hand.
         answer["wrong_way_line"] = wrong_way_line(wrong_way)
+    # Ticket 3.22. The hand-written year list, for the main Approved list only.
+    # The order is not touched here (A to Z, as always): the page sets the order.
+    # A card with no entry gets no key at all.
+    first_years = approval_years.load()
+    for card, medicine in zip(answer["approved"], found.approved):
+        if medicine.id in first_years:
+            card["first_approved"] = first_years[medicine.id]
     return answer
 
 
