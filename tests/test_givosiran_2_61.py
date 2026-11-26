@@ -20,7 +20,7 @@ from unittest.mock import patch
 
 import pytest
 
-from moonlight import api, engine
+from moonlight import api, engine, fetch
 
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
@@ -101,7 +101,10 @@ BASE_OVERRIDES = load(SAVED / "source_overrides_4283400.json")
 
 @pytest.fixture(scope="module")
 def before():
-    return page(AHP, BASE_CONFIRMED, BASE_OVERRIDES)
+    # Ticket 3.23 changed this fixture: "before" is the page as it was on
+    # 4283400, with no salt_parents.json, so Givosiran Sodium is its own card.
+    with patch.object(fetch, "_salt_parents", return_value={}):
+        return page(AHP, BASE_CONFIRMED, BASE_OVERRIDES)
 
 
 @pytest.fixture(scope="module")
@@ -157,11 +160,13 @@ def test_givosiran_has_no_no_regulator_line(now):
 
 
 def test_every_other_card_keeps_its_seat_and_its_source_record(before, now):
+    # Ticket 3.23 changed this test: Givosiran Sodium is no longer a second
+    # card. It is a form of the givosiran card (moonlight/salt_parents.json).
     others = [i for i in before["cards"] if i != GIVOSIRAN]
-    assert others == [GIVOSIRAN_SODIUM]  # the whole list has two cards
-    assert now["cards"][GIVOSIRAN_SODIUM] == before["cards"][GIVOSIRAN_SODIUM]
-    assert GIVOSIRAN_SODIUM in now["main"] and GIVOSIRAN_SODIUM in before["main"]
-    assert set(now["cards"]) == set(before["cards"])
+    assert others == [GIVOSIRAN_SODIUM]  # before: the whole list had two cards
+    assert GIVOSIRAN_SODIUM in before["main"]
+    assert list(now["cards"]) == [GIVOSIRAN]  # now: one card, nothing else
+    assert GIVOSIRAN_SODIUM not in now["main"] and GIVOSIRAN_SODIUM not in now["box"]
 
 
 # ---- acute intermittent porphyria: unchanged ----
