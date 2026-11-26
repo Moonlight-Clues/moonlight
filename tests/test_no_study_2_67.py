@@ -156,6 +156,12 @@ async function oneSearch(browser, name, answer) {
       await page.click("#" + box + " summary");
       await page.waitForTimeout(300);
     }
+    // ticket 2.T14: cards past 20 stay hidden until "Show all [N]". A hidden card's
+    // innerText is its textContent, so the read below has to happen after Show all.
+    if (box === "more-trials-box") {  // ticket 2.T14
+      const showAll = page.locator("#more-trials-show-all");  // ticket 2.T14
+      if (await showAll.count() && await showAll.isVisible()) await showAll.click();  // ticket 2.T14
+    }
     out.places[place] = await page.evaluate(readCards, [cardsId, process.argv[5], process.argv[6]]);
     if (SHOTS && name === "ra" && place === "wrong_box")
       await page.locator("#wrong-cards > .card", { hasText: "Dexbrompheniramine" }).first()
