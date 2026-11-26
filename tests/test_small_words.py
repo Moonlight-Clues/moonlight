@@ -107,7 +107,7 @@ def test_pre_b_all_whose_box_has_15_shows_neither_sentence(client, page):
         answer = client.get("/api/clues", params={"disease_id": PRE_B_ALL.id})
     assert answer.status_code == 200
     data = answer.json()
-    assert data["approved"] == [] and len(data["wider_group"]) == 15
+    assert [item["id"] for item in data["approved"]] == ["CHEMBL941"] and len(data["wider_group"]) == 15  # ticket 2.64: imatinib was []
     # The new sentence lives only in the box the rule keeps hidden here,
     # the old one is gone, and the API sends neither.
     assert not sentence_is_shown(data["approved"], data["wider_group"])

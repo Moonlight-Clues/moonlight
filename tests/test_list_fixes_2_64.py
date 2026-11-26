@@ -51,6 +51,12 @@ CONFIRMED_ENTRIES = [
     {"medicine_id": ANAGLIPTIN, "disease_id": T2D, "date": THE_DAY, "label": SUINY},
     {"medicine_id": TOFOGLIFLOZIN, "disease_id": T2D, "date": THE_DAY, "label": DEBERZA},
 ]
+APPROVALS_ROWS = [IMATINIB_ENTRY]  # the rows this ticket adds to approvals.json
+CONFIRMED_ROWS = CONFIRMED_ENTRIES  # the rows this ticket adds to confirmed.json
+BECAPLERMIN = "CHEMBL1201556"
+# Kashish, 26 Nov: becaplermin's marker is right. Imatinib, now approved, turns
+# PDGFRB down and becaplermin turns it up; that is what the rule is for.
+OPPOSITE_WAY = "Opposite way to the approved medicines for this disease."
 
 
 def load(path):
@@ -139,11 +145,31 @@ def test_the_pre_b_all_page_changes_only_where_imatinib_moves():
     assert gone == {("being_studied", IMATINIB)}
     assert added == {("approved", IMATINIB)}
     for key in set(old) & set(new):
+        if key == ("new_clues", BECAPLERMIN):
+            continue  # the one allowed change, checked in the next test
         assert old[key] == new[key], key
     for key in before.keys() | after.keys():
-        if isinstance(before.get(key), list):
+        if isinstance(before.get(key), list) or key == "opposite_way_box":
             continue
         assert before.get(key) == after.get(key), key
+    # The same rule that marks becaplermin's row also lists it in the folded box (approved by Kashish).
+    assert after["opposite_way_box"] == [BECAPLERMIN] and "opposite_way_box" not in before
+
+
+def test_becaplermin_gains_only_the_opposite_way_marker_on_its_pdgfrb_row():
+    key = ("new_clues", BECAPLERMIN)
+    old = card(answer("before", PRE_B_ALL), *key)
+    new = card(answer("after", PRE_B_ALL), *key)
+    assert places(answer("after", PRE_B_ALL), BECAPLERMIN) == ["new_clues"]
+    marked = [p for p in new["proteins"] if "opposite_way" in p]
+    assert [(p["symbol"], p["direction"], p["opposite_way"]) for p in marked] == [
+        ("PDGFRB", "up", OPPOSITE_WAY)]
+    stripped = [{k: v for k, v in p.items() if k != "opposite_way"} for p in new["proteins"]]
+    assert stripped == old["proteins"]
+    assert {k: v for k, v in new.items() if k != "proteins"} == \
+        {k: v for k, v in old.items() if k != "proteins"}
+    imatinib = card(answer("after", PRE_B_ALL), "approved", IMATINIB)
+    assert {p["symbol"]: p["direction"] for p in imatinib["proteins"]}["PDGFRB"] == "down"
 
 
 def test_pre_b_all_approved_list_is_still_a_to_z():

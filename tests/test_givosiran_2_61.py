@@ -112,7 +112,8 @@ def now():
 # ---- the two lists: exactly one row more each ----
 
 def test_confirmed_json_is_the_base_plus_exactly_one_row_at_the_end():
-    now = load(CONFIRMED_FILE)
+    from test_list_fixes_2_64 import CONFIRMED_ROWS  # ticket 2.64
+    now = load(CONFIRMED_FILE)[:-len(CONFIRMED_ROWS)]  # ticket 2.64: its two rows come after this one
     assert len(BASE_CONFIRMED) == 33
     assert len(now) == 34
     assert now[:33] == BASE_CONFIRMED  # none lost, none changed, same order

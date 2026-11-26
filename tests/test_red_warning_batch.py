@@ -337,7 +337,9 @@ def test_no_pair_is_written_twice_and_none_clashes_with_another_list():
 
 def test_the_other_files_the_ticket_names_are_not_part_of_this_change():
     # Ticket 2.46 added entries dated 2026-11-25 to the approvals file after this one.
-    before_2_46 = [e for e in load(APPROVALS_FILE) if e["date"] != THE_DAY]
+    from test_list_fixes_2_64 import APPROVALS_ROWS  # ticket 2.64
+    # Ticket 2.64 added one entry dated 2026-11-26, left out of this count.
+    before_2_46 = [e for e in load(APPROVALS_FILE) if e["date"] != THE_DAY][:-len(APPROVALS_ROWS)]  # ticket 2.64
     # Ticket 2.54 (signed answers Q5, Q20) added six left-out entries: 53 + 6.
     assert len(before_2_46) == 22 and len(load(LEFT_OUT_FILE)) == 59
 

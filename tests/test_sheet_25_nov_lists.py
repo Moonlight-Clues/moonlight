@@ -120,7 +120,10 @@ def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
         entries = entries[:-6 - len(RED_ROWS)]  # ticket 2.62 added RED_ROWS after those
     if name == "limits.json":
         entries = entries[:len(entries) - len(LIMIT_ROWS)]  # ticket 2.62 added LIMIT_ROWS after these
-    later = {"corrections.json": 5, "confirmed.json": 4, "limits.json": 1}.get(name, 0)  # confirmed: 3 of 2.56 + givosiran of 2.61
+    from test_list_fixes_2_64 import APPROVALS_ROWS, CONFIRMED_ROWS  # ticket 2.64
+    if name == "approvals.json":
+        entries = entries[:-len(APPROVALS_ROWS)]  # ticket 2.64 added imatinib (pre-B ALL) after these
+    later = {"corrections.json": 5, "confirmed.json": 4 + len(CONFIRMED_ROWS), "limits.json": 1}.get(name, 0)  # confirmed: 3 of 2.56 + givosiran of 2.61 + the two of ticket 2.64
     if later:
         entries = entries[:-later]
     if name == "corrections.json":
