@@ -105,7 +105,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from moonlight import explain, protein, reports, translate
+from moonlight import explain, protein, reports, translate, version
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -676,6 +676,13 @@ def _shown_new_clues(found: _Found) -> Tuple[List[Clue], int]:
 @app.get("/", response_class=HTMLResponse)
 def page() -> str:
     return PAGE.read_text(encoding="utf-8")
+
+
+@app.get("/api/version")
+def build() -> dict:
+    """Ticket 3.21. Which build is live: the fingerprint of the served files
+    and the Cloud Run revision ("local" when there is none). Nothing else."""
+    return {"fingerprint": version.FINGERPRINT, "revision": version.REVISION}
 
 
 @app.get("/api/search")
