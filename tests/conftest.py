@@ -50,6 +50,9 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "wider_labels: use the real moonlight/wider_labels.json "
                    "(ticket 2.63). Without it the list is empty.")
+    config.addinivalue_line(
+        "markers", "pmda_summaries: use the real moonlight/pmda_summaries.json "
+                   "(ticket 2.68). Without it the list is empty.")
 
 
 _real_load = approval_years.load
@@ -112,6 +115,16 @@ def pytest_runtest_setup(item):
         from moonlight import engine
 
         started = patch.object(engine, "_read_wider_labels", return_value=[])
+        started.start()
+        _salt_parents_patch.append(started)
+    # Ticket 2.68. The same for the PMDA English summaries
+    # (moonlight/pmda_summaries.json): EMPTY for every test, so every older
+    # test still sees each Japan card with JAPAN_LINE, as before the list
+    # existed. A test that needs the real list opts in with
+    # @pytest.mark.pmda_summaries.
+    if not item.get_closest_marker("pmda_summaries"):
+        from moonlight import engine
+        started = patch.object(engine, "_read_pmda_summaries", return_value=[])
         started.start()
         _salt_parents_patch.append(started)
 

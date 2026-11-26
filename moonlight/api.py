@@ -111,6 +111,7 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
 from moonlight.engine import override_sources, source_overrides
+from moonlight.engine import link_pmda_summaries, pmda_summaries, skip_boxed_pmda_summaries
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -294,7 +295,8 @@ async def _check_hand_lists(_app: FastAPI):
     plain message, before any page is served. Ticket 2.51: the same for the
     hand-written withdrawals list. Ticket 3.17: the same for the
     hand-written list of labels the Source record opens. Ticket 2.63: the
-    same for the hand-written list of wider labels."""
+    same for the hand-written list of wider labels. Ticket 2.68: the same
+    for the list of PMDA English summaries."""
     limits_by_hand()
     withdrawals_by_hand()
     diagnostic_ids("")  # ticket 3.10: the hand-written list of scan medicines
@@ -302,6 +304,7 @@ async def _check_hand_lists(_app: FastAPI):
     # Ticket 2.63: the hand-written list of wider labels. A pair that is
     # also on corrections.json stops the app here.
     wider_labels_by_hand()
+    pmda_summaries()
     yield
 
 
@@ -368,8 +371,15 @@ class _Found:
         # Ticket 3.17: a card on source_overrides.json for this page opens
         # the medicine's own current label as its Source record. Only that
         # link changes, here and in both folded boxes. No card moves by it.
-        self.approved = override_sources(confirm_by_label(tabs.approved, disease.id),
-                                         disease.id)
+        # Ticket 2.68: a main-list card with JAPAN_LINE that
+        # pmda_summaries.json names for this page shows the PMDA line and
+        # opens the English summary. It then leaves the Japan folded box.
+        self.approved = override_sources(
+            link_pmda_summaries(confirm_by_label(tabs.approved, disease.id), disease.id),
+            disease.id)
+        # Ticket 2.68: main list only. An entry for a card in the narrower or
+        # wider-group box is logged and skipped; those cards are not changed.
+        skip_boxed_pmda_summaries(tabs.narrower + tabs.wider_group, disease.id)
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = override_sources(tabs.wider_group, disease.id)
         # Approved only for a narrower disease (ticket 2.14): its own folded box.
@@ -570,7 +580,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     label is only there for a medicine found on a parent or child entry.
 
     Ticket 2.13. proof_note is only there when Japan's general list is the
-    card's only approval receipt. warning is only there when the medicine's
+    card's only approval receipt. Ticket 2.68: with PMDA's English summary,
+    proof_note is the engine's PMDA line and source is the summary. warning is only there when the medicine's
     id is in wrong: the corrections list for this disease. Neither moves
     the card or takes anything off it.
 
