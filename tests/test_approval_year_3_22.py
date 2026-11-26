@@ -27,6 +27,8 @@ from moonlight import api, approval_years, fetch
 
 import test_narrower_box as saved_pages
 
+pytestmark = pytest.mark.approval_years  # these tests read the list (see conftest.py)
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGE_FILE = ROOT / "web" / "index.html"
 PAGE = PAGE_FILE.read_text(encoding="utf-8")
