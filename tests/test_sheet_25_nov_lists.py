@@ -22,6 +22,7 @@ from moonlight import engine
 
 # Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
 from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+from test_wider_labels_2_63 import APPROVAL_ROWS  # noqa: E402  ticket 2.63 (D2): the rows it added to approvals.json
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LISTS = ROOT / "moonlight"
@@ -120,6 +121,8 @@ def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
         entries = entries[:-6 - len(RED_ROWS)]  # ticket 2.62 added RED_ROWS after those
     if name == "limits.json":
         entries = entries[:len(entries) - len(LIMIT_ROWS)]  # ticket 2.62 added LIMIT_ROWS after these
+    if name == "approvals.json":  # ticket 2.63 (D2)
+        entries = entries[:len(entries) - len(APPROVAL_ROWS)]  # ticket 2.63 (D2) added APPROVAL_ROWS after these
     later = {"corrections.json": 5, "confirmed.json": 4, "limits.json": 1}.get(name, 0)  # confirmed: 3 of 2.56 + givosiran of 2.61
     if later:
         entries = entries[:-later]

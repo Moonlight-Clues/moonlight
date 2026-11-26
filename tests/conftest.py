@@ -15,6 +15,10 @@ test, so no card carries first_approved and every old test sees the site
 exactly as before (A to Z, no year line). A test that needs the years opts out
 with @pytest.mark.approval_years (or pytestmark for a whole file) and then
 reads the list through approval_years.load as the app does.
+
+Ticket 2.63. A fourth thing: the hand list of wider labels
+(moonlight/wider_labels.json) is empty for every test unless it is marked
+@pytest.mark.wider_labels. See the setup hook below.
 """
 
 import os
@@ -43,6 +47,9 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "salt_parents: use the real moonlight/salt_parents.json "
                    "(ticket 3.23). Without it the list is empty.")
+    config.addinivalue_line(
+        "markers", "wider_labels: use the real moonlight/wider_labels.json "
+                   "(ticket 2.63). Without it the list is empty.")
 
 
 _real_load = approval_years.load
@@ -94,6 +101,17 @@ def pytest_runtest_setup(item):
     if not item.get_closest_marker("salt_parents") \
             and os.environ.get("MOONLIGHT_SALT_PARENTS") != "on":
         started = patch.object(fetch, "_salt_parents", return_value={})
+        started.start()
+        _salt_parents_patch.append(started)
+    # Ticket 2.63 (W1). The same switch for the hand list of wider labels
+    # (moonlight/wider_labels.json): EMPTY for every test, so every older
+    # test sees the cards as they were before the list existed. A test that
+    # needs the real list opts in with @pytest.mark.wider_labels. Its own
+    # marker, separate from every other ticket's. Undone with the salt patch.
+    if not item.get_closest_marker("wider_labels"):
+        from moonlight import engine
+
+        started = patch.object(engine, "_read_wider_labels", return_value=[])
         started.start()
         _salt_parents_patch.append(started)
 
