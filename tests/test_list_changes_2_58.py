@@ -18,6 +18,9 @@ import pytest
 
 from moonlight import engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+
 import old_flag_saved as saved
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -80,12 +83,13 @@ def diabetes():
 def test_ipratropium_on_asthma_is_gone_from_the_file_and_nothing_else_is_lost():
     entries = real()
     assert not [e for e in entries if e["medicine_id"] == IPRATROPIUM]
-    assert len(entries) == 122  # 118 - mannitol (3.10) - ipratropium + six
-    assert len({(e["medicine_id"], e["disease_id"]) for e in entries}) == 122
+    assert len(entries) == 122 + len(RED_ROWS)  # (2.62 adds RED_ROWS at the end.) 118 - mannitol (3.10) - ipratropium + six
+    assert len({(e["medicine_id"], e["disease_id"]) for e in entries}) == 122 + len(RED_ROWS)
 
 
 def test_the_six_entries_are_in_the_existing_shape_with_the_existing_note():
-    new = [e for e in real() if e["date"] == "2026-11-26"]
+    # Ticket 2.62 added entries of the same day at the very end: leave them out.
+    new = [e for e in real() if e["date"] == "2026-11-26"][:6]
     assert new == [entry(m, T2D, "2026-11-26") for m in SIX]
     assert all(list(e) == ["medicine_id", "disease_id", "date", "note"] for e in new)
 

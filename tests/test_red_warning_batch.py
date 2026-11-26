@@ -27,6 +27,9 @@ import pytest
 
 from moonlight import api, engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 
@@ -307,7 +310,7 @@ def test_the_ticket_cards_are_all_accounted_for():
 
 def test_the_file_holds_the_old_39_unchanged_then_the_62_new_ones():
     entries = load(CORRECTIONS_FILE)
-    assert len(entries) == 122  # Ticket 2.58: ipratropium on asthma deleted, six added; Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
+    assert len(entries) == 122 + len(RED_ROWS)  # Ticket 2.62 adds RED_ROWS at the end. Ticket 2.58: ipratropium on asthma deleted, six added; Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven after Obizur
     assert hashlib.sha256(json.dumps(entries[:39], sort_keys=True).encode()).hexdigest() == \
         OLD_39_SHA256
     # Ticket 2.47 added one more at the end (Obizur, Kashish's decision).

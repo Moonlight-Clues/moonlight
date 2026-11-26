@@ -28,6 +28,9 @@ import pytest
 from fastapi.testclient import TestClient
 
 from moonlight import api, engine
+
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
 from moonlight.engine import CHILD, PARENT, Neighbour
 from moonlight.fetch import Listed
 from moonlight.filter import sort_paths
@@ -314,8 +317,8 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Ticket 2.56, signed rule Q22: five more, dated 2026-11-25 (red cards of UC, heart failure, high blood pressure).
     # Ticket 3.10 (MAIN 4, Q14): mannitol's red entry on asthma deleted.
     # Ticket 2.58: ipratropium on asthma deleted, six type 2 diabetes entries added, dated 2026-11-26.
-    assert len(entries) == 122
-    assert len(engine.corrections()) == 122
+    assert len(entries) == 122 + len(RED_ROWS)  # ticket 2.62 added RED_ROWS, dated 2026-11-26
+    assert len(engine.corrections()) == 122 + len(RED_ROWS)
     monday = [entry for entry in entries if entry["date"] == MONDAY]
     assert len(monday) == 12
     assert all(entry["note"] == FIRST_NOTE for entry in monday)

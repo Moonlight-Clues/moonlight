@@ -26,6 +26,9 @@ import pytest
 from fastapi.testclient import TestClient
 
 from moonlight import api, engine
+
+# Ticket 2.62 part 3 row 8 (daratumumab marked limited); empty ROW8_PAIRS there to undo it.
+from test_red_warnings_2_62 import ROW8_PAIRS, mark_row8, unmark_row8, without_row8_line  # noqa: E402
 from moonlight.engine import sort_into_tabs
 from moonlight.fetch import fetch_approved, fetch_listed_medicines, fetch_withdrawn
 from moonlight.filter import sort_paths
@@ -113,12 +116,13 @@ def saved_post_json(body):
 
 def test_the_real_file_holds_the_first_two_entries_then_the_three_new_ones():
     # Ticket 2.32 added to the file. Its own test holds the whole file.
-    assert load(APPROVALS_FILE)[:5] == first_batch.FIRST_ENTRIES + SECOND_BATCH
+    assert unmark_row8(load(APPROVALS_FILE)[:5]) == first_batch.FIRST_ENTRIES + SECOND_BATCH  # 2.62 row 8 marked daratumumab
 
 
 def test_the_engine_reads_the_three_new_entries():
     assert engine.approvals_by_hand()[2:5] == [
-        engine.HandApproval(DARATUMUMAB, "Daratumumab", AL_AMYLOIDOSIS, DARATUMUMAB_LABEL),
+        engine.HandApproval(DARATUMUMAB, "Daratumumab", AL_AMYLOIDOSIS, DARATUMUMAB_LABEL,
+                            limited=bool(ROW8_PAIRS)),  # ticket 2.62 row 8
         engine.HandApproval(ATRASENTAN, "Atrasentan", IGA, ATRASENTAN_LABEL),
         engine.HandApproval(SIBEPRENLIMAB, "Sibeprenlimab", IGA, SIBEPRENLIMAB_LABEL),
     ]
@@ -239,13 +243,13 @@ def test_daratumumab_is_on_the_approved_list_of_al_amyloidosis_a_to_z_and_nowher
     new = al_page.real_page()
     assert new["disease"] == {"id": AL_AMYLOIDOSIS, "name": "AL amyloidosis"}
     assert [card["medicine"] for card in new["approved"]] == ["Daratumumab", "Tafamidis"]
-    assert new["approved"][0] == DARATUMUMAB_CARD
+    assert without_row8_line(new)["approved"][0] == DARATUMUMAB_CARD  # 2.62 row 8 adds one line
     assert [key for key, _ in first_batch.cards_naming(new, "daratumumab")] == ["approved"]
     # Nothing else on the page changes. Tafamidis keeps its red warning.
     expected = dict(old, approved=[DARATUMUMAB_CARD] + old["approved"],
                     more_in_trials=[card for card in old["more_in_trials"]
                                     if card["id"] != DARATUMUMAB])
-    assert new == expected
+    assert without_row8_line(new) == expected  # ticket 2.62 row 8 adds one line
     assert new["approved"][1]["warning"] == old["approved"][0]["warning"]
 
 

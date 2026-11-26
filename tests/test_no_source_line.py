@@ -51,6 +51,9 @@ from fastapi.testclient import TestClient
 
 from moonlight import api
 
+# Ticket 2.62 (delete the asthma rows there and `moved` is 0).
+from test_red_warnings_2_62 import RED_ROWS, page as page_2_62  # noqa: E402
+
 import test_narrower_box
 from test_narrower_box import saved_post_json
 
@@ -296,10 +299,20 @@ def test_browser_every_card_of_the_answer_is_on_the_page(seen, answers):
             assert all(card["onScreen"] for card in cards), (name, place)
 
 
+def asthma_clues_that_left_the_box():
+    """Ticket 2.62: asthma new clues whose opposite-way line the signed rows removed."""
+    from test_red_warnings_2_62 import opposite_ids
+    old, new = page_2_62("MONDO_0004979", signed=False), page_2_62("MONDO_0004979")
+    return opposite_ids(old["new_clues"]) - opposite_ids(new["new_clues"])
+
+
 def test_browser_the_five_asthma_clues_say_kashishs_sentence(seen):
     """EXAMPLE 1, untouched data. All five are in the list above the box."""
     places = seen["asthma"]["places"]
-    assert len(places["new_clues"]) == 100 and len(places["opposite_way_box"]) == 26
+    # Ticket 2.62: red medicines no longer set the direction, so some clues leave the box
+    # for the list (the total stays 126). `moved` counts them from the saved answers.
+    moved = len(asthma_clues_that_left_the_box())
+    assert len(places["new_clues"]) == 100 + moved and len(places["opposite_way_box"]) == 26 - moved
     cards = {card["name"]: card
              for place in ("new_clues", "opposite_way_box") for card in places[place]}
     assert len(cards) == 126  # every new clue, list and box together

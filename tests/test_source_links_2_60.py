@@ -26,6 +26,9 @@ import pytest
 
 from moonlight import engine
 
+# Ticket 2.62: the signed rows of tests/test_red_warnings_2_62.py (delete a row there and these follow).
+from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
+
 import old_flag_saved as t2d_saved
 import test_withdrawal_line as hem_a_saved
 
@@ -169,6 +172,12 @@ def test_only_that_one_line_of_limits_json_differs_from_c5cb017():
     old = subprocess.run(["git", "show", "c5cb017:moonlight/limits.json"], cwd=ROOT,
                          capture_output=True, text=True, check=True).stdout
     now = LIMITS_FILE.read_text(encoding="utf-8")
+    # Ticket 2.62 appended LIMIT_ROWS (one line each) at the end of the list: take them off.
+    lines = now.rstrip().split("\n")
+    if LIMIT_ROWS:
+        keep = lines[:-1 - len(LIMIT_ROWS)]
+        keep[-1] = keep[-1].rstrip(",")
+        now = "\n".join(keep + [lines[-1]]) + "\n"
     assert now == old.replace(ROCTAVIAN_OLD_LINK, ROCTAVIAN_LINK)
 
 

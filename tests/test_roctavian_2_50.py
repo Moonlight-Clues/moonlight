@@ -24,6 +24,12 @@ import pytest
 
 from moonlight import engine
 
+# Ticket 2.62: LIMIT_ROWS of tests/test_red_warnings_2_62.py (delete a row there and this follows).
+from test_red_warnings_2_62 import LIMIT_ROWS  # noqa: E402
+
+HEM_A_PAGE = "MONDO_0010602"
+LATER_LIMITS = {(m, d) for _, m, d, _, _ in LIMIT_ROWS}
+
 import test_withdrawal_line as hem_a_page
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -94,6 +100,9 @@ def test_the_card_carries_the_limited_line_and_keeps_its_place(page):
     assert card["limit_note"] == LIMITED_LINE
     assert card["source"] == FDA_INSERT == ENTRY["label"]  # the card's own source link
     others = [item for item in page["approved"] if item["id"] != ROCTAVIAN]
+    # Ticket 2.62: other hand-written limit lines sit on other pages; on this page only
+    # a limit row of the same disease may carry the line.
+    others = [item for item in others if (item["id"], HEM_A_PAGE) not in LATER_LIMITS]
     assert all("limit_note" not in item for item in others)
 
 
