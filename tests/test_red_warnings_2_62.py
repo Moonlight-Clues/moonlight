@@ -1,5 +1,5 @@
 """Ticket 2.62. Red warnings from Kashish's sheet of 26 Nov (Part 1), and
-three "only some people" lines (Part 3 rows 6-7 (row 8 waits: see the PR)).
+three "only some people" lines (Part 3 rows 6-8; row 8 is made in approvals.json, see the last block).
 
 Draft: built for every row; MAIN 4 removes the rows Kashish answers No to.
 

@@ -289,8 +289,6 @@ def test_wrong_source_proof_names_the_disease_and_gets_no_red_warning(card):
     assert (medicine.split()[0].lower() in "\n".join(lines).lower()
             or medicine_id in ("CHEMBL25", "CHEMBL113", "CHEMBL112"))  # Excedrin Migraine
     pairs = {(e["medicine_id"], e["disease_id"]) for e in load(CORRECTIONS_FILE)}
-    # Ticket 2.62 (signed sheet row 9) made caffeine on migraine red on purpose.
-    pairs -= {(m, d) for _, m, d, _, _ in RED_ROWS}
     assert (medicine_id, disease_id) not in pairs
 
 

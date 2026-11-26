@@ -10,5 +10,5 @@ as sent (`answers/`, `index.json` says which file answers which question).
 - Pages: multiple sclerosis (EFO_0803536), asthma (MONDO_0004979), COPD
   (MONDO_0005002), migraine (MONDO_0005277), psoriasis (MONDO_0005083),
   rheumatoid arthritis (MONDO_0008383), Wilson disease (MONDO_0010200),
-  haemophilia A (MONDO_0010602), multiple myeloma (MONDO_0019438).
+  haemophilia A (MONDO_0010602), AL amyloidosis (MONDO_0019438).
 - Gemini was not asked. No key was used.
