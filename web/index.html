@@ -1126,7 +1126,13 @@ body.registering>:not(.register){display:none!important}
     const wrongIdsShown = (data.wrong_approvals_box || []).filter(id => cardOf.has(id));  // an id with no card is skipped, as before
     const wrongCards = wrongIdsShown.map(id => cardOf.get(id));
     const newCards = data.new_clues.map((clue, place) => card(clue, diseaseName, place + 1));
-    const studiedCards = data.being_studied.map(clue => card(clue, diseaseName, null));
+    // Ticket T13. The record count stays on Approved and New clues.
+    // An In trials card does not show it in the corner.
+    const studiedCards = data.being_studied.map(clue => {
+      const el = card(clue, diseaseName, null);
+      slot(el, "reports").hidden = true;
+      return el;
+    });
     // In a trial for this disease, on none of the 25 proteins: the folded box under the list.
     const moreTrialsCards = (data.more_in_trials || []).map(medicine => trialBoxCard(medicine));
     // In a trial for this disease, approved for nothing: the second folded box, under that one.
