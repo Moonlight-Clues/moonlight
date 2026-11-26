@@ -60,7 +60,7 @@ def saved_post_json(body):
     raise AssertionError(f"no saved list for {asked}")
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope="module", autouse=True)
 def offline():
     api.forget_visitors()
     with patch("requests.request", side_effect=AssertionError("network used")), \
