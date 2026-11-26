@@ -1,0 +1,4659 @@
+{
+  "disease": {
+    "id": "MONDO_0020511",
+    "name": "precursor B-cell acute lymphoblastic leukemia"
+  },
+  "about_disease": {
+    "description": "The most frequent type of acute lymphoblastic leukemia. Approximately 75% of cases occur in children under six years of age. This is a good prognosis leukemia. In the pediatric age group the complete remission rate is approximately 95% and the disease free survival rate is 70%. Approximately 80% of children appear to be cured. In the adult age group the complete remission rate is 60-85%. (WHO, 2001)",
+    "source": "Open Targets",
+    "also_called": [
+      "B cell precursor type acute leukaemia",
+      "B cell precursor type acute leukemia",
+      "B-cell precursor type acute leukaemia",
+      "B-cell precursor type acute leukemia",
+      "B-precursor ALL",
+      "precursor B-cell acute lymphoblastic leukemia/lymphoma",
+      "precursor B-cell acute lymphocytic leukaemia",
+      "precursor B-cell acute lymphocytic leukemia",
+      "precursor B-cell acute lymphocytic leukemia/lymphoma",
+      "precursor B-lymphoblastic leukaemia",
+      "precursor B-lymphoblastic leukaemia (B-precursor ALL)",
+      "precursor B-lymphoblastic leukemia",
+      "precursor B-lymphoblastic leukemia (B-precursor ALL)"
+    ]
+  },
+  "rule_text": "Ordered by how strongly the proteins are linked to the disease. Pieces of the same machine count once. If a medicine acts on different machines, the scores are added. Ties: more reports first, then alphabetical. Being first on the list does not mean best.",
+  "approved": [],
+  "being_studied": [
+    {
+      "id": "CHEMBL941",
+      "medicine": "Imatinib",
+      "forms": [
+        "Imatinib",
+        "Imatinib Mesylate"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 3,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 2040,
+      "source": "https://clinicaltrials.gov/study/NCT00327678",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1421",
+      "medicine": "Dasatinib Anhydrous",
+      "forms": [
+        "Dasatinib Anhydrous",
+        "Dasatinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 3,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 1158,
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1742992",
+      "medicine": "Blinatumomab",
+      "forms": [
+        "Blinatumomab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        },
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 668,
+      "source": "https://clinicaltrials.gov/study/NCT02393859",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1171837",
+      "medicine": "Ponatinib",
+      "forms": [
+        "Ponatinib",
+        "Ponatinib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        }
+      ],
+      "reports": 152,
+      "source": "https://clinicaltrials.gov/study/NCT06860269",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL53463",
+      "medicine": "Doxorubicin",
+      "forms": [
+        "Doxorubicin",
+        "Doxorubicin Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 1999,
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL44657",
+      "medicine": "Etoposide",
+      "forms": [
+        "Etoposide"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 1456,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL58",
+      "medicine": "Mitoxantrone",
+      "forms": [
+        "Mitoxantrone",
+        "Mitoxantrone Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 344,
+      "source": "https://clinicaltrials.gov/study/NCT01700946",
+      "trial_phase": "Phase 2",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL178",
+      "medicine": "Daunorubicin",
+      "forms": [
+        "Daunorubicin",
+        "Daunorubicin Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 339,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1117",
+      "medicine": "Idarubicin",
+      "forms": [
+        "Idarubicin",
+        "Idarubicin Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 254,
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200645",
+      "medicine": "Etoposide Phosphate",
+      "forms": [
+        "Etoposide Phosphate"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 46,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL43",
+      "medicine": "Amsacrine",
+      "forms": [
+        "Amsacrine"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 11,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL803",
+      "medicine": "Cytarabine",
+      "forms": [
+        "Cytarabine"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "As a component of the tetrameric DNA polymerase delta complex (Pol-delta4), plays a role in high fidelity genome replication and repair."
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 13970,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1750",
+      "medicine": "Clofarabine",
+      "forms": [
+        "Clofarabine"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "As a component of the tetrameric DNA polymerase delta complex (Pol-delta4), plays a role in high fidelity genome replication and repair."
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 1870,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL384467",
+      "medicine": "Dexamethasone",
+      "forms": [
+        "Dexamethasone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 2562,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL635",
+      "medicine": "Prednisone",
+      "forms": [
+        "Prednisone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1723,
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL650",
+      "medicine": "Methylprednisolone",
+      "forms": [
+        "Methylprednisolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 883,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 2/3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL389621",
+      "medicine": "Hydrocortisone",
+      "forms": [
+        "Hydrocortisone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 474,
+      "source": "https://clinicaltrials.gov/study/NCT00002471",
+      "trial_phase": "Phase 2",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201576",
+      "medicine": "Rituximab",
+      "forms": [
+        "Rituximab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 2187,
+      "source": "https://clinicaltrials.gov/study/NCT00327678",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201567",
+      "medicine": "Filgrastim",
+      "forms": [
+        "Filgrastim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 869,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201568",
+      "medicine": "Pegfilgrastim",
+      "forms": [
+        "Pegfilgrastim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 419,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2109128",
+      "medicine": "Lenograstim",
+      "forms": [
+        "Lenograstim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 276,
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL90555",
+      "medicine": "Vincristine",
+      "forms": [
+        "Vincristine",
+        "Vincristine Sulfate"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 2078,
+      "source": "https://clinicaltrials.gov/study/NCT01228331",
+      "trial_phase": "Phase 3",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL159",
+      "medicine": "Vinblastine",
+      "forms": [
+        "Vinblastine",
+        "Vinblastine Sulfate"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 398,
+      "source": "https://clinicaltrials.gov/study/NCT01700946",
+      "trial_phase": "Phase 2",
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    }
+  ],
+  "new_clues": [
+    {
+      "id": "CHEMBL1946170",
+      "medicine": "Regorafenib",
+      "forms": [
+        "Regorafenib"
+      ],
+      "proteins": [
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false,
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 3,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 852,
+      "source": "https://clinicaltrials.gov/study/NCT02287025",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1336",
+      "medicine": "Sorafenib",
+      "forms": [
+        "Sorafenib",
+        "Sorafenib Tosylate"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 1334,
+      "source": "https://clinicaltrials.gov/study/NCT01203787",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL535",
+      "medicine": "Sunitinib",
+      "forms": [
+        "Sunitinib",
+        "Sunitinib Malate"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 882,
+      "source": "https://clinicaltrials.gov/study/NCT00930345",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4303201",
+      "medicine": "Catequentinib",
+      "forms": [
+        "Catequentinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 726,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0G2CG",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL477772",
+      "medicine": "Pazopanib",
+      "forms": [
+        "Pazopanib",
+        "Pazopanib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 520,
+      "source": "https://clinicaltrials.gov/study/NCT01205230",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL491473",
+      "medicine": "Cediranib",
+      "forms": [
+        "Cediranib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 136,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L01EK02",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL608533",
+      "medicine": "Midostaurin",
+      "forms": [
+        "Midostaurin"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 104,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=11fa3fc9-6776-49a6-b1c1-653f627c3e58",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1908391",
+      "medicine": "Masitinib",
+      "forms": [
+        "Masitinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 88,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L01EX06",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1289494",
+      "medicine": "Tivozanib",
+      "forms": [
+        "Tivozanib",
+        "Tivozanib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 80,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0W7JZ",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL576982",
+      "medicine": "Quizartinib",
+      "forms": [
+        "Quizartinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 78,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D07KYT",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4298092",
+      "medicine": "Glofitamab",
+      "forms": [
+        "Glofitamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 344,
+      "source": "https://clinicaltrials.gov/study/NCT06956092",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4650393",
+      "medicine": "Epcoritamab",
+      "forms": [
+        "Epcoritamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 244,
+      "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297788",
+      "medicine": "Mosunetuzumab",
+      "forms": [
+        "Mosunetuzumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 244,
+      "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4298084",
+      "medicine": "Odronextamab",
+      "forms": [
+        "Odronextamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 84,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/ordspono",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL255863",
+      "medicine": "Nilotinib",
+      "forms": [
+        "Nilotinib",
+        "Nilotinib Hydrochloride Monohydrate"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        }
+      ],
+      "reports": 366,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d288d165-3505-49bb-9b2e-124490d65f49",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL288441",
+      "medicine": "Bosutinib",
+      "forms": [
+        "Bosutinib",
+        "Bosutinib Monohydrate"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        }
+      ],
+      "reports": 104,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0OB0F",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4208229",
+      "medicine": "Asciminib",
+      "forms": [
+        "Asciminib",
+        "Asciminib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Protein with a unique structure having two opposing regulatory activities toward small GTP-binding proteins.",
+          "evidence": [
+            "literature"
+          ]
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "evidence": [
+            "literature"
+          ]
+        }
+      ],
+      "reports": 78,
+      "source": "https://clinicaltrials.gov/study/NCT06427811",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3545413",
+      "medicine": "Flumatinib",
+      "forms": [
+        "Flumatinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false,
+          "evidence": [
+            "literature"
+          ]
+        }
+      ],
+      "reports": 9,
+      "source": "https://clinicaltrials.gov/study/NCT02204644",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4298047",
+      "medicine": "Tafasitamab",
+      "forms": [
+        "Tafasitamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 64,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0R3PY",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3301574",
+      "medicine": "Tisagenlecleucel",
+      "forms": [
+        "Tisagenlecleucel"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 58,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=aad3ba54-dfd3-4cb3-9e2b-c5ef89559189",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3989989",
+      "medicine": "Axicabtagene Ciloleucel",
+      "forms": [
+        "Axicabtagene Ciloleucel"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 47,
+      "source": "https://clinicaltrials.gov/study/NCT06609304",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297778",
+      "medicine": "Loncastuximab Tesirine",
+      "forms": [
+        "Loncastuximab Tesirine"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 38,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D8L5PA",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297236",
+      "medicine": "Lisocabtagene Maraleucel",
+      "forms": [
+        "Lisocabtagene Maraleucel"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 33,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0M4WU",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2109334",
+      "medicine": "Inebilizumab",
+      "forms": [
+        "Inebilizumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 29,
+      "source": "https://clinicaltrials.gov/study/NCT06180278",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4594618",
+      "medicine": "Brexucabtagene Autoleucel",
+      "forms": [
+        "Brexucabtagene Autoleucel"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 19,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D18SHN",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL5095440",
+      "medicine": "Obecabtagene Autoleucel",
+      "forms": [
+        "Obecabtagene Autoleucel"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes."
+        }
+      ],
+      "reports": 12,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/aucatzyl",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1738",
+      "medicine": "Dexrazoxane",
+      "forms": [
+        "Dexrazoxane",
+        "Dexrazoxane Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 41,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D07XVN",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1186894",
+      "medicine": "Amrubicin",
+      "forms": [
+        "Amrubicin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 24,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L01DB10",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL68117",
+      "medicine": "Vosaroxin",
+      "forms": [
+        "Vosaroxin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 18,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L01XX53",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL452231",
+      "medicine": "Teniposide",
+      "forms": [
+        "Teniposide"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 17,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f19cf6d7-a1c8-42ec-844c-c798512139d9",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1096885",
+      "medicine": "Valrubicin",
+      "forms": [
+        "Valrubicin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 9,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D07IPB",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL240163",
+      "medicine": "Pazufloxacin",
+      "forms": [
+        "Pazufloxacin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TOP2A",
+          "points": 39,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 6,
+      "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4594505",
+      "medicine": "Teclistamab",
+      "forms": [
+        "Teclistamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 174,
+      "source": "https://clinicaltrials.gov/study/NCT06251076",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297809",
+      "medicine": "Elranatamab",
+      "forms": [
+        "Elranatamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 171,
+      "source": "https://clinicaltrials.gov/study/NCT06057402",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL5095292",
+      "medicine": "Tarlatamab",
+      "forms": [
+        "Tarlatamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 120,
+      "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4594503",
+      "medicine": "Talquetamab",
+      "forms": [
+        "Talquetamab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 117,
+      "source": "https://ttd.idrblab.cn/data/drug/details/DXR1A6",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108581",
+      "medicine": "Catumaxomab",
+      "forms": [
+        "Catumaxomab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 63,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/removab",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201608",
+      "medicine": "MUROMONAB-CD3",
+      "forms": [
+        "MUROMONAB-CD3"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 42,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D05GVQ",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1743078",
+      "medicine": "Teplizumab",
+      "forms": [
+        "Teplizumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Part of the TCR-CD3 complex present on T-lymphocyte cell surface that plays an essential role in adaptive immune response."
+        }
+      ],
+      "reports": 20,
+      "source": "https://clinicaltrials.gov/study/NCT05757713",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3813873",
+      "medicine": "Pexidartinib",
+      "forms": [
+        "Pexidartinib",
+        "Pexidartinib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 30,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=24c5a6f1-b640-4d14-b44b-dd293ed002b1",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4204794",
+      "medicine": "Avapritinib",
+      "forms": [
+        "Avapritinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 28,
+      "source": "https://clinicaltrials.gov/study/NCT04825574",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4216467",
+      "medicine": "Ripretinib",
+      "forms": [
+        "Ripretinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 16,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D09AAK",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL888",
+      "medicine": "Gemcitabine",
+      "forms": [
+        "Gemcitabine",
+        "Gemcitabine Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "As a component of the tetrameric DNA polymerase delta complex (Pol-delta4), plays a role in high fidelity genome replication and repair."
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 30998,
+      "source": "https://clinicaltrials.gov/study/NCT01336192",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1096882",
+      "medicine": "Fludarabine Phosphate",
+      "forms": [
+        "Fludarabine Phosphate"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory subunit of the DNA polymerase alpha complex (also known as the alpha DNA polymerase-primase complex) which plays an essential role in the initiation of DNA synthesis."
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of both the DNA polymerase delta complex and the DNA polymerase zeta complex."
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "As a component of the tetrameric DNA polymerase delta complex (Pol-delta4), plays a role in high fidelity genome replication and repair."
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Catalytic component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Accessory component of the DNA polymerase epsilon complex."
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 3289,
+      "source": "https://clinicaltrials.gov/study/NCT00220311",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL502835",
+      "medicine": "Nintedanib",
+      "forms": [
+        "Nintedanib",
+        "Nintedanib Esylate"
+      ],
+      "proteins": [
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 163,
+      "source": "https://www.pmda.go.jp/english/review-services/reviews/approved-information/drugs/0001.html",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201556",
+      "medicine": "Becaplermin",
+      "forms": [
+        "Becaplermin"
+      ],
+      "proteins": [
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 21,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/regranex",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL131",
+      "medicine": "Prednisolone",
+      "forms": [
+        "Prednisolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 700,
+      "source": "https://clinicaltrials.gov/study/NCT00138970",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1370",
+      "medicine": "Budesonide",
+      "forms": [
+        "Budesonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 486,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/budesonide-formoterol-teva",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1504",
+      "medicine": "Triamcinolone Acetonide",
+      "forms": [
+        "Triamcinolone Acetonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 422,
+      "source": "https://clinicaltrials.gov/study/NCT00324168",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1473",
+      "medicine": "Fluticasone Propionate",
+      "forms": [
+        "Fluticasone Propionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 403,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/aerivio-spiromax",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1451",
+      "medicine": "Triamcinolone",
+      "forms": [
+        "Triamcinolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 398,
+      "source": "https://clinicaltrials.gov/study/NCT00231764",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL632",
+      "medicine": "Betamethasone",
+      "forms": [
+        "Betamethasone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 362,
+      "source": "https://clinicaltrials.gov/study/NCT00231764",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201207",
+      "medicine": "Betamethasone Phosphoric Acid",
+      "forms": [
+        "Betamethasone Sodium Phosphate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 274,
+      "source": "https://clinicaltrials.gov/study/NCT00231764",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200384",
+      "medicine": "Betamethasone Dipropionate",
+      "forms": [
+        "Betamethasone Dipropionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 229,
+      "source": "https://clinicaltrials.gov/study/NCT00216892",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200500",
+      "medicine": "Beclomethasone Dipropionate",
+      "forms": [
+        "Beclomethasone Dipropionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 172,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/riarify",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1676",
+      "medicine": "Fluticasone Furoate",
+      "forms": [
+        "Fluticasone Furoate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 168,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/alisade",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1364144",
+      "medicine": "Methylprednisolone Acetate",
+      "forms": [
+        "Methylprednisolone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 167,
+      "source": "https://clinicaltrials.gov/study/NCT00324168",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1161",
+      "medicine": "Mometasone Furoate",
+      "forms": [
+        "Mometasone Furoate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 165,
+      "source": "https://clinicaltrials.gov/study/NCT00358527",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200878",
+      "medicine": "Triamcinolone Hexacetonide",
+      "forms": [
+        "Triamcinolone Hexacetonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 142,
+      "source": "https://clinicaltrials.gov/study/NCT00324168",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1276308",
+      "medicine": "Mifepristone",
+      "forms": [
+        "Mifepristone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 141,
+      "source": "https://clinicaltrials.gov/study/NCT00177372",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1159650",
+      "medicine": "Clobetasol Propionate",
+      "forms": [
+        "Clobetasol Propionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 95,
+      "source": "https://clinicaltrials.gov/study/NCT00436540",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2040682",
+      "medicine": "Ciclesonide",
+      "forms": [
+        "Ciclesonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 87,
+      "source": "https://clinicaltrials.gov/study/NCT00404547",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201302",
+      "medicine": "Dexamethasone Phosphoric Acid",
+      "forms": [
+        "Dexamethasone Phosphoric Acid",
+        "Dexamethasone Sodium Phosphate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 70,
+      "source": "https://clinicaltrials.gov/study/NCT03382821",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1152",
+      "medicine": "Prednisolone Acetate",
+      "forms": [
+        "Prednisolone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 67,
+      "source": "https://clinicaltrials.gov/study/NCT00170729",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL989",
+      "medicine": "Fluocinolone Acetonide",
+      "forms": [
+        "Fluocinolone Acetonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 58,
+      "source": "https://clinicaltrials.gov/study/NCT00469183",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200865",
+      "medicine": "Loteprednol Etabonate",
+      "forms": [
+        "Loteprednol Etabonate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 53,
+      "source": "https://clinicaltrials.gov/study/NCT00407043",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201265",
+      "medicine": "Methylprednisolone Hemisuccinate",
+      "forms": [
+        "Methylprednisolone Hemisuccinate",
+        "Methylprednisolone Sodium Succinate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 40,
+      "source": "https://clinicaltrials.gov/study/NCT05748561",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200908",
+      "medicine": "Halobetasol Propionate",
+      "forms": [
+        "Halobetasol Propionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 35,
+      "source": "https://clinicaltrials.gov/study/NCT03987763",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL139835",
+      "medicine": "Cyproterone Acetate",
+      "forms": [
+        "Cyproterone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 29,
+      "source": "https://clinicaltrials.gov/study/NCT00003653",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201749",
+      "medicine": "Difluprednate",
+      "forms": [
+        "Difluprednate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 23,
+      "source": "https://clinicaltrials.gov/study/NCT04631315",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201231",
+      "medicine": "Prednisolone Phosphoric Acid",
+      "forms": [
+        "Prednisolone Phosphoric Acid",
+        "Prednisolone Sodium Phosphate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 23,
+      "source": "https://clinicaltrials.gov/study/NCT01534195",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1497",
+      "medicine": "Betamethasone Valerate",
+      "forms": [
+        "Betamethasone Valerate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 22,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1faf8d75-af60-4438-b6d5-c1b06d5ac703",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200600",
+      "medicine": "Fluorometholone",
+      "forms": [
+        "Fluorometholone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 21,
+      "source": "https://clinicaltrials.gov/study/NCT03747614",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1683",
+      "medicine": "Hydrocortisone Butyrate",
+      "forms": [
+        "Hydrocortisone Butyrate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 17,
+      "source": "https://clinicaltrials.gov/study/NCT00693693",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201109",
+      "medicine": "Desonide",
+      "forms": [
+        "Desonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 14,
+      "source": "https://clinicaltrials.gov/study/NCT00690833",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1766",
+      "medicine": "Desoximetasone",
+      "forms": [
+        "Desoximetasone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 13,
+      "source": "https://clinicaltrials.gov/study/NCT02340169",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2348780",
+      "medicine": "Vamorolone",
+      "forms": [
+        "Vamorolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 13,
+      "source": "https://clinicaltrials.gov/study/NCT06713135",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201891",
+      "medicine": "Deflazacort",
+      "forms": [
+        "Deflazacort"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 12,
+      "source": "https://clinicaltrials.gov/study/NCT04365088",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1501",
+      "medicine": "Fluocinonide",
+      "forms": [
+        "Fluocinonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 12,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=34b91547-31f6-4043-b91c-16c9ebd81349",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1091",
+      "medicine": "Hydrocortisone Acetate",
+      "forms": [
+        "Hydrocortisone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 12,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1eb217be-34f1-4b3b-a3a5-4dfb83fb6143",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1512",
+      "medicine": "Flunisolide",
+      "forms": [
+        "Flunisolide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 8,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=34aea106-c7f3-4324-baa9-d6fd3028b108",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL977",
+      "medicine": "Hydrocortisone Hemisuccinate Anhydrous",
+      "forms": [
+        "Hydrocortisone Sodium Succinate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 8,
+      "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2009/009866s77s79lbl.pdf",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200386",
+      "medicine": "Prednicarbate",
+      "forms": [
+        "Prednicarbate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 8,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=89831c07-3a37-446e-b486-a7beb4cc227f",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201012",
+      "medicine": "Flurandrenolide",
+      "forms": [
+        "Flurandrenolide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 6,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3086e1b7-7a9a-7196-e054-00144ff8d46c",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1650",
+      "medicine": "Cortisone Acetate",
+      "forms": [
+        "Cortisone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 5,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=85cfed58-e5f1-4170-8d83-60e6bebd3610",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200538",
+      "medicine": "Betamethasone Acetate",
+      "forms": [
+        "Betamethasone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 4,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1addcff1-1c03-44d9-b751-5c2ffbec7520",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200989",
+      "medicine": "Alclometasone Dipropionate",
+      "forms": [
+        "Alclometasone Dipropionate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 3,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6aacce3f-aa2f-4f2c-a5bd-8cff157a3dab",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200845",
+      "medicine": "Halcinonide",
+      "forms": [
+        "Halcinonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 3,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b7d78c72-a683-4208-b7dd-5523502c036c",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200617",
+      "medicine": "Rimexolone",
+      "forms": [
+        "Rimexolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 3,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0D2TN",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1530428",
+      "medicine": "Dexamethasone Acetate",
+      "forms": [
+        "Dexamethasone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 2,
+      "source": "https://clinicaltrials.gov/study/NCT00635154",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200545",
+      "medicine": "Diflorasone Diacetate",
+      "forms": [
+        "Diflorasone Diacetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 2,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b20c9420-8fb4-4a49-93f0-c0e4074d6d71",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201064",
+      "medicine": "Fluorometholone Acetate",
+      "forms": [
+        "Fluorometholone Acetate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 2,
+      "source": "https://clinicaltrials.gov/study/NCT07553455",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201173",
+      "medicine": "Medrysone",
+      "forms": [
+        "Medrysone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 2,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D04SFH",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200732",
+      "medicine": "Amcinonide",
+      "forms": [
+        "Amcinonide"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D06XHC",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200376",
+      "medicine": "Betamethasone Benzoate",
+      "forms": [
+        "Betamethasone Benzoate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D06CWH",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200877",
+      "medicine": "Flumethasone Pivalate",
+      "forms": [
+        "Flumethasone Pivalate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0F7NQ",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200774",
+      "medicine": "Fluprednisolone",
+      "forms": [
+        "Fluprednisolone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0V9DZ",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201263",
+      "medicine": "Hydrocortamate",
+      "forms": [
+        "Hydrocortamate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D05RXI",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1200953",
+      "medicine": "Hydrocortisone Probutate",
+      "forms": [
+        "Hydrocortisone Probutate"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=361338e6-d719-4bea-aca0-7dd591fcfa08",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201148",
+      "medicine": "Meprednisone",
+      "forms": [
+        "Meprednisone"
+      ],
+      "proteins": [
+        {
+          "symbol": "NR3C1",
+          "points": 37,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for glucocorticoids (GC)."
+        }
+      ],
+      "reports": 1,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0I5DS",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1743048",
+      "medicine": "Obinutuzumab",
+      "forms": [
+        "Obinutuzumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 275,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=df12ceb2-5b4b-4ab5-a317-2a36bf2a3cda",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201836",
+      "medicine": "Ofatumumab",
+      "forms": [
+        "Ofatumumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 144,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/arzerra",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108041",
+      "medicine": "Ocrelizumab",
+      "forms": [
+        "Ocrelizumab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 97,
+      "source": "https://clinicaltrials.gov/study/NCT03853746",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201604",
+      "medicine": "Tositumomab",
+      "forms": [
+        "Tositumomab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 45,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0I2AV",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108354",
+      "medicine": "Ublituximab",
+      "forms": [
+        "Ublituximab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes."
+        }
+      ],
+      "reports": 45,
+      "source": "https://clinicaltrials.gov/study/NCT07225361",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2107881",
+      "medicine": "Regramostim",
+      "forms": [
+        "Regramostim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 246,
+      "source": "https://clinicaltrials.gov/study/NCT01718210",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3833384",
+      "medicine": "Eflapegrastim",
+      "forms": [
+        "Eflapegrastim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 9,
+      "source": "https://clinicaltrials.gov/study/NCT05949333",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297950",
+      "medicine": "Efbemalenograstim Alfa",
+      "forms": [
+        "Efbemalenograstim Alfa"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 6,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/ryzneuta",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4594230",
+      "medicine": "Lipegfilgrastim",
+      "forms": [
+        "Lipegfilgrastim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 5,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/lonquex",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108572",
+      "medicine": "Balugrastim",
+      "forms": [
+        "Balugrastim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 3,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L03AA15",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297800",
+      "medicine": "Pegteograstim",
+      "forms": [
+        "Pegteograstim"
+      ],
+      "proteins": [
+        {
+          "symbol": "CSF3R",
+          "points": 35,
+          "direction": "up",
+          "machine": 1,
+          "piece_of_machine": false,
+          "function": "Receptor for granulocyte colony-stimulating factor (CSF3), essential for granulocytic maturation."
+        }
+      ],
+      "reports": 2,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L03AA17",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs this protein turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL428647",
+      "medicine": "Paclitaxel",
+      "forms": [
+        "Paclitaxel"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 8120,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/paxene",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL92",
+      "medicine": "Docetaxel Anhydrous",
+      "forms": [
+        "Docetaxel"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 4518,
+      "source": "https://www.ema.europa.eu/en/medicines/human/EPAR/docetaxel-zentiva",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL553025",
+      "medicine": "Vinorelbine",
+      "forms": [
+        "Vinorelbine",
+        "Vinorelbine Tartrate"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 868,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6d47c96a-7fdc-48ac-9250-41c5d3ecf8db",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1683590",
+      "medicine": "Eribulin",
+      "forms": [
+        "Eribulin",
+        "Eribulin Mesylate"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 412,
+      "source": "https://clinicaltrials.gov/study/NCT05033769",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1742994",
+      "medicine": "Brentuximab Vedotin",
+      "forms": [
+        "Brentuximab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 368,
+      "source": "https://clinicaltrials.gov/study/NCT01909934",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL107",
+      "medicine": "Colchicine",
+      "forms": [
+        "Colchicine"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 350,
+      "source": "https://clinicaltrials.gov/study/NCT00235079",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL5095273",
+      "medicine": "Disitamab Vedotin",
+      "forms": [
+        "Disitamab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 270,
+      "source": "https://clinicaltrials.gov/study/NCT04400695",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1743082",
+      "medicine": "Trastuzumab Emtansine",
+      "forms": [
+        "Trastuzumab Emtansine"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 256,
+      "source": "https://clinicaltrials.gov/study/NCT02658734",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201748",
+      "medicine": "Cabazitaxel",
+      "forms": [
+        "Cabazitaxel"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 234,
+      "source": "https://clinicaltrials.gov/study/NCT01649635",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201752",
+      "medicine": "Ixabepilone",
+      "forms": [
+        "Ixabepilone"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 232,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=241f0b1e-8b95-470d-876f-bf1804daaf18",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3301582",
+      "medicine": "Polatuzumab Vedotin",
+      "forms": [
+        "Polatuzumab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 194,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=20a16ab2-f338-4abb-9dcd-254bd949a2bc",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3301589",
+      "medicine": "Enfortumab Vedotin",
+      "forms": [
+        "Enfortumab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 152,
+      "source": "https://clinicaltrials.gov/study/NCT06862219",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2110725",
+      "medicine": "Vinflunine",
+      "forms": [
+        "Vinflunine"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 62,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0OT9S",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3545132",
+      "medicine": "Mirvetuximab Soravtansine",
+      "forms": [
+        "Mirvetuximab Soravtansine"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 60,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0RP2W",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108628",
+      "medicine": "Paclitaxel Poliglumex",
+      "forms": [
+        "Paclitaxel Poliglumex"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 48,
+      "source": "https://www.whocc.no/atc_ddd_index/?code=L01CD03",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL4297841",
+      "medicine": "Tisotumab Vedotin",
+      "forms": [
+        "Tisotumab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 36,
+      "source": "https://clinicaltrials.gov/study/NCT06952660",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1743028",
+      "medicine": "Glembatumumab Vedotin",
+      "forms": [
+        "Glembatumumab Vedotin"
+      ],
+      "proteins": [
+        {
+          "symbol": "TUBA1B",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, protein filaments consisting of alpha- and beta-tubulin heterodimers."
+        },
+        {
+          "symbol": "TUBA3C",
+          "points": 35,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true,
+          "function": "Tubulin is the major constituent of microtubules, a cylinder consisting of laterally associated linear protofilaments composed of alpha- and beta-tubulin heterodimers."
+        }
+      ],
+      "reports": 24,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0O9RJ",
+      "trial_phase": null,
+      "ending": "But there is a catch. Nobody knows from our information if the disease needs these proteins turned up or down. So this is a clue to read about. Never start, stop or change any medicine without a doctor."
+    }
+  ],
+  "left_out": {
+    "not_approved": 140,
+    "unclear_link": 0
+  },
+  "wider_group": [
+    {
+      "id": "CHEMBL1863514",
+      "medicine": "Asparaginase Erwinia Chrysanthemi",
+      "forms": [
+        "Asparaginase Erwinia Chrysanthemi"
+      ],
+      "proteins": [],
+      "reports": 10,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=30bdf2ea-008b-4cbb-81e4-c3474f2ad286",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1742992",
+      "medicine": "Blinatumomab",
+      "forms": [
+        "Blinatumomab"
+      ],
+      "proteins": [
+        {
+          "symbol": "CD19",
+          "points": 39,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "CD3E",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "CD3D",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "CD3G",
+          "points": 38,
+          "direction": "unknown",
+          "machine": 2,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 668,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=38b482a8-960b-4591-9857-5031ecb830aa",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL2108728",
+      "medicine": "Calaspargase Pegol",
+      "forms": [
+        "Calaspargase Pegol"
+      ],
+      "proteins": [],
+      "reports": 13,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6585bd0d-bd78-4341-9e87-0f7664821f05",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL515",
+      "medicine": "Chlorambucil",
+      "forms": [
+        "Chlorambucil"
+      ],
+      "proteins": [],
+      "reports": 1,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=967ed3ff-d99b-41e8-b768-dfb586d3d9a6",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1750",
+      "medicine": "Clofarabine",
+      "forms": [
+        "Clofarabine"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 1870,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=55d3c78b-dca5-436b-97b5-73d166217415",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL803",
+      "medicine": "Cytarabine",
+      "forms": [
+        "Cytarabine"
+      ],
+      "proteins": [
+        {
+          "symbol": "POLA1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLA2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLD4",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "POLE3",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM1",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "PRIM2",
+          "points": 38,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 13970,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1315f89d-f530-4dff-98e5-27d51617d4a1",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1421",
+      "medicine": "Dasatinib Anhydrous",
+      "forms": [
+        "Dasatinib Anhydrous",
+        "Dasatinib"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "KIT",
+          "points": 38,
+          "direction": "down",
+          "machine": 2,
+          "piece_of_machine": false
+        },
+        {
+          "symbol": "PDGFRB",
+          "points": 38,
+          "direction": "down",
+          "machine": 3,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 1158,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0e7f054c-7a27-4192-bd1c-6115d8be858f",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL2108611",
+      "medicine": "Inotuzumab Ozogamicin",
+      "forms": [
+        "Inotuzumab Ozogamicin"
+      ],
+      "proteins": [],
+      "reports": 46,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cc7014b1-c775-411d-b374-8113248b4077",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1425",
+      "medicine": "Mercaptopurine Anhydrous",
+      "forms": [
+        "Mercaptopurine"
+      ],
+      "proteins": [],
+      "reports": 130,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=15904472-4c32-4224-95d3-eb131a7ff9c8",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL34259",
+      "medicine": "Methotrexate",
+      "forms": [
+        "Methotrexate"
+      ],
+      "proteins": [],
+      "reports": 199,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4767fe9f-aa42-46cd-8101-9df7101f55e1",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL2108546",
+      "medicine": "Pegaspargase",
+      "forms": [
+        "Pegaspargase"
+      ],
+      "proteins": [],
+      "reports": 69,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d933e1d1-06b7-4d70-981f-3e8984b0683f",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL18442",
+      "medicine": "Plerixafor",
+      "forms": [
+        "Plerixafor"
+      ],
+      "proteins": [],
+      "reports": 3,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0ed08d2b-5051-46b2-aa37-1d6275bf9003",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1171837",
+      "medicine": "Ponatinib",
+      "forms": [
+        "Ponatinib",
+        "Ponatinib Hydrochloride"
+      ],
+      "proteins": [
+        {
+          "symbol": "BCR",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        },
+        {
+          "symbol": "ABL1",
+          "points": 40,
+          "direction": "down",
+          "machine": 1,
+          "piece_of_machine": true
+        }
+      ],
+      "reports": 152,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=807f988e-117b-4497-934d-73aa78baac71",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL1201576",
+      "medicine": "Rituximab",
+      "forms": [
+        "Rituximab"
+      ],
+      "proteins": [
+        {
+          "symbol": "MS4A1",
+          "points": 36,
+          "direction": "unknown",
+          "machine": 1,
+          "piece_of_machine": false
+        }
+      ],
+      "reports": 2187,
+      "source": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b172773b-3905-4a1c-ad95-bab4b6126563",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in."
+    },
+    {
+      "id": "CHEMBL727",
+      "medicine": "Thioguanine",
+      "forms": [
+        "Thioguanine"
+      ],
+      "proteins": [],
+      "reports": 46,
+      "source": "https://ttd.idrblab.cn/data/drug/details/D0BK1N",
+      "label": "Not listed as approved for this exact disease. Approved for acute lymphoblastic leukemia, a wider group the database puts this disease in.",
+      "proof_note": "The database lists this as approved, but gives no regulator record for it."
+    }
+  ],
+  "more_in_trials": [
+    {
+      "id": "CHEMBL325041",
+      "medicine": "Bortezomib",
+      "forms": [
+        "Bortezomib"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT03643276",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL88",
+      "medicine": "Cyclophosphamide Anhydrous",
+      "forms": [
+        "Cyclophosphamide"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1024",
+      "medicine": "Ifosfamide",
+      "forms": [
+        "Ifosfamide"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1679",
+      "medicine": "Leucovorin",
+      "forms": [
+        "Leucovorin",
+        "Leucovorin Calcium"
+      ],
+      "trial_phase": "Phase 3",
+      "source": "https://clinicaltrials.gov/study/NCT00005977",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108931",
+      "medicine": "Crisantaspase",
+      "forms": [
+        "Crisantaspase"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3545131",
+      "medicine": "Isatuximab",
+      "forms": [
+        "Isatuximab"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT06860269",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201112",
+      "medicine": "Nelarabine",
+      "forms": [
+        "Nelarabine"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1789941",
+      "medicine": "Ruxolitinib",
+      "forms": [
+        "Ruxolitinib"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL98",
+      "medicine": "Vorinostat",
+      "forms": [
+        "Vorinostat"
+      ],
+      "trial_phase": "Phase 2/3",
+      "source": "https://clinicaltrials.gov/study/NCT03117751",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201438",
+      "medicine": "Aldesleukin",
+      "forms": [
+        "Aldesleukin"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT01700946",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108989",
+      "medicine": "Asparaginase",
+      "forms": [
+        "Asparaginase"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT00002471",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL671",
+      "medicine": "Thiotepa",
+      "forms": [
+        "Thiotepa"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT00002471",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1201585",
+      "medicine": "Trastuzumab",
+      "forms": [
+        "Trastuzumab"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT00724360",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL3137309",
+      "medicine": "Venetoclax",
+      "forms": [
+        "Venetoclax"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT06754267",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL238071",
+      "medicine": "Vindesine",
+      "forms": [
+        "Vindesine"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT05557110",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL1789844",
+      "medicine": "Ipilimumab",
+      "forms": [
+        "Ipilimumab"
+      ],
+      "trial_phase": "Phase 1",
+      "source": "https://clinicaltrials.gov/study/NCT02879695",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    },
+    {
+      "id": "CHEMBL2108738",
+      "medicine": "Nivolumab",
+      "forms": [
+        "Nivolumab"
+      ],
+      "trial_phase": "Phase 1",
+      "source": "https://clinicaltrials.gov/study/NCT02879695",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    }
+  ],
+  "new_in_trials": [
+    {
+      "id": "CHEMBL2316582",
+      "medicine": "Olverembatinib",
+      "forms": [
+        "Olverembatinib"
+      ],
+      "trial_phase": "Phase 2",
+      "source": "https://clinicaltrials.gov/study/NCT06754267",
+      "ending": "Never start, stop or change any medicine without a doctor."
+    }
+  ]
+}
