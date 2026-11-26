@@ -61,7 +61,9 @@ the live API on 2026-11-25 (data 26.09). So was "therapeuticAreas" ("id") on
 a disease. Both are saved in fixtures/gene_evidence/.
 """
 
+import json
 import logging
+import pathlib
 import threading
 import time
 from dataclasses import dataclass
@@ -139,6 +141,42 @@ EXACT_SYNONYM = "hasExactSynonym"
 WITHDRAWN = "withdrawn"  # compared in small letters
 
 _log = logging.getLogger(__name__)
+
+
+# Ticket 3.23. Open Targets 26.09 gives some salt forms no parentMolecule
+# (error E52, thread 2106). moonlight/salt_parents.json is a hand list:
+# {"<salt id>": {"parent": "<parent id>", "source": "...", "date": "..."}}.
+# A drug with no parentMolecule whose id is on it is treated as a form of that
+# parent. A drug that has a parentMolecule never looks at the list.
+SALT_PARENTS_FILE = pathlib.Path(__file__).resolve().parent / "salt_parents.json"
+_SALT_PARENTS: Optional[Dict[str, dict]] = None
+
+
+def _salt_parents() -> Dict[str, dict]:
+    """The one place the salt list is read. Tests replace this."""
+    global _SALT_PARENTS
+    if _SALT_PARENTS is None:
+        found = json.loads(SALT_PARENTS_FILE.read_text(encoding="utf-8"))
+        if not isinstance(found, dict):
+            raise ValueError("salt_parents.json must hold an object.")
+        for salt_id, row in found.items():
+            if not isinstance(row, dict) or set(row) != {"parent", "source", "date"} \
+                    or not all(isinstance(row[key], str) and row[key].strip() for key in row):
+                raise ValueError(f"A salt row needs parent, source and date: {salt_id!r}")
+        _SALT_PARENTS = found
+    return _SALT_PARENTS
+
+
+def _parent_of(drug: dict) -> Optional[dict]:
+    """The medicine this drug is a form of: Open Targets' parentMolecule, else
+    the hand list's parent (id only: the name is not written by hand), else None."""
+    parent = drug["parentMolecule"]
+    if parent:
+        return parent
+    row = _salt_parents().get(drug["id"])
+    if row:
+        return {"id": row["parent"], "name": None}
+    return None
 
 DISEASE_QUERY = """
 query DiseaseRecord($diseaseId: String!) {
@@ -661,14 +699,14 @@ def fetch_paths(disease: Disease, target: Target) -> List[Path]:
         drug = row["drug"]
         if drug is None:
             continue
-        parent = drug["parentMolecule"]
+        parent = _parent_of(drug)
         family_id = parent["id"] if parent else drug["id"]
         family = families.setdefault(
             family_id, {"name": None, "forms": [], "actions": [], "sources": [], "machine": []}
         )
         if parent:
             # Named after the parent, even if the parent has no row of its own.
-            family["name"] = family["name"] or parent["name"]
+            family["name"] = family["name"] or parent["name"] or drug["name"]
         else:
             family["name"] = drug["name"]
 
@@ -788,7 +826,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
         drug = row["drug"]
         if drug is None:
             continue
-        parent = drug["parentMolecule"]
+        parent = _parent_of(drug)
         family_id = parent["id"] if parent else drug["id"]
         family = families.setdefault(
             family_id,
@@ -823,7 +861,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
                 family["records"].insert(0, record)  # the parent itself goes first
         family["withdrawn"].append(_was_withdrawn(drug))  # True, False or None
         if parent:
-            family["name"] = family["name"] or parent["name"]
+            family["name"] = family["name"] or parent["name"] or drug["name"]
         else:
             family["name"] = drug["name"]
 
