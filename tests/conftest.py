@@ -9,11 +9,17 @@
    by accident. The tests of that part switch it on with a fake store.
 
 No line of any old test was changed for this.
+
+Ticket 3.22. A third thing: moonlight.approval_years.load returns {} for every
+test, so no card carries first_approved and every old test sees the site
+exactly as before (A to Z, no year line). A test that needs the years opts out
+with @pytest.mark.approval_years (or pytestmark for a whole file) and then
+reads the list through approval_years.load as the app does.
 """
 
 import pytest
 
-from moonlight import api, cache
+from moonlight import api, approval_years, cache
 
 
 @pytest.fixture(autouse=True)
@@ -24,3 +30,31 @@ def _speed_set_up(monkeypatch):
     yield
     api.forget_answers()
     cache.forget_firestore_trouble()
+
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        "markers", "approval_years: read the real approval_years.json (ticket 3.22); "
+        "without it approval_years.load returns {}")
+
+
+_real_load = approval_years.load
+_years_on = False  # True only while a test marked approval_years runs
+
+
+@pytest.fixture(autouse=True, scope="session")
+def _approval_years_off_by_default():
+    """Session-wide, so module-scoped fixtures of old tests build their pages with no
+    years too (a per-test fixture would run after them)."""
+    mine = pytest.MonkeyPatch()
+    mine.setattr(approval_years, "load", lambda: _real_load() if _years_on else {})
+    yield
+    mine.undo()
+
+
+@pytest.fixture(autouse=True)
+def _approval_years_on_when_marked(request):
+    global _years_on
+    _years_on = request.node.get_closest_marker("approval_years") is not None
+    yield
+    _years_on = False

@@ -129,6 +129,12 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .register [data-diagnostic]::after{display:block;width:max-content;max-width:100%;box-sizing:border-box;margin:3px 0 0;padding:1px 5px;background:#fff;color:#000;border-color:#000;font-size:8.5px;letter-spacing:.03em}
 @media print{[data-diagnostic]::after{background:#fff!important;color:#000!important;border:1px solid #000!important}}
 .forms{font-size:12px;color:var(--muted);margin:8px 0 0}
+.first-year{font-size:12px;color:var(--muted);margin:4px 0 0}
+.order-note{font-size:12px;color:var(--muted);margin:0 0 8px}
+.order-switch{display:flex;gap:8px;margin:0 0 14px}
+.order-switch button{border:1px solid #C7D7D9;border-radius:999px;padding:8px 12px;background:var(--paper);font-size:12px;color:var(--navy);min-height:36px;cursor:pointer}
+.order-switch button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media print{.order-switch{display:none!important}}
 .reports{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;flex:none}
 .card-subhead{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:750;margin:18px 0 8px}
 .path{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 12px}
@@ -426,6 +432,12 @@ body.registering>:not(.register){display:none!important}
         <div id="approved-list">
           <p class="tab-words">Already approved for this disease in at least one country, according to the database. Nothing here says how well any of them works. Listed A to Z.</p>
           <p class="doctor-line">Talk to your doctor before changing any medicine.</p>
+          <!-- Ticket 3.22. Once per page, main list only, and only when some card has a year. The words are in APPROVAL_WORDS. -->
+          <p class="order-note" id="order-note" hidden></p>
+          <div class="order-switch" id="order-switch" role="group" hidden>
+            <button type="button" data-order="newest" aria-pressed="true"></button>
+            <button type="button" data-order="az" aria-pressed="false"></button>
+          </div>
           <!-- How many more cards are in the folded boxes. Only when the main list and a box both hold cards. -->
           <p class="more-line" id="more-line" hidden></p>
           <div class="cards" id="approved-cards"></div>
@@ -702,7 +714,7 @@ body.registering>:not(.register){display:none!important}
     <div class="card-top">
       <div class="card-title">
         <span class="rank" data-slot="rank" hidden></span>
-        <div><h3 data-slot="medicine-name"></h3><p class="forms" data-slot="forms"></p></div>
+        <div><h3 data-slot="medicine-name"></h3><p class="forms" data-slot="forms"></p><p class="first-year" data-slot="first-year" hidden></p></div>
       </div>
       <span class="reports" data-slot="reports"></span>
     </div>
@@ -971,6 +983,7 @@ body.registering>:not(.register){display:none!important}
      or nothing (ticket 3.14). */
   async function showClues(diseaseId, tab, alsoCalled) {
     const mine = ++latest;
+    currentDiseaseId = diseaseId;
     const results = byId("results");
     results.hidden = false;
     byId("found").hidden = true;
@@ -1109,7 +1122,10 @@ body.registering>:not(.register){display:none!important}
     const moreTrialsCards = (data.more_in_trials || []).map(medicine => trialBoxCard(medicine));
     // In a trial for this disease, approved for nothing: the second folded box, under that one.
     const newTrialsCards = (data.new_in_trials || []).map(medicine => trialBoxCard(medicine));
-    byId("approved-cards").replaceChildren(...approvedCards);
+    // Ticket 3.22. The main list's medicines, in the same order as approvedCards.
+    const boxedIds = new Set(data.no_regulator_box || []);
+    const mainMedicines = notWrong.filter(medicine => !boxedIds.has(medicine.id));
+    drawMainApproved(approvedCards, mainMedicines);
     // Ticket 2.28. The API names the clues of the folded box. Each card keeps its number.
     const [aboveCards, oppositeCards] = aboveAndBox(data.new_clues, data.opposite_way_box, newCards);
     byId("new-cards").replaceChildren(...aboveCards);
@@ -1334,6 +1350,99 @@ body.registering>:not(.register){display:none!important}
     name.setAttribute("aria-label", name.textContent + ", " + word.toLowerCase());
   }
 
+
+  /* Ticket 3.22. Every word of the year line and the order switch is here, in one place.
+     Decided 26 Nov (revised ticket). {year} and {region} come from moonlight/approval_years.json. */
+  const APPROVAL_WORDS = {
+    card: "First approved: {year} ({region})",
+    newest: "Newest approval first",
+    az: "A to Z",
+    note: "Newest approvals are listed first. Newer does not mean better.",
+  };
+  const OLD_ORDER_WORDS = " Listed A to Z.";  // the end of the tab's heading line, as it stands
+
+  /* The year the API sent for a card, or null. Anything but a plausible whole year is no year. */
+  function yearOf(medicine) {
+    const first = medicine.first_approved, year = first && first.year;
+    return Number.isInteger(year) && year >= 1800 && year <= 2100 && typeof first.region === "string"
+      && first.region.trim() ? year : null;
+  }
+
+  /* Newest first: year descending, ties and cards with no year keep the API's A to Z order
+     (the sort is stable), and cards with no year go last. */
+  function newestFirst(items) {
+    return items.map((item, place) => ({...item, place})).sort((a, b) => {
+      const x = yearOf(a.medicine), y = yearOf(b.medicine);
+      if (x === null && y === null) return a.place - b.place;
+      if (x === null) return 1;
+      if (y === null) return -1;
+      return y - x || a.place - b.place;
+    });
+  }
+
+  /* The order lives in the page address: &order=az. Newest first is the default and has no word. */
+  function readOrder() { return new URLSearchParams(location.search).get("order") === "az" ? "az" : "newest"; }
+  function writeOrder(order) {
+    try {
+      const address = new URLSearchParams(location.search);
+      if (order === "az") address.set("order", "az"); else address.delete("order");
+      if (!address.get("disease") && currentDiseaseId) address.set("disease", currentDiseaseId);
+      history.replaceState(null, "", location.pathname + "?" + address.toString() + location.hash);
+    } catch (problem) { /* a page that cannot change its address still works */ }
+  }
+
+  let currentDiseaseId = null;
+  let mainApproved = null;  // what the switch re-draws: [{medicine, card}]
+
+  /* The main Approved list only. No card has a year (or the year question failed): the list, the
+     heading and the switch are exactly as before this ticket. */
+  function drawMainApproved(cards, medicines) {
+    const items = cards.map((card, place) => ({medicine: medicines[place], card}));
+    items.forEach(({medicine, card}) => {
+      const year = yearOf(medicine), line = slot(card, "first-year");
+      if (year === null) return;
+      // The year is a link to the entry's source, when the list has one. Words around it are the block's.
+      const [before, after] = APPROVAL_WORDS.card.replace("{region}", () => medicine.first_approved.region.trim()).split("{year}");
+      const source = medicine.first_approved.source;
+      let yearPart = document.createTextNode(String(year));
+      if (typeof source === "string" && source) {  // the API only sends a checked secure link (approval_years.load)
+        yearPart = document.createElement("a");
+        yearPart.href = source;
+        yearPart.className = "source-link";
+        yearPart.textContent = String(year);
+      }
+      line.replaceChildren(before, yearPart, after);
+      line.hidden = false;
+    });
+    const words = byId("approved-list").querySelector(".tab-words");
+    if (words.dataset.original === undefined) words.dataset.original = words.textContent;
+    words.textContent = words.dataset.original;
+    mainApproved = items.some(({medicine}) => yearOf(medicine) !== null) ? items : null;
+    byId("order-note").hidden = byId("order-switch").hidden = !mainApproved;
+    if (mainApproved) paintOrder(readOrder());
+    else byId("approved-cards").replaceChildren(...cards);
+  }
+
+  function paintOrder(order) {
+    const shown = order === "az" ? mainApproved : newestFirst(mainApproved);
+    byId("approved-cards").replaceChildren(...shown.map(item => item.card));
+    byId("order-note").textContent = APPROVAL_WORDS.note;
+    byId("order-note").hidden = order === "az";  // the note is about the newest order only
+    const words = byId("approved-list").querySelector(".tab-words");
+    words.textContent = order === "az" || !words.dataset.original.endsWith(OLD_ORDER_WORDS)
+      ? words.dataset.original
+      : words.dataset.original.slice(0, -OLD_ORDER_WORDS.length);  // the note replaces "Listed A to Z."
+    document.querySelectorAll("#order-switch button").forEach(button => {
+      button.textContent = APPROVAL_WORDS[button.dataset.order];
+      button.setAttribute("aria-pressed", String(button.dataset.order === order));
+    });
+  }
+
+  document.querySelectorAll("#order-switch button").forEach(button => button.addEventListener("click", () => {
+    if (!mainApproved) return;
+    writeOrder(button.dataset.order);
+    paintOrder(button.dataset.order);
+  }));
 
   /* A medicine already approved for this disease. It is not a clue. */
   function approvedCard(medicine, diseaseName) {
