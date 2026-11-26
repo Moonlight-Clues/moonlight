@@ -1,6 +1,6 @@
 # Sources for moonlight/approval_years.json
 
-**What the year means:** earliest US or EU approval of this active ingredient, for any use.
+**What the year means:** the year the active ingredient (moiety) was first approved, in any salt or form — earliest US or EU approval, for any use.
 
 It is not the year the medicine was approved for the disease on the page, and it is not a judgement of how good or current the medicine is.
 
@@ -18,7 +18,7 @@ How these are applied in practice: "ties go to the US" is decided by year (same 
 
 Shape: `{"CHEMBL...": {"year": 2001, "region": "US" | "EU", "source": "<url>"}}`
 
-1. **Ingredient.** The card's ChEMBL id is mapped to its parent molecule and all its salt/hydrate forms using the ChEMBL API (molecule and molecule_form endpoints), with their INN/USAN/BAN/FDA/USP/JAN names (and a few weaker synonym types, flagged in `anomalies.csv` when they are the only link). Salts and forms count as the same ingredient.
+1. **Ingredient.** The card's ChEMBL id is mapped to its parent molecule and all its salt/hydrate forms using the ChEMBL API (molecule and molecule_form endpoints), with their INN/USAN/BAN/FDA/USP/JAN names and the preferred name. Salts and forms of the same active moiety count as the same ingredient, so a card for testosterone cypionate takes the year testosterone was first approved. Weaker ChEMBL synonym types (OTHER, DCF, BNF, INN_SPANISH) are not used to assign a year; those ingredients are listed in `no_entry.md` under "weak synonym, pending hand-check" until they are checked by hand.
 2. **US year, small-molecule and CDER products.** Drugs@FDA, read from the openFDA `drug/drugsfda` bulk export. Only NDA and BLA applications count (no ANDAs). The date is the approval date of the application's ORIGINAL submission (`submission_type` ORIG, status AP); supplements do not count. The application must contain a product whose only active ingredient is this ingredient. Source = the Drugs@FDA application page (`accessdata.fda.gov/scripts/cder/daf/...ApplNo=`).
 3. **US year, CBER biologics.** The FDA Purple Book (monthly data download, October 2026 file). Only rows with Submission Type "Original" and License Type 351(a) count; the date is the Approval Date of the earliest such row for the BLA. A BLA whose Original row is not in the Purple Book gives no date (nothing is guessed). Blood-factor products have US proper names that differ from the INN (for example "Antihemophilic Factor (Recombinant)" for octocog alfa), so for these the ChEMBL id is tied to its BLA numbers in `purplebook_aliases.json`, with the INN/brand evidence written there. The Purple Book has no stable page per product, so its source link is the Purple Book advanced search with the BLA number as the query (`purplebooksearch.fda.gov/advanced-search?query=<BLA number>`); the BLA number is in the link. When Drugs@FDA and the Purple Book give the same date, Drugs@FDA is used.
 4. **EU year.** EMA's published medicines list (`medicines-output-medicines-report_en.xlsx`), human medicines, centrally authorised only. The date is the "Marketing authorisation date". Single-substance medicines only. Source = the medicine's EPAR page on ema.europa.eu.
