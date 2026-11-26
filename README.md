@@ -1,38 +1,36 @@
 # Moonlight
 
-**What open research records about the medicines for a disease, each with its source.** · [moonlightclues.com](https://www.moonlightclues.com) · MIT · hello@moonlightclues.com
+**What open research records about the medicines for a disease, with the official label beside each one.**
+
+[moonlightclues.com](https://www.moonlightclues.com) · open source (MIT) · hello@moonlightclues.com
 
 > **Not medical advice.** Moonlight is for learning and research. Never start, stop or change any medicine without a doctor.
 
-**Vision:** anyone, anywhere, can see what research records about the medicines linked to a disease, and the source behind each one.
+## What it is
 
-**Mission:** turn open drug–disease research into plain cards. Each card links to its source record, and every error we find is logged in public and reported upstream.
+Search a disease and get one page in plain words, with three tabs:
 
-## Why it matters (30 seconds)
+- **Approved:** medicines the database records as approved for the disease. Each card opens the regulator's label, or says that none was found.
+- **In trials:** some of the medicines in trials for the disease. Not every trial is listed yet.
+- **New clues:** approved medicines that act on a protein linked to the disease, with no trial for it recorded. Things to read about, never treatments.
 
-**Doctors anywhere** see in one page what is approved for a disease, what is in trials and what is worth reading about, each with a link to its source record. **Researchers and pharma teams** get an open, auditable view of the same records, with every correction published. **Patients and carers**, especially families living with rare diseases, can see what research says about their condition, in plain words, with links to show their doctor. It's free and open source, built in Kochi, India.
+## Why it matters
 
-## Built on Open Targets
+Records of approvals, trials and research are public, but they are scattered and written for scientists. Moonlight puts them on one page that a doctor, a researcher or a carer can read, and shows the source behind every card. When a record looks wrong, the card says so, and we report it to the source.
 
-The [Open Targets Platform](https://platform.opentargets.org) is a free, open-source resource from [Open Targets](https://www.opentargets.org), a public–private partnership founded in 2014 by EMBL-EBI, the Wellcome Sanger Institute and GSK, and now also including Genentech, MSD, Pfizer and Sanofi. It brings together genetics, genomics, literature, clinical-trial and drug data to link targets (proteins) to diseases, and it's updated every quarter. Moonlight is a window onto this one open database, so its gaps are our gaps, on top of our own.
+## What it has achieved
 
-## Three tabs per disease
+**1. A published audit: "Do the labels agree?"**
+We checked 4,631 of Moonlight's "Approved" cards, on 1,313 disease pages, against official medicine labels. Where a label could be read (3,934 cards), it at least partly supports the card in 83.2% of cases and fully matches in 25.3%. A computer program read the labels; no doctor has checked its work yet. These figures show how far the database agrees with the labels, not whether any medicine works. The report, data and code are public: [doi.org/10.5281/zenodo.24549100](https://doi.org/10.5281/zenodo.24549100).
 
-- **Approved:** medicines Open Targets records as approved for the disease. Each card says whether a DailyMed, FDA, EMA or PMDA record is attached.
-- **In trials:** some of the medicines in clinical trials for the disease, each with its trial or research record. Not every trial is listed yet.
-- **New clues:** approved medicines that act on a protein linked to the disease but have no trial recorded for it in Open Targets. They're things to read about, never treatments.
-
-## Corrections and studies
-
-- **Open Targets** confirmed seven wrong approval records we reported and is fixing them in release 26.12 ([thread 2105](https://community.opentargets.org/t/2105)). We have also written to the **Therapeutic Target Database (TTD)** maintainers about the same seven entries.
-- **124-disease study** ([report](https://github.com/Moonlight-Clues/moonlight/blob/probe-approval-proof/fixtures/probe_p3/REPORT.md)): 724 of the 2,096 medicines on the Approved lists had no DailyMed, FDA or EMA approval report attached. That measures the strength of the proof, not whether each card is right, and those cards are now marked. **50-disease study** of "up or down" data: [report](https://github.com/Moonlight-Clues/moonlight/blob/probe-direction/fixtures/probe_p4/REPORT.md).
-- Confirmed fixes live in [moonlight/corrections.json](moonlight/corrections.json).
+**2. Corrections confirmed by Open Targets.**
+We reported seven records that listed a medicine as approved for a disease it is not approved for. Open Targets confirmed all seven and will correct them in release 26.12 ([thread 2105](https://community.opentargets.org/t/2105)). This is a correction to their data, not an endorsement of Moonlight.
 
 ## Found a wrong medicine?
 
-Open a **"Wrong medicine"** issue or email hello@moonlightclues.com with the disease, the medicine, what's wrong and a source (a regulator label or trial ID) if you have one. Please don't send personal health information.
+Open a **"Wrong medicine"** issue, or email hello@moonlightclues.com, with the disease, the medicine, what is wrong and a source if you have one. Please do not send personal health information.
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md) before opening a pull request.
+Every correction we have made by hand is in [moonlight/corrections.json](moonlight/corrections.json).
 
 ## Run it
 
@@ -42,10 +40,14 @@ uvicorn moonlight.api:app --port 8080   # http://localhost:8080
 pytest                                  # uses saved answers in fixtures/
 ```
 
-Pitch decks: [for doctors](docs/pitch/moonlight-deck-doctors-19nov.pdf) · [for funders](docs/pitch/moonlight-deck-funders-19nov.pdf)
+## Data
 
-## Team, funding, licence
+Moonlight reads one open database, the [Open Targets Platform](https://platform.opentargets.org). If a medicine is missing there, it is missing here.
 
-**The SMAKS Project**, Kochi: Kashish Dugar (product lead), Shreshth Dugar (co-founder and maintainer), Sidha Mogha (design). Licence: [MIT](LICENSE) © 2026 The SMAKS Project. Data: Open Targets Platform.
+## Team and licence
 
-The project has applied to [Open Source Collective](https://opencollective.com/opensource) for fiscal hosting. If accepted, donations and spending will be public on Open Collective. Moonlight does not sell data and does not run advertisements. See also [GOVERNANCE.md](GOVERNANCE.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+**The SMAKS Project**, Kochi: Kashish Dugar (product lead), Shreshth Dugar (co-founder and maintainer), Sidha Mogha (design).
+
+Licence: [MIT](LICENSE) © 2026 The SMAKS Project. An application to Open Source Collective for fiscal hosting is pending.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md), the [Code of Conduct](CODE_OF_CONDUCT.md) and [GOVERNANCE.md](GOVERNANCE.md).
