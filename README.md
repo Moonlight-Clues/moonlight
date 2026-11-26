@@ -24,6 +24,7 @@ The [Open Targets Platform](https://platform.opentargets.org) is a free, open-so
 
 ## Corrections and studies
 
+- **Paper** (26 Nov 2026): [Do the labels agree?](https://doi.org/10.5281/zenodo.24549100) on Zenodo, DOI 10.5281/zenodo.24549100. A computer program checked 4,631 medicine-disease pairs on 1,313 disease pages against official labels; no doctor has checked its work yet.
 - **Open Targets** confirmed seven wrong approval records we reported and is fixing them in release 26.12 ([thread 2105](https://community.opentargets.org/t/2105)). We have also written to the **Therapeutic Target Database (TTD)** maintainers about the same seven entries.
 - **124-disease study** ([report](https://github.com/Moonlight-Clues/moonlight/blob/probe-approval-proof/fixtures/probe_p3/REPORT.md)): 724 of the 2,096 medicines on the Approved lists had no DailyMed, FDA or EMA approval report attached. That measures the strength of the proof, not whether each card is right, and those cards are now marked. **50-disease study** of "up or down" data: [report](https://github.com/Moonlight-Clues/moonlight/blob/probe-direction/fixtures/probe_p4/REPORT.md).
 - Confirmed fixes live in [moonlight/corrections.json](moonlight/corrections.json).
