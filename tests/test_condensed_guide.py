@@ -92,7 +92,7 @@ DOCTORS = [
 NOT_REFERENCE = "Moonlight is not a prescribing reference."
 FACTS_TITLE = "Where the facts come from"
 FACTS = [
-    ("Facts.", "Open Targets Platform, a free and open research database."),
+    ("Facts.", "Open Targets Platform, an open research database."),  # ticket T0
     # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
     ("Words.", "What you type is sent to Gemini, so type no names or private details."),
     ("Visits.", "Counted with Umami. No cookies. Never the disease or anything you type."),
