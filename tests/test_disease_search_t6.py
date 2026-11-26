@@ -190,7 +190,7 @@ def test_a_search_over_2000_trials_stores_nothing_for_that_disease():
     assert result["ctgov_only"] == []
     assert result["stops"] == [{
         "term": "breast cancer",
-        "reason": "over_2000",
+        "reason": "skipped",
         "detail": {"trial_total": 7765},
     }]
     assert disease_search.TRIAL_LIMIT == 2000
@@ -450,6 +450,66 @@ def test_a_second_run_reads_the_cache_and_writes_the_same_file(tmp_path):
     saved = disease_search.read_sqlite(first)
     assert saved["diseases"][0]["trial_total"] == 1
     assert saved["found"][0]["medicine_id"] == "CHEMBL1551"
+
+
+def test_a_medicine_off_the_disease_list_matches_from_the_whole_catalogue():
+    """Erlotinib and fenofibrate are not on this disease's trial list.
+    The catalogue is every Open Targets medicine, so the bracket name and
+    "(drug)" still match."""
+    one = disease(PSC, "sclerosing cholangitis")
+    erlotinib = {"id": "CHEMBL553", "name": "ERLOTINIB", "parentMolecule": None,
+                 "synonyms": [{"label": "Erlotinib", "source": "ChEMBL"}],
+                 "tradeNames": [{"label": "Tarceva", "source": "ChEMBL"}]}
+    fenofibrate = {"id": "CHEMBL672", "name": "FENOFIBRATE", "parentMolecule": None,
+                   "synonyms": [{"label": "Fenofibrate", "source": "ChEMBL"}],
+                   "tradeNames": []}
+    rows = [study("NCT1", ["sclerosing cholangitis"], [
+        drug_iv("Erlotinib (Tarceva)"), drug_iv("Fenofibrate (drug)")])]
+    result = disease_search.assemble(
+        one, searches_of("sclerosing cholangitis", rows),
+        catalog(erlotinib, fenofibrate), disease_search.exact_index([one]), [], {})
+    assert result["matched"] == [
+        {"medicine_id": "CHEMBL553", "nct_ids": ["NCT1"]},
+        {"medicine_id": "CHEMBL672", "nct_ids": ["NCT1"]},
+    ]
+    assert result["ctgov_only"] == []
+    assert result["before_medicines"] == 0
+
+
+def test_the_four_synonyms_main_5_kept_out_stay_out():
+    """cholangitis, sclerosing; FA; CF; Fibrocystic disease. MAIN 5, 26 Nov 2026."""
+    psc = disease(PSC, "sclerosing cholangitis", exact=("cholangitis, sclerosing",))
+    psc_name = [study("NCT1", ["sclerosing cholangitis"], [drug_iv("Ursodiol")])]
+    psc_extra = psc_name + [study("NCT00929266", ["Healthy Volunteers"], [drug_iv("X")])]
+    psc_result = disease_search.assemble(
+        psc, searches_of("sclerosing cholangitis", psc_name,
+                         **{"cholangitis, sclerosing": psc_extra}),
+        catalog(URSODIOL), disease_search.exact_index([psc]), [], {})
+    assert "cholangitis, sclerosing" not in psc_result["terms_used"]
+    assert ("cholangitis, sclerosing", "extra_trials") in {
+        (stop["term"], stop["reason"]) for stop in psc_result["stops"]}
+
+    friedreich = disease(FRIEDREICH, "Friedreich ataxia", exact=("FA",))
+    fr_name = [study("NCT1", ["Friedreich ataxia"], [drug_iv("Omaveloxolone")])]
+    fr_extra = fr_name + [study("NCT00243399", ["Fanconi Anemia"], [drug_iv("Androgen")])]
+    fr_result = disease_search.assemble(
+        friedreich, searches_of("Friedreich ataxia", fr_name, FA=fr_extra),
+        catalog(), disease_search.exact_index([friedreich]), [], {})
+    assert "FA" not in fr_result["terms_used"]
+
+    cystic = disease(CYSTIC, "cystic fibrosis", exact=("CF", "Fibrocystic disease"))
+    breast = disease("MONDO_0005219", "breast fibrocystic disease", exact=("Fibrocystic disease",))
+    cf_name = [study("NCT1", ["cystic fibrosis"], [drug_iv("Ivacaftor")])]
+    cf_extra = cf_name + [study("NCT00005036", ["Colorectal Cancer"], [drug_iv("Fluorouracil")])]
+    fibro = [study("NCT05717894", ["Fibrocystic Breast Disease"], [drug_iv("Evening primrose oil")])]
+    cf_result = disease_search.assemble(
+        cystic, searches_of("cystic fibrosis", cf_name, CF=cf_extra, **{"Fibrocystic disease": fibro}),
+        catalog(), disease_search.exact_index([cystic, breast]), [], {})
+    assert "CF" not in cf_result["terms_used"]
+    assert "Fibrocystic disease" not in cf_result["terms_used"]
+    reasons = {(stop["term"], stop["reason"]) for stop in cf_result["stops"]}
+    assert ("CF", "extra_trials") in reasons
+    assert ("Fibrocystic disease", "other_disease") in reasons
 
 
 def test_the_check_diseases_are_the_four_named_in_the_ticket():

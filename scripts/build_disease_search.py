@@ -5,17 +5,22 @@ interventional drug and biological trials are asked for. Placebo is dropped.
 Each intervention is stored as a matched medicine id, or as the name
 ClinicalTrials.gov listed when it does not match one medicine.
 
-A search of more than 2,000 trials is not downloaded. A synonym that names a
+A disease whose own-name search is more than 2,000 trials is skipped: the
+count is recorded and the studies are not downloaded. A synonym that names a
 different disease, or that returns trials of a different disease, is not
-used. Both are written into the stops table. The run then exits 2 so a person
-can decide. It does not guess.
+used. Both are written into the stops table. MAIN 5 confirmed this on
+26 Nov 2026, including keeping out "cholangitis, sclerosing", "FA", "CF"
+and "Fibrocystic disease", and MONDO_0018646 as the PSC record.
 
-This batch stands on main. It does not read moonlight/trials.sqlite and it
-does not use the T2 batch. The name matcher is moonlight/match.py (T5).
+Names are matched against every Open Targets medicine in --drug-file
+(output/drug_molecule), not only the medicines on that disease's list.
+The name matcher is moonlight/match.py (T5, with the bracket and "(drug)"
+follow-up). This batch does not read moonlight/trials.sqlite.
 
 Open Targets facts come from the 26.09 files, not from a live question:
     --disease-file   output/disease (id, name, synonyms)
-    --drug-file      output/drug_molecule (id, name, parentId, synonyms, tradeNames)
+    --drug-file      output/drug_molecule, every medicine (id, name, parentId,
+                     synonyms, tradeNames), not one disease's list
     --report-file    output/clinical_report (id, source, drugs, diseases)
 A .json file is read as written. A .parquet file needs pyarrow, at build time
 only. Tests pass the JSON.
@@ -312,8 +317,9 @@ def main(argv: Optional[Sequence[str]] = None, *,
                 searches[term] = found
                 log(f"  {found['total']} trials for {term!r}")
                 if term == terms[0] and found["total"] > disease_search.TRIAL_LIMIT:
-                    log(f"  STOP AND ASK: {term!r} is {found['total']} trials, over "
-                        f"{disease_search.TRIAL_LIMIT}. The rest of this disease is not fetched.")
+                    log(f"  skipped: {term!r} is {found['total']} trials, over "
+                        f"{disease_search.TRIAL_LIMIT}. No search is stored. "
+                        "The In trials tab stays as it is today.")
                     break
             results.append(disease_search.assemble(
                 disease, searches, drugs, index, reports, parents))
@@ -340,12 +346,8 @@ def main(argv: Optional[Sequence[str]] = None, *,
             f"(matched {disease['matched_total']}, "
             f"only on ClinicalTrials.gov {disease['ctgov_only_total']})")
     for stop in saved["stops"]:
-        log(f"STOP {stop['disease_id']} {stop['reason']} {stop['term']!r} "
+        log(f"recorded {stop['disease_id']} {stop['reason']} {stop['term']!r} "
             + canonical(stop["detail"])[:500])
-    if saved["stops"]:
-        log(f"STOP AND ASK: {len(saved['stops'])} stop(s). The file holds the searches "
-            "that stayed inside the limit and did not pull in a different disease.")
-        return 2
     return 0
 
 

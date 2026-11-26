@@ -17,7 +17,9 @@ How a medicine is stored
     know: store the name as ClinicalTrials.gov listed it.
 
 When to stop
-    A search of more than 2,000 trials is not stored.
+    A disease whose own-name search is more than 2,000 trials is skipped.
+    Nothing is fetched past the count, and the count is recorded. Its In
+    trials tab stays as it is today (MAIN 5, 26 Nov 2026).
     A synonym that is the name, or an exact synonym, of a different Open
     Targets disease is not used.
     A synonym that brings back a trial for a different disease (a trial the
@@ -41,6 +43,7 @@ OT_RELEASE = "26.09"
 # The four diseases the ticket's check names, as Open Targets 26.09 ids.
 # PSC has no record of its own: Open Targets files it under sclerosing
 # cholangitis, with "primary sclerosing cholangitis" as an exact synonym.
+# MAIN 5 confirmed MONDO_0018646 is the right PSC record (26 Nov 2026).
 CHECK_DISEASES = (
     ("MONDO_0018646", "sclerosing cholangitis"),
     ("MONDO_0100339", "Friedreich ataxia"),
@@ -178,15 +181,25 @@ def _label_index(drugs: Sequence[dict]) -> Dict[str, List[dict]]:
 
 
 def _match_names(names: Sequence[str], by_label: Dict[str, List[dict]]) -> Optional[str]:
-    """One medicine id, or None. The decision is match.match, not this file."""
+    """One medicine id, or None. The decision is match.match, not this file.
+
+    by_label is every Open Targets medicine, not the disease's own list.
+    Bracket names and "(drug)" are expanded first, so the candidates include
+    the medicine those pieces name.
+    """
     given = [name for name in names if name and str(name).strip()]
     if not given:
         return None
-    if any(match.is_combination(name) for name in given):
+    pieces = []
+    for name in given:
+        pieces.extend(match.names_to_try(name))
+    if not pieces:
+        return None
+    if any(match.is_combination(name) for name in pieces):
         return match.match(given, [])
     seen = set()
     candidates = []
-    for name in given:
+    for name in pieces:
         for drug in by_label.get(match._clean(name), ()):
             if drug["id"] not in seen:
                 seen.add(drug["id"])
@@ -222,9 +235,10 @@ def _empty_result(disease: dict, before: dict, name_total: Optional[int], stops:
 def assemble(disease: dict, searches: Dict[str, dict], drugs: Sequence[dict],
              index: Dict[str, List[dict]], reports: Sequence[dict],
              parents: Dict[str, str]) -> dict:
-    """One disease: the searches it was given, the medicine catalogue, and
-    Open Targets' existing trial rows. searches[term] is {"total", "studies"}.
+    """One disease: the searches it was given, every Open Targets medicine,
+    and Open Targets' existing trial rows. searches[term] is {"total", "studies"}.
     studies is None when the search was over the limit and was not fetched.
+    The medicine list is the whole catalogue, not the disease's own list.
     """
     terms = search_terms(disease)
     name = terms[0]
@@ -232,7 +246,7 @@ def assemble(disease: dict, searches: Dict[str, dict], drugs: Sequence[dict],
     name_search = searches[name]
     if name_search["total"] > TRIAL_LIMIT:
         return _empty_result(disease, before, name_search["total"], [
-            _stop(name, "over_2000", {"trial_total": name_search["total"]})])
+            _stop(name, "skipped", {"trial_total": name_search["total"]})])
 
     name_studies = list(name_search.get("studies") or [])
     name_ids = {_nct(study) for study in name_studies if _nct(study)}
