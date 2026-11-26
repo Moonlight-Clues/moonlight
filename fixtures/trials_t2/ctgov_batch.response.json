@@ -1,0 +1,414 @@
+{
+ "studies": [
+  {
+   "protocolSection": {
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "interventionNames": [
+        "Biological: Intracel KLH Vaccine",
+        "Biological: Tetanus toxoid"
+       ],
+       "label": "Arm A: Intracel KLH"
+      },
+      {
+       "interventionNames": [
+        "Biological: Biosyn KLH",
+        "Biological: Tetanus toxoid"
+       ],
+       "label": "Arm B: Biosyn KLH"
+      },
+      {
+       "interventionNames": [
+        "Biological: Biosyn KLH",
+        "Drug: Montanide ISA51",
+        "Biological: Tetanus toxoid"
+       ],
+       "label": "Arm C: Biosyn KLH with Montanide ISA51"
+      }
+     ],
+     "interventions": [
+      {
+       "armGroupLabels": [
+        "Arm A: Intracel KLH"
+       ],
+       "name": "Intracel KLH Vaccine",
+       "otherNames": [
+        "KLH BCI-ImmuneActivator(TM)",
+        "IntraCel"
+       ],
+       "type": "BIOLOGICAL"
+      },
+      {
+       "armGroupLabels": [
+        "Arm B: Biosyn KLH",
+        "Arm C: Biosyn KLH with Montanide ISA51"
+       ],
+       "name": "Biosyn KLH",
+       "otherNames": [
+        "Immunocyanin",
+        "IMMUCOTHEL®",
+        "VACMUNE®"
+       ],
+       "type": "BIOLOGICAL"
+      },
+      {
+       "armGroupLabels": [
+        "Arm C: Biosyn KLH with Montanide ISA51"
+       ],
+       "name": "Montanide ISA51",
+       "otherNames": [
+        "Montanide ISA 51 VG"
+       ],
+       "type": "DRUG"
+      },
+      {
+       "armGroupLabels": [
+        "Arm A: Intracel KLH",
+        "Arm B: Biosyn KLH",
+        "Arm C: Biosyn KLH with Montanide ISA51"
+       ],
+       "name": "Tetanus toxoid",
+       "otherNames": [
+        "PUROGENATED®"
+       ],
+       "type": "BIOLOGICAL"
+      }
+     ]
+    },
+    "designModule": {
+     "studyType": "OBSERVATIONAL"
+    },
+    "identificationModule": {
+     "briefTitle": "Vaccination With Tetanus and KLH to Assess Immune Responses.",
+     "nctId": "NCT00000105"
+    },
+    "statusModule": {
+     "completionDateStruct": {
+      "date": "2012-03",
+      "type": "ACTUAL"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-11-29",
+      "type": "ACTUAL"
+     },
+     "overallStatus": "TERMINATED",
+     "startDateStruct": {
+      "date": "2002-07"
+     }
+    }
+   }
+  },
+  {
+   "protocolSection": {
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "name": "Aldesleukin",
+       "type": "DRUG"
+      }
+     ]
+    },
+    "designModule": {
+     "phases": [
+      "PHASE1"
+     ],
+     "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+     "briefTitle": "Subcutaneously Administered Aldesleukin ( Interleukin-2; IL-2 ) Therapy in HIV-Infected Patients",
+     "nctId": "NCT00000821"
+    },
+    "statusModule": {
+     "completionDateStruct": {
+      "date": "2002-03",
+      "type": "ACTUAL"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2021-11-03",
+      "type": "ACTUAL"
+     },
+     "overallStatus": "COMPLETED"
+    }
+   }
+  },
+  {
+   "protocolSection": {
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "name": "Pemetrexed",
+       "type": "DRUG"
+      },
+      {
+       "name": "Cisplatin",
+       "type": "DRUG"
+      }
+     ]
+    },
+    "designModule": {
+     "studyType": "EXPANDED_ACCESS"
+    },
+    "identificationModule": {
+     "briefTitle": "ALIMTA (Pemetrexed) Alone or in Combination With Cisplatin for Patients With Malignant Mesothelioma.",
+     "nctId": "NCT00040625"
+    },
+    "statusModule": {
+     "lastUpdatePostDateStruct": {
+      "date": "2007-03-15",
+      "type": "ESTIMATED"
+     },
+     "overallStatus": "APPROVED_FOR_MARKETING"
+    }
+   }
+  },
+  {
+   "protocolSection": {
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "interventionNames": [
+        "Biological: Bevacizumab",
+        "Other: Laboratory Biomarker Analysis",
+        "Drug: Paclitaxel",
+        "Other: Questionnaire Administration"
+       ],
+       "label": "Arm A (Paclitaxel)",
+       "type": "ACTIVE_COMPARATOR"
+      },
+      {
+       "interventionNames": [
+        "Biological: Bevacizumab",
+        "Other: Laboratory Biomarker Analysis",
+        "Drug: Nab-paclitaxel",
+        "Other: Questionnaire Administration"
+       ],
+       "label": "Arm B (Nab-paclitaxel)",
+       "type": "EXPERIMENTAL"
+      },
+      {
+       "interventionNames": [
+        "Biological: Bevacizumab",
+        "Drug: Ixabepilone",
+        "Other: Laboratory Biomarker Analysis",
+        "Other: Questionnaire Administration"
+       ],
+       "label": "Arm C (Ixabepilone)",
+       "type": "EXPERIMENTAL"
+      }
+     ],
+     "interventions": [
+      {
+       "armGroupLabels": [
+        "Arm A (Paclitaxel)",
+        "Arm B (Nab-paclitaxel)",
+        "Arm C (Ixabepilone)"
+       ],
+       "name": "Bevacizumab",
+       "otherNames": [
+        "ABP 215",
+        "Anti-VEGF",
+        "Anti-VEGF Humanized Monoclonal Antibody",
+        "Anti-VEGF Monoclonal Antibody SIBP04",
+        "Anti-VEGF rhuMAb",
+        "Avastin",
+        "Bevacizumab awwb",
+        "Bevacizumab Biosimilar ABP 215",
+        "Bevacizumab Biosimilar BEVZ92",
+        "Bevacizumab Biosimilar BI 695502",
+        "Bevacizumab Biosimilar CBT 124",
+        "Bevacizumab Biosimilar CT-P16",
+        "Bevacizumab Biosimilar FKB238",
+        "Bevacizumab Biosimilar GB-222",
+        "Bevacizumab Biosimilar HD204",
+        "Bevacizumab Biosimilar HLX04",
+        "Bevacizumab Biosimilar IBI305",
+        "Bevacizumab Biosimilar LY01008",
+        "Bevacizumab Biosimilar MIL60",
+        "Bevacizumab Biosimilar Mvasi",
+        "Bevacizumab Biosimilar MYL-1402O",
+        "Bevacizumab Biosimilar QL 1101",
+        "Bevacizumab Biosimilar RPH-001",
+        "Bevacizumab Biosimilar SCT501",
+        "Bevacizumab Biosimilar Zirabev",
+        "Bevacizumab-awwb",
+        "Bevacizumab-bvzr",
+        "BP102",
+        "BP102 Biosimilar",
+        "HD204",
+        "Immunoglobulin G1 (Human-Mouse Monoclonal rhuMab-VEGF Gamma-Chain Anti-Human Vascular Endothelial Growth Factor), Disulfide With Human-Mouse Monoclonal rhuMab-VEGF Light Chain, Dimer",
+        "Mvasi",
+        "MYL-1402O",
+        "Recombinant Humanized Anti-VEGF Monoclonal Antibody",
+        "rhuMab-VEGF",
+        "SCT501",
+        "SIBP 04",
+        "SIBP-04",
+        "SIBP04",
+        "Zirabev"
+       ],
+       "type": "BIOLOGICAL"
+      },
+      {
+       "armGroupLabels": [
+        "Arm C (Ixabepilone)"
+       ],
+       "name": "Ixabepilone",
+       "otherNames": [
+        "(1S,3S,7S,10R,11S,12S,16R)-7,11-Dihydroxy-8,8,10,12,16-pentamethyl-3-[(1E)-1-methyl-2-(2-methyl-4-thiazolyl)ethenyl]-17-oxa-4-azabicyclo[14.1.0]heptadecane-5,9-dione",
+        "Azaepothilone B",
+        "BMS 247550",
+        "BMS-247550",
+        "BMS247550",
+        "Epothilone",
+        "Epothilone-B BMS 247550",
+        "Ixempra"
+       ],
+       "type": "DRUG"
+      },
+      {
+       "armGroupLabels": [
+        "Arm A (Paclitaxel)",
+        "Arm B (Nab-paclitaxel)",
+        "Arm C (Ixabepilone)"
+       ],
+       "name": "Laboratory Biomarker Analysis",
+       "type": "OTHER"
+      },
+      {
+       "armGroupLabels": [
+        "Arm B (Nab-paclitaxel)"
+       ],
+       "name": "Nab-paclitaxel",
+       "otherNames": [
+        "ABI 007",
+        "ABI-007",
+        "Abraxane",
+        "Albumin-bound Paclitaxel",
+        "Albumin-Stabilized Nanoparticle Paclitaxel",
+        "Nanoparticle Albumin-bound Paclitaxel",
+        "Nanoparticle Paclitaxel",
+        "Paclitaxel Albumin",
+        "paclitaxel albumin-stabilized nanoparticle formulation",
+        "Protein-bound Paclitaxel"
+       ],
+       "type": "DRUG"
+      },
+      {
+       "armGroupLabels": [
+        "Arm A (Paclitaxel)"
+       ],
+       "name": "Paclitaxel",
+       "otherNames": [
+        "Anzatax",
+        "Asotax",
+        "Bristaxol",
+        "Praxel",
+        "Taxol",
+        "Taxol Konzentrat"
+       ],
+       "type": "DRUG"
+      },
+      {
+       "armGroupLabels": [
+        "Arm A (Paclitaxel)",
+        "Arm B (Nab-paclitaxel)",
+        "Arm C (Ixabepilone)"
+       ],
+       "name": "Questionnaire Administration",
+       "type": "OTHER"
+      }
+     ]
+    },
+    "designModule": {
+     "phases": [
+      "PHASE3"
+     ],
+     "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+     "briefTitle": "Paclitaxel, Nab-paclitaxel, or Ixabepilone With or Without Bevacizumab in Treating Patients With Stage IIIC or Stage IV Breast Cancer",
+     "nctId": "NCT00785291"
+    },
+    "statusModule": {
+     "completionDateStruct": {
+      "date": "2017-06-15",
+      "type": "ACTUAL"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-06-23",
+      "type": "ACTUAL"
+     },
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2008-10-13",
+      "type": "ACTUAL"
+     }
+    }
+   }
+  },
+  {
+   "protocolSection": {
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "interventionNames": [
+        "Other: Placebo"
+       ],
+       "label": "Placebo",
+       "type": "PLACEBO_COMPARATOR"
+      },
+      {
+       "interventionNames": [
+        "Drug: Remdesivir"
+       ],
+       "label": "Remdesivir",
+       "type": "EXPERIMENTAL"
+      }
+     ],
+     "interventions": [
+      {
+       "armGroupLabels": [
+        "Placebo"
+       ],
+       "name": "Placebo",
+       "type": "OTHER"
+      },
+      {
+       "armGroupLabels": [
+        "Remdesivir"
+       ],
+       "name": "Remdesivir",
+       "type": "DRUG"
+      }
+     ]
+    },
+    "designModule": {
+     "phases": [
+      "PHASE3"
+     ],
+     "studyType": "INTERVENTIONAL"
+    },
+    "identificationModule": {
+     "briefTitle": "Adaptive COVID-19 Treatment Trial (ACTT)",
+     "nctId": "NCT04280705"
+    },
+    "statusModule": {
+     "completionDateStruct": {
+      "date": "2020-05-21",
+      "type": "ACTUAL"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2022-03-14",
+      "type": "ACTUAL"
+     },
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2020-02-21",
+      "type": "ACTUAL"
+     }
+    }
+   }
+  }
+ ]
+}
