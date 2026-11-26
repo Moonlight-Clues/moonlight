@@ -420,6 +420,12 @@ PMDA_SUMMARIES_FILE = pathlib.Path(__file__).resolve().parent / "pmda_summaries.
 PMDA_SUMMARY_KEYS = {"medicine_id", "disease_id", "date", "summary_date", "link"}
 # The one extra key an entry may carry: where its summary_date was read.
 PMDA_EXTRA_KEY = "date_source"
+# Ticket 2.69. Another optional key: "original" (the medicine's first approval)
+# or "new use" (a later added use). Without it an entry counts as "new use".
+PMDA_TYPE_KEY = "approval_type"
+PMDA_TYPES = ("original", "new use")
+# Ticket 2.69. The region word of a "First approved" line set by a PMDA year.
+JAPAN_REGION = "Japan"
 # Ticket 3.18. The wider groups too broad for the wider-group box. Nothing in
 # Moonlight writes here.
 BROAD_GROUPS_FILE = pathlib.Path(__file__).resolve().parent / "broad_groups.json"
@@ -1975,31 +1981,29 @@ def _on_pmda(link: object) -> bool:
     return address.scheme == "https" and (host == "pmda.go.jp" or host.endswith(".pmda.go.jp"))
 
 
-def pmda_summaries() -> Dict[Tuple[str, str], Tuple[str, str]]:
-    """The hand-found list of PMDA English summaries (ticket 2.68), as
-    (medicine id, disease id) -> (the link, the year of summary_date).
-
-    Each entry holds exactly five things: the medicine's id, the disease's
-    id, the date, the summary_date (the approval date the summary gives,
-    written YYYY-MM-DD) and the link, an https link on pmda.go.jp that is
-    not Japan's general list. It may also hold date_source, in words. An
-    entry with no approval date, or not written this way, raises
-    ValueError, and the list is never half read. The same pair written
-    twice is refused too.
-
-    This list is written by hand. No code adds to it.
-    """
+def _pmda_entries() -> Dict[Tuple[str, str], Tuple[str, str, str]]:
+    """The PMDA summaries file, checked: (medicine id, disease id) ->
+    (link, year of summary_date, approval type). A missing approval_type
+    reads as "new use" (ticket 2.69). Anything not written properly raises
+    ValueError, and the list is never half read."""
     entries = _read_pmda_summaries()
     if not isinstance(entries, list):
         raise ValueError("pmda_summaries.json must hold a list.")
-    found: Dict[Tuple[str, str], Tuple[str, str]] = {}
+    found: Dict[Tuple[str, str], Tuple[str, str, str]] = {}
     for entry in entries:
-        keys = PMDA_SUMMARY_KEYS
+        keys = set(PMDA_SUMMARY_KEYS)
         if isinstance(entry, dict) and PMDA_EXTRA_KEY in entry:
             said = entry[PMDA_EXTRA_KEY]
             if not isinstance(said, str) or not said.strip():
                 raise ValueError(f"A PMDA summary's date_source must be words: {entry!r}")
-            keys = PMDA_SUMMARY_KEYS | {PMDA_EXTRA_KEY}
+            keys.add(PMDA_EXTRA_KEY)
+        kind = "new use"
+        if isinstance(entry, dict) and PMDA_TYPE_KEY in entry:
+            kind = entry[PMDA_TYPE_KEY]
+            if not isinstance(kind, str) or kind not in PMDA_TYPES:
+                raise ValueError(f"A PMDA summary's approval_type must be one of "
+                                 f"{list(PMDA_TYPES)}: {entry!r}")
+            keys.add(PMDA_TYPE_KEY)
         pair = _checked_pair(entry, keys, "A PMDA summary")
         when = entry["summary_date"]
         if not isinstance(when, str) or len(when) != 10:
@@ -2013,8 +2017,51 @@ def pmda_summaries() -> Dict[Tuple[str, str], Tuple[str, str]]:
             raise ValueError(f"A PMDA summary needs an https link on pmda.go.jp: {entry!r}")
         if pair in found:
             raise ValueError(f"A PMDA summary is written twice: {entry!r}")
-        found[pair] = (entry["link"], when[:4])
+        found[pair] = (entry["link"], when[:4], kind)
     return found
+
+
+def pmda_summaries() -> Dict[Tuple[str, str], Tuple[str, str]]:
+    """The hand-found list of PMDA English summaries (ticket 2.68), as
+    (medicine id, disease id) -> (the link, the year of summary_date).
+
+    Each entry holds the medicine's id, the disease's id, the date, the
+    summary_date (the approval date the summary gives, written YYYY-MM-DD)
+    and the link, an https link on pmda.go.jp that is not Japan's general
+    list. It may also hold date_source, in words, and (ticket 2.69)
+    approval_type, "original" or "new use". An entry with no approval date,
+    or not written this way, raises ValueError, and the list is never half
+    read. The same pair written twice is refused too.
+
+    This list is written by hand. No code adds to it.
+    """
+    return {pair: (link, year) for pair, (link, year, _kind) in _pmda_entries().items()}
+
+
+def pmda_original_approvals() -> Dict[Tuple[str, str], Tuple[str, int]]:
+    """Ticket 2.69. The entries of pmda_summaries.json that are a medicine's
+    original approval: (medicine id, disease id) -> (link, year). An entry
+    that says "new use", or says nothing, is not here: it never sets a year."""
+    return {pair: (link, int(year)) for pair, (link, year, kind) in _pmda_entries().items()
+            if kind == "original"}
+
+
+def earliest_first_approved(table: Optional[dict],
+                            original: Optional[Tuple[str, int]]) -> Optional[dict]:
+    """Ticket 2.69. The "first_approved" entry for a card: its approval_years
+    entry (table, or None) and its PMDA original approval (link, year), or None.
+
+    Japan wins only when its year is strictly earlier than the table's, or
+    when there is no table entry: {"year", "region": "Japan", "source": the
+    PMDA link}. Otherwise the table's entry comes back as it was (a later
+    Japan year or a tie changes nothing and is not logged).
+    """
+    if original is None:
+        return table
+    link, year = original
+    if table is not None and year >= table["year"]:
+        return table
+    return {"year": year, "region": JAPAN_REGION, "source": link}
 
 
 def link_pmda_summaries(approved: Iterable[ApprovedMedicine],
