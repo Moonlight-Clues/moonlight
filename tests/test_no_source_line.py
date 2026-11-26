@@ -66,6 +66,9 @@ SENTENCE = "The database gives no source link for this medicine."
 # The words the card has today. The card must not say both.
 OLD_WORDS = "No source link in the data"
 LINK_WORDS = "Source record"
+# ticket 2.67 (W6): on the three In trials places, a card with no link says this instead.
+NO_STUDY = "No study of this disease was found for this medicine."
+TRIAL_PLACES = ("being_studied", "more_in_trials", "new_in_trials")  # ticket 2.67 (W6)
 
 ASTHMA = "MONDO_0004979"
 LEUKEMIA = "MONDO_0004967"  # acute lymphoblastic leukemia
@@ -195,6 +198,7 @@ const { chromium } = require("playwright");
 const PAGE = fs.readFileSync(process.argv[1], "utf-8");
 const ANSWERS = JSON.parse(fs.readFileSync(process.argv[2], "utf-8"));
 const SENTENCE = process.argv[3], OLD_WORDS = process.argv[4];
+const NO_STUDY = process.argv[5];  // ticket 2.67 (W6)
 const SITE = "http://moonlight.test";
 
 // Each place: its name in the answer, its tab, its cards, the box to open first (if any).
@@ -210,7 +214,7 @@ const PLACES = [
 ];
 
 // What a reader sees on each card of one place. Read while the place is open.
-function readCards([cardsId, sentence, oldWords]) {
+function readCards([cardsId, sentence, oldWords, noStudy]) {
   const count = (words, piece) => words.split(piece).length - 1;
   return [...document.querySelectorAll("#" + cardsId + " > .card")].map(card => {
     const words = card.innerText.replace(/\s+/g, " ").trim();  // only what is on screen
@@ -219,6 +223,7 @@ function readCards([cardsId, sentence, oldWords]) {
       name: card.querySelector('[data-slot="medicine-name"]').textContent,
       onScreen: card.checkVisibility(),
       sentences: count(words, sentence),
+      noStudy: count(words, noStudy),  // ticket 2.67 (W6)
       oldWords: count(words, oldWords),
       linksShown: links.length,
       linkWords: links.map(a => a.innerText.trim()),
@@ -254,7 +259,7 @@ async function oneSearch(browser, answer) {
       await page.click("#" + box + " summary");
       await page.waitForTimeout(300);
     }
-    out.places[name] = await page.evaluate(readCards, [cardsId, SENTENCE, OLD_WORDS]);
+    out.places[name] = await page.evaluate(readCards, [cardsId, SENTENCE, OLD_WORDS, NO_STUDY]);
   }
   await context.close();
   return out;
@@ -280,7 +285,7 @@ def seen(answers, tmp_path_factory):
     answers_file = tmp_path_factory.mktemp("no_source_line") / "answers.json"
     answers_file.write_text(json.dumps(answers), encoding="utf-8")
     run = subprocess.run(
-        [node, "-e", BROWSER_SCRIPT, str(PAGE_FILE), str(answers_file), SENTENCE, OLD_WORDS],
+        [node, "-e", BROWSER_SCRIPT, str(PAGE_FILE), str(answers_file), SENTENCE, OLD_WORDS, NO_STUDY],
         capture_output=True, text=True, timeout=300, cwd=str(ROOT))
     assert run.returncode == 0, run.stderr[-3000:]
     out = json.loads(run.stdout)
@@ -327,7 +332,10 @@ def test_browser_a_card_with_no_link_says_the_sentence_in_every_place(seen, plac
     """EXAMPLE 2. The first card of the place was handed over with no link."""
     first = seen["every_place"]["places"][place][0]
     assert first["onScreen"]
-    assert first["sentences"] == 1  # said once, and on screen
+    if place in TRIAL_PLACES:  # ticket 2.67 (W6): the In trials places say the new sentence instead
+        assert first["noStudy"] == 1 and first["sentences"] == 0
+    else:
+        assert first["sentences"] == 1  # said once, and on screen
     assert first["linksShown"] == 0  # there is no link to show
 
 

@@ -27,6 +27,7 @@ from fastapi.testclient import TestClient
 from moonlight import api
 
 import test_narrower_box as saved_pages
+from test_red_warnings_2_62 import page as saved_page_2_62
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGE_FILE = ROOT / "web" / "index.html"
@@ -42,6 +43,7 @@ TRIAL_PLACES = [("being_studied", "tab-trials", "studied-cards", None),
                 ("new_in_trials", "tab-trials", "new-trials-cards", "new-trials-box")]
 OTHER_PLACES = [("new_clues", "tab-clues", "new-cards", None),
                 ("approved", "tab-approved", "approved-cards", None)]
+MISTAKES_BOX = ("wrong_box", "tab-approved", "wrong-cards", "wrong-box")  # Approved tab, red-warning box
 
 
 # ---- the page, read as text ----
@@ -86,7 +88,11 @@ def answers():
     for place, *_ in TRIAL_PLACES:
         long_name[place][0]["medicine"] = LONG_NAME
         long_name[place][0]["forms"] = [LONG_NAME]
-    return {"base": base, "nolink": nolink, "long": long_name}
+    # Rheumatoid arthritis, saved answers, untouched: Dexbrompheniramine is in the
+    # Approved tab's mistakes box (the red-warning box), where the broken name was seen.
+    arthritis = saved_page_2_62("MONDO_0008383")
+    assert "CHEMBL1201287" in arthritis["wrong_approvals_box"]
+    return {"base": base, "nolink": nolink, "long": long_name, "ra": arthritis}
 
 
 BROWSER_SCRIPT = r"""
@@ -151,6 +157,9 @@ async function oneSearch(browser, name, answer) {
       await page.waitForTimeout(300);
     }
     out.places[place] = await page.evaluate(readCards, [cardsId, process.argv[5], process.argv[6]]);
+    if (SHOTS && name === "ra" && place === "wrong_box")
+      await page.locator("#wrong-cards > .card", { hasText: "Dexbrompheniramine" }).first()
+        .screenshot({ path: SHOTS + "/ra_wrong_box.png" });
     if (SHOTS && (name === "nolink" || name === "long") && place !== "approved" && place !== "new_clues")
       await page.locator("#" + cardsId + " > .card").first().screenshot({ path: SHOTS + "/" + name + "_" + place + ".png" });
   }
@@ -182,7 +191,7 @@ def seen(answers, tmp_path_factory):
     shots = os.environ.get("MOONLIGHT_SHOTS", "")
     run = subprocess.run(
         [node, "-e", BROWSER_SCRIPT, str(PAGE_FILE), str(answers_file),
-         json.dumps(TRIAL_PLACES + OTHER_PLACES), shots, NO_STUDY, NO_SOURCE],
+         json.dumps(TRIAL_PLACES + OTHER_PLACES + [MISTAKES_BOX]), shots, NO_STUDY, NO_SOURCE],
         capture_output=True, text=True, timeout=300, cwd=str(ROOT))
     assert run.returncode == 0, run.stderr[-3000:]
     out = json.loads(run.stdout)
@@ -217,6 +226,15 @@ def test_browser_an_in_trials_card_with_a_link_keeps_its_link_and_never_says_no_
 def test_browser_a_card_on_another_tab_with_no_link_keeps_the_2_23_sentence(seen, place):
     first = seen["nolink"]["places"][place][0]
     assert first["noSource"] == 1 and first["noStudy"] == 0
+
+
+def test_browser_dexbrompheniramine_in_the_mistakes_box_of_rheumatoid_arthritis_is_one_line(seen):
+    cards = {card["name"]: card for card in seen["ra"]["places"]["wrong_box"]}
+    first = cards["Dexbrompheniramine"]  # the real card, nothing handed over
+    assert first["lang"] == "en" and first["hyphens"] == "auto"
+    assert first["overflowWrap"] != "anywhere" and first["wordBreak"] != "break-all"
+    assert first["titleLines"] == 1  # one line (a break would need a hyphen, and none is needed)
+    assert not first["titleOverflows"] and not first["sideways"]
 
 
 @pytest.mark.parametrize("place", [p[0] for p in TRIAL_PLACES])
