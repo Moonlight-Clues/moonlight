@@ -1405,11 +1405,10 @@ body.registering>:not(.register){display:none!important}
       const [before, after] = APPROVAL_WORDS.card.replace("{region}", () => medicine.first_approved.region.trim()).split("{year}");
       const source = medicine.first_approved.source;
       let yearPart = document.createTextNode(String(year));
-      if (typeof source === "string" && source.startsWith("https://")) {
+      if (typeof source === "string" && source) {  // the API only sends a checked secure link (approval_years.load)
         yearPart = document.createElement("a");
         yearPart.href = source;
-        yearPart.target = "_blank";
-        yearPart.rel = "noopener";
+        yearPart.className = "source-link";
         yearPart.textContent = String(year);
       }
       line.replaceChildren(before, yearPart, after);
