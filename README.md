@@ -42,7 +42,6 @@ uvicorn moonlight.api:app --port 8080   # http://localhost:8080
 pytest                                  # uses saved answers in fixtures/
 ```
 
-Pitch decks: [for doctors](docs/pitch/moonlight-deck-doctors-19nov.pdf) · [for funders](docs/pitch/moonlight-deck-funders-19nov.pdf)
 
 ## Team, funding, licence
 
