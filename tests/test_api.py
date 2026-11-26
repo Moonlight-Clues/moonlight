@@ -457,7 +457,8 @@ def test_the_page_wording(client):
     assert 'placeholder="Type a disease name"' in page
     assert "Search by disease name<" in page
     assert (
-        "A free, open-source explorer of medicines and trials for any disease, "
+        # ticket T0
+        "An open-source explorer of medicines and trials for any disease, "
         "built from public research data."
     ) in page
     assert "Please wait, fetching data" in page
@@ -1440,7 +1441,7 @@ def test_54_back_to_search_closes_the_guide(client):
 def test_54_the_sentence_about_the_data_release_is_not_copied(client):
     page = client.get("/").text
     assert "which release of the data" not in page
-    assert "Open Targets Platform, a free and open research database." in page
+    assert "Open Targets Platform, an open research database." in page  # ticket T0
 
 
 # ---- Example 2 ----
@@ -1947,7 +1948,7 @@ def test_82_the_guide_line_is_right_after_the_open_targets_line(client):
     guide = guide_of(client.get("/").text)
     lines = [plain(line) for line in re.findall(r"(?s)<li>.*?</li>", guide)]
     place = lines.index("Words. " + GUIDE_LINE)
-    assert lines[place - 1] == "Facts. Open Targets Platform, a free and open research database."
+    assert lines[place - 1] == "Facts. Open Targets Platform, an open research database."  # ticket T0
 
 
 def test_82_the_safety_line_is_unchanged(client):
