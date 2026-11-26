@@ -1,0 +1,6 @@
+{
+ "query": "query MatchDrug($chemblId: String!) {\n  drug(chemblId: $chemblId) {\n    id name\n    synonyms { label source }\n    tradeNames { label source }\n    parentMolecule { id name }\n    childMolecules { id name synonyms { label source } tradeNames { label source } }\n  }\n}",
+ "variables": {
+  "chemblId": "CHEMBL941"
+ }
+}
