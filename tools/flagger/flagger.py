@@ -44,8 +44,13 @@ SOURCE_KIND_ORDER = (
     "USAN name page",
     "FDA label, unreadable",
     "EMA page, unreadable",
+    "combination only",
     "other",
 )
+PENDING_RELABEL = "combo-relabel"   # checked.json mark: no date, treated as never checked
+COMBO_ONLY = "combination only"
+COMBO_ONLY_NOTE = "combination only: no single-ingredient label found; source kept"
+NL_COLS = ["disease_id", "disease", "medicine_id", "medicine", "source_kind", "label_url", "note"]
 SALT_WORDS = {
     "hydrochloride", "hydrobromide", "sodium", "potassium", "calcium", "magnesium",
     "acetate", "maleate", "fumarate", "succinate", "tartrate", "sulfate", "sulphate",
@@ -568,6 +573,8 @@ def resolve_source_label(c, labels_dir, get=_get, ingredients_of=None, finder=No
 # ---------------------------------------------------------------- no-label source kinds
 def source_kind(url, reason=""):
     """A short source type for the no-label file. Unknown hosts fall under 'other'."""
+    if (reason or "").startswith("combination only") or "no single-ingredient label" in (reason or ""):
+        return COMBO_ONLY
     if not (url or "").strip():
         return "missing link"
     host = (re.match(r"https?://([^/]+)", url) or [None, ""])[1]
@@ -598,12 +605,126 @@ def kind_sort_key(kind):
 
 
 # ---------------------------------------------------------------- order, estimate, plan
+def is_never_checked(rec):
+    """True when there is no completed check: missing, no date, or pending a combination relabel."""
+    if not rec:
+        return True
+    if rec.get("pending") == PENDING_RELABEL:
+        return True
+    return not rec.get("date")
+
+
+def last_checked_date(c, checked):
+    rec = checked.get(card_key(c)) or {}
+    return "" if is_never_checked(rec) else rec["date"]
+
+
+def mark_not_yet_checked(checked, keys):
+    """Mark these cards as never checked so the next run picks them first (no date)."""
+    for key in keys:
+        checked[key] = {"pending": PENDING_RELABEL}
+    return checked
+
+
 def order_cards(cards, checked):
-    """Oldest-checked first; never checked first. Ties: a fixed hash, so the slice is spread over the diseases."""
+    """Oldest-checked first; never checked first. Ties: a fixed hash, so the slice is spread over the diseases.
+
+    A card is never checked if it is absent from checked.json, has no date, or is
+    marked pending=combo-relabel (a combination source that will be replaced).
+    """
     def k(c):
-        last = (checked.get(card_key(c)) or {}).get("date", "")
-        return (last, hashlib.sha1(card_key(c).encode()).hexdigest())
+        return (last_checked_date(c, checked), hashlib.sha1(card_key(c).encode()).hexdigest())
     return sorted(cards, key=k)
+
+
+def combo_only_row(r):
+    """A no-label-file row for a card whose source is a combination with no single-ingredient label."""
+    return {
+        "disease_id": r["disease_id"], "disease": r["disease"],
+        "medicine_id": r["medicine_id"], "medicine": r["medicine"],
+        "source_kind": COMBO_ONLY,
+        "label_url": r.get("source_url") or r.get("label_url") or "",
+        "note": r.get("note") if (r.get("note") or "").startswith("combination only") else COMBO_ONLY_NOTE,
+    }
+
+
+def merge_combo_only(no_label, combo_only_cards):
+    """Append combination-only cards to the no-label list. They keep their source. Does not touch flags."""
+    seen = {(r["disease_id"], r["medicine_id"]) for r in no_label}
+    out = list(no_label)
+    for r in combo_only_cards:
+        key = (r["disease_id"], r["medicine_id"])
+        if key in seen:
+            continue
+        out.append(combo_only_row(r))
+        seen.add(key)
+    out.sort(key=lambda r: (kind_sort_key(r["source_kind"]), r["label_url"] or "", r["disease"], r["medicine"]))
+    return out
+
+
+def write_no_label_csv(date, no_label):
+    path = os.path.join(REPO, "flags", f"{date}-no-label.csv")
+    os.makedirs(os.path.join(REPO, "flags"), exist_ok=True)
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=NL_COLS, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(no_label)
+    kind_counts = {}
+    for r in no_label:
+        kind_counts[r["source_kind"]] = kind_counts.get(r["source_kind"], 0) + 1
+    return path, kind_counts
+
+
+def combo_only_sentence(n, flag_count=None):
+    extra = (" of %s" % flag_count) if flag_count is not None else ""
+    return (
+        'The %s "combination only" cards have a combination product\'s label and no '
+        "single-ingredient label of their own; they keep that source. They are listed here in addition to "
+        "any flag their model verdict already earned. This does not change the flag count%s."
+        % (n, extra)
+    )
+
+
+def update_md_no_label_counts(date, no_label, kind_counts, flag_count=None):
+    """Refresh the no-label table in flags/<date>.md. Leaves the flag count as it is."""
+    md_path = os.path.join(REPO, "flags", f"{date}.md")
+    if not os.path.exists(md_path):
+        return
+    lines = [
+        f"## No readable label: {len(no_label)}",
+        "",
+        "| Source | Cards |",
+        "|---|---|",
+    ]
+    for kind in SOURCE_KIND_ORDER:
+        if kind in kind_counts:
+            lines.append(f"| {kind} | {kind_counts[kind]} |")
+    for kind in kind_counts:
+        if kind not in SOURCE_KIND_ORDER:
+            lines.append(f"| {kind} | {kind_counts[kind]} |")
+    lines += ["", f"Sorted list: `flags/{date}-no-label.csv`."]
+    if kind_counts.get(COMBO_ONLY):
+        lines += ["", combo_only_sentence(kind_counts[COMBO_ONLY], flag_count)]
+    lines.append("")
+    text = open(md_path).read()
+    text = re.sub(
+        r"## No readable label:.*?(?=\n## |\Z)",
+        "\n".join(lines),
+        text,
+        count=1,
+        flags=re.S,
+    )
+    open(md_path, "w").write(text)
+
+
+def _md_after_no_label(md, date, kind_counts, flag_count):
+    md += ["", f"Sorted list: `flags/{date}-no-label.csv`."]
+    n = kind_counts.get(COMBO_ONLY)
+    if n:
+        md += ["", combo_only_sentence(n, flag_count), ""]
+    else:
+        md.append("")
+    return md
 
 
 def user_message(c, label_url, text):
@@ -793,14 +914,18 @@ def cmd_report(a):
         for r in flags:
             w.writerow({**r, "cost": f"{r['cost']:.6f}"})
     no_label = [r for r in rows if r["verdict"] == "NO_LABEL"]
-    no_label.sort(key=lambda r: (kind_sort_key(r["source_kind"]), r["label_url"] or "", r["disease"], r["medicine"]))
-    nl_cols = ["disease_id", "disease", "medicine_id", "medicine", "source_kind", "label_url", "note"]
-    with open(os.path.join(REPO, "flags", f"{date}-no-label.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=nl_cols, extrasaction="ignore"); w.writeheader()
-        w.writerows(no_label)
-    kind_counts = {}
-    for r in no_label:
-        kind_counts[r["source_kind"]] = kind_counts.get(r["source_kind"], 0) + 1
+    combo_only = []
+    for c in chosen:
+        note = c.get("combo_note") or ""
+        if "no single-ingredient label found" in note:
+            combo_only.append({**c, "label_url": c.get("source") or c.get("label_url") or "", "note": note})
+    combo_path = os.path.join(REPO, "flags", f"{date}-combo-would-switch.csv")
+    if os.path.exists(combo_path):
+        for r in csv.DictReader(open(combo_path)):
+            if not r.get("replacement_url"):
+                combo_only.append(r)
+    no_label = merge_combo_only(no_label, combo_only)
+    _, kind_counts = write_no_label_csv(date, no_label)
     for r in rows:
         checked[f"{r['disease_id']}|{r['medicine_id']}"] = {"date": date, "verdict": r["verdict"]}
     json.dump(checked, open(a.checked, "w"), indent=0, sort_keys=True)
@@ -828,7 +953,7 @@ def cmd_report(a):
     extra = [k for k in kind_counts if k not in SOURCE_KIND_ORDER]
     for kind in extra:
         md.append(f"| {kind} | {kind_counts[kind]} |")
-    md += ["", f"Sorted list: `flags/{date}-no-label.csv`.", ""]
+    md = _md_after_no_label(md, date, kind_counts, len(flags))
     if plan["diseases_failed"]:
         md += ["## Pages that could not be read", ""] + [f"- {x}" for x in plan["diseases_failed"]] + [""]
     open(os.path.join(REPO, "flags", f"{date}.md"), "w").write("\n".join(md) + "\n")
@@ -884,17 +1009,32 @@ def cmd_combos(a):
     cols = ["disease_id", "disease", "medicine_id", "medicine", "source_url", "ingredients", "replacement_url", "note"]
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(rows)
-    switched = sum(1 for r in rows if r["replacement_url"] and r["replacement_url"] != r["source_url"])
-    none = len(rows) - switched
-    # Append a short section to the run md when it exists.
+    switched = [r for r in rows if r["replacement_url"] and r["replacement_url"] != r["source_url"]]
+    none = [r for r in rows if not r["replacement_url"] or r["replacement_url"] == r["source_url"]]
+    # Next run should read the cards that would switch first, against the single-medicine label.
+    checked_path = a.checked
+    checked = json.load(open(checked_path)) if os.path.exists(checked_path) else {}
+    mark_not_yet_checked(checked, [f"{r['disease_id']}|{r['medicine_id']}" for r in switched])
+    json.dump(checked, open(checked_path, "w"), indent=0, sort_keys=True)
+    # Combination-only cards go on the no-label list; they keep their source and are not flags for that reason.
+    nl_path = os.path.join(REPO, "flags", f"{date}-no-label.csv")
+    existing = list(csv.DictReader(open(nl_path))) if os.path.exists(nl_path) else []
+    no_label = merge_combo_only(existing, none)
+    _, kind_counts = write_no_label_csv(date, no_label)
+    flags_path = os.path.join(REPO, "flags", f"{date}.csv")
+    flag_count = sum(1 for _ in csv.DictReader(open(flags_path))) if os.path.exists(flags_path) else None
+    update_md_no_label_counts(date, no_label, kind_counts, flag_count)
     md_path = os.path.join(REPO, "flags", f"{date}.md")
     section = [
         f"## Combination sources that Q22 would replace: {len(rows)}",
         "",
         "A combination pill's label does not count for one of its parts (Kashish, Q22). "
         "From the next run, the flagger looks up that medicine's own single-ingredient DailyMed SPL instead. "
-        f"Tonight's cards were not re-sent. {switched} would switch to a single-ingredient label; "
-        f"{none} are a combination with no single-ingredient label found (the source would be kept). "
+        f"{len(switched)} would switch and have been marked not-yet-checked so they are read first with that label; "
+        f"{len(none)} have no single-ingredient label, keep their source, and are listed as "
+        f'"combination only" in `flags/{date}-no-label.csv`. '
+        "That listing does not change the flag count"
+        + (f" of {flag_count}" if flag_count is not None else "") + ". "
         f"List: `flags/{date}-combo-would-switch.csv`.",
         "",
     ]
@@ -902,7 +1042,9 @@ def cmd_combos(a):
         text = open(md_path).read()
         text = re.sub(r"\n## Combination sources that Q22 would replace:.*", "", text, flags=re.S)
         open(md_path, "w").write(text.rstrip() + "\n\n" + "\n".join(section))
-    print(json.dumps({"combo_cards": len(rows), "would_switch": switched, "no_single_found": none, "file": path}))
+    print(json.dumps({"combo_cards": len(rows), "would_switch": len(switched),
+                      "no_single_found": len(none), "no_label": len(no_label),
+                      "flags": flag_count, "file": path}))
     return 0
 
 

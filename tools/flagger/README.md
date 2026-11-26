@@ -23,5 +23,9 @@ It never changes the site, `moonlight/*.py`, `moonlight/*.json` or `web/`. A fla
   (hard cap 1.00). The actual cost comes from the API's usage figures.
 - Flags: NO, UNCLEAR, and any card whose verdict changed since its last check. NO_LABEL cards go in
   `flags/<date>-no-label.csv`, sorted by source type, with a per-source count in the md file; they are not flags.
+  Cards whose source is a combination with no single-ingredient label are added to that file as
+  `combination only`; they keep their source and this does not by itself change the flag count.
+  Cards that will switch to a single-ingredient label are marked not-yet-checked in `checked.json`
+  (no date, `pending: combo-relabel`) so the next run reads them first.
 - `ANTHROPIC_API_KEY` is read from the environment only and never printed or written. Missing key: stops, writes nothing.
 - `diseases.txt` is the 522 pages walked on 26 Nov 2026. The site has no list of every page; extend this file to widen the net.

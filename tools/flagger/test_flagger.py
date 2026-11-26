@@ -263,3 +263,61 @@ def test_search_falls_back_to_name_without_salt_words():
     assert "solo" in url
     assert any("Anhydrous" in q for q in queries)
     assert any("carbidopa" in q.lower() and "anhydrous" not in q.lower() for q in queries)
+
+
+
+def test_pending_relabel_is_never_checked():
+    assert f.is_never_checked(None)
+    assert f.is_never_checked({})
+    assert f.is_never_checked({"pending": f.PENDING_RELABEL})
+    assert f.is_never_checked({"pending": f.PENDING_RELABEL, "verdict": "UNCLEAR"})
+    assert f.is_never_checked({"date": ""})
+    assert not f.is_never_checked({"date": "2026-11-26", "verdict": "NO"})
+    cards = [card("D1", "A"), card("D1", "B"), card("D1", "C")]
+    checked = {
+        "D1|A": {"date": "2026-11-20"},
+        "D1|B": {"pending": f.PENDING_RELABEL},
+        # C is absent
+    }
+    assert [c["medicine_id"] for c in f.order_cards(cards, checked)][:2] == ["B", "C"] or set(
+        c["medicine_id"] for c in f.order_cards(cards, checked)[:2]
+    ) == {"B", "C"}
+    assert f.order_cards(cards, checked)[-1]["medicine_id"] == "A"
+
+
+def test_mark_not_yet_checked_clears_the_date():
+    checked = {"D1|A": {"date": "2026-11-26", "verdict": "UNCLEAR"}}
+    f.mark_not_yet_checked(checked, ["D1|A"])
+    assert f.is_never_checked(checked["D1|A"])
+    assert "date" not in checked["D1|A"]
+    cards = [card("D1", "A"), card("D1", "B")]
+    checked["D1|B"] = {"date": "2026-11-26", "verdict": "YES"}
+    assert f.order_cards(cards, checked)[0]["medicine_id"] == "A"
+
+
+def test_source_kind_combination_only():
+    assert f.source_kind("https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=abc",
+                         "combination only: no single-ingredient label found; source kept") == "combination only"
+    assert f.source_kind("https://www.ema.europa.eu/en/medicines/human/EPAR/kaftrio",
+                         "combo source, no single-ingredient label found") == "combination only"
+    assert f.kind_sort_key("combination only") > f.kind_sort_key("missing link")
+
+
+def test_merge_combo_only_keeps_source_and_does_not_duplicate():
+    existing = [{
+        "disease_id": "D0", "disease": "d0", "medicine_id": "M0", "medicine": "M0",
+        "source_kind": "WHO ATC", "label_url": "https://www.whocc.no/x", "note": "source is not a readable label page",
+    }]
+    extras = [
+        {"disease_id": "MONDO_0005087", "disease": "respiratory system disorder",
+         "medicine_id": "CHEMBL4298128", "medicine": "Elexacaftor",
+         "source_url": "https://www.ema.europa.eu/en/medicines/human/EPAR/kaftrio",
+         "note": "combo source, no single-ingredient label found"},
+        existing[0],  # already present, should not duplicate
+    ]
+    out = f.merge_combo_only(existing, extras)
+    assert len(out) == 2
+    combo = [r for r in out if r["source_kind"] == "combination only"][0]
+    assert combo["medicine"] == "Elexacaftor"
+    assert combo["label_url"] == "https://www.ema.europa.eu/en/medicines/human/EPAR/kaftrio"
+    assert "source kept" in combo["note"] or "no single-ingredient" in combo["note"]
