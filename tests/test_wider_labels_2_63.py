@@ -116,7 +116,8 @@ def test_givosiran_on_aip_is_on_approvals_json_with_the_givlaari_label():
     entries = json.loads(APPROVALS_FILE.read_text(encoding="utf-8"))
     rows = [e for e in entries if (e["medicine_id"], e["disease_id"]) == (GIVOSIRAN, AIP)]
     assert rows == APPROVAL_ROWS
-    assert entries[-len(APPROVAL_ROWS):] == APPROVAL_ROWS  # at the end of the file
+    from test_list_fixes_2_64 import APPROVALS_ROWS as ROWS_2_64  # ticket 2.64
+    assert entries[:len(entries) - len(ROWS_2_64)][-len(APPROVAL_ROWS):] == APPROVAL_ROWS  # at the end of the file; ticket 2.64 added imatinib after it
 
 
 GOOD = {"medicine_id": "CHEMBL1", "disease_id": "MONDO_1", "group": "a group",
@@ -197,8 +198,15 @@ def test_each_card_carries_the_exact_line(pages, pair):
 def test_no_other_card_on_the_page_changes(pages, disease_id):
     after, before = pages[disease_id], saved.before(disease_id)
     assert set(after) == set(before)
+    from test_list_fixes_2_64 import ANAGLIPTIN, DEBERZA, SUINY, TOFOGLIFLOZIN  # ticket 2.64
+    japanese = {ANAGLIPTIN: SUINY, TOFOGLIFLOZIN: DEBERZA}  # ticket 2.64
+    was = {c["id"]: c["source"] for c in before.get("approved", [])}  # ticket 2.64
     for key in before:
-        if key in LISTS:
+        if key in LISTS and key == "approved" and disease_id == T2D:  # ticket 2.64: two Japanese labels
+            assert all(c["source"] == japanese[c["id"]] for c in after[key] if c["id"] in japanese)  # ticket 2.64
+            back = [dict(c, source=was[c["id"]]) if c["id"] in japanese else c for c in after[key]]  # ticket 2.64
+            assert [without_note(c) for c in back] == before[key], key  # ticket 2.64
+        elif key in LISTS:
             assert [without_note(c) for c in after[key]] == before[key], key
         else:
             assert after[key] == before[key], key

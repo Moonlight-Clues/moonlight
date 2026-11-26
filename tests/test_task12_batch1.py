@@ -80,6 +80,8 @@ def test_each_file_ends_with_the_new_entries(name):
     if name == "limits.json":
         entries = entries[:len(entries) - len(LIMIT_ROWS)]  # ticket 2.62 added LIMIT_ROWS after these
     if name == "confirmed.json":
+        from test_list_fixes_2_64 import CONFIRMED_ROWS  # ticket 2.64
+        entries = entries[:-len(CONFIRMED_ROWS)]  # ticket 2.64 added two after givosiran: Suiny, Deberza
         # Ticket 2.61 (26 Nov) added one entry after these: givosiran, Orphanet_95157.
         entries = entries[:-1]
     assert entries[-len(NEW[name]):] == NEW[name]

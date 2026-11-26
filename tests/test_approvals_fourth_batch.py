@@ -267,7 +267,8 @@ def test_the_real_file_holds_the_first_ten_entries_then_the_five_then_avatrombop
     # tests/test_label_batch.py holds them. Ticket 2.39 marked valbenazine "limited".
     assert load(APPROVALS_FILE)[:15] == third_batch.as_written_now(FIRST_TEN) + FOURTH_BATCH
     assert load(APPROVALS_FILE)[21:22] == [AVATROMBOPAG_ENTRY]  # ticket 2.46 added seven after it
-    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS)  # 22 until ticket 2.46; Ticket 2.54, signed answers Q2 and Q13: hydrocortisone and primidone; ticket 2.63 (D2) added APPROVAL_ROWS
+    from test_list_fixes_2_64 import APPROVALS_ROWS  # ticket 2.64
+    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS) + len(APPROVALS_ROWS)  # 22 until ticket 2.46; Ticket 2.54, signed answers Q2 and Q13: hydrocortisone and primidone; ticket 2.63 (D2) added APPROVAL_ROWS; ticket 2.64 added one (imatinib)
 
 
 def test_the_first_ten_entries_are_written_as_they_were():

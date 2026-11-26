@@ -293,6 +293,12 @@ def test_every_card_shown_today_is_where_it_was_letter_for_letter(pages, disease
                    for card in plain if card["id"] in US_2_59)
         plain = [{k: v for k, v in card.items() if k != "withdrawal_note"}
                  if card["id"] in US_2_59 else card for card in plain]
+    if disease_id == T2D:  # ticket 2.64: anagliptin, tofogliflozin open their Japanese labels
+        from test_list_fixes_2_64 import ANAGLIPTIN, DEBERZA, SUINY, TOFOGLIFLOZIN  # ticket 2.64
+        japanese = {ANAGLIPTIN: SUINY, TOFOGLIFLOZIN: DEBERZA}  # ticket 2.64
+        assert all(card["source"] == japanese[card["id"]] for card in plain if card["id"] in japanese)  # ticket 2.64
+        was = {card["id"]: card["source"] for card in before["approved"]}  # ticket 2.64
+        plain = [dict(card, source=was[card["id"]]) if card["id"] in japanese else card for card in plain]  # ticket 2.64
     assert [card for card in plain if card["id"] not in back] == before["approved"]
     wider_red = WIDER_RED_2_58.get(disease_id, set())
     assert all("warning" in card for card in after.get("wider_group", []) if card["id"] in wider_red)

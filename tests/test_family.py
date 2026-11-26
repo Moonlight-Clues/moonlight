@@ -674,11 +674,11 @@ def clues_json(client, disease):
 
 def test_api_pre_b_all_main_list_empty_box_of_15_each_with_the_parent_label(client):
     data = clues_json(client, PRE_B_ALL)
-    assert data["approved"] == []
+    assert [item["id"] for item in data["approved"]] == ["CHEMBL941"]  # ticket 2.64: imatinib (limited label) was []
     box = data["wider_group"]
     assert [item["medicine"].upper() for item in box] == ALL_15
     assert all(item["label"] == ALL_LABEL for item in box)
-    assert len(data["being_studied"]) == 23
+    assert len(data["being_studied"]) == 22  # ticket 2.64: 23 until imatinib moved to Approved
 
 
 def test_api_a_box_item_has_the_facts_of_an_approved_item_and_its_label(client):

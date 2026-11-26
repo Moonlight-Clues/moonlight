@@ -397,7 +397,8 @@ def test_each_card_now_shows_the_red_words_and_sits_in_the_folded_box(card):
 def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
     # Ticket 2.39 marked valbenazine (entry 8) "limited".
     assert load(APPROVALS_FILE)[:21] == third_batch.as_written_now(FIRST_FIFTEEN) + PART_B
-    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS)  # ticket 2.63 (D2) added APPROVAL_ROWS. Ticket 2.54, signed answers Q2 and Q13: hydrocortisone, primidone; 2.34b added avatrombopag after these, 2.46 seven more
+    from test_list_fixes_2_64 import APPROVALS_ROWS  # ticket 2.64
+    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS) + len(APPROVALS_ROWS)  # ticket 2.63 (D2) added APPROVAL_ROWS. Ticket 2.54, signed answers Q2 and Q13: hydrocortisone, primidone; 2.34b added avatrombopag after these, 2.46 seven more; ticket 2.64 one more (imatinib)
 
 
 def test_two_new_entries_are_limited_and_four_are_not():
