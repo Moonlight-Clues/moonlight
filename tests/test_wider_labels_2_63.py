@@ -34,6 +34,9 @@ from moonlight import api, approval_years, engine, fetch
 import wider_labels_saved as saved
 from wider_labels_saved import AIP, HAEMOPHILIA_A, T2D
 
+# Every test here reads the real wider-labels list (see conftest.py, ticket 2.63).
+pytestmark = pytest.mark.wider_labels
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WIDER_FILE = ROOT / "moonlight" / "wider_labels.json"
 APPROVALS_FILE = ROOT / "moonlight" / "approvals.json"
@@ -61,6 +64,13 @@ SIX = {
     (GIVOSIRAN, AIP): ("acute hepatic porphyria", GIVLAARI),  # givosiran, Givlaari
 }
 INSULIN_GLARGINE = "CHEMBL1201497"
+
+# Sheet D2: the rows this ticket adds at the end of approvals.json. Older tests
+# that count or list that file read this, the way ticket 2.62's RED_ROWS is read.
+APPROVAL_ROWS = [
+    {"medicine_id": GIVOSIRAN, "name": "Givosiran", "disease_id": AIP,
+     "date": "2026-11-26", "label": GIVLAARI},
+]
 
 LISTS = ("approved", "narrower", "wider_group", "being_studied", "new_clues",
          "more_in_trials", "new_in_trials")
@@ -105,8 +115,8 @@ def test_the_engine_reads_the_six_entries():
 def test_givosiran_on_aip_is_on_approvals_json_with_the_givlaari_label():
     entries = json.loads(APPROVALS_FILE.read_text(encoding="utf-8"))
     rows = [e for e in entries if (e["medicine_id"], e["disease_id"]) == (GIVOSIRAN, AIP)]
-    assert rows == [{"medicine_id": GIVOSIRAN, "name": "Givosiran", "disease_id": AIP,
-                     "date": "2026-11-26", "label": GIVLAARI}]
+    assert rows == APPROVAL_ROWS
+    assert entries[-len(APPROVAL_ROWS):] == APPROVAL_ROWS  # at the end of the file
 
 
 GOOD = {"medicine_id": "CHEMBL1", "disease_id": "MONDO_1", "group": "a group",

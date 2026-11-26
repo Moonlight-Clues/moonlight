@@ -36,6 +36,7 @@ import pytest
 from moonlight import api, engine
 
 import test_approvals_batch as second_batch
+from test_wider_labels_2_63 import APPROVAL_ROWS  # noqa: E402  ticket 2.63 (D2): the rows it added to approvals.json
 import test_approvals_by_hand as first_batch
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -387,7 +388,8 @@ def test_now_the_card_is_only_under_approved_with_the_line_and_its_label(entry):
 
 
 @pytest.mark.parametrize("disease_id, ids", [
-    (SMA, [APITEGROMAB]), (PORPHYRIA, [HEMIN]), (OME, [CIPROFLOXACIN]),
+    (SMA, [APITEGROMAB]), (OME, [CIPROFLOXACIN]),
+    (PORPHYRIA, [HEMIN] + [row["medicine_id"] for row in APPROVAL_ROWS]),  # ticket 2.63 (D2): givosiran too
     (HAEMOPHILIA_A, [FITUSIRAN, FEIBA, FACTOR_VIII, DESMOPRESSIN])])
 def test_an_entry_works_only_for_its_own_page(disease_id, ids):
     assert [hand.medicine_id for hand in engine.added_by_hand(disease_id)] == ids

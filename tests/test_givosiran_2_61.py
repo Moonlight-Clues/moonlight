@@ -170,4 +170,4 @@ def test_acute_intermittent_porphyria_is_unchanged():
     new = page(AIP)
     old = page(AIP, BASE_CONFIRMED, BASE_OVERRIDES)
     assert new == old
-    assert GIVOSIRAN not in new["cards"]
+    assert GIVOSIRAN in new["main"] and new["cards"][GIVOSIRAN]["source"] == LABEL  # ticket 2.63 (D2): givosiran is added by hand on this page now, on the main list

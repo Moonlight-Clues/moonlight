@@ -871,6 +871,8 @@ def test_browser_b_example_the_first_card_reads_like_this_top_to_bottom(seen):
         "Ipilimumab", "→", "CTLA4", "→", "Graves disease",
         "CTLA4", "Down", "59 / 100 points",
         CTLA4_SENTENCE,
+        "Points: how strongly research data links this protein to the disease, out of 100. "  # ticket 2.63 (W2)
+        "Not how well the medicine works.",  # ticket 2.63 (W2): once, under the protein rows
         DIRECTION_LINE,
         ENDING,
         "Source record",
