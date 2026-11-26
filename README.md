@@ -44,6 +44,10 @@ pytest                                  # uses saved answers in fixtures/
 
 Pitch decks: [for doctors](docs/pitch/moonlight-deck-doctors-19nov.pdf) · [for funders](docs/pitch/moonlight-deck-funders-19nov.pdf)
 
+## How AI is used
+
+Claude builds the project and audits the data. Label checks run as batch jobs through the Claude API, and development is done with Claude Code. On the live site, Google's Gemini suggests which disease a search means, and it writes the plain-language card explanations. The guide on the site says Gemini is used for the search, and that what you type is sent to Gemini. Gemini does not create a disease, a medicine, a link or a score.
+
 ## Team, funding, licence
 
 **The SMAKS Project**, Kochi: Kashish Dugar (product lead), Shreshth Dugar (co-founder and maintainer), Sidha Mogha (design). Licence: [MIT](LICENSE) © 2026 The SMAKS Project. Data: Open Targets Platform.
