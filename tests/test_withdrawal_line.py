@@ -49,6 +49,7 @@ from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
 import test_api
 import test_fetch
+from source_3_17 import back_to_before as labels_back_to_before  # ticket 3.17 and 2.60: own-label links
 from source_2_53 import back_to_before  # ticket 2.53: Source record links
 from source_3_11 import back_to_before as trials_back_to_before  # ticket 3.11: In trials links
 
@@ -578,7 +579,7 @@ def test_example_everything_else_is_letter_for_letter_what_main_gives(hem_a, bef
         assert trials_back_to_before(hem_a)[where] == before[where], where
     assert hem_a["left_out"] == {"not_approved": 23, "unclear_link": 0}
     assert len(hem_a["being_studied"]) == 10 and len(hem_a["new_clues"]) == 38
-    assert without_the_key(back_to_before(trials_back_to_before(hem_a))) == before
+    assert without_the_key(back_to_before(trials_back_to_before(labels_back_to_before(hem_a)))) == before
     # Same keys in the same order; ticket 2.47 adds the red box's key for Obizur.
     assert [key for key in hem_a if key != "wrong_approvals_box"] == list(before)
 
@@ -701,7 +702,7 @@ def test_guard_a_wider_group_card_gets_the_line_from_the_list_it_came_from(befor
             post_json=changed_list(HEMORRHAGIC, add_withdrawal_report(THROMBIN)))
     assert card(answer, THROMBIN, "wider_group")[KEY] == LINE
     assert [item["medicine"] for item in answer["wider_group"]] == HEM_A_WIDER_11
-    assert without_the_key(back_to_before(trials_back_to_before(answer))) == before  # nothing moved
+    assert without_the_key(back_to_before(trials_back_to_before(labels_back_to_before(answer)))) == before  # nothing moved
 
 
 def test_guard_a_wider_group_card_gets_the_line_from_the_searched_diseases_list(before):

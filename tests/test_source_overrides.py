@@ -90,10 +90,14 @@ def batch_rows():
 
 
 def test_the_file_holds_the_54_rows_of_the_batch_exactly_in_order():
+    # Ticket 2.60 (MAIN 4, 26 Nov) added two rows after the batch (rosiglitazone on
+    # type 2 diabetes, Roctavian on haemophilia A): 56 rows. tests/test_source_links_2_60.py
+    # holds them. The first 54 are still the batch, unchanged.
     rows = batch_rows()
     assert len(rows) == 54
     written = load(OVERRIDES_FILE)
-    assert written == [
+    assert len(written) == 56
+    assert written[:54] == [
         {"medicine_id": row["medicine_id"], "disease_id": row["disease_id"],
          "url": row["url"], "date": row["label_date"], "note": row["quote"],
          "evidence_file": row["evidence_file"]}
@@ -109,7 +113,7 @@ def test_the_engine_reads_the_real_file():
     assert found[(MACITENTAN, PAH.id)] == OPSUMIT
     assert found[(TETRABENAZINE, TREMOR.id)] == XENAZINE
     assert found[(ALOGLIPTIN, T2D.id)] == NESINA
-    assert len(found) == 54
+    assert len(found) == 56  # 54 of the batch + 2 from ticket 2.60
 
 
 # ---- the file is checked like the other hand-written lists ----

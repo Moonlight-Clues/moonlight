@@ -11,7 +11,7 @@ Any other change still fails those tests. Call it before the 2.53 and 3.11
 helpers: it puts back the link those helpers expect to find.
 
 Found by running the whole suite with the batch and with an empty list, on
-the saved answers in fixtures/ (no network): 20 cards.
+the saved answers in fixtures/ (no network): 20 cards. Ticket 2.60 added a 21st.
 """
 
 import copy
@@ -78,6 +78,10 @@ MOVED = (
     ("MONDO_0008383", "CHEMBL90593",
      "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d509cc4f-d92f-4216-a117-16b467a29126",
      "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ada639d4-bac0-2ad0-e053-2a95a90afce7"),
+    # Ticket 2.60 (MAIN 4, 26 Nov, approved 7:35 am): Roctavian on haemophilia A.
+    ("MONDO_0010602", "CHEMBL4297579",
+     "https://www.fda.gov/media/169937/download?attachment",
+     "https://www.fda.gov/media/169937/download"),
 )
 
 # Only Approved cards choose their link this way.

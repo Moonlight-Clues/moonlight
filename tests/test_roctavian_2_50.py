@@ -34,7 +34,8 @@ README = FOLDER / "README.md"
 
 HAEMOPHILIA_A = "MONDO_0010602"
 ROCTAVIAN = "CHEMBL4297579"
-FDA_INSERT = "https://www.fda.gov/media/169937/download?attachment"
+FDA_INSERT = "https://www.fda.gov/media/169937/download"  # ticket 2.60 dropped "?attachment" (MAIN 4, 26 Nov)
+READ_ON_25_NOV = FDA_INSERT + "?attachment"  # the link as the saved label and README of ticket 2.50 record it
 LIMITED_LINE = "The label covers only some people with this disease."
 WITHDRAWAL_LINE = "The database records a withdrawal for this medicine in some country or region."
 
@@ -83,7 +84,7 @@ def test_roctavian_is_not_also_in_approvals_json():
 
 def test_the_saved_label_requires_a_test_result():
     saved = text("labels", "roctavian-fda-package-insert.txt")
-    assert saved.splitlines()[0] == FDA_INSERT
+    assert saved.splitlines()[0] == READ_ON_25_NOV
     assert INDICATION in saved
     assert "detected by an FDA-approved test" in INDICATION
 
@@ -132,5 +133,5 @@ def test_readme_has_one_line_for_the_card():
     card, shows, quoted, link, change = lines[0].split(" | ")
     assert ROCTAVIAN in card and HAEMOPHILIA_A in card
     assert quoted == INDICATION
-    assert link == FDA_INSERT
+    assert link == READ_ON_25_NOV
     assert "limits.json" in change
