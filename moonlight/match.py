@@ -10,6 +10,9 @@ Kashish's rules (26 Nov 2026):
   never used. Trade names "X component of Y" are never used.
 - Before comparing, case and spaces are evened out, and amounts with units
   ("500 mg", "1.5 mg/kg", "0.5%") are removed. Form words ("tablets") stay.
+- A name in brackets is an extra name. "Erlotinib (Tarceva)" is tried as
+  "Erlotinib" and as "Tarceva" (MAIN 5, 26 Nov 2026).
+- "(drug)" is dropped. "Fenofibrate (drug)" is tried as "Fenofibrate".
 - A medicine and its salt forms are one medicine: Open Targets' parentMolecule,
   else moonlight/salt_parents.json (read through fetch, ticket 3.23).
 - A name with a joining mark (/ + , ; & and with plus) is a combination. A
@@ -44,6 +47,8 @@ _PER = r"(?:kg|m2|m²|ml|l|day|d|dose|h|hr|hours?|weeks?|wk)"
 _DOSE = re.compile(rf"(?<![a-z0-9])\d+(?:[.,]\d+)?\s*{_UNIT}(?:\s*/\s*{_PER})?(?![a-z0-9])")
 _JOIN = re.compile(r"[/+,;&]|\b(?:and|with|plus)\b")
 _SPACES = re.compile(r"\s+")
+_DRUG_TAG = re.compile(r"\(\s*drug\s*\)", re.IGNORECASE)
+_BRACKETS = re.compile(r"\(([^)]*)\)")
 
 
 def _read_trial_names(path: pathlib.Path) -> Dict[str, dict]:
@@ -68,6 +73,24 @@ def _clean(name: str) -> str:
     """Small letters, no amounts with units, single spaces."""
     text = _DOSE.sub(" ", name.casefold())
     return _SPACES.sub(" ", text).strip()
+
+
+def names_to_try(name: str) -> List[str]:
+    """One trial string, as the names to look up.
+
+    "(drug)" is dropped. Text in brackets is its own name, and so is the
+    text outside the brackets. "Erlotinib (Tarceva)" gives "Erlotinib" and
+    "Tarceva". "Fenofibrate (drug)" gives "Fenofibrate".
+    """
+    without_drug_tag = _DRUG_TAG.sub(" ", name)
+    insides = _BRACKETS.findall(without_drug_tag)
+    outside = _BRACKETS.sub(" ", without_drug_tag)
+    found = []
+    for part in [outside, *insides]:
+        part = " ".join(part.split())
+        if part:
+            found.append(part)
+    return found
 
 
 def is_combination(name: str) -> bool:
@@ -108,7 +131,10 @@ def match(names: Union[str, Iterable[str]], drugs: Iterable[dict]) -> Optional[s
     trial's names mean, or None."""
     if isinstance(names, str):
         names = [names]
-    given = [name for name in names if name and name.strip()]
+    raw = [name for name in names if name and str(name).strip()]
+    given = []
+    for name in raw:
+        given.extend(names_to_try(name))
     combos = [name for name in given if is_combination(name)]
     if combos:
         _log.warning("Trial names %r hold a combination %r: no match.", given, combos)

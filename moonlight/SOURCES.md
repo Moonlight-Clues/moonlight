@@ -60,6 +60,12 @@ What "First approved" means: the medicine (the active moiety), not the exact sal
 - Medicines approved only nationally in the EU, or only in countries such as Japan, have no entry.
 - Under `chembl_parent`, a salt is missed if ChEMBL does not list that salt as a form of the parent (fitusiran sodium is the audited example).
 
+# Sources for moonlight/trials.sqlite
+
+Built by `scripts/build_trials.py`. One row for every ClinicalTrials.gov study that Open Targets Platform 26.09 links to a disease (dataset `clinical_report`, a row whose source is ClinicalTrials.gov and that names a disease id). The study text is ClinicalTrials.gov API v2. Observational records and expanded-access records are left out.
+
+Kept interventional studies: 161,149. Open Targets clinical-report NCT ids linked to a disease: 170,575, all found. Run date 2026-11-26. ClinicalTrials.gov API version 2.0.5. ClinicalTrials.gov data timestamp 2026-11-25. File size 38,572,032 bytes.
+
 ## Data versions used
 
 - openFDA drugsfda export dated 2026-11-25 (https://download.open.fda.gov/drug/drugsfda/drug-drugsfda-0001-of-0001.json.zip)
