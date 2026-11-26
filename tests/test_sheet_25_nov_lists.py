@@ -115,7 +115,7 @@ def test_each_file_ends_with_the_new_entries_all_dated_25_nov(name):
     if name == "corrections.json":
         # Ticket 2.58 (25N-16) added six entries after these, dated 2026-11-26.
         entries = entries[:-6]
-    later = {"corrections.json": 5, "confirmed.json": 3, "limits.json": 1}.get(name, 0)
+    later = {"corrections.json": 5, "confirmed.json": 4, "limits.json": 1}.get(name, 0)  # confirmed: 3 of 2.56 + givosiran of 2.61
     if later:
         entries = entries[:-later]
     if name == "corrections.json":

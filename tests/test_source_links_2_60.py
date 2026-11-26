@@ -80,9 +80,10 @@ def test_the_base_copy_is_the_54_rows_of_c5cb017():
 
 def test_the_file_is_the_base_plus_exactly_two_rows_at_the_end():
     base, now = load(BASE_OVERRIDES), load(OVERRIDES_FILE)
-    assert len(now) == len(base) + 2 == 56
+    # Ticket 2.61 (26 Nov) added one row after these (givosiran): 57 rows.
+    assert len(now) == len(base) + 3 == 57
     assert now[:54] == base  # no row lost, none changed, same order
-    assert now[54:] == [ROW_AVANDIA, ROW_ROCTAVIAN]
+    assert now[54:56] == [ROW_AVANDIA, ROW_ROCTAVIAN]
 
 
 def test_each_new_pair_is_written_once_and_the_engine_reads_both_links():
