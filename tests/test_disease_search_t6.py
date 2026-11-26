@@ -476,6 +476,24 @@ def test_a_medicine_off_the_disease_list_matches_from_the_whole_catalogue():
     assert result["before_medicines"] == 0
 
 
+def test_an_alias_list_matches_the_main_name_and_a_combination_does_not():
+    """ticket T5b. "VX-770, IVA" is aliases of Ivacaftor. "ELX/TEZ/IVA" is
+    three medicines and stays unmatched."""
+    one = disease(CYSTIC, "cystic fibrosis")
+    ivacaftor = {"id": "CHEMBL2010601", "name": "IVACAFTOR", "parentMolecule": None,
+                 "synonyms": [{"label": "Ivacaftor", "source": "ChEMBL"},
+                              {"label": "VX-770", "source": "ChEMBL"}],
+                 "tradeNames": [{"label": "Kalydeco", "source": "ChEMBL"}]}
+    rows = [study("NCT1", ["cystic fibrosis"], [
+        drug_iv("Ivacaftor", other=("VX-770, IVA",)),
+        drug_iv("ELX/TEZ/IVA")])]
+    result = disease_search.assemble(
+        one, searches_of("cystic fibrosis", rows), catalog(ivacaftor),
+        disease_search.exact_index([one]), [], {})
+    assert result["matched"] == [{"medicine_id": "CHEMBL2010601", "nct_ids": ["NCT1"]}]
+    assert result["ctgov_only"] == [{"name": "ELX/TEZ/IVA", "nct_ids": ["NCT1"]}]
+
+
 def test_the_four_synonyms_main_5_kept_out_stay_out():
     """cholangitis, sclerosing; FA; CF; Fibrocystic disease. MAIN 5, 26 Nov 2026."""
     psc = disease(PSC, "sclerosing cholangitis", exact=("cholangitis, sclerosing",))

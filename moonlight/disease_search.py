@@ -184,23 +184,16 @@ def _match_names(names: Sequence[str], by_label: Dict[str, List[dict]]) -> Optio
     """One medicine id, or None. The decision is match.match, not this file.
 
     by_label is every Open Targets medicine, not the disease's own list.
-    Bracket names and "(drug)" are expanded first, so the candidates include
-    the medicine those pieces name.
+    The first name is the medicine's own name. Later names are aliases.
+    search_keys picks every catalogue row those pieces might name.
     """
     given = [name for name in names if name and str(name).strip()]
     if not given:
         return None
-    pieces = []
-    for name in given:
-        pieces.extend(match.names_to_try(name))
-    if not pieces:
-        return None
-    if any(match.is_combination(name) for name in pieces):
-        return match.match(given, [])
     seen = set()
     candidates = []
-    for name in pieces:
-        for drug in by_label.get(match._clean(name), ()):
+    for key in match.search_keys(given):
+        for drug in by_label.get(key, ()):
             if drug["id"] not in seen:
                 seen.add(drug["id"])
                 candidates.append(drug)
