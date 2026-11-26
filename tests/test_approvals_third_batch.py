@@ -31,6 +31,9 @@ from fastapi.testclient import TestClient
 
 from moonlight import api, engine
 
+# Ticket 2.62 part 3 row 8 (daratumumab marked limited); empty ROW8_PAIRS there to undo it.
+from test_red_warnings_2_62 import ROW8_PAIRS, mark_row8, unmark_row8, without_row8_line  # noqa: E402
+
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 import test_no_regulator_line as huntington_page
@@ -85,9 +88,9 @@ LIMITED_LINE = "The label covers only some people with this disease."
 
 def as_written_now(entries):
     """The entries as the file holds them since ticket 2.39."""
-    return [dict(entry, limited=True)
-            if (entry["medicine_id"], entry["disease_id"]) == (VALBENAZINE, HUNTINGTON)
-            else entry for entry in entries]
+    return mark_row8([dict(entry, limited=True)
+                      if (entry["medicine_id"], entry["disease_id"]) == (VALBENAZINE, HUNTINGTON)
+                      else entry for entry in entries])  # ticket 2.62 row 8: daratumumab too
 
 
 # The card, exactly as /api/clues must send it. Everything but the last two

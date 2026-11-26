@@ -323,3 +323,56 @@ def test_only_that_card_changes_on_a_limit_page(row, before, after):
 @pytest.mark.parametrize("disease", pages())
 def test_the_offline_before_is_the_live_answer_saved_at_recording(disease, before):
     assert before[disease] == read(SAVED / "before" / f"{disease}.clues.json")
+
+
+# ---- part 3 row 8: daratumumab, marked in approvals.json (MAIN 4, 26 Nov) ----
+# Its pair is already in approvals.json (added by hand, 23 Nov), and the engine
+# refuses a pair in both files, so the row is made with "limited": true on that
+# entry. TO REMOVE THIS ROW: empty ROW8_PAIRS and delete the `, "limited": true`
+# on the CHEMBL1743007 line of moonlight/approvals.json. The old tests that know
+# about it read ROW8_PAIRS too.
+
+ROW8_PAIRS = [("CHEMBL1743007", "MONDO_0019438")]
+ADDED_LINE = "This approval is missing from the database. We added it from the official label."
+
+
+def mark_row8(entries):
+    """approvals.json entries as the file holds them with row 8 in."""
+    return [dict(e, limited=True) if (e["medicine_id"], e["disease_id"]) in ROW8_PAIRS else e
+            for e in entries]
+
+
+def unmark_row8(entries):
+    """The same entries as they were on main."""
+    return [{k: v for k, v in e.items() if k != "limited"}
+            if (e["medicine_id"], e["disease_id"]) in ROW8_PAIRS else e for e in entries]
+
+
+def without_row8_line(answer):
+    """A page answer with row 8's limit line taken off its card."""
+    return {**answer, "approved": [
+        {k: v for k, v in c.items() if k != "limit_note"}
+        if (c["id"], answer["disease"]["id"]) in ROW8_PAIRS else c for c in answer["approved"]]}
+
+
+@pytest.mark.parametrize("pair", ROW8_PAIRS)
+def test_part3_row8_the_approvals_entry_is_marked_limited_and_nothing_else_changed(pair):
+    (entry,) = [e for e in read(ROOT / "moonlight" / "approvals.json")
+                if (e["medicine_id"], e["disease_id"]) == pair]
+    assert entry == {"medicine_id": "CHEMBL1743007", "name": "Daratumumab",
+                     "disease_id": "MONDO_0019438", "date": "2026-11-23",
+                     "label": DM + "4bb241af-4299-4373-8762-2d6709515db0", "limited": True}
+    assert pair not in {(e["medicine_id"], e["disease_id"]) for e in read(LIMITS_FILE)}
+
+
+@pytest.mark.parametrize("pair", ROW8_PAIRS)
+def test_part3_row8_the_card_shows_the_only_some_people_line_and_keeps_its_added_line(pair):
+    medicine, disease = pair
+    answer = page(disease)
+    found = card(answer, "approved", medicine)
+    assert found["limit_note"] == LIMIT_LINE
+    assert found["proof_note"] == ADDED_LINE  # the grey line it had before stays
+    assert "warning" not in found
+    assert everywhere(answer, medicine) == ["approved"]
+    was = card(read(SAVED / "before" / f"{disease}.clues.json"), "approved", medicine)
+    assert {k: v for k, v in found.items() if k != "limit_note"} == was

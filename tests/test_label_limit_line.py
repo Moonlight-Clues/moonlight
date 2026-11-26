@@ -36,6 +36,9 @@ from fastapi.testclient import TestClient
 
 from moonlight import api, engine
 
+# Ticket 2.62 part 3 row 8 (daratumumab marked limited); empty ROW8_PAIRS there to undo it.
+from test_red_warnings_2_62 import ROW8_PAIRS, mark_row8, unmark_row8, without_row8_line  # noqa: E402
+
 import test_approvals_batch as second_batch
 import test_approvals_by_hand as first_batch
 import test_approvals_third_batch as third_batch
@@ -190,6 +193,9 @@ def test_the_eight_earlier_entries_are_written_as_they_were_with_no_new_key():
             assert set(entry) == {"medicine_id", "name", "disease_id", "date", "label",
                                   "limited"}
             continue
+        if (entry["medicine_id"], entry["disease_id"]) in ROW8_PAIRS:  # ticket 2.62 row 8
+            assert set(entry) == {"medicine_id", "name", "disease_id", "date", "label", "limited"}
+            continue
         assert set(entry) == {"medicine_id", "name", "disease_id", "date", "label"}
 
 
@@ -207,7 +213,9 @@ def test_the_engine_reads_the_two_new_entries_as_limited():
 def test_the_eight_earlier_entries_are_not_limited():
     earlier = engine.approvals_by_hand()[:8]
     assert [entry.medicine_id for entry in earlier] == [e["medicine_id"] for e in FIRST_EIGHT]
-    assert [entry.limited for entry in earlier] == [False] * 7 + [True]  # ticket 2.39
+    # ticket 2.39: valbenazine (last). Ticket 2.62 row 8: daratumumab (third), if in ROW8_PAIRS.
+    assert [entry.limited for entry in earlier] == [
+        (entry.medicine_id, entry.disease_id) in ROW8_PAIRS for entry in earlier[:7]] + [True]
     # Written the old way, with four things, an entry is as it was.
     assert engine.HandApproval("CHEMBL1", "Name", "MONDO_1", "https://example.org/label") \
         == engine.HandApproval("CHEMBL1", "Name", "MONDO_1", "https://example.org/label",
@@ -385,6 +393,8 @@ def test_guard_the_eight_earlier_entries_give_the_cards_they_gave_on_main(
             "reports": reports, "source": label, "proof_note": ADDED_LINE}
     if medicine_id == third_batch.VALBENAZINE:  # ticket 2.39: one more line
         card[KEY] = LINE
+    if (medicine_id, disease_id) in ROW8_PAIRS:  # ticket 2.62 row 8: one more line
+        card[KEY] = LINE
     assert own_list_card(disease_id, medicine_id) == card
 
 
@@ -451,7 +461,9 @@ def test_guard_the_other_saved_pages_are_as_they_were_and_have_no_such_line(dise
     hand-added card each. Not one letter moves."""
     # Ticket 2.54, signed answer Q13: primidone is left off essential tremor here, so the
     # page is the one this test knew.
-    new = page(disease_id, [e for e in load(APPROVALS_FILE) if e["medicine_id"] != "CHEMBL856"])
+    # Ticket 2.62 row 8: daratumumab is marked limited now; read it as it was.
+    new = page(disease_id, unmark_row8(
+        [e for e in load(APPROVALS_FILE) if e["medicine_id"] != "CHEMBL856"]))
     assert new == page(disease_id, FIRST_EIGHT)
     assert cards_with_the_key(new) == []
     assert LINE not in json.dumps(new)

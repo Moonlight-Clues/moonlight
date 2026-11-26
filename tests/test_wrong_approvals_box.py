@@ -59,6 +59,9 @@ import pytest
 from fastapi.testclient import TestClient
 
 from moonlight import api, engine
+
+# Ticket 2.62 part 3 row 8 (daratumumab marked limited); empty ROW8_PAIRS there to undo it.
+from test_red_warnings_2_62 import ROW8_PAIRS, mark_row8, unmark_row8, without_row8_line  # noqa: E402
 from moonlight.filter import sort_paths
 from moonlight.records import Disease, Medicine, MedicineForm, Path, Target
 
@@ -402,7 +405,8 @@ def test_example_in_trials_and_new_clues_are_letter_for_letter_what_main_gives(h
 def test_example_every_old_key_answers_what_main_answered_and_one_key_is_new(
         disease_id, huntington, amyloidosis):
     answer = tag_back_to_before(trials_back_to_before(
-        {HUNTINGTON: before_2_39(huntington), AL_AMYLOIDOSIS: amyloidosis}[disease_id]))
+        {HUNTINGTON: before_2_39(huntington),
+         AL_AMYLOIDOSIS: without_row8_line(amyloidosis)}[disease_id]))  # ticket 2.62 row 8
     old = MAIN_SENT[disease_id]
     assert [key for key in answer if key != KEY] == list(old)  # in the same order
     assert {key: fingerprint(answer[key]) for key in old} == old
