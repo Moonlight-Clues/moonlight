@@ -49,7 +49,9 @@ What "First approved" means: the medicine (the active moiety), not the exact sal
 - Edetate disodium: the 1953 record is edetate calcium disodium (Calcium Disodium Versenate, NDA 008922), a different drug.
 - Carbinoxamine: the table had 2013 (NDA 022556), but Drugs@FDA lists Clistin (NDA 008955) with a supplement approved 27 Dec 1974, so the original is earlier; the original has no date.
 
-**Known limit: undated old applications.** Drugs@FDA lists some old NDAs with no approval date, so the build cannot use them. For 31 entries an earlier-numbered undated NDA for the same ingredient exists, so the year shown may be later than the true first approval. They are listed in `fault2_undated_nda_candidates.csv` (kept with the build files, not in this repository).
+**Entries removed, because the year was probably too late (MAIN 5, 26 Nov 2026).** A year that is probably too late is worse than no year. Drugs@FDA lists some old NDAs with no approval date, so the build cannot use them. 31 entries had an earlier-numbered undated NDA for the same ingredient, so the dated year in the table may have been later than the true first approval. Those 31 rows were dropped. The removed rows are in `fault2_unsure_removed.json` (kept with the build files, not in this repository) for later checking. The original flag list, including the rows that were fixed or reviewed and kept, is `fault2_undated_nda_candidates.csv` in the same folder.
+
+**Not applied.** 13 cards that would gain a new year after a name-word fix were left out, for Product to hand-check. They are in `fault1_new_entry_candidates_NOT_APPLIED.csv` (kept with the build files, not in this repository).
 
 ## Known limits
 

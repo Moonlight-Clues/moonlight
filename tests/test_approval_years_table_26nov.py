@@ -3,6 +3,8 @@
 Reads the real file only. No network. The values below were hand-checked by
 Product (handcheck_ester63.csv) and ordered by MAIN 5: the moiety rule, five
 wrong values fixed, three removals, fibrinogen 1947 (US) from the Federal Register.
+31 unsure years (earlier-numbered undated NDAs) were then removed: a year that
+is probably too late is worse than no year.
 """
 
 import json
@@ -22,7 +24,7 @@ APPL = "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview
 
 
 def test_the_whole_table_is_there_and_every_entry_loads():
-    assert len(TABLE) > 2000
+    assert len(TABLE) == 2022
     assert approval_years.load() == TABLE
 
 
@@ -51,3 +53,25 @@ def test_the_fibrinogen_citation_is_in_the_sources_file():
 def test_hylenex_is_called_an_nda_in_the_sources_file():
     assert "Hylenex, NDA 021859" in SOURCES
     assert "Hylenex, BLA 021859" not in SOURCES
+
+
+UNSURE_REMOVED = (
+    "CHEMBL105", "CHEMBL1169", "CHEMBL1199080",
+    "CHEMBL1200600", "CHEMBL1200731", "CHEMBL1200848",
+    "CHEMBL1201039", "CHEMBL1201170", "CHEMBL1201328",
+    "CHEMBL1201347", "CHEMBL1236821", "CHEMBL1295",
+    "CHEMBL1466", "CHEMBL1615439", "CHEMBL174",
+    "CHEMBL177", "CHEMBL18", "CHEMBL2110563",
+    "CHEMBL3559672", "CHEMBL395429", "CHEMBL3989767",
+    "CHEMBL428880", "CHEMBL434", "CHEMBL5465559",
+    "CHEMBL55643", "CHEMBL564085", "CHEMBL64",
+    "CHEMBL660", "CHEMBL689", "CHEMBL819",
+    "CHEMBL969",
+)
+
+
+def test_unsure_undated_nda_years_were_removed():
+    # MAIN 5: a year that is probably too late is worse than no year.
+    assert len(set(UNSURE_REMOVED)) == 31
+    for medicine_id in UNSURE_REMOVED:
+        assert medicine_id not in TABLE
