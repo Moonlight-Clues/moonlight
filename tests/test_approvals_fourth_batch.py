@@ -48,6 +48,7 @@ from fastapi.testclient import TestClient
 from moonlight import api, engine
 
 import test_approvals_batch as second_batch
+from test_wider_labels_2_63 import APPROVAL_ROWS  # noqa: E402  ticket 2.63 (D2): the rows it added to approvals.json
 import test_approvals_third_batch as third_batch  # ticket 2.39
 import test_approvals_by_hand as first_batch
 import test_label_limit_line as limited_batch
@@ -267,7 +268,7 @@ def test_the_real_file_holds_the_first_ten_entries_then_the_five_then_avatrombop
     assert load(APPROVALS_FILE)[:15] == third_batch.as_written_now(FIRST_TEN) + FOURTH_BATCH
     assert load(APPROVALS_FILE)[21:22] == [AVATROMBOPAG_ENTRY]  # ticket 2.46 added seven after it
     from test_list_fixes_2_64 import APPROVALS_ROWS  # ticket 2.64
-    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVALS_ROWS)  # 22 until ticket 2.46; Ticket 2.54, signed answers Q2 and Q13: hydrocortisone and primidone; ticket 2.64 added one (imatinib)
+    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS) + len(APPROVALS_ROWS)  # 22 until ticket 2.46; Ticket 2.54, signed answers Q2 and Q13: hydrocortisone and primidone; ticket 2.63 (D2) added APPROVAL_ROWS; ticket 2.64 added one (imatinib)
 
 
 def test_the_first_ten_entries_are_written_as_they_were():
@@ -531,6 +532,8 @@ def test_they_are_no_longer_in_a_trials_box_or_list_and_nothing_else_changes():
 
 def test_givosiran_has_no_entry_in_the_hand_written_file():
     for entry in load(APPROVALS_FILE):
+        if entry in APPROVAL_ROWS:  # ticket 2.63 (D2): givosiran on acute intermittent porphyria is added by hand now
+            continue  # ticket 2.63 (D2)
         assert entry["medicine_id"] not in (GIVOSIRAN, GIVOSIRAN_SODIUM)
         assert entry["name"] != "Givosiran"
 

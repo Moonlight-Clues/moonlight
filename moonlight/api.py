@@ -111,10 +111,12 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
 from moonlight.engine import override_sources, source_overrides
+from moonlight.engine import link_pmda_summaries, pmda_summaries, skip_boxed_pmda_summaries
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.engine import hand_withdrawal_notes, limit_notes, limits_by_hand
+from moonlight.engine import wider_label_notes, wider_labels_by_hand
 from moonlight.engine import withdrawals_by_hand
 from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
@@ -292,11 +294,17 @@ async def _check_hand_lists(_app: FastAPI):
     both limits.json and approvals.json, stops the app with the engine's
     plain message, before any page is served. Ticket 2.51: the same for the
     hand-written withdrawals list. Ticket 3.17: the same for the
-    hand-written list of labels the Source record opens."""
+    hand-written list of labels the Source record opens. Ticket 2.63: the
+    same for the hand-written list of wider labels. Ticket 2.68: the same
+    for the list of PMDA English summaries."""
     limits_by_hand()
     withdrawals_by_hand()
     diagnostic_ids("")  # ticket 3.10: the hand-written list of scan medicines
     source_overrides()
+    # Ticket 2.63: the hand-written list of wider labels. A pair that is
+    # also on corrections.json stops the app here.
+    wider_labels_by_hand()
+    pmda_summaries()
     yield
 
 
@@ -363,8 +371,15 @@ class _Found:
         # Ticket 3.17: a card on source_overrides.json for this page opens
         # the medicine's own current label as its Source record. Only that
         # link changes, here and in both folded boxes. No card moves by it.
-        self.approved = override_sources(confirm_by_label(tabs.approved, disease.id),
-                                         disease.id)
+        # Ticket 2.68: a main-list card with JAPAN_LINE that
+        # pmda_summaries.json names for this page shows the PMDA line and
+        # opens the English summary. It then leaves the Japan folded box.
+        self.approved = override_sources(
+            link_pmda_summaries(confirm_by_label(tabs.approved, disease.id), disease.id),
+            disease.id)
+        # Ticket 2.68: main list only. An entry for a card in the narrower or
+        # wider-group box is logged and skipped; those cards are not changed.
+        skip_boxed_pmda_summaries(tabs.narrower + tabs.wider_group, disease.id)
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = override_sources(tabs.wider_group, disease.id)
         # Approved only for a narrower disease (ticket 2.14): its own folded box.
@@ -393,6 +408,10 @@ class _Found:
         # some people" line because limits.json marks them: card id -> the
         # engine's words. Worked out from the same lists. Nothing moves.
         self.limit_notes = limit_notes(tabs, disease.id, listed, on_list)
+        # Ticket 2.63 (W1). Which cards of the main Approved list carry the
+        # wider-label line because wider_labels.json names them: card id ->
+        # the engine's words, with the label's group. Nothing moves.
+        self.wider_label_notes = wider_label_notes(tabs, disease.id, listed, on_list)
         # Ticket 3.11. Each medicine's trial links for THIS disease, read
         # from the disease's own list. They only pick which of a main In
         # trials card's own links it opens. Nothing moves or is counted.
@@ -552,7 +571,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
                    words: Optional[Dict[str, str]] = None,
                    notes: Optional[Dict[str, str]] = None,
                    limits: Optional[Dict[str, str]] = None,
-                   diagnostic: Iterable[str] = ()) -> dict:
+                   diagnostic: Iterable[str] = (),
+                   wider: Optional[Dict[str, str]] = None) -> dict:
     """One medicine already approved for the disease. It is not a clue, so
     it has no rank, no explanation and no ending.
 
@@ -560,7 +580,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     label is only there for a medicine found on a parent or child entry.
 
     Ticket 2.13. proof_note is only there when Japan's general list is the
-    card's only approval receipt. warning is only there when the medicine's
+    card's only approval receipt. Ticket 2.68: with PMDA's English summary,
+    proof_note is the engine's PMDA line and source is the summary. warning is only there when the medicine's
     id is in wrong: the corrections list for this disease. Neither moves
     the card or takes anything off it.
 
@@ -597,6 +618,11 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
     Ticket 3.10. diagnostic holds the ids of the scan medicines for this
     disease (engine.diagnostic_ids). Such a card gains the key
     diagnostic_tag: the engine's word. Nothing else on it changes.
+
+    Ticket 2.63 (W1). wider says which cards of the main Approved list carry
+    the wider-label line (engine.wider_label_notes): card id -> the engine's
+    words. Such a card gains the key wider_label_note, last. Every other
+    card has no such key. Only the main Approved list is handed wider.
     """
     # explain.py's own way of writing a name, so "SILDENAFIL" is written
     # "Sildenafil" here exactly as a clue's name is.
@@ -623,6 +649,8 @@ def _approved_json(medicine: ApprovedMedicine, wrong: Iterable[str] = (),
         item["withdrawal_note"] = notes[medicine.id]  # the engine's words, never typed here
     if medicine.id in diagnostic:
         item["diagnostic_tag"] = DIAGNOSTIC_TAG  # the engine's word, never typed here
+    if medicine.id in (wider or {}):
+        item["wider_label_note"] = wider[medicine.id]  # the engine's words, never typed here
     return item
 
 
@@ -774,7 +802,9 @@ def _build_clues(disease_id: str) -> dict:
         "rule_text": RULE_TEXT,
         # The three tabs, in the order the page shows them.
         # Ticket 2.39: only the main list is handed the limit notes.
-        "approved": [_approved_json(medicine, wrong, words, notes, found.limit_notes, scans)
+        # Ticket 2.63: and the wider-label notes.
+        "approved": [_approved_json(medicine, wrong, words, notes, found.limit_notes, scans,
+                                    found.wider_label_notes)
                      for medicine in found.approved],
         # Ticket 3.11: a trial card opens a study for this disease first.
         "being_studied": [_clue_json(clue, disease, one_way, found.studies)

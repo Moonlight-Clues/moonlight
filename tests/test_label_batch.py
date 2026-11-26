@@ -34,6 +34,7 @@ from moonlight import api, engine
 from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
 
 import test_approvals_batch as second_batch
+from test_wider_labels_2_63 import APPROVAL_ROWS  # noqa: E402  ticket 2.63 (D2): the rows it added to approvals.json
 import test_approvals_by_hand as first_batch
 import test_approvals_fourth_batch as fourth_batch
 import test_approvals_third_batch as third_batch  # ticket 2.39
@@ -397,7 +398,7 @@ def test_the_approvals_file_holds_the_first_fifteen_then_the_six_new_ones():
     # Ticket 2.39 marked valbenazine (entry 8) "limited".
     assert load(APPROVALS_FILE)[:21] == third_batch.as_written_now(FIRST_FIFTEEN) + PART_B
     from test_list_fixes_2_64 import APPROVALS_ROWS  # ticket 2.64
-    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVALS_ROWS)  # Ticket 2.54, signed answers Q2 and Q13: hydrocortisone, primidone; 2.34b added avatrombopag after these, 2.46 seven more; ticket 2.64 one more (imatinib)
+    assert len(load(APPROVALS_FILE)) == 31 + len(APPROVAL_ROWS) + len(APPROVALS_ROWS)  # ticket 2.63 (D2) added APPROVAL_ROWS. Ticket 2.54, signed answers Q2 and Q13: hydrocortisone, primidone; 2.34b added avatrombopag after these, 2.46 seven more; ticket 2.64 one more (imatinib)
 
 
 def test_two_new_entries_are_limited_and_four_are_not():

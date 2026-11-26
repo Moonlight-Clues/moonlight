@@ -147,6 +147,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .protein-id{font-weight:700;font-size:13px}
 .protein-facts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .score{font-weight:750;color:var(--navy);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+/* Ticket 2.63 (W2). Once under a card's protein rows: what the points mean. Small and grey. */
+.points-line{font-size:12px;line-height:1.45;color:var(--muted);margin:-5px 0 12px}
 .machine-note{font-size:12px;background:var(--slate);border-radius:6px;padding:8px 10px;margin:4px 0 12px;color:var(--neutral)}
 .direction{display:inline-flex;align-items:center;gap:5px;border:1px solid #C8CFD6;background:var(--neutral-bg);color:var(--neutral);border-radius:6px;padding:4px 8px;font-size:12px;font-weight:650;white-space:nowrap}
 .direction svg{width:13px;height:13px}
@@ -722,10 +724,14 @@ body.registering>:not(.register){display:none!important}
     <p class="proof-note" data-slot="proof-note" hidden></p>
     <p class="proof-note" data-slot="limit-note" hidden></p>
     <p class="proof-note" data-slot="withdrawal-note" hidden></p>
+    <!-- Ticket 2.63 (W1). The API's words, under the card's other lines. -->
+    <p class="proof-note" data-slot="wider-label-note" hidden></p>
     <p class="wrong-warning" data-slot="warning" hidden><svg role="img" aria-label="Warning" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v5"/><path d="M12 17.6v.4"/></svg><span data-part="warning-words"></span></p>
     <p class="card-subhead" data-part="path-head">Research pathway</p>
     <div class="path" data-slot="path"></div>
     <div class="protein-list" data-part="proteins"></div>
+    <!-- Ticket 2.63 (W2). Kashish's words, signed 26 Nov. Shown once, only on a card that shows points. -->
+    <p class="points-line" data-slot="points-line" hidden>Points: how strongly research data links this protein to the disease, out of 100. Not how well the medicine works.</p>
     <div data-part="machines"></div>
     <p class="machine-note no-path" data-part="no-path" hidden>This medicine does not act on one of the 25 proteins most linked to this disease, so no path is shown.</p>
     <p class="direction-note">The data does not say which direction this disease needs.</p>
@@ -1467,6 +1473,10 @@ body.registering>:not(.register){display:none!important}
       slot(el, "withdrawal-note").textContent = medicine.withdrawal_note;
       slot(el, "withdrawal-note").hidden = false;
     }
+    if (medicine.wider_label_note) {  // ticket 2.63: the label names a wider group. The API's words
+      slot(el, "wider-label-note").textContent = medicine.wider_label_note;
+      slot(el, "wider-label-note").hidden = false;
+    }
     if (medicine.warning) {  // on the corrections list for this disease
       part(slot(el, "warning"), "warning-words").textContent = medicine.warning;
       slot(el, "warning").hidden = false;
@@ -1488,7 +1498,7 @@ body.registering>:not(.register){display:none!important}
     const el = copyOf("card-template");
     slot(el, "medicine-name").textContent = medicine.medicine;
     slot(el, "forms").textContent = "Forms: " + medicine.forms.join(", ");
-    for (const name of ["rank", "reports", "label", "proof-note", "limit-note", "withdrawal-note", "warning", "path", "ending"])
+    for (const name of ["rank", "reports", "label", "proof-note", "limit-note", "withdrawal-note", "wider-label-note", "warning", "path", "points-line", "ending"])
       slot(el, name).remove();
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
@@ -1583,6 +1593,9 @@ body.registering>:not(.register){display:none!important}
         machines.get(protein.machine).push(protein.symbol);
       }
     }
+    // Ticket 2.63 (W2). The points line, once, under the protein rows; gone from a card with none.
+    if (clue.proteins.length) slot(el, "points-line").hidden = false;
+    else slot(el, "points-line").remove();
     for (const pieces of machines.values()) {
       const line = document.createElement("p");
       line.className = "machine-note";

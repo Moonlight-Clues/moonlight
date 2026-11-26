@@ -31,6 +31,7 @@ from moonlight import api, engine
 from test_red_warnings_2_62 import LIMIT_ROWS, RED_ROWS  # noqa: E402
 
 import test_approvals_batch as second_batch
+from test_wider_labels_2_63 import APPROVAL_ROWS  # noqa: E402  ticket 2.63 (D2): the rows it added to approvals.json
 import test_approvals_by_hand as first_batch
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -341,7 +342,7 @@ def test_the_other_files_the_ticket_names_are_not_part_of_this_change():
     # Ticket 2.64 added one entry dated 2026-11-26, left out of this count.
     before_2_46 = [e for e in load(APPROVALS_FILE) if e["date"] != THE_DAY][:-len(APPROVALS_ROWS)]  # ticket 2.64
     # Ticket 2.54 (signed answers Q5, Q20) added six left-out entries: 53 + 6.
-    assert len(before_2_46) == 22 and len(load(LEFT_OUT_FILE)) == 59
+    assert len(before_2_46) == 22 + len(APPROVAL_ROWS) and len(load(LEFT_OUT_FILE)) == 59  # ticket 2.63 (D2): its rows are dated 26 Nov, so they count here
 
 
 # ---- the pages: the new red cards are in the red box ----
