@@ -294,6 +294,7 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:12px}
 .contact{color:var(--muted)}.contact a{user-select:text;-webkit-user-select:text}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
+.build-line{margin-top:4px;color:var(--muted);font-size:11px;min-height:0}
 /* the register: the plain view behind the print button (ticket 5.1).
    Black on white. Nothing in it needs a colour to be understood. While it
    shows, the rest of the page is put away, on screen and on paper. */
@@ -655,6 +656,7 @@ body.registering>:not(.register){display:none!important}
 <footer class="site-footer" id="about"><div class="wrap">
   <div class="footer-row"><span class="contact">Found something wrong or have any feedback? Contact <a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></span></div>
   <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</div>
+  <div class="build-line" id="build-line"></div>
 </div></footer>
 
 <!-- The register: a plain view of the same results, for paper (ticket 5.1).
@@ -1690,6 +1692,13 @@ body.registering>:not(.register){display:none!important}
 
   /* ---- a link can open a disease, and one of its tabs ----
      Like ?disease=MONDO_0015924&tab=clues. With no tab, Approved opens. */
+
+  /* Ticket 3.21. The footer's build line, filled from /api/version after load.
+     If the call fails the line stays empty: no error text. */
+  fetch("/api/version").then(r => r.ok ? r.json() : null).then(v => {
+    if (v && typeof v.fingerprint === "string" && /^[0-9a-f]{12}$/.test(v.fingerprint))
+      byId("build-line").textContent = "Build " + v.fingerprint;
+  }).catch(() => {});
 
   const linked = new URLSearchParams(location.search);
   if (linked.get("disease")) showClues(linked.get("disease"), linked.get("tab"));
