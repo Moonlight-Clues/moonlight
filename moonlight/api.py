@@ -111,7 +111,8 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
 from moonlight.engine import override_sources, source_overrides
-from moonlight.engine import link_pmda_summaries, pmda_summaries, skip_boxed_pmda_summaries
+from moonlight.engine import (earliest_first_approved, link_pmda_summaries,
+                              pmda_original_approvals, pmda_summaries, skip_boxed_pmda_summaries)
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -873,10 +874,15 @@ def _build_clues(disease_id: str) -> dict:
     # Ticket 3.22. The hand-written year list, for the main Approved list only.
     # The order is not touched here (A to Z, as always): the page sets the order.
     # A card with no entry gets no key at all.
+    # Ticket 2.69. The earliest of that year and the card's PMDA original
+    # approval for this disease: "(Japan)" only when Japan is strictly earlier.
     first_years = approval_years.load()
+    japan_firsts = pmda_original_approvals()
     for card, medicine in zip(answer["approved"], found.approved):
-        if medicine.id in first_years:
-            card["first_approved"] = first_years[medicine.id]
+        first = earliest_first_approved(first_years.get(medicine.id),
+                                        japan_firsts.get((medicine.id, disease.id)))
+        if first is not None:
+            card["first_approved"] = first
     return answer
 
 
