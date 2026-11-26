@@ -312,6 +312,7 @@ def test_no_real_entry_is_for_a_card_with_its_own_us_or_eu_label():
 
 
 @pytest.mark.pmda_summaries
+@pytest.mark.salt_parents  # as on the live site: ipragliflozin's card has its parent's id
 def test_on_the_saved_t2d_page_each_real_entry_is_a_japan_card_and_gets_its_line():
     rows = [row for row in json.loads(REAL_FILE.read_text(encoding="utf-8"))
             if row["disease_id"] == T2D]
@@ -323,6 +324,7 @@ def test_on_the_saved_t2d_page_each_real_entry_is_a_japan_card_and_gets_its_line
         assert shown["proof_note"] == line(row["summary_date"][:4]), row
         assert shown["source"] == row["link"], row
         assert row["medicine_id"] not in real["no_regulator_box"], row
+    assert {row["medicine_id"] for row in rows} == {"CHEMBL1650443", "CHEMBL2018096"}
 
 
 # ---- 5. an entry for a card in the narrower or wider box (MAIN 5, 26 Nov) ----
