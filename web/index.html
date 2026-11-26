@@ -104,6 +104,9 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 /* "Tap to open" always sits on a line of its own under the label, on every
    folded box, with nothing drawn in front of it (ticket 2.37). */
 .wider-box summary [data-part="tap"]{display:block;font-weight:500;color:var(--muted);white-space:nowrap}
+/* Ticket 2.T14. Under the first 20 cards of "More medicines in trials". */
+.show-all{display:block;width:100%;box-sizing:border-box;margin-top:15px;min-height:44px;padding:9px 12px;border:1px solid #A9CACB;border-radius:9px;background:#fff;color:#287D7C;font-size:14px;font-weight:700;cursor:pointer}
+.show-all:hover{background:var(--mist)}
 .more-line{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .section{margin-top:46px}.section-head{display:flex;align-items:center;gap:12px}
 .section-head h2,.section>h2{color:#327F80}
@@ -897,6 +900,8 @@ body.registering>:not(.register){display:none!important}
     byId("new-cards").replaceChildren();
     byId("studied-cards").replaceChildren();
     byId("more-trials-cards").replaceChildren();
+    const moreShowAll = byId("more-trials-show-all");  // ticket 2.T14
+    if (moreShowAll) moreShowAll.remove();  // ticket 2.T14
     byId("new-trials-cards").replaceChildren();
     byId("filters").replaceChildren();
     shown = null;
@@ -1184,8 +1189,25 @@ body.registering>:not(.register){display:none!important}
       : "No medicine in this data is being studied for this disease.";
     byId("more-trials-cards").replaceChildren(...moreTrialsCards);
     byId("more-trials-count").textContent = moreTrialsCards.length;
+    // ticket 2.T14: the first 20 stay on screen. The rest stay in the page, hidden, until "Show all [N]".
+    const moreShown = 20;
+    moreTrialsCards.forEach((card, place) => { card.hidden = place >= moreShown; });
+    const oldShowAll = byId("more-trials-show-all");
+    if (oldShowAll) oldShowAll.remove();
+    if (moreTrialsCards.length > moreShown) {
+      const showAll = document.createElement("button");
+      showAll.type = "button";
+      showAll.id = "more-trials-show-all";
+      showAll.className = "show-all";
+      showAll.textContent = "Show all " + moreTrialsCards.length;
+      showAll.addEventListener("click", () => {
+        for (const card of moreTrialsCards) card.hidden = false;
+        showAll.remove();
+      });
+      byId("more-trials-cards").after(showAll);
+    }
     byId("more-trials-box").hidden = !moreTrialsCards.length;
-    byId("more-trials-box").open = !studiedCards.length;  // open only when it is all there is
+    byId("more-trials-box").open = moreTrialsCards.length > 0;  // ticket 2.T14: open whenever it holds cards
     tapWords(byId("more-trials-box"));
     byId("new-trials-cards").replaceChildren(...newTrialsCards);
     byId("new-trials-count").textContent = newTrialsCards.length;
