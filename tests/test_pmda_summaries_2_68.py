@@ -323,3 +323,43 @@ def test_on_the_saved_t2d_page_each_real_entry_is_a_japan_card_and_gets_its_line
         assert shown["proof_note"] == line(row["summary_date"][:4]), row
         assert shown["source"] == row["link"], row
         assert row["medicine_id"] not in real["no_regulator_box"], row
+
+
+# ---- 5. an entry for a card in the narrower or wider box (MAIN 5, 26 Nov) ----
+# Main list only. Such a card is left untouched; the app logs the entry and
+# skips it, and never refuses to start.
+
+def test_a_boxed_card_with_an_entry_is_logged_and_skipped(caplog):
+    boxed = [card("N"), card("M")]
+    with with_entries([entry("N")]), caplog.at_level("WARNING", logger="moonlight.engine"):
+        skipped = engine.skip_boxed_pmda_summaries(boxed, T2D)
+    assert skipped == ["N"]
+    assert boxed == [card("N"), card("M")]  # nothing on the cards changes
+    assert any("N" in message and T2D in message for message in caplog.messages)
+
+
+def test_a_boxed_card_without_an_entry_is_not_logged(caplog):
+    with with_entries([entry("A")]), caplog.at_level("WARNING", logger="moonlight.engine"):
+        assert engine.skip_boxed_pmda_summaries([card("N")], T2D) == []
+    assert not caplog.messages
+
+
+@pytest.mark.parametrize("box", ["narrower", "wider_group"])
+def test_on_a_page_a_boxed_card_with_an_entry_keeps_the_japan_line(box, caplog):
+    """Cards made here, put through the same api step the page uses
+    (api._Found), so the box card and the main-list card are both seen."""
+    from moonlight import api
+    boxed = card("N")
+    tabs = engine.Tabs(approved=[card("A")], being_studied=[], new_clues=[], left_out={},
+                       **{box: [boxed]})
+    with with_entries([entry("N"), entry("A")]), \
+            patch.object(api, "sort_into_tabs", return_value=tabs), \
+            patch.object(engine, "_read_corrections", return_value=[]), \
+            caplog.at_level("WARNING", logger="moonlight.engine"):
+        found = api._Found(engine.Disease(T2D, "type 2 diabetes"), {}, [])
+    [kept] = getattr(found, box)
+    assert kept.proof_note == JAPAN_LINE
+    assert kept.source_record == JAPAN_LIST
+    [main] = found.approved
+    assert main.proof_note == line(2015)
+    assert any("N" in message for message in caplog.messages)

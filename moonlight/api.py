@@ -111,7 +111,7 @@ from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_int
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
 from moonlight.engine import confirm_by_label, no_regulator_box, wrong_approvals_box
 from moonlight.engine import override_sources, source_overrides
-from moonlight.engine import link_pmda_summaries, pmda_summaries
+from moonlight.engine import link_pmda_summaries, pmda_summaries, skip_boxed_pmda_summaries
 from moonlight.engine import leave_out, pushes_wrong_way, warning_words, wrong_way_line
 from moonlight.engine import MORE_IN_TRIALS_ENDING, TrialMedicine, keep_out
 from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
@@ -377,6 +377,9 @@ class _Found:
         self.approved = override_sources(
             link_pmda_summaries(confirm_by_label(tabs.approved, disease.id), disease.id),
             disease.id)
+        # Ticket 2.68: main list only. An entry for a card in the narrower or
+        # wider-group box is logged and skipped; those cards are not changed.
+        skip_boxed_pmda_summaries(tabs.narrower + tabs.wider_group, disease.id)
         # Approved only for a wider group (ticket 2.12): the folded box.
         self.wider_group = override_sources(tabs.wider_group, disease.id)
         # Approved only for a narrower disease (ticket 2.14): its own folded box.

@@ -201,6 +201,7 @@ of time. From a terminal:
 import datetime
 import heapq
 import json
+import logging
 import pathlib
 import sys
 import threading
@@ -226,6 +227,8 @@ from moonlight.filter import (
 )
 from moonlight.rank import Clue, rank_clues
 from moonlight.records import STAGE_ORDER, Disease, Medicine, Path, Target
+
+_log = logging.getLogger("moonlight.engine")
 
 AT_ONCE = fetch.AT_ONCE  # 15: the most proteins, or extra disease entries, fetched at the same time (set in fetch.py, which sizes its connection pool to match)
 PRELOAD_TARGETS = 25  # the same number of proteins cli.py looks at
@@ -2034,6 +2037,24 @@ def link_pmda_summaries(approved: Iterable[ApprovedMedicine],
             medicine = replace(medicine, pmda_link=found[0], pmda_year=found[1])
         out.append(medicine)
     return out
+
+
+def skip_boxed_pmda_summaries(boxed: Iterable[ApprovedMedicine],
+                              disease_id: str) -> List[str]:
+    """The ids of cards in the narrower or wider-group box that
+    pmda_summaries.json names for this disease (ticket 2.68, MAIN 5, 26 Nov).
+
+    Main list only: such a card is left untouched and keeps its line and
+    link. Each entry skipped is written to the log as a warning, so a hand
+    check can find it. The app never refuses to start for it.
+    """
+    summaries = pmda_summaries()
+    skipped = [medicine.id for medicine in boxed if (medicine.id, disease_id) in summaries]
+    for medicine_id in skipped:
+        _log.warning("pmda_summaries.json: skipped the entry for %s on %s: the card is in "
+                     "the narrower or wider-group box, not on the main list.",
+                     medicine_id, disease_id)
+    return skipped
 
 
 def _read_left_out() -> list:
