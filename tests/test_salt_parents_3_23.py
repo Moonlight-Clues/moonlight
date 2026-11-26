@@ -25,6 +25,8 @@ import test_givosiran_2_61 as givosiran
 import test_approvals_batch as second_batch
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+pytestmark = pytest.mark.salt_parents  # ticket 3.23: these tests use the real list
+
 LIST_FILE = ROOT / "moonlight" / "salt_parents.json"
 FIXTURES = ROOT / "fixtures"
 

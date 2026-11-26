@@ -17,6 +17,8 @@ with @pytest.mark.approval_years (or pytestmark for a whole file) and then
 reads the list through approval_years.load as the app does.
 """
 
+import os
+
 import pytest
 
 from moonlight import api, approval_years, cache
@@ -33,9 +35,14 @@ def _speed_set_up(monkeypatch):
 
 
 def pytest_configure(config):
+    # Both markers are registered here, once (a second pytest_configure in this
+    # file would silently replace this one).
     config.addinivalue_line(
         "markers", "approval_years: read the real approval_years.json (ticket 3.22); "
         "without it approval_years.load returns {}")
+    config.addinivalue_line(
+        "markers", "salt_parents: use the real moonlight/salt_parents.json "
+                   "(ticket 3.23). Without it the list is empty.")
 
 
 _real_load = approval_years.load
@@ -58,3 +65,46 @@ def _approval_years_on_when_marked(request):
     _years_on = request.node.get_closest_marker("approval_years") is not None
     yield
     _years_on = False
+
+
+# Ticket 3.23. The hand list of salt parents (moonlight/salt_parents.json) is
+# EMPTY for every test, so every older test still sees the pages as they were
+# before the list existed ("back to before"). A test that needs the real list
+# opts in with @pytest.mark.salt_parents (or pytestmark = pytest.mark.salt_parents
+# for a whole file). This marker is only for this list; it is not the marker of
+# any other ticket.
+#
+# Why hooks and not a plain autouse fixture: many older tests build their page
+# in a module-scoped fixture, and a function-scoped autouse fixture runs AFTER
+# those. The setup hook below runs before any fixture of the test is built, so
+# it covers them too. It does the job of one autouse fixture, switched by the
+# marker.
+_salt_parents_patch = []
+
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_runtest_setup(item):
+    from unittest.mock import patch
+
+    from moonlight import fetch
+
+    _salt_parents_stop()
+    # MOONLIGHT_SALT_PARENTS=on leaves the real list on for a whole run. Only
+    # test_salt_parents_pins_3_23.py sets it, for a child pytest run.
+    if not item.get_closest_marker("salt_parents") \
+            and os.environ.get("MOONLIGHT_SALT_PARENTS") != "on":
+        started = patch.object(fetch, "_salt_parents", return_value={})
+        started.start()
+        _salt_parents_patch.append(started)
+
+
+def _salt_parents_stop():
+    while _salt_parents_patch:
+        _salt_parents_patch.pop().stop()
+
+
+@pytest.hookimpl(trylast=True)
+def pytest_runtest_teardown(item, nextitem):
+    # A module-scoped fixture is torn down inside the last test's teardown;
+    # the list goes back after that, so nothing else sees the patch.
+    _salt_parents_stop()
