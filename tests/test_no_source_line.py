@@ -259,6 +259,11 @@ async function oneSearch(browser, answer) {
       await page.click("#" + box + " summary");
       await page.waitForTimeout(300);
     }
+    // ticket 2.T14: cards past 20 stay hidden until "Show all [N]".
+    if (box === "more-trials-box") {  // ticket 2.T14
+      const showAll = page.locator("#more-trials-show-all");  // ticket 2.T14
+      if (await showAll.count() && await showAll.isVisible()) await showAll.click();  // ticket 2.T14
+    }
     out.places[name] = await page.evaluate(readCards, [cardsId, SENTENCE, OLD_WORDS, NO_STUDY]);
   }
   await context.close();

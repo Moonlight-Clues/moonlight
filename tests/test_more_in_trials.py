@@ -683,6 +683,7 @@ function readTrials() {
     box: [...document.querySelectorAll("#more-trials-cards > .card")].map(readCard),
     boxCardsOnScreen: [...document.querySelectorAll("#more-trials-cards > .card")]
       .filter(card => card.checkVisibility()).length,  // false inside a folded box
+    showAll: (document.getElementById("more-trials-show-all") || {}).textContent || null,  // ticket 2.T14
   };
 }
 
@@ -709,10 +710,21 @@ async function oneSearch(browser, answer) {
   await page.click("#tab-trials");
   const out = { errors };
   out.closed = await page.evaluate(readTrials);
-  if (out.closed.boxShown) {
+  // ticket 2.T14: this box starts open. Open it only when it started closed,
+  // then show the cards past 20 before the reads that expect every card on screen.
+  if (out.closed.boxShown && !out.closed.boxOpen) {  // ticket 2.T14
     await page.click("#more-trials-box summary");
     await page.waitForTimeout(300);  // the box tells the page it was opened a moment later
+  }
+  const showAll = page.locator("#more-trials-show-all");  // ticket 2.T14
+  if (out.closed.boxShown && await showAll.count() && await showAll.isVisible()) await showAll.click();  // ticket 2.T14
+  if (out.closed.boxShown) {
     out.tapped = await page.evaluate(readTrials);
+    if (out.tapped.boxOpen) {  // ticket 2.T14: the summary still folds the box
+      await page.click("#more-trials-box summary");
+      await page.waitForTimeout(300);
+      out.folded = await page.evaluate(readTrials);  // ticket 2.T14
+    }
   }
   out.explainAskedFor = explainCalls.map(url => new URL(url).searchParams.get("clue_id"));
   await context.close();
@@ -774,13 +786,16 @@ def test_browser_the_7_cards_are_the_same_as_before_the_ticket(seen):
 
 def test_browser_the_box_is_folded_under_the_list_with_its_label_and_count(seen):
     closed = seen["example"]["closed"]
-    assert closed["boxShown"] and not closed["boxOpen"] and closed["boxIsAfterTheList"]
-    assert closed["summary"] == LABEL + " (26) · Tap to open" or \
-        closed["summary"] == LABEL + " (26) Tap to open"
-    assert closed["boxCardsOnScreen"] == 0  # folded: no card is on screen yet
+    assert closed["boxShown"] and closed["boxOpen"] and closed["boxIsAfterTheList"]  # ticket 2.T14
+    assert closed["summary"] == LABEL + " (26) Tap to close"  # ticket 2.T14
+    assert closed["boxCardsOnScreen"] == 20  # ticket 2.T14
+    assert closed["showAll"] == "Show all 26"  # ticket 2.T14
     tapped = seen["example"]["tapped"]
     assert tapped["boxOpen"] and tapped["boxCardsOnScreen"] == 26
+    assert tapped["showAll"] is None  # ticket 2.T14
     assert tapped["summary"].endswith("Tap to close")
+    folded = seen["example"]["folded"]  # ticket 2.T14
+    assert not folded["boxOpen"] and folded["boxCardsOnScreen"] == 0  # ticket 2.T14
 
 
 def test_browser_the_tab_counts_the_list_and_the_box(seen):
@@ -837,7 +852,8 @@ def test_browser_an_empty_list_with_a_box_opens_the_box_and_drops_the_sentence(s
     closed = seen["empty_list"]["closed"]
     assert closed["list"] == []
     assert not closed["noteShown"] and closed["noteWords"] == ""
-    assert closed["boxShown"] and closed["boxOpen"] and closed["boxCardsOnScreen"] == 26
+    assert closed["boxShown"] and closed["boxOpen"] and closed["boxCardsOnScreen"] == 20  # ticket 2.T14
+    assert closed["showAll"] == "Show all 26"  # ticket 2.T14
     assert closed["summary"].endswith("Tap to close")
 
 
