@@ -48,7 +48,6 @@ RED_ROWS = [
     (6, "CHEMBL1676", "MONDO_0005002", "Fluticasone Furoate", "approved"),
     (7, "CHEMBL689", "MONDO_0005002", "Mannitol", "narrower"),
     (8, "CHEMBL485", "MONDO_0005277", "Codeine", "approved"),
-    (9, "CHEMBL113", "MONDO_0005277", "Caffeine", "approved"),
     (10, "CHEMBL1590", "MONDO_0005277", "Pseudoephedrine", "approved"),
     (11, "CHEMBL582", "MONDO_0005083", "Isopropyl Alcohol", "approved"),
     (12, "CHEMBL3988900", "MONDO_0005083", "Zinc Oxide", "approved"),
