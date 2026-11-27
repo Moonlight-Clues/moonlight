@@ -90,6 +90,7 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .tab-count{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
 .panel{margin-top:22px}
 .panel>.section-desc,.tab-words{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 12px}
+.trials-count{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 12px}
 .doctor-line{background:var(--paper);border:1px solid #EADFC8;border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:12px 15px;font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);margin:0 0 17px}
 .no-path{margin:16px 0 4px}
 .where-label{font-size:13px;line-height:1.5;font-weight:650;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 12px;margin:12px 0 0}
@@ -500,6 +501,9 @@ body.registering>:not(.register){display:none!important}
         <h2>Already being studied for this disease</h2>
         <p class="section-desc">Medicines being tested for this disease. A separate research category, not a prediction of effectiveness. Not every trial is listed.</p>
         <p class="finished-note" id="finished-note" hidden>'Finished' means the trial ended. It does not mean the medicine worked.</p>
+        <p class="trials-count" id="trials-count-line" hidden></p>
+        <p class="trials-count" id="trials-sources-line" hidden></p>
+        <p class="trials-count" id="all-trials-line" hidden><a class="all-studies" id="all-trials-link"></a></p>
         <p class="filter-note" id="studied-note"></p>
         <div class="cards" id="studied-cards"></div>
         <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
@@ -1216,6 +1220,26 @@ body.registering>:not(.register){display:none!important}
     // The sentence is only for an In trials tab with nothing in it at all.
     byId("studied-note").textContent = studiedCards.length || moreTrialsCards.length || newTrialsCards.length ? ""
       : "No medicine in this data is being studied for this disease.";
+    // Ticket T7. The count line, the sources line, and (a skipped search) the register link.
+    // The words come from the API. A page without them is unchanged.
+    const countLine = byId("trials-count-line");
+    countLine.textContent = data.trials_count_line || "";
+    countLine.hidden = !data.trials_count_line;
+    const sourcesLine = byId("trials-sources-line");
+    sourcesLine.textContent = data.trials_sources_line || "";
+    sourcesLine.hidden = !data.trials_sources_line;
+    const allTrials = data.all_trials;
+    const allLine = byId("all-trials-line");
+    const allLink = byId("all-trials-link");
+    if (allTrials && allTrials.url && allTrials.total) {
+      allLink.href = allTrials.url;
+      allLink.textContent = "All " + allTrials.total + " trials on ClinicalTrials.gov";
+      allLine.hidden = false;
+    } else {
+      allLink.removeAttribute("href");
+      allLink.textContent = "";
+      allLine.hidden = true;
+    }
     byId("more-trials-cards").replaceChildren(...moreTrialsCards);
     byId("more-trials-count").textContent = moreTrialsCards.length;
     // ticket 2.T14: the first 20 stay on screen. The rest stay in the page, hidden, until "Show all [N]".
@@ -1640,9 +1664,10 @@ body.registering>:not(.register){display:none!important}
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
     fillStudies(el, medicine);  // ticket T4b
+    addCtgovNote(el, medicine);  // ticket T7
     const phase = slot(el, "phase");
-    phase.textContent = medicine.trial_phase;
-    phase.hidden = false;
+    phase.textContent = medicine.trial_phase || "";
+    phase.hidden = !medicine.trial_phase;
     if (medicine.source) {
       const source = slot(el, "source");
       source.href = medicine.source;
@@ -1753,7 +1778,21 @@ body.registering>:not(.register){display:none!important}
     } else {
       part(el, "no-source").hidden = false;
     }
+    addCtgovNote(el, clue);  // ticket T7
     return el;
+  }
+
+  /* Ticket T7. The grey line, in the API's words, only when the API sends it. */
+  function addCtgovNote(el, card) {
+    if (!card || !card.ctgov_note) return;
+    const note = document.createElement("p");
+    note.className = "proof-note";
+    note.dataset.slot = "ctgov-note";
+    note.textContent = card.ctgov_note;
+    const studies = el.querySelector('[data-slot="studies"]');
+    const top = el.querySelector(".card-top");
+    if (studies) studies.after(note);
+    else if (top) top.after(note);
   }
 
   /* ---- protein filter buttons, for the new clues ---- */
@@ -1924,8 +1963,13 @@ body.registering>:not(.register){display:none!important}
     reg("approved-empty").hidden = !!(shownBoxes.main.length || boxed);  // as on the page
 
     const studied = data.being_studied.length;
-    reg("trials").textContent = studied + (studied === 1 ? " medicine. " : " medicines. ")
+    const countLine = byId("trials-count-line");
+    const sourcesLine = byId("trials-sources-line");
+    let trialsWords = studied + (studied === 1 ? " medicine. " : " medicines. ")
       + pageWords("#panel-trials .section-desc");
+    if (!countLine.hidden && countLine.textContent) trialsWords += " " + countLine.textContent;
+    if (!sourcesLine.hidden && sourcesLine.textContent) trialsWords += " " + sourcesLine.textContent;
+    reg("trials").textContent = trialsWords;
 
     // The page's own order, from the list above the opposite-way box (ticket 2.28).
     const first = aboveAndBox(data.new_clues, data.opposite_way_box, data.new_clues)[0].slice(0, REGISTER_CLUES);

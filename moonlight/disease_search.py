@@ -30,13 +30,17 @@ When to stop
 """
 
 import json
+import logging
 import os
 import pathlib
 import re
 import sqlite3
-from typing import Dict, Iterable, List, Optional, Sequence
+from dataclasses import dataclass
+from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 from moonlight import match
+
+_log = logging.getLogger("moonlight.disease_search")
 
 TRIAL_LIMIT = 2000
 OT_RELEASE = "26.09"
@@ -470,3 +474,96 @@ def read_sqlite(path: pathlib.Path) -> dict:
         "found": found,
         "stops": stops,
     }
+
+
+# Ticket T7. The page reads the file the batch wrote. It never searches again.
+
+SEARCH_PATH = pathlib.Path(__file__).with_name("disease_search.sqlite")
+
+
+@dataclass(frozen=True)
+class FoundMedicine:
+    """One matched medicine: an Open Targets id, and the trials that named it."""
+
+    medicine_id: str
+    nct_ids: Tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class FoundName:
+    """One name ClinicalTrials.gov listed that matched no Open Targets medicine."""
+
+    name: str
+    nct_ids: Tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class StoredDisease:
+    """One disease in the file. stored is False when the search was skipped."""
+
+    disease_id: str
+    name: str
+    stored: bool
+    name_trial_total: Optional[int]
+    matched: Tuple[FoundMedicine, ...] = ()
+    ctgov_only: Tuple[FoundName, ...] = ()
+
+
+def _ncts(text: str) -> Tuple[str, ...]:
+    return tuple(sorted({nct.strip().upper() for nct in json.loads(text) if nct and str(nct).strip()}))
+
+
+class SearchFile:
+    """The opened disease-search file, kept in memory. It is small.
+
+    Open it once. A missing or unreadable file is None: the page is then
+    served as before, and the log says so.
+    """
+
+    def __init__(self, rows: Dict[str, StoredDisease]):
+        self._rows = rows
+
+    def get(self, disease_id: str) -> Optional[StoredDisease]:
+        return self._rows.get(disease_id)
+
+    @classmethod
+    def open(cls, path: Optional[pathlib.Path] = None) -> Optional["SearchFile"]:
+        path = pathlib.Path(path if path is not None else SEARCH_PATH)
+        if not path.is_file():
+            _log.warning("disease search file %s is missing: serving trials as before", path)
+            return None
+        try:
+            con = sqlite3.connect(f"{path.resolve().as_uri()}?mode=ro", uri=True)
+            con.row_factory = sqlite3.Row
+            try:
+                diseases = list(con.execute(
+                    "SELECT disease_id, name, stored, name_trial_total FROM diseases"))
+                found = list(con.execute(
+                    "SELECT disease_id, kind, medicine_id, name, nct_ids FROM found"))
+            finally:
+                con.close()
+        except (sqlite3.Error, ValueError) as error:
+            _log.warning("disease search file %s cannot be read (%s): serving trials as before",
+                         path, error)
+            return None
+        matched: Dict[str, List[FoundMedicine]] = {}
+        only: Dict[str, List[FoundName]] = {}
+        for row in found:
+            if row["kind"] == "matched" and row["medicine_id"]:
+                matched.setdefault(row["disease_id"], []).append(
+                    FoundMedicine(row["medicine_id"], _ncts(row["nct_ids"])))
+            elif row["kind"] == "ctgov_only" and row["name"]:
+                only.setdefault(row["disease_id"], []).append(
+                    FoundName(row["name"], _ncts(row["nct_ids"])))
+        rows = {}
+        for disease in diseases:
+            disease_id = disease["disease_id"]
+            rows[disease_id] = StoredDisease(
+                disease_id=disease_id,
+                name=disease["name"],
+                stored=bool(disease["stored"]),
+                name_trial_total=disease["name_trial_total"],
+                matched=tuple(sorted(matched.get(disease_id, []), key=lambda item: item.medicine_id)),
+                ctgov_only=tuple(sorted(only.get(disease_id, []), key=lambda item: item.name)),
+            )
+        return cls(rows)

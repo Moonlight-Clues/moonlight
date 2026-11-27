@@ -221,6 +221,19 @@ def studies_url(disease_name: str, medicine_name: str) -> str:
             + "&intr=" + urllib.parse.quote(medicine_name or "", safe=""))
 
 
+# The same cut the disease-search file uses: interventional drug or biological.
+DISEASE_FILTER = ("AREA[StudyType]INTERVENTIONAL AND "
+                  "(AREA[InterventionType]DRUG OR AREA[InterventionType]BIOLOGICAL)")
+
+
+def condition_search_url(disease_name: str) -> str:
+    """Ticket T7. The register's search for a disease whose own trial list
+    was too long to store. The words of the filter are the ones the search
+    counted, so the link is that search."""
+    return (SEARCH_URL + "?cond=" + urllib.parse.quote(disease_name or "", safe="")
+            + "&term=" + urllib.parse.quote(DISEASE_FILTER, safe=""))
+
+
 def _plain(trial: ctgov.Trial) -> dict:
     """A Trial as plain JSON: the phases as a list, and its page's address."""
     return {**dataclasses.asdict(trial), "phases": list(trial.phases),

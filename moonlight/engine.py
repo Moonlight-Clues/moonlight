@@ -1329,6 +1329,198 @@ def _trial_medicine(entry: OnList) -> TrialMedicine:
     )
 
 
+# Ticket T7. The grey line on a medicine whose trials for this disease were
+# found on ClinicalTrials.gov and not in Open Targets. The count line and
+# the sources line sit on the In trials tab.
+CTGOV_TRIAL_LINE = ("Its trials for this disease were found on "
+                    "ClinicalTrials.gov, not in Open Targets.")
+TRIALS_SOURCES_LINE = "Trials come from Open Targets and ClinicalTrials.gov."
+
+
+def trials_count_line(medicines: int, drug_trials: int) -> str:
+    """"1 medicine, 1 drug trial" when either number is one. Otherwise the plurals."""
+    medicine = "1 medicine" if medicines == 1 else f"{medicines} medicines"
+    trial = "1 drug trial" if drug_trials == 1 else f"{drug_trials} drug trials"
+    return f"{medicine}, {trial}"
+
+
+@dataclass
+class Placed:
+    """Where the matched medicines went, after today's tab rules."""
+
+    being_studied: List[Clue]
+    new_clues: List[Clue]
+    more_in_trials: List[TrialMedicine]
+    new_in_trials: List[TrialMedicine]
+    grey: Set[str]  # family ids whose card carries CTGOV_TRIAL_LINE
+    extra_ncts: Dict[str, Set[str]]  # in-trials family id -> NCT ids from the search
+    held: List[str]  # family ids on a hand list: not added
+
+
+def _trial_card(family_id: str, entry: Optional[OnList], fact, paths) -> TrialMedicine:
+    """One box card. A phase Open Targets did not record is left unstated."""
+    if entry is not None:
+        medicine = entry.medicine
+        stage = medicine.disease_stage if _is_a_trial(medicine.disease_stage) else "UNKNOWN"
+        links = [link for link, _stage in entry.reports if link]
+        return TrialMedicine(
+            id=family_id, name=medicine.name,
+            forms=tuple(form.name for form in medicine.forms),
+            stage=stage, sources=tuple(links))
+    if paths:
+        medicine = paths[0].medicine
+        stage = medicine.disease_stage if _is_a_trial(medicine.disease_stage) else "UNKNOWN"
+        return TrialMedicine(
+            id=family_id, name=medicine.name,
+            forms=tuple(form.name for form in medicine.forms),
+            stage=stage, sources=())
+    name = fact.parent_name or fact.name
+    forms = [name]
+    if fact.name and fact.name not in forms:
+        forms.append(fact.name)
+    return TrialMedicine(id=family_id, name=name, forms=tuple(forms), stage="UNKNOWN", sources=())
+
+
+def _trial_sort(medicine: TrialMedicine):
+    return (STAGE_ORDER.index(medicine.stage), medicine.name.casefold(), medicine.name, medicine.id)
+
+
+def place_matched(tabs: Tabs, on_list, tray, matched, facts, blocked) -> Placed:
+    """Matched medicines Open Targets has no trial for, through today's rules.
+
+    tabs, on_list and tray are what the page already worked out. matched is
+    the disease-search file's rows (anything with medicine_id and nct_ids).
+    facts maps a medicine id the page has not already met to a DrugFact.
+    blocked is the corrections list and left_out.json for THIS disease.
+
+    A medicine Open Targets already has a ClinicalTrials.gov trial for is
+    left as it is. One approved for this disease, or only for a wider or
+    narrower disease, is not given a new In trials card. A hand-listed
+    medicine is not added. Nothing here fetches.
+    """
+    on_list = list(on_list)
+    facts = dict(facts or {})
+    blocked = set(blocked or ())
+    id_to_family: Dict[str, str] = {}
+
+    def bind(form_id: Optional[str], family: str) -> None:
+        if form_id:
+            id_to_family.setdefault(form_id, family)
+
+    for entry in on_list:
+        family = _family_id(entry.medicine)
+        bind(family, family)
+        for form in entry.medicine.forms:
+            bind(form.id, family)
+    for paths in tray.values():
+        for path in paths:
+            family = _family_id(path.medicine)
+            bind(family, family)
+            for form in path.medicine.forms:
+                bind(form.id, family)
+    for fact in facts.values():
+        family = fact.parent_id or fact.id
+        bind(fact.id, family)
+        bind(family, family)
+
+    by_family: Dict[str, Set[str]] = {}
+    raw_ids: Dict[str, Set[str]] = {}
+    for row in matched:
+        family = id_to_family.get(row.medicine_id, row.medicine_id)
+        fact = facts.get(row.medicine_id)
+        if fact is not None and fact.parent_id:
+            family = fact.parent_id
+        ncts = {str(nct).strip().upper() for nct in (row.nct_ids or ()) if nct and str(nct).strip()}
+        by_family.setdefault(family, set()).update(ncts)
+        raw_ids.setdefault(family, set()).add(row.medicine_id)
+
+    if not by_family:
+        return Placed(
+            being_studied=list(tabs.being_studied), new_clues=list(tabs.new_clues),
+            more_in_trials=list(tabs.more_in_trials), new_in_trials=list(tabs.new_in_trials),
+            grey=set(), extra_ncts={}, held=[])
+
+    already_trial = set(studies_for_this_disease(on_list))
+    approved_ids = {medicine.id for medicine in tabs.approved + tabs.narrower + tabs.wider_group}
+    being = {_family_id(clue.medicine): clue for clue in tabs.being_studied}
+    clues_new = {_family_id(clue.medicine): clue for clue in tabs.new_clues}
+    more = {medicine.id: medicine for medicine in tabs.more_in_trials}
+    newer = {medicine.id: medicine for medicine in tabs.new_in_trials}
+    on_by_family = {_family_id(entry.medicine): entry for entry in on_list}
+    paths_of: Dict[str, List[Path]] = {}
+    for paths in tray.values():
+        for path in paths:
+            paths_of.setdefault(_family_id(path.medicine), []).append(path)
+
+    grey: Set[str] = set()
+    extra: Dict[str, Set[str]] = {}
+    held: List[str] = []
+
+    def on_the_tab(family: str) -> None:
+        grey.add(family)
+        extra[family] = set(by_family[family])
+
+    for family in sorted(by_family):
+        ids = raw_ids[family] | {family}
+        if family in already_trial:
+            continue
+        if ids & blocked:
+            held.append(family)
+            continue
+        if family in being or family in more or family in newer:
+            on_the_tab(family)
+            continue
+        if family in approved_ids:
+            grey.add(family)  # the approved card. Not a new In trials card.
+            continue
+        entry = on_by_family.get(family)
+        paths = paths_of.get(family, [])
+        fact = facts.get(family)
+        if fact is None:
+            for drug_id in sorted(ids):
+                if drug_id in facts:
+                    fact = facts[drug_id]
+                    break
+        if entry is not None:
+            withdrawn = entry.medicine.withdrawn
+            best = entry.medicine.best_stage
+        elif paths:
+            withdrawn = paths[0].medicine.withdrawn
+            best = paths[0].medicine.best_stage
+        elif fact is not None:
+            withdrawn = fact.withdrawn
+            best = fact.best_stage
+        else:
+            continue  # no record to apply the rules to
+        if withdrawn is True or best not in STAGE_ORDER:
+            continue
+        acts = family in paths_of
+        card = _trial_card(family, entry, fact, paths_of.get(family, []))
+        if best == fetch.APPROVAL:
+            clues_new.pop(family, None)
+            if acts:
+                being[family] = rank_clues(paths_of[family])[0]
+            else:
+                more[family] = card
+            on_the_tab(family)
+        elif entry is not None and entry.all_seen:
+            newer[family] = card
+            on_the_tab(family)
+        elif fact is not None and entry is None:
+            newer[family] = card
+            on_the_tab(family)
+
+    return Placed(
+        being_studied=rank_clues(path for clue in being.values() for path in clue.paths),
+        new_clues=[clue for clue in tabs.new_clues if _family_id(clue.medicine) in clues_new],
+        more_in_trials=sorted(more.values(), key=_trial_sort),
+        new_in_trials=sorted(newer.values(), key=_trial_sort),
+        grey=grey,
+        extra_ncts=extra,
+        held=held,
+    )
+
+
 def studies_for_this_disease(on_list: Iterable[OnList]) -> Dict[str, Set[str]]:
     """Family id -> the links of its trial reports for THIS disease (ticket 3.11).
 
