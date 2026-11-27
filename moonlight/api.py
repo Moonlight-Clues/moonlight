@@ -1,6 +1,8 @@
 """The small API behind Sidha's page. Medicine first.
 
-    GET /                                   the page (web/index.html)
+    GET /                                   the page (web/index.html).
+                                            ?disease=<id> fills the title
+                                            from Open Targets (ticket 3.29).
     GET /corrections                        every change made by hand to the
                                             database's list (ticket 2.66),
                                             built from the lists at start-up
@@ -110,6 +112,7 @@ memory, never kept with a report, never printed, never written down.
 """
 
 import datetime
+import html
 import os
 import pathlib
 import threading
@@ -774,9 +777,53 @@ def _shown_new_clues(found: _Found) -> Tuple[List[Clue], int]:
     return leave_out(found.new_clues, pushes_wrong_way(found.disease.id))
 
 
+# Ticket 3.29. The home title. A known disease is "<Open Targets name> · Moonlight".
+_HOME_TITLE = "Moonlight"
+_TITLE_TAG = "<title>Moonlight</title>"
+_OG_TITLE_TAG = '<meta property="og:title" content="Moonlight">'
+
+
+def _preview_title(disease_id: str) -> str:
+    """The browser title for this address.
+
+    Open Targets' own name when the id is known. The home title when the
+    address has no disease, the id is unknown, or Open Targets does not
+    answer: the page still opens, and the preview uses the home text.
+    """
+    if not disease_id:
+        return _HOME_TITLE
+    try:
+        disease = fetch_disease(disease_id)
+    except (FetchError, requests.RequestException):
+        return _HOME_TITLE
+    if disease is None:
+        return _HOME_TITLE
+    return f"{disease.name} · {_HOME_TITLE}"
+
+
+def _with_title(page: str, title: str) -> str:
+    """Fill <title> and og:title. The description tags stay as written.
+
+    The name is escaped, so a character in it cannot become a tag.
+    """
+    if title == _HOME_TITLE:
+        return page
+    safe = html.escape(title, quote=True)
+    page = page.replace(_TITLE_TAG, f"<title>{safe}</title>", 1)
+    page = page.replace(
+        _OG_TITLE_TAG, f'<meta property="og:title" content="{safe}">', 1)
+    return page
+
+
 @app.get("/", response_class=HTMLResponse)
-def page() -> str:
-    return PAGE.read_text(encoding="utf-8")
+def page(disease: str = "") -> str:
+    """The page. With ?disease=<id>, the title is already filled in.
+
+    WhatsApp and other link previews do not run the page's script, so
+    the name has to be in the HTML itself (ticket 3.29). The name is
+    Open Targets' own.
+    """
+    return _with_title(PAGE.read_text(encoding="utf-8"), _preview_title(disease.strip()))
 
 
 @app.get("/corrections", response_class=HTMLResponse)
