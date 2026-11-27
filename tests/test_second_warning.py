@@ -330,9 +330,11 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Read as plain text: nothing is left once the keys, the ids, the two
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
-    # Permanent correction ids (C-001) sit on every entry. This check is
-    # about a person's name, so the id is taken out before the leftover test.
+    # Permanent correction ids (C-001), and a report number if one is there,
+    # sit on the lines. This check is about a person's name, so both are
+    # taken out before the leftover test.
     text = re.sub(r'"id": "C-\d+", ', "", text)
+    text = re.sub(r'"report": "E\d+", ', "", text)
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
     labels = sorted({entry["label"] for entry in entries if entry.get("label")}, key=len, reverse=True)
     for known in ["medicine_id", "disease_id", "date", "note", "label", FIRST_NOTE, SECOND_NOTE,

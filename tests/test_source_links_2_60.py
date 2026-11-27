@@ -175,9 +175,11 @@ def test_only_that_one_line_of_limits_json_differs_from_c5cb017():
     old = subprocess.run(["git", "show", "c5cb017:moonlight/limits.json"], cwd=ROOT,
                          capture_output=True, text=True, check=True).stdout
     now = LIMITS_FILE.read_text(encoding="utf-8")
-    # Permanent correction ids were added on every line. This check is the
-    # Roctavian link, so the ids are taken out before the old file is compared.
+    # Permanent correction ids, and a report number where one was added, sit
+    # on the lines. This check is the Roctavian link, so both are taken out
+    # before the old file is compared.
     now = re.sub(r'"id": "C-\d+", ', "", now)
+    now = re.sub(r'"report": "E\d+", ', "", now)
     # Ticket 2.62 appended LIMIT_ROWS (one line each) at the end of the list: take them off.
     lines = now.rstrip().split("\n")
     if LIMIT_ROWS:

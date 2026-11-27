@@ -90,6 +90,8 @@ python -m moonlight.correction_ids
 
 Write that id on the entry. Do not fill a gap. `fixtures/correction_ids.json` pins each id to the entry, and `tests/test_correction_ids.py` fails if one changes.
 
+An entry may also carry `"report"`, a report number like `E17` (`^E\d+$`). The entries that have one are listed in `REPORT_CANDIDATES.md`. C-186 waits on Kashish and has none.
+
 # Sources for moonlight/names.json
 
 Built by `scripts/build_names.py`. One name for every medicine id (ChEMBL) and disease id (MONDO, Orphanet, EFO, and the other Open Targets disease prefixes) found in these hand lists: `corrections.json`, `approvals.json`, `limits.json`, `confirmed.json`, `withdrawals.json`, `pmda_summaries.json`, `salt_parents.json`.

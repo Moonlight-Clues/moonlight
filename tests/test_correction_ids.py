@@ -23,6 +23,28 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "fixtures" / "correction_ids.json"
 LISTS = ROOT / "moonlight"
 ID_RE = re.compile(r"^C-\d{3,}$")
+REPORT_RE = re.compile(r"^E\d+$")
+# The eighteen entries with a report number. C-186 stays blank.
+REPORTS = {
+    "C-219": "E17",
+    "C-152": "E36",
+    "C-059": "E4",
+    "C-060": "E6",
+    "C-055": "E8",
+    "C-056": "E11",
+    "C-057": "E14",
+    "C-058": "E14",
+    "C-278": "E52",
+    "C-279": "E52",
+    "C-280": "E52",
+    "C-281": "E52",
+    "C-282": "E52",
+    "C-283": "E52",
+    "C-284": "E52",
+    "C-285": "E52",
+    "C-286": "E52",
+    "C-287": "E52",
+}
 
 # The seven lists, in the order a same-day tie is broken.
 HAND_LISTS = (
@@ -80,6 +102,35 @@ def test_ids_never_change_for_an_existing_entry():
     """The fixture is the pin. Renumbering, or dropping an entry, fails."""
     pinned = json.loads(FIXTURE.read_text(encoding="utf-8"))
     assert identities() == pinned
+
+
+def test_a_report_when_present_matches_a_report_number_and_only_the_eighteen_have_one():
+    """report, when present, matches ^E\\d+$. C-186 and every other entry stay blank."""
+    found = {}
+    for name in HAND_LISTS:
+        held = _load(name)
+        rows = held.values() if name == "salt_parents" else held
+        for row in rows:
+            if "report" not in row:
+                continue
+            assert isinstance(row["report"], str) and REPORT_RE.fullmatch(row["report"])
+            assert row["id"] not in found
+            found[row["id"]] = row["report"]
+    assert found == REPORTS
+
+
+def test_a_bad_report_is_refused_and_a_good_one_is_kept():
+    good = {"id": "C-001", "report": "E17", "medicine_id": "CHEMBL1",
+            "disease_id": "MONDO_1", "date": "2026-11-16", "note": engine.CORRECTION_NOTE}
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(engine, "_read_corrections", lambda: [good])
+        assert engine.corrections() == {("CHEMBL1", "MONDO_1")}
+        patch.setattr(engine, "_read_corrections", lambda: [dict(good, report="e17")])
+        with pytest.raises(ValueError, match="E17"):
+            engine.corrections()
+        patch.setattr(engine, "_read_corrections", lambda: [dict(good, report="E")])
+        with pytest.raises(ValueError, match="E17"):
+            engine.corrections()
 
 
 def test_the_helper_offers_the_next_id_and_never_a_used_one():

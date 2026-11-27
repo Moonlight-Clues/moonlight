@@ -172,7 +172,7 @@ def test_every_row_has_parent_name_as_the_label_writes_it():
     found = real_list()
     assert {salt: row["parent_name"] for salt, row in found.items()} == PARENT_NAMES
     for salt, row in found.items():
-        assert set(row) - {"id"} == {"parent", "parent_name", "source", "date"}, salt  # id is the permanent correction number
+        assert set(row) - {"id", "report"} == {"parent", "parent_name", "source", "date"}, salt  # id and report are set aside
 
 
 def test_every_row_is_dated_the_day_it_was_made_and_merged():
