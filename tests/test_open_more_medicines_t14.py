@@ -9,7 +9,7 @@ Pulmonary arterial hypertension, from the saved answer of ticket 2.52:
 48 medicines in the box, so the button reads "Show all 48". The 52 in the
 build file was a newer live page. This test pins the fixture.
 
-"New medicines being tested" is not changed. No network.
+Ticket T14b opens "New medicines being tested" the same way. No network.
 """
 
 import copy
@@ -146,8 +146,8 @@ def test_pah_starts_open_with_the_first_20_and_show_all_48(seen):
     assert opened["showAllTag"] == "BUTTON"
     assert opened["showAllHeight"] >= 44
     assert opened["buttonAfterCards"] is True
-    # The other box on this tab is unchanged: still closed while the list has cards.
-    assert opened["newShown"] and opened["newOpen"] is False
+    # ticket T14b: this box now starts open too. It used to stay closed.
+    assert opened["newShown"] and opened["newOpen"] is True  # ticket T14b
 
 
 def test_pah_the_summary_still_folds_the_box_and_reopening_keeps_the_first_20(seen):

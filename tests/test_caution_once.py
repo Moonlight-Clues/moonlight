@@ -255,8 +255,8 @@ def test_browser_a_folded_box_keeps_the_sentence_folded_away_with_its_cards(seen
     closed = seen["example"]["closed"]
     assert closed["oldBox"]["shown"] and closed["oldBox"]["open"]  # ticket 2.T14
     assert closed["oldBox"]["cautions"] == [CAUTION] and closed["oldBox"]["cautionShown"]  # ticket 2.T14
-    assert closed["newBox"]["shown"] and not closed["newBox"]["open"]
-    assert closed["newBox"]["cautions"] == [CAUTION] and not closed["newBox"]["cautionShown"]
+    assert closed["newBox"]["shown"] and closed["newBox"]["open"]  # ticket T14b
+    assert closed["newBox"]["cautions"] == [CAUTION] and closed["newBox"]["cautionShown"]  # ticket T14b
 
 
 def test_browser_a_box_that_starts_open_shows_the_sentence_straight_away(seen):

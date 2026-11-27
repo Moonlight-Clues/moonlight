@@ -938,6 +938,8 @@ body.registering>:not(.register){display:none!important}
     const moreShowAll = byId("more-trials-show-all");  // ticket 2.T14
     if (moreShowAll) moreShowAll.remove();  // ticket 2.T14
     byId("new-trials-cards").replaceChildren();
+    const newShowAll = byId("new-trials-show-all");  // ticket T14b
+    if (newShowAll) newShowAll.remove();  // ticket T14b
     byId("filters").replaceChildren();
     shown = null;
     byId("print-page").hidden = true;
@@ -1289,8 +1291,25 @@ body.registering>:not(.register){display:none!important}
     tapWords(byId("more-trials-box"));
     byId("new-trials-cards").replaceChildren(...newTrialsCards);
     byId("new-trials-count").textContent = newTrialsCards.length;
+    // ticket T14b: the first 20 stay on screen. The rest stay in the page, hidden, until "Show all [N]".
+    const newFirst = 20;
+    newTrialsCards.forEach((card, place) => { card.hidden = place >= newFirst; });
+    const oldNewShowAll = byId("new-trials-show-all");
+    if (oldNewShowAll) oldNewShowAll.remove();
+    if (newTrialsCards.length > newFirst) {
+      const showAll = document.createElement("button");
+      showAll.type = "button";
+      showAll.id = "new-trials-show-all";
+      showAll.className = "show-all";
+      showAll.textContent = "Show all " + newTrialsCards.length;
+      showAll.addEventListener("click", () => {
+        for (const card of newTrialsCards) card.hidden = false;
+        showAll.remove();
+      });
+      byId("new-trials-cards").after(showAll);
+    }
     byId("new-trials-box").hidden = !newTrialsCards.length;
-    byId("new-trials-box").open = !studiedCards.length && !moreTrialsCards.length;  // open only when it is all there is
+    byId("new-trials-box").open = newTrialsCards.length > 0;  // ticket T14b: open whenever it holds cards
     tapWords(byId("new-trials-box"));
     // Ticket T8. Medicines found only on ClinicalTrials.gov. Open, first 20, then "Show all [N]".
     const only = data.ctgov_only || null;
