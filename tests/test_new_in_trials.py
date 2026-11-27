@@ -780,8 +780,9 @@ def test_browser_example_the_2_21_box_holds_prednisone(seen):
 def test_browser_example_the_new_box_holds_the_three_in_order(seen):
     closed = seen["example"]["closed"]
     assert closed["newBox"]["shown"] and closed["newBoxIsAfterTheOldBox"]
-    assert closed["newBox"]["summary"] in (LABEL + " (3) · Tap to open", LABEL + " (3) Tap to open")
-    assert not closed["newBox"]["open"] and closed["newBox"]["cardsOnScreen"] == 0  # folded
+    assert closed["newBox"]["summary"].startswith(LABEL + " (3)")  # ticket T14b: the summary keeps the full count
+    assert closed["newBox"]["summary"].endswith("Tap to close")  # ticket T14b
+    assert closed["newBox"]["open"] and closed["newBox"]["cardsOnScreen"] == 3  # ticket T14b
     tapped = seen["example"]["tapped"]["newBox"]
     assert tapped["open"] and tapped["cardsOnScreen"] == 3
     assert tapped["summary"].endswith("Tap to close")
@@ -826,7 +827,7 @@ def test_browser_pbc_the_7_and_the_26_are_as_before_and_the_new_box_has_10(seen)
         (name, phase) for _, name, phase in PBC_NEW_10]
     closed = seen["pbc"]["closed"]
     assert closed["tab"] == "In trials (43)"  # 7 + 26 + 10
-    assert closed["oldBox"]["open"] and not closed["newBox"]["open"]  # ticket 2.T14
+    assert closed["oldBox"]["open"] and closed["newBox"]["open"]  # ticket T14b
     assert closed["newBox"]["summary"].startswith(LABEL + " (10)")
 
 
