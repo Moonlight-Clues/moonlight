@@ -13,8 +13,11 @@ app, like the other hand-written lists (Kashish, 27 Nov, decisions A and B).
 
 Each entry of these lists also carries a permanent id (C-001, C-002, ...),
 one sequence across corrections, approvals, limits, confirmed, withdrawals,
-pmda_summaries and salt_parents. See moonlight/correction_ids.py. The page
-does not show the id.
+pmda_summaries and salt_parents. See moonlight/correction_ids.py. Ticket 3.30:
+each card starts with "Correction C-014", and under it "From report E36" when
+the entry has a report number. An entry with no id (discontinued has none yet)
+has no such line; nothing is made up. The header is the home page's: the
+wordmark with its gold dot, then the tagline, and the wordmark links home.
 
 What each list's row says it shows (Kashish, 27 Nov, decision C):
     corrections     the card's red sentence, exactly as shown (engine.RED_WORDS)
@@ -36,7 +39,7 @@ import pathlib
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Set, Tuple
 
-from moonlight import engine, explain
+from moonlight import correction_ids, engine, explain
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -59,6 +62,12 @@ ALL_PAGES = "All pages"
 SAFETY_LINE = ("For learning and research exploration, not medical advice. Never start, "
                "stop or change any medicine without a doctor.")
 SOURCE_LINK = "Source record"
+# Ticket 3.30. New words, for Kashish's sheet (approved by Claude, 27 Nov).
+CORRECTION_LABEL = "Correction"   # "Correction C-014"
+REPORT_LABEL = "From report"      # "From report E36"
+# The home page's tagline (web/index.html), word for word.
+TAGLINE = ("An open-source explorer of medicines and trials for any disease, "
+           "built from public research data.")
 COLUMNS = ("Date", "Disease", "Medicine", "Card", "Source")
 
 
@@ -69,6 +78,8 @@ class Row:
     medicine: str
     lines: Tuple[str, ...]  # what the card shows, one item per line
     source: str
+    correction_id: Optional[str] = None  # "C-014", when the entry has an id
+    report: Optional[str] = None  # "E36", when the entry has a report number
 
     @property
     def shows(self) -> str:
@@ -182,23 +193,33 @@ def rows() -> List[Row]:
             on_every_page = name == "discontinued" or (name == "withdrawals" and entry.get("region"))
             disease = ALL_PAGES if on_every_page else names[entry["disease_id"]]
         datetime.date.fromisoformat(entry["date"])  # ValueError if not a real date
+        if "id" in entry:
+            correction_ids.check_id(entry["id"])  # ValueError unless like C-014
+        if "report" in entry:
+            correction_ids.check_report(entry["report"])  # ValueError unless like E36
         found.append((entry["date"], order, Row(entry["date"], disease, medicine,
                                                 _shows(name, entry, medicine, names),
-                                                link_of(name, entry))))
+                                                link_of(name, entry),
+                                                entry.get("id"), entry.get("report"))))
     found.sort(key=lambda item: item[1])
     found.sort(key=lambda item: item[0], reverse=True)  # stable: newest first
     return [row for _, _, row in found]
 
 
 _STYLE = """
-:root{--cream:#F5F0E8;--navy:#101F31;--teal:#429D9A;--paper:#FFFFFF;--line:#D5E0E2;--muted:#566877}
+:root{--cream:#F5F0E8;--navy:#101F31;--teal:#429D9A;--gold:#E9B45B;--paper:#FFFFFF;--line:#D5E0E2;--muted:#566877}
 *{box-sizing:border-box}
 body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 a{color:var(--teal);text-underline-offset:3px}
 a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 .wrap{width:min(100% - 32px,1060px);margin-inline:auto}
 .site-header{background:var(--navy);padding:20px 0}
-.wordmark{font-family:"Space Grotesk",system-ui,sans-serif;letter-spacing:-.035em;font-size:clamp(27px,5.5vw,35px);font-weight:700;color:#F5F0E8;text-decoration:none}
+.wordmark{font-family:"Space Grotesk",system-ui,sans-serif;letter-spacing:-.035em;font-size:clamp(27px,5.5vw,35px);line-height:1.12;font-weight:700;color:#F5F0E8;text-decoration:none}
+.brandline{display:flex;align-items:center;gap:10px}
+.brand-dot{background:var(--gold);width:7px;height:7px;border-radius:100%;flex:none}
+.tagline{margin:8px 0 0;color:#C4D2D9;font-size:13px;max-width:640px}
+.cid{display:block;font-weight:700}
+.from{display:block;font-size:12px;color:var(--muted)}
 .safety{position:sticky;top:0;z-index:10;background:#203448;border-bottom:1px solid #5F9E9B}
 .safety-inner{padding:11px 0;font-size:12px;line-height:1.45;color:#F4F0E9}
 .main{padding:28px 0 58px}
@@ -215,8 +236,23 @@ td.date{white-space:nowrap}
   tr.row{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:0 0 12px;padding:6px 0}
   td{border:0;padding:4px 14px}
   td::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;color:var(--muted)}
+  td.ident::before{content:none}
+  td.ident{padding-top:8px}
+  td.ident:empty{display:none}
 }
 """
+
+
+def _ident_cell(row: Row) -> str:
+    """The card's first cell: "Correction C-014", then "From report E36" if any.
+    Empty when the entry has no id, so the cell never says something made up."""
+    e = html.escape
+    if not row.correction_id:
+        return '<td class="ident"></td>'
+    line = f'<span class="cid">{e(CORRECTION_LABEL)} {e(row.correction_id)}</span>'
+    if row.report:
+        line += f'<span class="from">{e(REPORT_LABEL)} {e(row.report)}</span>'
+    return f'<td class="ident">{line}</td>'
 
 
 def page_html() -> str:
@@ -226,12 +262,13 @@ def page_html() -> str:
     for row in rows():
         cells = (("date", e(row.shown_date)), ("disease", e(row.disease)),
                  ("medicine", e(row.medicine)), ("shows", "<br>".join(e(l) for l in row.lines)))
-        tds = "".join(f'<td class="{cls}" data-label="{e(label)}">{text}</td>'
+        tds = _ident_cell(row) + "".join(f'<td class="{cls}" data-label="{e(label)}">{text}</td>'
                       for (cls, text), label in zip(cells, COLUMNS))
         tds += (f'<td class="source" data-label="{e(COLUMNS[4])}"><a href="{e(row.source)}" '
                 f'rel="noopener" target="_blank">{e(SOURCE_LINK)}</a></td>')
         body.append(f'<tr class="row">{tds}</tr>')
-    heads = "".join(f'<th scope="col">{e(c)}</th>' for c in COLUMNS)
+    heads = f'<th scope="col">{e(CORRECTION_LABEL)}</th>' + "".join(
+        f'<th scope="col">{e(c)}</th>' for c in COLUMNS)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -242,7 +279,10 @@ def page_html() -> str:
 <style>{_STYLE}</style>
 </head>
 <body>
-<header class="site-header"><div class="wrap"><a class="wordmark" href="/">Moonlight</a></div></header>
+<header class="site-header"><div class="wrap">
+  <div class="brandline"><a class="wordmark" href="/">Moonlight</a><span class="brand-dot" aria-hidden="true"></span></div>
+  <p class="tagline">{e(TAGLINE)}</p>
+</div></header>
 <div class="safety" role="note"><div class="wrap safety-inner"><span>{e(SAFETY_LINE)}</span></div></div>
 <main class="main"><div class="wrap">
 <h1>{e(HEADING)}</h1>
