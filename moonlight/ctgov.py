@@ -49,6 +49,18 @@ EXPECTED_DATE = frozenset({"ESTIMATED", "ANTICIPATED"})
 BEING_TESTED = "Being tested"
 USED_FOR_COMPARISON = "Used for comparison"
 ROLE_NOT_STATED = "Role not stated"
+# Ticket 3.26 (Kashish's words). A trial that is over says what the medicine
+# was, not what it is. "Role not stated" is the same for every trial.
+WAS_TESTED = "Was tested"
+WAS_USED_FOR_COMPARISON = "Was used for comparison"
+OVER_ROLE_WORDS = {
+    BEING_TESTED: WAS_TESTED,
+    USED_FOR_COMPARISON: WAS_USED_FOR_COMPARISON,
+}
+# The status words of a trial that is over, as STATUS_WORDS gives them.
+OVER_STATUSES = frozenset({"Finished", "Stopped early", "Withdrawn before starting"})
+FINISHED = "Finished"
+ENDED_PREFIX = "Ended "
 END_MISSING = "End date not recorded"
 STATUS_MISSING = "Status not recorded"
 STATUS_UNKNOWN = "Status unknown"
@@ -81,13 +93,18 @@ def read_trial(study, medicine) -> Optional[Trial]:
     design = _dict(protocol.get("designModule"))
     if design.get("studyType") != "INTERVENTIONAL":
         return None
-    status = _dict(protocol.get("statusModule"))
+    module = _dict(protocol.get("statusModule"))
+    status, end, role = _status(module), _end(module), _role(protocol, medicine)
+    if status in OVER_STATUSES:  # ticket 3.26
+        role = OVER_ROLE_WORDS.get(role, role)
+        if status == FINISHED and end.startswith(ENDED_PREFIX):
+            status, end = f"{FINISHED} {end[len(ENDED_PREFIX):]}", ""  # "Finished 2016", no "Ended" after it
     return Trial(
         nct_id=_nct_id(protocol),
-        status=_status(status),
-        end=_end(status),
+        status=status,
+        end=end,
         phases=_phases(design),
-        role=_role(protocol, medicine),
+        role=role,
     )
 
 
@@ -122,7 +139,7 @@ def _end(status: dict) -> str:
     if year is None or not isinstance(kind, str):
         return END_MISSING
     if kind == "ACTUAL":
-        return f"Ended {year}"
+        return f"{ENDED_PREFIX}{year}"
     if kind in EXPECTED_DATE:
         return f"Expected to end {year}"
     return END_MISSING

@@ -315,9 +315,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .build-line{margin-top:4px;color:var(--muted);font-size:11px;min-height:0}
 .trials-checked-line{margin-top:2px;color:var(--muted);font-size:11px}
 /* Tickets T4 and T4b. Trial rows on trial cards. The words and the rules are MAIN 5's spec.
-   One change from it: .card-subhead already styles the small capitals "Research pathway" line, so the
-   spec's rule is scoped to the studies slot (and puts the capitals back to ordinary words) to leave that line as it was. */
-[data-slot="studies"] .card-subhead{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 2px;text-transform:none;letter-spacing:normal}
+   Ticket 3.26: the "Trials for this disease" subhead has no rule of its own any more. It is a plain
+   .card-subhead, so it looks exactly like "Research pathway". */
 .studies{list-style:none;margin:0 0 4px;padding:0}
 .studies li{border-top:1px solid var(--line)}
 .studies li:first-child{border-top:0}
@@ -328,6 +327,7 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .study-row .sr2{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:2px}
 .all-studies{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:650}
 .finished-note{font-size:13px;color:var(--muted);margin:0 0 12px}
+.no-details{margin:18px 0 8px}  /* ticket 3.26: the grey line where the rows would be; same top spacing as the subhead */
 @media print{.study-row .nct{color:#000}}
 /* the register: the plain view behind the print button (ticket 5.1).
    Black on white. Nothing in it needs a colour to be understood. While it
@@ -1672,14 +1672,16 @@ body.registering>:not(.register){display:none!important}
      Everything is written with textContent. */
   // The addresses come from the API ("url" on each trial, "studies_url" on the card); the page holds none.
 
-  /* "PHASE1" -> "Phase 1", "EARLY_PHASE1" -> "Early Phase 1"; several are joined with " / ". "NA" is left out. */
+  /* "PHASE1" -> "Phase 1", "EARLY_PHASE1" -> "Early Phase 1", "PHASE2","PHASE3" -> "Phase 2/3": the
+     phase pill's own format (ticket 3.26). "NA" is left out. */
   function studyPhaseWords(tokens) {
-    const words = [];
+    const found = [];
     for (const token of Array.isArray(tokens) ? tokens : []) {
-      const found = /^(EARLY_)?PHASE_?(\d)$/.exec(token);
-      if (found) words.push((found[1] ? "Early " : "") + "Phase " + found[2]);
+      const hit = /^(EARLY_)?PHASE_?(\d)$/.exec(token);
+      if (hit) found.push({early: Boolean(hit[1]), number: hit[2]});
     }
-    return words.join(" / ");
+    if (found.length && !found.some(item => item.early)) return "Phase " + found.map(item => item.number).join("/");
+    return found.map(item => (item.early ? "Early " : "") + "Phase " + item.number).join(" / ");
   }
 
   function studyRow(trial) {
@@ -1708,12 +1710,60 @@ body.registering>:not(.register){display:none!important}
     return item;
   }
 
-  function fillStudies(el, card) {
+  /* The trial rows a card shows: up to 3 of what the API sent. */
+  function shownStudies(card) {
+    return Array.isArray(card.studies) ? card.studies.slice(0, 3) : [];
+  }
+
+  /* Ticket 3.26. Words are Kashish's and decided. */
+  const NO_DETAILS_WORDS = "No trial details were found on ClinicalTrials.gov.";
+
+  /* Ticket 3.26, item 5. A trial card with no rows shows the grey line where the rows would be, unless the
+     card already shows "No study of this disease was found for this medicine." (never both). A card the
+     API sent no "studies" for (no trials file) is not told it has none. */
+  function finishStudies(el, card, noStudyShown) {
     const holder = slot(el, "studies");
-    const trials = Array.isArray(card.studies) ? card.studies.slice(0, 3) : [];
-    if (!trials.length) {
+    if (!holder || shownStudies(card).length) return;
+    if (noStudyShown || !Array.isArray(card.studies)) {
       holder.remove();
       return;
+    }
+    const line = document.createElement("p");
+    line.className = "fine muted no-details";
+    line.textContent = NO_DETAILS_WORDS;
+    holder.append(line);
+    holder.hidden = false;
+  }
+
+  /* Ticket 3.26, items 2 and 3. The card foot of a trial card: the phase pill is left out when the card
+     shows exactly one trial row (the row has the phase), and "Source record" is left out when its address
+     is one of the card's trial-row links. Returns true when the card shows the no-study line instead. */
+  function drawFoot(el, card) {
+    const rows = shownStudies(card);
+    const phase = slot(el, "phase");
+    if (card.trial_phase && rows.length !== 1) {
+      phase.textContent = card.trial_phase;
+      phase.hidden = false;
+    } else {
+      phase.remove();
+    }
+    if (card.source) {
+      if (!rows.some(trial => trial.url === card.source)) {
+        const source = slot(el, "source");
+        source.href = card.source;
+        source.hidden = false;
+      }
+      return false;
+    }
+    return true;
+  }
+
+  function fillStudies(el, card) {
+    const holder = slot(el, "studies");
+    const trials = shownStudies(card);
+    if (!trials.length) {
+      if (!Array.isArray(card.studies)) holder.remove();  // not a trial card: as it was
+      return;  // a trial card with no rows keeps its empty slot for finishStudies (ticket 3.26)
     }
     const head = document.createElement("p");
     head.className = "card-subhead";
@@ -1736,7 +1786,7 @@ body.registering>:not(.register){display:none!important}
   function drawTrialNotes(data) {
     const cards = [...(data.being_studied || []), ...(data.more_in_trials || []), ...(data.new_in_trials || [])];
     byId("finished-note").hidden = !cards.some(card =>
-      (Array.isArray(card.studies) ? card.studies.slice(0, 3) : []).some(trial => trial.status === "Finished"));
+      (Array.isArray(card.studies) ? card.studies.slice(0, 3) : []).some(trial => trial.status.startsWith("Finished")));
     const checked = cards.map(card => card.trials_checked).find(day => typeof day === "string");
     const parts = checked ? /^(\d{4})-(\d{2})-(\d{2})/.exec(checked) : null;
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -1764,16 +1814,9 @@ body.registering>:not(.register){display:none!important}
     el.querySelector(".direction-note").remove();
     fillStudies(el, medicine);  // ticket T4b
     addCtgovNote(el, medicine);  // ticket T7
-    const phase = slot(el, "phase");
-    phase.textContent = medicine.trial_phase || "";
-    phase.hidden = !medicine.trial_phase;
-    if (medicine.source) {
-      const source = slot(el, "source");
-      source.href = medicine.source;
-      source.hidden = false;
-    } else {
-      part(el, "no-study").hidden = false;  // ticket 2.67: an In trials card says so, in place of the link
-    }
+    const noStudy = drawFoot(el, medicine);
+    if (noStudy) part(el, "no-study").hidden = false;  // ticket 2.67: an In trials card says so, in place of the link
+    finishStudies(el, medicine, noStudy);  // ticket 3.26
     return el;
   }
 
@@ -1787,15 +1830,22 @@ body.registering>:not(.register){display:none!important}
       rank.hidden = false;
     }
     slot(el, "ending").textContent = clue.ending;
+    let noStudy = false;
     if (clue.trial_phase) {
       const phase = slot(el, "phase");
-      phase.textContent = clue.trial_phase;
-      phase.hidden = false;
+      if (shownStudies(clue).length === 1) {
+        phase.remove();  // ticket 3.26: the one trial row already shows the phase
+      } else {
+        phase.textContent = clue.trial_phase;
+        phase.hidden = false;
+      }
       if (!clue.source) {  // ticket 2.67: a medicine being studied with no link says so, in place of the 2.23 line
         part(el, "no-source").hidden = true;
         part(el, "no-study").hidden = false;
+        noStudy = true;
       }
     }
+    finishStudies(el, clue, noStudy);  // ticket 3.26
     return el;
   }
 
@@ -1871,9 +1921,12 @@ body.registering>:not(.register){display:none!important}
     }
 
     if (clue.source) {
-      const source = slot(el, "source");
-      source.href = clue.source;
-      source.hidden = false;
+      // ticket 3.26: not shown when it is the address of one of the card's own trial rows
+      if (!shownStudies(clue).some(trial => trial.url === clue.source)) {
+        const source = slot(el, "source");
+        source.href = clue.source;
+        source.hidden = false;
+      }
     } else {
       part(el, "no-source").hidden = false;
     }
