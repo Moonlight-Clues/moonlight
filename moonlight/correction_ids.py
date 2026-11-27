@@ -31,6 +31,8 @@ HAND_LISTS = (
 
 # At least three digits: C-001, and C-1000 when the sequence passes 999.
 ID_RE = re.compile(r"^C-\d{3,}$")
+# A report number such as E17 or E4. Only some entries carry one.
+REPORT_RE = re.compile(r"^E\d+$")
 
 
 def check_id(value):
@@ -40,16 +42,29 @@ def check_id(value):
             f"A hand-list id must be a permanent correction number like C-001: {value!r}")
 
 
+def check_report(value):
+    """ValueError unless value is a report number like E17."""
+    if not isinstance(value, str) or not REPORT_RE.fullmatch(value):
+        raise ValueError(
+            f"A hand-list report must be a report number like E17: {value!r}")
+
+
 def without_id(entry):
-    """The entry without its id, after checking the id when one is present.
+    """The entry without its id and report, after checking them.
 
     An entry with no id is returned as it is, so a made-up test entry still
     reads. The real files all carry an id; tests/test_correction_ids.py
-    refuses a file that drops one.
+    refuses a file that drops one. "report" is optional. When it is present
+    it must match ^E\\d+$, and it is set aside so the rest of the entry is
+    read as before.
     """
-    if isinstance(entry, dict) and "id" in entry:
-        check_id(entry["id"])
-        return {key: value for key, value in entry.items() if key != "id"}
+    if isinstance(entry, dict) and ("id" in entry or "report" in entry):
+        kept = dict(entry)
+        if "id" in kept:
+            check_id(kept.pop("id"))
+        if "report" in kept:
+            check_report(kept.pop("report"))
+        return kept
     return entry
 
 
