@@ -321,7 +321,15 @@ def test_example_old_fields_are_unchanged_and_each_trial_card_gains_three(tmp_pa
     for key in before:
         if key in ("being_studied", "more_in_trials", "new_in_trials"):
             assert len(after[key]) == len(before[key])
-            for new, old in zip(after[key], before[key]):
+            # Ticket 3.31 re-sorts the two folded boxes (newest trial first), so
+            # cards are paired by id, not by place. Nothing else is relaxed.
+            if key != "being_studied":
+                assert sorted(c["id"] for c in after[key]) == sorted(c["id"] for c in before[key])
+            else:
+                assert [c["id"] for c in after[key]] == [c["id"] for c in before[key]]
+            old_by_id = {c["id"]: c for c in before[key]}
+            for new in after[key]:
+                old = old_by_id[new["id"]]
                 assert set(new) - set(old) == NEW_KEYS
                 assert {k: v for k, v in new.items() if k not in NEW_KEYS} == old
         else:

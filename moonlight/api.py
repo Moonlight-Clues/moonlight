@@ -121,7 +121,7 @@ import time
 from collections import OrderedDict, deque
 import contextlib
 from concurrent.futures import ThreadPoolExecutor
-from typing import Deque, Dict, Iterable, List, Optional, Set, Tuple
+from typing import Deque, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
@@ -796,7 +796,8 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
     }
 
 
-def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name: str) -> None:
+def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name: str,
+                boxes: Sequence[list] = ()) -> None:
     """Ticket T3. Give each trial card up to 3 of its trials, newest first,
     the trial total and the date the trials file was checked.
 
@@ -807,6 +808,11 @@ def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name:
     "studies_url", from trials.py, so the page holds no address of its own.
     All or none: if the file cannot be read for one card, no card gets the
     new fields and the page is served as before.
+    Ticket 3.31. boxes are the two folded boxes. Once the trial fields are on,
+    each is re-sorted in place by its card's newest known start date, newest
+    first. The sort is stable: ties and cards with no known date keep the
+    order they came in (highest phase, then A to Z). The date is internal and
+    is taken off the card. Without the file, the order is not touched.
     """
     if _trials is None:
         return
@@ -815,8 +821,14 @@ def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name:
                                for card in cards], disease_name=disease_name)
     if found is None:
         return
+    newest = {}
     for card, new in zip(cards, found):
+        new = dict(new)
+        newest[id(card)] = new.pop("newest_start", None)
         card.update(new)
+    for box in boxes:
+        box.sort(key=lambda card: (newest.get(id(card)) is None,
+                                   -newest[id(card)].toordinal() if newest.get(id(card)) else 0))
 
 
 def _about_json(disease: Disease) -> dict:
@@ -1093,7 +1105,8 @@ def _build_clues(disease_id: str) -> dict:
             counted.add(nct)
         merged[card["id"]] = links
         counted.update(trials.nct_numbers(found.studies.get(card["id"], ())))
-    _add_trials(trial_cards, merged, disease.name)
+    _add_trials(trial_cards, merged, disease.name,
+                boxes=[answer[key] for key in ("more_in_trials", "new_in_trials") if key in answer])
     # Ticket T7. The count line and the sources line, only when the search
     # was stored and the tab has a card. A skipped search keeps today's cards
     # and adds the register link for the whole disease.
