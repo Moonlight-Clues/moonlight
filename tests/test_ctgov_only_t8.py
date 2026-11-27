@@ -82,8 +82,9 @@ def test_past_three_hundred_only_three_hundred_are_sent_and_a_link(monkeypatch, 
     assert box["cards"][0]["name"] == "Drug 001"
     assert box["more_url"].startswith("https://clinicaltrials.gov/search?")
     assert "example" in box["more_url"].lower()
-    # the tab's count line includes the 300 cards
-    assert answer["trials_count_line"].startswith("300 medicines")
+    # the tab's count line includes the 300 cards, in the agreed sentence
+    assert answer["trials_count_line"] == (
+        "These 300 medicines are in 300 drug trials on ClinicalTrials.gov.")
 
 
 def test_a_skipped_disease_has_no_box(monkeypatch, tmp_path):
@@ -259,6 +260,8 @@ def test_one_card_has_no_show_all_button(seen):
     one = seen["one"]["open"]
     assert one["errors"] == [] if "errors" in one else seen["one"]["errors"] == []
     assert one["names"] == ["Only drug"]
+    assert "(1 trial)" in one["summary"]
+    assert "(1 trials)" not in one["summary"]
     assert one["showAll"] is None
     assert one["count"] == "(1)"
     assert one["dashed"] is False

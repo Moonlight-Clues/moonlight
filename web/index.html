@@ -1296,7 +1296,8 @@ body.registering>:not(.register){display:none!important}
     const only = data.ctgov_only || null;
     const onlyCards = only && Array.isArray(only.cards) ? only.cards.map(item => ctgovOnlyCard(item, only.line)) : [];
     byId("ctgov-only-cards").replaceChildren(...onlyCards);
-    byId("ctgov-only-trials").textContent = only ? (only.trials + " trials") : "";
+    byId("ctgov-only-trials").textContent = only
+      ? (only.trials === 1 ? "1 trial" : only.trials + " trials") : "";
     byId("ctgov-only-note").textContent = only ? (only.note || "") : "";
     const onlyShown = 20;
     onlyCards.forEach((card, place) => { card.hidden = place >= onlyShown; });
