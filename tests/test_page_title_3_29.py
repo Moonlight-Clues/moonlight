@@ -1,9 +1,12 @@
-"""Ticket 3.29. The browser title and the link preview.
+"""Ticket 3.29. The link preview. The browser tab stays Moonlight.
 
 A shared link is read by WhatsApp before any script runs, so the server
-writes the title and the description into the HTML it sends back.
-The home page, and a disease Open Targets does not know, both use the
-home title. A known disease uses Open Targets' own name.
+writes og:title and the description into the HTML it sends back.
+The home page, and a disease Open Targets does not know, use og:title
+"Moonlight". A known disease uses Open Targets' own name there.
+The <title> is "Moonlight" on every page, and a search does not change
+it: a disease name in the tab would reach the visit counter if its
+guard failed (MAIN 5, 27 Nov).
 
 The description is the same on every page, word for word:
 
@@ -11,8 +14,8 @@ The description is the same on every page, word for word:
     with the official label beside each one.
 
 Saved files only. No network: fetch._post_json is swapped for a fake.
-The browser test opens the page in Chromium, searches, and reads the
-title the tab shows after the results are drawn.
+The browser test opens the page in Chromium, searches, and checks the
+tab title is still Moonlight.
 """
 
 import html
@@ -84,20 +87,20 @@ def client():
     translate.forget_everything()
 
 
-def assert_preview(page, title):
-    """The four tags a link preview reads, already filled in, before any script."""
-    safe_title = html.escape(title, quote=True)
+def assert_preview(page, og_title):
+    """The preview tags, filled in before any script. The tab title stays Moonlight."""
+    safe_og = html.escape(og_title, quote=True)
     safe_description = html.escape(DESCRIPTION, quote=True)
     assert page.count("<title>") == 1
     assert len(re.findall(r'<meta name="description"', page)) == 1
     assert len(re.findall(r'<meta property="og:title"', page)) == 1
     assert len(re.findall(r'<meta property="og:description"', page)) == 1
-    assert f"<title>{safe_title}</title>" in page
+    assert "<title>Moonlight</title>" in page
     assert f'<meta name="description" content="{safe_description}">' in page
-    assert f'<meta property="og:title" content="{safe_title}">' in page
+    assert f'<meta property="og:title" content="{safe_og}">' in page
     assert f'<meta property="og:description" content="{safe_description}">' in page
     head = page[:page.index("<script")]
-    for bit in ("<title>", 'name="description"', 'property="og:title"',
+    for bit in ("<title>Moonlight</title>", 'name="description"', 'property="og:title"',
                 'property="og:description"'):
         assert bit in head, bit
 
@@ -287,8 +290,13 @@ def searched(tmp_path_factory):
     return found
 
 
-def test_browser_the_title_after_a_search(searched):
+def test_the_script_does_not_set_the_tab_title():
+    assert "document.title" not in PAGE_FILE.read_text(encoding="utf-8")
+
+
+def test_browser_a_search_leaves_the_tab_title_as_moonlight(searched):
     assert searched["width"] == 390
     assert searched["titleBefore"] == HOME_TITLE
-    assert searched["title"] == disease_title(open_targets_name())
+    assert searched["title"] == HOME_TITLE
+    assert open_targets_name() not in searched["title"]
     assert searched["heading"]  # the page drew the disease

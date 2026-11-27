@@ -1125,11 +1125,6 @@ body.registering>:not(.register){display:none!important}
 
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
-    // Ticket 3.29. The tab title uses Open Targets' own name. A shared link
-    // already has it in the HTML; a search on this page sets it here.
-    document.title = disease.name + " · Moonlight";
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", document.title);
     drawTrialNotes(data);
     byId("disease-title").textContent = diseaseName;
     drawAbout(data.about_disease);
