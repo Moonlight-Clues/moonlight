@@ -86,13 +86,15 @@ def test_the_legend_holds_kashishs_signed_words_one_line_per_letter(guide):
     assert key_of(guide).count("<li>") == len(LEGEND)
 
 
-def test_the_report_note_is_under_the_legend_word_for_word(guide):
+# Ticket 3.32: the note moved into the folded "Where the facts come from" (see
+# test_guide_report_trials_3_32.py). This test used to be
+# test_the_report_note_is_under_the_legend_word_for_word.
+def test_nothing_is_under_the_legend_the_key_ends_at_j(guide):
     card_part = guide[guide.index('id="guide-card"'):]
     card_part = card_part[:card_part.index("</section>")]
-    note = re.search(r'(?s)</ul>\s*<p class="key-note">(.*?)</p>\s*$', card_part)
-    assert note, "the note comes straight after the legend, last in the card part"
-    assert plain(note.group(1)) == REPORT_NOTE
-    assert note.group(1).count("<br>") == 1  # two lines, one sentence each
+    assert re.search(r'(?s)</ul>\s*$', card_part), "the legend is last in the card part"
+    assert "key-note" not in guide and "key-note" not in PAGE
+    assert REPORT_NOTE not in plain(card_part)
 
 
 def test_the_old_legend_words_are_gone(guide):

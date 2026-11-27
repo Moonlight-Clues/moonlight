@@ -1945,11 +1945,13 @@ def test_82_example_6_the_page_holds_the_guide_line_inside_the_guide(client):
 
 # Ticket 5.8: the lines are list items in a folded part now. This test used
 # to be test_82_the_guide_line_is_right_after_the_open_targets_paragraph.
-def test_82_the_guide_line_is_right_after_the_open_targets_line(client):
+def test_82_the_guide_line_is_right_after_the_open_targets_and_trials_lines(client):
     guide = guide_of(client.get("/").text)
     lines = [plain(line) for line in re.findall(r"(?s)<li>.*?</li>", guide)]
     place = lines.index("Words. " + GUIDE_LINE)
-    assert lines[place - 1] == "Facts. Open Targets Platform, an open research database."  # ticket T0
+    # Ticket 3.32: the new Trials line sits between Facts and Words.
+    assert lines[place - 2] == "Facts. Open Targets Platform, an open research database."  # ticket T0
+    assert lines[place - 1] == "Trials. ClinicalTrials.gov, the US public register of clinical studies."
 
 
 def test_82_the_safety_line_is_unchanged(client):

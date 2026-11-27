@@ -324,7 +324,9 @@ def test_the_how_to_card_says_8_records():
 def test_the_report_link_keeps_its_name():
     assert '>Report</button>' in PAGE
     assert 'const REPORT_THANKS = "Thank you. We read every report.";' in PAGE
-    assert "We read every report.<br>Nothing about you is kept." in PAGE
+    # Ticket 3.32: the two-line note under the key moved into the guide's facts fold.
+    assert "We read every report.<br>Nothing about you is kept." not in PAGE
+    assert "<span>We read every report. Nothing about you is kept.</span>" in PAGE
 
 
 # ---- the tag's look, in the page's own styles ----
