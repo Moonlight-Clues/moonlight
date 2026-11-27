@@ -109,9 +109,13 @@ def test_the_three_tabs_are_as_before(page):
 
 def test_the_footer_keeps_the_contact_line_and_the_last_line_in_that_order(page):
     footer = footer_of(page)
-    assert plain(footer) == CONTACT + " " + FOOTER_NOTE
+    # Ticket 2.66 (MAIN 5's named OK, 27 Nov): the last line ends with
+    # " · Corrections", a link to the corrections page.
+    assert plain(footer) == CONTACT + " " + FOOTER_NOTE + " · Corrections"
     assert ("Found something wrong or have any feedback? Contact "
             '<a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a>') in footer
+    assert re.search(r'<div class="footer-note">[^<]* · <a href="/corrections">Corrections</a></div>',
+                     footer)  # ticket 2.66
 
 
 # ---- Example 3: no medicine is named before a search ----

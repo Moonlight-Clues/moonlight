@@ -250,7 +250,7 @@ def page_html() -> str:
 </div></main>
 <footer class="site-footer"><div class="wrap">
 <p>Found something wrong or have any feedback? Contact <a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></p>
-<p>Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</p>
+<p>Moonlight · Research exploration only · Not clinical findings · Data from Open Targets and ClinicalTrials.gov</p>
 </div></footer>
 </body>
 </html>

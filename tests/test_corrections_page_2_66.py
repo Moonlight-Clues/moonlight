@@ -235,11 +235,19 @@ def test_the_route_serves_the_page_with_no_network(lists):
     assert answer.text.count('<tr class="row">') == 10
 
 
-def test_the_footer_links_to_it_beside_the_build_line():
+def test_the_footer_links_to_it_at_the_end_of_the_last_line():
+    """MAIN 5, 27 Nov. Top to bottom: contact line; "Moonlight · Research
+    exploration only · ..." ending with " · Corrections" as a link; the Build
+    line; "Trial details checked ..."."""
     page = PAGE_FILE.read_text(encoding="utf-8")
     footer = page[page.index('<footer class="site-footer"'):page.index("</footer>")]
-    assert re.search(r'id="build-line"></div>\s*<a [^>]*href="/corrections"', footer) \
-        or re.search(r'href="/corrections"[^>]*>[^<]*</a>\s*<div class="build-line"', footer)
+    order = [footer.index('class="contact"'),
+             footer.index('<div class="footer-note">Moonlight · Research exploration only · '),
+             footer.index(' · <a href="/corrections">Corrections</a></div>'),
+             footer.index('id="build-line"'),
+             footer.index('id="trials-checked-line"')]
+    assert order == sorted(order)
+    assert footer.count('href="/corrections"') == 1
 
 
 WIDTH_SCRIPT = r"""
