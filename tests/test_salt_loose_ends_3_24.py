@@ -367,10 +367,18 @@ CHANGED = {
 }
 
 
+# Ticket 3.28 (MAIN 5's named OK): the In-trials Ixazomib card that 3.23 took
+# off AL amyloidosis is back. It is the one card added; nothing else is.
+ADDED = {AL_AMYLOIDOSIS: [("more_in_trials", IXAZOMIB)]}  # ticket 3.28
+
+
 @pytest.mark.parametrize("disease_id", sorted(PAGES))
 def test_every_other_card_on_the_3_23_pages_is_unchanged(pages, disease_id):
     before, after = load(BEFORE / f"{disease_id}.json"), pages[disease_id]
     old, new = cards(before), cards(after)
+    added = ADDED.get(disease_id, [])  # ticket 3.28
+    assert [key for key in new if key not in old] == added  # ticket 3.28
+    new = {key: card for key, card in new.items() if key not in added}  # ticket 3.28
     assert list(new) == list(old)  # the same cards, in the same places and order
     for key, card in old.items():
         expected = dict(card, **CHANGED.get((disease_id,) + key, {}))
