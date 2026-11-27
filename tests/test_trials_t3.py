@@ -221,14 +221,14 @@ def test_the_role_is_read_for_the_card_s_medicine_or_one_of_its_forms(tmp_path):
     path = make_file(tmp_path / "t.sqlite", [study("NCT00000001", "2015", medicine="Imatinib Mesylate")])
     found = open_file(path)
     links = {LINK + "NCT00000001"}
-    assert found.for_card(links, ["Imatinib", "Imatinib Mesylate"], today=TODAY)[0][0]["role"] == "Being tested"
+    assert found.for_card(links, ["Imatinib", "Imatinib Mesylate"], today=TODAY)[0][0]["role"] == "Was tested"  # ticket 3.26: the study is over
     assert found.for_card(links, ["Imatinib"], today=TODAY)[0][0]["role"] == ctgov.ROLE_NOT_STATED
 
 
 def test_a_comparison_only_medicine_says_so(tmp_path):
     path = make_file(tmp_path / "t.sqlite", [study("NCT00000001", "2015", arm="ACTIVE_COMPARATOR")])
     assert open_file(path).for_card({LINK + "NCT00000001"}, ["Sirolimus"], today=TODAY)[0][0]["role"] \
-        == ctgov.USED_FOR_COMPARISON
+        == ctgov.WAS_USED_FOR_COMPARISON  # ticket 3.26: the study is over
 
 
 # ------------------------------------------------- opening, once, and the date

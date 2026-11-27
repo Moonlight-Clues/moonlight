@@ -82,33 +82,33 @@ READINGS = [
     ("NCT05477862", "Clinically Designed Improvisatory Music",
      "Invitation only", "Expected to end 2026", ("NA",), "Being tested"),
     ("NCT04123561", "DSP",
-     "Finished", "Ended 2022", ("PHASE3",), "Used for comparison"),
+     "Finished 2022", "", ("PHASE3",), "Was used for comparison"),  # ticket 3.26
     ("NCT04123561", "TLC599",
-     "Finished", "Ended 2022", ("PHASE3",), "Role not stated"),
+     "Finished 2022", "", ("PHASE3",), "Role not stated"),  # ticket 3.26
     ("NCT04123561", "Normal Saline",
-     "Finished", "Ended 2022", ("PHASE3",), "Used for comparison"),
+     "Finished 2022", "", ("PHASE3",), "Was used for comparison"),  # ticket 3.26
     ("NCT01340183", "Placebo",
      "Paused", "Expected to end 2011", ("PHASE1",), "Used for comparison"),
     ("NCT01340183", "AZD5099",
      "Paused", "Expected to end 2011", ("PHASE1",), "Being tested"),
     ("NCT00789659", "Negative pressure dressing",
-     "Withdrawn before starting", "Ended 2014", ("NA",), "Being tested"),
+     "Withdrawn before starting", "Ended 2014", ("NA",), "Was tested"),  # ticket 3.26
     ("NCT00645580", "Fluvoxamine",
      "Status unknown", "Expected to end 2009", ("NA",), "Being tested"),
     ("NCT02733523", 'Program "Sentirnos bien" (Feeling well)',
-     "Finished", "End date not recorded", ("NA",), "Being tested"),
+     "Finished", "End date not recorded", ("NA",), "Was tested"),  # ticket 3.26
     ("NCT04118153", "Abatacept",
-     "Finished", "Ended 2024", ("EARLY_PHASE1",), "Being tested"),
+     "Finished 2024", "", ("EARLY_PHASE1",), "Was tested"),  # ticket 3.26
     ("NCT02006251", "Real-time Instrumentation",
-     "Stopped early", "Ended 2014", (), "Being tested"),
+     "Stopped early", "Ended 2014", (), "Was tested"),  # ticket 3.26
     ("NCT02006251", "Standard Total Hip Arthroplasty",
-     "Stopped early", "Ended 2014", (), "Role not stated"),
+     "Stopped early", "Ended 2014", (), "Role not stated"),  # ticket 3.26
     ("NCT00188396", "Citalopram",
-     "Finished", "Ended 2008", ("NA",), "Role not stated"),
+     "Finished 2008", "", ("NA",), "Role not stated"),  # ticket 3.26
     ("NCT03208946", "Low-CML diet",
-     "Finished", "Ended 2018", ("NA",), "Used for comparison"),
+     "Finished 2018", "", ("NA",), "Was used for comparison"),  # ticket 3.26
     ("NCT03208946", "High-CML diet",
-     "Finished", "Ended 2018", ("NA",), "Being tested"),
+     "Finished 2018", "", ("NA",), "Was tested"),  # ticket 3.26
 ]
 
 
@@ -183,7 +183,7 @@ def test_a_date_with_no_type_is_not_recorded():
 def test_the_name_must_match_the_whole_intervention_name():
     knee = study("NCT04123561")
     assert read_trial(knee, "Saline").role == "Role not stated"
-    assert read_trial(knee, "Normal Saline").role == "Used for comparison"
+    assert read_trial(knee, "Normal Saline").role == "Was used for comparison"  # ticket 3.26
     paused = read_trial(study("NCT01340183"), "Aspirin")
     assert paused.role == "Role not stated"
     assert paused.status == "Paused"

@@ -49,8 +49,7 @@ LINK = "https://clinicaltrials.gov/study/"
 ALL_URL = "https://clinicaltrials.gov/search?cond=x&intr="  # as the API would send it; the page must use it as sent
 
 CSS_LINES = [
-    # The spec's rule, scoped to the slot: .card-subhead already styles the "Research pathway" line.
-    '[data-slot="studies"] .card-subhead{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 2px;text-transform:none;letter-spacing:normal}',
+    # Ticket 3.26: the scoped subhead rule that stood here is gone; the subhead is a plain .card-subhead.
     ".studies{list-style:none;margin:0 0 4px;padding:0}",
     ".studies li{border-top:1px solid var(--line)}",
     ".studies li:first-child{border-top:0}",
@@ -323,8 +322,12 @@ def test_example_no_trials_the_card_is_exactly_as_today(seen):
             if name == "noChecked" and place == 0:
                 continue  # that one has trials; it is the footer test's
             if name == "none" and place == 0:
-                assert card["outer"] == today[0]["outer"]
+                # ticket 3.26: a trial card with no rows now shows the grey "No trial details" line (or, with
+                # no source link, the no-study line it had); everything else on the card is as today.
                 assert not card["rows"] and card["subhead"] is None and card["all"] is None
+                bare = re.sub(r'<div data-slot="studies"[^>]*><p class="fine muted no-details">[^<]*</p></div>', "",
+                              card["outer"])
+                assert bare == today[0]["outer"]
             else:
                 assert card["outer"] == today[place]["outer"]
     for card in today:
@@ -358,11 +361,11 @@ def test_no_address_sent_means_a_plain_row_and_no_all_link_never_a_made_up_link(
 
 def test_phase_joined_with_a_slash_and_left_out_when_none(seen):
     rows = first_main(seen, "three")["rows"]
-    assert [row["phase"] for row in rows] == ["Phase 1 / Phase 2", "Phase 2", None]
+    assert [row["phase"] for row in rows] == ["Phase 1/2", "Phase 2", None]  # ticket 3.26: the pill's format
 
 
 @pytest.mark.parametrize("tokens, words", [
-    (["EARLY_PHASE1"], "Early Phase 1"), (["PHASE1"], "Phase 1"), (["PHASE2", "PHASE3"], "Phase 2 / Phase 3"),
+    (["EARLY_PHASE1"], "Early Phase 1"), (["PHASE1"], "Phase 1"), (["PHASE2", "PHASE3"], "Phase 2/3"),  # ticket 3.26
     (["PHASE4"], "Phase 4"), (["NA"], None), ([], None),
 ])
 def test_phase_words_are_the_cards_phase_words(tokens, words, base, tmp_path_factory):
@@ -399,7 +402,8 @@ def test_the_slot_is_right_after_the_card_top_and_unhidden_only_when_filled(seen
     card = first_main(seen, "six")
     assert card["hasSlot"] and card["slotAfterTop"] and card["slotShown"] and card["slotBeforePath"]
     empty = first_main(seen, "none")
-    assert not empty["hasSlot"] or (empty["slotHidden"] and not empty["slotShown"])
+    # ticket 3.26: the empty slot now holds the grey line (or is gone, where the no-study line is shown)
+    assert not empty["hasSlot"] or (empty["slotShown"] and "No trial details were found" in empty["outer"])
 
 
 # the finished note
