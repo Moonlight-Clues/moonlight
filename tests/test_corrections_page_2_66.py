@@ -314,3 +314,172 @@ def test_real_every_row_has_a_link():
 def test_real_row_count_equals_the_lists_entries():
     lists = real_lists()
     assert len(corrections_page.rows()) == len(corrections_page.entries_of(lists))
+
+
+# ---- Ticket 3.30: the header matches the home page; each card starts with its id ----
+
+TAGLINE = ("An open-source explorer of medicines and trials for any disease, "
+           "built from public research data.")
+IDS = {  # source link -> (id, report or None); one card of each kind, some with a report
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=codeine-label": ("C-014", "E36"),
+    "https://example.org/a": ("C-015", None),
+    "https://example.org/b": ("C-016", "E4"),
+    "https://example.org/c": ("C-017", "E36"),
+    "https://example.org/d": ("C-018", None),
+    "https://example.org/e": ("C-019", None),
+    "https://example.org/f": ("C-020", "E8"),
+    "https://example.org/g": ("C-021", "E52"),
+    "https://www.pmda.go.jp/files/x.pdf": ("C-022", None),
+}  # the discontinued entry (h) has no id yet, so its card has no id line
+
+
+@pytest.fixture
+def numbered(lists):
+    """The made-up lists, with an id on every entry but the discontinued one,
+    and a report number on some."""
+    data, names = lists
+    for name, entry, link in entries(data):
+        if link in IDS:
+            cid, report = IDS[link]
+            target = data[name][next(iter(data[name]))] if name == "salt_parents" else entry
+            if name == "salt_parents":
+                target = data[name]["CHEMBL9001"]
+            target["id"] = cid
+            if report:
+                target["report"] = report
+    return data, names
+
+
+def test_the_header_is_the_home_pages_with_the_wordmark_linking_home(lists):
+    page = corrections_page.page_html()
+    home = PAGE_FILE.read_text(encoding="utf-8")
+    assert f'<p class="tagline">{TAGLINE}</p>' in home  # the words we copy
+    header = page[page.index('<header class="site-header">'):page.index("</header>")]
+    assert f'<p class="tagline">{TAGLINE}</p>' in header
+    assert '<a class="wordmark" href="/">Moonlight</a>' in header
+    assert '<span class="brand-dot" aria-hidden="true"></span>' in header
+    assert header.index("wordmark") < header.index("brand-dot") < header.index("tagline")
+    for rule in (".brandline{display:flex;align-items:center;gap:10px}",
+                 ".brand-dot{background:var(--gold);width:7px;height:7px;border-radius:100%;flex:none}",
+                 ".tagline{margin:8px 0 0;color:#C4D2D9;font-size:13px;max-width:640px}"):
+        assert rule in home and rule in page  # same look as the home page
+    assert "--gold:#E9B45B" in page
+
+
+def test_a_card_starts_with_its_correction_id_then_the_report(numbered):
+    page = corrections_page.page_html()
+    for row in corrections_page.rows():
+        cid, report = IDS.get(row.source, (None, None))
+        assert (row.correction_id, row.report) == (cid, report)
+    assert ('<td class="ident"><span class="cid">Correction C-014</span>'
+            '<span class="from">From report E36</span></td>') in page
+    assert '<td class="ident"><span class="cid">Correction C-015</span></td>' in page
+    assert page.count("From report") == sum(1 for _, r in IDS.values() if r) == 5
+    assert page.count("Correction C-") == len(IDS)
+    # the id is the first thing in every card that has one
+    for chunk in page.split('<tr class="row">')[1:]:
+        assert chunk.startswith("<td") and ('class="ident"' in chunk[:20] or "Correction C-" not in chunk)
+
+
+def test_an_entry_with_no_report_has_no_report_line(numbered):
+    assert by_source("https://example.org/a").report is None
+    assert "From report None" not in corrections_page.page_html()
+
+
+def test_a_bad_id_or_report_stops_the_build(numbered):
+    data, _ = numbered
+    data["corrections"][1]["report"] = "36"
+    with pytest.raises(ValueError):
+        corrections_page.rows()
+
+
+def test_every_real_entry_with_an_id_shows_it():
+    lists = real_lists()
+    page = corrections_page.page_html()
+    entries_ = [e for n, e, _ in corrections_page.entries_of(lists) if "id" in e]
+    assert entries_  # the seven hand lists all carry ids
+    for entry in entries_:
+        assert f"Correction {entry['id']}</span>" in page
+        if "report" in entry:
+            assert f"From report {entry['report']}</span>" in page
+
+
+CARD_SCRIPT = r"""
+"use strict";
+const fs = require("fs");
+const { chromium } = require("playwright");
+(async () => {
+  const browser = await chromium.launch();
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.route("**/*", route => route.abort());  // never the network
+    await page.setContent(fs.readFileSync(process.argv[1], "utf-8"));
+    const seen = await page.evaluate(() => {
+      const box = el => { const r = el.getBoundingClientRect();
+        return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, w: r.width, h: r.height }; };
+      const word = document.querySelector(".site-header .wordmark");
+      const dot = document.querySelector(".site-header .brand-dot");
+      const tag = document.querySelector(".site-header .tagline");
+      return {
+        scroll: document.documentElement.scrollWidth,
+        header: { word: box(word), dot: box(dot), tag: box(tag), href: word.getAttribute("href"),
+                  tagClipped: tag.scrollWidth > tag.clientWidth,
+                  dotColor: getComputedStyle(dot).backgroundColor,
+                  wordColor: getComputedStyle(word).color,
+                  tagSize: getComputedStyle(tag).fontSize,
+                  headerBottom: box(document.querySelector(".site-header")).bottom },
+        cards: [...document.querySelectorAll("tr.row")].map(row => {
+          const ident = row.querySelector("td.ident");
+          const label = ident ? getComputedStyle(ident, "::before").content : null;
+          return { card: box(row), text: ident ? ident.innerText.split("\n").map(s => s.trim()).filter(Boolean) : null,
+                   identBox: ident ? box(ident) : null, first: row.firstElementChild === ident,
+                   cells: [...row.children].map(c => box(c).right),
+                   identLabel: label, source: row.querySelector("td.source a").href };
+        }),
+      };
+    });
+    process.stdout.write(JSON.stringify(seen));
+  } finally { await browser.close(); }
+})().catch(e => { console.error(e); process.exit(1); });
+"""
+
+
+def test_at_390px_the_header_and_one_card_of_each_kind(numbered, tmp_path):
+    node = shutil.which("node")
+    if not node or subprocess.run(
+            [node, "-e", "require('playwright')"], capture_output=True).returncode:
+        pytest.skip("needs node with playwright to open a real browser")
+    page_file = tmp_path / "corrections.html"
+    page_file.write_text(corrections_page.page_html(), encoding="utf-8")
+    run = subprocess.run([node, "-e", CARD_SCRIPT, str(page_file)],
+                         capture_output=True, text=True, timeout=120, cwd=str(ROOT))
+    assert run.returncode == 0, run.stderr[-3000:]
+    seen = json.loads(run.stdout)
+    assert seen["scroll"] <= 390
+    head = seen["header"]
+    # wordmark, then its gold dot on the same line, then the tagline under both
+    assert head["href"] == "/"
+    assert head["wordColor"] == "rgb(245, 240, 232)" and head["dotColor"] == "rgb(233, 180, 91)"
+    assert head["tagSize"] == "13px" and not head["tagClipped"]
+    assert head["dot"]["left"] >= head["word"]["right"] and head["dot"]["w"] == 7
+    assert abs((head["dot"]["top"] + head["dot"]["bottom"]) / 2
+               - (head["word"]["top"] + head["word"]["bottom"]) / 2) < 3
+    assert head["tag"]["top"] >= head["word"]["bottom"]
+    for part in ("word", "dot", "tag"):
+        assert 0 <= head[part]["left"] and head[part]["right"] <= 390
+    assert head["tag"]["bottom"] <= head["headerBottom"]
+    # one card of each kind: ten cards, nine with an id, none wider than the screen
+    cards = seen["cards"]
+    assert len(cards) == 10
+    by_link = {c["source"]: c for c in cards}
+    for link, (cid, report) in IDS.items():
+        card = by_link[link]
+        want = [f"Correction {cid}"] + ([f"From report {report}"] if report else [])
+        assert card["text"] == want, link
+        assert card["first"] and card["identLabel"] in ("none", "normal")  # no "Correction" label twice
+        assert 0 <= card["card"]["left"] and card["card"]["right"] <= 390
+        assert all(right <= 390 for right in card["cells"])
+        # the id sits at the top of the card, above every other cell
+        assert card["identBox"]["top"] - card["card"]["top"] < 20
+    none = by_link["https://example.org/h"]  # discontinued: no id yet, so no line and no gap
+    assert none["text"] == [] and none["identBox"]["h"] == 0
