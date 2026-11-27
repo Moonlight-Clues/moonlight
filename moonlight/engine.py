@@ -1338,10 +1338,16 @@ TRIALS_SOURCES_LINE = "Trials come from Open Targets and ClinicalTrials.gov."
 
 
 def trials_count_line(medicines: int, drug_trials: int) -> str:
-    """"1 medicine, 1 drug trial" when either number is one. Otherwise the plurals."""
-    medicine = "1 medicine" if medicines == 1 else f"{medicines} medicines"
-    trial = "1 drug trial" if drug_trials == 1 else f"{drug_trials} drug trials"
-    return f"{medicine}, {trial}"
+    """The agreed sentence (MAIN 5, 27 Nov).
+
+    Several medicines: "These [M] medicines are in [N] drug trials on
+    ClinicalTrials.gov." One medicine: "This medicine is in [N] drug trials
+    on ClinicalTrials.gov." One drug trial is written "1 drug trial".
+    """
+    trials = "1 drug trial" if drug_trials == 1 else f"{drug_trials} drug trials"
+    if medicines == 1:
+        return f"This medicine is in {trials} on ClinicalTrials.gov."
+    return f"These {medicines} medicines are in {trials} on ClinicalTrials.gov."
 
 
 @dataclass

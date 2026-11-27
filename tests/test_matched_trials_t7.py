@@ -3,9 +3,8 @@
 A medicine the disease-search file matched, and that Open Targets has no
 trial for on this disease, goes through today's tab rules. Its card carries
 the grey line "Its trials for this disease were found on ClinicalTrials.gov,
-not in Open Targets." The In trials tab shows the count line (one is
-"1 medicine" and "1 drug trial") and "Trials come from Open Targets and
-ClinicalTrials.gov."
+not in Open Targets." The In trials tab shows the agreed count sentence
+and "Trials come from Open Targets and ClinicalTrials.gov."
 
 A medicine Open Targets already has a trial for is left as it is.
 An approved medicine is not added to In trials.
@@ -215,12 +214,14 @@ def api_trial(med):
 
 
 def test_the_count_line_says_one_when_there_is_one():
-    assert trials_count_line(1, 1) == "1 medicine, 1 drug trial"
-    assert trials_count_line(1, 2) == "1 medicine, 2 drug trials"
-    assert trials_count_line(2, 1) == "2 medicines, 1 drug trial"
-    assert trials_count_line(12, 40) == "12 medicines, 40 drug trials"
-    assert "1 medicine" in trials_count_line(1, 4)
+    """MAIN 5, 27 Nov. The agreed sentence, not a bare pair of counts."""
+    assert trials_count_line(1, 1) == "This medicine is in 1 drug trial on ClinicalTrials.gov."
+    assert trials_count_line(1, 2) == "This medicine is in 2 drug trials on ClinicalTrials.gov."
+    assert trials_count_line(2, 1) == "These 2 medicines are in 1 drug trial on ClinicalTrials.gov."
+    assert trials_count_line(12, 40) == "These 12 medicines are in 40 drug trials on ClinicalTrials.gov."
+    assert trials_count_line(50, 67) == "These 50 medicines are in 67 drug trials on ClinicalTrials.gov."
     assert "1 drug trial" in trials_count_line(4, 1)
+    assert "1 drug trials" not in trials_count_line(1, 1)
 
 
 def test_the_sources_line_is_the_ticket_sentence():
@@ -333,7 +334,7 @@ def test_the_api_sends_the_line_the_count_and_the_sources(monkeypatch, tmp_path)
     assert [card["id"] for card in cards] == ["CHEMBL9"]
     assert cards[0]["ctgov_note"] == LINE
     assert answer["approved"] == []
-    assert answer["trials_count_line"] == "1 medicine, 1 drug trial"
+    assert answer["trials_count_line"] == "This medicine is in 1 drug trial on ClinicalTrials.gov."
     assert answer["trials_sources_line"] == SOURCES
     assert len({card["id"] for card in cards}) == len(cards)
 
@@ -451,7 +452,7 @@ def _page_answer():
             }],
             "new_clues": [],
             "left_out": {"not_approved": 0, "unclear_link": 0},
-            "trials_count_line": "1 medicine, 1 drug trial",
+            "trials_count_line": "This medicine is in 1 drug trial on ClinicalTrials.gov.",
             "trials_sources_line": SOURCES,
         },
         "skipped": {
@@ -491,7 +492,7 @@ def test_the_tab_count_matches_the_cards_and_the_lines_show(seen):
     assert one["names"].count("Faraway") == 1
     assert "Already Approved" not in one["names"]
     assert one["notes"] == [LINE]
-    assert one["countLine"] == "1 medicine, 1 drug trial"
+    assert one["countLine"] == "This medicine is in 1 drug trial on ClinicalTrials.gov."
     assert one["sources"] == SOURCES
     assert one["count"] == "(" + str(one["cardCount"]) + ")"
     assert one["cardCount"] == 1
