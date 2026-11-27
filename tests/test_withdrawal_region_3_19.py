@@ -20,6 +20,8 @@ is not in this ticket: it waits for Kashish, as ticket 3.20. No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -47,7 +49,7 @@ OCTOCOG_ALFA = "CHEMBL4297873"  # Open Targets already records a withdrawal for 
 
 
 def load(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(path.read_text(encoding="utf-8")))
 
 
 def page(entries):

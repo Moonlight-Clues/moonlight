@@ -224,7 +224,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field, replace
 from typing import Callable, Dict, Iterable, List, Optional, Set, Tuple, TypeVar
 
-from moonlight import fetch
+from moonlight import correction_ids, fetch
 from moonlight.fetch import fetch_approved, fetch_disease, fetch_family, fetch_paths
 from moonlight.fetch import fetch_targets, fetch_withdrawn
 from moonlight.fetch import Listed, OnList
@@ -2054,8 +2054,12 @@ def _checked_pair(entry: object, keys: Set[str], kind: str) -> Tuple[str, str]:
 
     The entry must hold exactly the things in keys, with a medicine id, a
     disease id and a real date (like "2026-11-16"). Nothing that is not
-    in keys: no doctor's name, no reason.
+    in keys: no doctor's name, no reason. A permanent correction number
+    ("id", like C-001) may be there as well. It is checked and then set
+    aside, so the rest of the entry is read as before.
     """
+    if isinstance(entry, dict):
+        entry = correction_ids.without_id(entry)
     if not isinstance(entry, dict) or set(entry) != keys:
         raise ValueError(f"{kind} must hold exactly {sorted(keys)}: {entry!r}")
     medicine_id, disease_id, date = entry["medicine_id"], entry["disease_id"], entry["date"]

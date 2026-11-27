@@ -15,6 +15,8 @@ fixtures/givosiran_2_61/ so "one row more, none lost" can be checked.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -45,7 +47,7 @@ OVERRIDE_ROW = {"medicine_id": GIVOSIRAN, "disease_id": AHP, "url": LABEL, "date
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_post_json(body):

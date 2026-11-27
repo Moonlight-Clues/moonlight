@@ -12,6 +12,8 @@ the code. fixtures/task12_batch1/stopped/ holds the answers with the entries in.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 
 import pytest
@@ -54,7 +56,7 @@ NEW = {
 
 
 def load(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(path.read_text(encoding="utf-8")))
 
 
 def answer(state, disease_id):

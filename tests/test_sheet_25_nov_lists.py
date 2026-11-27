@@ -14,6 +14,8 @@ Not added, on purpose (the ticket's STOP AND ASK / DO NOT ADD):
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 
 import pytest
@@ -80,7 +82,7 @@ PAGES = [ADDISON, AML, PARKINSON, GRAVES, PROSTATE, HEM_A, TREMOR, ALS, ADPKD, T
 
 
 def load(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(path.read_text(encoding="utf-8")))
 
 
 def answer(state, disease_id):

@@ -21,6 +21,8 @@ Saved answers only (fixtures/wider_labels_2_63/). No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import shutil
 import subprocess
@@ -113,7 +115,7 @@ def test_the_engine_reads_the_six_entries():
 
 
 def test_givosiran_on_aip_is_on_approvals_json_with_the_givlaari_label():
-    entries = json.loads(APPROVALS_FILE.read_text(encoding="utf-8"))
+    entries = without_correction_id(json.loads(APPROVALS_FILE.read_text(encoding="utf-8")))
     rows = [e for e in entries if (e["medicine_id"], e["disease_id"]) == (GIVOSIRAN, AIP)]
     assert rows == APPROVAL_ROWS
     from test_list_fixes_2_64 import APPROVALS_ROWS as ROWS_2_64  # ticket 2.64

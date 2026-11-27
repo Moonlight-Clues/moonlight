@@ -387,7 +387,7 @@ def test_prasterone_has_the_label_warning_for_rheumatoid_arthritis_only():
     # Ticket 2.45 added prasterone for osteoarthritis after this one: only the RA entry is read here.
     mine = [entry for entry in entries
             if entry["medicine_id"] == PRASTERONE and entry["disease_id"] == RA]
-    assert [{k: v for k, v in entry.items() if k != "label"} for entry in mine] == [
+    assert [{k: v for k, v in entry.items() if k not in ("label", "id")} for entry in mine] == [
         {"medicine_id": PRASTERONE, "disease_id": RA, "date": "2026-11-24",
          "note": LABEL_WARNING}]
     assert entries[38] == mine[0]  # added at the end of the 39 that were there then

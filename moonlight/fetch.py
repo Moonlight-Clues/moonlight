@@ -72,7 +72,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 import requests
 from requests.adapters import HTTPAdapter
 
-from moonlight import cache
+from moonlight import cache, correction_ids
 from moonlight.records import (
     STAGE_ORDER,
     Disease,
@@ -166,8 +166,10 @@ def _salt_parents() -> Dict[str, dict]:
         if not isinstance(found, dict):
             raise ValueError("salt_parents.json must hold an object.")
         for salt_id, row in found.items():
-            if not isinstance(row, dict) or set(row) != SALT_ROW_KEYS \
-                    or not all(isinstance(row[key], str) and row[key].strip() for key in row):
+            # "id" (C-001) is allowed. The four salt fields are still required.
+            body = correction_ids.without_id(row) if isinstance(row, dict) else row
+            if not isinstance(body, dict) or set(body) != SALT_ROW_KEYS \
+                    or not all(isinstance(body[key], str) and body[key].strip() for key in body):
                 raise ValueError(
                     f"A salt row needs parent, parent_name, source and date: {salt_id!r}")
         _SALT_PARENTS = found

@@ -74,6 +74,22 @@ Kept interventional studies: 161,149. Open Targets clinical-report NCT ids linke
 - ChEMBL API (https://www.ebi.ac.uk/chembl/api/data/), read 26 Nov 2026
 - The list of Approved cards is read from the live Moonlight API (`/api/clues?disease_id=...`, read-only) on 26 Nov 2026.
 
+# Permanent ids on the hand lists
+
+Every entry of these seven lists carries an `"id"` like `C-001`:
+
+`corrections.json`, `approvals.json`, `limits.json`, `confirmed.json`, `withdrawals.json`, `pmda_summaries.json`, `salt_parents.json`.
+
+The numbers are one sequence across all seven. They were assigned once, in date order. Entries from the same day keep that list order, then the entry's place in its file. A number is never reused and never renumbered.
+
+A new entry takes the next number. Print it with:
+
+```bash
+python -m moonlight.correction_ids
+```
+
+Write that id on the entry. Do not fill a gap. `fixtures/correction_ids.json` pins each id to the entry, and `tests/test_correction_ids.py` fails if one changes.
+
 # Sources for moonlight/names.json
 
 Built by `scripts/build_names.py`. One name for every medicine id (ChEMBL) and disease id (MONDO, Orphanet, EFO, and the other Open Targets disease prefixes) found in these hand lists: `corrections.json`, `approvals.json`, `limits.json`, `confirmed.json`, `withdrawals.json`, `pmda_summaries.json`, `salt_parents.json`.

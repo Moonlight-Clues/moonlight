@@ -27,6 +27,8 @@ own list, asked live on 2026-11-25). No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import re
 from unittest.mock import patch
@@ -152,7 +154,7 @@ def names(entry):
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_rows(disease_id):

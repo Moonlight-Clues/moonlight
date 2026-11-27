@@ -12,6 +12,8 @@ read from those files. None is written by hand.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import re
 
 import pytest
@@ -34,7 +36,7 @@ TOP_LINE = ("Already approved for this disease in at least one country, accordin
 
 
 def real_entries():
-    return json.loads(FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(FILE.read_text(encoding="utf-8")))
 
 
 def mondays_entries():
@@ -109,6 +111,9 @@ def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
     # the keys, the ids, the day and the note are taken away.
     text = "".join(line for line in FILE.read_text(encoding="utf-8").splitlines(keepends=True)
                    if THE_DAY in line)
+    # Permanent correction ids (C-001) sit on every entry. This check is
+    # about a person's name, so the id is taken out before the leftover test.
+    text = re.sub(r'"id": "C-\d+", ', "", text)
     assert text.count(THE_DAY) == 12
     labels = sorted({entry["label"] for entry in entries if entry["label"]}, key=len, reverse=True)
     for known in ["medicine_id", "disease_id", "date", "note", "label", NOTE, THE_DAY,

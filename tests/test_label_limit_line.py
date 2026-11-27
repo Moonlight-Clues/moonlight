@@ -26,6 +26,8 @@ ticket 2.32 in the same folder. Nothing new was asked. No network.
 
 import copy
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import shutil
 import subprocess
@@ -103,7 +105,7 @@ EARLIER_CARDS = [
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_rows(disease_id):

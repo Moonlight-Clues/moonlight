@@ -19,6 +19,8 @@ fetch.py's DISEASE_DRUGS_QUERY). No network.
 
 import hashlib
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import re
 from unittest.mock import patch
@@ -190,7 +192,7 @@ def names(card):
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_post_json(body):

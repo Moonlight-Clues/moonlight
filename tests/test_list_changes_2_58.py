@@ -12,6 +12,8 @@ Saved answers only (fixtures/old_withdrawn_flag/). No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 
 import pytest
@@ -39,7 +41,7 @@ NOT_ADDED = {"irbesartan": "CHEMBL1513", "losartan": "CHEMBL191"}  # diabetic ki
 
 
 def real():
-    return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8")))
 
 
 def entry(medicine_id, disease_id, day):
