@@ -19,8 +19,12 @@ Kashish's rules (26 Nov 2026):
 - The first name is the trial's main medicine name. A joining mark in it
   (/ + , ; & and with plus) means a combination, and the trial matches nothing.
 - Later names are aliases. Commas and semicolons split them into pieces.
-  A piece that matches nothing is ignored. A piece with "/" or "+" is still
-  a combination, and the trial matches nothing.
+  A piece that matches nothing is ignored. A piece with "+" is still a
+  combination, and the trial matches nothing.
+- A "/" piece in an other-name is a list of aliases when every part is the
+  same medicine as the main name, or an unknown brand name: letters only, no
+  digits. ® and ™ are not digits. An unknown part with a digit, such as
+  VX-445, is a different medicine, so the list is a combination (ticket T5d).
 - Names that point to two medicines match nothing. A log line names both.
 - A medicine and its salt forms are one medicine: Open Targets' parentMolecule,
   else moonlight/salt_parents.json (read through fetch, ticket 3.23).
@@ -119,30 +123,83 @@ def _alias_pieces(name: str) -> List[str]:
     return pieces
 
 
+_OTHER_JOIN = re.compile(r"[+,;&]|\b(?:and|with|plus)\b")
+
+
+_TRADEMARK = str.maketrans("", "", "®™")
+
+
+def _brand_like(part: str) -> bool:
+    """Letters only, no digits. Trademark marks are ignored."""
+    text = "".join(part.translate(_TRADEMARK).split())
+    return bool(text) and all(ch.isalpha() for ch in text)
+
+
+def _slash_parts(piece: str) -> Optional[List[str]]:
+    """Parts of an other-name that is only a '/' list, or None.
+
+    '10 mg/kg' is a dose, already removed by _clean, so it is not this list.
+    A '+' or another joining mark besides '/' means it is not this list.
+    """
+    cleaned = _clean(piece)
+    if "/" not in cleaned or _OTHER_JOIN.search(cleaned):
+        return None
+    parts = [" ".join(bit.split()) for bit in piece.split("/")]
+    parts = [bit for bit in parts if bit]
+    if len(parts) < 2:
+        return None
+    return parts
+
+
+def _lookup_bits(raw: List[str]) -> Optional[List[str]]:
+    """Pieces to look up, or None when a hard combination needs no catalogue.
+
+    A '/' list in an other-name is included as its parts. The main name's
+    joining marks are not opened.
+    """
+    main_parts = names_to_try(raw[0])
+    if any(is_combination(part) for part in main_parts):
+        return None
+    bits = list(main_parts)
+    for alias in raw[1:]:
+        for piece in _alias_pieces(alias):
+            slash = _slash_parts(piece)
+            if slash is not None:
+                bits.extend(slash)
+                continue
+            if is_combination(piece):
+                return None
+            bits.append(piece)
+    return bits
+
+
+def _keys_of(part: str) -> List[str]:
+    key = _clean(part)
+    keys = [key] if key else []
+    stripped = _SPACES.sub(" ", _FORM.sub(" ", key)).strip()
+    if stripped and stripped != key:
+        keys.append(stripped)
+    return keys
+
+
 def search_keys(names: Union[str, Iterable[str]]) -> List[str]:
     """Cleaned keys a caller can use to pick candidate medicines.
 
     The same pieces match() will look up, including a form word dropped from
-    a name. Empty when a piece is a combination: match() then needs no catalogue.
+    a name, and the parts of a '/' alias list. Empty when the main name is a
+    combination, or an other-name has a joining mark other than that list.
     """
     if isinstance(names, str):
         names = [names]
     raw = [name for name in names if name and str(name).strip()]
     if not raw:
         return []
-    parts = list(names_to_try(raw[0]))
-    for alias in raw[1:]:
-        parts.extend(_alias_pieces(alias))
-    if any(is_combination(part) for part in parts):
+    bits = _lookup_bits(raw)
+    if bits is None:
         return []
     keys = []
-    for part in parts:
-        key = _clean(part)
-        if key:
-            keys.append(key)
-        stripped = _SPACES.sub(" ", _FORM.sub(" ", key)).strip()
-        if stripped and stripped != key:
-            keys.append(stripped)
+    for part in bits:
+        keys.extend(_keys_of(part))
     return keys
 
 
@@ -220,18 +277,33 @@ def match(names: Union[str, Iterable[str]], drugs: Iterable[dict]) -> Optional[s
     if main_combos:
         _log.warning("Trial names %r hold a combination %r: no match.", raw, main_combos)
         return None
-    alias_parts: List[str] = []
-    for alias in raw[1:]:
-        alias_parts.extend(_alias_pieces(alias))
-    alias_combos = [part for part in alias_parts if is_combination(part)]
-    if alias_combos:
-        _log.warning("Trial names %r hold a combination %r: no match.", raw, alias_combos)
-        return None
     index, families = _index(drugs)
     hand = {_clean(name): row["id"] for name, row in _trial_names().items()}
     found: Set[str] = set()
-    for part in main_parts + alias_parts:
+    for part in main_parts:
         found |= _ids_for_piece(part, index, families, hand)
+    main_ids = set(found)
+    for alias in raw[1:]:
+        for piece in _alias_pieces(alias):
+            slash = _slash_parts(piece)
+            if slash is not None:
+                for bit in slash:
+                    ids = _ids_for_piece(bit, index, families, hand)
+                    if not ids:
+                        if _brand_like(bit):
+                            continue
+                        _log.warning("Trial names %r hold a combination %r: no match.",
+                                     raw, [piece])
+                        return None
+                    if len(main_ids) != 1 or ids != main_ids:
+                        _log.warning("Trial names %r hold a combination %r: no match.",
+                                     raw, [piece])
+                        return None
+                continue
+            if is_combination(piece):
+                _log.warning("Trial names %r hold a combination %r: no match.", raw, [piece])
+                return None
+            found |= _ids_for_piece(piece, index, families, hand)
     if len(found) == 1:
         return found.pop()
     if found:
