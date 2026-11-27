@@ -1149,6 +1149,7 @@ def test_53_the_answer_has_these_parts_in_this_order(client, disease_list):
         "left_out", "more_in_trials",
         "wrong_approvals_box",  # ticket 2.52: Nitric Oxide is in the red-warning box
         "no_regulator_box",  # ticket 2.42: Beraprost, with the Japan line, is in the new box
+        "recruiting",  # ticket R2: null when there is no fresh trials file
     ]
     assert data["rule_text"] == RULE_TEXT
 
