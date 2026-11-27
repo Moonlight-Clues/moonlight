@@ -192,6 +192,20 @@ says which cards of the main Approved list carry WIDER_LABEL_LINE with that
 group. A sticky note like limit_notes: no card moves. A pair that
 corrections.json also holds is refused, so a red card never carries it.
 
+Ticket 2.65 (sheet W4, W5; Kashish's answers of 26 Nov). Where a medicine
+was withdrawn is a fact about the medicine, not the page. An entry of
+withdrawals.json with a region (W4) now names that medicine's card on every
+page, on the main Approved list and in both folded boxes (narrower, wider
+group): "the same medicine should say the same thing wherever it shows". An
+entry with no region is as it was: its own disease's main list only. The
+database's own line still wins on a card that has one. discontinued_by_hand()
+reads moonlight/discontinued.json, a hand-written list of medicines whose
+maker stopped selling them while the approval was never withdrawn (W5):
+medicine, date and source, no disease. discontinued_notes() gives every
+Approved-tab card of such a medicine, on every page, DISCONTINUED_LINE, in
+place of any other withdrawal line and even where there was none. Clue and
+In trials cards are never named. A medicine on both lists stops the app.
+
 preload(disease_ids) fills the saved results for a list of diseases ahead
 of time. From a terminal:
 
@@ -341,6 +355,11 @@ REGION_LINES = {
     "EU": "Its approval was withdrawn in the EU. It may still be sold elsewhere.",
 }
 
+# Ticket 2.65 (W5). The grey line, in place of any other withdrawal line, on
+# an Approved-tab card of a medicine on the hand-written discontinued list.
+# Kashish's signed words of 26 Nov, exactly. Changing them needs her approval.
+DISCONTINUED_LINE = "The maker stopped selling it. Its approval was never withdrawn."
+
 # Ticket 3.1, Kashish's decisions of 25 Nov (spoken). Under each gene on a
 # clue card, one line says why the gene is linked to the disease. A kind of
 # evidence counts when its score for that gene and disease is at least
@@ -393,6 +412,11 @@ WITHDRAWAL_KEYS = {"medicine_id", "disease_id", "date", "source"}
 # Ticket 3.19. The one extra key an entry may carry, and only as a key of
 # REGION_LINES.
 WITHDRAWAL_EXTRA_KEY = "region"
+# Ticket 2.65. The medicines their maker stopped selling, whose approval was
+# never withdrawn, written by hand after a person read the source. No disease:
+# it is about the medicine. Nothing in Moonlight writes here.
+DISCONTINUED_FILE = pathlib.Path(__file__).resolve().parent / "discontinued.json"
+DISCONTINUED_KEYS = {"medicine_id", "date", "source"}
 # Ticket 2.42. Approvals the database has, confirmed by hand from the
 # official label. Nothing in Moonlight writes here.
 CONFIRMED_FILE = pathlib.Path(__file__).resolve().parent / "confirmed.json"
@@ -469,6 +493,14 @@ class HandWithdrawal:
     source: str  # the maker's or a regulator's own statement
     # Ticket 3.19. "US" or "EU" if the entry names one region, else None.
     region: Optional[str] = None
+
+
+@dataclass(frozen=True)
+class HandDiscontinued:
+    """One entry of the hand-written discontinued list (ticket 2.65)."""
+
+    medicine_id: str  # the card's id, or the id of one of its forms
+    source: str  # the page a person read: the maker stopped selling it
 
 
 @dataclass(frozen=True)
@@ -1666,28 +1698,132 @@ def withdrawals_by_hand() -> List[HandWithdrawal]:
 
 
 def hand_withdrawal_notes(
-    tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = ()
+    tabs: Tabs, disease_id: str, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = (),
+    neighbours: Iterable[Neighbour] = (),
 ) -> Dict[str, str]:
     """Card id -> HAND_WITHDRAWAL_LINE, for the cards of the main Approved
     list that withdrawals.json names for this disease (ticket 2.51). For an
     entry with a region, its sentence of REGION_LINES instead (ticket 3.19).
 
+    Ticket 2.65 (W4): an entry with a region names its medicine on every
+    page, whatever its disease_id, and on every card of the Approved tab:
+    the main list, the narrower box and the wider-group box. An entry
+    without a region is as before: its own disease's main list only.
+
     A sticky note put on a card after the cards are laid out: tabs is only
-    read. Matched like limit_notes. Only the main Approved list is read. An
-    entry for a medicine that is not on the page, or for another disease,
-    names nothing. A card that also carries WITHDRAWAL_LINE keeps only that
-    one: the api lets withdrawal_notes win. If two entries name the same card
-    (its own id and a form's id), the first in the file's order gives the line.
+    read. Matched like limit_notes. An entry for a medicine that is not on
+    the page names nothing. A card that also carries WITHDRAWAL_LINE keeps
+    only that one: the api lets withdrawal_notes win. If two entries name the
+    same card (its own id and a form's id), the first in the file's order
+    gives the line.
     """
-    listed, on_list = list(listed), list(on_list)
+    listed, on_list, neighbours = list(listed), list(on_list), list(neighbours)
+    every_card = tabs.approved + tabs.narrower + tabs.wider_group
     notes: Dict[str, str] = {}
     for entry in withdrawals_by_hand():
-        if entry.disease_id != disease_id:
+        if entry.region:
+            named = _cards_named({entry.medicine_id}, every_card, listed, on_list, neighbours)
+            line = REGION_LINES[entry.region]
+        elif entry.disease_id == disease_id:
+            named = _main_cards_named({entry.medicine_id}, tabs, listed, on_list)
+            line = HAND_WITHDRAWAL_LINE
+        else:
             continue
-        line = REGION_LINES[entry.region] if entry.region else HAND_WITHDRAWAL_LINE
-        for medicine_id in _main_cards_named({entry.medicine_id}, tabs, listed, on_list):
+        for medicine_id in named:
             notes.setdefault(medicine_id, line)
     return notes
+
+
+def _cards_named(
+    wanted: Set[str], cards: Iterable[ApprovedMedicine], listed: Iterable[Listed],
+    on_list: Iterable[OnList], neighbours: Iterable[Neighbour],
+) -> List[str]:
+    """Ticket 2.65. Like _main_cards_named, for any cards of the Approved tab:
+    the ids of the cards whose id, or the id of one of their forms, is in
+    wanted, in the order given. The forms are the ones the page already
+    fetched: the card's paths, the disease's own list and its parents' and
+    children's lists. Nothing new is asked."""
+    if not wanted:
+        return []
+    form_ids: Dict[str, Set[str]] = {}
+    for entry in list(listed) + [e for n in neighbours for e in n.approved + n.withdrawn]:
+        form_ids.setdefault(entry.id, set()).update(form_id for form_id, _ in entry.forms)
+    for entry in on_list:
+        form_ids.setdefault(_family_id(entry.medicine), set()).update(
+            form.id for form in entry.medicine.forms)
+    found = []
+    for medicine in cards:
+        ids = {medicine.id} | form_ids.get(medicine.id, set())
+        for path in medicine.clue.paths if medicine.clue else ():
+            ids.update(form.id for form in path.medicine.forms)
+        if ids & wanted and medicine.id not in found:
+            found.append(medicine.id)
+    return found
+
+
+def _read_discontinued() -> list:
+    """The one place the discontinued file is read. Tests replace this."""
+    return json.loads(DISCONTINUED_FILE.read_text(encoding="utf-8"))
+
+
+def _check_no_clash(entries: List[HandDiscontinued]) -> None:
+    """Ticket 2.65, rule 3. A medicine on discontinued.json may not be on
+    withdrawals.json too, for any disease, with or without a region: the
+    two lines say opposite things. ValueError if it is."""
+    withdrawn = {entry.medicine_id for entry in withdrawals_by_hand()}
+    clash = sorted({entry.medicine_id for entry in entries} & withdrawn)
+    if clash:
+        raise ValueError(
+            "A medicine is on both discontinued.json and withdrawals.json: "
+            + ", ".join(clash))
+
+
+def discontinued_by_hand() -> List[HandDiscontinued]:
+    """The hand-written discontinued list, in the file's order (ticket 2.65).
+
+    Each entry holds exactly three things: the medicine's id, the date (like
+    "2026-11-26") and the source, an https link to the page a person read.
+    No disease: it is about the medicine. An entry not written this way
+    raises ValueError, and the list is never half read. The same medicine
+    twice is refused, and so is a medicine that withdrawals.json also holds.
+    The app reads this list before it serves a page, so such a list stops it.
+    This list is written by hand. No code adds to it.
+    """
+    entries = _read_discontinued()
+    if not isinstance(entries, list):
+        raise ValueError("discontinued.json must hold a list.")
+    found: Dict[str, HandDiscontinued] = {}
+    for entry in entries:
+        if not isinstance(entry, dict) or set(entry) != DISCONTINUED_KEYS:
+            raise ValueError(
+                f"A discontinued medicine must hold exactly {sorted(DISCONTINUED_KEYS)}: {entry!r}")
+        medicine_id, date, source = entry["medicine_id"], entry["date"], entry["source"]
+        if not all(isinstance(value, str) and value for value in (medicine_id, date)):
+            raise ValueError(f"A discontinued medicine needs a medicine id and a date: {entry!r}")
+        datetime.date.fromisoformat(date)  # ValueError if it is not a real date
+        if not isinstance(source, str) or not source.startswith("https://"):
+            raise ValueError(f"A discontinued medicine needs an https link to its source: {entry!r}")
+        if medicine_id in found:
+            raise ValueError(f"A discontinued medicine is written twice: {entry!r}")
+        found[medicine_id] = HandDiscontinued(medicine_id, source)
+    result = list(found.values())
+    _check_no_clash(result)
+    return result
+
+
+def discontinued_notes(
+    tabs: Tabs, listed: Iterable[Listed] = (), on_list: Iterable[OnList] = (),
+    neighbours: Iterable[Neighbour] = (),
+) -> Dict[str, str]:
+    """Card id -> DISCONTINUED_LINE, for every card of the Approved tab (main
+    list, narrower box, wider-group box) whose id, or a form's id, is on
+    discontinued.json (ticket 2.65, W5). On every page. The api puts these
+    last, so the line takes the place of any other withdrawal line. A sticky
+    note: tabs is only read. In trials and New clues are never read."""
+    wanted = {entry.medicine_id for entry in discontinued_by_hand()}
+    cards = tabs.approved + tabs.narrower + tabs.wider_group
+    return {medicine_id: DISCONTINUED_LINE
+            for medicine_id in _cards_named(wanted, cards, listed, on_list, neighbours)}
 
 
 def _read_corrections() -> list:

@@ -32,6 +32,19 @@
                                             there is no regulator record, or
                                             only Japan's general list (ticket
                                             2.42). They are still in "approved"
+                                            Also, on every card of the In trials
+                                            list and of the two boxes under it
+                                            (ticket T3): "studies", up to 3
+                                            of the card's trials for this
+                                            disease, newest first, each
+                                            nct_id, status, end, phases and
+                                            role; "study_total", how many the
+                                            trials file holds; and
+                                            "trials_checked", the date that
+                                            file was built. From
+                                            moonlight/trials.sqlite, opened
+                                            once at start. If the file is
+                                            missing, none of the three is sent.
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
     POST /api/report                        a visitor's report about one card,
                                             kept in Firestore by reports.py
@@ -105,7 +118,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from moonlight import approval_years, explain, protein, reports, translate, version
+from moonlight import approval_years, explain, protein, reports, translate, trials, version
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -119,6 +132,7 @@ from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.engine import hand_withdrawal_notes, limit_notes, limits_by_hand
 from moonlight.engine import wider_label_notes, wider_labels_by_hand
 from moonlight.engine import withdrawals_by_hand
+from moonlight.engine import discontinued_by_hand, discontinued_notes  # ticket 2.65
 from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
 from moonlight.engine import studies_for_this_disease
@@ -300,19 +314,35 @@ async def _check_hand_lists(_app: FastAPI):
     for the list of PMDA English summaries."""
     limits_by_hand()
     withdrawals_by_hand()
+    # Ticket 2.65: the hand-written discontinued list. A medicine that is
+    # also on withdrawals.json stops the app here.
+    discontinued_by_hand()
     diagnostic_ids("")  # ticket 3.10: the hand-written list of scan medicines
     source_overrides()
     # Ticket 2.63: the hand-written list of wider labels. A pair that is
     # also on corrections.json stops the app here.
     wider_labels_by_hand()
     pmda_summaries()
-    yield
+    # Ticket T3. The trials file, opened once. Missing or unreadable: the
+    # page is served without trial details, as before, and the log says so.
+    global _trials
+    _trials = trials.Trials.open()
+    try:
+        yield
+    finally:
+        opened, _trials = _trials, None
+        if opened is not None:
+            opened.close()
 
 
 app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None,
               lifespan=_check_hand_lists)
 # Ticket 3.6. Answers over 1000 bytes are gzipped for a browser that asks.
 app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+# Ticket T3. moonlight/trials.sqlite, opened once when the app starts
+# (_check_hand_lists). None until then, and for good if the file is missing.
+_trials: Optional[trials.Trials] = None
 
 # Ticket 3.6. The finished /api/clues answer for each disease, kept in
 # memory like a tray of finished plates: (disease id, Open Targets data
@@ -401,9 +431,14 @@ class _Found:
         # Ticket 2.51: the hand-written withdrawals add the same key to the
         # main list's cards they name. The database's own line wins: a card
         # never shows both.
+        # Ticket 2.65: a region entry (W4) names its medicine on every page,
+        # in the main list and both folded boxes; the database's line still
+        # wins over it. The discontinued line (W5) comes last: it takes the
+        # place of any other withdrawal line on the Approved tab.
         self.withdrawal_notes = {
-            **hand_withdrawal_notes(tabs, disease.id, listed, on_list),
+            **hand_withdrawal_notes(tabs, disease.id, listed, on_list, neighbours),
             **withdrawal_notes(tabs, on_list, neighbours),
+            **discontinued_notes(tabs, listed, on_list, neighbours),
         }
         # Ticket 2.39. Which cards of the main Approved list carry the "only
         # some people" line because limits.json marks them: card id -> the
@@ -675,6 +710,27 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
     }
 
 
+def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]]) -> None:
+    """Ticket T3. Give each trial card up to 3 of its trials, newest first,
+    the trial total and the date the trials file was checked.
+
+    cards are the cards of the In trials list and of the two folded boxes
+    under it. links is engine.studies_for_this_disease: family id -> the
+    card's trial links for this disease. Nothing else on a card changes.
+    All or none: if the file cannot be read for one card, no card gets the
+    new fields and the page is served as before.
+    """
+    if _trials is None:
+        return
+    cards = list(cards)
+    found = _trials.for_cards([(links.get(card["id"], ()), [card["medicine"], *card["forms"]])
+                               for card in cards])
+    if found is None:
+        return
+    for card, new in zip(cards, found):
+        card.update(new)
+
+
 def _about_json(disease: Disease) -> dict:
     """The disease in Open Targets' own words (ticket 5.5).
 
@@ -876,6 +932,9 @@ def _build_clues(disease_id: str) -> dict:
     # A card with no entry gets no key at all.
     # Ticket 2.69. The earliest of that year and the card's PMDA original
     # approval for this disease: "(Japan)" only when Japan is strictly earlier.
+    # Ticket T3. Trials on the trial cards: the In trials list and its two boxes.
+    _add_trials(answer["being_studied"] + answer.get("more_in_trials", [])
+                + answer.get("new_in_trials", []), found.studies)
     first_years = approval_years.load()
     japan_firsts = pmda_original_approvals()
     for card, medicine in zip(answer["approved"], found.approved):
