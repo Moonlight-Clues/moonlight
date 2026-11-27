@@ -9,7 +9,9 @@ Kashish's rules (26 Nov 2026):
   is "ChEMBL", for the medicine and its salt (child) forms. Names from AACT are
   never used. Trade names "X component of Y" are never used.
 - Before comparing, case and spaces are evened out, and amounts with units
-  ("500 mg", "1.5 mg/kg", "0.5%") are removed.
+  ("500 mg", "1.5 mg/kg", "0.5%", and a comma that only introduces one,
+  ", 2.5 mg") are removed. That happens before the name is checked for a
+  joining mark (ticket T5c).
 - A form word (tablets, capsules, injection, oral solution) is dropped only
   when what is left exactly matches one known medicine (MAIN 5, ticket T5b).
 - A name in brackets is an extra name. "Erlotinib (Tarceva)" is tried as
@@ -47,7 +49,10 @@ COMPONENT_OF = " component of "
 
 _UNIT = r"(?:mg|mcg|µg|μg|ug|g|kg|ml|l|iu|units?|mmol|nmol|meq|%)"
 _PER = r"(?:kg|m2|m²|ml|l|day|d|dose|h|hr|hours?|weeks?|wk)"
-_DOSE = re.compile(rf"(?<![a-z0-9])\d+(?:[.,]\d+)?\s*{_UNIT}(?:\s*/\s*{_PER})?(?![a-z0-9])")
+# A comma is part of the dose only when a number and a unit follow it
+# (", 2.5 mg"). A comma between two names is left for the joining check.
+_DOSE = re.compile(
+    rf",?\s*(?<![a-z0-9])\d+(?:[.,]\d+)?\s*{_UNIT}(?:\s*/\s*{_PER})?(?![a-z0-9])")
 _JOIN = re.compile(r"[/+,;&]|\b(?:and|with|plus)\b")
 _SPACES = re.compile(r"\s+")
 _DRUG_TAG = re.compile(r"\(\s*drug\s*\)", re.IGNORECASE)
