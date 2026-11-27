@@ -21,9 +21,10 @@ Kashish's rules (26 Nov 2026):
 - Later names are aliases. Commas and semicolons split them into pieces.
   A piece that matches nothing is ignored. A piece with "+" is still a
   combination, and the trial matches nothing.
-- A "/" piece in an other-name is a list of aliases when every part is
-  unknown or the same medicine as the main name. If any part is a different
-  known medicine, it stays a combination (ticket T5d).
+- A "/" piece in an other-name is a list of aliases when every part is the
+  same medicine as the main name, or an unknown brand name: letters only, no
+  digits. ® and ™ are not digits. An unknown part with a digit, such as
+  VX-445, is a different medicine, so the list is a combination (ticket T5d).
 - Names that point to two medicines match nothing. A log line names both.
 - A medicine and its salt forms are one medicine: Open Targets' parentMolecule,
   else moonlight/salt_parents.json (read through fetch, ticket 3.23).
@@ -123,6 +124,15 @@ def _alias_pieces(name: str) -> List[str]:
 
 
 _OTHER_JOIN = re.compile(r"[+,;&]|\b(?:and|with|plus)\b")
+
+
+_TRADEMARK = str.maketrans("", "", "®™")
+
+
+def _brand_like(part: str) -> bool:
+    """Letters only, no digits. Trademark marks are ignored."""
+    text = "".join(part.translate(_TRADEMARK).split())
+    return bool(text) and all(ch.isalpha() for ch in text)
 
 
 def _slash_parts(piece: str) -> Optional[List[str]]:
@@ -280,7 +290,11 @@ def match(names: Union[str, Iterable[str]], drugs: Iterable[dict]) -> Optional[s
                 for bit in slash:
                     ids = _ids_for_piece(bit, index, families, hand)
                     if not ids:
-                        continue
+                        if _brand_like(bit):
+                            continue
+                        _log.warning("Trial names %r hold a combination %r: no match.",
+                                     raw, [piece])
+                        return None
                     if len(main_ids) != 1 or ids != main_ids:
                         _log.warning("Trial names %r hold a combination %r: no match.",
                                      raw, [piece])

@@ -62,9 +62,7 @@ def test_a_combination_and_placebo_for_x_still_match_nothing():
 def test_an_alias_list_ignores_pieces_that_match_nothing():
     """ticket T5b. The main name decides. Commas and semicolons in an
     other-name split into aliases. "IVA" and "BIIB141" match nothing and
-    are ignored. A "/" list whose known parts are the main medicine is
-    aliases too (ticket T5d). "ELX/TEZ/IVA" is the main name, so it stays
-    a combination."""
+    are ignored. A "/" in an alias is still a combination."""
     ivacaftor = _medicine("CHEMBL2010601", "IVACAFTOR",
                           synonyms=("Ivacaftor", "VX-770"), trade_names=("Kalydeco",))
     oma = _medicine("CHEMBL4303525", "OMAVELOXOLONE",
@@ -73,8 +71,7 @@ def test_an_alias_list_ignores_pieces_that_match_nothing():
     assert match.match(["Ivacaftor", "Kalydeco, VX-770"], [ivacaftor]) == "CHEMBL2010601"
     assert match.match(["Ivacaftor", "VX-770; IVA"], [ivacaftor]) == "CHEMBL2010601"
     assert match.match(["Omaveloxolone", "BIIB141, SKYCLARYS, RTA-408"], [oma]) == "CHEMBL4303525"
-    # ticket T5d: VX-445 and VX-661 are unknown, VX-770 is ivacaftor.
-    assert match.match(["Ivacaftor", "VX-445/VX-661/VX-770"], [ivacaftor]) == "CHEMBL2010601"
+    assert match.match(["Ivacaftor", "VX-445/VX-661/VX-770"], [ivacaftor]) is None
     assert match.match(["ELX/TEZ/IVA"], [ivacaftor]) is None
 
 
