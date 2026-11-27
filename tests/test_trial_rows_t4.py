@@ -46,6 +46,7 @@ PAGE = PAGE_FILE.read_text(encoding="utf-8")
 SUBHEAD = "Trials for this disease, newest first"
 FINISHED_NOTE = "'Finished' means the trial ended. It does not mean the medicine worked."
 LINK = "https://clinicaltrials.gov/study/"
+ALL_URL = "https://clinicaltrials.gov/search?cond=x&intr="  # as the API would send it; the page must use it as sent
 
 CSS_LINES = [
     # The spec's rule, scoped to the slot: .card-subhead already styles the "Research pathway" line.
@@ -65,7 +66,8 @@ CSS_LINES = [
 
 
 def trial(nct, status="Recruiting", end="Expected to end 2031", phases=("PHASE3",), role="Being tested"):
-    return {"nct_id": nct, "status": status, "end": end, "phases": list(phases), "role": role}
+    return {"nct_id": nct, "status": status, "end": end, "phases": list(phases), "role": role,
+            "url": LINK + nct}
 
 
 def six(first="NCT0000000"):
@@ -98,6 +100,7 @@ def given(answer, where, studies, total=None, checked="2026-11-26"):
         card = out[key][place]
         card["studies"] = copy.deepcopy(studies)
         card["study_total"] = len(studies) if total is None else total
+        card["studies_url"] = ALL_URL + quote(card["medicine"], safe="")
         card["trials_checked"] = checked
     return out
 
@@ -120,7 +123,11 @@ def answers(base):
         "boxes": given(base, every, three, total=5),
         "plain": given(base, [MAIN], [trial("NCT00000021", status="Recruiting")]),
         "noChecked": given(base, [MAIN], three, total=6),
+        "noUrl": given(base, [MAIN], three, total=6),
     }
+    for item in out["noUrl"]["being_studied"][0]["studies"]:
+        item.pop("url")
+    out["noUrl"]["being_studied"][0].pop("studies_url")
     for card in out["noChecked"]["being_studied"]:
         card.pop("trials_checked", None)
     return out
@@ -154,10 +161,17 @@ def test_no_dashed_edge_and_no_new_colour_in_the_new_css():
         assert re.search(re.escape(token) + r":", PAGE), token
 
 
+def test_the_page_holds_no_clinicaltrials_address_of_its_own():
+    script = "".join(re.findall(r"(?s)<script>(.*?)</script>", PAGE))
+    assert "clinicaltrials.gov/" not in script.lower()  # the words "on ClinicalTrials.gov" are not an address
+    assert "http" not in script.lower()
+
+
 def test_the_words_are_in_the_page_exactly():
     assert SUBHEAD in PAGE
     assert FINISHED_NOTE in PAGE
     assert "Trial details checked " in PAGE
+    assert "Not clinical findings · Data from Open Targets and ClinicalTrials.gov</div>" in PAGE
 
 
 def test_the_new_code_writes_with_textcontent_only():
@@ -279,10 +293,6 @@ def seen(answers, tmp_path_factory):
     return out
 
 
-def enc(words):
-    return quote(words, safe="!'()*")
-
-
 def first_main(seen, name):
     return seen[name]["cards"]["main"][0]
 
@@ -294,9 +304,7 @@ def test_example_six_trials_show_three_rows_and_the_all_link(seen, answers):
     assert len(card["rows"]) == 3
     assert card["subhead"] == SUBHEAD
     assert card["all"]["text"] == "All 6 trials on ClinicalTrials.gov"
-    disease = answers["six"]["disease"]["name"]
-    assert card["all"]["href"] == ("https://clinicaltrials.gov/search?cond=" + enc(disease)
-                                   + "&intr=" + enc(card["name"]))
+    assert card["all"]["href"] == ALL_URL + quote(card["name"], safe="")  # the API's address, as sent
 
 
 def test_three_trials_have_no_all_link_and_four_do(seen):
@@ -339,6 +347,12 @@ def test_a_row_is_one_whole_link_to_the_trial_in_the_same_tab(seen):
         assert row["href"] == LINK + row["nct"]
         assert row["target"] is None  # opens as the Source record link does today
         assert row["rel"] is None
+
+
+def test_no_address_sent_means_a_plain_row_and_no_all_link_never_a_made_up_link(seen):
+    card = first_main(seen, "noUrl")
+    assert len(card["rows"]) == 3 and all(row["tag"] == "SPAN" and row["href"] is None for row in card["rows"])
+    assert card["all"] is None
 
 
 def test_phase_joined_with_a_slash_and_left_out_when_none(seen):

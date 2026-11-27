@@ -690,7 +690,7 @@ body.registering>:not(.register){display:none!important}
 
 <footer class="site-footer" id="about"><div class="wrap">
   <div class="footer-row"><span class="contact">Found something wrong or have any feedback? Contact <a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></span></div>
-  <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</div>
+  <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets and ClinicalTrials.gov</div>
   <div class="build-line" id="build-line"></div>
   <div class="trials-checked-line" id="trials-checked-line" hidden></div>
 </div></footer>
@@ -1120,7 +1120,6 @@ body.registering>:not(.register){display:none!important}
 
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
-    studiesDisease = disease.name;
     drawTrialNotes(data);
     byId("disease-title").textContent = diseaseName;
     drawAbout(data.about_disease);
@@ -1546,8 +1545,7 @@ body.registering>:not(.register){display:none!important}
   /* Ticket T4. Trial rows. The API's "studies" (up to 3, newest first, ticket T3), shown as sent:
      status, end and role are never reworded. A card with no studies loses the slot and is as it was.
      Everything is written with textContent. */
-  const STUDY_PAGE = "https://clinicaltrials.gov/study/";
-  let studiesDisease = "";  // the disease's name as the API sent it, for the "All [N]" link
+  // The addresses come from the API ("url" on each trial, "studies_url" on the card); the page holds none.
 
   /* "PHASE1" -> "Phase 1", "EARLY_PHASE1" -> "Early Phase 1"; several are joined with " / ". "NA" is left out. */
   function studyPhaseWords(tokens) {
@@ -1561,9 +1559,9 @@ body.registering>:not(.register){display:none!important}
 
   function studyRow(trial) {
     const item = document.createElement("li");
-    const link = document.createElement("a");
+    const link = document.createElement(trial.url ? "a" : "span");  // no address sent: a plain row, never a made-up link
     link.className = "study-row";
-    link.href = STUDY_PAGE + trial.nct_id;
+    if (trial.url) link.href = trial.url;
     const top = document.createElement("span");
     top.className = "sr1";
     const number = document.createElement("span");
@@ -1585,7 +1583,7 @@ body.registering>:not(.register){display:none!important}
     return item;
   }
 
-  function fillStudies(el, card, medicineName) {
+  function fillStudies(el, card) {
     const holder = slot(el, "studies");
     const trials = Array.isArray(card.studies) ? card.studies.slice(0, 3) : [];
     if (!trials.length) {
@@ -1599,11 +1597,10 @@ body.registering>:not(.register){display:none!important}
     list.className = "studies";
     list.append(...trials.map(studyRow));
     holder.append(head, list);
-    if (card.study_total > 3) {
+    if (card.study_total > 3 && card.studies_url) {
       const all = document.createElement("a");
       all.className = "all-studies";
-      all.href = "https://clinicaltrials.gov/search?cond=" + encodeURIComponent(studiesDisease)
-        + "&intr=" + encodeURIComponent(medicineName);
+      all.href = card.studies_url;
       all.textContent = "All " + card.study_total + " trials on ClinicalTrials.gov";
       holder.append(all);
     }
@@ -1640,7 +1637,7 @@ body.registering>:not(.register){display:none!important}
       slot(el, name).remove();
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
-    fillStudies(el, medicine, medicine.medicine);  // ticket T4b
+    fillStudies(el, medicine);  // ticket T4b
     const phase = slot(el, "phase");
     phase.textContent = medicine.trial_phase;
     phase.hidden = false;
@@ -1686,7 +1683,7 @@ body.registering>:not(.register){display:none!important}
 
     slot(el, "medicine-name").textContent = clue.medicine;
     slot(el, "forms").textContent = "Forms: " + clue.forms.join(", ");
-    fillStudies(el, clue, clue.medicine);  // ticket T4: only a trial card has any
+    fillStudies(el, clue);  // ticket T4: only a trial card has any
     // Ticket 3.10 (Q15): the count says records. The Report link keeps its name.
     slot(el, "reports").textContent = clue.reports + (clue.reports === 1 ? " record" : " records");
 

@@ -1386,8 +1386,9 @@ GUIDE_HEADINGS = [
 ]
 FOOTER_LINE = "Made with care by a family in Kochi"
 FOOTER_NOTE = (
+    # ticket T4 (MAIN 5's named OK): "and ClinicalTrials.gov" added
     "Moonlight · Research exploration only · Not clinical findings · "
-    "Data from Open Targets"
+    "Data from Open Targets and ClinicalTrials.gov"
 )
 
 

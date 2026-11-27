@@ -38,7 +38,10 @@
                                             of the card's trials for this
                                             disease, newest first, each
                                             nct_id, status, end, phases and
-                                            role; "study_total", how many the
+                                            role, and (ticket T4) url;
+                                            "studies_url", the register's
+                                            search for the card (ticket T4);
+                                            "study_total", how many the
                                             trials file holds; and
                                             "trials_checked", the date that
                                             file was built. From
@@ -710,13 +713,15 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
     }
 
 
-def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]]) -> None:
+def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name: str) -> None:
     """Ticket T3. Give each trial card up to 3 of its trials, newest first,
     the trial total and the date the trials file was checked.
 
     cards are the cards of the In trials list and of the two folded boxes
     under it. links is engine.studies_for_this_disease: family id -> the
     card's trial links for this disease. Nothing else on a card changes.
+    Ticket T4: each trial also has its ClinicalTrials.gov "url", and each card
+    "studies_url", from trials.py, so the page holds no address of its own.
     All or none: if the file cannot be read for one card, no card gets the
     new fields and the page is served as before.
     """
@@ -724,7 +729,7 @@ def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]]) -> None:
         return
     cards = list(cards)
     found = _trials.for_cards([(links.get(card["id"], ()), [card["medicine"], *card["forms"]])
-                               for card in cards])
+                               for card in cards], disease_name=disease_name)
     if found is None:
         return
     for card, new in zip(cards, found):
@@ -934,7 +939,7 @@ def _build_clues(disease_id: str) -> dict:
     # approval for this disease: "(Japan)" only when Japan is strictly earlier.
     # Ticket T3. Trials on the trial cards: the In trials list and its two boxes.
     _add_trials(answer["being_studied"] + answer.get("more_in_trials", [])
-                + answer.get("new_in_trials", []), found.studies)
+                + answer.get("new_in_trials", []), found.studies, disease.name)
     first_years = approval_years.load()
     japan_firsts = pmda_original_approvals()
     for card, medicine in zip(answer["approved"], found.approved):

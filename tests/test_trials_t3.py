@@ -34,6 +34,7 @@ import sqlite3
 from unittest.mock import patch
 
 import pytest
+from urllib.parse import quote
 from fastapi.testclient import TestClient
 
 from moonlight import api, ctgov
@@ -44,8 +45,9 @@ import test_opposite_way_box as adpkd_page
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REAL_FILE = ROOT / "moonlight" / "trials.sqlite"
 TODAY = datetime.date(2026, 11, 26)
-NEW_KEYS = {"studies", "study_total", "trials_checked"}
-TRIAL_KEYS = {"nct_id", "status", "end", "phases", "role"}
+# ticket T4: each trial also has its "url", and each card "studies_url" (the API sends the links)
+NEW_KEYS = {"studies", "study_total", "trials_checked", "studies_url"}
+TRIAL_KEYS = {"nct_id", "status", "end", "phases", "role", "url"}
 LINK = "https://clinicaltrials.gov/study/"
 
 
@@ -114,7 +116,8 @@ def test_a_trial_has_exactly_the_ctgov_reader_fields(tmp_path):
               end=("2027-01", "ESTIMATED"))])
     shown, _ = open_file(path).for_card({LINK + "NCT00000001"}, ["Sirolimus"], today=TODAY)
     assert shown == [{"nct_id": "NCT00000001", "status": "Recruiting", "end": "Expected to end 2027",
-                      "phases": ["PHASE1", "PHASE2"], "role": "Being tested"}]
+                      "phases": ["PHASE1", "PHASE2"], "role": "Being tested",
+                      "url": "https://clinicaltrials.gov/study/NCT00000001"}]
     assert set(shown[0]) == TRIAL_KEYS
     json.dumps(shown)  # plain JSON: no tuples or dataclasses left in it
 
@@ -435,3 +438,37 @@ def test_example_the_real_file_on_the_saved_adpkd_page_grows_the_answer_by_under
     assert 0 < grew < 30 * 1024, grew
     assert all("trials_checked" in card for card in trial_cards(after))
     assert any(card["study_total"] > 0 for card in trial_cards(after))
+
+
+# ------------------------------------------------ ticket T4: the API sends the links
+
+def test_t4_each_trial_has_its_clinicaltrials_page(tmp_path):
+    path = make_file(tmp_path / "t.sqlite", [study("NCT00000001", "2019-07-15"), study("NCT00000002", "2020")])
+    shown, _ = open_file(path).for_card({LINK + "NCT00000001", LINK + "NCT00000002"}, ["Sirolimus"], today=TODAY)
+    assert [item["url"] for item in shown] == ["https://clinicaltrials.gov/study/NCT00000002",
+                                               "https://clinicaltrials.gov/study/NCT00000001"]
+
+
+def test_t4_studies_url_is_the_register_search_for_the_disease_and_the_medicine(tmp_path):
+    path = make_file(tmp_path / "t.sqlite", [study("NCT00000001", "2019")])
+    found = open_file(path).for_cards([({LINK + "NCT00000001"}, ["Sirolimus", "Sirolimus tablet"])],
+                                      today=TODAY, disease_name="polycystic kidney disease, autosomal dominant")
+    assert found[0]["studies_url"] == ("https://clinicaltrials.gov/search?cond="
+                                       "polycystic%20kidney%20disease%2C%20autosomal%20dominant&intr=Sirolimus")
+
+
+def test_t4_without_a_disease_name_there_is_no_studies_url(tmp_path):
+    path = make_file(tmp_path / "t.sqlite", [study("NCT00000001", "2019")])
+    found = open_file(path).for_cards([({LINK + "NCT00000001"}, ["Sirolimus"])], today=TODAY)
+    assert "studies_url" not in found[0]
+
+
+def test_t4_the_api_gives_every_trial_card_a_studies_url_with_the_pages_disease(tmp_path, before):
+    path, _, _ = small_file(tmp_path)
+    with patch.object(trials_module, "TRIALS_PATH", path), TestClient(api.app):
+        after = saved_page()
+    name = after["disease"]["name"]
+    for card in trial_cards(after):
+        assert card["studies_url"].startswith("https://clinicaltrials.gov/search?cond=" + quote(name, safe="") + "&intr=")
+        assert card["studies_url"].endswith("&intr=" + quote(card["medicine"], safe=""))
+        assert all(item["url"] == LINK + item["nct_id"] for item in card["studies"])
