@@ -83,7 +83,7 @@ DOCTORS = [
                   "Unclear link to the disease: counted separately."),
     ("Wider and narrower diseases.", "Shown with a label, each in its own folded box."),
     # Ticket 3.32: new line.
-    ("Trials.", "Matched to a medicine by its exact name. A finished trial is a record, not a result."),
+    ("Trials.", "Rows are the trials the database links to the medicine. Medicines found only on ClinicalTrials.gov are matched by exact name. A finished trial is a record, not a result."),
     ("Known gaps.", "A missing medicine may be withdrawn somewhere, filed further away, "
                     "or not recorded yet."),
     ("Weak proof.", "Japan-list-only approvals say so. Approvals with no regulator "

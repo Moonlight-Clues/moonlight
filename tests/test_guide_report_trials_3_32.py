@@ -26,7 +26,7 @@ GUIDE = guide_of(PAGE)
 
 DOCTORS_NEW = [
     ("Source.", "Open Targets Platform. Trial details from ClinicalTrials.gov."),
-    ("Trials.", "Matched to a medicine by its exact name. A finished trial is a record, not a result."),
+    ("Trials.", "Rows are the trials the database links to the medicine. Medicines found only on ClinicalTrials.gov are matched by exact name. A finished trial is a record, not a result."),
 ]
 FACTS_NEW = [
     ("Trials.", "ClinicalTrials.gov, the US public register of clinical studies."),
