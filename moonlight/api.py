@@ -132,6 +132,7 @@ from moonlight.engine import HandApproval, added_by_hand, withdrawal_notes
 from moonlight.engine import hand_withdrawal_notes, limit_notes, limits_by_hand
 from moonlight.engine import wider_label_notes, wider_labels_by_hand
 from moonlight.engine import withdrawals_by_hand
+from moonlight.engine import discontinued_by_hand, discontinued_notes  # ticket 2.65
 from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
 from moonlight.engine import studies_for_this_disease
@@ -313,6 +314,9 @@ async def _check_hand_lists(_app: FastAPI):
     for the list of PMDA English summaries."""
     limits_by_hand()
     withdrawals_by_hand()
+    # Ticket 2.65: the hand-written discontinued list. A medicine that is
+    # also on withdrawals.json stops the app here.
+    discontinued_by_hand()
     diagnostic_ids("")  # ticket 3.10: the hand-written list of scan medicines
     source_overrides()
     # Ticket 2.63: the hand-written list of wider labels. A pair that is
@@ -427,9 +431,14 @@ class _Found:
         # Ticket 2.51: the hand-written withdrawals add the same key to the
         # main list's cards they name. The database's own line wins: a card
         # never shows both.
+        # Ticket 2.65: a region entry (W4) names its medicine on every page,
+        # in the main list and both folded boxes; the database's line still
+        # wins over it. The discontinued line (W5) comes last: it takes the
+        # place of any other withdrawal line on the Approved tab.
         self.withdrawal_notes = {
-            **hand_withdrawal_notes(tabs, disease.id, listed, on_list),
+            **hand_withdrawal_notes(tabs, disease.id, listed, on_list, neighbours),
             **withdrawal_notes(tabs, on_list, neighbours),
+            **discontinued_notes(tabs, listed, on_list, neighbours),
         }
         # Ticket 2.39. Which cards of the main Approved list carry the "only
         # some people" line because limits.json marks them: card id -> the
