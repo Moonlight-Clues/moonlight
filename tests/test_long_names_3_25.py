@@ -134,6 +134,11 @@ async function oneSearch(browser, id, answer) {
   // The long names in "New medicines being tested": the title's text box must be inside
   // its card, and a name too long for one line must have wrapped (taller than one line).
   await page.click("#tab-trials");
+  // ticket T14b: cards past 20 stay hidden until "Show all [N]". A hidden title has
+  // no height, so the wrap check below has to happen after Show all. The assertions
+  // are unchanged.
+  const showAll = page.locator("#new-trials-show-all");
+  if (await showAll.count() && await showAll.isVisible()) await showAll.click();
   out.newBox = await page.evaluate(() => [...document.querySelectorAll("#new-trials-cards > .card")].map(card => {
     const h3 = card.querySelector(".card-title h3");
     const line = parseFloat(getComputedStyle(h3).lineHeight) || parseFloat(getComputedStyle(h3).fontSize) * 1.2;
