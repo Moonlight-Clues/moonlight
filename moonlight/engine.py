@@ -1195,6 +1195,16 @@ def sort_into_tabs(
     acts_on_a_protein = {
         _family_id(path.medicine) for paths in tray.values() for path in paths
     }
+    # Ticket 3.28. A box card that a listed salt joined through the hand list
+    # (salt_parents.json). Merging never removes a medicine from In trials:
+    # in trials for this disease, it stays in this box too.
+    salt_parents = fetch._salt_parents()
+    merged_by_hand = {
+        family_id
+        for family_id, (_, _, entries) in nearby.items()
+        if any(salt_parents.get(form_id, {}).get("parent") == family_id
+               for entry in entries for form_id, _ in entry.forms)
+    }
     more_in_trials = [
         _trial_medicine(entry)
         for entry in on_list
@@ -1202,7 +1212,8 @@ def sort_into_tabs(
         and _family_id(entry.medicine) not in withdrawn_ids
         and _family_id(entry.medicine) not in acts_on_a_protein
         and _family_id(entry.medicine) not in own_ids
-        and _family_id(entry.medicine) not in nearby
+        and (_family_id(entry.medicine) not in nearby
+             or _family_id(entry.medicine) in merged_by_hand)  # ticket 3.28
     ]
     # Furthest trial stage first, then A to Z, ignoring capitals. The last
     # two only make the order the same every time.

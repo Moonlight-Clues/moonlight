@@ -840,7 +840,7 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
              "approval_sources": [], "regulator_sources": [], "reports": 0, "source_said": False,
              "regulator_report": False, "records": [], "stage_reports": [],
              "named": set(), "told": True, "withdrawal_report": False, "study_links": [],
-             "hand_parent": None, "own_regulator_sources": []},
+             "hand_parent": None, "own_regulator_sources": [], "own_links": []},
         )
         # Ticket 3.24. This row joined its family through the hand list of
         # salt parents: remember the parent's id and name as the list gives them.
@@ -891,6 +891,9 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             # Ticket 2.21. Each link once, with the stage of its own report.
             if url and url not in [link for link, _ in family["stage_reports"]]:
                 family["stage_reports"].append((url, report.get("clinicalStage")))
+            # Ticket 3.28. The links of the parent's own row.
+            if url and drug["id"] == family_id and url not in family["own_links"]:
+                family["own_links"].append(url)
             # .get: an answer to the old question has no stage on its reports.
             is_approval = report.get("clinicalStage") == APPROVAL
             # Ticket 2.31. Only this exact word counts. A link is not needed.
@@ -958,6 +961,22 @@ def _merged_by_hand(family: dict) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[st
     return tuple(forms), tuple(regulator)
 
 
+def _reports_parent_first(family: dict) -> Tuple[Tuple[str, Optional[str]], ...]:
+    """A family's (link, stage) reports, as OnList holds them.
+
+    Ticket 3.28, only for a family that a listed salt joined through the hand
+    list (salt_parents.json): the parent's own reports come first, in the
+    list's order, then the salt's. So an In-trials card opens the parent's
+    own trial, as it did before the salt joined it. Any other family keeps
+    the list's order.
+    """
+    reports = list(family["stage_reports"])
+    if family["hand_parent"]:
+        own = [report for report in reports if report[0] in family["own_links"]]
+        reports = own + [report for report in reports if report not in own]
+    return tuple(reports)
+
+
 def _as_listed(family_id: str, family: dict) -> Listed:
     forms, regulator_sources = _merged_by_hand(family)
     return Listed(
@@ -1020,7 +1039,7 @@ def fetch_listed_medicines(disease: Disease) -> List[OnList]:
     return [
         OnList(
             medicine=Medicine(name=family["name"], forms=family["records"]),
-            reports=tuple(family["stage_reports"]),
+            reports=_reports_parent_first(family),  # ticket 3.28
             all_seen=family["told"]
             and family["named"] <= {record.id for record in family["records"]},
             withdrawal_report=family["withdrawal_report"],
