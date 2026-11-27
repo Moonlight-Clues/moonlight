@@ -111,9 +111,11 @@ def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
     # the keys, the ids, the day and the note are taken away.
     text = "".join(line for line in FILE.read_text(encoding="utf-8").splitlines(keepends=True)
                    if THE_DAY in line)
-    # Permanent correction ids (C-001) sit on every entry. This check is
-    # about a person's name, so the id is taken out before the leftover test.
+    # Permanent correction ids (C-001), and a report number if one is there,
+    # sit on the lines. This check is about a person's name, so both are
+    # taken out before the leftover test.
     text = re.sub(r'"id": "C-\d+", ', "", text)
+    text = re.sub(r'"report": "E\d+", ', "", text)
     assert text.count(THE_DAY) == 12
     labels = sorted({entry["label"] for entry in entries if entry["label"]}, key=len, reverse=True)
     for known in ["medicine_id", "disease_id", "date", "note", "label", NOTE, THE_DAY,
