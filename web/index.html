@@ -281,7 +281,6 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 /* the key: ten small chips, a gold letter and a few words each. Two columns at every width,
    so every row is full (ticket 3.9). */
 .key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
-.key-note{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 /* Ticket T11. A picture of one trial row, using the same classes as a row on a card. Not a link. */
 .guide-trial{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:var(--radius);padding:6px 16px 4px;margin-top:16px;box-shadow:0 4px 13px #101F3107}
 .guide-trial-line{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
@@ -657,7 +656,6 @@ body.registering>:not(.register){display:none!important}
         <li><span class="k" aria-hidden="true">I</span><span>Where the fact comes from</span></li>
         <li><span class="k" aria-hidden="true">J</span><span>Tell us if something is wrong</span></li>
       </ul>
-      <p class="key-note">We read every report.<br>Nothing about you is kept.</p>
     </section>
 
     <section aria-labelledby="guide-limits-title">
@@ -683,10 +681,11 @@ body.registering>:not(.register){display:none!important}
       <details class="wider-box">
         <summary id="guide-doctors-title">For doctors: how far to trust each part</summary>
         <ul class="limits">
-          <li><div><b>Source.</b> <span>Open Targets Platform.</span></div></li>
+          <li><div><b>Source.</b> <span>Open Targets Platform. Trial details from ClinicalTrials.gov.</span></div></li>
           <li><div><b>“Approved”.</b> <span>In at least one country, per the database. Not a measure of efficacy.</span></div></li>
           <li><div><b>Left out.</b> <span>Withdrawn anywhere, or approved nowhere: counted, never named. Unclear link to the disease: counted separately.</span></div></li>
           <li><div><b>Wider and narrower diseases.</b> <span>Shown with a label, each in its own folded box.</span></div></li>
+          <li><div><b>Trials.</b> <span>Matched to a medicine by its exact name. A finished trial is a record, not a result.</span></div></li>
           <li><div><b>Known gaps.</b> <span>A missing medicine may be withdrawn somewhere, filed further away, or not recorded yet.</span></div></li>
           <li><div><b>Weak proof.</b> <span>Japan-list-only approvals say so. Approvals with no regulator record say so. Confirmed mistakes carry a red warning.</span></div></li>
           <li><div><b>Ranking.</b> <span>Link strength across the top 25 proteins. One protein machine counts once.</span></div></li>
@@ -698,9 +697,11 @@ body.registering>:not(.register){display:none!important}
         <summary id="guide-facts-title">Where the facts come from</summary>
         <ul class="limits">
           <li><div><b>Facts.</b> <span>Open Targets Platform, an open research database.</span></div></li>
+          <li><div><b>Trials.</b> <span>ClinicalTrials.gov, the US public register of clinical studies.</span></div></li>
           <li><div><b>Words.</b> <span>What you type is sent to Gemini, so type no names or private details.</span></div></li>
           <li><div><b>Visits.</b> <span>Counted with Umami. No cookies. Never the disease or anything you type.</span></div></li>
           <li><div><b>Protein descriptions.</b> <span>Written by UniProt, read through Open Targets. CC BY 4.0.</span></div></li>
+          <li><div><b>Reports.</b> <span>We read every report. Nothing about you is kept.</span></div></li>
         </ul>
       </details>
     </div>

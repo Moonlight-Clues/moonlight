@@ -76,11 +76,14 @@ CANNOT = [
 ]
 DOCTORS_TITLE = "For doctors: how far to trust each part"
 DOCTORS = [
-    ("Source.", "Open Targets Platform."),
+    # Ticket 3.32: ClinicalTrials.gov is named as the source of trial details.
+    ("Source.", "Open Targets Platform. Trial details from ClinicalTrials.gov."),
     ("“Approved”.", "In at least one country, per the database. Not a measure of efficacy."),
     ("Left out.", "Withdrawn anywhere, or approved nowhere: counted, never named. "
                   "Unclear link to the disease: counted separately."),
     ("Wider and narrower diseases.", "Shown with a label, each in its own folded box."),
+    # Ticket 3.32: new line.
+    ("Trials.", "Matched to a medicine by its exact name. A finished trial is a record, not a result."),
     ("Known gaps.", "A missing medicine may be withdrawn somewhere, filed further away, "
                     "or not recorded yet."),
     ("Weak proof.", "Japan-list-only approvals say so. Approvals with no regulator "
@@ -93,11 +96,15 @@ NOT_REFERENCE = "Moonlight is not a prescribing reference."
 FACTS_TITLE = "Where the facts come from"
 FACTS = [
     ("Facts.", "Open Targets Platform, an open research database."),  # ticket T0
+    # Ticket 3.32: new line, straight after Facts.
+    ("Trials.", "ClinicalTrials.gov, the US public register of clinical studies."),
     # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
     ("Words.", "What you type is sent to Gemini, so type no names or private details."),
     ("Visits.", "Counted with Umami. No cookies. Never the disease or anything you type."),
     # Ticket 3.8: Kashish's credit line, 23 Nov 2026.
     ("Protein descriptions.", "Written by UniProt, read through Open Targets. CC BY 4.0."),
+    # Ticket 3.32: the report note moved here from under the A to J key. Last line.
+    ("Reports.", "We read every report. Nothing about you is kept."),
 ]
 STRIP = "Test a condition you know well. Tell us what is missing or wrong."
 
@@ -282,14 +289,14 @@ def test_each_fold_is_closed_at_first_and_uses_the_wider_group_pattern(page, gui
     assert "tabindex" not in guide
 
 
-def test_the_fold_for_doctors_holds_these_eight_lines_then_the_sentence_set_apart(guide):
+def test_the_fold_for_doctors_holds_these_nine_lines_then_the_sentence_set_apart(guide):
     _, inside = fold(guide, DOCTORS_TITLE)
     assert lines_of(inside) == DOCTORS
     assert inside.index("</ul>") < inside.index('<p class="not-reference">%s</p>' % NOT_REFERENCE)
     assert guide.count(NOT_REFERENCE) == 1
 
 
-def test_the_fold_of_sources_holds_these_four_lines(guide):
+def test_the_fold_of_sources_holds_these_six_lines(guide):
     _, inside = fold(guide, FACTS_TITLE)
     assert lines_of(inside) == FACTS
 

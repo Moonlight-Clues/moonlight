@@ -66,11 +66,14 @@ MAIL_LINK = '<a href="mailto:%s">%s</a>' % (ADDRESS, ADDRESS)
 DOCTORS = "For doctors: how far to trust each part"
 # Kashish's words, 16 Nov. Each was checked against the code on main.
 DOCTOR_POINTS = [
-    "Source. Open Targets Platform.",
+    # Ticket 3.32: ClinicalTrials.gov named as the source of trial details.
+    "Source. Open Targets Platform. Trial details from ClinicalTrials.gov.",
     "“Approved”. In at least one country, per the database. Not a measure of efficacy.",
     "Left out. Withdrawn anywhere, or approved nowhere: counted, never named. "
     "Unclear link to the disease: counted separately.",
     "Wider and narrower diseases. Shown with a label, each in its own folded box.",
+    # Ticket 3.32: new line.
+    "Trials. Matched to a medicine by its exact name. A finished trial is a record, not a result.",
     "Known gaps. A missing medicine may be withdrawn somewhere, filed further away, "
     "or not recorded yet.",
     "Weak proof. Japan-list-only approvals say so. Approvals with no regulator "
@@ -239,7 +242,7 @@ def test_for_doctors_holds_kashishs_points_word_for_word_in_the_same_list_style(
     assert section.count('<ul class="limits">') == 1
     items = re.findall(r"(?s)<li>(.*?)</li>", section)
     assert [plain(item) for item in items] == DOCTOR_POINTS
-    assert len(items) == 8
+    assert len(items) == 9
     for item, words in zip(items, DOCTOR_POINTS):  # the first sentence is the bold title
         assert plain(re.search(r"<b>(.*?)</b>", item).group(1)) == words.split(". ")[0] + "."
 
