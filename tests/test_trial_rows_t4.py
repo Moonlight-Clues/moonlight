@@ -171,7 +171,8 @@ def test_the_words_are_in_the_page_exactly():
     assert SUBHEAD in PAGE
     assert FINISHED_NOTE in PAGE
     assert "Trial details checked " in PAGE
-    assert "Not clinical findings · Data from Open Targets and ClinicalTrials.gov</div>" in PAGE
+    assert ("Not clinical findings · Data from Open Targets and ClinicalTrials.gov"
+            ' · <a href="/corrections">Corrections</a></div>') in PAGE  # ticket 2.66
 
 
 def test_the_new_code_writes_with_textcontent_only():

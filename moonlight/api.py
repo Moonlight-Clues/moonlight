@@ -1,6 +1,9 @@
 """The small API behind Sidha's page. Medicine first.
 
     GET /                                   the page (web/index.html)
+    GET /corrections                        every change made by hand to the
+                                            database's list (ticket 2.66),
+                                            built from the lists at start-up
     GET /api/search?q=                      matching diseases, best first, and "did you mean"
     GET /api/clues?disease_id=              the three tabs: approved, being studied
                                             and new clues. No explanations. Also
@@ -139,6 +142,7 @@ from moonlight.engine import discontinued_by_hand, discontinued_notes  # ticket 
 from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
 from moonlight.engine import studies_for_this_disease
+from moonlight import corrections_page  # ticket 2.66
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -326,6 +330,11 @@ async def _check_hand_lists(_app: FastAPI):
     # also on corrections.json stops the app here.
     wider_labels_by_hand()
     pmda_summaries()
+    # Ticket 2.66. The public corrections page, built once from the lists.
+    # An entry with no name in names.json, or no link, stops the app here:
+    # the page never shows an ID or an empty link.
+    global _corrections_page
+    _corrections_page = corrections_page.page_html()
     # Ticket T3. The trials file, opened once. Missing or unreadable: the
     # page is served without trial details, as before, and the log says so.
     global _trials
@@ -346,6 +355,8 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 # Ticket T3. moonlight/trials.sqlite, opened once when the app starts
 # (_check_hand_lists). None until then, and for good if the file is missing.
 _trials: Optional[trials.Trials] = None
+# Ticket 2.66. The corrections page, built when the app starts.
+_corrections_page: Optional[str] = None
 
 # Ticket 3.6. The finished /api/clues answer for each disease, kept in
 # memory like a tray of finished plates: (disease id, Open Targets data
@@ -766,6 +777,15 @@ def _shown_new_clues(found: _Found) -> Tuple[List[Clue], int]:
 @app.get("/", response_class=HTMLResponse)
 def page() -> str:
     return PAGE.read_text(encoding="utf-8")
+
+
+@app.get("/corrections", response_class=HTMLResponse)
+def corrections() -> str:
+    """Ticket 2.66. Every change made by hand to the database's list, newest
+    first. Built from the lists at start-up; no network at request time. If
+    the app was started without its start-up step (some tests), it is built
+    here from the same files, still with no network."""
+    return _corrections_page if _corrections_page is not None else corrections_page.page_html()
 
 
 @app.get("/api/version")

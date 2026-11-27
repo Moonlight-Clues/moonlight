@@ -232,7 +232,8 @@ def test_the_footer_note_is_unchanged_and_does_not_wrap_at_390(seen):
     ok = seen["ok"]
     # ticket T4 (MAIN 5's named OK): "and ClinicalTrials.gov" added
     assert ok["noteText"] == ("Moonlight · Research exploration only · Not clinical findings"
-                              " · Data from Open Targets and ClinicalTrials.gov")
+                              " · Data from Open Targets and ClinicalTrials.gov"
+                              " · Corrections")  # ticket 2.66
     assert ok["noteBox"]["h"] == seen["failed"]["noteBox"]["h"]  # the new line does not change it
     assert ok["lineBox"]["top"] >= ok["noteBox"]["bottom"]
     assert ok["lineBox"]["h"] < 20  # one line
