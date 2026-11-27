@@ -11,6 +11,11 @@ No ID is ever shown: an entry whose medicine or disease has no name there,
 or that has no https link, stops the build with ValueError, and with it the
 app, like the other hand-written lists (Kashish, 27 Nov, decisions A and B).
 
+Each entry of these lists also carries a permanent id (C-001, C-002, ...),
+one sequence across corrections, approvals, limits, confirmed, withdrawals,
+pmda_summaries and salt_parents. See moonlight/correction_ids.py. The page
+does not show the id.
+
 What each list's row says it shows (Kashish, 27 Nov, decision C):
     corrections     the card's red sentence, exactly as shown (engine.RED_WORDS)
     approvals       engine.ADDED_LINE, and engine.LIMITED_LINE under it when the

@@ -14,6 +14,8 @@ The ids were checked against the saved answer on branch probe-key-diseases
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -54,7 +56,7 @@ def offline():
 
 
 def real_corrections():
-    return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8")))
 
 
 def approved_path(name, medicine_id, disease):

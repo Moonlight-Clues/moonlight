@@ -20,6 +20,8 @@ engine._read_corrections and engine._read_left_out, which tests replace.
 
 import inspect
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import re
 from unittest.mock import patch
@@ -289,7 +291,7 @@ TODAYS_TEN = (
 
 
 def real_corrections():
-    return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8")))
 
 
 def test_the_real_file_holds_todays_ten_with_the_new_note_and_no_other():
@@ -328,6 +330,9 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # Read as plain text: nothing is left once the keys, the ids, the two
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
+    # Permanent correction ids (C-001) sit on every entry. This check is
+    # about a person's name, so the id is taken out before the leftover test.
+    text = re.sub(r'"id": "C-\d+", ', "", text)
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
     labels = sorted({entry["label"] for entry in entries if entry.get("label")}, key=len, reverse=True)
     for known in ["medicine_id", "disease_id", "date", "note", "label", FIRST_NOTE, SECOND_NOTE,

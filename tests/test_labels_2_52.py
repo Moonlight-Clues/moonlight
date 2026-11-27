@@ -23,6 +23,8 @@ data 26.09) and is saved in fixtures/labels_read/2.52/disease_drugs/. No network
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 import re
 from unittest.mock import patch
@@ -80,7 +82,7 @@ DIVISTA_SENTENCE = ("DivistaTM is specially designed as a once a day nutritional
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_post_json(body):

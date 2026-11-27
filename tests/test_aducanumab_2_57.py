@@ -14,6 +14,8 @@ import pytest
 
 from moonlight import engine
 
+from hand_ids import without_correction_id
+
 import test_approval_proof as proof
 import test_withdrawal_line as pages
 
@@ -55,7 +57,7 @@ def without_entry():
 
 
 def test_the_file_ends_with_the_aducanumab_entry():
-    entries = json.loads(FILE.read_text(encoding="utf-8"))
+    entries = without_correction_id(json.loads(FILE.read_text(encoding="utf-8")))
     # Ticket 2.59 adds two entries (tolazamide, tolbutamide) after this one.
     assert entries[-3] == ENTRY
     assert engine.withdrawals_by_hand()[-3] == engine.HandWithdrawal(ADUCANUMAB, ALZHEIMER, FDA)

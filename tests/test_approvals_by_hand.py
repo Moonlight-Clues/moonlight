@@ -31,6 +31,8 @@ fixtures/no_regulator/ for the answers that folder already held. No network.
 
 import copy
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -152,7 +154,7 @@ def only_under_approved(tabs, medicine_id):
 # ---- the saved pages ----
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_post_json(body):

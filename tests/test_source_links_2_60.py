@@ -19,6 +19,9 @@ fixtures/source_overrides/source_overrides_c5cb017.json.
 """
 
 import json
+import re
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -68,7 +71,7 @@ ROSIGLITAZONE_WITHDRAWAL_LINE = ("The database records a withdrawal for this med
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def by_id(cards):
@@ -172,6 +175,9 @@ def test_only_that_one_line_of_limits_json_differs_from_c5cb017():
     old = subprocess.run(["git", "show", "c5cb017:moonlight/limits.json"], cwd=ROOT,
                          capture_output=True, text=True, check=True).stdout
     now = LIMITS_FILE.read_text(encoding="utf-8")
+    # Permanent correction ids were added on every line. This check is the
+    # Roctavian link, so the ids are taken out before the old file is compared.
+    now = re.sub(r'"id": "C-\d+", ', "", now)
     # Ticket 2.62 appended LIMIT_ROWS (one line each) at the end of the list: take them off.
     lines = now.rstrip().split("\n")
     if LIMIT_ROWS:

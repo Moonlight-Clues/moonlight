@@ -103,7 +103,7 @@ def test_the_list_holds_exactly_the_ten_pairs_and_not_sefaxersen():
 
 def test_every_row_has_a_source_and_the_build_date():
     for salt, row in real_list().items():
-        assert set(row) == {"parent", "parent_name", "source", "date"}, salt  # ticket 3.24
+        assert set(row) - {"id"} == {"parent", "parent_name", "source", "date"}, salt  # ticket 3.24; id is the permanent correction number
         assert row["source"].strip(), salt
         assert row["date"] == "2026-11-26", salt  # ticket 3.24
         assert row["source"].startswith("https://"), salt  # Product's 26 Nov evidence URL

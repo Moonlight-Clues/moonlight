@@ -8,6 +8,8 @@ No other card changes. Saved answers only (old_flag_saved.py). No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -33,7 +35,7 @@ SOURCES = {
 
 
 def entries():
-    return json.loads(FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(FILE.read_text(encoding="utf-8")))
 
 
 @pytest.fixture(scope="module")

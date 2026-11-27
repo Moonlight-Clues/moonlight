@@ -16,6 +16,8 @@ a card can only differ because of an entry.
 
 import copy
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -103,7 +105,7 @@ def row_id(row):
 
 
 def read(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(path.read_text(encoding="utf-8")))
 
 
 # ---- the saved answers ----

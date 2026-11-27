@@ -19,6 +19,8 @@ answer with the three entries, both saved as sent (Open Targets data 26.09).
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 
 import pytest
@@ -60,7 +62,7 @@ OPPOSITE_WAY = "Opposite way to the approved medicines for this disease."
 
 
 def load(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(path.read_text(encoding="utf-8")))
 
 
 def answer(state, disease_id):

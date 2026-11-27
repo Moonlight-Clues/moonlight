@@ -18,6 +18,8 @@ No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 
 import pytest
@@ -55,7 +57,7 @@ INDICATION = ("ROCTAVIAN is an adeno-associated virus vector-based gene therapy 
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def text(*parts):

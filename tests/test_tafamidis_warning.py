@@ -16,6 +16,8 @@ there is one tafamidis card, not two.
 
 import copy
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -62,7 +64,7 @@ def offline():
 
 
 def real_corrections():
-    return json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(CORRECTIONS_FILE.read_text(encoding="utf-8")))
 
 
 def _saved_answers():

@@ -22,6 +22,8 @@ Part B (Source record order) waits for ticket 2.56. No network.
 
 import hashlib
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -58,7 +60,7 @@ OLD_111_SHA256 = "38f19927efc2a1835141b15751979af3d7258081c9844842b3ecb22a713d66
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def old_entries():

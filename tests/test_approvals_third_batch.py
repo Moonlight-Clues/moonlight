@@ -23,6 +23,8 @@ they were not saved again. No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -109,7 +111,7 @@ VALBENAZINE_CARD_NOW = dict(VALBENAZINE_CARD, limit_note=LIMITED_LINE)  # ticket
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 def saved_rows(disease_id):

@@ -20,6 +20,8 @@ ticket 2.27's tests. No network.
 """
 
 import json
+
+from hand_ids import without_correction_id
 import pathlib
 from unittest.mock import patch
 
@@ -62,7 +64,7 @@ VALBENAZINE_BEFORE = {"medicine_id": VALBENAZINE, "name": "Valbenazine",
 
 
 def load(file):
-    return json.loads(file.read_text(encoding="utf-8"))
+    return without_correction_id(json.loads(file.read_text(encoding="utf-8")))
 
 
 @pytest.fixture(scope="module")
