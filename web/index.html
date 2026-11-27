@@ -122,6 +122,8 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .card{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:var(--radius);padding:18px 16px 17px;box-shadow:0 4px 13px #101F3107;min-width:0}
 .card-top{display:flex;justify-content:space-between;align-items:start;gap:12px}
 .card-title{display:flex;align-items:flex-start;gap:11px;min-width:0}
+/* Ticket 3.25. The title's text box may shrink below its longest word, so a long name wraps (2.67) instead of widening the card. */
+.card-title>div{min-width:0}
 .rank{flex:none;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:var(--mist);color:#286F70;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
 /* Ticket 2.67 (W6). A long name breaks only with a hyphen (the page is lang="en"), never mid-word without one. */
 .card h3{hyphens:auto;overflow-wrap:break-word;word-break:normal}
