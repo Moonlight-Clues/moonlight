@@ -8,6 +8,8 @@ the network and never changes the drawer.
                                         or is not a trials file (logged)
     trials.for_card(links, names)    -> ([up to 3 trials, newest first], total)
     trials.for_cards(cards, disease_name=...)  -> the new fields for each card
+    (that pair also has .newest: the newest known start date among all the
+     card's trials in the file, or None. Ticket 3.31, internal.)
     trials.checked                   -> the date the file was built, "2026-11-26"
 
 links are the card's own trial links for the page's disease (they hold the
@@ -60,6 +62,15 @@ ASK_AT_A_TIME = 500  # SQLite's own limit on "?" marks is far higher; this is pl
 
 _NCT = re.compile(r"NCT\d{8}", re.IGNORECASE)
 _DATE = re.compile(r"^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$")
+
+
+class _Found(tuple):
+    """for_card's answer: a plain (shown, total) pair that also has .newest."""
+
+    def __new__(cls, shown, total, newest=None):
+        self = super().__new__(cls, (shown, total))
+        self.newest = newest
+        return self
 
 
 def nct_numbers(links: Iterable[str]) -> List[str]:
@@ -133,8 +144,13 @@ class Trials:
 
     def for_card(self, links: Iterable[str], names: Sequence[str],
                  today: Optional[datetime.date] = None,
-                 limit: int = MAX_SHOWN) -> Tuple[List[dict], int]:
+                 limit: int = MAX_SHOWN) -> "_Found":
         """(the newest trials, how many are in the file) for one card.
+
+        Ticket 3.31: the pair also carries .newest, the newest known start
+        date among all the card's trials in the file (not only the shown
+        ones), by the same unknown-date rules; None when no trial has a known
+        date. Internal: the API sorts two boxes by it and never sends it.
 
         names is the card's medicine name, then its tablet forms. Raises
         sqlite3.Error or zlib.error if the file is damaged: the caller serves
@@ -155,19 +171,21 @@ class Trials:
             dated = {nct: start_key(starts[nct], today) for nct in order}
             order.sort(key=lambda nct: (dated[nct] is None,
                                         -dated[nct].toordinal() if dated[nct] else 0))
+            newest = max((day for day in dated.values() if day is not None), default=None)
             shown = []
             for nct in order[:max(limit, 0)]:
                 trial = self._read(nct, names)
                 if trial is not None:
                     shown.append(_plain(trial))
-        return shown, len(starts)
+        return _Found(shown, len(starts), newest)
 
     def for_cards(self, cards: Sequence[Tuple[Iterable[str], Sequence[str]]],
                   today: Optional[datetime.date] = None,
                   disease_name: Optional[str] = None) -> Optional[List[dict]]:
         """The three new fields for each card, in the cards' order: (links,
         names) in, {"studies", "study_total", "trials_checked"} out, and
-        (ticket T4) "studies_url" too when disease_name is given.
+        (ticket T4) "studies_url" too when disease_name is given. Ticket 3.31:
+        also "newest_start" (a date or None), for the API's sort only.
 
         All or none. If the file cannot be read for any card, the reason goes
         to the log (this file's, never the page's: the page keeps no log) and
@@ -176,9 +194,11 @@ class Trials:
         try:
             found = []
             for links, names in cards:
-                shown, total = self.for_card(links, names, today=today)
+                found_one = self.for_card(links, names, today=today)
+                shown, total = found_one
                 one = {"studies": shown, "study_total": total,
-                       "trials_checked": self.checked}
+                       "trials_checked": self.checked,
+                       "newest_start": getattr(found_one, "newest", None)}  # ticket 3.31: internal, the API removes it
                 if disease_name is not None:
                     one["studies_url"] = studies_url(disease_name, names[0] if names else "")
                 found.append(one)
