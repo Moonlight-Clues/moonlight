@@ -313,7 +313,7 @@ def test_part_b_label_is_saved_and_the_readme_line_quotes_it(entry):
 def test_the_corrections_file_holds_the_old_24_then_the_fourteen_new_ones():
     entries = load(CORRECTIONS_FILE)
     assert len(entries) == 122 + len(RED_ROWS)  # Ticket 2.62 adds RED_ROWS at the end. Ticket 2.58: ipratropium on asthma deleted (25N-13), six type 2 diabetes entries added, dated 2026-11-26 (25N-16); Ticket 3.10 (MAIN 4, 25 Nov, Q14): mannitol's red entry on asthma deleted; ticket 2.56, signed rule Q22 (and Q3, Q13 for the other lists): five more, dated 2026-11-25; Ticket 2.55, signed answers Q10 and Q22: dicumarol, sodium phenylbutyrate; ticket 2.54, signed answers Q22 and 10b: simvastatin, misoprostol; ticket 2.52 added seven; ticket 2.47 added Obizur; ticket 2.40 added one after these: prasterone; ticket 2.45, 62 more
-    assert entries[24:38] == NEW_CORRECTIONS
+    assert [{k: v for k, v in entry.items() if k != "label"} for entry in entries[24:38]] == NEW_CORRECTIONS
     assert [entry["date"] for entry in entries[:24]] == sorted(
         entry["date"] for entry in entries[:24])
     assert all(entry["date"] < THE_DAY for entry in entries[:24])
@@ -327,7 +327,7 @@ def test_each_new_entry_has_exactly_the_four_keys_and_the_note_already_used():
     third = [e for e in entries[24:] if e["note"] == engine.THIRD_NOTE]
     assert [(e["medicine_id"], e["disease_id"]) for e in third] == [("CHEMBL1466", "MONDO_0010602")]
     for entry in entries[24:]:
-        assert list(entry) == ["medicine_id", "disease_id", "date", "note"]
+        assert list(entry) == ["medicine_id", "disease_id", "date", "note", "label"]
         if entry not in third:
             assert entry["note"] == NOTE
 

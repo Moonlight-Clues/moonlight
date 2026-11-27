@@ -112,9 +112,11 @@ def test_the_file_holds_the_old_111_unchanged_then_the_two_new_entries():
                 "note": "This looks like a mistake in the database. The official label is for a "
                         "different disease."}
     old = entries[:56] + [ipratropium, mannitol] + entries[56:109]
+    # The label field is ignored here, so this still pins the original four fields.
+    old = [{k: v for k, v in entry.items() if k != "label"} for entry in old]
     assert hashlib.sha256(json.dumps(old, sort_keys=True).encode()).hexdigest() == \
         OLD_111_SHA256
-    assert entries[109:111] == NEW
+    assert [{k: v for k, v in entry.items() if k != "label"} for entry in entries[109:111]] == NEW
     assert all(list(entry) == ["medicine_id", "disease_id", "date", "note"] for entry in NEW)
 
 

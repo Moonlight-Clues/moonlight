@@ -84,7 +84,8 @@ def test_each_file_ends_with_the_new_entries(name):
         entries = entries[:-len(CONFIRMED_ROWS)]  # ticket 2.64 added two after givosiran: Suiny, Deberza
         # Ticket 2.61 (26 Nov) added one entry after these: givosiran, Orphanet_95157.
         entries = entries[:-1]
-    assert entries[-len(NEW[name]):] == NEW[name]
+    bare = lambda entry: {k: v for k, v in entry.items() if k != "label"}
+    assert [bare(entry) for entry in entries[-len(NEW[name]):]] == [bare(entry) for entry in NEW[name]]
     assert len(entries) > len(NEW[name])
 
 

@@ -298,7 +298,7 @@ def test_the_real_file_holds_todays_ten_with_the_new_note_and_no_other():
     assert len(today) == 10  # no pair twice
     assert {(entry["medicine_id"], entry["disease_id"]) for entry in today} == TODAYS_TEN
     for entry in today:
-        assert set(entry) == {"medicine_id", "disease_id", "date", "note"}
+        assert set(entry) == {"medicine_id", "disease_id", "date", "note", "label"}
         assert entry["note"] == SECOND_NOTE
     # Kashish: no entry for momelotinib under myeloproliferative disorder.
     assert all(entry["disease_id"] != "EFO_0004251" for entry in real_corrections())
@@ -329,12 +329,15 @@ def test_the_real_file_holds_mondays_twelve_and_todays_ten_and_nothing_else():
     # days and the two notes are taken away. No room for anybody's name.
     text = CORRECTIONS_FILE.read_text(encoding="utf-8")
     ids = {entry[key] for entry in entries for key in ("medicine_id", "disease_id")}
-    for known in ["medicine_id", "disease_id", "date", "note", FIRST_NOTE, SECOND_NOTE,
+    labels = sorted({entry["label"] for entry in entries if entry.get("label")}, key=len, reverse=True)
+    for known in ["medicine_id", "disease_id", "date", "note", "label", FIRST_NOTE, SECOND_NOTE,
                   engine.THIRD_NOTE,  # ticket 2.55, Kashish's signed Q10
                   MONDAY, TODAY, TICKET_2_19_DAY, "2026-11-23", "2026-11-24", "2026-11-25",
                   "2026-11-26",  # ticket 2.58
+                  *labels,  # the label link added to each entry that has one
                   *sorted(ids, key=len, reverse=True)]:
         text = text.replace(f'"{known}"', "")
+    text = text.replace('""', "")  # an empty label
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
 

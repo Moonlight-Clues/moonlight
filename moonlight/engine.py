@@ -392,6 +392,10 @@ EVIDENCE_NAMES = {
 }
 CORRECTIONS_FILE = pathlib.Path(__file__).resolve().parent / "corrections.json"
 CORRECTION_KEYS = {"medicine_id", "disease_id", "date", "note"}
+# Optional. The official regulator label read for this entry, or "" when no
+# label-read record gave one. The page does not read it. Any other extra
+# key is still refused.
+CORRECTION_LABEL = "label"
 # Ticket 2.18. The clues left out by hand. Nothing in Moonlight writes here.
 LEFT_OUT_FILE = pathlib.Path(__file__).resolve().parent / "left_out.json"
 LEFT_OUT_KEYS = {"medicine_id", "disease_id", "date"}
@@ -1847,22 +1851,33 @@ def _checked_pair(entry: object, keys: Set[str], kind: str) -> Tuple[str, str]:
     return medicine_id, disease_id
 
 
+def _correction_keys(entry: object) -> Set[str]:
+    """The keys one correction must hold. "label" may be there as well."""
+    if isinstance(entry, dict) and CORRECTION_LABEL in entry:
+        label = entry[CORRECTION_LABEL]
+        if not isinstance(label, str) or (label and not label.startswith("https://")):
+            raise ValueError(
+                f"A correction's label must be an https link or empty: {entry!r}")
+        return CORRECTION_KEYS | {CORRECTION_LABEL}
+    return CORRECTION_KEYS
+
+
 def _corrections_with_notes() -> Dict[Tuple[str, str], str]:
     """The corrections list as (medicine id, disease id) -> the entry's note.
 
-    Each entry holds exactly four things: the medicine's id, the disease's
-    id, the date (like "2026-11-16") and a note that is exactly one of
-    CORRECTION_NOTES. No doctor is ever named, so an entry holding anything
-    else is refused. An entry that is not written this way raises
-    ValueError: a warning is never dropped quietly. One card cannot carry
-    both notes.
+    Each entry holds the medicine's id, the disease's id, the date (like
+    "2026-11-16") and a note that is exactly one of CORRECTION_NOTES. It may
+    also hold "label" (an https link, or empty). No doctor is ever named, so
+    an entry holding anything else is refused. An entry that is not written
+    this way raises ValueError: a warning is never dropped quietly. One card
+    cannot carry both notes.
     """
     entries = _read_corrections()
     if not isinstance(entries, list):
         raise ValueError("corrections.json must hold a list.")
     notes: Dict[Tuple[str, str], str] = {}
     for entry in entries:
-        pair = _checked_pair(entry, CORRECTION_KEYS, "A correction")
+        pair = _checked_pair(entry, _correction_keys(entry), "A correction")
         note = entry["note"]
         if not isinstance(note, str) or note not in CORRECTION_NOTES:
             raise ValueError(

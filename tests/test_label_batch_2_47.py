@@ -179,7 +179,8 @@ def test_deferoxamine_is_in_the_red_box_for_hemochromatosis_and_the_card_is_kept
     assert DEFEROXAMINE in [m.id for m in page.approved]  # the card is kept, not removed
     assert [m.id for m in engine.wrong_approvals_box(page.approved, HEMOCHROMATOSIS)] == [DEFEROXAMINE]
     assert engine.warning_words(HEMOCHROMATOSIS) == {DEFEROXAMINE: SECOND_NOTE}
-    assert [e for e in load(CORRECTIONS_FILE) if e["medicine_id"] == DEFEROXAMINE] == [
+    found = [e for e in load(CORRECTIONS_FILE) if e["medicine_id"] == DEFEROXAMINE]
+    assert [{k: v for k, v in e.items() if k != "label"} for e in found] == [
         {"medicine_id": DEFEROXAMINE, "disease_id": HEMOCHROMATOSIS,
          "date": "2026-11-22", "note": SECOND_NOTE}]
 
@@ -198,7 +199,8 @@ def test_obizur_is_in_the_red_box_for_haemophilia_a_and_the_card_is_kept():
     assert OBIZUR in [m.id for m in page.approved]  # the card is kept, not removed
     assert OBIZUR in [m.id for m in engine.wrong_approvals_box(page.approved, HAEMOPHILIA_A)]
     assert engine.warning_words(HAEMOPHILIA_A)[OBIZUR] == SECOND_NOTE
-    assert [e for e in load(CORRECTIONS_FILE) if e["medicine_id"] == OBIZUR] == [
+    found = [e for e in load(CORRECTIONS_FILE) if e["medicine_id"] == OBIZUR]
+    assert [{k: v for k, v in e.items() if k != "label"} for e in found] == [
         {"medicine_id": OBIZUR, "disease_id": HAEMOPHILIA_A,
          "date": "2026-11-25", "note": SECOND_NOTE}]
     assert OBIZUR not in {e["medicine_id"] for e in load(APPROVALS_FILE)}

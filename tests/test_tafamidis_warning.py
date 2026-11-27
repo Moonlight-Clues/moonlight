@@ -136,7 +136,8 @@ def test_the_note_is_the_engines_second_note_exactly():
 
 def test_the_new_entry_is_in_the_real_file_once():
     # Not "it is last": the next warning goes after it (Kashish, 23 Nov).
-    assert real_corrections().count(THE_ENTRY) == 1
+    bare = lambda entry: {k: v for k, v in entry.items() if k != "label"}
+    assert [bare(entry) for entry in real_corrections()].count(THE_ENTRY) == 1
 
 
 def test_the_real_file_is_in_date_order():
@@ -160,9 +161,10 @@ def test_the_file_holds_24_entries():
 
 def test_it_is_the_only_entry_of_that_day_and_the_only_one_for_tafamidis():
     entries = real_corrections()
-    assert [entry for entry in entries if entry["date"] == THE_DAY] == [THE_ENTRY]
-    assert [entry for entry in entries if entry["medicine_id"] == TAFAMIDIS] == [THE_ENTRY]
-    assert [entry for entry in entries if entry["disease_id"] == AL_AMYLOIDOSIS] == [THE_ENTRY]
+    bare = lambda entry: {k: v for k, v in entry.items() if k != "label"}
+    assert [bare(entry) for entry in entries if entry["date"] == THE_DAY] == [THE_ENTRY]
+    assert [bare(entry) for entry in entries if entry["medicine_id"] == TAFAMIDIS] == [THE_ENTRY]
+    assert [bare(entry) for entry in entries if entry["disease_id"] == AL_AMYLOIDOSIS] == [THE_ENTRY]
 
 
 def test_the_engine_gives_the_al_amyloidosis_page_the_second_words_for_tafamidis_only():
