@@ -1335,6 +1335,11 @@ def _trial_medicine(entry: OnList) -> TrialMedicine:
 CTGOV_TRIAL_LINE = ("Its trials for this disease were found on "
                     "ClinicalTrials.gov, not in Open Targets.")
 TRIALS_SOURCES_LINE = "Trials come from Open Targets and ClinicalTrials.gov."
+# Ticket T8. The box of names ClinicalTrials.gov listed that matched no medicine.
+CTGOV_ONLY_LINE = "Found only on ClinicalTrials.gov."
+CTGOV_ONLY_NOTE = ("These are listed on ClinicalTrials.gov. "
+                   "Moonlight has no other records for them.")
+CTGOV_ONLY_SENT = 300
 
 
 def trials_count_line(medicines: int, drug_trials: int) -> str:

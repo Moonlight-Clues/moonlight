@@ -147,7 +147,8 @@ from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
 from moonlight.engine import studies_for_this_disease
 from moonlight import corrections_page  # ticket 2.66
-from moonlight.engine import (CTGOV_TRIAL_LINE, TRIALS_SOURCES_LINE, Tabs, _family_id,
+from moonlight.engine import (CTGOV_ONLY_LINE, CTGOV_ONLY_NOTE, CTGOV_ONLY_SENT,
+                              CTGOV_TRIAL_LINE, TRIALS_SOURCES_LINE, Tabs, _family_id,
                               place_matched, trials_count_line)
 from moonlight.fetch import (
     FetchError,
@@ -1097,8 +1098,26 @@ def _build_clues(disease_id: str) -> dict:
     # was stored and the tab has a card. A skipped search keeps today's cards
     # and adds the register link for the whole disease.
     row = getattr(found, "search", None)
-    if row is not None and row.stored and trial_cards:
-        answer["trials_count_line"] = trials_count_line(len(trial_cards), len(counted))
+    # Ticket T8. Names found only on ClinicalTrials.gov. At most 300 cards.
+    # Past that, the register's search for the disease.
+    only_cards = 0
+    only_ncts = set()
+    if row is not None and row.stored and row.ctgov_only:
+        ordered = sorted(row.ctgov_only, key=lambda item: (item.name.casefold(), item.name))
+        sent = ordered[:CTGOV_ONLY_SENT]
+        answer["ctgov_only"] = {
+            "trials": len({nct for item in row.ctgov_only for nct in item.nct_ids}),
+            "note": CTGOV_ONLY_NOTE,
+            "line": CTGOV_ONLY_LINE,
+            "cards": [{"name": item.name} for item in sent],
+        }
+        if len(ordered) > CTGOV_ONLY_SENT:
+            answer["ctgov_only"]["more_url"] = trials.condition_search_url(row.name)
+        only_cards = len(sent)
+        only_ncts = {nct for item in sent for nct in item.nct_ids}
+    shown = len(trial_cards) + only_cards
+    if row is not None and row.stored and shown:
+        answer["trials_count_line"] = trials_count_line(shown, len(counted | only_ncts))
         answer["trials_sources_line"] = TRIALS_SOURCES_LINE
     if row is not None and not row.stored and row.name_trial_total:
         answer["all_trials"] = {"total": row.name_trial_total,
