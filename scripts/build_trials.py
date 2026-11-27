@@ -64,7 +64,27 @@ How the file is compressed (read with the standard library only)
     holds ClinicalTrials.gov's own nctId.
 
 The meta table has one row: run_date, ot_release, ctgov_api_version,
-ctgov_data_timestamp, compression, counts (JSON, sorted keys) and zdict.
+ctgov_data_timestamp, compression, counts (JSON, sorted keys) and zdict; and
+(ticket R1) countries_read_date, countries_data_timestamp and countries_counts.
+
+Ticket R1 adds, read from the same sources:
+    studies.countries   JSON list: the distinct locations.country names of the
+                        study, sorted, spelled as ClinicalTrials.gov spells
+                        them ([] when it lists none). No site, city or contact.
+    study_diseases      (disease_id, nct_id), PRIMARY KEY (disease_id, nct_id),
+                        WITHOUT ROWID, so it is indexed by disease_id. One row
+                        for each diseaseId an Open Targets clinical_report row
+                        gives a stored trial; the ids exactly as given, no
+                        parent or child diseases. Saved in the cache as
+                        ot_study_diseases.json.
+    --keep-from FILE    copies FILE's studies (every column, the compressed
+                        bytes) and its meta row unchanged, and adds only the
+                        countries of this read and study_diseases. Then
+                        run_date and ctgov_data_timestamp stay FILE's (when its
+                        fields were read) and countries_read_date and
+                        countries_data_timestamp are this read's. Used for the
+                        R1 rebuild, because the saved answers behind the 26 Nov
+                        file were not kept and the registry had changed since.
 
 Same input, same file: rows are written in NCT order, JSON keys are sorted,
 the dictionary is built from the rows themselves, and the only date written is
@@ -73,7 +93,7 @@ cache give byte-identical files.
 
     python scripts/build_trials.py --ot-parquet clinical_report.parquet \
         --cache /path/to/cache [--offline] [--run-date 2026-11-26] \
-        [--out moonlight/trials.sqlite]
+        [--out moonlight/trials.sqlite] [--keep-from old_trials.sqlite]
 """
 
 import argparse
@@ -125,6 +145,7 @@ FIELDS = (
     "protocolSection.armsInterventionsModule.interventions.type",
     "protocolSection.armsInterventionsModule.interventions.otherNames",
     "protocolSection.armsInterventionsModule.interventions.armGroupLabels",
+    "protocolSection.contactsLocationsModule.locations.country",
 )
 
 # What is kept of each module (anything else ClinicalTrials.gov sends is dropped).
@@ -174,6 +195,25 @@ def nct_ids_from_reports(rows: Iterable[dict]) -> Tuple[List[str], Dict[str, int
     return sorted(linked), counts
 
 
+def disease_links_from_reports(rows: Iterable[dict]) -> List[Tuple[str, str]]:
+    """Ticket R1. Open Targets clinical_report rows -> sorted, distinct
+    (disease_id, NCT number) pairs: one for each disease id a ClinicalTrials.gov
+    report gives its trial. The ids exactly as given: no parent or child
+    diseases are added. Pure: no file, no network."""
+    links = set()
+    for row in rows:
+        if row.get("source") != CTGOV_SOURCE:
+            continue
+        nct = (row.get("id") or "").strip().upper()
+        if not nct.startswith("NCT"):
+            continue
+        for disease in row.get("diseases") or []:
+            disease_id = (disease or {}).get("diseaseId")
+            if disease_id:
+                links.add((disease_id, nct))
+    return sorted(links)
+
+
 def read_ot_parquet(path: pathlib.Path) -> List[dict]:
     """The clinical_report parquet, as plain rows. Needs pyarrow (build time only)."""
     import pyarrow.parquet as pq  # noqa: WPS433 - optional, build-time only
@@ -184,14 +224,27 @@ def ot_ids(cache: pathlib.Path, parquet: Optional[pathlib.Path]) -> Tuple[List[s
     """NCT numbers from the parquet, saved to the cache; or from the cache."""
     saved = cache / "ot_nct_ids.json"
     if parquet is not None:
-        ids, counts = nct_ids_from_reports(read_ot_parquet(parquet))
+        rows = read_ot_parquet(parquet)
+        ids, counts = nct_ids_from_reports(rows)
         write_json_file(saved, {"counts": counts, "ids": ids, "release": OT_RELEASE,
                                 "source": OT_SOURCE})
+        write_json_file(cache / "ot_study_diseases.json",
+                        {"links": disease_links_from_reports(rows), "release": OT_RELEASE,
+                         "source": OT_SOURCE})
         return ids, counts
     found = json.loads(saved.read_text(encoding="utf-8"))
     if found.get("release") != OT_RELEASE:
         raise ValueError(f"{saved} is for Open Targets {found.get('release')}, not {OT_RELEASE}")
     return list(found["ids"]), dict(found["counts"])
+
+
+def ot_links(cache: pathlib.Path) -> List[Tuple[str, str]]:
+    """Ticket R1. The (disease_id, NCT number) pairs ot_ids saved in the cache."""
+    saved = cache / "ot_study_diseases.json"
+    found = json.loads(saved.read_text(encoding="utf-8"))
+    if found.get("release") != OT_RELEASE:
+        raise ValueError(f"{saved} is for Open Targets {found.get('release')}, not {OT_RELEASE}")
+    return [tuple(pair) for pair in found["links"]]
 
 
 # ---------------------------------------------------------- ClinicalTrials.gov
@@ -369,14 +422,27 @@ def project(study: dict) -> dict:
     return {"protocolSection": out}
 
 
+def countries(study: dict) -> List[str]:
+    """Ticket R1. The distinct country names of a study's locations, sorted,
+    spelled exactly as ClinicalTrials.gov spells them. Nothing else of a
+    location (site, city, contact) is read. No locations: an empty list."""
+    section = study.get("protocolSection") or {}
+    module = section.get("contactsLocationsModule") or {}
+    found = set()
+    for location in module.get("locations") or []:
+        country = (location or {}).get("country") if isinstance(location, dict) else None
+        if isinstance(country, str) and country:
+            found.add(country)
+    return sorted(found)
+
+
 def canonical(value) -> str:
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
 
 
-def sort_rows(ids: List[str], studies: List[dict]) -> Tuple[List[Tuple[str, dict]], Dict[str, int]]:
-    """Match each returned study to the NCT numbers asked for (its own number
-    or one of its nctIdAliases) and keep interventional ones.
-    Returns ([(ot_nct_id, projected study)] in NCT order, counts)."""
+def match_studies(ids: List[str], studies: List[dict]) -> Tuple[Dict[str, dict], int]:
+    """Each NCT number asked for -> the returned study under that number or
+    one of its nctIdAliases; and how many matched by an alias."""
     asked = set(ids)
     by_id: Dict[str, dict] = {}
     aliased = 0
@@ -389,6 +455,15 @@ def sort_rows(ids: List[str], studies: List[dict]) -> Tuple[List[Tuple[str, dict
                 by_id[name] = study
                 if name != own:
                     aliased += 1
+    return by_id, aliased
+
+
+def sort_rows(ids: List[str], studies: List[dict]) -> Tuple[List[Tuple[str, dict]], Dict[str, int]]:
+    """Match each returned study to the NCT numbers asked for (its own number
+    or one of its nctIdAliases) and keep interventional ones.
+    Returns ([(ot_nct_id, projected study)] in NCT order, counts)."""
+    asked = set(ids)
+    by_id, aliased = match_studies(ids, studies)
     rows = []
     counts = {"requested": len(ids), "found": len(by_id), "not_found": len(asked - set(by_id)),
               "found_under_newer_nct": aliased, "kept_interventional": 0,
@@ -434,11 +509,43 @@ def _struct_date(study: dict, key: str) -> Optional[str]:
     return ((study["protocolSection"].get("statusModule") or {}).get(key) or {}).get("date")
 
 
-def write_sqlite(out: pathlib.Path, rows: List[Tuple[str, dict]], meta: dict) -> None:
+def write_sqlite(out: pathlib.Path, rows: List[Tuple[str, dict]], meta: dict,
+                 countries_by_nct: Optional[Dict[str, List[str]]] = None,
+                 links: Iterable[Tuple[str, str]] = ()) -> None:
     """Write the file in one go, rows in NCT order, then VACUUM: the same rows
-    give the same bytes."""
+    give the same bytes. countries_by_nct and links are ticket R1's: a study
+    with no countries given gets an empty list, and a link to an NCT number
+    that is not a row is left out."""
     blobs = [canonical(study).encode("utf-8") for _, study in rows]
     zdict = make_zdict(blobs)
+    countries_by_nct = countries_by_nct or {}
+    ready = [(nct, _struct_date(study, "startDateStruct"),
+              _struct_date(study, "lastUpdatePostDateStruct"), compress(blob, zdict),
+              canonical(countries_by_nct.get(nct, [])))
+             for (nct, study), blob in zip(rows, blobs)]
+    meta = {**meta, "ot_release": OT_RELEASE, "ot_source": OT_SOURCE,
+            "compression": COMPRESSION, "counts": canonical(meta["counts"])}
+    meta.setdefault("ctgov_api_version", None)
+    meta.setdefault("ctgov_data_timestamp", None)
+    meta.setdefault("countries_read_date", meta["run_date"])
+    meta.setdefault("countries_data_timestamp", meta.get("ctgov_data_timestamp"))
+    write_rows(out, ready, zdict, meta, links)
+
+
+META_COLUMNS = ("run_date", "ot_release", "ot_source", "ctgov_api_version",
+                "ctgov_data_timestamp", "compression", "counts", "zdict",
+                "countries_read_date", "countries_data_timestamp", "countries_counts")
+
+
+def write_rows(out: pathlib.Path, ready: List[Tuple[str, Optional[str], Optional[str], bytes, str]],
+               zdict: bytes, meta: dict, links: Iterable[Tuple[str, str]]) -> None:
+    """The file from rows that are ready to store: (nct_id, start_date,
+    last_update, compressed study, countries JSON), in NCT order."""
+    ready = sorted(ready)
+    stored = {row[0] for row in ready}
+    links = sorted({(disease, nct) for disease, nct in links if nct in stored})
+    meta = {**meta, "zdict": zdict}
+    meta.setdefault("countries_counts", None)
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_name(out.name + ".building")
     if tmp.exists():
@@ -451,22 +558,42 @@ def write_sqlite(out: pathlib.Path, rows: List[Tuple[str, dict]], meta: dict) ->
         con.execute("BEGIN")
         con.execute("CREATE TABLE meta (run_date TEXT NOT NULL, ot_release TEXT NOT NULL, "
                     "ot_source TEXT NOT NULL, ctgov_api_version TEXT, ctgov_data_timestamp TEXT, "
-                    "compression TEXT NOT NULL, counts TEXT NOT NULL, zdict BLOB NOT NULL)")
+                    "compression TEXT NOT NULL, counts TEXT NOT NULL, zdict BLOB NOT NULL, "
+                    "countries_read_date TEXT NOT NULL, countries_data_timestamp TEXT, "
+                    "countries_counts TEXT)")
         con.execute("CREATE TABLE studies (nct_id TEXT PRIMARY KEY, start_date TEXT, "
-                    "last_update TEXT, study BLOB NOT NULL) WITHOUT ROWID")
-        con.execute("INSERT INTO meta VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                    (meta["run_date"], OT_RELEASE, OT_SOURCE, meta.get("ctgov_api_version"),
-                     meta.get("ctgov_data_timestamp"), COMPRESSION, canonical(meta["counts"]),
-                     zdict))
-        con.executemany("INSERT INTO studies VALUES (?, ?, ?, ?)",
-                        [(nct, _struct_date(study, "startDateStruct"),
-                          _struct_date(study, "lastUpdatePostDateStruct"), compress(blob, zdict))
-                         for (nct, study), blob in zip(rows, blobs)])
+                    "last_update TEXT, study BLOB NOT NULL, countries TEXT NOT NULL) WITHOUT ROWID")
+        # The primary key is the index by disease_id: one look-up finds a
+        # disease's trials, and no second copy of the pairs is stored.
+        con.execute("CREATE TABLE study_diseases (disease_id TEXT NOT NULL, nct_id TEXT NOT NULL, "
+                    "PRIMARY KEY (disease_id, nct_id)) WITHOUT ROWID")
+        con.execute(f"INSERT INTO meta ({', '.join(META_COLUMNS)}) VALUES "
+                    f"({', '.join('?' * len(META_COLUMNS))})",
+                    [meta[column] for column in META_COLUMNS])
+        con.executemany("INSERT INTO studies VALUES (?, ?, ?, ?, ?)", ready)
+        con.executemany("INSERT INTO study_diseases VALUES (?, ?)", links)
         con.execute("COMMIT")
         con.execute("VACUUM")
     finally:
         con.close()
     os.replace(tmp, out)
+
+
+def read_kept(path: pathlib.Path) -> Tuple[dict, List[Tuple[str, Optional[str], Optional[str], bytes]]]:
+    """Ticket R1. An earlier trials file's meta row and its study rows, exactly
+    as stored (the compressed bytes are not opened)."""
+    con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+    try:
+        names = ("run_date", "ot_release", "ot_source", "ctgov_api_version",
+                 "ctgov_data_timestamp", "compression", "counts", "zdict")
+        meta = dict(zip(names, con.execute(f"SELECT {', '.join(names)} FROM meta").fetchone()))
+        rows = con.execute("SELECT nct_id, start_date, last_update, study FROM studies "
+                           "ORDER BY nct_id").fetchall()
+    finally:
+        con.close()
+    if meta["ot_release"] != OT_RELEASE:
+        raise ValueError(f"{path} is for Open Targets {meta['ot_release']}, not {OT_RELEASE}")
+    return meta, rows
 
 
 def read_study(path: pathlib.Path, nct_id: str) -> Optional[dict]:
@@ -484,15 +611,46 @@ def read_study(path: pathlib.Path, nct_id: str) -> Optional[dict]:
 
 
 def build(ids: List[str], ot_counts: Dict[str, int], studies: List[dict], version: dict,
-          out: pathlib.Path, run_date: str) -> dict:
+          out: pathlib.Path, run_date: str, links: Iterable[Tuple[str, str]] = (),
+          keep_from: Optional[pathlib.Path] = None) -> dict:
+    """Write the file. links are the (disease_id, NCT number) pairs (ticket R1).
+
+    keep_from (ticket R1): an earlier trials file. Its studies, their columns
+    and its meta row are copied byte for byte; only each study's countries
+    (from this read of the registry) and the links are new. run_date is then
+    the date of this read, written as countries_read_date; the file's own
+    run_date stays the earlier one, because every other field is from then.
+    """
     datetime.date.fromisoformat(run_date)  # a real date, or this raises
-    rows, counts = sort_rows(ids, studies)
-    counts = dict(sorted({**ot_counts, **counts}.items()))
-    meta = {"run_date": run_date, "counts": counts,
-            "ctgov_api_version": version.get("apiVersion"),
-            "ctgov_data_timestamp": version.get("dataTimestamp")}
-    write_sqlite(out, rows, meta)
+    if keep_from is None:
+        rows, counts = sort_rows(ids, studies)
+        counts = dict(sorted({**ot_counts, **counts}.items()))
+        by_id, _ = match_studies(ids, studies)
+        found = {nct: countries(by_id[nct]) for nct, _ in rows}
+        meta = {"run_date": run_date, "counts": counts,
+                "ctgov_api_version": version.get("apiVersion"),
+                "ctgov_data_timestamp": version.get("dataTimestamp"),
+                "countries_counts": canonical(_countries_counts(found, set(found)))}
+        write_sqlite(out, rows, meta, found, links)
+        return meta
+    kept_meta, kept = read_kept(keep_from)
+    by_id, _ = match_studies([row[0] for row in kept], studies)
+    found = {nct: countries(by_id[nct]) for nct, *_ in kept if nct in by_id}
+    meta = {**kept_meta, "countries_read_date": run_date,
+            "countries_data_timestamp": version.get("dataTimestamp"),
+            "countries_counts": canonical(_countries_counts(found, {row[0] for row in kept}))}
+    ready = [(nct, start, last, bytes(blob), canonical(found.get(nct, [])))
+             for nct, start, last, blob in kept]
+    write_rows(out, ready, bytes(kept_meta["zdict"]), meta, links)
+    meta["counts"] = json.loads(kept_meta["counts"])
     return meta
+
+
+def _countries_counts(found: Dict[str, List[str]], stored: set) -> Dict[str, int]:
+    return {"studies": len(stored),
+            "studies_read_for_countries": len(found),
+            "studies_not_returned_by_this_read": len(stored - set(found)),
+            "studies_with_no_country": sum(1 for nct in stored if not found.get(nct))}
 
 
 MAX_BYTES = 50 * 1024 * 1024
@@ -508,6 +666,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--run-date", default=datetime.date.today().isoformat())
     parser.add_argument("--offline", action="store_true",
                         help="use only saved answers; fail if one is missing")
+    parser.add_argument("--keep-from", type=pathlib.Path,
+                        help="an earlier trials file whose studies and meta row are kept "
+                             "byte for byte; only countries and study_diseases are added")
     args = parser.parse_args(argv)
 
     def log(text: str) -> None:
@@ -522,11 +683,13 @@ def main(argv: Optional[List[str]] = None) -> int:
     except StopAndAsk as error:
         log(f"STOP AND ASK: {error} (calls made: {fetcher.calls})")
         return 3
-    meta = build(ids, ot_counts, studies, version, args.out, args.run_date)
+    meta = build(ids, ot_counts, studies, version, args.out, args.run_date,
+                 links=ot_links(args.cache), keep_from=args.keep_from)
     size = args.out.stat().st_size
     log(f"wrote {args.out} ({size} bytes); calls this run: {fetcher.calls}, "
         f"refusals: {fetcher.refusals}; {time.monotonic() - started:.0f} s")
     log("counts " + canonical(meta["counts"]))
+    log("countries " + str(meta.get("countries_counts")))
     if size > MAX_BYTES:
         log(f"STOP AND ASK: the file is {size} bytes, over 50 MB")
         return 4

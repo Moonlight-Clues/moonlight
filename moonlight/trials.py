@@ -11,6 +11,8 @@ the network and never changes the drawer.
     (that pair also has .newest: the newest known start date among all the
      card's trials in the file, or None. Ticket 3.31, internal.)
     trials.checked                   -> the date the file was built, "2026-11-26"
+    trials.recruiting_for(disease_id)  -> [studies linked to the disease that
+                                        are RECRUITING, newest first] (ticket R1)
 
 links are the card's own trial links for the page's disease (they hold the
 NCT numbers). The file holds the studies but not which disease a medicine
@@ -208,6 +210,47 @@ class Trials:
                          error)
             return None
 
+    def recruiting_for(self, disease_id: str,
+                       today: Optional[datetime.date] = None) -> List[dict]:
+        """Ticket R1. Every study the file links to this disease (study_diseases,
+        exact disease id) whose overallStatus is exactly RECRUITING.
+
+        Each item: nct_id, title (briefTitle), phases (as for_card's rows
+        word them), countries (the file's sorted list; may be empty) and url
+        (the study's page, at its contacts and locations). Newest start date
+        first, by for_card's rules: unknown dates last, ties to the higher
+        NCT number. No linked study: an empty list. Raises sqlite3.Error or
+        zlib.error if the file is damaged, as for_card does.
+        """
+        today = today or datetime.date.today()
+        with self._lock:
+            found = self._con.execute(
+                "SELECT s.nct_id, s.start_date, s.study, s.countries FROM study_diseases d "
+                "JOIN studies s ON s.nct_id = d.nct_id WHERE d.disease_id = ?",
+                (disease_id,)).fetchall()
+            items = []
+            for nct, start, blob, countries in found:
+                study = self._open(blob)
+                section = study.get("protocolSection") or {}
+                if (section.get("statusModule") or {}).get("overallStatus") != "RECRUITING":
+                    continue
+                trial = ctgov.read_trial(study, "")
+                shown = (trial.nct_id if trial is not None and trial.nct_id else nct)
+                items.append((nct, start_key(start, today), {
+                    "nct_id": shown,
+                    "title": (section.get("identificationModule") or {}).get("briefTitle"),
+                    "phases": list(trial.phases) if trial is not None else [],
+                    "countries": list(json.loads(countries)),
+                    "url": study_url(shown) + CONTACTS_ANCHOR}))
+        # The same two stable sorts as for_card.
+        items.sort(key=lambda item: item[0], reverse=True)
+        items.sort(key=lambda item: (item[1] is None, -item[1].toordinal() if item[1] else 0))
+        return [item for _, _, item in items]
+
+    def _open(self, blob: bytes) -> dict:
+        opened = zlib.decompressobj(zdict=self._zdict)
+        return json.loads(opened.decompress(blob) + opened.flush())
+
     def _study(self, nct: str) -> dict:
         blob = self._con.execute("SELECT study FROM studies WHERE nct_id = ?", (nct,)).fetchone()[0]
         opened = zlib.decompressobj(zdict=self._zdict)
@@ -227,6 +270,7 @@ class Trials:
 
 
 STUDY_URL = "https://clinicaltrials.gov/study/"
+CONTACTS_ANCHOR = "#contacts-and-locations"  # ticket R1: the study page's own section
 SEARCH_URL = "https://clinicaltrials.gov/search"
 
 
