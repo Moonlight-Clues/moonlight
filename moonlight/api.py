@@ -128,7 +128,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
-from moonlight import approval_years, explain, protein, reports, translate, trials, version
+from moonlight import approval_years, disease_search, explain, protein, reports, translate, trials, version
 from moonlight.engine import ApprovedMedicine, Neighbour, fetch_neighbours, find_clues
 from moonlight.engine import OPPOSITE_LINE, WRONG_WARNING, looks_wrong, sort_into_tabs
 from moonlight.engine import one_way_proteins, opposite_box, opposite_way
@@ -147,6 +147,8 @@ from moonlight.engine import DIAGNOSTIC_TAG, diagnostic_ids
 from moonlight.engine import evidence_ids
 from moonlight.engine import studies_for_this_disease
 from moonlight import corrections_page  # ticket 2.66
+from moonlight.engine import (CTGOV_TRIAL_LINE, TRIALS_SOURCES_LINE, Tabs, _family_id,
+                              place_matched, trials_count_line)
 from moonlight.fetch import (
     FetchError,
     data_version,
@@ -154,6 +156,7 @@ from moonlight.fetch import (
     fetch_disease,
     fetch_listed_medicines,
     fetch_targets,
+    fetch_drug_facts,
     fetch_withdrawn,
     remembered_version,
     search_diseases,
@@ -341,8 +344,10 @@ async def _check_hand_lists(_app: FastAPI):
     _corrections_page = corrections_page.page_html()
     # Ticket T3. The trials file, opened once. Missing or unreadable: the
     # page is served without trial details, as before, and the log says so.
-    global _trials
+    global _trials, _search
     _trials = trials.Trials.open()
+    # Ticket T7. The disease-search file, read once. Missing: the page is as before.
+    _search = disease_search.SearchFile.open()
     try:
         yield
     finally:
@@ -361,6 +366,8 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 _trials: Optional[trials.Trials] = None
 # Ticket 2.66. The corrections page, built when the app starts.
 _corrections_page: Optional[str] = None
+# Ticket T7. moonlight/disease_search.sqlite, opened once at the same time.
+_search: Optional[disease_search.SearchFile] = None
 
 # Ticket 3.6. The finished /api/clues answer for each disease, kept in
 # memory like a tray of finished plates: (disease id, Open Targets data
@@ -489,6 +496,60 @@ class _Found:
         self.known_names = names
 
 
+def _known_medicine_ids(found: _Found, on_list, tray) -> Set[str]:
+    """Ids the page has already met, so a matched salt is not fetched again."""
+    known = set()
+    for entry in on_list:
+        known.add(_family_id(entry.medicine))
+        known.update(form.id for form in entry.medicine.forms)
+    for paths in tray.values():
+        for path in paths:
+            known.add(_family_id(path.medicine))
+            known.update(form.id for form in path.medicine.forms)
+    for medicine in (found.approved + found.narrower + found.wider_group
+                     + found.more_in_trials + found.new_in_trials
+                     + found.being_studied + found.new_clues):
+        known.add(getattr(medicine, "id", None) or _family_id(medicine.medicine))
+    known.discard(None)
+    return known
+
+
+def _apply_matched(found: _Found, on_list, tray) -> None:
+    """Ticket T7. Matched medicines Open Targets has no trial for.
+
+    The disease-search file is read, not searched again. A disease it skipped,
+    or a file it does not have, leaves the tabs as they are. A drug question
+    that fails does not take the page down: those medicines are left out.
+    """
+    row = None if _search is None else _search.get(found.disease.id)
+    found.search = row
+    found.grey = set()
+    found.extra_ncts = {}
+    if row is None or not row.stored or not row.matched:
+        return
+    need = [item.medicine_id for item in row.matched
+            if item.medicine_id not in _known_medicine_ids(found, on_list, tray)]
+    facts = {}
+    if need:
+        try:
+            facts = fetch_drug_facts(need)
+        except (FetchError, requests.RequestException):
+            facts = {}  # the page still opens; these medicines are left out
+    blocked = looks_wrong(found.disease.id) | pushes_wrong_way(found.disease.id)
+    placed = place_matched(Tabs(
+        approved=found.approved, being_studied=found.being_studied, new_clues=found.new_clues,
+        left_out=found.left_out, wider_group=found.wider_group, narrower=found.narrower,
+        more_in_trials=found.more_in_trials, new_in_trials=found.new_in_trials,
+    ), on_list, tray, row.matched, facts, blocked)
+    found.being_studied = placed.being_studied
+    found.new_clues = placed.new_clues
+    found.more_in_trials = placed.more_in_trials
+    found.new_in_trials = placed.new_in_trials
+    found.grey = placed.grey
+    found.extra_ncts = placed.extra_ncts
+    found.held = placed.held  # on a hand list for this disease: not added
+
+
 def _find(disease_id: str) -> _Found:
     """Disease -> its top proteins and its own medicine list -> the three tabs."""
     try:
@@ -496,11 +557,15 @@ def _find(disease_id: str) -> _Found:
         if disease is None:
             raise HTTPException(status_code=404, detail="Open Targets does not know this disease.")
         targets = fetch_targets(disease, TOP_TARGETS)
-        return _Found(disease, find_clues(disease, targets), fetch_approved(disease),
-                      fetch_withdrawn(disease),  # the same saved answer, not a new question
-                      fetch_neighbours(disease),  # one step up and one step down
-                      fetch_listed_medicines(disease),  # the same saved answer again
-                      added_by_hand(disease.id))  # a file, not a question (ticket 2.26)
+        tray = find_clues(disease, targets)
+        on_list = fetch_listed_medicines(disease)  # the same saved answer again
+        found = _Found(disease, tray, fetch_approved(disease),
+                       fetch_withdrawn(disease),  # the same saved answer, not a new question
+                       fetch_neighbours(disease),  # one step up and one step down
+                       on_list,
+                       added_by_hand(disease.id))  # a file, not a question (ticket 2.26)
+        _apply_matched(found, on_list, tray)  # ticket T7
+        return found
     except (FetchError, requests.RequestException):
         raise HTTPException(
             status_code=502, detail="Could not get the data from Open Targets."
@@ -722,7 +787,9 @@ def _more_in_trials_json(medicine: TrialMedicine) -> dict:
         "id": medicine.id,
         "medicine": display(medicine.name),
         "forms": [display(name) for name in medicine.forms],
-        "trial_phase": explain._phase_words(medicine.stage),
+        "trial_phase": explain._phase_words(medicine.stage) if (
+            medicine.stage.startswith("PHASE_") or medicine.stage.startswith("EARLY_PHASE_")
+        ) else "",
         "source": medicine.source_record,
         "ending": MORE_IN_TRIALS_ENDING,  # the engine's words, never changed here
     }
@@ -1004,9 +1071,38 @@ def _build_clues(disease_id: str) -> dict:
     # A card with no entry gets no key at all.
     # Ticket 2.69. The earliest of that year and the card's PMDA original
     # approval for this disease: "(Japan)" only when Japan is strictly earlier.
+    # Ticket T7. The grey line, on whichever card the medicine already has.
+    grey = getattr(found, "grey", ())
+    for key in ("approved", "narrower", "wider_group", "being_studied", "more_in_trials", "new_in_trials"):
+        for card in answer.get(key, []):
+            if card.get("id") in grey:
+                card["ctgov_note"] = CTGOV_TRIAL_LINE
     # Ticket T3. Trials on the trial cards: the In trials list and its two boxes.
-    _add_trials(answer["being_studied"] + answer.get("more_in_trials", [])
-                + answer.get("new_in_trials", []), found.studies, disease.name)
+    # Ticket T7. NCT ids from the disease search are added for the lookup only.
+    # They do not change which link a card already opens.
+    trial_cards = (answer["being_studied"] + answer.get("more_in_trials", [])
+                   + answer.get("new_in_trials", []))
+    extra = getattr(found, "extra_ncts", {})
+    merged = {}
+    counted = set()
+    for card in trial_cards:
+        links = set(found.studies.get(card["id"], ()))
+        for nct in extra.get(card["id"], ()):
+            links.add(trials.study_url(nct))
+            counted.add(nct)
+        merged[card["id"]] = links
+        counted.update(trials.nct_numbers(found.studies.get(card["id"], ())))
+    _add_trials(trial_cards, merged, disease.name)
+    # Ticket T7. The count line and the sources line, only when the search
+    # was stored and the tab has a card. A skipped search keeps today's cards
+    # and adds the register link for the whole disease.
+    row = getattr(found, "search", None)
+    if row is not None and row.stored and trial_cards:
+        answer["trials_count_line"] = trials_count_line(len(trial_cards), len(counted))
+        answer["trials_sources_line"] = TRIALS_SOURCES_LINE
+    if row is not None and not row.stored and row.name_trial_total:
+        answer["all_trials"] = {"total": row.name_trial_total,
+                                "url": trials.condition_search_url(row.name)}
     first_years = approval_years.load()
     japan_firsts = pmda_original_approvals()
     for card, medicine in zip(answer["approved"], found.approved):

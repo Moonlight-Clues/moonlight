@@ -41,6 +41,22 @@ def saved_post_json(body):
     """Stands in for fetch._post_json with the files in fixtures/narrow_cards_3_25/."""
     assert set(body) == {"query", "variables"}
     query, variables = body["query"], body["variables"]
+    # ticket T7. A medicine question has no diseaseId. The answer is the same
+    # drug object these saved files already hold, or nothing when they do not.
+    if "chemblId" in query:
+        by_id = {}
+        wanted = set(variables.values())
+        for folder in ("disease_drugs", "target_drugs"):
+            for path in (SAVED / folder).glob("*.response.json"):
+                payload = json.loads(path.read_text(encoding="utf-8"))
+                root = payload.get("data") or {}
+                asked = root.get("disease") or root.get("target") or {}
+                rows = (asked.get("drugAndClinicalCandidates") or {}).get("rows") or []
+                for row in rows:
+                    drug = row.get("drug") or {}
+                    if drug.get("id") in wanted:
+                        by_id.setdefault(drug["id"], drug)
+        return {"data": {key: by_id.get(drug_id) for key, drug_id in variables.items()}}
     if "targetId" in variables:
         path = SAVED / "target_drugs" / f"{variables['targetId']}.response.json"
     else:

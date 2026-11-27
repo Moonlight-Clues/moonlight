@@ -67,13 +67,14 @@ import pathlib
 import threading
 import time
 from dataclasses import dataclass
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import requests
 from requests.adapters import HTTPAdapter
 
 from moonlight import cache
 from moonlight.records import (
+    STAGE_ORDER,
     Disease,
     Medicine,
     MedicineForm,
@@ -1102,3 +1103,72 @@ def fetch_approved(disease: Disease) -> List[Listed]:
         for family_id, family in approved.items()
         if True not in family["withdrawn"]  # one withdrawn form is enough
     ]
+
+
+# Ticket T7. A matched medicine that is not already on the page. The fields
+# are the ones a live drug() answer sends (checked 27 Nov 2026).
+
+@dataclass(frozen=True)
+class DrugFact:
+    """One Open Targets medicine, enough to apply today's tab rules."""
+
+    id: str
+    name: str
+    best_stage: str  # maximumClinicalStage
+    withdrawn: Optional[bool]
+    parent_id: Optional[str]
+    parent_name: Optional[str]
+
+
+_DRUG_FIELDS = """
+    id
+    name
+    maximumClinicalStage
+    drugWarnings { warningType }
+    parentMolecule { id name drugWarnings { warningType } }
+    childMolecules { id name drugWarnings { warningType } }
+"""
+_DRUGS_AT_ONCE = 40
+
+
+def fetch_drug_facts(ids: Sequence[str]) -> Dict[str, DrugFact]:
+    """The named medicines, from Open Targets. An id it does not know is left out.
+
+    One question asks for up to 40, so a long list is not 40 separate waits.
+    Tests replace _post_json, the same door as every other question.
+    """
+    wanted = []
+    seen = set()
+    for drug_id in ids:
+        if drug_id and drug_id not in seen:
+            seen.add(drug_id)
+            wanted.append(drug_id)
+    found: Dict[str, DrugFact] = {}
+    for start in range(0, len(wanted), _DRUGS_AT_ONCE):
+        chunk = wanted[start:start + _DRUGS_AT_ONCE]
+        variables = {f"id{i}": drug_id for i, drug_id in enumerate(chunk)}
+        var_defs = " ".join(f"${key}: String!" for key in variables)
+        fields = " ".join(f"{key}: drug(chemblId: ${key}) {{ {_DRUG_FIELDS} }}" for key in variables)
+        data = _ask(f"query Drugs({var_defs}) {{ {fields} }}", variables)
+        for key, drug_id in variables.items():
+            fact = _drug_fact(data.get(key))
+            if fact is not None and fact.id == drug_id:
+                found[drug_id] = fact
+    return found
+
+
+def _drug_fact(drug: Optional[dict]) -> Optional[DrugFact]:
+    if not drug or not drug.get("id") or not drug.get("name"):
+        return None
+    stage = drug.get("maximumClinicalStage")
+    if stage not in STAGE_ORDER:
+        return None
+    parent = drug.get("parentMolecule") or None
+    return DrugFact(
+        id=drug["id"],
+        name=drug["name"],
+        best_stage=stage,
+        withdrawn=_was_withdrawn(drug),
+        parent_id=parent.get("id") if parent else None,
+        parent_name=parent.get("name") if parent else None,
+    )
