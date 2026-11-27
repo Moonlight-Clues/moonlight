@@ -307,6 +307,22 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .contact{color:var(--muted)}.contact a{user-select:text;-webkit-user-select:text}
 .footer-note{margin-top:12px;color:var(--muted);font-size:11px}
 .build-line{margin-top:4px;color:var(--muted);font-size:11px;min-height:0}
+.trials-checked-line{margin-top:2px;color:var(--muted);font-size:11px}
+/* Tickets T4 and T4b. Trial rows on trial cards. The words and the rules are MAIN 5's spec.
+   One change from it: .card-subhead already styles the small capitals "Research pathway" line, so the
+   spec's rule is scoped to the studies slot (and puts the capitals back to ordinary words) to leave that line as it was. */
+[data-slot="studies"] .card-subhead{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 2px;text-transform:none;letter-spacing:normal}
+.studies{list-style:none;margin:0 0 4px;padding:0}
+.studies li{border-top:1px solid var(--line)}
+.studies li:first-child{border-top:0}
+.study-row{display:block;min-height:44px;padding:8px 0;text-decoration:none;color:inherit}
+.study-row .sr1{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.study-row .nct{color:var(--teal);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.study-row .phase-t{font-size:12px;font-weight:700;color:var(--neutral);white-space:nowrap}
+.study-row .sr2{display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-top:2px}
+.all-studies{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:650}
+.finished-note{font-size:13px;color:var(--muted);margin:0 0 12px}
+@media print{.study-row .nct{color:#000}}
 /* the register: the plain view behind the print button (ticket 5.1).
    Black on white. Nothing in it needs a colour to be understood. While it
    shows, the rest of the page is put away, on screen and on paper. */
@@ -481,6 +497,7 @@ body.registering>:not(.register){display:none!important}
       <section class="panel studied" data-slot="studied" id="panel-trials" role="tabpanel" aria-labelledby="tab-trials" hidden>
         <h2>Already being studied for this disease</h2>
         <p class="section-desc">Medicines being tested for this disease. A separate research category, not a prediction of effectiveness. Not every trial is listed.</p>
+        <p class="finished-note" id="finished-note" hidden>'Finished' means the trial ended. It does not mean the medicine worked.</p>
         <p class="filter-note" id="studied-note"></p>
         <div class="cards" id="studied-cards"></div>
         <!-- More medicines in trials, on none of the 25 proteins (ticket 2.21). Folded, under the list. -->
@@ -673,8 +690,9 @@ body.registering>:not(.register){display:none!important}
 
 <footer class="site-footer" id="about"><div class="wrap">
   <div class="footer-row"><span class="contact">Found something wrong or have any feedback? Contact <a href="mailto:hello@moonlightclues.com">hello@moonlightclues.com</a></span></div>
-  <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets</div>
+  <div class="footer-note">Moonlight · Research exploration only · Not clinical findings · Data from Open Targets and ClinicalTrials.gov</div>
   <div class="build-line" id="build-line"></div>
+  <div class="trials-checked-line" id="trials-checked-line" hidden></div>
 </div></footer>
 
 <!-- The register: a plain view of the same results, for paper (ticket 5.1).
@@ -724,6 +742,8 @@ body.registering>:not(.register){display:none!important}
       </div>
       <span class="reports" data-slot="reports"></span>
     </div>
+    <!-- Tickets T4 and T4b. Trials for this disease, filled from the API's "studies". Removed when a card has none. -->
+    <div data-slot="studies" hidden></div>
     <p class="where-label" data-slot="label" hidden></p>
     <p class="proof-note" data-slot="proof-note" hidden></p>
     <p class="proof-note" data-slot="limit-note" hidden></p>
@@ -1100,6 +1120,7 @@ body.registering>:not(.register){display:none!important}
 
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
+    drawTrialNotes(data);
     byId("disease-title").textContent = diseaseName;
     drawAbout(data.about_disease);
     byId("rule-text").textContent = data.rule_text;
@@ -1521,6 +1542,89 @@ body.registering>:not(.register){display:none!important}
     return el;
   }
 
+  /* Ticket T4. Trial rows. The API's "studies" (up to 3, newest first, ticket T3), shown as sent:
+     status, end and role are never reworded. A card with no studies loses the slot and is as it was.
+     Everything is written with textContent. */
+  // The addresses come from the API ("url" on each trial, "studies_url" on the card); the page holds none.
+
+  /* "PHASE1" -> "Phase 1", "EARLY_PHASE1" -> "Early Phase 1"; several are joined with " / ". "NA" is left out. */
+  function studyPhaseWords(tokens) {
+    const words = [];
+    for (const token of Array.isArray(tokens) ? tokens : []) {
+      const found = /^(EARLY_)?PHASE_?(\d)$/.exec(token);
+      if (found) words.push((found[1] ? "Early " : "") + "Phase " + found[2]);
+    }
+    return words.join(" / ");
+  }
+
+  function studyRow(trial) {
+    const item = document.createElement("li");
+    const link = document.createElement(trial.url ? "a" : "span");  // no address sent: a plain row, never a made-up link
+    link.className = "study-row";
+    if (trial.url) link.href = trial.url;
+    const top = document.createElement("span");
+    top.className = "sr1";
+    const number = document.createElement("span");
+    number.className = "nct";
+    number.textContent = trial.nct_id;
+    top.append(number);
+    const phase = studyPhaseWords(trial.phases);
+    if (phase) {
+      const stage = document.createElement("span");
+      stage.className = "phase-t";
+      stage.textContent = phase;
+      top.append(stage);
+    }
+    const line = document.createElement("span");
+    line.className = "sr2";
+    line.textContent = [trial.status, trial.end, trial.role].filter(Boolean).join(" \u00b7 ");
+    link.append(top, line);
+    item.append(link);
+    return item;
+  }
+
+  function fillStudies(el, card) {
+    const holder = slot(el, "studies");
+    const trials = Array.isArray(card.studies) ? card.studies.slice(0, 3) : [];
+    if (!trials.length) {
+      holder.remove();
+      return;
+    }
+    const head = document.createElement("p");
+    head.className = "card-subhead";
+    head.textContent = "Trials for this disease, newest first";
+    const list = document.createElement("ul");
+    list.className = "studies";
+    list.append(...trials.map(studyRow));
+    holder.append(head, list);
+    if (card.study_total > 3 && card.studies_url) {
+      const all = document.createElement("a");
+      all.className = "all-studies";
+      all.href = card.studies_url;
+      all.textContent = "All " + card.study_total + " trials on ClinicalTrials.gov";
+      holder.append(all);
+    }
+    holder.hidden = false;
+  }
+
+  /* The note and the footer line, from the three trial lists of one answer. */
+  function drawTrialNotes(data) {
+    const cards = [...(data.being_studied || []), ...(data.more_in_trials || []), ...(data.new_in_trials || [])];
+    byId("finished-note").hidden = !cards.some(card =>
+      (Array.isArray(card.studies) ? card.studies.slice(0, 3) : []).some(trial => trial.status === "Finished"));
+    const checked = cards.map(card => card.trials_checked).find(day => typeof day === "string");
+    const parts = checked ? /^(\d{4})-(\d{2})-(\d{2})/.exec(checked) : null;
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const line = byId("trials-checked-line");
+    if (parts && months[Number(parts[2]) - 1]) {
+      line.textContent = "Trial details checked " + Number(parts[3]) + " " + months[Number(parts[2]) - 1] + " " + parts[1] + ".";
+      line.hidden = false;
+    } else {
+      line.textContent = "";
+      line.hidden = true;
+    }
+  }
+
   /* A card of a folded box on the In trials tab (tickets 2.21 and 2.24):
      the medicine, its trial stage and its source link. The caution
      sentence is written once at the top of the box, not on each card
@@ -1533,6 +1637,7 @@ body.registering>:not(.register){display:none!important}
       slot(el, name).remove();
     for (const name of ["path-head", "proteins", "machines", "no-path"]) part(el, name).remove();
     el.querySelector(".direction-note").remove();
+    fillStudies(el, medicine);  // ticket T4b
     const phase = slot(el, "phase");
     phase.textContent = medicine.trial_phase;
     phase.hidden = false;
@@ -1578,6 +1683,7 @@ body.registering>:not(.register){display:none!important}
 
     slot(el, "medicine-name").textContent = clue.medicine;
     slot(el, "forms").textContent = "Forms: " + clue.forms.join(", ");
+    fillStudies(el, clue);  // ticket T4: only a trial card has any
     // Ticket 3.10 (Q15): the count says records. The Report link keeps its name.
     slot(el, "reports").textContent = clue.reports + (clue.reports === 1 ? " record" : " records");
 

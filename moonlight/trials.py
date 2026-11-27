@@ -7,6 +7,7 @@ the network and never changes the drawer.
     Trials.open()                    -> Trials, or None if the file is missing
                                         or is not a trials file (logged)
     trials.for_card(links, names)    -> ([up to 3 trials, newest first], total)
+    trials.for_cards(cards, disease_name=...)  -> the new fields for each card
     trials.checked                   -> the date the file was built, "2026-11-26"
 
 links are the card's own trial links for the page's disease (they hold the
@@ -21,7 +22,10 @@ MAIN 5, 26 Nov). Ties go to the higher NCT number, so the order never changes
 between two asks.
 
 Each trial is what moonlight/ctgov.py reads (ticket T1): nct_id, status, end,
-phases, role. The role is read for the card's medicine, trying its name and
+phases, role; and (ticket T4) "url", its page on ClinicalTrials.gov. A card
+also gets "studies_url", the register's search for the card's medicine and
+the page's disease, for the page's "All [N] trials" link. The page holds no
+address of its own: it uses these. The role is read for the card's medicine, trying its name and
 then each of its tablet forms; the first form that says more than "Role not
 stated" wins.
 
@@ -39,6 +43,7 @@ import pathlib
 import re
 import sqlite3
 import threading
+import urllib.parse
 import zlib
 from typing import Iterable, List, Optional, Sequence, Tuple
 
@@ -158,9 +163,11 @@ class Trials:
         return shown, len(starts)
 
     def for_cards(self, cards: Sequence[Tuple[Iterable[str], Sequence[str]]],
-                  today: Optional[datetime.date] = None) -> Optional[List[dict]]:
+                  today: Optional[datetime.date] = None,
+                  disease_name: Optional[str] = None) -> Optional[List[dict]]:
         """The three new fields for each card, in the cards' order: (links,
-        names) in, {"studies", "study_total", "trials_checked"} out.
+        names) in, {"studies", "study_total", "trials_checked"} out, and
+        (ticket T4) "studies_url" too when disease_name is given.
 
         All or none. If the file cannot be read for any card, the reason goes
         to the log (this file's, never the page's: the page keeps no log) and
@@ -170,8 +177,11 @@ class Trials:
             found = []
             for links, names in cards:
                 shown, total = self.for_card(links, names, today=today)
-                found.append({"studies": shown, "study_total": total,
-                              "trials_checked": self.checked})
+                one = {"studies": shown, "study_total": total,
+                       "trials_checked": self.checked}
+                if disease_name is not None:
+                    one["studies_url"] = studies_url(disease_name, names[0] if names else "")
+                found.append(one)
             return found
         except (sqlite3.Error, zlib.error, ValueError, TypeError) as error:
             _log.warning("trials file could not be read (%s): serving without trial details",
@@ -196,6 +206,22 @@ class Trials:
         return first
 
 
+STUDY_URL = "https://clinicaltrials.gov/study/"
+SEARCH_URL = "https://clinicaltrials.gov/search"
+
+
+def study_url(nct_id: str) -> str:
+    """Ticket T4. One trial's page on ClinicalTrials.gov."""
+    return STUDY_URL + nct_id
+
+
+def studies_url(disease_name: str, medicine_name: str) -> str:
+    """Ticket T4. The register's search for this medicine in this disease."""
+    return (SEARCH_URL + "?cond=" + urllib.parse.quote(disease_name or "", safe="")
+            + "&intr=" + urllib.parse.quote(medicine_name or "", safe=""))
+
+
 def _plain(trial: ctgov.Trial) -> dict:
-    """A Trial as plain JSON: the phases as a list."""
-    return {**dataclasses.asdict(trial), "phases": list(trial.phases)}
+    """A Trial as plain JSON: the phases as a list, and its page's address."""
+    return {**dataclasses.asdict(trial), "phases": list(trial.phases),
+            "url": study_url(trial.nct_id)}
