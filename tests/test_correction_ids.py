@@ -24,9 +24,10 @@ FIXTURE = ROOT / "fixtures" / "correction_ids.json"
 LISTS = ROOT / "moonlight"
 ID_RE = re.compile(r"^C-\d{3,}$")
 REPORT_RE = re.compile(r"^E\d+$")
-# The eight entries a person checked. No other entry carries "report".
+# The eighteen entries with a report number. C-186 stays blank.
 REPORTS = {
     "C-219": "E17",
+    "C-152": "E36",
     "C-059": "E4",
     "C-060": "E6",
     "C-055": "E8",
@@ -34,6 +35,15 @@ REPORTS = {
     "C-057": "E14",
     "C-058": "E14",
     "C-278": "E52",
+    "C-279": "E52",
+    "C-280": "E52",
+    "C-281": "E52",
+    "C-282": "E52",
+    "C-283": "E52",
+    "C-284": "E52",
+    "C-285": "E52",
+    "C-286": "E52",
+    "C-287": "E52",
 }
 
 # The seven lists, in the order a same-day tie is broken.
@@ -94,8 +104,8 @@ def test_ids_never_change_for_an_existing_entry():
     assert identities() == pinned
 
 
-def test_a_report_when_present_matches_a_report_number_and_only_the_eight_have_one():
-    """report, when present, matches ^E\\d+$. The other candidates stay blank."""
+def test_a_report_when_present_matches_a_report_number_and_only_the_eighteen_have_one():
+    """report, when present, matches ^E\\d+$. C-186 and every other entry stay blank."""
     found = {}
     for name in HAND_LISTS:
         held = _load(name)

@@ -1,6 +1,6 @@
 # Report-number candidates
 
-A person has checked this list. `"report"` is written on the eight entries marked **added**. Every other entry here is **pending a planner decision** and has no `report` field. No id was changed.
+The planner has decided. `"report"` is written on the eighteen entries marked **added**. C-186 is **waiting on Kashish** and has no `report` field. No id was changed.
 
 How the list was made: every pull request title and body on Moonlight-Clues/moonlight (151 pull requests), and every commit message, was searched for a number like E36. An entry is here only when that record names the number and the entry together. If a number was not tied to an entry, it is left out.
 
@@ -8,10 +8,10 @@ Left out of the original list on purpose: pull request 72 names E16 (hydrocortis
 
 ## E36
 
-- **C-152** — `limits.json`: Roctavian, CHEMBL4297579, haemophilia A, MONDO_0010602. **Pending a planner decision.** No `report` field.
+- **C-152** — `limits.json`: Roctavian, CHEMBL4297579, haemophilia A, MONDO_0010602. **Added** `"report": "E36"`.
 - Evidence: [pull request 88](https://github.com/Moonlight-Clues/moonlight/pull/88). Quote: "Ticket 2.50, reported error E36." and "`moonlight/limits.json` gets an entry for Roctavian and haemophilia A."
 
-- **C-186** — `withdrawals.json`: Roctavian, CHEMBL4297579, haemophilia A, MONDO_0010602. **Pending a planner decision.** No `report` field. This is the withdrawal row, not the limits row above.
+- **C-186** — `withdrawals.json`: Roctavian, CHEMBL4297579, haemophilia A, MONDO_0010602. **Waiting on Kashish.** No `report` field. The 2.51 commit [0e221a9](https://github.com/Moonlight-Clues/moonlight/commit/0e221a9) never mentions E36. This is the withdrawal row, not the limits row above.
 
 ## E17
 
@@ -34,12 +34,12 @@ These numbers are the item labels in [pull request 72](https://github.com/Moonli
 [Pull request 114](https://github.com/Moonlight-Clues/moonlight/pull/114), title "Ticket 3.23: one card per medicine when Open Targets misses a salt form's parent (E52)". Quote: "`moonlight/salt_parents.json` (new): hand list of **10** salt -> parent pairs." Commit [738b28f](https://github.com/Moonlight-Clues/moonlight/commit/738b28f) has the same words in its subject.
 
 - **C-278** — salt CHEMBL4594265, parent Givosiran CHEMBL4297760. **Added** `"report": "E52"`.
-- **C-279** — salt CHEMBL4297536, parent Patisiran CHEMBL3989987. **Pending a planner decision.** No `report` field.
-- **C-280** — salt CHEMBL4594335, parent Eplontersen CHEMBL4594334. **Pending a planner decision.** No `report` field.
-- **C-281** — salt CHEMBL5095303, parent Vutrisiran CHEMBL4594511. **Pending a planner decision.** No `report` field.
-- **C-282** — salt CHEMBL5315048, parent Zilucoplan CHEMBL4298207. **Pending a planner decision.** No `report` field.
-- **C-283** — salt CHEMBL3707226, parent Defibrotide CHEMBL2108396. **Pending a planner decision.** No `report` field.
-- **C-284** — salt CHEMBL4298005, parent Mitiglinide CHEMBL471498. **Pending a planner decision.** No `report` field.
-- **C-285** — salt CHEMBL4297658, parent Ipragliflozin CHEMBL2018096. **Pending a planner decision.** No `report` field.
-- **C-286** — salt CHEMBL3545432, parent Ixazomib CHEMBL2141296. **Pending a planner decision.** No `report` field.
-- **C-287** — salt CHEMBL87992, parent Eslicarbazepine CHEMBL315985. **Pending a planner decision.** No `report` field.
+- **C-279** — salt CHEMBL4297536, parent Patisiran CHEMBL3989987. **Added** `"report": "E52"`.
+- **C-280** — salt CHEMBL4594335, parent Eplontersen CHEMBL4594334. **Added** `"report": "E52"`.
+- **C-281** — salt CHEMBL5095303, parent Vutrisiran CHEMBL4594511. **Added** `"report": "E52"`.
+- **C-282** — salt CHEMBL5315048, parent Zilucoplan CHEMBL4298207. **Added** `"report": "E52"`.
+- **C-283** — salt CHEMBL3707226, parent Defibrotide CHEMBL2108396. **Added** `"report": "E52"`.
+- **C-284** — salt CHEMBL4298005, parent Mitiglinide CHEMBL471498. **Added** `"report": "E52"`.
+- **C-285** — salt CHEMBL4297658, parent Ipragliflozin CHEMBL2018096. **Added** `"report": "E52"`.
+- **C-286** — salt CHEMBL3545432, parent Ixazomib CHEMBL2141296. **Added** `"report": "E52"`.
+- **C-287** — salt CHEMBL87992, parent Eslicarbazepine CHEMBL315985. **Added** `"report": "E52"`.

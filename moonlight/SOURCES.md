@@ -90,7 +90,7 @@ python -m moonlight.correction_ids
 
 Write that id on the entry. Do not fill a gap. `fixtures/correction_ids.json` pins each id to the entry, and `tests/test_correction_ids.py` fails if one changes.
 
-An entry may also carry `"report"`, a report number like `E17` (`^E\d+$`). Only the entries named in `REPORT_CANDIDATES.md` as added have one. The others wait for a planner decision.
+An entry may also carry `"report"`, a report number like `E17` (`^E\d+$`). The entries that have one are listed in `REPORT_CANDIDATES.md`. C-186 waits on Kashish and has none.
 
 # Sources for moonlight/names.json
 
