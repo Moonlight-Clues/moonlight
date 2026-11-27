@@ -1719,7 +1719,7 @@ body.registering>:not(.register){display:none!important}
   const NO_DETAILS_WORDS = "No trial details were found on ClinicalTrials.gov.";
 
   /* Ticket 3.26, item 5. A trial card with no rows shows the grey line where the rows would be, unless the
-     card already shows "No study of this disease was found for this medicine." (never both). A card the
+     card already shows its no-study line (never both). A card the
      API sent no "studies" for (no trials file) is not told it has none. */
   function finishStudies(el, card, noStudyShown) {
     const holder = slot(el, "studies");
