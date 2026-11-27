@@ -304,10 +304,24 @@ def test_real_file_holds_the_same_studies_and_old_fields():
             d = zlib.decompressobj(zdict=zdict)
             assert json.loads(d.decompress(blob) + d.flush()) == old["study"]
             assert isinstance(json.loads(countries), list)
-        read = con.execute("SELECT countries_read_date FROM meta").fetchone()[0]
-        datetime.date.fromisoformat(read)
     finally:
         con.close()
+
+
+def test_real_file_checked_date_is_when_the_statuses_were_read():
+    # The checked date (meta run_date, Trials.checked) is the date the stored
+    # overallStatus values were read: the 26 Nov build. The countries were
+    # read later, and that date is kept separately.
+    con = sqlite3.connect(f"file:{REAL_FILE}?mode=ro", uri=True)
+    try:
+        row = con.execute("SELECT run_date, ctgov_data_timestamp, countries_read_date, "
+                          "countries_data_timestamp FROM meta").fetchone()
+    finally:
+        con.close()
+    assert row == (OLD["meta"]["run_date"], OLD["meta"]["ctgov_data_timestamp"],
+                   "2026-11-27", "2026-11-27T10:00:05")
+    assert OLD["meta"]["run_date"] == "2026-11-26"
+    assert _real().checked == "2026-11-26"
 
 
 @pytest.mark.parametrize("disease_id", [PAH, PSC])
