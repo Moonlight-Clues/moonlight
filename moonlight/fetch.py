@@ -145,11 +145,16 @@ _log = logging.getLogger(__name__)
 
 # Ticket 3.23. Open Targets 26.09 gives some salt forms no parentMolecule
 # (error E52, thread 2106). moonlight/salt_parents.json is a hand list:
-# {"<salt id>": {"parent": "<parent id>", "source": "...", "date": "..."}}.
+# {"<salt id>": {"parent": "<parent id>", "parent_name": "...", "source": "...",
+#                "date": "..."}}.
 # A drug with no parentMolecule whose id is on it is treated as a form of that
 # parent. A drug that has a parentMolecule never looks at the list.
+# Ticket 3.24. "parent_name" is the medicine's name as its label writes it.
+# When no Open Targets row names the parent, the family is named parent_name,
+# never the salt's name.
 SALT_PARENTS_FILE = pathlib.Path(__file__).resolve().parent / "salt_parents.json"
 _SALT_PARENTS: Optional[Dict[str, dict]] = None
+SALT_ROW_KEYS = {"parent", "parent_name", "source", "date"}  # ticket 3.24 added parent_name
 
 
 def _salt_parents() -> Dict[str, dict]:
@@ -160,22 +165,23 @@ def _salt_parents() -> Dict[str, dict]:
         if not isinstance(found, dict):
             raise ValueError("salt_parents.json must hold an object.")
         for salt_id, row in found.items():
-            if not isinstance(row, dict) or set(row) != {"parent", "source", "date"} \
+            if not isinstance(row, dict) or set(row) != SALT_ROW_KEYS \
                     or not all(isinstance(row[key], str) and row[key].strip() for key in row):
-                raise ValueError(f"A salt row needs parent, source and date: {salt_id!r}")
+                raise ValueError(
+                    f"A salt row needs parent, parent_name, source and date: {salt_id!r}")
         _SALT_PARENTS = found
     return _SALT_PARENTS
 
 
 def _parent_of(drug: dict) -> Optional[dict]:
     """The medicine this drug is a form of: Open Targets' parentMolecule, else
-    the hand list's parent (id only: the name is not written by hand), else None."""
+    the hand list's parent, named as its label writes it (ticket 3.24), else None."""
     parent = drug["parentMolecule"]
     if parent:
         return parent
     row = _salt_parents().get(drug["id"])
     if row:
-        return {"id": row["parent"], "name": None}
+        return {"id": row["parent"], "name": row["parent_name"]}
     return None
 
 DISEASE_QUERY = """
@@ -833,8 +839,13 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
             {"name": None, "forms": [], "sources": [], "approved": False, "withdrawn": [],
              "approval_sources": [], "regulator_sources": [], "reports": 0, "source_said": False,
              "regulator_report": False, "records": [], "stage_reports": [],
-             "named": set(), "told": True, "withdrawal_report": False, "study_links": []},
+             "named": set(), "told": True, "withdrawal_report": False, "study_links": [],
+             "hand_parent": None, "own_regulator_sources": []},
         )
+        # Ticket 3.24. This row joined its family through the hand list of
+        # salt parents: remember the parent's id and name as the list gives them.
+        if parent and not drug["parentMolecule"]:
+            family["hand_parent"] = (parent["id"], parent["name"])
         # Ticket 2.24. Every relative this row names: the medicine it is a
         # form of, and its own tablet forms. If the answer does not say
         # the tablet forms at all, the family was not wholly told.
@@ -901,6 +912,10 @@ def _list_families(disease: Disease) -> Dict[str, dict]:
                 # Ticket 2.53. The same receipt, with its link, if it has one.
                 if url and url not in family["regulator_sources"]:
                     family["regulator_sources"].append(url)
+                # Ticket 3.24. The same receipt, when it is the parent's own.
+                if url and drug["id"] == family_id \
+                        and url not in family["own_regulator_sources"]:
+                    family["own_regulator_sources"].append(url)
     return families
 
 
@@ -919,16 +934,41 @@ def _regulator_record(family: dict) -> Optional[bool]:
     return False
 
 
+def _merged_by_hand(family: dict) -> Tuple[Tuple[Tuple[str, str], ...], Tuple[str, ...]]:
+    """The forms and regulator links of a family, as Listed holds them.
+
+    Ticket 3.24, only for a family that a listed salt joined through the hand
+    list (salt_parents.json). Any other family is handed back as it is.
+      * Forms: the forms belong to the medicine, not the page. If the list
+        has no row for the parent, the parent is still listed first, named
+        as the hand list names it.
+      * Regulator links: if the parent has a regulator's label of its own,
+        it comes first, so the card keeps the parent's own. A salt's label
+        still beats a secondary source (engine's source_record reads
+        regulator_sources first). Who wrote a report is read from its
+        "source" field, never from the link.
+    """
+    forms, regulator = list(family["forms"]), list(family["regulator_sources"])
+    if family["hand_parent"]:
+        parent_id, parent_name = family["hand_parent"]
+        if parent_id not in [form_id for form_id, _ in forms]:
+            forms.insert(0, (parent_id, parent_name))
+        own = [link for link in regulator if link in family["own_regulator_sources"]]
+        regulator = own + [link for link in regulator if link not in own]
+    return tuple(forms), tuple(regulator)
+
+
 def _as_listed(family_id: str, family: dict) -> Listed:
+    forms, regulator_sources = _merged_by_hand(family)
     return Listed(
         id=family_id,
         name=family["name"],
-        forms=tuple(family["forms"]),
+        forms=forms,
         sources=tuple(family["sources"]),
         approved=family["approved"],
         approval_sources=tuple(family["approval_sources"]),
         regulator_record=_regulator_record(family),
-        regulator_sources=tuple(family["regulator_sources"]),
+        regulator_sources=regulator_sources,
         withdrawal_report=family["withdrawal_report"],
     )
 
