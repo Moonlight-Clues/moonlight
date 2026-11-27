@@ -1,0 +1,3587 @@
+{
+ "meta": {
+  "compression": "zlib-level9-preset-dictionary-v1",
+  "counts": "{\"dropped_expanded_access\":681,\"dropped_observational\":8745,\"dropped_other_or_missing_study_type\":0,\"found\":170575,\"found_under_newer_nct\":7,\"kept_interventional\":161149,\"not_found\":0,\"ot_ctgov_reports\":230989,\"ot_nct_linked_to_disease\":170575,\"ot_nct_without_disease\":60414,\"requested\":170575}",
+  "ctgov_api_version": "2.0.5",
+  "ctgov_data_timestamp": "2026-11-25T10:00:05",
+  "ot_release": "26.09",
+  "ot_source": "https://ftp.ebi.ac.uk/pub/databases/opentargets/platform/26.09/output/clinical_report/00000000.parquet",
+  "run_date": "2026-11-26"
+ },
+ "note": "Read from moonlight/trials.sqlite as it was on 2026-11-27, before ticket R1. random.Random(20261127).sample of 50 NCT numbers.",
+ "studies": [
+  {
+   "blob_sha256": "435d257a61b7eb8a56976627af4bb2b85e7eca786b585aadff0f31022070b4fe",
+   "last_update": "2017-07-02",
+   "nct_id": "NCT00096551",
+   "start_date": "2004-11-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "Recombinant Vaccinia-PSA(L155)/TRICOM (PROSTVAC-V/TRICOM)",
+        "type": "DRUG"
+       },
+       {
+        "name": "Recombinant Fowlpox-PSA(L155)/TRICOM (PROSTVAC-F/TRICOM)",
+        "type": "DRUG"
+       },
+       {
+        "name": "Recombinant Fowlpox-GM-CSF",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Phase I Feasibility Study of an Intraprostatic PSA-Based Vaccine in Men With Prostate Cancer With Local Failure Following Radiotherapy or Cryotherapy or Clinical Progression on Androgen Deprivation Therapy in the Absence of Local Definitive Therapy",
+      "nctId": "NCT00096551"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2011-07-25",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2017-07-02",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2004-11-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "91673213aedd52f1850d24dd46b70039f83db15a99336184b4a05d481f768d3b",
+   "last_update": "2019-10-15",
+   "nct_id": "NCT00115544",
+   "start_date": "2005-09",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Stanate"
+        ],
+        "label": "1",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Stanate"
+        ],
+        "label": "2",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Stanate"
+        ],
+        "label": "3",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "1",
+         "2",
+         "3"
+        ],
+        "name": "Stanate",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Safety and Pharmacology of Stanate",
+      "nctId": "NCT00115544"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2006-07",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-10-15",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2005-09"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "6767a7fffc01dc58b1f84e74785738288899ce75fc6a7bf0e51e8eb31b2eaf57",
+   "last_update": "2005-10-21",
+   "nct_id": "NCT00133081",
+   "start_date": "2002-10",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "All registered antiepileptic drugs",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Study to Improve the Treatment of Epilepsy (SITE)",
+      "nctId": "NCT00133081"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2006-08"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2005-10-21",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2002-10"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "e6ac13a6d2151db82b6ae34edb3afe53ee8875361c2bfc06bd80068e37b71ec2",
+   "last_update": "2017-01-12",
+   "nct_id": "NCT00134888",
+   "start_date": "2000-12",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "Buprenorphine/naloxone",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "NA"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Blockade Efficacy of Buprenorphine/Naloxone For Opioid Dependence",
+      "nctId": "NCT00134888"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2002-11",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2017-01-12",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2000-12"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "2f970b76e48d31261c716cfd70f629b37493d035f78ab5567da04c6eeffb2443",
+   "last_update": "2008-02-01",
+   "nct_id": "NCT00149877",
+   "start_date": "2004-04",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "Tegaserod",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Efficacy, Safety and Tolerability of Tegaserod in Patients With Chronic Constipation",
+      "nctId": "NCT00149877"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2006-02",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2008-02-01",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2004-04"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "7ccfbc3a3464b60dc876d6d84682a7ae008467c7370797bffd8bbece027ce2ea",
+   "last_update": "2018-03-01",
+   "nct_id": "NCT00179023",
+   "start_date": "2003-04",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Trimethaphan"
+        ],
+        "label": "Part 1",
+        "type": "OTHER"
+       },
+       {
+        "interventionNames": [
+         "Drug: Trimethaphan"
+        ],
+        "label": "Part 2 (closed)",
+        "type": "OTHER"
+       },
+       {
+        "interventionNames": [
+         "Drug: Pseudoephedrine"
+        ],
+        "label": "Part 3",
+        "type": "OTHER"
+       },
+       {
+        "interventionNames": [
+         "Drug: Trimethaphan"
+        ],
+        "label": "Part 4a (closed)",
+        "type": "OTHER"
+       },
+       {
+        "interventionNames": [
+         "Drug: Trimethaphan"
+        ],
+        "label": "Part 4b (closed)",
+        "type": "OTHER"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Part 1",
+         "Part 4a (closed)",
+         "Part 4b (closed)"
+        ],
+        "name": "Trimethaphan",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Part 2 (closed)"
+        ],
+        "name": "Trimethaphan",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Part 3"
+        ],
+        "name": "Pseudoephedrine",
+        "otherNames": [
+         "Sudafed"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "The Autonomic Nervous System and Obesity",
+      "nctId": "NCT00179023"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2017-01",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2018-03-01",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2003-04"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "0f5f6d96bbe7a4f12b6cad1e8bc8ed1f83d7e45b939e816058b64044fe5fa3d3",
+   "last_update": "2020-08-12",
+   "nct_id": "NCT00273364",
+   "start_date": "2005-11-16",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Procedure: Hematopoietic Stem Cell Therapy"
+        ],
+        "label": "Hematopoietic Stem Cell Transplantation",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Standard treatment with a conventional drug"
+        ],
+        "label": "Standard therapy for MS",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Hematopoietic Stem Cell Transplantation"
+        ],
+        "name": "Hematopoietic Stem Cell Therapy",
+        "otherNames": [
+         "stem cell infusion"
+        ],
+        "type": "PROCEDURE"
+       },
+       {
+        "armGroupLabels": [
+         "Standard therapy for MS"
+        ],
+        "name": "Standard treatment with a conventional drug",
+        "otherNames": [
+         "standard of care"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Stem Cell Therapy for Patients With Multiple Sclerosis Failing Alternate Approved Therapy- A Randomized Study",
+      "nctId": "NCT00273364"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2019-08-30",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2020-08-12",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2005-11-16",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "c551b4b3ea9013f46fc231cb723b248f13fd724b0400327244510bdc4d9e0a8b",
+   "last_update": "2015-03-11",
+   "nct_id": "NCT00488995",
+   "start_date": "2007-07",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "CP-675,206",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Safety And Efficacy Study Of CP-675,206 In HIV-Infected Patients",
+      "nctId": "NCT00488995"
+     },
+     "statusModule": {
+      "lastUpdatePostDateStruct": {
+       "date": "2015-03-11",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "WITHDRAWN",
+      "startDateStruct": {
+       "date": "2007-07"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "bdd786ef6bb045a8f64d422163928f3fbdef176f31e468de4f6cb24036f47424",
+   "last_update": "2020-05-05",
+   "nct_id": "NCT00640614",
+   "start_date": "2008-04",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Biological: T.R.U.E. TEST® Skin Patch Test: Dose Response Allergens"
+        ],
+        "label": "Sensitives",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Biological: T.R.U.E. TEST® Skin Patch Test: Dose Response Allergens"
+        ],
+        "label": "Consecutives",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Consecutives",
+         "Sensitives"
+        ],
+        "name": "T.R.U.E. TEST® Skin Patch Test: Dose Response Allergens",
+        "otherNames": [
+         "T.R.U.E. TEST® Skin Patch Test: Panel 3.2"
+        ],
+        "type": "BIOLOGICAL"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Clinical Evaluation of T.R.U.E. TEST® : Safety and Efficacy",
+      "nctId": "NCT00640614"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2009-10",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2020-05-05",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2008-04"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "39b5d22be370cacafbf8b73fa58904ac94d28acc924c53bd56e5b3aaa0325e2e",
+   "last_update": "2019-08-28",
+   "nct_id": "NCT00900757",
+   "start_date": "2009-08",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Palonosetron (PALO)"
+        ],
+        "label": "Palonosetron",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Palonosetron"
+        ],
+        "name": "Palonosetron (PALO)",
+        "otherNames": [
+         "Aloxi"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Intravenous Palonosetron With Radiotherapy and Concomitant Temozolomide",
+      "nctId": "NCT00900757"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2012-12",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-08-28",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2009-08"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "b632a5d59f6c667b23d0fc4cd88fb6a22dcba08941fd9341111f47159c0c0d9e",
+   "last_update": "2020-11-05",
+   "nct_id": "NCT00986440",
+   "start_date": "2009-07-31",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: CS-7017"
+        ],
+        "label": "CS-7017",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "Placebo",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "CS-7017"
+        ],
+        "name": "CS-7017",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Placebo"
+        ],
+        "name": "Placebo",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Study of CS-7017 in Colorectal Cancer Patients Who Have Achieved Disease Control Following First-Line Chemotherapy",
+      "nctId": "NCT00986440"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2012-10-29",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2020-11-05",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "TERMINATED",
+      "startDateStruct": {
+       "date": "2009-07-31",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "38ed46e0d84519721afb6403b70c05503053d4fc3f065090e23ce86735f0e5c6",
+   "last_update": "2014-07-04",
+   "nct_id": "NCT01016782",
+   "start_date": "2008-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: 0444"
+        ],
+        "label": "Test",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: 0444"
+        ],
+        "label": "Reference",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Drug: 0444"
+        ],
+        "label": "Vehicle",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Reference",
+         "Test",
+         "Vehicle"
+        ],
+        "name": "0444",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Study of 0444 Gel in the Treatment of Inflammatory Lesions of Rosacea",
+      "nctId": "NCT01016782"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2009-07",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2014-07-04",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2008-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "02a15a73ac4cf60d5064cfb35ab9a6192f3f3257bd981188f682cd620d7880aa",
+   "last_update": "2018-04-05",
+   "nct_id": "NCT01056380",
+   "start_date": "2010-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Nitazoxanide"
+        ],
+        "label": "Nitazoxanide",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "Placebo",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Nitazoxanide"
+        ],
+        "name": "Nitazoxanide",
+        "otherNames": [
+         "Alinia, NTZ"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Placebo"
+        ],
+        "name": "Placebo",
+        "otherNames": [
+         "Sugar pill"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Study of Nitazoxanide in Adults With Acute Uncomplicated Influenza",
+      "nctId": "NCT01056380"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2010-12",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2018-04-05",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "TERMINATED",
+      "startDateStruct": {
+       "date": "2010-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "041552299c69020c425d9e9e9436a71bd32a9841da30f94e94c8b52cc5f928fa",
+   "last_update": "2023-06-29",
+   "nct_id": "NCT01124695",
+   "start_date": "2011-01-07",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: tamoxifen"
+        ],
+        "label": "Tamoxifen",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Tamoxifen"
+        ],
+        "name": "tamoxifen",
+        "otherNames": [
+         "tamoxifen citrate",
+         "Nolvadex",
+         "NSC# 180973"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Tamoxifen Citrate in Treating Patients With Metastatic or Recurrent Breast Cancer",
+      "nctId": "NCT01124695"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2022-12",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2023-06-29",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2011-01-07",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "6b5ab0d67d3db19cfd5c6aa6104b136d9f8169fdea09bc0f356bde4923f5ac3a",
+   "last_update": "2014-10-06",
+   "nct_id": "NCT01144624",
+   "start_date": "2010-07",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: AZD9773"
+        ],
+        "label": "1",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "2",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "1"
+        ],
+        "name": "AZD9773",
+        "otherNames": [
+         "CytoFab™"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "2"
+        ],
+        "name": "Placebo",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Study to Assess Safety,and Tolerability of 2 Doses of AZD9773 (CytoFab™) in Japanese With Severe Sepsis/Septic Shock",
+      "nctId": "NCT01144624"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2011-08",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2014-10-06",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2010-07"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "8fa9e4557763b77eb4c1722c0767190ba826ea37f23c4acc13d1d13d6a9b5c46",
+   "last_update": "2019-03-13",
+   "nct_id": "NCT01176266",
+   "start_date": "2010-07",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: asfotase alfa"
+        ],
+        "label": "Asfotase alfa",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Asfotase alfa"
+        ],
+        "name": "asfotase alfa",
+        "otherNames": [
+         "ENB-0040"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Open-Label Study of Asfotase Alfa in Infants and Children ≤ 5 Years of Age With Hypophosphatasia (HPP)",
+      "nctId": "NCT01176266"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2016-09",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-03-13",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2010-07"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "cfcc33e4bc57c4b6a5a4825af405fca68b90e09563715ba5d07b71c8f57cce14",
+   "last_update": "2019-11-18",
+   "nct_id": "NCT01196416",
+   "start_date": "2010-08",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Cisplatin",
+         "Drug: Gamma-Secretase Inhibitor RO4929097",
+         "Other: Laboratory Biomarker Analysis",
+         "Other: Pharmacological Study",
+         "Drug: Temozolomide",
+         "Drug: Vinblastine Sulfate"
+        ],
+        "label": "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Cisplatin",
+        "otherNames": [
+         "Abiplatin",
+         "Blastolem",
+         "Briplatin",
+         "CDDP",
+         "Cis-diammine-dichloroplatinum",
+         "Cis-diamminedichloridoplatinum",
+         "Cis-diamminedichloro Platinum (II)",
+         "Cis-diamminedichloroplatinum",
+         "Cis-dichloroammine Platinum (II)",
+         "Cis-platinous Diamine Dichloride",
+         "Cis-platinum",
+         "Cis-platinum II",
+         "Cis-platinum II Diamine Dichloride",
+         "Cismaplat",
+         "Cisplatina",
+         "Cisplatinum",
+         "Cisplatyl",
+         "Citoplatino",
+         "Citosin",
+         "Cysplatyna",
+         "DDP",
+         "Lederplatin",
+         "Metaplatin",
+         "Neoplatin",
+         "Peyrone's Chloride",
+         "Peyrone's Salt",
+         "Placis",
+         "Plastistil",
+         "Platamine",
+         "Platiblastin",
+         "Platiblastin-S",
+         "Platinex",
+         "Platinol",
+         "Platinol- AQ",
+         "Platinol-AQ",
+         "Platinol-AQ VHA Plus",
+         "Platinoxan",
+         "Platinum",
+         "Platinum Diamminodichloride",
+         "Platiran",
+         "Platistin",
+         "Platosin"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Gamma-Secretase Inhibitor RO4929097",
+        "otherNames": [
+         "RO4929097"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Laboratory Biomarker Analysis",
+        "type": "OTHER"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Pharmacological Study",
+        "type": "OTHER"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Temozolomide",
+        "otherNames": [
+         "CCRG-81045",
+         "Imidazo[5,1-d]-1,2,3,5-tetrazine-8-carboxamide, 3, 4-dihydro-3-methyl-4-oxo-",
+         "M & B 39831",
+         "M and B 39831",
+         "Methazolastone",
+         "RP-46161",
+         "SCH 52365",
+         "Temodal",
+         "Temodar"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (RO4929097, cisplatin, vinblastine, temozolomide)"
+        ],
+        "name": "Vinblastine Sulfate",
+        "otherNames": [
+         "29060 LE",
+         "29060-LE",
+         "Exal",
+         "Velban",
+         "Velbe",
+         "Velsar",
+         "VINCALEUKOBLASTINE"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Gamma-secretase/Notch Signalling Pathway Inhibitor RO4929097 in Combination With Cisplatin, Vinblastine, and Temozolomide in Treating Patients With Recurrent or Metastatic Melanoma",
+      "nctId": "NCT01196416"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2015-08",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-11-18",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2010-08"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "8e9680353baccf120655549954932438bf68666a1686fb707cd3b363e8a33c89",
+   "last_update": "2014-07-08",
+   "nct_id": "NCT01540461",
+   "start_date": "2012-03",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Brivanib"
+        ],
+        "label": "Arm: Brivanib",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Arm: Brivanib"
+        ],
+        "name": "Brivanib",
+        "otherNames": [
+         "BMS-582664"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Determine the Pharmacokinetics and Safety of Brivanib in Chinese Subjects With Advanced Primary Liver Cancer (Hepatocellular Carcinoma: HCC)",
+      "nctId": "NCT01540461"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2013-11",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2014-07-08",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2012-03"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "3994efee32c239f44c4e7ef7c3ab389e17ec78ece0c4645e11992b34736785a7",
+   "last_update": "2019-11-20",
+   "nct_id": "NCT01883518",
+   "start_date": "2013-06",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Biological: Autologous dendritic cell vaccine"
+        ],
+        "label": "Autologous dendritic cell vaccine",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Autologous dendritic cell vaccine"
+        ],
+        "name": "Autologous dendritic cell vaccine",
+        "otherNames": [
+         "Autologous dendritic cell vaccine loaded with allogeneic tumor lysate expression of cancer testis antigens",
+         "CTA vaccine",
+         "DC vaccine",
+         "DC CTA vaccine"
+        ],
+        "type": "BIOLOGICAL"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Autologous Dendritic Cell Vaccine in Patients With Soft Tissue Sarcoma",
+      "nctId": "NCT01883518"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2020-09",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-11-20",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2013-06"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "abd781fd8fbcccdb389703b9bf58c9a600421681123a1e29b1f92bf5b8e192bd",
+   "last_update": "2018-01-02",
+   "nct_id": "NCT01901575",
+   "start_date": "2011-07",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Remifentanil"
+        ],
+        "label": "Remifentanil IV PCA",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Remifentanil IV PCA"
+        ],
+        "name": "Remifentanil",
+        "otherNames": [
+         "Ultiva"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Remifentanil Intravenous Patient Controlled Analgesia (IVPCA) for Ablation of Idiopathic Ventricular Tachycardia",
+      "nctId": "NCT01901575"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2013-04",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2018-01-02",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2011-07",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "fe3f5a4939c9517b3f85cd3436e9defd5adb42884c9744025d4084d2f0530b3f",
+   "last_update": "2018-06-26",
+   "nct_id": "NCT01945047",
+   "start_date": "2013-05",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Ketamine"
+        ],
+        "label": "Ketamine",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Midazolam"
+        ],
+        "label": "Midazolam",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Ketamine"
+        ],
+        "name": "Ketamine",
+        "otherNames": [
+         "Ketamine Hydrochloride",
+         "Kevlar"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Midazolam"
+        ],
+        "name": "Midazolam",
+        "otherNames": [
+         "Midazolam Hydrochloride",
+         "Midazolam HCL"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Action of Ketamine in Treatment-Resistant Depression",
+      "nctId": "NCT01945047"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2017-12",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2018-06-26",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2013-05"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "307bbf356d17213112e05f834b98a52736ed32136fa0c9c6b001995587bd981f",
+   "last_update": "2018-04-23",
+   "nct_id": "NCT02066077",
+   "start_date": "2013-01-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Propofol",
+         "Device: Bilateral temporal MECT"
+        ],
+        "label": "Bilateral temporal and propofol",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Etomidate",
+         "Device: Bilateral temporal MECT"
+        ],
+        "label": "Bilateral temporal and etomidate",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Propofol",
+         "Device: The right temporal MECT"
+        ],
+        "label": "The right temporal and propofol",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Etomidate",
+         "Device: The right temporal MECT"
+        ],
+        "label": "The right temporal and etomidate",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Propofol",
+         "Device: Bilateral frontal MECT"
+        ],
+        "label": "Bilateral frontal and propofol",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Etomidate",
+         "Device: Bilateral frontal MECT"
+        ],
+        "label": "Bilateral frontal and etomidate",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Etomidate",
+         "Device: Bilateral temporal MECT"
+        ],
+        "label": "Standard-therapy Group",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Bilateral frontal and etomidate",
+         "Bilateral temporal and etomidate",
+         "Standard-therapy Group",
+         "The right temporal and etomidate"
+        ],
+        "name": "Etomidate",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Bilateral frontal and propofol",
+         "Bilateral temporal and propofol",
+         "The right temporal and propofol"
+        ],
+        "name": "Propofol",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Bilateral temporal and etomidate",
+         "Bilateral temporal and propofol",
+         "Standard-therapy Group"
+        ],
+        "name": "Bilateral temporal MECT",
+        "type": "DEVICE"
+       },
+       {
+        "armGroupLabels": [
+         "The right temporal and etomidate",
+         "The right temporal and propofol"
+        ],
+        "name": "The right temporal MECT",
+        "type": "DEVICE"
+       },
+       {
+        "armGroupLabels": [
+         "Bilateral frontal and etomidate",
+         "Bilateral frontal and propofol"
+        ],
+        "name": "Bilateral frontal MECT",
+        "type": "DEVICE"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "NA"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "The Efficacy And Cognitive Impairment Of Modified Electroconvulsive Therapy",
+      "nctId": "NCT02066077"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2017-12-31",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2018-04-23",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2013-01-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "49d927abda74b6ae6cd937801192a096521dc363a3353715684e11540d4fe849",
+   "last_update": "2022-08-03",
+   "nct_id": "NCT02177071",
+   "start_date": "2015-10-09",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "label": "INFLIXIMAB AND ANTI METABOLITE",
+        "type": "NO_INTERVENTION"
+       },
+       {
+        "interventionNames": [
+         "Drug: INFLIXIMAB"
+        ],
+        "label": "STOP INFLIXIMAB CONTINUING ANTI METABOLITE",
+        "type": "OTHER"
+       },
+       {
+        "interventionNames": [
+         "Drug: AZATHIOPRINE",
+         "Drug: MERCAPTOPURINE",
+         "Drug: Methotrexate"
+        ],
+        "label": "CONTINUING INFLIXIMAB AND discontinuing anti-metabolites",
+        "type": "OTHER"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "STOP INFLIXIMAB CONTINUING ANTI METABOLITE"
+        ],
+        "name": "INFLIXIMAB",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "CONTINUING INFLIXIMAB AND discontinuing anti-metabolites"
+        ],
+        "name": "AZATHIOPRINE",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "CONTINUING INFLIXIMAB AND discontinuing anti-metabolites"
+        ],
+        "name": "MERCAPTOPURINE",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "CONTINUING INFLIXIMAB AND discontinuing anti-metabolites"
+        ],
+        "name": "Methotrexate",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A proSpective Randomized Controlled Trial comParing infliximAb-antimetabolites Combination Therapy to Anti-metabolites monotheRapy and Infliximab monothErapy in Crohn's Disease Patients in Sustained Steroid-free Remission on Combination Therapy",
+      "nctId": "NCT02177071"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2021-10",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2022-08-03",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-10-09",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "fb9b4ea49739dbb6891fe76bbe5a36e438123ef8797693227434b9479f268d7d",
+   "last_update": "2014-09-08",
+   "nct_id": "NCT02233023",
+   "start_date": "1998-06",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Pramipexole"
+        ],
+        "label": "Pramixpexole",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Bromocriptine and other dopamine agonists"
+        ],
+        "label": "Bromocriptine and other dopamine agonists",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Pramixpexole"
+        ],
+        "name": "Pramipexole",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Bromocriptine and other dopamine agonists"
+        ],
+        "name": "Bromocriptine and other dopamine agonists",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Ophthalmologic Safety of Long Term Treatment With Pramipexole Compared to Bromocriptine or Other Dopamine Agonists in Patients With Parkinson's Disease",
+      "nctId": "NCT02233023"
+     },
+     "statusModule": {
+      "lastUpdatePostDateStruct": {
+       "date": "2014-09-08",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "1998-06"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "868545e745bd7a78b9c883dc216ff9f8f8ee7b5f835233058db295ad0912c00d",
+   "last_update": "2016-11-17",
+   "nct_id": "NCT02250807",
+   "start_date": "2015-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Simeprevir",
+         "Drug: Sofosbuvir"
+        ],
+        "label": "Simeprevir and Sofosbuvir",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Simeprevir and Sofosbuvir"
+        ],
+        "name": "Simeprevir",
+        "otherNames": [
+         "TMC435"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Simeprevir and Sofosbuvir"
+        ],
+        "name": "Sofosbuvir",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Efficacy and Safety Study of Simeprevir in Combination With Sofosbuvir in Subjects With Chronic Genotype 4 Hepatitis C Virus Infection",
+      "nctId": "NCT02250807"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2015-12",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2016-11-17",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "90cf0bb0df13316d17e80bdfe62127cfd936260a186068572d30bccaf8974a4b",
+   "last_update": "2020-05-21",
+   "nct_id": "NCT02321319",
+   "start_date": "2017-03-11",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Hydromorphone HCl ER Tablets"
+        ],
+        "label": "Hydromorphone HCl ER Tablets",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Hydromorphone HCl ER Tablets"
+        ],
+        "name": "Hydromorphone HCl ER Tablets",
+        "otherNames": [
+         "Exalgo, Jurnista"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Open-Label Safety and PK Study of ER Hydromorphone Tablets in Opioid-Tolerant Pediatric Chronic Pain Patients",
+      "nctId": "NCT02321319"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2019-02-04",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2020-05-21",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "TERMINATED",
+      "startDateStruct": {
+       "date": "2017-03-11",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "347602423cd8a9204846999ece86aac57ec6502dbcc82fdbf8027e5025b8ff5c",
+   "last_update": "2017-01-18",
+   "nct_id": "NCT02332603",
+   "start_date": "2015-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Methylprednisolone"
+        ],
+        "label": "Methylprednisolone",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Drug: Isotonic Sodium Chloride"
+        ],
+        "label": "Isotonic Sodium Chloride",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Methylprednisolone"
+        ],
+        "name": "Methylprednisolone",
+        "otherNames": [
+         "Solu-Medrol"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Isotonic Sodium Chloride"
+        ],
+        "name": "Isotonic Sodium Chloride",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Effect of Methylprednisolone on Glucose Homeostasis in Patients Undergoing Total Hip- and Knee-arthroplasty",
+      "nctId": "NCT02332603"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2017-01",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2017-01-18",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-01"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "ee5d9eb9fc0e86c13f5f6533128b6b15ad3ad115105cc1d0661ed91a0fe464c3",
+   "last_update": "2023-10-12",
+   "nct_id": "NCT02426658",
+   "start_date": "2015-05",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Other: Laboratory Biomarker Analysis",
+         "Drug: Pemetrexed Disodium",
+         "Other: Quality-of-Life Assessment"
+        ],
+        "label": "Treatment (pemetrexed disodium)",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Treatment (pemetrexed disodium)"
+        ],
+        "name": "Laboratory Biomarker Analysis",
+        "type": "OTHER"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (pemetrexed disodium)"
+        ],
+        "name": "Pemetrexed Disodium",
+        "otherNames": [
+         "Alimta",
+         "LY231514",
+         "N-[4-[2-(2-Amino-4,7-dihydro-4-oxo-1H-pyrrolo[2,3-d]pyrimidin-5-yl)ethyl]benzoyl]-L-glutamic Acid Disodium Salt"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment (pemetrexed disodium)"
+        ],
+        "name": "Quality-of-Life Assessment",
+        "otherNames": [
+         "Quality of Life Assessment"
+        ],
+        "type": "OTHER"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Pemetrexed Disodium in Treating Patients With Stage IV Non-small Cell Lung Cancer and ECOG Performance Status 3",
+      "nctId": "NCT02426658"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2022-10-07",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2023-10-12",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-05",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "3a80b3f181ea5f7755dc55fc9120d9ecc48c957892d578e1db5586020c88ed75",
+   "last_update": "2015-05-06",
+   "nct_id": "NCT02435160",
+   "start_date": "2015-05",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Biological: Fecal Microbiota Transplantation"
+        ],
+        "label": "Ulcerative Colitis",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Ulcerative Colitis"
+        ],
+        "name": "Fecal Microbiota Transplantation",
+        "type": "BIOLOGICAL"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "The Study of Efficacy and Mechanism in Fecal Microbiota Transplantation in the Treatment of Ulcerative Colitis",
+      "nctId": "NCT02435160"
+     },
+     "statusModule": {
+      "lastUpdatePostDateStruct": {
+       "date": "2015-05-06",
+       "type": "ESTIMATED"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2015-05"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "c6af78beff33937c78d145ae711d8fe74d8d3d5e8a1bb7537c7609ec5f47e4fb",
+   "last_update": "2023-05-09",
+   "nct_id": "NCT02649335",
+   "start_date": "2015-07-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Propranolol"
+        ],
+        "label": "Propranolol",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Procedure: Endoscopic variceal ligation (EVL)"
+        ],
+        "label": "Endoscopic variceal ligation (EVL)",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Propranolol"
+        ],
+        "name": "Propranolol",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Endoscopic variceal ligation (EVL)"
+        ],
+        "name": "Endoscopic variceal ligation (EVL)",
+        "type": "PROCEDURE"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "To Study the Effect of Nonselective Beta Blockers in Advanced Stage Liver Disease With Ascites",
+      "nctId": "NCT02649335"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2016-12-30",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2023-05-09",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2015-07-01",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "5fe91b6762d49ccea9e1d2bbb5b4438d97369f4b150b19a6f9805e08a854252d",
+   "last_update": "2019-05-30",
+   "nct_id": "NCT03777085",
+   "start_date": "2019-01-10",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: TQB2303"
+        ],
+        "label": "TQB2303",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Rituximab"
+        ],
+        "label": "Rituximab",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "TQB2303"
+        ],
+        "name": "TQB2303",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Rituximab"
+        ],
+        "name": "Rituximab",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Study of TQB2303 in Patients With CD20-Positive Diffuse Large B-cell Lymphoma (DLBCL)",
+      "nctId": "NCT03777085"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2020-12-30",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2019-05-30",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2019-01-10",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "7f1a3c65f156383865014299c354668417e1555ae8754d4819d97c89fcbbc815",
+   "last_update": "2025-03-19",
+   "nct_id": "NCT03904576",
+   "start_date": "2019-04-18",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: BI 1358894"
+        ],
+        "label": "Treatment (T)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "Reference Treatment (R)",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Treatment (T)"
+        ],
+        "name": "BI 1358894",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Reference Treatment (R)"
+        ],
+        "name": "Placebo",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Study in Healthy Men to Test Whether BI 1358894 Reduces Druginduced Panic Symptoms",
+      "nctId": "NCT03904576"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2019-08-29",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-03-19",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2019-04-18",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "fe4df83fcb80554a38136d21508041ec6a0d9aae4c8c2de56c198ae520e23f5e",
+   "last_update": "2025-09-11",
+   "nct_id": "NCT04138719",
+   "start_date": "2019-11-20",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Nab-paclitaxel + Carboplatin"
+        ],
+        "label": "Nab-paclitaxel + Carboplatin",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Nab-paclitaxel + Epirubicin"
+        ],
+        "label": "Nab-paclitaxel + Epirubicin",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Nab-paclitaxel + Carboplatin"
+        ],
+        "name": "Nab-paclitaxel + Carboplatin",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Nab-paclitaxel + Epirubicin"
+        ],
+        "name": "Nab-paclitaxel + Epirubicin",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Nab-paclitaxel Plus Carboplatin Versus Nab-paclitaxel Plus Epirubicin in the Neoadjuvant Therapy for Breast Cancer",
+      "nctId": "NCT04138719"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2028-06-20",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-09-11",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2019-11-20",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "250fd52978576cd14ddd7a3478bb9db778f89ba1a793f7ce4a727ad4e503e96b",
+   "last_update": "2021-09-28",
+   "nct_id": "NCT04686539",
+   "start_date": "2021-01-20",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: CBD"
+        ],
+        "label": "Recipients of CBD oil",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "Recipients of Placebo",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Recipients of CBD oil"
+        ],
+        "name": "CBD",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Recipients of Placebo"
+        ],
+        "name": "Placebo",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Synthetic CBD as a Therapy for COVID-19",
+      "nctId": "NCT04686539"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2022-01",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2021-09-28",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2021-01-20",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "24c86c7294ef3181e0c4b539c2d3f60d1601599ed538329bdb11924c10c7287c",
+   "last_update": "2021-05-03",
+   "nct_id": "NCT04869072",
+   "start_date": "2020-04-29",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "interventions": [
+       {
+        "name": "Convalescent plasma",
+        "otherNames": [
+         "Fresh Frozen Plasma (FFP)"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Convalescent Plasma Therapy - Zurich Protocol",
+      "nctId": "NCT04869072"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2021-03-30",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2021-05-03",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2020-04-29",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "0bbad2131e722eb131f568d3213bb94f0d170f2fbbe450187aae46d664a50f50",
+   "last_update": "2025-02-26",
+   "nct_id": "NCT04974151",
+   "start_date": "2024-08-22",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Amlodipine besylate",
+         "Drug: Amlodipine folic acid placebo",
+         "Drug: 5-MTHF Placebos"
+        ],
+        "label": "Amlodipine (5mg/d)",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Drug: Amlodipine besylate And Folic Acid",
+         "Drug: Amlodipine placebo",
+         "Drug: 5-MTHF Placebos"
+        ],
+        "label": "Amlodipine folic acid (5.8mg/d)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Amlodipine besylate And Folic Acid",
+         "Drug: 5-methyltetrahydrofolate (5-MTHF)",
+         "Drug: Amlodipine placebo"
+        ],
+        "label": "Amlodipine folic acid (5.8mg/d) + 5-MTHF (0.4mg/d)",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Amlodipine (5mg/d)"
+        ],
+        "name": "Amlodipine besylate",
+        "otherNames": [
+         "Amlodipine"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Amlodipine folic acid (5.8mg/d)",
+         "Amlodipine folic acid (5.8mg/d) + 5-MTHF (0.4mg/d)"
+        ],
+        "name": "Amlodipine besylate And Folic Acid",
+        "otherNames": [
+         "Amlodipine Folic Acid",
+         "Anye"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Amlodipine folic acid (5.8mg/d) + 5-MTHF (0.4mg/d)"
+        ],
+        "name": "5-methyltetrahydrofolate (5-MTHF)",
+        "otherNames": [
+         "5-MTHF"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Amlodipine folic acid (5.8mg/d)",
+         "Amlodipine folic acid (5.8mg/d) + 5-MTHF (0.4mg/d)"
+        ],
+        "name": "Amlodipine placebo",
+        "otherNames": [
+         "Amlodipine (dummy)"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Amlodipine (5mg/d)"
+        ],
+        "name": "Amlodipine folic acid placebo",
+        "otherNames": [
+         "Amlodipine folic acid (dummy)"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Amlodipine (5mg/d)",
+         "Amlodipine folic acid (5.8mg/d)"
+        ],
+        "name": "5-MTHF Placebos",
+        "otherNames": [
+         "5-MTHF (dummy)"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "China Stroke Primary Prevention Trial 2 for Participants With Hypertension and MTHFR 677 TT Genotype",
+      "nctId": "NCT04974151"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2029-06-30",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-02-26",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2024-08-22",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "a3228e912527a398d5b5bc98ee2e5ed2b628b51d735e32723337142411b7ecbd",
+   "last_update": "2026-09-25",
+   "nct_id": "NCT05119569",
+   "start_date": "2022-03-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Fenebrutinib"
+        ],
+        "label": "Fenebrutinib",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Placebo"
+        ],
+        "label": "Placebo",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Fenebrutinib"
+        ],
+        "name": "Fenebrutinib",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Placebo"
+        ],
+        "name": "Placebo",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Study to Investigate the Efficacy of Fenebrutinib in Relapsing Multiple Sclerosis (RMS)",
+      "nctId": "NCT05119569"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2027-06-30",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2026-09-25",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "ACTIVE_NOT_RECRUITING",
+      "startDateStruct": {
+       "date": "2022-03-01",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "a958328092057dade676a3bc11de64776e0c379c969287246468d2679c002a97",
+   "last_update": "2025-08-13",
+   "nct_id": "NCT05142774",
+   "start_date": "2021-10-28",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Tapinarof cream, 1%"
+        ],
+        "label": "tapinarof cream",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "tapinarof cream"
+        ],
+        "name": "Tapinarof cream, 1%",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Long Term Extension Study of Tapinarof Cream, 1% for Subjects With Atopic Dermatitis",
+      "nctId": "NCT05142774"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2024-03-07",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-08-13",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2021-10-28",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "71b3fd6c21ad16ac3fdb4ef5b4e3ec317f77d8ff552e3cfb7f7f6f42d893e04d",
+   "last_update": "2022-05-13",
+   "nct_id": "NCT05373004",
+   "start_date": "2023-03",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Empagliflozin 25 MG"
+        ],
+        "label": "Empagliflozin 25 mg arm (SGLT2 inhibitor)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Enalapril Maleate 20 mg"
+        ],
+        "label": "Enalapril 20 mg arm (ACE inhibitor)",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Empagliflozin 25 mg arm (SGLT2 inhibitor)"
+        ],
+        "name": "Empagliflozin 25 MG",
+        "otherNames": [
+         "Jardiance 25 MG"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Enalapril 20 mg arm (ACE inhibitor)"
+        ],
+        "name": "Enalapril Maleate 20 mg",
+        "otherNames": [
+         "Renitec 20 MG"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Comparison Between the Efficacy of SGLT2 Inhibitor Therapy Versus ACE Inhibitor in the Treatment of Diabetic Kidney Disease",
+      "nctId": "NCT05373004"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2024-05",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2022-05-13",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2023-03",
+       "type": "ESTIMATED"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "dd7dc0a999a13f4ae03dfe176de63363146d0ec69b4f528ac4134ef923132cfa",
+   "last_update": "2026-08-19",
+   "nct_id": "NCT05689983",
+   "start_date": "2022-04-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Symptom-driven budesonide/formoterol combination"
+        ],
+        "label": "As needed inhaled corticosteroid and long-acting beta-agonist",
+        "type": "ACTIVE_COMPARATOR"
+       },
+       {
+        "interventionNames": [
+         "Drug: Maintenance ICS and Symptom Driven SABA"
+        ],
+        "label": "Standard therapy: maintenance inhaled corticosteroid and as needed short-acting beta-agonist",
+        "type": "PLACEBO_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Standard therapy: maintenance inhaled corticosteroid and as needed short-acting beta-agonist"
+        ],
+        "name": "Maintenance ICS and Symptom Driven SABA",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "As needed inhaled corticosteroid and long-acting beta-agonist"
+        ],
+        "name": "Symptom-driven budesonide/formoterol combination",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Symptom-driven ICS/LABA Therapy for Adolescent Patients With Asthma Non-adherent to Daily Maintenance Inhalers",
+      "nctId": "NCT05689983"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2025-09-25",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2026-08-19",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2022-04-01",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "e6eefc45c80c2bcae650f5204dab00dd13e68dcda2dfbe8986e5c74870d43fdd",
+   "last_update": "2025-06-03",
+   "nct_id": "NCT05727215",
+   "start_date": "2023-02-28",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Biological: SARS-CoV-2 subunit protein recombinant vaccine"
+        ],
+        "label": "Primary dose of inactivated (Sinovac®) vaccine",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Primary dose of inactivated (Sinovac®) vaccine"
+        ],
+        "name": "SARS-CoV-2 subunit protein recombinant vaccine",
+        "type": "BIOLOGICAL"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Heterologous Booster Study of COVID-19 Protein Subunit Recombinant Vaccine in Children 12-17 Years of Age",
+      "nctId": "NCT05727215"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2024-03-18",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-06-03",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2023-02-28",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "757b3f32dd5f05f12e1219e04e616217e93749b76b42fac2d49e78e259888e8b",
+   "last_update": "2024-07-08",
+   "nct_id": "NCT05731960",
+   "start_date": "2023-03-06",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Dexamethasone"
+        ],
+        "label": "Dexamethasone (Group SD)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Metoclopramide"
+        ],
+        "label": "Metoclopramide (Group SM)",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Dexamethasone (Group SD)"
+        ],
+        "name": "Dexamethasone",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Metoclopramide (Group SM)"
+        ],
+        "name": "Metoclopramide",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Evaluating the Effect of Intravenous Dexamethasone on the Duration of Spinal Anesthesia After Cesarean Delivery",
+      "nctId": "NCT05731960"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2025-12",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2024-07-08",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "UNKNOWN",
+      "startDateStruct": {
+       "date": "2023-03-06",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "dd2b3e02a26a3195be99430e321f8b51e3759dcd6b24da6bd47cf8272df06aea",
+   "last_update": "2025-06-29",
+   "nct_id": "NCT05824871",
+   "start_date": "2022-09-02",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Sudapyridine"
+        ],
+        "label": "Sudapyridine (WX-081) Group",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Bedaquiline"
+        ],
+        "label": "Bedaquiline Group",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Sudapyridine (WX-081) Group"
+        ],
+        "name": "Sudapyridine",
+        "otherNames": [
+         "WX-081"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Bedaquiline Group"
+        ],
+        "name": "Bedaquiline",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Phase III Study of Oral Sudapyridine (WX-081) Tablets in Rifampicin-Resistant Pulmonary Tuberculosis Patients",
+      "nctId": "NCT05824871"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2026-10-22",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-06-29",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2022-09-02",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "1370a6b1f9fb918f498f3064fbbc8d21fcb083f0a90fdaf3ff69a78824d3a87e",
+   "last_update": "2023-08-28",
+   "nct_id": "NCT05995301",
+   "start_date": "2022-03-12",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Ropivacaine in Transversus abdominis plane"
+        ],
+        "label": "Group I",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Ropivacaine in Local infiltration at port site"
+        ],
+        "label": "Group II",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Group I"
+        ],
+        "name": "Ropivacaine in Transversus abdominis plane",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Group II"
+        ],
+        "name": "Ropivacaine in Local infiltration at port site",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "NA"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Comparative Study on Postoperative Analgesia With Transversus Abdominis Plane Block to Local Anesthetic Infiltration With Ropivacaine in Laparoscopic Abdominal Surgery",
+      "nctId": "NCT05995301"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2023-02-25",
+       "type": "ACTUAL"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2023-08-28",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "COMPLETED",
+      "startDateStruct": {
+       "date": "2022-03-12",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "5c58187ce8a5d4bbb1ba9d1f643c24ceaa15b3477ba5268788c2cafbf172f35f",
+   "last_update": "2026-10-15",
+   "nct_id": "NCT06007924",
+   "start_date": "2023-08-16",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: Avutometinib",
+         "Drug: Defactinib"
+        ],
+        "label": "Radioiodine-refractory (RAIR), recurrent and/or metastatic differentiated thyroid cancer (DTC)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Avutometinib",
+         "Drug: Defactinib"
+        ],
+        "label": "Anaplastic thyroid cancer (ATC), previously treated BRAF V600E/K/D/R anaplastic thyroid cancer (ATC)",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Anaplastic thyroid cancer (ATC), previously treated BRAF V600E/K/D/R anaplastic thyroid cancer (ATC)",
+         "Radioiodine-refractory (RAIR), recurrent and/or metastatic differentiated thyroid cancer (DTC)"
+        ],
+        "name": "Avutometinib",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Anaplastic thyroid cancer (ATC), previously treated BRAF V600E/K/D/R anaplastic thyroid cancer (ATC)",
+         "Radioiodine-refractory (RAIR), recurrent and/or metastatic differentiated thyroid cancer (DTC)"
+        ],
+        "name": "Defactinib",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Study of Avutometinib and Defactinib in People With Thyroid Cancer",
+      "nctId": "NCT06007924"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2027-08-16",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2026-10-15",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2023-08-16",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "5db0a4e7eacd9d04ea82d2ab30c64bd40b3a60745bfbd28eaf8af0f6241a3442",
+   "last_update": "2024-02-20",
+   "nct_id": "NCT06268652",
+   "start_date": "2024-01-15",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Other: Organoid-guided personalized treatment"
+        ],
+        "label": "Organoid-guided personalized treatment",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Gemcitabine",
+         "Drug: Capecitabine",
+         "Drug: Vinorelbine",
+         "Drug: Eribulin"
+        ],
+        "label": "Treatment of physician's choice",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Organoid-guided personalized treatment"
+        ],
+        "name": "Organoid-guided personalized treatment",
+        "otherNames": [
+         "OGPT"
+        ],
+        "type": "OTHER"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment of physician's choice"
+        ],
+        "name": "Gemcitabine",
+        "otherNames": [
+         "Gemzar"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment of physician's choice"
+        ],
+        "name": "Capecitabine",
+        "otherNames": [
+         "Xeloda"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment of physician's choice"
+        ],
+        "name": "Vinorelbine",
+        "otherNames": [
+         "Navelbine"
+        ],
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Treatment of physician's choice"
+        ],
+        "name": "Eribulin",
+        "otherNames": [
+         "Halaven"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Patient Derived Organoid-guided Personalized Treatment Versus Treatment of Physician's Choice in Breast Cancer",
+      "nctId": "NCT06268652"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2028-01-15",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2024-02-20",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2024-01-15",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "c11ddbb1af80a3bd00897c1c7ccbaa750429ce7ae44f4e63c1839a7c565cc2a7",
+   "last_update": "2024-04-05",
+   "nct_id": "NCT06350825",
+   "start_date": "2016-01-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Procedure: Cytoreductive prostatectomy or brachytherapy"
+        ],
+        "label": "Local treatment group",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: ADT+second-generation antiandrogens ± chemotherapy"
+        ],
+        "label": "SOC group",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "Local treatment group"
+        ],
+        "name": "Cytoreductive prostatectomy or brachytherapy",
+        "otherNames": [
+         "surgery or radiation therapy+SOC"
+        ],
+        "type": "PROCEDURE"
+       },
+       {
+        "armGroupLabels": [
+         "SOC group"
+        ],
+        "name": "ADT+second-generation antiandrogens ± chemotherapy",
+        "otherNames": [
+         "hormonal therapy or chemotherapy"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Cytoreductive Prostatectomy Combined With Triple or Dual Systemic Therapy in mHSPC Patients",
+      "nctId": "NCT06350825"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2028-12-31",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2024-04-05",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2016-01-01",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "5971b3e25a519f5ab443122c9095a60e0b86a7495b1bd4d7132603e24493d329",
+   "last_update": "2026-11-24",
+   "nct_id": "NCT06929624",
+   "start_date": "2025-04-24",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: SHR-A1912 Injection",
+         "Drug: Rituximab Injection",
+         "Drug: Gemcitabine Hydrochloride for Injection",
+         "Drug: Oxaliplatin Injection"
+        ],
+        "label": "SHR-A1912 combined with Rituximab + Gemcitabine + Oxaliplatin",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: Rituximab Injection",
+         "Drug: Gemcitabine Hydrochloride for Injection",
+         "Drug: Oxaliplatin Injection"
+        ],
+        "label": "Rituximab + Gemcitabine + Oxaliplatin",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "SHR-A1912 combined with Rituximab + Gemcitabine + Oxaliplatin"
+        ],
+        "name": "SHR-A1912 Injection",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Rituximab + Gemcitabine + Oxaliplatin",
+         "SHR-A1912 combined with Rituximab + Gemcitabine + Oxaliplatin"
+        ],
+        "name": "Rituximab Injection",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Rituximab + Gemcitabine + Oxaliplatin",
+         "SHR-A1912 combined with Rituximab + Gemcitabine + Oxaliplatin"
+        ],
+        "name": "Gemcitabine Hydrochloride for Injection",
+        "type": "DRUG"
+       },
+       {
+        "armGroupLabels": [
+         "Rituximab + Gemcitabine + Oxaliplatin",
+         "SHR-A1912 combined with Rituximab + Gemcitabine + Oxaliplatin"
+        ],
+        "name": "Oxaliplatin Injection",
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "A Phase 3 Clinical Study of SHR-A1912 Combined With R-GemOx Versus R-GemOx in Diffuse Large B-cell Lymphoma",
+      "nctId": "NCT06929624"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2028-01",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2026-11-24",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "ACTIVE_NOT_RECRUITING",
+      "startDateStruct": {
+       "date": "2025-04-24",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "109953a50b70143821511c8fabe2200e19047228e1e17aecdbb8a34167eeb160",
+   "last_update": "2025-12-01",
+   "nct_id": "NCT07062523",
+   "start_date": "2024-07-01",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Drug: 68Ga-FAPI"
+        ],
+        "label": "68Ga-FAPI PET/CT in Sjögren's Syndrome",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Drug: 68Ga-FAPI"
+        ],
+        "label": "68Ga-FAPI PET/CT in tumor patients",
+        "type": "EXPERIMENTAL"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "68Ga-FAPI PET/CT in Sjögren's Syndrome",
+         "68Ga-FAPI PET/CT in tumor patients"
+        ],
+        "name": "68Ga-FAPI",
+        "otherNames": [
+         "68Ga-Fibroblast activation protein Inhibitor"
+        ],
+        "type": "DRUG"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE1",
+       "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Analyse of Inflammatory Activity of Sjögren's Syndrome on 68Ga-FAPI PET-CT",
+      "nctId": "NCT07062523"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2025-12-01",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-12-01",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2024-07-01",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  },
+  {
+   "blob_sha256": "dd138bea8af277dcacfeac7c5d7bb50a7cd49374e11b0aab4cf849383286ed30",
+   "last_update": "2025-12-01",
+   "nct_id": "NCT07204457",
+   "start_date": "2025-10-15",
+   "study": {
+    "protocolSection": {
+     "armsInterventionsModule": {
+      "armGroups": [
+       {
+        "interventionNames": [
+         "Biological: EG-MCV4"
+        ],
+        "label": "EG-MCV4 (Test group 1)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Biological: EG-MCV4"
+        ],
+        "label": "EG-MCV4 (Test group 2)",
+        "type": "EXPERIMENTAL"
+       },
+       {
+        "interventionNames": [
+         "Biological: Menveo"
+        ],
+        "label": "Menveo",
+        "type": "ACTIVE_COMPARATOR"
+       }
+      ],
+      "interventions": [
+       {
+        "armGroupLabels": [
+         "EG-MCV4 (Test group 1)",
+         "EG-MCV4 (Test group 2)"
+        ],
+        "name": "EG-MCV4",
+        "otherNames": [
+         "Meningococcal(Groups A, C, W-135, and Y) Conjugate Vaccine"
+        ],
+        "type": "BIOLOGICAL"
+       },
+       {
+        "armGroupLabels": [
+         "Menveo"
+        ],
+        "name": "Menveo",
+        "otherNames": [
+         "Meningococcal(Groups A, C, W-135, and Y) Conjugate Vaccine"
+        ],
+        "type": "BIOLOGICAL"
+       }
+      ]
+     },
+     "designModule": {
+      "phases": [
+       "PHASE2",
+       "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+     },
+     "identificationModule": {
+      "briefTitle": "Immunogenicity and Safety of Meningococcal Conjugate Vaccine (EG-MCV4) in Healthy Adults Aged 19 to 55 Years Old",
+      "nctId": "NCT07204457"
+     },
+     "statusModule": {
+      "completionDateStruct": {
+       "date": "2027-06",
+       "type": "ESTIMATED"
+      },
+      "lastUpdatePostDateStruct": {
+       "date": "2025-12-01",
+       "type": "ACTUAL"
+      },
+      "overallStatus": "RECRUITING",
+      "startDateStruct": {
+       "date": "2025-10-15",
+       "type": "ACTUAL"
+      }
+     }
+    }
+   }
+  }
+ ],
+ "study_count": 161149,
+ "zdict_sha256": "2003eda25fc44c17aa8e323d8c73dfce5f3e5a363d540ba6cde0d5e23ad108b3"
+}
