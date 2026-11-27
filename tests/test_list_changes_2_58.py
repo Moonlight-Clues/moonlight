@@ -90,8 +90,9 @@ def test_ipratropium_on_asthma_is_gone_from_the_file_and_nothing_else_is_lost():
 def test_the_six_entries_are_in_the_existing_shape_with_the_existing_note():
     # Ticket 2.62 added entries of the same day at the very end: leave them out.
     new = [e for e in real() if e["date"] == "2026-11-26"][:6]
-    assert new == [entry(m, T2D, "2026-11-26") for m in SIX]
-    assert all(list(e) == ["medicine_id", "disease_id", "date", "note"] for e in new)
+    assert [{k: v for k, v in e.items() if k != "label"} for e in new] == [
+        entry(m, T2D, "2026-11-26") for m in SIX]
+    assert all(list(e) == ["medicine_id", "disease_id", "date", "note", "label"] for e in new)
 
 
 def test_irbesartan_and_losartan_are_not_red_on_type_2_diabetes():

@@ -354,7 +354,9 @@ def test_the_corrections_file_is_the_one_the_engine_reads():
 def test_every_entry_in_the_real_file_has_the_four_things_and_names_no_doctor():
     # True today because the file is empty. It guards every later pull request.
     for entry in REAL_READ_CORRECTIONS():
-        assert set(entry) == {"medicine_id", "disease_id", "date", "note"}
+        # The label field was added later. These four are still the entry.
+        assert set(entry) - {"label"} == {"medicine_id", "disease_id", "date", "note"}
+        assert isinstance(entry.get("label", ""), str)
         # One of the two (ticket 2.18), or the third (ticket 2.55, Kashish's signed Q10).
         assert entry["note"] in (NOTE, SECOND_NOTE, engine.THIRD_NOTE)
     assert len(engine.corrections()) == len(REAL_READ_CORRECTIONS())

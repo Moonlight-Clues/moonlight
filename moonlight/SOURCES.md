@@ -73,3 +73,11 @@ Kept interventional studies: 161,149. Open Targets clinical-report NCT ids linke
 - EMA medicines list generated 26/11/2026 06:00 (https://www.ema.europa.eu/en/documents/report/medicines-output-medicines-report_en.xlsx)
 - ChEMBL API (https://www.ebi.ac.uk/chembl/api/data/), read 26 Nov 2026
 - The list of Approved cards is read from the live Moonlight API (`/api/clues?disease_id=...`, read-only) on 26 Nov 2026.
+
+# Sources for moonlight/names.json
+
+Built by `scripts/build_names.py`. One name for every medicine id (ChEMBL) and disease id (MONDO, Orphanet, EFO, and the other Open Targets disease prefixes) found in these hand lists: `corrections.json`, `approvals.json`, `limits.json`, `confirmed.json`, `withdrawals.json`, `pmda_summaries.json`, `salt_parents.json`.
+
+The repo's saved Open Targets answers do not hold a name for every one of those ids, so the names were read from the Open Targets Platform GraphQL API (`https://api.platform.opentargets.org/api/v4/graphql`). Before any name is kept, the script reads `meta.dataVersion` and stops unless it is 26.09. A medicine name is `drug(chemblId).name`. A disease name is `disease(efoId).name`. Both are stored as sent. The file's keys are sorted, so a second run writes the same bytes.
+
+`discontinued.json` is empty, so it is not read.

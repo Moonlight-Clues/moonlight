@@ -84,14 +84,16 @@ def test_the_note_is_the_engines_second_note_exactly():
 
 def test_the_new_entry_is_in_the_real_file():
     # Kashish, 23 Nov (ticket 2.25): in the file, not last. Later entries follow it.
-    assert THE_ENTRY in real_corrections()
+    bare = lambda entry: {k: v for k, v in entry.items() if k != "label"}
+    assert THE_ENTRY in [bare(entry) for entry in real_corrections()]
 
 
 def test_it_is_the_only_entry_of_that_day_and_the_only_one_for_deferoxamine():
     entries = real_corrections()
-    assert [entry for entry in entries if entry["date"] == THE_DAY] == [THE_ENTRY]
-    assert [entry for entry in entries if entry["medicine_id"] == DEFEROXAMINE] == [THE_ENTRY]
-    assert [entry for entry in entries if entry["disease_id"] == HEMOCHROMATOSIS] == [THE_ENTRY]
+    bare = lambda entry: {k: v for k, v in entry.items() if k != "label"}
+    assert [bare(entry) for entry in entries if entry["date"] == THE_DAY] == [THE_ENTRY]
+    assert [bare(entry) for entry in entries if entry["medicine_id"] == DEFEROXAMINE] == [THE_ENTRY]
+    assert [bare(entry) for entry in entries if entry["disease_id"] == HEMOCHROMATOSIS] == [THE_ENTRY]
 
 
 def test_the_engine_gives_the_hemochromatosis_page_the_second_words_for_deferoxamine_only():

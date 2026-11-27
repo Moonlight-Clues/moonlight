@@ -217,8 +217,9 @@ def test_the_card_is_now_in_the_red_box_and_the_card_is_kept(medicine_id, diseas
     assert medicine_id in [m.id for m in approved]  # kept on the Approved tab
     assert medicine_id not in [m.id for m in main]
     assert engine.warning_words(disease_id)[medicine_id] == SECOND_NOTE
-    assert [e for e in load(CORRECTIONS_FILE)
-            if (e["medicine_id"], e["disease_id"]) == (medicine_id, disease_id)] == [
+    found = [e for e in load(CORRECTIONS_FILE)
+             if (e["medicine_id"], e["disease_id"]) == (medicine_id, disease_id)]
+    assert [{k: v for k, v in e.items() if k != "label"} for e in found] == [
         {"medicine_id": medicine_id, "disease_id": disease_id, "date": THE_DAY,
          "note": SECOND_NOTE}]
 

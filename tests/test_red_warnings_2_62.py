@@ -179,8 +179,9 @@ def test_each_red_row_is_in_corrections_json_once_with_the_note(row):
     _, medicine, disease, _, _ = row
     found = [e for e in read(CORRECTIONS_FILE)
              if (e["medicine_id"], e["disease_id"]) == (medicine, disease)]
-    assert found == [{"medicine_id": medicine, "disease_id": disease,
-                      "date": THE_DAY, "note": NOTE}]
+    assert [{k: v for k, v in entry.items() if k != "label"} for entry in found] == [
+        {"medicine_id": medicine, "disease_id": disease, "date": THE_DAY, "note": NOTE}]
+    assert all(isinstance(entry["label"], str) for entry in found)
 
 
 @pytest.mark.parametrize("row", LIMIT_ROWS, ids=row_id)
