@@ -96,9 +96,9 @@ def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
     medicine_ids = {medicine_id for medicine_id, _ in saved_pairs()}
     disease_ids = {disease.id for disease in THE_THREE}
     for entry in entries:
-        # The label field was added later. Monday's twelve have none, so it is empty.
+        # The label field holds the regulator page read for this entry.
         assert set(entry) == {"medicine_id", "disease_id", "date", "note", "label"}
-        assert entry["label"] == ""
+        assert entry["label"].startswith("https://")
         # Each value is an id from the saved files, the day, or the note.
         # That leaves no room for anybody's name.
         assert entry["medicine_id"] in medicine_ids
@@ -110,10 +110,11 @@ def test_example_5_every_entry_holds_only_the_four_keys_and_no_persons_name():
     text = "".join(line for line in FILE.read_text(encoding="utf-8").splitlines(keepends=True)
                    if THE_DAY in line)
     assert text.count(THE_DAY) == 12
+    labels = sorted({entry["label"] for entry in entries if entry["label"]}, key=len, reverse=True)
     for known in ["medicine_id", "disease_id", "date", "note", "label", NOTE, THE_DAY,
+                  *labels,
                   *sorted(medicine_ids, key=len, reverse=True), *disease_ids]:
         text = text.replace(f'"{known}"', "")
-    text = text.replace('""', "")  # the empty label
     assert re.sub(r"[\s\[\]{}:,]", "", text) == ""
 
 
