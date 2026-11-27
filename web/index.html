@@ -521,6 +521,12 @@ body.registering>:not(.register){display:none!important}
           <p class="doctor-line" data-part="caution">Never start, stop or change any medicine without a doctor.</p>
           <div class="cards" id="new-trials-cards"></div>
         </details>
+        <!-- Ticket T8. Names listed on ClinicalTrials.gov that matched no medicine. Open, under the two boxes. -->
+        <details class="wider-box" id="ctgov-only-box" hidden>
+          <summary>Medicines found only on ClinicalTrials.gov (<span id="ctgov-only-trials"></span>)</summary>
+          <p class="trials-count" id="ctgov-only-note"></p>
+          <div class="cards" id="ctgov-only-cards"></div>
+        </details>
       </section>
 
       <section class="panel" data-slot="new-clues" id="panel-clues" role="tabpanel" aria-labelledby="tab-clues" hidden>
@@ -1286,12 +1292,47 @@ body.registering>:not(.register){display:none!important}
     byId("new-trials-box").hidden = !newTrialsCards.length;
     byId("new-trials-box").open = !studiedCards.length && !moreTrialsCards.length;  // open only when it is all there is
     tapWords(byId("new-trials-box"));
+    // Ticket T8. Medicines found only on ClinicalTrials.gov. Open, first 20, then "Show all [N]".
+    const only = data.ctgov_only || null;
+    const onlyCards = only && Array.isArray(only.cards) ? only.cards.map(item => ctgovOnlyCard(item, only.line)) : [];
+    byId("ctgov-only-cards").replaceChildren(...onlyCards);
+    byId("ctgov-only-trials").textContent = only
+      ? (only.trials === 1 ? "1 trial" : only.trials + " trials") : "";
+    byId("ctgov-only-note").textContent = only ? (only.note || "") : "";
+    const onlyShown = 20;
+    onlyCards.forEach((card, place) => { card.hidden = place >= onlyShown; });
+    const oldOnlyAll = byId("ctgov-only-show-all");
+    if (oldOnlyAll) oldOnlyAll.remove();
+    const oldOnlyLink = byId("ctgov-only-more");
+    if (oldOnlyLink) oldOnlyLink.remove();
+    if (onlyCards.length > onlyShown) {
+      const showAll = document.createElement("button");
+      showAll.type = "button";
+      showAll.id = "ctgov-only-show-all";
+      showAll.className = "show-all";
+      showAll.textContent = "Show all " + onlyCards.length;
+      showAll.addEventListener("click", () => {
+        for (const card of onlyCards) card.hidden = false;
+        showAll.remove();
+      });
+      byId("ctgov-only-cards").after(showAll);
+    }
+    if (only && only.more_url) {
+      const more = document.createElement("a");
+      more.id = "ctgov-only-more";
+      more.className = "all-studies";
+      more.href = only.more_url;
+      more.textContent = "All " + only.trials + " trials on ClinicalTrials.gov";
+      byId("ctgov-only-box").append(more);
+    }
+    byId("ctgov-only-box").hidden = !onlyCards.length;
+    byId("ctgov-only-box").open = onlyCards.length > 0;
 
     const counts = {
       // The main list and the two older boxes. The red-warning box is not counted (ticket 2.27),
       // nor is the no-regulator box (ticket 2.42).
       approved: approvedCards.length + narrowerCards.length + widerCards.length,
-      trials: studiedCards.length + moreTrialsCards.length + newTrialsCards.length,  // the list and both its boxes
+      trials: studiedCards.length + moreTrialsCards.length + newTrialsCards.length + onlyCards.length,  // the list, both boxes, and the ClinicalTrials.gov-only box
       clues: newCards.length};
     for (const button of tabButtons) part(button, "count").textContent = "(" + counts[button.dataset.tab] + ")";
 
@@ -1840,6 +1881,29 @@ body.registering>:not(.register){display:none!important}
     return el;
   }
 
+  /* Ticket T8. A name ClinicalTrials.gov listed, with the one line the API sends.
+     The card keeps the normal edge. No path, no records count, no phase. */
+  function ctgovOnlyCard(item, line) {
+    const el = copyOf("card-template");
+    slot(el, "medicine-name").textContent = item.name;
+    for (const name of ["rank", "reports", "forms", "first-year", "label", "proof-note", "limit-note", "withdrawal-note", "wider-label-note", "warning", "path", "points-line", "ending", "studies", "phase", "source"]) {
+      const node = slot(el, name);
+      if (node) node.remove();
+    }
+    for (const name of ["path-head", "proteins", "machines", "no-path", "no-source", "no-study"]) {
+      const node = part(el, name);
+      if (node) node.remove();
+    }
+    const direction = el.querySelector(".direction-note");
+    if (direction) direction.remove();
+    const note = document.createElement("p");
+    note.className = "proof-note";
+    note.dataset.slot = "ctgov-only-line";
+    note.textContent = line || "";
+    el.querySelector(".card-top").after(note);
+    return el;
+  }
+
   /* Ticket T7. The grey line, in the API's words, only when the API sends it. */
   function addCtgovNote(el, card) {
     if (!card || !card.ctgov_note) return;
@@ -2027,6 +2091,13 @@ body.registering>:not(.register){display:none!important}
       + pageWords("#panel-trials .section-desc");
     if (!countLine.hidden && countLine.textContent) trialsWords += " " + countLine.textContent;
     if (!sourcesLine.hidden && sourcesLine.textContent) trialsWords += " " + sourcesLine.textContent;
+    const onlyBox = byId("ctgov-only-box");
+    if (onlyBox && !onlyBox.hidden) {
+      const title = onlyBox.querySelector("summary").innerText.replace(/\s+/g, " ").trim();
+      trialsWords += " " + title;
+      const onlyNote = byId("ctgov-only-note").textContent;
+      if (onlyNote) trialsWords += " " + onlyNote;
+    }
     reg("trials").textContent = trialsWords;
 
     // The page's own order, from the list above the opposite-way box (ticket 2.28).
