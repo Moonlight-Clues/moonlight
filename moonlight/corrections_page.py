@@ -13,10 +13,12 @@ app, like the other hand-written lists (Kashish, 27 Nov, decisions A and B).
 
 What each list's row says it shows (Kashish, 27 Nov, decision C):
     corrections     the card's red sentence, exactly as shown (engine.RED_WORDS)
-    approvals       engine.ADDED_LINE
+    approvals       engine.ADDED_LINE, and engine.LIMITED_LINE under it when the
+                    entry says "limited": both lines, as the card shows them
     limits          engine.LIMITED_LINE
     confirmed       CONFIRMED_LINE (new words, for Kashish's sheet)
-    withdrawals     the card's withdrawal line (W4): REGION_LINES or HAND_WITHDRAWAL_LINE
+    withdrawals     the card's withdrawal line (W4): REGION_LINES or HAND_WITHDRAWAL_LINE;
+                    an entry with a region shows on every page, so ALL_PAGES
     pmda_summaries  the Japan line, engine.pmda_line
     salt_parents    "Forms: ..." with the forms, and ALL_PAGES as the disease
     discontinued    engine.DISCONTINUED_LINE, and ALL_PAGES (read only if present)
@@ -60,8 +62,13 @@ class Row:
     date: str  # "2026-11-26", for sorting
     disease: str
     medicine: str
-    shows: str
+    lines: Tuple[str, ...]  # what the card shows, one item per line
     source: str
+
+    @property
+    def shows(self) -> str:
+        """The card's lines, one per text line."""
+        return "\n".join(self.lines)
 
     @property
     def shown_date(self) -> str:
@@ -116,7 +123,14 @@ def ids_needing_names(lists: Dict[str, object]) -> Set[str]:
     return needed
 
 
-def _shows(name: str, entry: dict, medicine: str, names: Dict[str, str]) -> str:
+def _shows(name: str, entry: dict, medicine: str, names: Dict[str, str]) -> Tuple[str, ...]:
+    """The lines the card shows, in its order (Kashish, 27 Nov, decision C)."""
+    if name == "approvals" and entry.get("limited") is True:
+        return (engine.ADDED_LINE, engine.LIMITED_LINE)  # both, as the card shows them
+    return (_one_line(name, entry, medicine, names),)
+
+
+def _one_line(name: str, entry: dict, medicine: str, names: Dict[str, str]) -> str:
     if name == "corrections":
         return engine.RED_WORDS[entry["note"]]
     if name == "approvals":
@@ -158,7 +172,10 @@ def rows() -> List[Row]:
             disease = ALL_PAGES
         else:
             medicine = explain._display(names[entry["medicine_id"]])
-            disease = ALL_PAGES if name == "discontinued" else names[entry["disease_id"]]
+            # Kashish, 27 Nov: a withdrawal with a region shows on every page
+            # (2.65, W4), so its row says "All pages" too.
+            on_every_page = name == "discontinued" or (name == "withdrawals" and entry.get("region"))
+            disease = ALL_PAGES if on_every_page else names[entry["disease_id"]]
         datetime.date.fromisoformat(entry["date"])  # ValueError if not a real date
         found.append((entry["date"], order, Row(entry["date"], disease, medicine,
                                                 _shows(name, entry, medicine, names),
@@ -202,9 +219,9 @@ def page_html() -> str:
     e = html.escape
     body = []
     for row in rows():
-        cells = (("date", row.shown_date), ("disease", row.disease),
-                 ("medicine", row.medicine), ("shows", row.shows))
-        tds = "".join(f'<td class="{cls}" data-label="{e(label)}">{e(text)}</td>'
+        cells = (("date", e(row.shown_date)), ("disease", e(row.disease)),
+                 ("medicine", e(row.medicine)), ("shows", "<br>".join(e(l) for l in row.lines)))
+        tds = "".join(f'<td class="{cls}" data-label="{e(label)}">{text}</td>'
                       for (cls, text), label in zip(cells, COLUMNS))
         tds += (f'<td class="source" data-label="{e(COLUMNS[4])}"><a href="{e(row.source)}" '
                 f'rel="noopener" target="_blank">{e(SOURCE_LINK)}</a></td>')

@@ -142,8 +142,9 @@ def by_source(source):
 
 def test_each_list_shows_the_cards_own_words(lists):
     assert by_source("https://example.org/a").shows == engine.WRONG_WARNING
-    assert by_source("https://example.org/b").shows == (
-        "This approval is missing from the database. We added it from the official label.")
+    assert by_source("https://example.org/b").shows == (  # limited: both lines
+        "This approval is missing from the database. We added it from the official label.\n"
+        "The label covers only some people with this disease.")
     assert by_source("https://example.org/c").shows == (
         "The label covers only some people with this disease.")
     assert by_source("https://example.org/d").shows == "Source record opens the label we read."
@@ -151,6 +152,24 @@ def test_each_list_shows_the_cards_own_words(lists):
     assert by_source("https://example.org/f").shows == engine.REGION_LINES["US"]
     assert by_source("https://www.pmda.go.jp/files/x.pdf").shows == engine.pmda_line("2013")
     assert by_source("https://example.org/h").shows == engine.DISCONTINUED_LINE
+
+
+def test_an_approval_for_only_some_people_shows_both_lines(lists):
+    """Kashish, 27 Nov: both lines, as the card shows them."""
+    data, _ = lists
+    data["approvals"].append(
+        {"medicine_id": "CHEMBL485", "name": "Codeine", "disease_id": "MONDO_0003233",
+         "date": "2026-11-23", "label": "https://example.org/b2"})
+    assert by_source("https://example.org/b").lines == (engine.ADDED_LINE, engine.LIMITED_LINE)
+    assert by_source("https://example.org/b2").lines == (engine.ADDED_LINE,)
+    page = corrections_page.page_html()
+    assert f"{engine.ADDED_LINE}<br>{engine.LIMITED_LINE}" in page
+
+
+def test_a_withdrawal_with_a_region_is_on_all_pages(lists):
+    """Kashish, 27 Nov: "All pages", as 2.65 shows the region line on every page."""
+    assert by_source("https://example.org/f").disease == "All pages"
+    assert by_source("https://example.org/e").disease == "Alzheimer disease"
 
 
 def test_a_salt_row_lists_the_forms_on_all_pages(lists):
