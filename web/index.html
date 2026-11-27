@@ -282,6 +282,9 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
    so every row is full (ticket 3.9). */
 .key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
 .key-note{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
+/* Ticket T11. A picture of one trial row, using the same classes as a row on a card. Not a link. */
+.guide-trial{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:var(--radius);padding:6px 16px 4px;margin-top:16px;box-shadow:0 4px 13px #101F3107}
+.guide-trial-line{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
 .key li{display:flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:13px;line-height:1.3;min-width:0}
 
 /* the two folded parts: the wider-group box, holding a list */
@@ -631,6 +634,16 @@ body.registering>:not(.register){display:none!important}
         <div class="card-foot"><span class="source-link">Source record</span> <span class="k" aria-label="I">I</span></div>
         <div class="report-row"><span class="report-link">Report</span> <span class="k" aria-label="J">J</span></div>
       </article>
+
+      <!-- Ticket T11. A picture of a trial row. No link and no address. -->
+      <div class="guide-trial">
+        <ul class="studies">
+          <li><span class="study-row"><span class="sr1"><span class="nct">NCT number</span><span class="phase-t">Phase 3</span></span><span class="sr2">Finished 2016 · Was tested</span></span></li>
+        </ul>
+      </div>
+      <p class="guide-trial-line">Each row is one trial on ClinicalTrials.gov. Tap it to open the trial.</p>
+      <p class="guide-trial-line">Status says where the trial is now. 'Finished' means it ended, not that the medicine worked.</p>
+      <p class="guide-trial-line">Role says whether this medicine was the one tested or was used for comparison.</p>
 
       <ul class="key">
         <li><span class="k" aria-hidden="true">A</span><span>Medicine and its forms</span></li>
