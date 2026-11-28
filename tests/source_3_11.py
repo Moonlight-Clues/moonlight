@@ -616,8 +616,13 @@ _NEW_TO_OLD = {(medicine_id, new): old for _, medicine_id, _, old, new in MOVED}
 
 
 def back_to_before(page):
-    """A copy of the page with the old link put back on the cards above."""
+    """A copy of the page with the old link put back on the cards above.
+
+    Ticket R2: the answer's new key "recruiting" is set aside too, as every
+    old comparison does for the keys later tickets added. Nothing else.
+    """
     plain = copy.deepcopy(page)
+    plain.pop("recruiting", None)
     for where in TRIAL_PARTS:
         for card in plain.get(where, []):
             if isinstance(card, dict) and (card.get("id"), card.get("source")) in _NEW_TO_OLD:

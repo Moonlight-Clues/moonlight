@@ -68,7 +68,10 @@ def test_36_the_bytes_on_the_wire_are_really_gzip_and_smaller(client):
                          headers={"Accept-Encoding": "gzip"}) as response:
             wire = b"".join(response.iter_raw())
     body = gzip.decompress(wire)
-    assert json.loads(body) == ask(client, **{"Accept-Encoding": "identity"}).json()
+    plain = ask(client, **{"Accept-Encoding": "identity"}).json()
+    # ticket R2: recruiting is set aside (the live app has the trials file open, this client does not)
+    assert {k: v for k, v in json.loads(body).items() if k != "recruiting"} == {
+        k: v for k, v in plain.items() if k != "recruiting"}
     assert len(wire) < len(body)
 
 

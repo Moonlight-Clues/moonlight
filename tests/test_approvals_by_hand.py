@@ -412,7 +412,7 @@ def test_nothing_else_on_the_graves_page_changes():
                              if card["id"] not in ("CHEMBL1201532", "CHEMBL1201533",
                                                    "CHEMBL1789844")]
     expected["wrong_way_line"] = engine.wrong_way_line(3)
-    assert new == expected
+    assert {k: v for k, v in new.items() if k != "recruiting"} == expected  # ticket R2: recruiting is set aside
 
 
 # ---- "No new request to Open Targets." ----

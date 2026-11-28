@@ -319,6 +319,8 @@ def test_example_old_fields_are_unchanged_and_each_trial_card_gains_three(tmp_pa
         after = saved_page()
     assert set(after) == set(before)
     for key in before:
+        if key == "recruiting":
+            continue  # ticket R2: recruiting is set aside
         if key in ("being_studied", "more_in_trials", "new_in_trials"):
             assert len(after[key]) == len(before[key])
             # Ticket 3.31 re-sorts the two folded boxes (newest trial first), so
@@ -431,7 +433,8 @@ def test_example_a_broken_lookup_serves_the_page_as_today(tmp_path, caplog, befo
         with patch.object(trials_module.Trials, "for_card", side_effect=sqlite3.DatabaseError("broken")):
             with caplog.at_level(logging.WARNING):
                 answer = saved_page()
-    assert answer == before
+    assert {k: v for k, v in answer.items() if k != "recruiting"} == {
+        k: v for k, v in before.items() if k != "recruiting"}  # ticket R2: recruiting is set aside
     assert "broken" in caplog.text or "trials" in caplog.text.lower()
 
 

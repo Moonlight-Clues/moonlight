@@ -199,6 +199,7 @@ def test_each_card_carries_the_exact_line(pages, pair):
 @pytest.mark.parametrize("disease_id", [T2D, HAEMOPHILIA_A])
 def test_no_other_card_on_the_page_changes(pages, disease_id):
     after, before = pages[disease_id], saved.before(disease_id)
+    after = {k: v for k, v in after.items() if k != "recruiting"}  # ticket R2: recruiting is set aside
     assert set(after) == set(before)
     from test_list_fixes_2_64 import ANAGLIPTIN, DEBERZA, SUINY, TOFOGLIFLOZIN  # ticket 2.64
     japanese = {ANAGLIPTIN: SUINY, TOFOGLIFLOZIN: DEBERZA}  # ticket 2.64
@@ -243,6 +244,7 @@ def test_givosiran_on_aip_is_one_card_on_the_main_list_with_the_line():
 @pytest.mark.salt_parents
 def test_aip_every_other_card_is_as_before():
     after, before = saved.page_answer(AIP, [no_years()]), saved.before(AIP, salt=True)
+    after = {k: v for k, v in after.items() if k != "recruiting"}  # ticket R2: recruiting is set aside
     assert [c["id"] for c in before["being_studied"]] == [GIVOSIRAN]
     assert after["being_studied"] == []  # it moved to Approved, nowhere else
     assert [c for c in after["approved"] if c["id"] != GIVOSIRAN] == before["approved"]

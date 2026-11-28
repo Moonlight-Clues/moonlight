@@ -581,7 +581,7 @@ def test_example_everything_else_is_letter_for_letter_what_main_gives(hem_a, bef
     assert len(hem_a["being_studied"]) == 10 and len(hem_a["new_clues"]) == 38
     assert without_the_key(back_to_before(trials_back_to_before(labels_back_to_before(hem_a)))) == before
     # Same keys in the same order; ticket 2.47 adds the red box's key for Obizur.
-    assert [key for key in hem_a if key != "wrong_approvals_box"] == list(before)
+    assert [key for key in hem_a if key not in ("wrong_approvals_box", "recruiting")] == list(before)  # ticket R2: recruiting is set aside
 
 
 def test_example_there_is_no_not_shown_line(hem_a):
