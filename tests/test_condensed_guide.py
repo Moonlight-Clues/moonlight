@@ -98,6 +98,8 @@ FACTS = [
     ("Facts.", "Open Targets Platform, an open research database."),  # ticket T0
     # Ticket 3.32: new line, straight after Facts.
     ("Trials.", "ClinicalTrials.gov, the US public register of clinical studies."),
+    # Ticket R3: new line, straight after Trials.
+    ("Recruiting now.", "Trials the registry lists as recruiting. Not every trial is listed, and this is not advice to join one."),
     # Ticket 3.8, commit B: the sentence about explanations is no longer true and is gone.
     ("Words.", "What you type is sent to Gemini, so type no names or private details."),
     ("Visits.", "Counted with Umami. No cookies. Never the disease or anything you type."),

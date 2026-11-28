@@ -202,6 +202,35 @@ small,.fine{font-size:12px}.muted{color:var(--muted)}
 .report-problem,.report-thanks{margin:8px 0 0}
 @media print{.report-row{display:none!important}}
 
+/* Ticket R3. The "Recruiting now" panel, layout A. Navy head, gold count, white list. */
+.recruiting{margin-top:22px;background:var(--navy);border:1px solid var(--navy);border-radius:16px;overflow:hidden;color:var(--cream)}
+.r-head{display:flex;flex-direction:column;gap:12px;padding:20px 18px 18px}
+.r-bar{display:flex;align-items:center;gap:12px;min-width:0}
+.r-name{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:0}
+.r-dot{flex:none;width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.r-name h2{margin:0;font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:26px;line-height:1.15;letter-spacing:-.03em;color:var(--cream);white-space:nowrap}
+.r-number{flex:none;margin-left:auto;font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:700;font-size:54px;line-height:.9;letter-spacing:-.04em;color:var(--gold);white-space:nowrap}
+.r-number.d3{font-size:44px}.r-number.d4{font-size:34px}
+.r-fact{margin:0;font-size:16px;line-height:1.45;color:var(--cream)}
+.r-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
+.r-pick,.r-toggle{flex:1 1 220px}
+.r-label{display:block;margin-bottom:5px;font-size:12px;color:#C4D2D9}
+.r-select{display:block;width:100%;min-height:48px;padding:8px 10px;border:1px solid #C7D7D9;border-radius:10px;background:#fff;color:var(--navy);font-size:16px}
+.r-toggle{min-height:48px;padding:10px 16px;border:0;border-radius:10px;background:var(--cream);color:var(--navy);font-size:16px;font-weight:700}
+.r-caution{margin:0;font-size:12px;line-height:1.5;color:#C4D2D9}
+.r-list{background:#fff;color:var(--navy);padding:0 14px 14px}
+.r-rows{list-style:none;margin:0;padding:0}
+.r-rows li+li{border-top:1px solid var(--line)}
+.r-row{display:block;min-height:44px;padding:10px 0;text-decoration:none;color:inherit}
+.r-top{display:flex;justify-content:space-between;gap:8px}
+.r-nct{font-size:13px;font-weight:700;color:#287D7C}
+.r-phase{font-size:12px;font-weight:700;color:var(--neutral);white-space:nowrap}
+.r-title{display:block;margin-top:3px;font-size:13px;line-height:1.45;color:var(--navy)}
+.r-countries{display:block;margin-top:2px;font-size:12px;color:var(--muted)}
+.r-link{display:block;margin-top:6px;font-size:13px;font-weight:650;color:#287D7C;text-decoration:underline;text-underline-offset:3px}
+.r-list .show-all{margin-top:12px}
+@media print{.recruiting{display:none}}
+
 /* being studied box and left-out counts */
 .studied{background:#E9EEF2;border:1px solid #D0DBE2;border-radius:16px;padding:18px 14px}
 .studied h2{color:var(--navy)}.studied .card{border-left-color:#788A9F;box-shadow:none}
@@ -456,6 +485,21 @@ body.registering>:not(.register){display:none!important}
         <button class="tab" type="button" role="tab" id="tab-trials" data-tab="trials" aria-controls="panel-trials" aria-selected="false" tabindex="-1">In trials <span class="tab-count" data-part="count"></span></button>
         <button class="tab" type="button" role="tab" id="tab-clues" data-tab="clues" aria-controls="panel-clues" aria-selected="false" tabindex="-1">New clues <span class="tab-count" data-part="count"></span></button>
       </div>
+      <!-- Ticket R3. "Recruiting now": In trials tab only, shown when the API's recruiting is not null and total >= 1. -->
+      <section class="recruiting" id="recruiting-panel" aria-labelledby="recruiting-heading" hidden>
+        <div class="r-head">
+          <div class="r-bar"><div class="r-name"><span class="r-dot" aria-hidden="true"></span><h2 id="recruiting-heading">Recruiting now</h2></div><span class="r-number" id="recruiting-number" aria-hidden="true"></span></div>
+          <p class="r-fact" id="recruiting-fact"></p>
+          <div class="r-controls">
+            <div class="r-pick"><label class="r-label" for="recruiting-country">Country</label><select class="r-select" id="recruiting-country"></select></div>
+            <button class="r-toggle" type="button" id="recruiting-toggle" aria-expanded="false" aria-controls="recruiting-list"></button>
+          </div>
+          <p class="r-caution" id="recruiting-caution">Not every trial is listed. This is not advice to join one.</p>
+        </div>
+        <div class="r-list" id="recruiting-list" hidden>
+          <ul class="r-rows" id="recruiting-rows"></ul>
+        </div>
+      </section>
       <p class="card-help"><a href="#guide-card" data-guide>How to read a card</a></p>
 
       <section class="panel" data-slot="approved" id="panel-approved" role="tabpanel" aria-labelledby="tab-approved">
@@ -698,6 +742,7 @@ body.registering>:not(.register){display:none!important}
         <ul class="limits">
           <li><div><b>Facts.</b> <span>Open Targets Platform, an open research database.</span></div></li>
           <li><div><b>Trials.</b> <span>ClinicalTrials.gov, the US public register of clinical studies.</span></div></li>
+          <li><div><b>Recruiting now.</b> <span>Trials the registry lists as recruiting. Not every trial is listed, and this is not advice to join one.</span></div></li>
           <li><div><b>Words.</b> <span>What you type is sent to Gemini, so type no names or private details.</span></div></li>
           <li><div><b>Visits.</b> <span>Counted with Umami. No cookies. Never the disease or anything you type.</span></div></li>
           <li><div><b>Protein descriptions.</b> <span>Written by UniProt, read through Open Targets. CC BY 4.0.</span></div></li>
@@ -957,6 +1002,8 @@ body.registering>:not(.register){display:none!important}
     byId("filters").replaceChildren();
     shown = null;
     byId("print-page").hidden = true;
+    recruiting = null;  // ticket R3
+    showRecruiting();
   }
 
   function clearChoices() {
@@ -1091,12 +1138,163 @@ body.registering>:not(.register){display:none!important}
     byId("disease-database-name").hidden = !alsoCalled;
   }
 
+  /* ---- Ticket R3. "Recruiting now" ----
+     The API's "recruiting" key is null, or {checked, total, countries: [{name, count}],
+     trials: [{nct_id, title, phases, countries, url}]}. The panel shows only when it is not
+     null and total is at least 1. The country and the open list live in these variables
+     and nowhere else: not in the address, not in storage, not sent to analytics. */
+  let currentTab = FIRST_TAB;
+  let recruiting = null;       // the API's recruiting key for the disease on the page, or null
+  let recruitingOpen = false;
+  let recruitingAll = 20;      // how many rows show; "Show all" lifts it
+  const RECRUITING_FIRST = 20;
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+                  "September", "October", "November", "December"];
+  const THE_COUNTRIES = ["United States", "United Kingdom", "Netherlands", "Philippines"];
+  const US = "United States";
+  const num = n => n.toLocaleString("en-US");
+
+  function dateWords(iso) {
+    const hit = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    return hit ? Number(hit[3]) + " " + MONTHS[Number(hit[2]) - 1] + " " + hit[1] : "";
+  }
+
+  /* "" is All countries; otherwise a country name. */
+  function recruitingTrials(country) {
+    return country ? recruiting.trials.filter(item => (item.countries || []).includes(country)) : recruiting.trials;
+  }
+
+  function recruitingFact(country) {
+    const day = "Checked on " + dateWords(recruiting.checked) + ".";
+    if (country) {
+      const n = recruitingTrials(country).length;
+      const place = THE_COUNTRIES.includes(country) ? "the " + country : country;
+      return (n === 1 ? "1 trial is" : num(n) + " trials are") + " recruiting in " + place + ". " + day;
+    }
+    const n = recruiting.total, m = recruiting.countries.length;
+    let line = (n === 1 ? "1 trial is" : num(n) + " trials are") + " recruiting in "
+      + (m === 1 ? "1 country" : num(m) + " countries") + ". " + day;
+    if (!recruiting.countries.some(item => item.name === US)) line = "No trial is recruiting in the United States. " + line;
+    return line;
+  }
+
+  function countriesWords(countries) {
+    const names = [...(countries || [])].sort();
+    if (names.length > 3) return names.slice(0, 3).join(", ") + " and " + (names.length - 3) + " more";
+    return listed(names);
+  }
+
+  function recruitingRow(item) {
+    const li = document.createElement("li");
+    const row = document.createElement(item.url ? "a" : "div");  // no address sent: a plain row, never a made-up link
+    row.className = "r-row";
+    if (item.url) {
+      row.href = item.url;
+      row.target = "_blank";
+      row.rel = "noopener noreferrer";
+    }
+    const top = document.createElement("span");
+    top.className = "r-top";
+    const nct = document.createElement("span");
+    nct.className = "r-nct";
+    nct.textContent = item.nct_id;
+    top.append(nct);
+    const phase = studyPhaseWords(item.phases);
+    if (phase) {
+      const stage = document.createElement("span");
+      stage.className = "r-phase";
+      stage.textContent = phase;
+      top.append(stage);
+    }
+    row.append(top);
+    if (item.title) {
+      const title = document.createElement("span");
+      title.className = "r-title";
+      title.textContent = item.title;
+      row.append(title);
+    }
+    const where = countriesWords(item.countries);
+    if (where) {
+      const line = document.createElement("span");
+      line.className = "r-countries";
+      line.textContent = where;
+      row.append(line);
+    }
+    if (item.url) {
+      const words = document.createElement("span");
+      words.className = "r-link";
+      words.textContent = "Sites and contacts on ClinicalTrials.gov";
+      row.append(words);
+    }
+    li.append(row);
+    return li;
+  }
+
+  /* Number, fact line, button and rows for the country in the picker. */
+  function paintRecruiting() {
+    const country = byId("recruiting-country").value;
+    const items = recruitingTrials(country);
+    const n = items.length;
+    const number = byId("recruiting-number");
+    number.textContent = num(n);
+    number.className = "r-number" + (n > 999 ? " d4" : n > 99 ? " d3" : "");
+    byId("recruiting-fact").textContent = recruitingFact(country);
+    byId("recruiting-toggle").textContent = (recruitingOpen ? "Hide the trial" : "See the trial") + (n === 1 ? "" : "s");
+    byId("recruiting-toggle").setAttribute("aria-expanded", String(recruitingOpen));
+    byId("recruiting-list").hidden = !recruitingOpen;
+    const rows = byId("recruiting-rows");
+    const old = byId("recruiting-show-all");
+    if (old) old.remove();
+    if (!recruitingOpen) { rows.replaceChildren(); return; }
+    rows.replaceChildren(...items.slice(0, recruitingAll).map(recruitingRow));
+    if (n > recruitingAll) {
+      const all = document.createElement("button");
+      all.type = "button";
+      all.id = "recruiting-show-all";
+      all.className = "show-all";
+      all.textContent = "Show all " + num(n);
+      all.addEventListener("click", () => { recruitingAll = Infinity; paintRecruiting(); });
+      byId("recruiting-list").append(all);
+    }
+  }
+
+  function drawRecruiting(data) {
+    recruiting = data && data.total >= 1 && Array.isArray(data.trials) && Array.isArray(data.countries) ? data : null;
+    recruitingOpen = false;
+    recruitingAll = RECRUITING_FIRST;
+    if (recruiting) {
+      const pick = byId("recruiting-country");
+      const options = recruiting.countries.map(item => {
+        const option = document.createElement("option");
+        option.value = item.name;
+        option.textContent = item.name + " (" + num(item.count) + ")";
+        return option;
+      });
+      const all = document.createElement("option");
+      all.value = "";
+      all.textContent = "All countries (" + num(recruiting.total) + ")";
+      pick.replaceChildren(...options, all);
+      pick.value = recruiting.countries.some(item => item.name === US) ? US : "";
+      paintRecruiting();
+    }
+    showRecruiting();
+  }
+
+  function showRecruiting() {
+    byId("recruiting-panel").hidden = !(recruiting && currentTab === "trials");
+  }
+
+  byId("recruiting-country").addEventListener("change", () => { recruitingAll = RECRUITING_FIRST; paintRecruiting(); });
+  byId("recruiting-toggle").addEventListener("click", () => { recruitingOpen = !recruitingOpen; paintRecruiting(); });
+
   /* ---- the three tabs ---- */
 
   const tabButtons = [...document.querySelectorAll('[role="tab"]')];
 
   /* Show one tab's list and hide the other two. */
   function selectTab(name) {
+    currentTab = name;
+    showRecruiting();
     for (const button of tabButtons) {
       const on = button.dataset.tab === name;
       button.setAttribute("aria-selected", String(on));
@@ -1167,6 +1365,7 @@ body.registering>:not(.register){display:none!important}
 
   function draw(data) {
     const disease = data.disease, diseaseName = capital(disease.name);
+    drawRecruiting(data.recruiting);  // ticket R3
     drawTrialNotes(data);
     byId("disease-title").textContent = diseaseName;
     drawAbout(data.about_disease);

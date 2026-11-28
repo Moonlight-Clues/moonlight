@@ -245,6 +245,8 @@ def test_example_4_the_line_is_under_the_real_in_trials_tab():
 
 
 def test_example_4_the_old_words_are_all_still_there_and_said_once():
-    for words in ("Medicines being tested for this disease.", "not a prediction of effectiveness.",
-                  "Not every trial is listed."):
+    for words in ("Medicines being tested for this disease.", "not a prediction of effectiveness."):
         assert PAGE.count(words) == 1
+    # Ticket R3: the Recruiting now panel's caution line starts with the same sentence.
+    assert PAGE.count("Not every trial is listed.") == 2
+    assert PAGE.count("Not every trial is listed. This is not advice to join one.") == 1
