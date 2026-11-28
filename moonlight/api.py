@@ -54,6 +54,12 @@
                                             moonlight/trials.sqlite, opened
                                             once at start. If the file is
                                             missing, none of the three is sent.
+                                            Ticket R2: and "recruiting", last: the
+                                            trials now recruiting for the disease,
+                                            {checked, total, countries, trials},
+                                            or null if there is no trials file, it
+                                            cannot be read, or it was checked more
+                                            than 14 days ago.
     GET /api/explain?disease_id=&clue_id=   one clue's explanation
     POST /api/report                        a visitor's report about one card,
                                             kept in Firestore by reports.py
@@ -116,8 +122,10 @@ import datetime
 import html
 import os
 import pathlib
+import sqlite3
 import threading
 import time
+import zlib
 from collections import OrderedDict, deque
 import contextlib
 from concurrent.futures import ThreadPoolExecutor
@@ -831,6 +839,43 @@ def _add_trials(cards: Iterable[dict], links: Dict[str, Set[str]], disease_name:
                                    -newest[id(card)].toordinal() if newest.get(id(card)) else 0))
 
 
+RECRUITING_USE_BY_DAYS = 14  # ticket R2: older than this, the trials file is not shown
+
+
+def _today() -> datetime.date:
+    return datetime.date.today()
+
+
+def _recruiting(disease_id: str, file: Optional[trials.Trials],
+                today: Optional[datetime.date] = None) -> Optional[dict]:
+    """Ticket R2. The recruiting trials for a disease, or None.
+
+    {"checked", "total", "countries": [{"name", "count"}, ...], "trials": [...]}.
+    trials is everything trials.recruiting_for gives, in its order (newest
+    first). countries holds only countries with at least one trial, A to Z;
+    a trial in three countries counts in each. All or none: no file, a file
+    that cannot be read, or a checked date more than 14 days before today
+    gives None, and the rest of the answer is served as before.
+    """
+    if file is None:
+        return None
+    today = today or _today()
+    try:
+        checked = datetime.date.fromisoformat(file.checked)
+        if (today - checked).days > RECRUITING_USE_BY_DAYS:
+            return None
+        items = file.recruiting_for(disease_id, today=today)
+        counts: Dict[str, int] = {}
+        for item in items:
+            for name in set(item["countries"]):
+                counts[name] = counts.get(name, 0) + 1
+    except (sqlite3.Error, zlib.error, ValueError, TypeError, KeyError):
+        return None  # api.py never logs (test_82); trials.py logs its own read errors
+    return {"checked": file.checked, "total": len(items),
+            "countries": [{"name": name, "count": counts[name]} for name in sorted(counts)],
+            "trials": items}
+
+
 def _about_json(disease: Disease) -> dict:
     """The disease in Open Targets' own words (ticket 5.5).
 
@@ -986,12 +1031,19 @@ def clues(disease_id: str) -> dict:
     if before is not None:
         kept = _kept_answer(disease_id, before)
         if kept is not None:
-            return kept
+            return _with_recruiting(kept, disease_id)
     answer = _build_clues(disease_id)
     after = remembered_version()
     if after is not None and before in (None, after):  # not if the version changed meanwhile
         _keep_answer(disease_id, after, answer)
-    return answer
+    return _with_recruiting(answer, disease_id)
+
+
+def _with_recruiting(answer: dict, disease_id: str) -> dict:
+    """Ticket R2. A copy of the answer with "recruiting" added last. It is
+    worked out for every ask, not kept, because the 14-day rule depends on
+    today's date."""
+    return {**answer, "recruiting": _recruiting(disease_id, _trials)}
 
 
 def _build_clues(disease_id: str) -> dict:

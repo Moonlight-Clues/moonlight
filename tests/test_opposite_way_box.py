@@ -287,11 +287,11 @@ def test_example_nothing_is_removed_and_every_old_key_answers_what_it_answered_b
     assert KEY not in before
     assert {key: value for key, value in trials_back_to_before(adpkd).items()
             if key != KEY} == before
-    assert [key for key in adpkd if key != KEY] == list(before)  # in the same order
+    assert [key for key in adpkd if key not in (KEY, "recruiting")] == list(before)  # in the same order; ticket R2: recruiting is set aside
 
 
 def test_example_the_answer_has_these_parts_in_this_order(adpkd):
-    assert list(adpkd) == [
+    assert [key for key in adpkd if key != "recruiting"] == [  # ticket R2: recruiting is set aside
         "disease", "about_disease", "rule_text", "approved", "being_studied", "new_clues",
         "left_out", "more_in_trials", "new_in_trials", "opposite_way_box",
     ]

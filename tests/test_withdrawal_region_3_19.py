@@ -206,7 +206,7 @@ def test_sickle_cell_saved_answers_give_the_saved_page():
             limits=load(ROOT / "moonlight" / "limits.json"),
             wrong=load(ROOT / "moonlight" / "corrections.json"),
             withdrawals=load(FILE))
-    assert answer == saved
+    assert {k: v for k, v in answer.items() if k != "recruiting"} == saved  # ticket R2: recruiting is set aside
 
 
 def test_sickle_cell_cards_show_the_exact_sentences(sickle_with):

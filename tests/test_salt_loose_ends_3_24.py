@@ -384,7 +384,7 @@ def test_every_other_card_on_the_3_23_pages_is_unchanged(pages, disease_id):
         expected = dict(card, **CHANGED.get((disease_id,) + key, {}))
         assert new[key] == expected, key
     # every other part of the answer, letter for letter
-    assert {k: v for k, v in after.items() if k not in CARD_PARTS} == \
+    assert {k: v for k, v in after.items() if k not in CARD_PARTS and k != "recruiting"} == \
         {k: v for k, v in before.items() if k not in CARD_PARTS}
 
 

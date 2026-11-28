@@ -324,7 +324,8 @@ def test_only_that_card_changes_on_a_limit_page(row, before, after):
 
 @pytest.mark.parametrize("disease", pages())
 def test_the_offline_before_is_the_live_answer_saved_at_recording(disease, before):
-    assert before[disease] == read(SAVED / "before" / f"{disease}.clues.json")
+    assert {k: v for k, v in before[disease].items() if k != "recruiting"} == read(
+        SAVED / "before" / f"{disease}.clues.json")  # ticket R2: recruiting is set aside
 
 
 # ---- part 3 row 8: daratumumab, marked in approvals.json (MAIN 4, 26 Nov) ----
