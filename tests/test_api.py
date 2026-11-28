@@ -446,7 +446,11 @@ def test_the_page_has_no_outside_link(client):
     assert "http" not in page.lower()  # no font, script, stylesheet or any other outside address
     assert "//" not in re.sub(r"(?s)<script>.*?</script>", "", page)  # no "//host" address either
     assert "@import" not in page
-    assert "<link" not in page.lower()
+    # Ticket R5 (asked for by Kashish): the one <link> allowed is the preload
+    # of the site's own font. Any other <link> still fails.
+    own_font = '<link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>'
+    assert page.count(own_font) == 1
+    assert "<link" not in page.replace(own_font, "").lower()
     assert not re.search(r"<script[^>]+src", page, flags=re.IGNORECASE)
     assert "target=" not in page  # nothing opens in a new tab
     assert "window.open" not in page
@@ -1451,13 +1455,16 @@ def test_54_the_sentence_about_the_data_release_is_not_copied(client):
 def test_54_example_2_no_http_link_to_any_outside_font_script_or_stylesheet(client):
     page = without_the_umami_script(client.get("/").text)
     assert "http" not in page.lower()
-    assert "<link" not in page.lower()
+    # Ticket R5 (asked for by Kashish): only the preload of the site's own font.
+    own_font = '<link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>'
+    assert "<link" not in page.replace(own_font, "").lower()
     assert "@import" not in page
     assert not re.search(r"<script[^>]+src", page, flags=re.IGNORECASE)
     assert "fonts.googleapis" not in page and "gstatic" not in page
     # Anything the styles fetch is held inside the page itself.
     addresses = re.findall(r"url\(\s*[\"']?([^\"')]{0,12})", page)
-    assert all(address.startswith("data:") for address in addresses), addresses
+    # Ticket R5: except the site's own font file.
+    assert all(address.startswith(("data:", "/fonts/space")) for address in addresses), addresses
 
 
 # Kashish changed her mind on 2026-11-16 (ticket 8.3). This test used to be

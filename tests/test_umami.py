@@ -144,11 +144,14 @@ def test_nothing_else_comes_from_outside(page):
     assert page.count(SCRIPT_ADDRESS) == 1
     assert "http" not in without.lower()
     assert not re.search(r"""(?:src|href|action|poster|srcset)\s*=\s*["']?\s*//""", without, flags=re.I)
-    assert "<link" not in without.lower()
+    # Ticket R5 (asked for by Kashish): the one <link> is the preload of the
+    # site's own font, and the one url() that is not data: is that font's address.
+    own_font = '<link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>'
+    assert "<link" not in without.replace(own_font, "").lower()
     assert "@import" not in without
     assert not re.search(r"<(img|iframe|video|audio|source|embed|object)\b", without, flags=re.I)
     addresses = re.findall(r"url\(\s*[\"']?([^\"')]{0,12})", without)
-    assert all(address.startswith("data:") for address in addresses), addresses
+    assert all(address.startswith(("data:", "/fonts/space")) for address in addresses), addresses
 
 
 # ---- Add-on: the guide tells people they are counted ----
