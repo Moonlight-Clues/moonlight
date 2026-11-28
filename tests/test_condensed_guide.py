@@ -43,7 +43,7 @@ STEPS = [
     ("Open a tab", "Three lists of medicines."),
 ]
 TILES = [
-    ("Approved", "Approved for this disease. Listed A to Z."),
+    ("Approved", "Approved for this disease. Newest approval first. Newer does not mean better."),
     ("In trials", "Being tested for it. Not a prediction."),
     ("New clues", "No recorded link yet. Worth reading about."),
 ]
@@ -197,8 +197,7 @@ def test_the_three_steps_have_these_words_and_no_sub_line(guide):
 
 def test_the_three_tabs_are_a_picture_and_three_tiles(guide):
     tabs = part(guide, 'id="guide-tabs-title"', "</section>")
-    assert ('<div class="tabs" aria-hidden="true"><span class="tab on">Approved</span>'
-            '<span class="tab">In trials</span><span class="tab">New clues</span></div>') in tabs
+    assert 'class="tabs"' not in tabs  # ticket 3.33: the pretend tab bar is gone
     found = re.findall(r'<div class="tab-note"><h3>([^<]+)</h3><p>([^<]+)</p></div>', tabs)
     assert found == TILES
     assert tabs.count("<p") == 3
