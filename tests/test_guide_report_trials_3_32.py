@@ -65,7 +65,8 @@ def test_no_key_note_is_left_in_the_page_or_its_styles():
 def test_the_key_is_the_last_thing_in_the_card_part():
     card_part = GUIDE[GUIDE.index('id="guide-card"'):]
     card_part = card_part[:card_part.index("</section>")]
-    assert re.search(r"</ul>\s*$", card_part)
+    # Ticket 3.33: the key ends its own box (card + key); the trial-row picture comes after the box.
+    assert re.search(r'(?s)<ul class="key">.*?</ul>\s*</div>\s*(<!--.*?-->\s*)?<div class="guide-trial">', card_part)
     key = card_part[card_part.index('<ul class="key">'):]
     assert re.findall(r'aria-hidden="true">([A-Z])</span>', key)[-1] == "J"
 
@@ -101,7 +102,7 @@ const SITE = "http://moonlight.test";
       keyLast: key.lastElementChild.innerText.replace(/\s+/g, " ").trim(),
       keyNext: key.nextElementSibling && key.nextElementSibling.tagName,
       keyNoteCount: document.querySelectorAll(".key-note").length,
-      sectionEndsWithKey: document.querySelector("#guide-card").lastElementChild === key,
+      sectionEndsWithKey: key.parentElement.lastElementChild === key,
       doctors: lines("guide-doctors-title"),
       facts: lines("guide-facts-title"),
       sideways: document.documentElement.scrollWidth > document.documentElement.clientWidth,

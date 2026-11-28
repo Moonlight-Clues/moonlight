@@ -51,9 +51,9 @@ def card_section(guide):
 
 
 def between_card_and_key(guide):
-    """What sits under the Doxapram card and above the gold-letter key."""
+    """What sits under the gold-letter key (ticket 3.33: the key now comes first, the row after it)."""
     part = card_section(guide)
-    return part[part.index("</article>"):part.index('<ul class="key">')]
+    return part[part.index("</ul>", part.index('<ul class="key">')):]
 
 
 def doxapram_card(guide):

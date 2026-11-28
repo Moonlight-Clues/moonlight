@@ -92,7 +92,9 @@ def test_the_legend_holds_kashishs_signed_words_one_line_per_letter(guide):
 def test_nothing_is_under_the_legend_the_key_ends_at_j(guide):
     card_part = guide[guide.index('id="guide-card"'):]
     card_part = card_part[:card_part.index("</section>")]
-    assert re.search(r'(?s)</ul>\s*$', card_part), "the legend is last in the card part"
+    # Ticket 3.33: the legend is last in its own box; the trial-row picture comes after the box.
+    before_trial = card_part[:card_part.index('<div class="guide-trial">')]
+    assert re.search(r'(?s)</ul>\s*</div>\s*(<!--.*?-->\s*)?$', before_trial), "the legend ends its box"
     assert "key-note" not in guide and "key-note" not in PAGE
     assert REPORT_NOTE not in plain(card_part)
 
@@ -143,10 +145,10 @@ def test_the_report_link_is_closed_after_the_source_record_and_not_clickable(car
 # ---- spacing ----
 
 def test_the_guides_section_gaps_are_24_on_a_phone_and_32_on_a_wide_screen():
-    assert ".guide{max-width:760px;margin-inline:auto;display:grid;gap:24px}" in PAGE
+    assert ".guide{max-width:760px;margin-inline:auto;display:grid;gap:28px}" in PAGE  # ticket 3.33: was 24px
     wide = PAGE[PAGE.index("@media(min-width:760px){.main"):]
     wide = wide[:wide.index("\n")]
-    assert ".guide{gap:32px}" in wide
+    assert ".guide{gap:32px}" not in wide  # ticket 3.33: 28px at every width, was 32px here
     assert "gap:56px" not in PAGE and "gap:68px" not in PAGE
 
 
@@ -328,8 +330,8 @@ def test_browser_the_letters_go_down_the_card_in_reading_order(seen, width):
 def test_browser_the_legend_grid_has_no_orphan(seen, width):
     shape = seen[width]["shape"]
     assert shape["keyItems"] == len(LEGEND)
-    assert shape["keyColumns"] == 2 if width == "390" else shape["keyColumns"] in (2, 4)
-    assert shape["keyRows"][-1] > 1, shape["keyRows"]
+    assert shape["keyColumns"] == 1  # ticket 3.33: one column, ten rows (was 2, or 2 to 4)
+    assert shape["keyRows"] == [1] * len(LEGEND), shape["keyRows"]
     assert sum(shape["keyRows"]) == len(LEGEND)
 
 
@@ -349,7 +351,7 @@ def test_browser_on_a_phone_d_and_e_sit_by_their_own_parts_without_crowding(seen
     assert not shape["sideways"]
 
 
-@pytest.mark.parametrize("width,gap", [("390", "24px"), ("1366", "32px")])
+@pytest.mark.parametrize("width,gap", [("390", "28px"), ("1366", "28px")])
 def test_browser_the_section_gaps(seen, width, gap):
     assert seen[width]["shape"]["gap"] == gap
 
