@@ -1951,8 +1951,11 @@ def test_82_the_guide_line_is_right_after_the_open_targets_and_trials_lines(clie
     lines = [plain(line) for line in re.findall(r"(?s)<li>.*?</li>", guide)]
     place = lines.index("Words. " + GUIDE_LINE)
     # Ticket 3.32: the new Trials line sits between Facts and Words.
-    assert lines[place - 2] == "Facts. Open Targets Platform, an open research database."  # ticket T0
-    assert lines[place - 1] == "Trials. ClinicalTrials.gov, the US public register of clinical studies."
+    # Ticket R3: and the Recruiting now line sits right after Trials, before Words.
+    assert lines[place - 3] == "Facts. Open Targets Platform, an open research database."  # ticket T0
+    assert lines[place - 2] == "Trials. ClinicalTrials.gov, the US public register of clinical studies."
+    assert lines[place - 1] == ("Recruiting now. Trials the registry lists as recruiting. "
+                                "Not every trial is listed, and this is not advice to join one.")
 
 
 def test_82_the_safety_line_is_unchanged(client):

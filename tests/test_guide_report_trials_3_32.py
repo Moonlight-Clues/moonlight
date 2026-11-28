@@ -48,7 +48,7 @@ def test_the_facts_fold_has_the_trials_line_after_facts_and_the_report_line_last
     labels = [label for label, _ in lines]
     assert lines[labels.index("Facts.") + 1] == FACTS_NEW[0]
     assert lines[-1] == FACTS_NEW[1]
-    assert labels.count("Reports.") == 1 and len(lines) == 6
+    assert labels.count("Reports.") == 1 and len(lines) == 7  # ticket R3: one more line, Recruiting now
 
 
 def test_the_new_lines_are_written_once_each_in_the_lists_own_style():
