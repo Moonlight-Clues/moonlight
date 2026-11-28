@@ -70,9 +70,14 @@ def test_made_with_care_and_its_heart_are_gone(page):
 
 
 def test_the_handwriting_font_is_gone(page):
-    assert "@font-face" not in page
+    # Ticket R5 (asked for by Kashish): the one @font-face allowed is Space
+    # Grotesk, from the site's own folder. Nothing else.
+    own = re.sub(r'@font-face\{font-family:"Space Grotesk";[^}]*\}', "", page)
+    own = own.replace("/fonts/space-grotesk-latin-wght-normal.woff2", "")
+    assert page.count("@font-face") == 1
+    assert "@font-face" not in own
     assert "caveat" not in page.lower()
-    assert "woff" not in page.lower()
+    assert "woff" not in own.lower().replace('type="font/woff2"', "")
     assert "cursive" not in styles_of(page)
 
 

@@ -207,6 +207,7 @@ def rows() -> List[Row]:
 
 
 _STYLE = """
+@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/space-grotesk-latin-wght-normal.woff2) format("woff2")}
 :root{--cream:#F5F0E8;--navy:#101F31;--teal:#429D9A;--gold:#E9B45B;--paper:#FFFFFF;--line:#D5E0E2;--muted:#566877}
 *{box-sizing:border-box}
 body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}

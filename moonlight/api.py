@@ -133,6 +133,7 @@ from typing import Deque, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 import requests
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 
@@ -176,6 +177,7 @@ from moonlight.filter import NOT_APPROVED, UNCLEAR_LINK
 from moonlight.rank import RULE_TEXT, Clue
 from moonlight.records import Disease, Path
 
+FONTS_DIR = pathlib.Path(__file__).resolve().parent.parent / "web" / "fonts"
 PAGE = pathlib.Path(__file__).resolve().parent.parent / "web" / "index.html"
 TOP_TARGETS = 25  # the same number of proteins the terminal runner looks at
 
@@ -367,6 +369,17 @@ async def _check_hand_lists(_app: FastAPI):
 
 app = FastAPI(title="Moonlight", docs_url=None, redoc_url=None, openapi_url=None,
               lifespan=_check_hand_lists)
+# Ticket R5. The site's own font, served from web/fonts/. The file name says
+# what is in it and never changes for other content, so browsers may keep it
+# for a year.
+class _FontFiles(StaticFiles):
+    def file_response(self, *args, **kwargs):
+        answer = super().file_response(*args, **kwargs)
+        answer.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return answer
+
+
+app.mount("/fonts", _FontFiles(directory=FONTS_DIR, check_dir=False), name="fonts")
 # Ticket 3.6. Answers over 1000 bytes are gzipped for a browser that asks.
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
