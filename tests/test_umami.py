@@ -144,7 +144,7 @@ def test_nothing_else_comes_from_outside(page):
     assert page.count(SCRIPT_ADDRESS) == 1
     assert "http" not in without.lower()
     assert not re.search(r"""(?:src|href|action|poster|srcset)\s*=\s*["']?\s*//""", without, flags=re.I)
-    # Ticket R5 (asked for by Kashish): the one <link> is the preload of the
+    # Ticket R5 (asked for by Shreshth): the one <link> is the preload of the
     # site's own font, and the one url() that is not data: is that font's address.
     own_font = '<link rel="preload" href="/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>'
     assert "<link" not in without.replace(own_font, "").lower()

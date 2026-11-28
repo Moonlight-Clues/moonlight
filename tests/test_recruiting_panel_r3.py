@@ -362,8 +362,11 @@ def rows_for(rec, country):
     return [t for t in rec["trials"] if country is None or country in t["countries"]]
 
 
-def countries_words(countries):
+def countries_words(countries, chosen=None):
+    # Ticket R4: a chosen country comes first, then the others A to Z.
     names = sorted(countries)
+    if chosen in names:
+        names = [chosen] + [n for n in names if n != chosen]
     if len(names) > 3:
         more = len(names) - 3
         return "%s, %s, %s and %d more" % (names[0], names[1], names[2], more)
@@ -437,7 +440,7 @@ def test_pah_open_rows_match_the_api_for_united_states(seen):
         assert row["nct"] == item["nct_id"]
         assert row["phase"] == phase_words(item["phases"])
         assert row["title"] == item["title"]
-        assert row["countries"] == countries_words(item["countries"])
+        assert row["countries"] == countries_words(item["countries"], "United States")
         assert row["link"] == "Sites and contacts on ClinicalTrials.gov"
         assert row["href"] == item["url"]
         assert row["target"] == "_blank" and "noopener" in row["rel"] and row["tag"] == "A"
