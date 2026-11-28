@@ -22,8 +22,8 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--navy);font:400 15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-button,input{font:inherit}button{cursor:pointer}a{color:var(--teal);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+button,input,select{font:inherit}button{cursor:pointer}a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 .wordmark,h1,h2,h3,.display{font-family:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.035em}
 .wrap{width:min(100% - 32px,1060px);margin-inline:auto}
 [hidden]{display:none!important}.hide{display:none!important}
@@ -491,7 +491,7 @@ body.registering>:not(.register){display:none!important}
       <section class="recruiting" id="recruiting-panel" aria-labelledby="recruiting-heading" hidden>
         <div class="r-head">
           <div class="r-bar"><div class="r-name"><span class="r-dot" aria-hidden="true"></span><h2 id="recruiting-heading">Recruiting now</h2></div><span class="r-number" id="recruiting-number" aria-hidden="true"></span></div>
-          <p class="r-fact" id="recruiting-fact"></p>
+          <p class="r-fact" id="recruiting-fact" aria-live="polite"></p>
           <div class="r-controls">
             <div class="r-pick"><label class="r-label" for="recruiting-country">Country</label><select class="r-select" id="recruiting-country"></select></div>
             <button class="r-toggle" type="button" id="recruiting-toggle" aria-expanded="false" aria-controls="recruiting-list"></button>
@@ -1180,13 +1180,15 @@ body.registering>:not(.register){display:none!important}
     return line;
   }
 
-  function countriesWords(countries) {
-    const names = [...(countries || [])].sort();
+  /* Ticket R4: a chosen country comes first, then the others A to Z. */
+  function countriesWords(countries, chosen) {
+    let names = [...(countries || [])].sort();
+    if (chosen && names.includes(chosen)) names = [chosen, ...names.filter(name => name !== chosen)];
     if (names.length > 3) return names.slice(0, 3).join(", ") + " and " + (names.length - 3) + " more";
     return listed(names);
   }
 
-  function recruitingRow(item) {
+  function recruitingRow(item, chosen) {
     const li = document.createElement("li");
     const row = document.createElement(item.url ? "a" : "div");  // no address sent: a plain row, never a made-up link
     row.className = "r-row";
@@ -1215,7 +1217,7 @@ body.registering>:not(.register){display:none!important}
       title.textContent = item.title;
       row.append(title);
     }
-    const where = countriesWords(item.countries);
+    const where = countriesWords(item.countries, chosen);
     if (where) {
       const line = document.createElement("span");
       line.className = "r-countries";
@@ -1248,14 +1250,19 @@ body.registering>:not(.register){display:none!important}
     const old = byId("recruiting-show-all");
     if (old) old.remove();
     if (!recruitingOpen) { rows.replaceChildren(); return; }
-    rows.replaceChildren(...items.slice(0, recruitingAll).map(recruitingRow));
+    rows.replaceChildren(...items.slice(0, recruitingAll).map(item => recruitingRow(item, country)));
     if (n > recruitingAll) {
       const all = document.createElement("button");
       all.type = "button";
       all.id = "recruiting-show-all";
       all.className = "show-all";
       all.textContent = "Show all " + num(n);
-      all.addEventListener("click", () => { recruitingAll = Infinity; paintRecruiting(); });
+      all.addEventListener("click", () => {
+        const before = rows.children.length;
+        recruitingAll = Infinity;
+        paintRecruiting();
+        focusFirstNew(rows.children[before] && rows.children[before].firstElementChild);  // ticket R4
+      });
       byId("recruiting-list").append(all);
     }
   }
@@ -1283,7 +1290,16 @@ body.registering>:not(.register){display:none!important}
   }
 
   function showRecruiting() {
-    byId("recruiting-panel").hidden = !(recruiting && currentTab === "trials");
+    const shown = Boolean(recruiting && currentTab === "trials");
+    byId("recruiting-panel").hidden = !shown;
+    document.querySelector(".card-help").hidden = shown;  // ticket R4: no "How to read a card" under the panel
+  }
+
+  /* Ticket R4. After "Show all", keyboard focus goes to the first newly shown item. */
+  function focusFirstNew(item) {
+    if (!item) return;
+    if (item.tabIndex < 0 && !item.hasAttribute("tabindex")) item.tabIndex = -1;
+    item.focus();
   }
 
   byId("recruiting-country").addEventListener("change", () => { recruitingAll = RECRUITING_FIRST; paintRecruiting(); });
@@ -1498,6 +1514,7 @@ body.registering>:not(.register){display:none!important}
       showAll.addEventListener("click", () => {
         for (const card of moreTrialsCards) card.hidden = false;
         showAll.remove();
+        focusFirstNew(moreTrialsCards[moreShown]);  // ticket R4
       });
       byId("more-trials-cards").after(showAll);
     }
@@ -1520,6 +1537,7 @@ body.registering>:not(.register){display:none!important}
       showAll.addEventListener("click", () => {
         for (const card of newTrialsCards) card.hidden = false;
         showAll.remove();
+        focusFirstNew(newTrialsCards[newFirst]);  // ticket R4
       });
       byId("new-trials-cards").after(showAll);
     }

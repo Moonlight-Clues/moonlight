@@ -70,7 +70,7 @@ def test_made_with_care_and_its_heart_are_gone(page):
 
 
 def test_the_handwriting_font_is_gone(page):
-    # Ticket R5 (asked for by Kashish): the one @font-face allowed is Space
+    # Ticket R5 (asked for by Shreshth): the one @font-face allowed is Space
     # Grotesk, from the site's own folder. Nothing else.
     own = re.sub(r'@font-face\{font-family:"Space Grotesk";[^}]*\}', "", page)
     own = own.replace("/fonts/space-grotesk-latin-wght-normal.woff2", "")
